@@ -550,6 +550,21 @@ tbody tr:last-child td {
   color: var(--fg-muted);
 }
 
+/* ---- 쿠팡 상품 위젯 ----
+   iframe 은 내용이 축소되지 않아 좁은 화면에서 잘립니다.
+   페이지 전체가 밀리지 않도록 자기 안에서만 가로 스크롤시킵니다. */
+
+.coupang-widget {
+  margin: 1.8rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.coupang-widget iframe {
+  border: 0;
+  display: block;
+  max-width: none;
+}
+
 /* 지금 카드로 충분할 때 덧붙이는 다음 단계 안내.
    결론(충분하다)을 뒤집지 않고, 더 하고 싶을 때 뭐가 필요한지만 알려줍니다. */
 .vr-next {

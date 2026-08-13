@@ -53,6 +53,8 @@ affiliate: false       # 쿠팡 링크를 본문에 넣으면 true
 
 {{VRAM_TOOL}}          ← 이 줄이면 그 자리에 계산기가 들어감
 
+{{COUPANG:rtx4070}}    ← 쿠팡 상품 위젯 (사진 + 실시간 가격)
+
 ## 자주 묻는 질문      ← 이 절의 h3 가 FAQPage 구조화 데이터로 자동 변환됨
 
 ### 질문은 h3 로
@@ -79,7 +81,9 @@ affiliate: false       # 쿠팡 링크를 본문에 넣으면 true
 
 | 항목 | 동작 |
 |------|------|
-| 공정위 고지 | `affiliate: true` 이거나 계산기를 실으면 **본문 맨 위**에 자동 삽입 |
+| 공정위 고지 | `affiliate: true` 이거나 **계산기·위젯을 실으면** 본문 맨 위에 자동 삽입 |
+| 위젯 CLS | iframe 높이만큼 `min-height` 를 미리 잡아 콘텐츠 밀림 방지 |
+| 위젯 오타 | 잘못된 id 는 경고 후 제거 — 페이지에 `{{COUPANG:…}}` 가 노출되지 않음 |
 | 제휴 링크 rel | 쿠팡 링크에 `sponsored nofollow noopener` 자동 부착 |
 | 구조화 데이터 | Article, BreadcrumbList, FAQPage, SoftwareApplication |
 | sitemap.xml | 글 추가 시 자동 갱신 |

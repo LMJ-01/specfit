@@ -4,7 +4,18 @@
 //    공개 전에 ollama.com 에서 대표 모델 몇 개의 실제 용량을 확인하고 보정하세요.
 //    보정한 수치가 곧 이 사이트의 차별점입니다 — 남들은 계산식만 적습니다.
 
-// buy: 쿠팡 파트너스 링크. 비워두면 구매 버튼이 렌더링되지 않습니다.
+// buy: 쿠팡 파트너스 짧은 링크. 계산기 결과의 텍스트 버튼에 쓰입니다.
+//      계산기는 입력에 따라 추천 카드가 바뀌므로 가벼운 텍스트 링크가 맞습니다.
+//
+// widget: 쿠팡 파트너스 '상품 위젯' iframe 코드 전체를 그대로 붙여넣습니다.
+//      글 본문에서 {{COUPANG:rtx4070}} 으로 불러 씁니다.
+//      상품 이미지와 실시간 가격이 나와 텍스트 링크보다 클릭률이 높습니다.
+//
+//      만드는 법: partners.coupang.com → 배너/위젯 → 상품 위젯 →
+//                 상품 검색 → 크기 선택 → 생성된 <iframe ...> 코드 복사
+//
+//      ⚠️ 위젯 크기는 가로 500px 이하를 권합니다.
+//         iframe 은 내용이 축소되지 않아 모바일에서 잘립니다.
 //
 // new: 신품으로 살 수 있는가.
 //   false 인 카드는 **추천 대상에서 제외**됩니다. 단종된 카드를 "이걸 사세요"라고
@@ -16,21 +27,21 @@
 //   형태: https://link.coupang.com/a/XXXXXX
 
 export const gpus = [
-  { id: 'rtx5090', name: 'RTX 5090', vram: 32, bw: 1792, tdp: 575, tier: 'flagship', new: true, buy: 'https://link.coupang.com/a/gbIXLiOL36' },
-  { id: 'rtx5080', name: 'RTX 5080', vram: 16, bw: 960, tdp: 360, tier: 'high', new: true, buy: '' },
-  { id: 'rtx4090', name: 'RTX 4090', vram: 24, bw: 1008, tdp: 450, tier: 'flagship', new: true, buy: 'https://link.coupang.com/a/gbIVZFcbWC' },
-  { id: 'rtx4080s', name: 'RTX 4080 Super', vram: 16, bw: 736, tdp: 320, tier: 'high', new: true, buy: '' },
-  { id: 'rtx4070tis', name: 'RTX 4070 Ti Super', vram: 16, bw: 672, tdp: 285, tier: 'high', new: true, buy: '' },
-  { id: 'rtx4070s', name: 'RTX 4070 Super', vram: 12, bw: 504, tdp: 220, tier: 'mid', new: true, buy: '' },
-  { id: 'rtx4070', name: 'RTX 4070', vram: 12, bw: 504, tdp: 200, tier: 'mid', new: true, buy: 'https://link.coupang.com/a/gbIQDWmjn2' },
-  { id: 'rtx4060ti16', name: 'RTX 4060 Ti 16GB', vram: 16, bw: 288, tdp: 165, tier: 'mid', new: true, buy: '' },
-  { id: 'rtx4060ti8', name: 'RTX 4060 Ti 8GB', vram: 8, bw: 288, tdp: 160, tier: 'entry', new: true, buy: '' },
-  { id: 'rtx4060', name: 'RTX 4060', vram: 8, bw: 272, tdp: 115, tier: 'entry', new: true, buy: 'https://link.coupang.com/a/gbITRwz3ts' },
+  { id: 'rtx5090', name: 'RTX 5090', vram: 32, bw: 1792, tdp: 575, tier: 'flagship', new: true, buy: 'https://link.coupang.com/a/gbIXLiOL36', widget: '' },
+  { id: 'rtx5080', name: 'RTX 5080', vram: 16, bw: 960, tdp: 360, tier: 'high', new: true, buy: '', widget: '' },
+  { id: 'rtx4090', name: 'RTX 4090', vram: 24, bw: 1008, tdp: 450, tier: 'flagship', new: true, buy: 'https://link.coupang.com/a/gbIVZFcbWC', widget: '' },
+  { id: 'rtx4080s', name: 'RTX 4080 Super', vram: 16, bw: 736, tdp: 320, tier: 'high', new: true, buy: '', widget: '' },
+  { id: 'rtx4070tis', name: 'RTX 4070 Ti Super', vram: 16, bw: 672, tdp: 285, tier: 'high', new: true, buy: '', widget: '' },
+  { id: 'rtx4070s', name: 'RTX 4070 Super', vram: 12, bw: 504, tdp: 220, tier: 'mid', new: true, buy: '', widget: '' },
+  { id: 'rtx4070', name: 'RTX 4070', vram: 12, bw: 504, tdp: 200, tier: 'mid', new: true, buy: 'https://link.coupang.com/a/gbIQDWmjn2', widget: '' },
+  { id: 'rtx4060ti16', name: 'RTX 4060 Ti 16GB', vram: 16, bw: 288, tdp: 165, tier: 'mid', new: true, buy: '', widget: '' },
+  { id: 'rtx4060ti8', name: 'RTX 4060 Ti 8GB', vram: 8, bw: 288, tdp: 160, tier: 'entry', new: true, buy: '', widget: '' },
+  { id: 'rtx4060', name: 'RTX 4060', vram: 8, bw: 272, tdp: 115, tier: 'entry', new: true, buy: 'https://link.coupang.com/a/gbITRwz3ts', widget: '' },
   // ── 아래는 단종. 진단용으로만 목록에 둡니다 (추천 대상 아님) ──
-  { id: 'rtx3090', name: 'RTX 3090 (중고)', vram: 24, bw: 936, tdp: 350, tier: 'high', new: false, buy: '' },
-  { id: 'rtx3080', name: 'RTX 3080 10GB', vram: 10, bw: 760, tdp: 320, tier: 'mid', new: false, buy: '' },
-  { id: 'rtx3070', name: 'RTX 3070', vram: 8, bw: 448, tdp: 220, tier: 'entry', new: false, buy: '' },
-  { id: 'rtx3060', name: 'RTX 3060 12GB', vram: 12, bw: 360, tdp: 170, tier: 'entry', new: false, buy: '' },
+  { id: 'rtx3090', name: 'RTX 3090 (중고)', vram: 24, bw: 936, tdp: 350, tier: 'high', new: false, buy: '', widget: '' },
+  { id: 'rtx3080', name: 'RTX 3080 10GB', vram: 10, bw: 760, tdp: 320, tier: 'mid', new: false, buy: '', widget: '' },
+  { id: 'rtx3070', name: 'RTX 3070', vram: 8, bw: 448, tdp: 220, tier: 'entry', new: false, buy: '', widget: '' },
+  { id: 'rtx3060', name: 'RTX 3060 12GB', vram: 12, bw: 360, tdp: 170, tier: 'entry', new: false, buy: '', widget: '' },
   { id: 'mac16', name: 'Mac 통합메모리 16GB', vram: 10, bw: 100, tdp: 0, mac: true, tier: 'mac' },
   { id: 'mac24', name: 'Mac 통합메모리 24GB', vram: 16, bw: 150, tdp: 0, mac: true, tier: 'mac' },
   { id: 'mac32', name: 'Mac 통합메모리 32GB', vram: 22, bw: 200, tdp: 0, mac: true, tier: 'mac' },

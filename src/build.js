@@ -24,6 +24,34 @@ const toolHasAffiliate = gpus.some((g) => g.buy);
 // 글 본문에 {{VRAM_TOOL}} 을 쓰면 그 자리에 계산기가 들어갑니다.
 const TOOL_MARK = '{{VRAM_TOOL}}';
 
+// {{COUPANG:rtx4070}} → 해당 카드의 쿠팡 상품 위젯.
+// id 패턴을 좁히면 오타가 매칭되지 않아 자리표시자가 페이지에 그대로 노출됩니다.
+// 무엇이든 잡아서 경고하고 제거합니다.
+const WIDGET_RE = /\{\{COUPANG:([^}]*)\}\}/gi;
+
+/**
+ * 위젯 자리표시자를 실제 iframe 으로 바꿉니다.
+ *
+ * iframe 은 늦게 로드되면서 아래 콘텐츠를 밀어냅니다(CLS).
+ * 쿠팡 위젯 코드에 width/height 가 박혀 있으므로 그 값으로 자리를 미리 잡아둡니다.
+ */
+function renderWidgets(html, warn) {
+  return html.replace(WIDGET_RE, (full, id) => {
+    const gpu = gpus.find((g) => g.id === id.toLowerCase());
+    if (!gpu) {
+      warn(`알 수 없는 위젯 id: ${id} — gpu-data.js 에 없는 항목입니다`);
+      return '';
+    }
+    if (!gpu.widget) {
+      warn(`${gpu.name}: widget 코드가 비어 있어 ${full} 이 무시됨`);
+      return '';
+    }
+    const h = /height="?(\d+)/.exec(gpu.widget);
+    const reserve = h ? ` style="min-height:${h[1]}px"` : '';
+    return `<div class="coupang-widget"${reserve}>${gpu.widget}</div>`;
+  });
+}
+
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
 const contentDir = join(here, 'content');
@@ -90,8 +118,12 @@ async function build() {
     .map((p) => {
       const faq = extractFaq(p.body);
       const usesTool = p.body.includes(TOOL_MARK);
+      // 위젯을 쓰면 그 자체가 제휴 링크이므로 공정위 고지가 붙어야 합니다.
+      const usesWidget = WIDGET_RE.test(p.body);
+      WIDGET_RE.lastIndex = 0; // 전역 정규식 상태 초기화
       return {
         toolData: usesTool ? toolData : null,
+        usesWidget,
         slug: p.slug,
         url: `/posts/${p.slug}.html`,
         title: p.data.title || p.slug,
@@ -100,13 +132,17 @@ async function build() {
         updated: p.data.updated || '',
         category: p.data.category || '',
         tags: Array.isArray(p.data.tags) ? p.data.tags : [],
-        // 계산기를 실은 글은 계산기 안의 제휴 링크 때문에 자동으로 제휴 페이지가 됩니다.
-        affiliate: p.data.affiliate === true || (usesTool && toolHasAffiliate),
+        // 계산기나 위젯을 실으면 그 안에 제휴 링크가 있으므로 자동으로 제휴 페이지가 됩니다.
+        affiliate:
+          p.data.affiliate === true || (usesTool && toolHasAffiliate) || usesWidget,
         image: p.data.image || '',
         faq,
-        html: markdownToHtml(p.body).replace(
-          new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'),
-          '<div data-vram-tool></div>'
+        html: renderWidgets(
+          markdownToHtml(p.body).replace(
+            new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'),
+            '<div data-vram-tool></div>'
+          ),
+          (msg) => warnings.push(`${p.slug}: ${msg}`)
         ),
         text: p.body.replace(/[#>*`|_-]/g, ' ').replace(/\s+/g, ' ').trim(),
       };
