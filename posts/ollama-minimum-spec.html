@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나 | 스펙핏</title>
+<meta name="description" content="로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/ollama-minimum-spec.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나 | 스펙핏">
+<meta property="og:description" content="로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/ollama-minimum-spec.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-08-13","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","item":"https://specfit.kr/posts/ollama-minimum-spec.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"VRAM 8GB인데 14B 모델을 돌릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 컨텍스트를 크게 줄여야 하고, 일부 레이어가 CPU로 넘어가 속도가 떨어집니다. 8GB에서는 7~8B 모델을 쓰는 편이 훨씬 쾌적합니다."}},{"@type":"Question","name":"그래픽카드 두 장을 꽂으면 VRAM이 합쳐지나요","acceptedAnswer":{"@type":"Answer","text":"Ollama는 여러 GPU에 레이어를 나눠 올릴 수 있어 큰 모델을 돌리는 데 도움이 됩니다. 다만 단순히 용량이 더해지는 것은 아니고, 카드 간 통신 오버헤드가 생겨 같은 용량의 단일 카드보다 느립니다."}},{"@type":"Question","name":"시스템 램은 얼마나 필요한가요","acceptedAnswer":{"@type":"Answer","text":"모델을 VRAM에 전부 올린다면 시스템 램은 16GB로도 충분합니다. 다만 VRAM을 넘기는 모델을 쓸 계획이라면 32GB 이상을 권합니다."}},{"@type":"Question","name":"양자화를 낮추면 더 큰 모델을 돌릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. Q4 대신 Q3나 Q2를 쓰면 용량이 줄어듭니다. 다만 Q4 아래로 내려가면 품질 저하가 체감되기 시작합니다. **같은 VRAM이라면 \"더 큰 모델을 강하게 양자화\"보다 \"작은 모델을 Q4로\"가 대체로 낫습니다.**"}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/about.html">소개</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-13">2026년 8월 13일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>로컬 LLM을 시작할 때 가장 많이 하는 질문은 &quot;어떤 그래픽카드를 사야 하나요&quot;입니다.
+그런데 이 질문은 순서가 틀렸습니다. <strong>먼저 정해야 할 것은 돌릴 모델이고,
+모델이 정해지면 필요한 VRAM이 정해지고, 그다음에 GPU가 정해집니다.</strong></p>
+<h2 id="바로-확인하기">바로 확인하기</h2>
+<p>그래픽카드를 고르면 어떤 모델이 돌아가는지 표시됩니다.
+컨텍스트 길이를 바꿔보면 판정이 달라지는 것도 볼 수 있습니다.</p>
+<p><div data-vram-tool></div></p>
+<h2 id="결론부터">결론부터</h2>
+<p>VRAM 용량별로 무리 없이 돌아가는 모델 크기입니다. <strong>Q4 양자화 기준</strong>입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>VRAM</th><th>편하게 돌아감</th><th>가능하지만 빠듯함</th><th>대표 GPU</th></tr></thead>
+<tbody>
+<tr><td>8GB</td><td>7~8B</td><td>13~14B (컨텍스트 축소)</td><td>RTX 4060, 3070</td></tr>
+<tr><td>12GB</td><td>13~14B</td><td>20B대</td><td>RTX 4070, 3080 12GB</td></tr>
+<tr><td>16GB</td><td>14B</td><td>32B (컨텍스트 축소)</td><td>RTX 4070 Ti Super, 4060 Ti 16GB</td></tr>
+<tr><td>24GB</td><td>32B</td><td>70B (강한 양자화 필요)</td><td>RTX 4090, 3090</td></tr>
+<tr><td>48GB+</td><td>70B</td><td>100B+</td><td>RTX 6000 Ada, A6000</td></tr>
+</tbody>
+</table></div>
+<p><strong>8GB가 실질적인 하한선입니다.</strong> 그 아래는 7B 모델도 컨텍스트를 크게 줄여야 하고,
+사용 경험이 급격히 나빠집니다.</p>
+<h2 id="vram-계산법">VRAM 계산법</h2>
+<p>모델 파일 크기가 곧 필요한 VRAM은 아닙니다. 세 가지가 함께 올라갑니다.</p>
+<pre><code>필요 VRAM ≈ 모델 가중치 + KV 캐시 + 오버헤드</code></pre>
+<h3 id="1-모델-가중치">1. 모델 가중치</h3>
+<p>Q4 양자화 기준으로 <strong>파라미터 수(B) × 약 0.6GB</strong> 정도로 잡으면 대체로 맞습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>모델 크기</th><th>Q4 가중치 (대략)</th></tr></thead>
+<tbody>
+<tr><td>7B</td><td>약 4.5GB</td></tr>
+<tr><td>14B</td><td>약 9GB</td></tr>
+<tr><td>32B</td><td>약 20GB</td></tr>
+<tr><td>70B</td><td>약 42GB</td></tr>
+</tbody>
+</table></div>
+<h3 id="2-kv-캐시-여기서-많이-틀립니다">2. KV 캐시 — 여기서 많이 틀립니다</h3>
+<p><strong>컨텍스트를 길게 잡을수록 VRAM을 더 먹습니다.</strong> 모델 크기와 별개입니다.</p>
+<p>긴 문서를 넣거나 대화를 길게 이어가면 KV 캐시가 계속 커지고,
+어느 순간 VRAM을 넘겨 시스템 램으로 넘어갑니다. 이때부터 속도가 급격히 떨어집니다.</p>
+<p>&quot;처음엔 빨랐는데 대화가 길어지니 느려진다&quot;는 대부분 이 문제입니다.</p>
+<h3 id="3-오버헤드">3. 오버헤드</h3>
+<p>컨텍스트 윈도우와 배치 처리를 위한 여유분으로 <strong>1~2GB 정도</strong>를 남겨둬야 합니다.
+VRAM을 100% 채우도록 계산하면 실제로는 안 돌아갑니다.</p>
+<h2 id="vram이-부족하면-어떻게-되나">VRAM이 부족하면 어떻게 되나</h2>
+<p>에러가 나는 게 아니라 <strong>느려집니다.</strong> 이게 더 헷갈리는 부분입니다.</p>
+<p>Ollama는 VRAM에 다 안 들어가면 일부 레이어를 CPU와 시스템 램으로 넘깁니다.
+동작은 하지만 속도가 몇 배에서 수십 배까지 떨어집니다.</p>
+<pre><code>전부 VRAM   →  초당 수십 토큰   (쓸 만함)
+일부 CPU    →  초당 수 토큰      (답답함)
+대부분 CPU  →  초당 1토큰 미만   (사실상 불가)</code></pre>
+<p>→ <strong>&quot;돌아가긴 한다&quot;와 &quot;쓸 만하다&quot;는 다릅니다.</strong> 표에서 &quot;빠듯함&quot;으로 표시한 조합은
+돌아가긴 하지만 일상적으로 쓰기엔 답답할 수 있습니다.</p>
+<h2 id="gpu를-고르기-전에-확인할-것">GPU를 고르기 전에 확인할 것</h2>
+<h3 id="vram이-먼저-연산-성능은-나중">VRAM이 먼저, 연산 성능은 나중</h3>
+<p>게이밍에서는 연산 성능이 중요하지만, <strong>로컬 LLM에서는 VRAM 용량이 먼저</strong>입니다.
+VRAM이 부족하면 아무리 빠른 GPU라도 CPU로 넘어가면서 느려집니다.</p>
+<p>그래서 이런 역전이 생깁니다.</p>
+<ul>
+<li>RTX 4060 Ti <strong>16GB</strong> &gt; RTX 4070 <strong>12GB</strong> — 32B 모델을 돌릴 때</li>
+<li>RTX 3090 <strong>24GB</strong> &gt; RTX 4070 Ti <strong>12GB</strong> — 세대가 낮아도 VRAM이 크면 유리</li>
+</ul>
+<p>중고 3090이 로컬 LLM 용도로 꾸준히 언급되는 이유가 이것입니다.</p>
+<h3 id="메모리-대역폭">메모리 대역폭</h3>
+<p>VRAM이 충분하다면 그다음은 <strong>대역폭</strong>입니다. 생성 속도에 직접 영향을 줍니다.
+같은 24GB라도 대역폭이 높은 쪽이 눈에 띄게 빠릅니다.</p>
+<h3 id="통합-메모리-맥">통합 메모리 (맥)</h3>
+<p>애플 실리콘은 통합 메모리를 VRAM처럼 씁니다.
+<strong>메모리 64GB 맥에서 70B 모델이 돌아가는</strong> 이유입니다.
+다만 대역폭이 전용 GPU보다 낮아 생성 속도는 느린 편입니다.</p>
+<ul>
+<li>용량이 필요하면 → 맥이 유리</li>
+<li>속도가 필요하면 → 전용 GPU가 유리</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="vram-8gb인데-14b-모델을-돌릴-수-있나요">VRAM 8GB인데 14B 모델을 돌릴 수 있나요</h3>
+<p>돌아가긴 합니다. 다만 컨텍스트를 크게 줄여야 하고, 일부 레이어가 CPU로 넘어가
+속도가 떨어집니다. 8GB에서는 7~8B 모델을 쓰는 편이 훨씬 쾌적합니다.</p>
+<h3 id="그래픽카드-두-장을-꽂으면-vram이-합쳐지나요">그래픽카드 두 장을 꽂으면 VRAM이 합쳐지나요</h3>
+<p>Ollama는 여러 GPU에 레이어를 나눠 올릴 수 있어 큰 모델을 돌리는 데 도움이 됩니다.
+다만 단순히 용량이 더해지는 것은 아니고, 카드 간 통신 오버헤드가 생겨
+같은 용량의 단일 카드보다 느립니다.</p>
+<h3 id="시스템-램은-얼마나-필요한가요">시스템 램은 얼마나 필요한가요</h3>
+<p>모델을 VRAM에 전부 올린다면 시스템 램은 16GB로도 충분합니다.
+다만 VRAM을 넘기는 모델을 쓸 계획이라면 32GB 이상을 권합니다.</p>
+<h3 id="양자화를-낮추면-더-큰-모델을-돌릴-수-있나요">양자화를 낮추면 더 큰 모델을 돌릴 수 있나요</h3>
+<p>가능합니다. Q4 대신 Q3나 Q2를 쓰면 용량이 줄어듭니다.
+다만 Q4 아래로 내려가면 품질 저하가 체감되기 시작합니다.
+<strong>같은 VRAM이라면 &quot;더 큰 모델을 강하게 양자화&quot;보다 &quot;작은 모델을 Q4로&quot;가 대체로 낫습니다.</strong></p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>돌릴 모델을 먼저 정합니다</strong> — GPU가 아니라</li>
+<li><strong>VRAM = 가중치 + KV 캐시 + 여유 1~2GB</strong>로 계산합니다</li>
+<li>VRAM이 부족하면 에러가 아니라 <strong>느려집니다</strong></li>
+<li>로컬 LLM에서는 <strong>연산 성능보다 VRAM 용량이 먼저</strong>입니다</li>
+</ol>
+<p>수치가 최신 정보와 다르거나 실제 사용 결과가 다르다면 <a href="/contact.html">알려주세요</a>.
+확인 후 본문을 고치고 갱신일을 표시합니다.</p>
+  </div>
+
+  <div class="ad-slot" aria-hidden="true" data-ad-placeholder></div>
+
+  <p class="tags"><span class="tag">Ollama</span> <span class="tag">로컬LLM</span> <span class="tag">VRAM</span> <span class="tag">그래픽카드</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/rtx3090-vs-4070-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽</span>
+        <span class="card-desc">로컬 LLM에서는 세대가 낮아도 VRAM이 큰 쪽이 유리합니다. 3090 24GB와 4070 12GB를 실제 기준으로 비교했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship"},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high"},{"id":"rtx4090","name":"RTX 4090","vram":24,"bw":1008,"tdp":450,"tier":"flagship"},{"id":"rtx4080s","name":"RTX 4080 Super","vram":16,"bw":736,"tdp":320,"tier":"high"},{"id":"rtx4070tis","name":"RTX 4070 Ti Super","vram":16,"bw":672,"tdp":285,"tier":"high"},{"id":"rtx4070s","name":"RTX 4070 Super","vram":12,"bw":504,"tdp":220,"tier":"mid"},{"id":"rtx4070","name":"RTX 4070","vram":12,"bw":504,"tdp":200,"tier":"mid"},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB","vram":16,"bw":288,"tdp":165,"tier":"mid"},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB","vram":8,"bw":288,"tdp":160,"tier":"entry"},{"id":"rtx4060","name":"RTX 4060","vram":8,"bw":272,"tdp":115,"tier":"entry"},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high"},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid"},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry"},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry"},{"id":"mac16","name":"Mac 통합메모리 16GB","vram":10,"bw":100,"tdp":0,"mac":true,"tier":"mac"},{"id":"mac24","name":"Mac 통합메모리 24GB","vram":16,"bw":150,"tdp":0,"mac":true,"tier":"mac"},{"id":"mac32","name":"Mac 통합메모리 32GB","vram":22,"bw":200,"tdp":0,"mac":true,"tier":"mac"},{"id":"mac64","name":"Mac 통합메모리 64GB","vram":46,"bw":300,"tdp":0,"mac":true,"tier":"mac"},{"id":"mac128","name":"Mac 통합메모리 128GB","vram":96,"bw":400,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.55},{"id":"q5","label":"Q5 (품질↑)","perB":0.68},{"id":"q8","label":"Q8 (고품질)","perB":1.05}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script src="/assets/vram.js" defer></script>
+</body>
+</html>

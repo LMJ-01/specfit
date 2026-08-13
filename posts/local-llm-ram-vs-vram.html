@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로컬 LLM 램 몇 GB 필요한가 — VRAM과 뭐가 다른가 | 스펙핏</title>
+<meta name="description" content="로컬 LLM에서 시스템 램과 VRAM은 역할이 다릅니다. 어느 쪽이 부족할 때 무슨 일이 생기는지, 얼마나 필요한지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/local-llm-ram-vs-vram.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="로컬 LLM 램 몇 GB 필요한가 — VRAM과 뭐가 다른가 | 스펙핏">
+<meta property="og:description" content="로컬 LLM에서 시스템 램과 VRAM은 역할이 다릅니다. 어느 쪽이 부족할 때 무슨 일이 생기는지, 얼마나 필요한지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/local-llm-ram-vs-vram.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 램 몇 GB 필요한가 — VRAM과 뭐가 다른가","description":"로컬 LLM에서 시스템 램과 VRAM은 역할이 다릅니다. 어느 쪽이 부족할 때 무슨 일이 생기는지, 얼마나 필요한지 정리했습니다.","datePublished":"2026-08-14","dateModified":"2026-08-14","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-ram-vs-vram.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"로컬 LLM 램 몇 GB 필요한가 — VRAM과 뭐가 다른가","item":"https://specfit.kr/posts/local-llm-ram-vs-vram.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"램을 늘리면 더 큰 모델이 돌아가나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 VRAM을 넘긴 부분은 CPU가 처리하므로 매우 느립니다. 큰 모델을 쓰려면 램이 아니라 **VRAM을 늘리는 것**이 맞습니다."}},{"@type":"Question","name":"16GB인데 32GB로 늘리면 속도가 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"모델이 이미 VRAM에 전부 올라가고 있다면 **차이가 거의 없습니다.** 반대로 CPU 오프로딩이 일어나고 있었다면 체감할 수 있습니다. 작업 관리자에서 실행 중 램 사용량을 먼저 확인해 보세요."}},{"@type":"Question","name":"DDR4와 DDR5 중 어느 쪽이 유리한가요","acceptedAnswer":{"@type":"Answer","text":"CPU 오프로딩을 자주 한다면 대역폭이 높은 DDR5가 유리합니다. 모델이 VRAM에 다 올라가는 환경이라면 차이가 크지 않습니다. **이것 때문에 플랫폼을 바꿀 정도의 차이는 아닙니다.**"}},{"@type":"Question","name":"램 속도(클럭)도 중요한가요","acceptedAnswer":{"@type":"Answer","text":"용량만큼은 아닙니다. 우선순위는 **용량 → 듀얼 채널 → 클럭** 순입니다. 32GB 싱글 채널보다 32GB 듀얼 채널이, 그보다 고클럭이 나중입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/about.html">소개</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>로컬 LLM 램 몇 GB 필요한가 — VRAM과 뭐가 다른가</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-14">2026년 8월 14일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>&quot;로컬 LLM 돌리려면 램 몇 GB 필요해요?&quot;</p>
+<p>이 질문에는 함정이 있습니다. <strong>램(시스템 메모리)과 VRAM(그래픽카드 메모리)은 다른 것</strong>인데,
+질문하는 쪽도 답하는 쪽도 섞어 쓰는 경우가 많습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>필요한 시스템 램</th></tr></thead>
+<tbody>
+<tr><td>모델이 VRAM에 전부 올라감</td><td><strong>16GB</strong> 로 충분</td></tr>
+<tr><td>일부를 CPU로 넘김 (VRAM 부족)</td><td><strong>32GB 이상</strong></td></tr>
+<tr><td>GPU 없이 CPU만으로 돌림</td><td><strong>모델 크기 + 8GB</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>VRAM이 충분하면 시스템 램은 생각보다 적게 듭니다.</strong>
+반대로 VRAM이 모자라면 그 부족분을 시스템 램이 떠안습니다.</p>
+<h2 id="둘은-역할이-다릅니다">둘은 역할이 다릅니다</h2>
+<pre><code>VRAM  →  모델이 실제로 연산되는 곳.  빠름.  용량 작음.
+RAM   →  모델을 읽어 올리는 통로.    느림.  용량 큼.</code></pre>
+<h3 id="정상-동작일-때">정상 동작일 때</h3>
+<ol>
+<li>디스크에서 모델 파일을 읽습니다 (시스템 램 경유)</li>
+<li>VRAM으로 올립니다</li>
+<li><strong>이후 연산은 전부 VRAM 안에서</strong> 일어납니다</li>
+</ol>
+<p>이 경우 시스템 램은 로딩할 때만 잠깐 쓰이고, 실행 중에는 거의 놀고 있습니다.
+그래서 <strong>16GB로 충분</strong>합니다.</p>
+<h3 id="vram이-부족할-때">VRAM이 부족할 때</h3>
+<p>모델이 VRAM에 다 안 들어가면 Ollama나 llama.cpp는 <strong>일부 레이어를 CPU로 넘깁니다.</strong>
+이때부터 시스템 램이 실제 작업 공간이 됩니다.</p>
+<pre><code>32B 모델 (약 20GB) + VRAM 12GB
+  → 12GB 는 GPU
+  → 나머지 8GB+ 는 시스템 램
+  → 램이 16GB면 다른 프로그램과 충돌</code></pre>
+<p>이 상태에서는 <strong>속도가 급격히 떨어집니다.</strong> 시스템 램의 대역폭이 VRAM의
+1/10 수준이기 때문입니다. &quot;돌아가긴 하는데 너무 느리다&quot;의 정체가 이것입니다.</p>
+<h2 id="램이-부족하면-생기는-일">램이 부족하면 생기는 일</h2>
+<p>VRAM 부족과 증상이 다릅니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>부족한 것</th><th>증상</th></tr></thead>
+<tbody>
+<tr><td>VRAM</td><td>느려짐 (CPU로 넘어감)</td></tr>
+<tr><td><strong>시스템 램</strong></td><td><strong>스왑 발생 → 극단적으로 느려지거나 강제 종료</strong></td></tr>
+</tbody>
+</table></div>
+<p>시스템 램까지 부족하면 디스크 스왑으로 넘어갑니다.
+이 단계에서는 초당 1토큰도 안 나오는 경우가 많고, 프로세스가 죽기도 합니다.</p>
+<h2 id="얼마나-사면-되나">얼마나 사면 되나</h2>
+<h3 id="32gb가-무난합니다">32GB가 무난합니다</h3>
+<p>지금 새로 맞춘다면 <strong>32GB를 권합니다.</strong> 이유는 세 가지입니다.</p>
+<ul>
+<li>VRAM을 넘기는 모델을 언젠가 쓰게 됩니다</li>
+<li>브라우저·IDE·도커를 같이 띄우면 16GB는 금방 찹니다</li>
+<li>32GB와 16GB의 가격 차이가 크지 않습니다</li>
+</ul>
+<h3 id="64gb가-필요한-경우">64GB가 필요한 경우</h3>
+<ul>
+<li>GPU 없이 <strong>CPU만으로</strong> 큰 모델을 돌릴 계획</li>
+<li>70B급 모델을 부분 오프로딩으로 쓸 계획</li>
+<li>가상머신이나 대용량 데이터 작업을 병행</li>
+</ul>
+<p>그 외에는 64GB가 성능을 올려주지 않습니다.
+<strong>남는 램은 그냥 남습니다</strong> — VRAM처럼 쓰이지 않습니다.</p>
+<h3 id="듀얼-채널로-꽂으세요">듀얼 채널로 꽂으세요</h3>
+<p>같은 32GB라도 <strong>16GB 두 장(듀얼 채널)</strong>이 <strong>32GB 한 장(싱글 채널)</strong>보다 빠릅니다.
+메모리 대역폭이 두 배가 되기 때문이고, CPU 오프로딩 상황에서 체감 차이가 납니다.</p>
+<p>메인보드 슬롯이 4개면 보통 <strong>2번·4번</strong>에 꽂습니다. 설명서를 확인하세요.</p>
+<h2 id="맥은-다릅니다">맥은 다릅니다</h2>
+<p>애플 실리콘은 <strong>통합 메모리(Unified Memory)</strong> 구조라 램과 VRAM이 분리되어 있지 않습니다.</p>
+<pre><code>맥 메모리 32GB  →  약 21~24GB 를 모델에 쓸 수 있음
+맥 메모리 64GB  →  약 45~48GB</code></pre>
+<p>시스템이 일부를 예약하므로 전체를 다 쓰지는 못합니다.
+<strong>메모리 64GB 맥에서 70B 모델이 돌아가는</strong> 이유가 이 구조입니다.</p>
+<p>다만 대역폭이 전용 GPU보다 낮아 같은 용량이면 생성 속도는 느립니다.
+그리고 <strong>맥은 나중에 메모리를 늘릴 수 없습니다.</strong> 살 때 정해야 합니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="램을-늘리면-더-큰-모델이-돌아가나요">램을 늘리면 더 큰 모델이 돌아가나요</h3>
+<p>돌아가긴 합니다. 다만 VRAM을 넘긴 부분은 CPU가 처리하므로 매우 느립니다.
+큰 모델을 쓰려면 램이 아니라 <strong>VRAM을 늘리는 것</strong>이 맞습니다.</p>
+<h3 id="16gb인데-32gb로-늘리면-속도가-빨라지나요">16GB인데 32GB로 늘리면 속도가 빨라지나요</h3>
+<p>모델이 이미 VRAM에 전부 올라가고 있다면 <strong>차이가 거의 없습니다.</strong>
+반대로 CPU 오프로딩이 일어나고 있었다면 체감할 수 있습니다.
+작업 관리자에서 실행 중 램 사용량을 먼저 확인해 보세요.</p>
+<h3 id="ddr4와-ddr5-중-어느-쪽이-유리한가요">DDR4와 DDR5 중 어느 쪽이 유리한가요</h3>
+<p>CPU 오프로딩을 자주 한다면 대역폭이 높은 DDR5가 유리합니다.
+모델이 VRAM에 다 올라가는 환경이라면 차이가 크지 않습니다.
+<strong>이것 때문에 플랫폼을 바꿀 정도의 차이는 아닙니다.</strong></p>
+<h3 id="램-속도클럭도-중요한가요">램 속도(클럭)도 중요한가요</h3>
+<p>용량만큼은 아닙니다. 우선순위는 <strong>용량 → 듀얼 채널 → 클럭</strong> 순입니다.
+32GB 싱글 채널보다 32GB 듀얼 채널이, 그보다 고클럭이 나중입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>VRAM이 충분하면 시스템 램 16GB로 충분</strong>합니다</li>
+<li>VRAM이 모자라면 그 부족분을 램이 떠안고, 그때부터 <strong>32GB 이상</strong>이 필요합니다</li>
+<li>큰 모델을 쓰고 싶다면 램이 아니라 <strong>VRAM을 늘려야</strong> 합니다</li>
+<li>같은 용량이면 <strong>듀얼 채널</strong>로 꽂으세요</li>
+<li>맥은 통합 메모리라 규칙이 다르고, <strong>나중에 못 늘립니다</strong></li>
+</ol>
+<p>VRAM이 얼마나 필요한지는
+<a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>를 참고하세요.</p>
+<p>수치가 실제 환경과 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  <div class="ad-slot" aria-hidden="true" data-ad-placeholder></div>
+
+  <p class="tags"><span class="tag">로컬LLM</span> <span class="tag">RAM</span> <span class="tag">VRAM</span> <span class="tag">메모리</span> <span class="tag">Ollama</span></p>
+</article>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>

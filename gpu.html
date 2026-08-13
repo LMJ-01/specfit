@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU | 스펙핏</title>
+<meta name="description" content="로컬 LLM·딥러닝용 그래픽카드 — 스펙핏">
+<link rel="canonical" href="https://specfit.kr/gpu.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="GPU | 스펙핏">
+<meta property="og:description" content="로컬 LLM·딥러닝용 그래픽카드 — 스펙핏">
+<meta property="og:url" content="https://specfit.kr/gpu.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"GPU","description":"로컬 LLM·딥러닝용 그래픽카드 — 스펙핏","url":"https://specfit.kr/gpu.html"}</script>
+</head>
+<body class="is-list">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html" aria-current="page">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/about.html">소개</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<section class="list-head">
+  <h1>GPU</h1>
+  <p class="lead">로컬 LLM·딥러닝용 그래픽카드</p>
+  
+</section>
+
+<ul class="card-list" data-list>
+  <li class="card">
+      <a href="/posts/rtx3090-vs-4070-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽</span>
+        <span class="card-desc">로컬 LLM에서는 세대가 낮아도 VRAM이 큰 쪽이 유리합니다. 3090 24GB와 4070 12GB를 실제 기준으로 비교했습니다.</span>
+      </a>
+    </li>
+  <li class="card">
+      <a href="/posts/ollama-minimum-spec.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나</span>
+        <span class="card-desc">로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.</span>
+      </a>
+    </li>
+</ul>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>

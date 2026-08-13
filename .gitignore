@@ -1,0 +1,18 @@
+# 인증 정보 — 절대 커밋 금지
+.env
+*.key
+secrets/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# 에디터
+.vscode/
+.idea/
+
+# 의존성 (현재는 의존성 0이지만 대비)
+node_modules/
+
+# 주의: 생성된 HTML 은 무시하지 않습니다.
+# GitHub Pages 가 루트를 그대로 서빙하므로 커밋되어야 합니다.

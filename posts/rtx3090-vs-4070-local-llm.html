@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽 | 스펙핏</title>
+<meta name="description" content="로컬 LLM에서는 세대가 낮아도 VRAM이 큰 쪽이 유리합니다. 3090 24GB와 4070 12GB를 실제 기준으로 비교했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/rtx3090-vs-4070-local-llm.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽 | 스펙핏">
+<meta property="og:description" content="로컬 LLM에서는 세대가 낮아도 VRAM이 큰 쪽이 유리합니다. 3090 24GB와 4070 12GB를 실제 기준으로 비교했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/rtx3090-vs-4070-local-llm.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽","description":"로컬 LLM에서는 세대가 낮아도 VRAM이 큰 쪽이 유리합니다. 3090 24GB와 4070 12GB를 실제 기준으로 비교했습니다.","datePublished":"2026-08-14","dateModified":"2026-08-14","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/rtx3090-vs-4070-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽","item":"https://specfit.kr/posts/rtx3090-vs-4070-local-llm.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"3090 두 장이 4090 한 장보다 나은가요","acceptedAnswer":{"@type":"Answer","text":"VRAM 총량은 48GB로 4090(24GB)의 두 배라 더 큰 모델을 올릴 수 있습니다. 다만 카드 간 통신 오버헤드가 있어 같은 용량 단일 카드보다 느리고, 파워 700W 이상과 메인보드 슬롯 간격을 감당해야 합니다."}},{"@type":"Question","name":"채굴 카드인지 어떻게 아나요","acceptedAnswer":{"@type":"Answer","text":"확실한 판별법은 없습니다. 다만 참고할 수 있는 것들이 있습니다. 같은 판매자가 여러 장을 동시에 파는 경우, 팬 소음이 유난히 큰 경우, 서멀 재도포 이력이 있는 경우는 주의합니다. 가격이 시세보다 크게 낮으면 이유를 물어보는 편이 좋습니다."}},{"@type":"Question","name":"로컬 LLM만 쓸 건데 게이밍 성능은 안 봐도 되나요","acceptedAnswer":{"@type":"Answer","text":"네. LLM 추론 성능은 **VRAM 용량 → 메모리 대역폭 → 연산 성능** 순으로 중요합니다. 게이밍 벤치마크 순위와 LLM 성능 순위는 일치하지 않습니다."}},{"@type":"Question","name":"맥은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"메모리 64GB 이상 맥에서는 통합 메모리를 VRAM처럼 써서 70B 모델도 올라갑니다. 다만 대역폭이 전용 GPU보다 낮아 생성 속도는 느립니다. **용량이 필요하면 맥, 속도가 필요하면 전용 GPU**입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/about.html">소개</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-14">2026년 8월 14일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>로컬 LLM을 시작하려는 사람이 자주 부딪히는 선택입니다.
+비슷한 가격대에서 <strong>구형 상위 카드</strong>와 <strong>신형 중급 카드</strong> 중 무엇을 살 것인가.</p>
+<p>게이밍이라면 신형이 낫습니다. 하지만 <strong>로컬 LLM에서는 답이 다릅니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<p><strong>로컬 LLM 용도라면 3090입니다.</strong> VRAM이 두 배이고 대역폭도 높습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>RTX 3090</th><th>RTX 4070</th></tr></thead>
+<tbody>
+<tr><td>VRAM</td><td><strong>24GB</strong></td><td>12GB</td></tr>
+<tr><td>메모리 대역폭</td><td><strong>936 GB/s</strong></td><td>504 GB/s</td></tr>
+<tr><td>TDP</td><td>350W</td><td><strong>200W</strong></td></tr>
+<tr><td>출시</td><td>2020년</td><td>2023년</td></tr>
+<tr><td>상태</td><td>중고만</td><td>신품</td></tr>
+<tr><td>돌릴 수 있는 모델</td><td><strong>32B (여유), 70B (강한 양자화)</strong></td><td>14B (여유), 20B대 (빠듯)</td></tr>
+</tbody>
+</table></div>
+<p>LLM 추론에서 중요한 두 지표가 <strong>VRAM 용량</strong>과 <strong>메모리 대역폭</strong>인데,
+3090이 둘 다 앞섭니다. 세대 차이가 이걸 뒤집지 못합니다.</p>
+<h2 id="왜-세대가-낮은데-유리한가">왜 세대가 낮은데 유리한가</h2>
+<h3 id="vram이-부족하면-성능이-아니라-가능-여부가-갈립니다">VRAM이 부족하면 성능이 아니라 가능 여부가 갈립니다</h3>
+<p>게이밍에서 VRAM이 부족하면 텍스처 품질을 낮추면 됩니다.
+LLM에서는 그런 타협이 없습니다. <strong>모델이 VRAM에 안 들어가면 시스템 램으로 넘어가고,
+그 순간 속도가 몇 배에서 수십 배 떨어집니다.</strong></p>
+<pre><code>32B 모델 (Q4, 약 20GB)
+  3090 24GB  →  전부 VRAM       →  쓸 만함
+  4070 12GB  →  절반 이상 CPU   →  사실상 불가</code></pre>
+<p>4070으로는 32B 모델을 &quot;느리게 돌리는&quot; 게 아니라 <strong>실질적으로 못 돌립니다.</strong></p>
+<h3 id="대역폭이-생성-속도를-정합니다">대역폭이 생성 속도를 정합니다</h3>
+<p>VRAM에 다 올라간 뒤에는 <strong>메모리 대역폭</strong>이 초당 토큰 수를 좌우합니다.
+3090의 936 GB/s는 4070의 504 GB/s보다 <strong>약 1.9배</strong> 높습니다.</p>
+<p>같은 14B 모델을 둘 다 VRAM에 올려도 3090이 더 빠릅니다.
+연산 성능(TFLOPS)은 4070이 앞서지만, LLM 추론은 연산보다 <strong>메모리 대역폭에 묶입니다.</strong></p>
+<h2 id="3090의-실제-단점">3090의 실제 단점</h2>
+<p>가격만 보고 사면 후회할 수 있는 부분입니다.</p>
+<h3 id="1-전력과-발열">1. 전력과 발열</h3>
+<p><strong>350W입니다.</strong> 4070의 1.75배입니다.</p>
+<ul>
+<li>파워서플라이 <strong>최소 750W</strong> 권장 (850W면 안심)</li>
+<li>케이스 통풍이 나쁘면 온도가 쉽게 올라갑니다</li>
+<li>24시간 돌리면 전기요금이 체감됩니다 — 누진 구간에 걸리면 더 큽니다</li>
+</ul>
+<h3 id="2-크기">2. 크기</h3>
+<p>3090은 대부분 3슬롯이고 길이가 깁니다.
+<strong>케이스에 들어가는지 먼저 재보세요.</strong> 미들타워라도 안 들어가는 경우가 있습니다.</p>
+<h3 id="3-중고-리스크">3. 중고 리스크</h3>
+<ul>
+<li><strong>채굴 이력</strong> — 2021~2022년 채굴 붐 시기 카드가 상당수 시장에 있습니다</li>
+<li><strong>보증 없음</strong> — 제조사 보증이 끝났거나 승계가 안 됩니다</li>
+<li><strong>팬·서멀 노후</strong> — 5년 넘은 카드입니다</li>
+</ul>
+<p>구매 전 확인할 것:</p>
+<ul>
+<li>판매자에게 사용 이력과 구매 시기 확인</li>
+<li>가능하면 직거래로 <strong>현장 테스트</strong> (부하 시 온도, 아티팩트)</li>
+<li>보증 잔여 기간 확인</li>
+</ul>
+<h2 id="4070이-나은-경우">4070이 나은 경우</h2>
+<p>3090이 항상 정답은 아닙니다.</p>
+<p><strong>14B 이하만 쓸 계획이라면</strong> 4070으로 충분합니다.
+Qwen 14B, Gemma 12B 정도로 코딩 보조나 문서 요약을 한다면 12GB로 됩니다.</p>
+<p>그리고 이런 조건이면 4070이 낫습니다.</p>
+<ul>
+<li>게이밍을 겸한다 → DLSS 3, 프레임 생성 지원</li>
+<li>소형 케이스다 → 3090이 안 들어감</li>
+<li>파워가 650W 이하다 → 교체 비용이 추가됨</li>
+<li>중고 거래가 부담스럽다 → 보증이 있는 신품</li>
+<li>전기요금이 신경 쓰인다 → 200W</li>
+</ul>
+<h2 id="다른-선택지도-있습니다">다른 선택지도 있습니다</h2>
+<p>이 둘만 놓고 고민할 필요는 없습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>카드</th><th>VRAM</th><th>특징</th></tr></thead>
+<tbody>
+<tr><td>RTX 4060 Ti 16GB</td><td>16GB</td><td>신품 + 저전력(165W). <strong>14B 여유, 32B 빠듯</strong></td></tr>
+<tr><td>RTX 4070 Ti Super</td><td>16GB</td><td>4070보다 VRAM 4GB 많음</td></tr>
+<tr><td>RTX 3090 Ti</td><td>24GB</td><td>3090과 VRAM 동일, 대역폭 약간 높음, 더 뜨거움</td></tr>
+</tbody>
+</table></div>
+<p><strong>4060 Ti 16GB</strong>는 특히 눈여겨볼 만합니다.
+성능은 3090보다 낮지만 VRAM 16GB에 신품·보증·저전력이라,
+중고가 부담스러운 경우의 현실적인 대안입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="3090-두-장이-4090-한-장보다-나은가요">3090 두 장이 4090 한 장보다 나은가요</h3>
+<p>VRAM 총량은 48GB로 4090(24GB)의 두 배라 더 큰 모델을 올릴 수 있습니다.
+다만 카드 간 통신 오버헤드가 있어 같은 용량 단일 카드보다 느리고,
+파워 700W 이상과 메인보드 슬롯 간격을 감당해야 합니다.</p>
+<h3 id="채굴-카드인지-어떻게-아나요">채굴 카드인지 어떻게 아나요</h3>
+<p>확실한 판별법은 없습니다. 다만 참고할 수 있는 것들이 있습니다.
+같은 판매자가 여러 장을 동시에 파는 경우, 팬 소음이 유난히 큰 경우,
+서멀 재도포 이력이 있는 경우는 주의합니다.
+가격이 시세보다 크게 낮으면 이유를 물어보는 편이 좋습니다.</p>
+<h3 id="로컬-llm만-쓸-건데-게이밍-성능은-안-봐도-되나요">로컬 LLM만 쓸 건데 게이밍 성능은 안 봐도 되나요</h3>
+<p>네. LLM 추론 성능은 <strong>VRAM 용량 → 메모리 대역폭 → 연산 성능</strong> 순으로 중요합니다.
+게이밍 벤치마크 순위와 LLM 성능 순위는 일치하지 않습니다.</p>
+<h3 id="맥은-어떤가요">맥은 어떤가요</h3>
+<p>메모리 64GB 이상 맥에서는 통합 메모리를 VRAM처럼 써서 70B 모델도 올라갑니다.
+다만 대역폭이 전용 GPU보다 낮아 생성 속도는 느립니다.
+<strong>용량이 필요하면 맥, 속도가 필요하면 전용 GPU</strong>입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>로컬 LLM은 VRAM이 먼저</strong>입니다 — 세대나 연산 성능이 아니라</li>
+<li>3090은 VRAM 24GB, 대역폭 936GB/s로 <strong>4070을 두 지표에서 앞섭니다</strong></li>
+<li>대신 <strong>350W·3슬롯·중고 리스크</strong>를 받아들여야 합니다</li>
+<li><strong>14B 이하만 쓴다면</strong> 4070이나 4060 Ti 16GB로 충분합니다</li>
+</ol>
+<p>VRAM 용량별로 어떤 모델이 돌아가는지는
+<a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>에 표로 정리했습니다.</p>
+<p>스펙이나 시세가 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  <div class="ad-slot" aria-hidden="true" data-ad-placeholder></div>
+
+  <p class="tags"><span class="tag">RTX3090</span> <span class="tag">RTX4070</span> <span class="tag">로컬LLM</span> <span class="tag">VRAM</span> <span class="tag">중고그래픽카드</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ollama-minimum-spec.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나</span>
+        <span class="card-desc">로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>
