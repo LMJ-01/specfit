@@ -59,6 +59,8 @@ export function layout({
 <meta property="og:image" content="${image}">
 <meta name="twitter:card" content="summary_large_image">
 
+${config.verification.naver ? `<meta name="naver-site-verification" content="${config.verification.naver}">` : ''}
+${config.verification.google ? `<meta name="google-site-verification" content="${config.verification.google}">` : ''}
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/style.css">
 <script>${themeBoot}</script>

@@ -32,6 +32,13 @@ export const config = {
   methodNotice:
     '직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.',
 
+  // 검색엔진 소유확인 메타 태그.
+  // 구글은 DNS TXT 로 인증했으므로 별도 태그가 필요 없습니다.
+  verification: {
+    naver: '1b06651a0659fc53f8131d626ea5cd2323c0a9ca',
+    google: '', // DNS TXT 방식 사용 중 — 비워둡니다
+  },
+
   // 애드센스 승인 후 채웁니다. 비어 있으면 광고 슬롯이 렌더링되지 않습니다.
   // (승인 전에도 min-height 자리는 잡아둡니다 — CLS 방지)
   adsense: {
