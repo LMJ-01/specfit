@@ -550,7 +550,22 @@ tbody tr:last-child td {
   color: var(--fg-muted);
 }
 
-/* 구매 버튼. 진단 결과가 "부족"일 때만 뜹니다 = 구매 의도가 가장 높은 지점. */
+/* 지금 카드로 충분할 때 덧붙이는 다음 단계 안내.
+   결론(충분하다)을 뒤집지 않고, 더 하고 싶을 때 뭐가 필요한지만 알려줍니다. */
+.vr-next {
+  display: block;
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--fg-muted);
+}
+.vr-next strong {
+  color: var(--fg);
+}
+
+/* 구매 버튼 */
 .vr-buy {
   display: inline-block;
   margin-top: 0.8rem;

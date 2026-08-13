@@ -65,14 +65,44 @@
     let headline;
     let advice;
 
+    const buyBtn = (card, label) =>
+      card && card.buy
+        ? `<a class="vr-buy" href="${card.buy}" target="_blank"
+             rel="sponsored nofollow noopener">${esc(label || card.name + ' 가격 보기')}</a>`
+        : '';
+
     if (v === 'ok') {
       headline = `쓸 수 있습니다`;
       advice = `<strong>${esc(gpu.name)}</strong>로 <strong>${esc(use.label)}</strong> 용도는 무리 없습니다.
         지금 카드를 그대로 쓰시면 됩니다.`;
+
+      // 지금 카드로 감당되는 가장 큰 모델의 '다음 단계'를 알려줍니다.
+      // 결론(충분하다)은 그대로 두고, 더 하고 싶을 때 뭐가 필요한지만 덧붙입니다.
+      const okModels = models.filter(
+        (m) => verdict(estimate(m.params, quant, len.tokens), gpu.vram) === 'ok'
+      );
+      const largest = okModels[okModels.length - 1];
+      const next = largest ? models[models.indexOf(largest) + 1] : models[0];
+      if (next) {
+        const up = recommend(estimate(next.params, quant, len.tokens));
+        if (up && up.vram > gpu.vram) {
+          advice += `<span class="vr-next">지금 카드로는 <strong>${esc(largest ? largest.label : '')}</strong>까지입니다.
+            더 큰 <strong>${esc(next.label)}</strong> 모델까지 돌리려면
+            <strong class="vr-hl">${esc(up.name)}</strong>(메모리 ${up.vram}GB) 이상이 필요합니다.</span>`;
+          advice += buyBtn(up);
+        }
+      }
     } else if (v === 'tight') {
       headline = `아슬아슬합니다`;
-      advice = `돌아가긴 하지만 여유가 없습니다. <strong>${esc(len.label)}</strong>보다 짧게 쓰거나,
-        한 단계 위 카드를 고려하세요.`;
+      advice = `돌아가긴 하지만 여유가 없습니다.
+        <strong>${esc(len.label)}</strong>보다 짧게 쓰면 됩니다.`;
+      // 같은 용도를 여유 있게 쓰려면 어떤 카드가 필요한지
+      const comfy = recommend(needed);
+      if (comfy && comfy.vram > gpu.vram) {
+        advice += `<span class="vr-next">여유 있게 쓰려면
+          <strong class="vr-hl">${esc(comfy.name)}</strong>(메모리 ${comfy.vram}GB) 이상입니다.</span>`;
+        advice += buyBtn(comfy);
+      }
     } else {
       const rec = recommend(needed);
       headline = v === 'slow' ? `느릴 겁니다` : `이 카드로는 어렵습니다`;
@@ -80,10 +110,7 @@
         advice = `<strong>${esc(use.label)}</strong> 용도라면 메모리 <strong>${rec.vram}GB</strong> 이상이 필요합니다.
            가장 저렴한 선택지는 <strong class="vr-hl">${esc(rec.name)}</strong>입니다.`;
         // 제휴 링크는 rel="sponsored" 가 필수입니다. 없으면 구글이 링크 스팸으로 봅니다.
-        if (rec.buy) {
-          advice += `<a class="vr-buy" href="${rec.buy}" target="_blank"
-            rel="sponsored nofollow noopener">${esc(rec.name)} 가격 보기</a>`;
-        }
+        advice += buyBtn(rec);
       } else {
         advice = `이 용도는 개인용 그래픽카드로는 감당하기 어렵습니다. 더 가벼운 용도를 골라보세요.`;
       }
