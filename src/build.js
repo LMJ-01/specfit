@@ -17,6 +17,10 @@ import { gpus, models, quants, contexts, useCases, lengths } from './gpu-data.js
 
 const toolData = { gpus, models, quants, contexts, useCases, lengths };
 
+// 계산기에 쿠팡 링크가 하나라도 있으면, 계산기를 실은 페이지는 '제휴 페이지'입니다.
+// 공정위 고지가 자동으로 붙어야 합니다 — 하단 표기나 누락은 수익 전액 몰수 사유입니다.
+const toolHasAffiliate = gpus.some((g) => g.buy);
+
 // 글 본문에 {{VRAM_TOOL}} 을 쓰면 그 자리에 계산기가 들어갑니다.
 const TOOL_MARK = '{{VRAM_TOOL}}';
 
@@ -96,7 +100,8 @@ async function build() {
         updated: p.data.updated || '',
         category: p.data.category || '',
         tags: Array.isArray(p.data.tags) ? p.data.tags : [],
-        affiliate: p.data.affiliate === true,
+        // 계산기를 실은 글은 계산기 안의 제휴 링크 때문에 자동으로 제휴 페이지가 됩니다.
+        affiliate: p.data.affiliate === true || (usesTool && toolHasAffiliate),
         image: p.data.image || '',
         faq,
         html: markdownToHtml(p.body).replace(
@@ -192,6 +197,7 @@ async function build() {
         intro:
           '그래픽카드와 설정을 고르면 어떤 크기의 모델이 여유 있게 돌아가는지 표로 보여줍니다.',
         data: toolData,
+        affiliate: toolHasAffiliate,
         body: markdownToHtml(`
 ## 내 그래픽카드 확인하는 법
 

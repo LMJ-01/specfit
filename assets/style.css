@@ -557,6 +557,26 @@ tbody tr:last-child td {
   font-size: 0.82rem;
   color: var(--fg-muted);
 }
+
+/* 구매 버튼. 진단 결과가 "부족"일 때만 뜹니다 = 구매 의도가 가장 높은 지점. */
+.vr-buy {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.55rem 1.1rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.vr-buy:hover {
+  filter: brightness(1.08);
+}
+.vr-buy::after {
+  content: ' ↗';
+  font-weight: 400;
+}
 .vr-hl {
   color: var(--accent);
 }

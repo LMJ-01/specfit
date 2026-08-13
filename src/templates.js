@@ -299,7 +299,7 @@ ${posts.length === 0 ? '<p class="empty">아직 글이 없습니다.</p>' : ''}`
  * 계산기 페이지.
  * 도구는 SoftwareApplication 으로 표시해 검색 결과에서 글과 구분되게 합니다.
  */
-export function toolPage({ title, description, path, intro, data, body = '' }) {
+export function toolPage({ title, description, path, intro, data, body = '', affiliate = false }) {
   return layout({
     title,
     description,
@@ -320,6 +320,14 @@ export function toolPage({ title, description, path, intro, data, body = '' }) {
     body: `<article class="post">
   <h1>${escapeHtml(title)}</h1>
   <p class="lead">${escapeHtml(intro)}</p>
+  ${
+    affiliate
+      ? `<aside class="notice notice-affiliate" role="note">
+  <strong>${escapeHtml(config.affiliateNotice)}</strong>
+  <span>${escapeHtml(config.methodNotice)}</span>
+</aside>`
+      : ''
+  }
   <div data-vram-tool></div>
   <div class="post-body">
 ${body}

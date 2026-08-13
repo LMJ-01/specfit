@@ -39,10 +39,11 @@
     no: { badge: '불가', desc: '실사용이 어려움' },
   };
 
-  // 조건을 만족하는 가장 저렴한 카드(= VRAM 여유가 가장 적은 카드)를 찾습니다.
+  // 조건을 만족하는 가장 작은 카드를 찾습니다.
+  // 단종된 카드(new: false)는 제외합니다 — 지금 살 사람에게 권할 수 없습니다.
   function recommend(needed) {
     return gpus
-      .filter((g) => !g.mac && needed <= g.vram * 0.9)
+      .filter((g) => !g.mac && g.new && needed <= g.vram * 0.9)
       .sort((a, b) => a.vram - b.vram || a.tdp - b.tdp)[0];
   }
 
@@ -75,10 +76,17 @@
     } else {
       const rec = recommend(needed);
       headline = v === 'slow' ? `느릴 겁니다` : `이 카드로는 어렵습니다`;
-      advice = rec
-        ? `<strong>${esc(use.label)}</strong> 용도라면 메모리 <strong>${rec.vram}GB</strong> 이상이 필요합니다.
-           가장 저렴한 선택지는 <strong class="vr-hl">${esc(rec.name)}</strong>입니다.`
-        : `이 용도는 개인용 그래픽카드로는 감당하기 어렵습니다. 더 가벼운 용도를 골라보세요.`;
+      if (rec) {
+        advice = `<strong>${esc(use.label)}</strong> 용도라면 메모리 <strong>${rec.vram}GB</strong> 이상이 필요합니다.
+           가장 저렴한 선택지는 <strong class="vr-hl">${esc(rec.name)}</strong>입니다.`;
+        // 제휴 링크는 rel="sponsored" 가 필수입니다. 없으면 구글이 링크 스팸으로 봅니다.
+        if (rec.buy) {
+          advice += `<a class="vr-buy" href="${rec.buy}" target="_blank"
+            rel="sponsored nofollow noopener">${esc(rec.name)} 가격 보기</a>`;
+        }
+      } else {
+        advice = `이 용도는 개인용 그래픽카드로는 감당하기 어렵습니다. 더 가벼운 용도를 골라보세요.`;
+      }
     }
 
     // ── 상세 표 (원하는 사람만) ──
