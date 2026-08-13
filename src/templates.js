@@ -123,12 +123,16 @@ ${scripts}
 </html>`;
 }
 
-/** 광고 슬롯. 승인 전에도 자리를 잡아둡니다 — 나중에 넣으면 CLS 가 발생합니다. */
+/**
+ * 광고 슬롯.
+ * 애드센스 미설정 시에는 아무것도 렌더링하지 않습니다.
+ * 자리표시자를 두면 방문자에게 빈 박스가 보이고, 심사에도 불리합니다.
+ * 광고가 없으면 밀릴 것도 없으므로 CLS 문제는 발생하지 않습니다.
+ * 승인 후 config 를 채우면 min-height 가 잡힌 슬롯이 들어갑니다.
+ */
 function adSlot() {
   const { client, slotInArticle } = config.adsense;
-  if (!client || !slotInArticle) {
-    return `<div class="ad-slot" aria-hidden="true" data-ad-placeholder></div>`;
-  }
+  if (!client || !slotInArticle) return '';
   return `<div class="ad-slot">
   <ins class="adsbygoogle" style="display:block" data-ad-client="${client}" data-ad-slot="${slotInArticle}" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

@@ -385,14 +385,6 @@ tbody tr:last-child td {
   justify-content: center;
   border-radius: var(--radius);
 }
-.ad-slot[data-ad-placeholder] {
-  border: 1px dashed var(--border);
-  color: var(--fg-muted);
-  font-size: 0.8rem;
-}
-.ad-slot[data-ad-placeholder]::after {
-  content: '광고 영역';
-}
 
 /* ---- 목록 ---- */
 
