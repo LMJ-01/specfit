@@ -79,17 +79,28 @@
 <h2 id="결론부터">결론부터</h2>
 <p>VRAM 용량별로 무리 없이 돌아가는 모델 크기입니다. <strong>Q4 양자화 기준</strong>입니다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>VRAM</th><th>편하게 돌아감</th><th>가능하지만 빠듯함</th><th>대표 GPU</th></tr></thead>
+<thead><tr><th>VRAM</th><th>여유 (전부 VRAM에)</th><th>돌아가지만 느림 (일부 CPU)</th><th>대표 GPU</th></tr></thead>
 <tbody>
-<tr><td>8GB</td><td>7~8B</td><td>13~14B (컨텍스트 축소)</td><td>RTX 4060, 3070</td></tr>
-<tr><td>12GB</td><td>13~14B</td><td>20B대</td><td>RTX 4070, 3080 12GB</td></tr>
-<tr><td>16GB</td><td>14B</td><td>32B (컨텍스트 축소)</td><td>RTX 4070 Ti Super, 4060 Ti 16GB</td></tr>
-<tr><td>24GB</td><td>32B</td><td>70B (강한 양자화 필요)</td><td>RTX 4090, 3090</td></tr>
-<tr><td>48GB+</td><td>70B</td><td>100B+</td><td>RTX 6000 Ada, A6000</td></tr>
+<tr><td>8GB</td><td>7~8B</td><td>12~14B</td><td>RTX 4060, 3070</td></tr>
+<tr><td>12GB</td><td>12~14B</td><td>20~22B</td><td>RTX 4070, 3060 12GB</td></tr>
+<tr><td>16GB</td><td>14B</td><td>32B</td><td>RTX 4070 Ti Super, 4060 Ti 16GB</td></tr>
+<tr><td>24GB</td><td>32B</td><td>— (70B는 Q4로 불가)</td><td>RTX 4090, 3090</td></tr>
+<tr><td>48GB+</td><td>70B</td><td>120B+</td><td>RTX 6000 Ada, A6000</td></tr>
 </tbody>
 </table></div>
+<p>판정은 위 계산기와 같은 기준입니다. 글과 도구가 다른 답을 내면 안 되기 때문입니다.</p>
 <p><strong>8GB가 실질적인 하한선입니다.</strong> 그 아래는 7B 모델도 컨텍스트를 크게 줄여야 하고,
 사용 경험이 급격히 나빠집니다.</p>
+<h3 id="컨텍스트를-줄여도-안-되는-구간이-있습니다">컨텍스트를 줄여도 안 되는 구간이 있습니다</h3>
+<p>오른쪽 칸을 &quot;컨텍스트를 줄이면 왼쪽 칸이 된다&quot;는 뜻으로 읽으면 안 됩니다.</p>
+<p><strong>가중치와 오버헤드는 컨텍스트와 무관하게 먼저 들어갑니다.</strong> 이 둘의 합이 이미 VRAM을
+넘으면 컨텍스트를 0으로 줄여도 넘습니다.</p>
+<pre><code>8GB 카드에 14B 모델
+  가중치      약 7.7GB   ← 컨텍스트와 무관
+  오버헤드    약 1GB     ← 컨텍스트와 무관
+  ─────────────────────
+  컨텍스트 0 이어도 8.7GB &gt; 8GB</code></pre>
+<p>컨텍스트 축소가 듣는 것은 <strong>경계선에 걸친 조합</strong>뿐입니다.</p>
 <h2 id="vram-계산법">VRAM 계산법</h2>
 <p>모델 파일 크기가 곧 필요한 VRAM은 아닙니다. 세 가지가 함께 올라갑니다.</p>
 <pre><code>필요 VRAM ≈ 모델 가중치 + KV 캐시 + 오버헤드</code></pre>
@@ -119,8 +130,8 @@ VRAM을 100% 채우도록 계산하면 실제로는 안 돌아갑니다.</p>
 <pre><code>전부 VRAM   →  초당 수십 토큰   (쓸 만함)
 일부 CPU    →  초당 수 토큰      (답답함)
 대부분 CPU  →  초당 1토큰 미만   (사실상 불가)</code></pre>
-<p>→ <strong>&quot;돌아가긴 한다&quot;와 &quot;쓸 만하다&quot;는 다릅니다.</strong> 표에서 &quot;빠듯함&quot;으로 표시한 조합은
-돌아가긴 하지만 일상적으로 쓰기엔 답답할 수 있습니다.</p>
+<p>→ <strong>&quot;돌아가긴 한다&quot;와 &quot;쓸 만하다&quot;는 다릅니다.</strong> 표에서 &quot;느림&quot;으로 표시한 조합은
+돌아가긴 하지만 일상적으로 쓰기엔 답답합니다.</p>
 <h2 id="gpu를-고르기-전에-확인할-것">GPU를 고르기 전에 확인할 것</h2>
 <h3 id="vram이-먼저-연산-성능은-나중">VRAM이 먼저, 연산 성능은 나중</h3>
 <p>게이밍에서는 연산 성능이 중요하지만, <strong>로컬 LLM에서는 VRAM 용량이 먼저</strong>입니다.
