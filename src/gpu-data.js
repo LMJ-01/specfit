@@ -65,25 +65,29 @@ export const gpus = [
   // ── 애플 실리콘 ────────────────────────────────────────────────
   // ⚠️ 맥은 대역폭이 '용량'이 아니라 '칩 등급'으로 정해집니다.
   //    이전 버전은 용량별로 100/150/200/300/400 을 매겨뒀는데 전부 틀린 값이었습니다.
-  //    32GB 라도 M4 면 120GB/s, M4 Pro 면 273GB/s 입니다. 두 배 이상 차이납니다.
+  //    32GB 라도 M5 면 153GB/s, M5 Pro 면 307GB/s 입니다. 두 배 차이납니다.
   //    그래서 항목을 칩 기준으로 나눕니다 — 사는 사람도 칩부터 고릅니다.
   //
-  // 대역폭 출처: apple.com 뉴스룸 M4 Pro/Max 발표 및 제품 사양, 2026-08-15 확인.
-  //   M4 120GB/s · M4 Pro 273GB/s · M4 Max 410GB/s(하위)~546GB/s(상위)
-  //   Max 는 보수적으로 410 을 쓰되 최상위 구성만 546 으로 둡니다.
+  // 대역폭 출처: apple.com/kr 맥북에어·맥북프로 제품 사양, 2026-08-15 확인.
+  //   M5 153GB/s · M5 Pro 307GB/s · M5 Max 460GB/s(GPU 32코어)~614GB/s(GPU 40코어)
+  //
+  //   ⚠️ M5 Max 는 같은 이름 안에서 GPU 코어 수에 따라 대역폭이 갈립니다.
+  //      메모리 용량이 아니라 GPU 구성이 정합니다. 여기서는 64GB 를 460,
+  //      128GB 를 614 로 두었으나, 실제로는 구성별로 확인해야 합니다.
   //
   // vram 은 '모델에 실제로 쓸 수 있는 몫' 입니다.
   //   macOS 의 Metal 은 통합 메모리의 약 75% 까지만 GPU 작업에 내줍니다.
   //   거기서 시스템 몫을 더 빼 보수적으로 잡았습니다 — 모자라면 아예 못 쓰기 때문입니다.
-  { id: 'm4-16', name: 'Mac M4 · 16GB', vram: 10, bw: 120, tdp: 0, mac: true, tier: 'mac' },
-  { id: 'm4-24', name: 'Mac M4 · 24GB', vram: 16, bw: 120, tdp: 0, mac: true, tier: 'mac' },
-  { id: 'm4-32', name: 'Mac M4 · 32GB', vram: 22, bw: 120, tdp: 0, mac: true, tier: 'mac' },
-  { id: 'm4pro-24', name: 'Mac M4 Pro · 24GB', vram: 16, bw: 273, tdp: 0, mac: true, tier: 'mac' },
-  { id: 'm4pro-48', name: 'Mac M4 Pro · 48GB', vram: 34, bw: 273, tdp: 0, mac: true, tier: 'mac' },
-  { id: 'm4pro-64', name: 'Mac M4 Pro · 64GB', vram: 46, bw: 273, tdp: 0, mac: true, tier: 'mac' },
-  { id: 'm4max-36', name: 'Mac M4 Max · 36GB', vram: 26, bw: 410, tdp: 0, mac: true, tier: 'mac' },
-  { id: 'm4max-64', name: 'Mac M4 Max · 64GB', vram: 46, bw: 410, tdp: 0, mac: true, tier: 'mac' },
-  { id: 'm4max-128', name: 'Mac M4 Max · 128GB', vram: 96, bw: 546, tdp: 0, mac: true, tier: 'mac' },
+  //
+  // 참고: M5 세대부터 최소 구성이 16GB 입니다. 8GB 맥은 더 이상 팔지 않습니다.
+  { id: 'm5-16', name: 'Mac M5 · 16GB', vram: 10, bw: 153, tdp: 0, mac: true, tier: 'mac' },
+  { id: 'm5-24', name: 'Mac M5 · 24GB', vram: 16, bw: 153, tdp: 0, mac: true, tier: 'mac' },
+  { id: 'm5-32', name: 'Mac M5 · 32GB', vram: 22, bw: 153, tdp: 0, mac: true, tier: 'mac' },
+  { id: 'm5pro-24', name: 'Mac M5 Pro · 24GB', vram: 16, bw: 307, tdp: 0, mac: true, tier: 'mac' },
+  { id: 'm5pro-48', name: 'Mac M5 Pro · 48GB', vram: 34, bw: 307, tdp: 0, mac: true, tier: 'mac' },
+  { id: 'm5pro-64', name: 'Mac M5 Pro · 64GB', vram: 46, bw: 307, tdp: 0, mac: true, tier: 'mac' },
+  { id: 'm5max-64', name: 'Mac M5 Max · 64GB', vram: 46, bw: 460, tdp: 0, mac: true, tier: 'mac' },
+  { id: 'm5max-128', name: 'Mac M5 Max · 128GB', vram: 96, bw: 614, tdp: 0, mac: true, tier: 'mac' },
 ];
 
 // params: 파라미터 수(B). 대표 모델명은 예시입니다.

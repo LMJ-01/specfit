@@ -148,10 +148,10 @@ function bandwidthLadder() {
   const rows = [
     ['RTX 5090', 1792],
     ['RTX 5070', 672],
-    ['M4 Max (상위)', 546],
+    ['M5 Max (상위)', 614],
     ['RTX 5060 Ti', 448],
-    ['M4 Pro', 273],
-    ['M4', 120],
+    ['M5 Pro', 307],
+    ['M5', 153],
   ];
   const max = 1792;
   const barX = 150;
@@ -190,7 +190,7 @@ function cpuVsGpuBandwidth() {
     ['RTX 5090', 1792, COLOR.accent],
     ['RTX 5070', 672, COLOR.accent],
     ['RTX 5060', 448, COLOR.accent],
-    ['Mac M4', 120, COLOR.accent],
+    ['Mac M5', 153, COLOR.accent],
     ['DDR5-5600 듀얼', 89.6, COLOR.over],
     ['DDR4-3200 듀얼', 51.2, COLOR.over],
   ];

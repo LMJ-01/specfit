@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>노트북 램 나중에 못 늘립니다 — 온보드 확인법과 LPCAMM2 | 스펙핏</title>
+<meta name="description" content="최근 얇은 노트북은 램이 납땜되어 있어 교체가 불가능합니다. 사기 전에 확인하는 법과, 그 문제를 푸는 새 규격 LPCAMM2를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/laptop-ram-onboard-lpcamm2.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="노트북 램 나중에 못 늘립니다 — 온보드 확인법과 LPCAMM2 | 스펙핏">
+<meta property="og:description" content="최근 얇은 노트북은 램이 납땜되어 있어 교체가 불가능합니다. 사기 전에 확인하는 법과, 그 문제를 푸는 새 규격 LPCAMM2를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/laptop-ram-onboard-lpcamm2.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 램 나중에 못 늘립니다 — 온보드 확인법과 LPCAMM2","description":"최근 얇은 노트북은 램이 납땜되어 있어 교체가 불가능합니다. 사기 전에 확인하는 법과, 그 문제를 푸는 새 규격 LPCAMM2를 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-ram-onboard-lpcamm2.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"노트북 램 나중에 못 늘립니다 — 온보드 확인법과 LPCAMM2","item":"https://specfit.kr/posts/laptop-ram-onboard-lpcamm2.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"온보드 노트북에 램을 추가할 수 없나요","acceptedAnswer":{"@type":"Answer","text":"없습니다. 칩이 메인보드에 직접 붙어 있어 물리적으로 불가능합니다. 일부 업체가 칩을 떼고 다시 붙이는 작업을 하기도 하지만 보증이 사라지고 위험이 큽니다. **정상적인 선택지가 아닙니다.**"}},{"@type":"Question","name":"온보드 + 슬롯 하나가 같이 있는 모델도 있나요","acceptedAnswer":{"@type":"Answer","text":"있습니다. 기본 용량은 납땜되어 있고 슬롯이 하나 더 있는 구조입니다. 이 경우 **용량이 다른 두 메모리가 섞여** 듀얼 채널 이득을 온전히 못 받을 수 있습니다. 사양에서 기본 구성이 어떻게 되어 있는지 확인하세요."}},{"@type":"Question","name":"LPDDR5X가 DDR5보다 느린가요","acceptedAnswer":{"@type":"Answer","text":"용도가 다릅니다. LPDDR5X는 저전력·고대역폭에 맞춰져 있고 노트북에 유리합니다. **교체가 안 된다는 게 단점이지 성능이 나쁜 게 아닙니다.**"}},{"@type":"Question","name":"LPCAMM2 노트북을 기다리는 게 나을까요","acceptedAnswer":{"@type":"Answer","text":"지금 필요하면 사세요. 확산이 이제 시작 단계이고 가격도 높습니다. **다만 32GB 이상을 오래 쓸 계획이라면** 사양에 LPCAMM2가 있는지 한 번 볼 값어치는 있습니다."}},{"@type":"Question","name":"맥은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"전부 통합 메모리라 **어떤 방법으로도 못 늘립니다.** 게다가 램이 VRAM 역할까지 하므로 계산이 다릅니다 — [맥 통합메모리 글](/posts/mac-unified-memory-local-llm.html)을 보세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>노트북 램 나중에 못 늘립니다 — 온보드 확인법과 LPCAMM2</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-15">2026년 8월 15일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>노트북을 사고 나서 가장 많이 후회하는 항목이 <strong>램</strong>입니다.</p>
+<p>CPU가 아쉬운 건 참을 만하고, SSD는 대개 바꿀 수 있습니다.
+<strong>그런데 램은 최근 노트북에서 아예 못 바꾸는 경우가 많습니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>방식</th><th>교체</th><th>어디에 쓰이나</th></tr></thead>
+<tbody>
+<tr><td><strong>온보드 (LPDDR5X 납땜)</strong></td><td>❌ <strong>불가</strong></td><td>얇고 가벼운 노트북 대부분</td></tr>
+<tr><td>SO-DIMM 슬롯</td><td>✅ 가능</td><td>게이밍·두꺼운 모델</td></tr>
+<tr><td><strong>LPCAMM2</strong></td><td>✅ <strong>가능</strong></td><td>새 규격, 확산 시작 단계</td></tr>
+</tbody>
+</table></div>
+<p><strong>살 때 확인해야 할 건 램 용량이 아니라 &quot;바꿀 수 있느냐&quot;입니다.</strong>
+바꿀 수 없으면 그 용량이 그 노트북의 수명이 됩니다.</p>
+<h2 id="왜-납땜하나">왜 납땜하나</h2>
+<p><strong>얇게 만들기 위해서입니다.</strong></p>
+<p>메모리 슬롯은 두껍고, 신호가 지나는 거리가 길어집니다.
+칩을 메인보드에 직접 붙이면 얇아지고 전력도 덜 먹습니다.
+LPDDR 계열은 애초에 그런 용도로 만들어진 저전력 메모리입니다.</p>
+<p><strong>성능과 두께를 얻고 확장성을 버린 거래</strong>입니다.
+그 거래가 소비자에게 유리한지는 다른 문제입니다.</p>
+<h2 id="사기-전에-확인하는-법">사기 전에 확인하는 법</h2>
+<h3 id="1-제품-사양에서-찾을-단어">1. 제품 사양에서 찾을 단어</h3>
+<ul>
+<li><strong>&quot;온보드&quot;</strong> — 납땜입니다. 못 바꿉니다</li>
+<li><strong>&quot;LPDDR5X&quot;</strong> — 대부분 온보드입니다</li>
+<li><strong>&quot;DDR5 SO-DIMM&quot;</strong> — 슬롯입니다. 바꿀 수 있습니다</li>
+<li><strong>&quot;슬롯 2개&quot;</strong> 처럼 개수가 적혀 있으면 슬롯 방식입니다</li>
+</ul>
+<h3 id="2-최대-32gb-지원에-속지-마세요">2. &quot;최대 32GB 지원&quot;에 속지 마세요</h3>
+<p><strong>지금 32GB가 들어있다는 뜻이 아닙니다.</strong> 그 노트북이 받을 수 있는 최대치입니다.
+온보드라면 그 최대치도 <strong>살 때 골라야만</strong> 얻을 수 있습니다.</p>
+<h3 id="3-분해-후기를-찾아보세요">3. 분해 후기를 찾아보세요</h3>
+<p>제조사 사양이 애매하면 모델명으로 분해 사진을 검색하는 게 가장 확실합니다.
+슬롯이 보이면 바꿀 수 있습니다.</p>
+<h3 id="4-이미-갖고-계신-노트북이라면">4. 이미 갖고 계신 노트북이라면</h3>
+<p><strong>윈도우</strong> — <code>Ctrl</code> + <code>Shift</code> + <code>Esc</code> → 성능 → 메모리 →
+<strong>&quot;사용된 슬롯&quot;</strong> 항목을 보세요. <code>1/2</code> 처럼 나오면 슬롯이 있고 하나가 비어 있습니다.
+이 항목 자체가 안 보이거나 슬롯 수가 표시되지 않으면 온보드일 가능성이 큽니다.</p>
+<p><strong>맥</strong> — 전부 통합 메모리라 확인할 필요 없이 <strong>불가능</strong>합니다.</p>
+<h2 id="lpcamm2-이-문제를-푸는-새-규격">LPCAMM2 — 이 문제를 푸는 새 규격</h2>
+<p><strong>2026년의 가장 큰 변화입니다.</strong></p>
+<p>지금까지는 <strong>&quot;얇게 쓰려면 온보드, 바꾸려면 두꺼운 SO-DIMM&quot;</strong> 둘 중 하나였습니다.
+LPCAMM2는 그 둘을 동시에 해결하려고 나온 규격입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>SO-DIMM</th><th>LPCAMM2</th></tr></thead>
+<tbody>
+<tr><td>교체</td><td>가능</td><td><strong>가능</strong></td></tr>
+<tr><td>두께</td><td>두꺼움</td><td><strong>절반 이하</strong></td></tr>
+<tr><td>모듈당 채널</td><td>1개</td><td><strong>2개</strong></td></tr>
+<tr><td>모듈당 최대 용량</td><td>—</td><td><strong>128GB</strong></td></tr>
+<tr><td>전력</td><td>높음</td><td>낮음 (LPDDR 기반)</td></tr>
+</tbody>
+</table></div>
+<p><strong>모듈 하나가 두 채널을 가진다</strong>는 게 중요합니다.
+SO-DIMM은 듀얼 채널을 만들려면 두 장을 꽂아야 하는데,
+LPCAMM2는 한 장으로 됩니다. <a href="/posts/local-llm-without-gpu.html">CPU 추론에서 듀얼 채널이 그대로 속도</a>라
+이 구조가 로컬 LLM에도 유리합니다.</p>
+<h3 id="다만-아직은-초기입니다">다만 아직은 초기입니다</h3>
+<ul>
+<li>JEDEC 표준으로 채택됐고, 인텔 코어 울트라 시리즈 3가 정식 지원합니다</li>
+<li><strong>2026년 하반기부터 채택 모델이 늘어날 전망</strong>입니다 — 아직 전망이지 확정은 아닙니다</li>
+<li>모듈 가격이 <strong>DDR5 SO-DIMM보다 두 배 이상</strong> 높습니다</li>
+<li>초기에는 프리미엄·워크스테이션급 위주로 들어갈 가능성이 큽니다</li>
+</ul>
+<p><strong>지금 당장 LPCAMM2를 기다려서 노트북 구매를 미룰 필요는 없습니다.</strong>
+다만 <strong>살 때 사양에 LPCAMM2가 적혀 있다면 그건 확실한 장점</strong>입니다.</p>
+<h3 id="호환은-안-됩니다">⚠️ 호환은 안 됩니다</h3>
+<p>CAMM2의 DDR5 규격과 LPDDR5(X) 규격은 <strong>핀 배열이 다릅니다.</strong>
+SO-DIMM 자리에 LPCAMM2를 꽂거나 그 반대는 불가능합니다.
+메인보드가 받는 규격이 정해져 있습니다.</p>
+<h2 id="그래서-몇-gb를-사야-하나">그래서 몇 GB를 사야 하나</h2>
+<p><strong>바꿀 수 없다면 넉넉하게</strong>가 원칙입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>슬롯 있음</th><th><strong>온보드</strong></th></tr></thead>
+<tbody>
+<tr><td>웹 개발, 일반 코딩</td><td>16GB</td><td>16GB</td></tr>
+<tr><td>도커·에뮬레이터 병행</td><td>16GB (나중에 증설)</td><td><strong>32GB</strong></td></tr>
+<tr><td>로컬 LLM 겸용</td><td>16GB (나중에 증설)</td><td><strong>32GB</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>슬롯이 있으면 16GB로 시작해도 됩니다.</strong> 부족해지면 그때 늘리면 됩니다.
+<strong>온보드면 처음부터 32GB</strong>입니다. 되돌릴 방법이 없습니다.</p>
+<p>기준 자체는 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 정리했습니다.</p>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsop7IrsG" target="_blank" rel="sponsored nofollow noopener">DDR5 32GB 보기</a>
+  <span class="buy-note">같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다</span>
+</aside></p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="온보드-노트북에-램을-추가할-수-없나요">온보드 노트북에 램을 추가할 수 없나요</h3>
+<p>없습니다. 칩이 메인보드에 직접 붙어 있어 물리적으로 불가능합니다.
+일부 업체가 칩을 떼고 다시 붙이는 작업을 하기도 하지만
+보증이 사라지고 위험이 큽니다. <strong>정상적인 선택지가 아닙니다.</strong></p>
+<h3 id="온보드-슬롯-하나가-같이-있는-모델도-있나요">온보드 + 슬롯 하나가 같이 있는 모델도 있나요</h3>
+<p>있습니다. 기본 용량은 납땜되어 있고 슬롯이 하나 더 있는 구조입니다.
+이 경우 <strong>용량이 다른 두 메모리가 섞여</strong> 듀얼 채널 이득을 온전히 못 받을 수 있습니다.
+사양에서 기본 구성이 어떻게 되어 있는지 확인하세요.</p>
+<h3 id="lpddr5x가-ddr5보다-느린가요">LPDDR5X가 DDR5보다 느린가요</h3>
+<p>용도가 다릅니다. LPDDR5X는 저전력·고대역폭에 맞춰져 있고 노트북에 유리합니다.
+<strong>교체가 안 된다는 게 단점이지 성능이 나쁜 게 아닙니다.</strong></p>
+<h3 id="lpcamm2-노트북을-기다리는-게-나을까요">LPCAMM2 노트북을 기다리는 게 나을까요</h3>
+<p>지금 필요하면 사세요. 확산이 이제 시작 단계이고 가격도 높습니다.
+<strong>다만 32GB 이상을 오래 쓸 계획이라면</strong> 사양에 LPCAMM2가 있는지 한 번 볼 값어치는 있습니다.</p>
+<h3 id="맥은-어떤가요">맥은 어떤가요</h3>
+<p>전부 통합 메모리라 <strong>어떤 방법으로도 못 늘립니다.</strong>
+게다가 램이 VRAM 역할까지 하므로 계산이 다릅니다 —
+<a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 글</a>을 보세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>최근 얇은 노트북은 램이 <strong>납땜되어 못 바꿉니다</strong></li>
+<li>사양에서 <strong>&quot;온보드&quot; · &quot;LPDDR5X&quot; · &quot;SO-DIMM&quot; · 슬롯 개수</strong>를 확인하세요</li>
+<li><strong>&quot;최대 32GB 지원&quot;은 지금 32GB라는 뜻이 아닙니다</strong></li>
+<li><strong>온보드면 처음부터 32GB</strong>를 고르세요. 되돌릴 수 없습니다</li>
+<li><strong>LPCAMM2</strong>가 이 문제를 푸는 새 규격입니다. 확산은 이제 시작입니다</li>
+</ol>
+<p>사양 표기가 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">노트북램</span> <span class="tag">온보드</span> <span class="tag">LPCAMM2</span> <span class="tag">LPDDR5X</span> <span class="tag">개발용노트북</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ram-16gb-vs-32gb.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점</span>
+        <span class="card-desc">32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/quantization-q4-q5-q8.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">양자화 Q4 Q5 Q8 — 올리면 뭐가 좋아지나</span>
+        <span class="card-desc">Q8이 Q4보다 용량을 73% 더 씁니다. 그 대가로 얻는 게 무엇인지, 같은 VRAM이라면 어느 쪽이 나은지 실측 용량으로 계산했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/local-llm-without-gpu.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가</span>
+        <span class="card-desc">그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>

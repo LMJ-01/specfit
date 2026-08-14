@@ -23,7 +23,7 @@
 <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"맥으로 로컬 LLM — 통합메모리 몇 GB를 사야 하나","description":"맥은 램이 VRAM 역할까지 합니다. 그런데 전체를 다 쓰지는 못하고, 속도는 용량이 아니라 칩이 정합니다. 살 때 정해지고 나중에 못 바꿉니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mac-unified-memory-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"맥으로 로컬 LLM — 통합메모리 몇 GB를 사야 하나","item":"https://specfit.kr/posts/mac-unified-memory-local-llm.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥북에어로도 로컬 LLM이 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 다만 에어는 M4 기본 칩이라 **대역폭 120 GB/s**이고 팬이 없습니다. 7~8B 모델은 무리 없지만, 길게 돌리면 발열로 속도가 떨어질 수 있습니다. 14B 이상을 상시로 쓸 계획이면 프로 쪽이 맞습니다."}},{"@type":"Question","name":"나중에 메모리를 늘릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"**없습니다.** 애플 실리콘은 메모리가 칩 패키지에 붙어 있어 교체가 불가능합니다. 살 때 정해야 하고, 부족하면 기기를 바꾸는 수밖에 없습니다. 이것 때문에 한 단계 위를 고르는 편이 안전합니다."}},{"@type":"Question","name":"같은 64GB면 M4 Pro와 M4 Max가 같나요","acceptedAnswer":{"@type":"Answer","text":"**올라가는 모델 크기는 같고, 속도가 다릅니다.** 쓸 수 있는 몫은 둘 다 약 46GB지만 대역폭이 273 vs 410 GB/s입니다. 같은 모델이 Max에서 더 빠릅니다."}},{"@type":"Question","name":"맥 vs 그래픽카드, 로컬 LLM에는 뭐가 낫나요","acceptedAnswer":{"@type":"Answer","text":"**32B 이하만 쓸 거면 그래픽카드가 낫습니다.** 같은 값에 더 빠릅니다. **70B를 쓰고 싶으면 맥 말고는 현실적인 선택지가 없습니다.** 그래픽카드로는 32GB(RTX 5090)가 개인용 상한입니다."}},{"@type":"Question","name":"인텔 맥은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"통합 메모리 구조가 아니라서 이 글의 내용이 적용되지 않습니다. 전용 GPU가 없는 모델이라면 CPU로만 돌아가 매우 느립니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥북에어로도 로컬 LLM이 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 다만 에어는 M5 기본 칩이라 **대역폭 153 GB/s**이고 팬이 없습니다. 7~8B 모델은 무리 없지만, 길게 돌리면 발열로 속도가 떨어질 수 있습니다. 14B 이상을 상시로 쓸 계획이면 프로 쪽이 맞습니다."}},{"@type":"Question","name":"나중에 메모리를 늘릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"**없습니다.** 애플 실리콘은 메모리가 칩 패키지에 붙어 있어 교체가 불가능합니다. 살 때 정해야 하고, 부족하면 기기를 바꾸는 수밖에 없습니다. 이것 때문에 한 단계 위를 고르는 편이 안전합니다."}},{"@type":"Question","name":"같은 64GB면 M5 Pro와 M5 Max가 같나요","acceptedAnswer":{"@type":"Answer","text":"**올라가는 모델 크기는 같고, 속도가 다릅니다.** 쓸 수 있는 몫은 둘 다 약 46GB지만 대역폭이 307 vs 460 GB/s입니다. 같은 모델이 Max에서 더 빠릅니다."}},{"@type":"Question","name":"맥 vs 그래픽카드, 로컬 LLM에는 뭐가 낫나요","acceptedAnswer":{"@type":"Answer","text":"**32B 이하만 쓸 거면 그래픽카드가 낫습니다.** 같은 값에 더 빠릅니다. **70B를 쓰고 싶으면 맥 말고는 현실적인 선택지가 없습니다.** 그래픽카드로는 32GB(RTX 5090)가 개인용 상한입니다."}},{"@type":"Question","name":"인텔 맥은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"통합 메모리 구조가 아니라서 이 글의 내용이 적용되지 않습니다. 전용 GPU가 없는 모델이라면 CPU로만 돌아가 매우 느립니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -113,20 +113,20 @@ GPU 작업에 쓸 수 있는 몫에 상한이 있고, 대략 <strong>전체의 7
 재부팅하면 초기화되며, 시스템 몫까지 가져가면 맥 전체가 느려집니다.
 <strong>이 글에서는 권하지 않습니다.</strong></p></blockquote>
 <h3 id="2-속도는-용량이-아니라-칩이-정합니다">2. 속도는 용량이 아니라 칩이 정합니다</h3>
-<p><strong>같은 32GB라도 M4냐 M4 Pro냐에 따라 생성 속도가 두 배 이상 차이납니다.</strong></p>
+<p><strong>같은 32GB라도 M5냐 M5 Pro냐에 따라 생성 속도가 두 배 차이납니다.</strong></p>
 <div class="table-wrap"><table>
 <thead><tr><th>칩</th><th>메모리 대역폭</th><th>최대 메모리</th></tr></thead>
 <tbody>
-<tr><td>M4</td><td>120 GB/s</td><td>32GB</td></tr>
-<tr><td>M4 Pro</td><td>273 GB/s</td><td>64GB</td></tr>
-<tr><td>M4 Max</td><td>410~546 GB/s</td><td>128GB</td></tr>
+<tr><td>M5</td><td>153 GB/s</td><td>32GB</td></tr>
+<tr><td>M5 Pro</td><td>307 GB/s</td><td>64GB</td></tr>
+<tr><td>M5 Max</td><td>460~614 GB/s</td><td>128GB</td></tr>
 </tbody>
 </table></div>
 <p>LLM 추론은 매 토큰마다 모델 가중치를 읽어야 해서 <strong>메모리 대역폭에 묶입니다.</strong>
 용량은 &quot;돌아가느냐&quot;를 정하고, <strong>대역폭은 &quot;얼마나 빠르냐&quot;를 정합니다.</strong></p>
-<pre><code>M4 · 32GB        22GB 까지 올라감,  120 GB/s
-M4 Pro · 24GB    16GB 까지 올라감,  273 GB/s   ← 더 작은데 훨씬 빠름</code></pre>
-<p><strong>14B를 쾌적하게 쓰고 싶다면 M4 32GB보다 M4 Pro 24GB가 나을 수 있습니다.</strong>
+<pre><code>M5 · 32GB        22GB 까지 올라감,  153 GB/s
+M5 Pro · 24GB    16GB 까지 올라감,  307 GB/s   ← 더 작은데 훨씬 빠름</code></pre>
+<p><strong>14B를 쾌적하게 쓰고 싶다면 M5 32GB보다 M5 Pro 24GB가 나을 수 있습니다.</strong>
 14B는 둘 다 올라가고, 그러면 대역폭이 체감을 정하기 때문입니다.</p>
 <p>이 순서는 <a href="/posts/rtx4060ti-16gb-vs-4070.html">그래픽카드에서와 같습니다</a> —
 <strong>용량이 먼저, 들어가고 나면 대역폭</strong>입니다.</p>
@@ -143,9 +143,9 @@ M4 Pro · 24GB    16GB 까지 올라감,  273 GB/s   ← 더 작은데 훨씬 �
 <tbody>
 <tr><td>RTX 5090</td><td>1792 GB/s</td></tr>
 <tr><td>RTX 5070</td><td>672 GB/s</td></tr>
-<tr><td>M4 Max (상위)</td><td>546 GB/s</td></tr>
-<tr><td>M4 Pro</td><td>273 GB/s</td></tr>
-<tr><td>M4</td><td>120 GB/s</td></tr>
+<tr><td>M5 Max (상위)</td><td>614 GB/s</td></tr>
+<tr><td>M5 Pro</td><td>307 GB/s</td></tr>
+<tr><td>M5</td><td>153 GB/s</td></tr>
 </tbody>
 </table></div>
 <p>같은 모델이 둘 다 올라간다면 <strong>그래픽카드가 더 빠릅니다.</strong></p>
@@ -161,7 +161,7 @@ M4 Pro · 24GB    16GB 까지 올라감,  273 GB/s   ← 더 작은데 훨씬 �
 로컬 LLM이 목적이라면 최소 24GB부터 보세요.</p>
 <p><strong>24GB — 최소 실용선</strong></p>
 <p>14B가 여유롭게 돌아갑니다. 코딩 보조와 문서 요약은 여기서 됩니다.
-<strong>M4 Pro 24GB</strong>면 대역폭까지 273 GB/s라 체감이 확실히 낫습니다.</p>
+<strong>M5 Pro 24GB</strong>면 대역폭까지 307 GB/s라 체감이 확실히 낫습니다.</p>
 <p><strong>32~48GB — 무난한 선택</strong></p>
 <p>32GB면 22B까지, 48GB면 32B까지 여유롭습니다.
 <strong>대부분의 사람에게는 여기가 상한</strong>입니다.</p>
@@ -170,16 +170,16 @@ M4 Pro · 24GB    16GB 까지 올라감,  273 GB/s   ← 더 작은데 훨씬 �
 70B를 쓸 계획이 없다면 이 돈은 <strong>다른 데 쓰는 편이 낫습니다.</strong></p>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
 <h3 id="맥북에어로도-로컬-llm이-되나요">맥북에어로도 로컬 LLM이 되나요</h3>
-<p>됩니다. 다만 에어는 M4 기본 칩이라 <strong>대역폭 120 GB/s</strong>이고 팬이 없습니다.
+<p>됩니다. 다만 에어는 M5 기본 칩이라 <strong>대역폭 153 GB/s</strong>이고 팬이 없습니다.
 7~8B 모델은 무리 없지만, 길게 돌리면 발열로 속도가 떨어질 수 있습니다.
 14B 이상을 상시로 쓸 계획이면 프로 쪽이 맞습니다.</p>
 <h3 id="나중에-메모리를-늘릴-수-있나요">나중에 메모리를 늘릴 수 있나요</h3>
 <p><strong>없습니다.</strong> 애플 실리콘은 메모리가 칩 패키지에 붙어 있어 교체가 불가능합니다.
 살 때 정해야 하고, 부족하면 기기를 바꾸는 수밖에 없습니다.
 이것 때문에 한 단계 위를 고르는 편이 안전합니다.</p>
-<h3 id="같은-64gb면-m4-pro와-m4-max가-같나요">같은 64GB면 M4 Pro와 M4 Max가 같나요</h3>
+<h3 id="같은-64gb면-m5-pro와-m5-max가-같나요">같은 64GB면 M5 Pro와 M5 Max가 같나요</h3>
 <p><strong>올라가는 모델 크기는 같고, 속도가 다릅니다.</strong>
-쓸 수 있는 몫은 둘 다 약 46GB지만 대역폭이 273 vs 410 GB/s입니다.
+쓸 수 있는 몫은 둘 다 약 46GB지만 대역폭이 307 vs 460 GB/s입니다.
 같은 모델이 Max에서 더 빠릅니다.</p>
 <h3 id="맥-vs-그래픽카드-로컬-llm에는-뭐가-낫나요">맥 vs 그래픽카드, 로컬 LLM에는 뭐가 낫나요</h3>
 <p><strong>32B 이하만 쓸 거면 그래픽카드가 낫습니다.</strong> 같은 값에 더 빠릅니다.
@@ -191,7 +191,7 @@ M4 Pro · 24GB    16GB 까지 올라감,  273 GB/s   ← 더 작은데 훨씬 �
 <h2 id="정리">정리</h2>
 <ol>
 <li><strong>전체 메모리를 다 못 씁니다.</strong> 약 75%가 상한이라 64GB면 46GB 정도입니다</li>
-<li><strong>속도는 용량이 아니라 칩이 정합니다.</strong> M4 120, M4 Pro 273, M4 Max 410~546 GB/s</li>
+<li><strong>속도는 용량이 아니라 칩이 정합니다.</strong> M5 153, M5 Pro 307, M5 Max 460~614 GB/s</li>
 <li>14B까지면 <strong>24GB</strong>, 32B를 넘보면 <strong>48GB</strong>부터입니다</li>
 <li><strong>70B를 노릴 때만 128GB</strong>가 의미 있습니다. 아니면 돈 낭비입니다</li>
 <li><strong>나중에 못 늘립니다.</strong> 애매하면 한 단계 위가 안전합니다</li>
@@ -204,12 +204,19 @@ M4 Pro · 24GB    16GB 까지 올라감,  273 GB/s   ← 더 작은데 훨씬 �
 
   
 
-  <p class="tags"><span class="tag">맥북</span> <span class="tag">애플실리콘</span> <span class="tag">통합메모리</span> <span class="tag">로컬LLM</span> <span class="tag">M4</span></p>
+  <p class="tags"><span class="tag">맥북</span> <span class="tag">애플실리콘</span> <span class="tag">통합메모리</span> <span class="tag">로컬LLM</span> <span class="tag">M5</span></p>
 </article>
 
 <section class="related" aria-labelledby="related-h">
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
+    <li class="card">
+      <a href="/posts/macbook-air-vs-pro-dev.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">맥북 에어 vs 프로 — 개발용으로 어디서 갈리나</span>
+        <span class="card-desc">M5 에어와 프로는 메모리 한계와 대역폭이 다릅니다. 에어는 32GB가 천장이고 프로는 128GB까지 갑니다. 로컬 LLM을 할 거면 여기서 갈립니다.</span>
+      </a>
+    </li>
     <li class="card">
       <a href="/posts/local-llm-laptop-choose.html">
         <span class="card-cat">노트북</span>
@@ -253,7 +260,7 @@ document.querySelector('[data-theme-toggle]').addEventListener('click',function(
   try{localStorage.setItem('theme',next)}catch(e){}
 });
 </script>
-<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m4-16","name":"Mac M4 · 16GB","vram":10,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-24","name":"Mac M4 · 24GB","vram":16,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-32","name":"Mac M4 · 32GB","vram":22,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-24","name":"Mac M4 Pro · 24GB","vram":16,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-48","name":"Mac M4 Pro · 48GB","vram":34,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-64","name":"Mac M4 Pro · 64GB","vram":46,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-36","name":"Mac M4 Max · 36GB","vram":26,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-64","name":"Mac M4 Max · 64GB","vram":46,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-128","name":"Mac M4 Max · 128GB","vram":96,"bw":546,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m5-16","name":"Mac M5 · 16GB","vram":10,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-24","name":"Mac M5 · 24GB","vram":16,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-32","name":"Mac M5 · 32GB","vram":22,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-24","name":"Mac M5 Pro · 24GB","vram":16,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-48","name":"Mac M5 Pro · 48GB","vram":34,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-64","name":"Mac M5 Pro · 64GB","vram":46,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-64","name":"Mac M5 Max · 64GB","vram":46,"bw":460,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-128","name":"Mac M5 Max · 128GB","vram":96,"bw":614,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
 <script src="/assets/vram.js" defer></script>
 </body>
 </html>

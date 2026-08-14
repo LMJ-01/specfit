@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다 | 스펙핏</title>
+<meta name="description" content="PCIe 5.0은 Gen4의 두 배 속도지만 개발 작업에서는 체감이 거의 없습니다. 대신 DRAM 유무와 TLC/QLC가 실제로 갈리는 지점입니다.">
+<link rel="canonical" href="https://specfit.kr/posts/dev-ssd-choose.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다 | 스펙핏">
+<meta property="og:description" content="PCIe 5.0은 Gen4의 두 배 속도지만 개발 작업에서는 체감이 거의 없습니다. 대신 DRAM 유무와 TLC/QLC가 실제로 갈리는 지점입니다.">
+<meta property="og:url" content="https://specfit.kr/posts/dev-ssd-choose.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다","description":"PCIe 5.0은 Gen4의 두 배 속도지만 개발 작업에서는 체감이 거의 없습니다. 대신 DRAM 유무와 TLC/QLC가 실제로 갈리는 지점입니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dev-ssd-choose.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다","item":"https://specfit.kr/posts/dev-ssd-choose.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Gen5 SSD를 사면 로컬 LLM이 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"**아닙니다.** 모델을 처음 읽어 올릴 때만 잠깐 쓰이고, 그 뒤 연산은 전부 VRAM 안에서 일어납니다. [VRAM과 시스템 램의 역할 차이](/posts/local-llm-ram-vs-vram.html)와 같은 구조입니다. 모델 로딩이 몇 초 빨라지는 정도이지 생성 속도와는 무관합니다."}},{"@type":"Question","name":"그럼 Gen5는 언제 사나요","acceptedAnswer":{"@type":"Answer","text":"큰 파일을 자주 옮기는 작업이라면 의미가 있습니다. 영상 편집, 대용량 데이터셋 이동 같은 경우입니다. **개발과 로컬 LLM만 한다면 Gen4로 충분**합니다."}},{"@type":"Question","name":"DRAM 없는 SSD를 쓰면 안 되나요","acceptedAnswer":{"@type":"Answer","text":"가벼운 용도라면 괜찮습니다. 다만 개발용은 쓰기가 많고 오래 켜두는 환경이라 **DRAM 있는 쪽이 안정적**입니다. 가격 차이만큼의 값어치는 있습니다."}},{"@type":"Question","name":"SSD를 몇 % 채워도 되나요","acceptedAnswer":{"@type":"Answer","text":"**80% 안팎을 넘기지 않는 편**이 좋습니다. 빈 공간이 부족하면 SSD 내부 정리가 어려워져 속도가 떨어지고 수명에도 불리합니다. 로컬 LLM 모델을 쌓아두다 보면 이 선을 쉽게 넘깁니다."}},{"@type":"Question","name":"외장 SSD에 모델을 두어도 되나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 다만 연결 속도가 낮으면 모델 로딩이 느려집니다. **자주 쓰는 모델은 내장에, 보관용은 외장에** 두는 식이 무난합니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-15">2026년 8월 15일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>SSD를 고를 때 가장 눈에 띄는 숫자가 <strong>순차 읽기 속도</strong>입니다.
+PCIe 5.0 제품이 14,000 MB/s를 넘어가니 Gen4의 두 배입니다.</p>
+<p><strong>그런데 개발 작업에서는 그 차이가 거의 안 느껴집니다.</strong>
+실제로 갈리는 건 다른 항목입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>개발에서 중요도</th></tr></thead>
+<tbody>
+<tr><td><strong>용량</strong></td><td>⭐⭐⭐ 가장 중요합니다</td></tr>
+<tr><td><strong>DRAM 유무</strong></td><td>⭐⭐⭐ 지속 성능이 갈립니다</td></tr>
+<tr><td><strong>TLC / QLC</strong></td><td>⭐⭐ 수명과 쓰기 안정성</td></tr>
+<tr><td>Gen4 / Gen5</td><td>⭐ 체감이 거의 없습니다</td></tr>
+<tr><td>순차 속도 숫자</td><td>⭐ 마케팅 숫자에 가깝습니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>Gen4 TLC + DRAM 있는 1TB 이상</strong>이면 개발용으로 충분합니다.</p>
+<h2 id="왜-gen5가-체감이-안-되나">왜 Gen5가 체감이 안 되나</h2>
+<p><strong>개발 작업은 큰 파일을 통째로 읽는 일이 드뭅니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>실제 병목</th></tr></thead>
+<tbody>
+<tr><td><code>npm install</code></td><td>작은 파일 수만 개 — 순차 속도 아님</td></tr>
+<tr><td>빌드·컴파일</td><td><strong>CPU</strong></td></tr>
+<tr><td>Git 작업</td><td>작은 파일 다수</td></tr>
+<tr><td>IDE 인덱싱</td><td>작은 파일 다수</td></tr>
+<tr><td>큰 파일 복사</td><td>순차 속도 ← <strong>여기서만 Gen5가 유리</strong></td></tr>
+</tbody>
+</table></div>
+<p>순차 속도가 두 배여도, <strong>작은 파일 수만 개를 다루는 작업에서는 차이가 작습니다.</strong>
+그리고 개발 작업 대부분이 그쪽입니다.</p>
+<h3 id="gen5는-발열이라는-대가가-있습니다">Gen5는 발열이라는 대가가 있습니다</h3>
+<p>Gen5는 Gen4보다 열이 많이 납니다. <strong>방열판이 사실상 필수</strong>이고,
+냉각이 부족하면 스스로 속도를 낮춰 버립니다. 그러면 Gen5를 산 의미가 사라집니다.</p>
+<p>노트북이라면 더 문제입니다. 공간이 좁아 방열판을 못 넣는 경우가 많습니다.</p>
+<p><strong>&quot;Gen5인데 왜 안 빠르지&quot;의 상당수가 발열 때문</strong>입니다.</p>
+<h2 id="실제로-갈리는-것-dram-유무">실제로 갈리는 것 — DRAM 유무</h2>
+<p><strong>이게 순차 속도보다 중요합니다.</strong></p>
+<p>SSD는 데이터가 어디 있는지 적어둔 <strong>지도</strong>를 들고 다닙니다.
+그 지도를 SSD 안의 전용 메모리(DRAM)에 두느냐, 시스템 램을 빌려 쓰느냐가 갈립니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>DRAM 있음</th><th>DRAM 없음</th></tr></thead>
+<tbody>
+<tr><td>지도 위치</td><td>SSD 안</td><td>시스템 램을 빌림</td></tr>
+<tr><td>가벼운 작업</td><td>빠름</td><td>빠름</td></tr>
+<tr><td><strong>오래 쓰거나 가득 찰 때</strong></td><td><strong>안정적</strong></td><td><strong>떨어집니다</strong></td></tr>
+<tr><td>가격</td><td>높음</td><td>낮음</td></tr>
+</tbody>
+</table></div>
+<p><strong>벤치마크에서는 차이가 잘 안 납니다.</strong> 짧게 측정하기 때문입니다.
+차이는 <strong>길게 쓸 때, 용량이 찼을 때</strong> 나옵니다. 개발용은 그런 환경입니다.</p>
+<p>제품 사양에서 <strong>&quot;DRAM 캐시&quot;</strong> 또는 <strong>&quot;HMB&quot;</strong>를 확인하세요.
+HMB만 적혀 있으면 DRAM이 없는 제품입니다.</p>
+<h2 id="tlc와-qlc">TLC와 QLC</h2>
+<p>낸드에 한 칸당 몇 비트를 넣느냐의 차이입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>TLC</th><th>QLC</th></tr></thead>
+<tbody>
+<tr><td>한 칸당</td><td>3비트</td><td>4비트</td></tr>
+<tr><td>수명</td><td><strong>깁니다</strong></td><td>짧습니다</td></tr>
+<tr><td>지속 쓰기</td><td><strong>안정적</strong></td><td>캐시가 차면 급락</td></tr>
+<tr><td>가격</td><td>높음</td><td>낮음</td></tr>
+</tbody>
+</table></div>
+<p><strong>개발용은 TLC를 권합니다.</strong></p>
+<p>이유는 쓰기가 많기 때문입니다. 빌드 산출물, 도커 이미지, 패키지 캐시가
+계속 쓰였다 지워집니다. QLC는 이런 환경에서 불리합니다.</p>
+<p>QLC는 <strong>한 번 넣고 주로 읽기만 하는 저장용</strong>에 맞습니다.</p>
+<h2 id="용량-로컬-llm을-하면-다시-계산해야-합니다">용량 — 로컬 LLM을 하면 다시 계산해야 합니다</h2>
+<p><strong>모델 파일이 생각보다 큽니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>모델</th><th>Q4 파일 크기</th></tr></thead>
+<tbody>
+<tr><td>3B</td><td>약 2GB</td></tr>
+<tr><td>7~8B</td><td>약 4.7GB</td></tr>
+<tr><td>14B</td><td><strong>약 9GB</strong></td></tr>
+<tr><td>32B</td><td><strong>약 20GB</strong></td></tr>
+<tr><td>70B</td><td><strong>약 43GB</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>이것저것 받아보다 보면 금방 수십 GB가 됩니다.</strong>
+<code>ollama list</code> 로 확인하고 안 쓰는 건 지우는 습관이 필요합니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>용도</th><th>권장 용량</th></tr></thead>
+<tbody>
+<tr><td>일반 개발만</td><td>512GB</td></tr>
+<tr><td>개발 + 도커</td><td><strong>1TB</strong></td></tr>
+<tr><td><strong>로컬 LLM 겸용</strong></td><td><strong>1TB 이상, 2TB면 여유</strong></td></tr>
+</tbody>
+</table></div>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdspuKuC8O" target="_blank" rel="sponsored nofollow noopener">NVMe SSD 1TB 보기</a>
+  <span class="buy-note">모델 파일이 하나에 5~20GB 라 금방 찹니다</span>
+</aside></p>
+<h2 id="노트북은-확인할-게-하나-더-있습니다">노트북은 확인할 게 하나 더 있습니다</h2>
+<p><strong>노트북은 SSD를 바꿀 수 있는 경우가 많습니다.</strong> 램과 다른 점입니다.</p>
+<ul>
+<li>슬롯이 두 개면 나중에 하나 더 꽂으면 됩니다</li>
+<li>하나뿐이어도 더 큰 것으로 갈아끼울 수 있습니다</li>
+<li>다만 <strong>일부 초슬림 모델은 SSD도 납땜</strong>되어 있습니다</li>
+</ul>
+<p>그래서 <a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에서
+<strong>&quot;SSD에서 아끼고 램에 쓰라&quot;</strong>고 적었습니다. 나중에 해결되는 쪽이기 때문입니다.</p>
+<p><strong>단, 살 때 확인은 필요합니다.</strong> 사양에 슬롯 개수가 적혀 있는지 보세요.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="gen5-ssd를-사면-로컬-llm이-빨라지나요">Gen5 SSD를 사면 로컬 LLM이 빨라지나요</h3>
+<p><strong>아닙니다.</strong> 모델을 처음 읽어 올릴 때만 잠깐 쓰이고,
+그 뒤 연산은 전부 VRAM 안에서 일어납니다.
+<a href="/posts/local-llm-ram-vs-vram.html">VRAM과 시스템 램의 역할 차이</a>와 같은 구조입니다.</p>
+<p>모델 로딩이 몇 초 빨라지는 정도이지 생성 속도와는 무관합니다.</p>
+<h3 id="그럼-gen5는-언제-사나요">그럼 Gen5는 언제 사나요</h3>
+<p>큰 파일을 자주 옮기는 작업이라면 의미가 있습니다.
+영상 편집, 대용량 데이터셋 이동 같은 경우입니다.
+<strong>개발과 로컬 LLM만 한다면 Gen4로 충분</strong>합니다.</p>
+<h3 id="dram-없는-ssd를-쓰면-안-되나요">DRAM 없는 SSD를 쓰면 안 되나요</h3>
+<p>가벼운 용도라면 괜찮습니다. 다만 개발용은 쓰기가 많고 오래 켜두는 환경이라
+<strong>DRAM 있는 쪽이 안정적</strong>입니다. 가격 차이만큼의 값어치는 있습니다.</p>
+<h3 id="ssd를-몇-채워도-되나요">SSD를 몇 % 채워도 되나요</h3>
+<p><strong>80% 안팎을 넘기지 않는 편</strong>이 좋습니다.
+빈 공간이 부족하면 SSD 내부 정리가 어려워져 속도가 떨어지고 수명에도 불리합니다.
+로컬 LLM 모델을 쌓아두다 보면 이 선을 쉽게 넘깁니다.</p>
+<h3 id="외장-ssd에-모델을-두어도-되나요">외장 SSD에 모델을 두어도 되나요</h3>
+<p>가능합니다. 다만 연결 속도가 낮으면 모델 로딩이 느려집니다.
+<strong>자주 쓰는 모델은 내장에, 보관용은 외장에</strong> 두는 식이 무난합니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>Gen5는 개발 작업에서 체감이 거의 없습니다.</strong> 병목이 순차 속도가 아닙니다</li>
+<li>Gen5는 <strong>발열이라는 대가</strong>가 있습니다. 냉각이 부족하면 스스로 느려집니다</li>
+<li><strong>DRAM 유무가 순차 속도보다 중요</strong>합니다. 오래 쓸 때 갈립니다</li>
+<li>개발용은 <strong>TLC</strong>를 고르세요. 쓰기가 많은 환경입니다</li>
+<li><strong>로컬 LLM을 겸하면 1TB 이상</strong>입니다. 모델 하나가 최대 43GB입니다</li>
+</ol>
+<p>스펙이나 판단이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">SSD</span> <span class="tag">NVMe</span> <span class="tag">PCIe5</span> <span class="tag">개발용PC</span> <span class="tag">로컬LLM</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ram-16gb-vs-32gb.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점</span>
+        <span class="card-desc">32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/quantization-q4-q5-q8.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">양자화 Q4 Q5 Q8 — 올리면 뭐가 좋아지나</span>
+        <span class="card-desc">Q8이 Q4보다 용량을 73% 더 씁니다. 그 대가로 얻는 게 무엇인지, 같은 VRAM이라면 어느 쪽이 나은지 실측 용량으로 계산했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/local-llm-without-gpu.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가</span>
+        <span class="card-desc">그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>
