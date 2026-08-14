@@ -39,11 +39,28 @@
     no: { badge: '불가', desc: '실사용이 어려움' },
   };
 
-  // 조건을 만족하는 가장 작은 카드를 찾습니다.
+  // 여유 있게 돌아가는 가장 작은 카드.
   // 단종된 카드(new: false)는 제외합니다 — 지금 살 사람에게 권할 수 없습니다.
   function recommend(needed) {
     return gpus
       .filter((g) => !g.mac && g.new && needed <= g.vram * 0.9)
+      .sort((a, b) => a.vram - b.vram || a.tdp - b.tdp)[0];
+  }
+
+  /**
+   * 빠듯하게라도 들어가는 가장 작은 카드.
+   *
+   * 여유 기준만 쓰면 가격대가 크게 건너뛰는 구간이 생깁니다.
+   * 예를 들어 22B(약 15GB)는 16GB 의 90%(14.4GB)를 넘어서 16GB 카드가 탈락하고,
+   * 곧바로 24GB 급이 추천됩니다 — 가격대가 완전히 다릅니다.
+   *
+   * 그 구간에서 "빠듯하지만 들어가는" 선택지를 함께 보여줍니다.
+   * 감추면 더 정직한 게 아니라, 살 수 있었던 카드를 안 알려준 것이 됩니다.
+   * 대신 빠듯하다는 사실과 그 대가를 반드시 같이 적습니다.
+   */
+  function recommendTight(needed) {
+    return gpus
+      .filter((g) => !g.mac && g.new && needed > g.vram * 0.9 && needed <= g.vram)
       .sort((a, b) => a.vram - b.vram || a.tdp - b.tdp)[0];
   }
 
@@ -105,12 +122,26 @@
       }
     } else {
       const rec = recommend(needed);
+      const tight = recommendTight(needed);
       headline = v === 'slow' ? `느릴 겁니다` : `이 카드로는 어렵습니다`;
       if (rec) {
         advice = `<strong>${esc(use.label)}</strong> 용도라면 메모리 <strong>${rec.vram}GB</strong> 이상이 필요합니다.
-           가장 저렴한 선택지는 <strong class="vr-hl">${esc(rec.name)}</strong>입니다.`;
+           여유 있게 쓰려면 <strong class="vr-hl">${esc(rec.name)}</strong>입니다.`;
         // 제휴 링크는 rel="sponsored" 가 필수입니다. 없으면 구글이 링크 스팸으로 봅니다.
         advice += buyBtn(rec);
+        // 여유 기준만 보여주면 가격대가 건너뛰는 구간이 있습니다.
+        // 더 작은 카드에 빠듯하게 들어간다면, 그 대가와 함께 알려줍니다.
+        if (tight && tight.vram < rec.vram) {
+          advice += `<span class="vr-next">예산을 줄이려면
+            <strong class="vr-hl">${esc(tight.name)}</strong>(메모리 ${tight.vram}GB)에도 들어갑니다.
+            다만 <strong>빠듯</strong>해서 긴 내용을 다루면 밀립니다.</span>`;
+          advice += buyBtn(tight);
+        }
+      } else if (tight) {
+        advice = `<strong>${esc(use.label)}</strong> 용도를 여유 있게 돌릴 카드는 없습니다.
+           <strong class="vr-hl">${esc(tight.name)}</strong>(메모리 ${tight.vram}GB)에
+           <strong>빠듯하게</strong> 들어가는 정도입니다.`;
+        advice += buyBtn(tight);
       } else {
         advice = `이 용도는 개인용 그래픽카드로는 감당하기 어렵습니다. 더 가벼운 용도를 골라보세요.`;
       }
