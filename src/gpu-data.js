@@ -35,10 +35,10 @@ export const gpus = [
   { id: 'rtx5090', name: 'RTX 5090', vram: 32, bw: 1792, tdp: 575, tier: 'flagship', new: true, buy: 'https://link.coupang.com/a/gbIXLiOL36', widget: '' },
   { id: 'rtx5080', name: 'RTX 5080', vram: 16, bw: 960, tdp: 360, tier: 'high', new: true, buy: '', widget: '' },
   { id: 'rtx5070ti', name: 'RTX 5070 Ti', vram: 16, bw: 896, tdp: 300, tier: 'high', new: true, buy: '', widget: '' },
-  { id: 'rtx5070', name: 'RTX 5070', vram: 12, bw: 672, tdp: 250, tier: 'mid', new: true, buy: '', widget: '' },
-  { id: 'rtx5060ti16', name: 'RTX 5060 Ti 16GB', vram: 16, bw: 448, tdp: 180, tier: 'mid', new: true, buy: '', widget: '' },
+  { id: 'rtx5070', name: 'RTX 5070', vram: 12, bw: 672, tdp: 250, tier: 'mid', new: true, buy: 'https://link.coupang.com/a/gdoNP0RuHQ', widget: '' },
+  { id: 'rtx5060ti16', name: 'RTX 5060 Ti 16GB', vram: 16, bw: 448, tdp: 180, tier: 'mid', new: true, buy: 'https://link.coupang.com/a/gdoQpS5jIi', widget: '' },
   { id: 'rtx5060ti8', name: 'RTX 5060 Ti 8GB', vram: 8, bw: 448, tdp: 180, tier: 'entry', new: true, buy: '', widget: '' },
-  { id: 'rtx5060', name: 'RTX 5060', vram: 8, bw: 448, tdp: 145, tier: 'entry', new: true, buy: '', widget: '' },
+  { id: 'rtx5060', name: 'RTX 5060', vram: 8, bw: 448, tdp: 145, tier: 'entry', new: true, buy: 'https://link.coupang.com/a/gdoLFZl6Xc', widget: '' },
   { id: 'rtx5050', name: 'RTX 5050', vram: 8, bw: 320, tdp: 130, tier: 'entry', new: true, buy: '', widget: '' },
 
   // ── RTX 40 (Ada): 생산 종료 ────────────────────────────────────
