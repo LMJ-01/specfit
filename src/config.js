@@ -15,7 +15,7 @@ export const config = {
 
   author: {
     name: '스펙핏',
-    email: 'contact@specfit.kr', // 도메인 구매 후 실제 주소로
+    email: 'lmj010903@naver.com',
   },
 
   // 목록 페이지당 글 수
