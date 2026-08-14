@@ -14,6 +14,7 @@ import { config } from './config.js';
 import { markdownToHtml, parseFrontmatter } from './markdown.js';
 import { postPage, listPage, staticPage, toolPage } from './templates.js';
 import { gpus, models, quants, contexts, useCases, lengths } from './gpu-data.js';
+import { figures } from './figures.js';
 
 const toolData = { gpus, models, quants, contexts, useCases, lengths };
 
@@ -28,6 +29,23 @@ const TOOL_MARK = '{{VRAM_TOOL}}';
 // id 패턴을 좁히면 오타가 매칭되지 않아 자리표시자가 페이지에 그대로 노출됩니다.
 // 무엇이든 잡아서 경고하고 제거합니다.
 const WIDGET_RE = /\{\{COUPANG:([^}]*)\}\}/gi;
+
+// {{FIG:vram-overflow}} → 본문 도해.
+// 위젯과 같은 이유로 패턴을 넓게 잡습니다 — 오타가 매칭되지 않으면
+// 자리표시자가 페이지에 그대로 노출됩니다.
+const FIG_RE = /\{\{FIG:([^}]*)\}\}/gi;
+
+/** 도해 자리표시자를 인라인 SVG 로 바꿉니다. */
+function renderFigures(html, warn) {
+  return html.replace(FIG_RE, (full, name) => {
+    const make = figures[name.trim().toLowerCase()];
+    if (!make) {
+      warn(`알 수 없는 도해 이름: ${name} — figures.js 에 없는 항목입니다`);
+      return '';
+    }
+    return make();
+  });
+}
 
 /**
  * 위젯 자리표시자를 실제 iframe 으로 바꿉니다.
@@ -137,10 +155,13 @@ async function build() {
           p.data.affiliate === true || (usesTool && toolHasAffiliate) || usesWidget,
         image: p.data.image || '',
         faq,
-        html: renderWidgets(
-          markdownToHtml(p.body).replace(
-            new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'),
-            '<div data-vram-tool></div>'
+        html: renderFigures(
+          renderWidgets(
+            markdownToHtml(p.body).replace(
+              new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'),
+              '<div data-vram-tool></div>'
+            ),
+            (msg) => warnings.push(`${p.slug}: ${msg}`)
           ),
           (msg) => warnings.push(`${p.slug}: ${msg}`)
         ),

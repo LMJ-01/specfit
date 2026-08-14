@@ -14,6 +14,9 @@
   --warn-bg: #fff8e6;
   --warn-border: #e8c766;
   --warn-fg: #6b4e00;
+  /* 도해 색. 막대 위에 흰 글씨를 얹으므로 양쪽 테마에서 충분히 어두워야 합니다. */
+  --fig-fit: #2f855a;
+  --fig-over: #c05621;
   --radius: 10px;
   --wrap: 46rem;
   --wrap-wide: 64rem;
@@ -33,6 +36,8 @@
     --warn-bg: #241f10;
     --warn-border: #6b5720;
     --warn-fg: #e8c766;
+    --fig-fit: #2c7a55;
+    --fig-over: #b3521c;
     color-scheme: dark;
   }
 }
@@ -49,6 +54,8 @@
   --warn-bg: #241f10;
   --warn-border: #6b5720;
   --warn-fg: #e8c766;
+  --fig-fit: #2c7a55;
+  --fig-over: #b3521c;
   color-scheme: dark;
 }
 
@@ -348,6 +355,30 @@ thead th {
 }
 tbody tr:last-child td {
   border-bottom: 0;
+}
+
+/* ---- 본문 도해 ----
+   인라인 SVG 라 CSS 변수를 그대로 읽습니다 — 다크모드가 자동으로 따라옵니다.
+   width/height 가 박혀 있어 비율이 알려져 있으므로, max-width 로 줄여도 CLS 가 없습니다. */
+
+.fig {
+  margin: 1.8rem 0;
+}
+.fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+}
+.fig svg text {
+  /* SVG 는 본문 폰트를 자동으로 따르지 않습니다. 지정하지 않으면 한글이 세리프로 나옵니다. */
+  font-family: inherit;
+}
+.fig figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
 }
 
 /* ---- 고지 박스 ----

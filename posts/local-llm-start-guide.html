@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드 | 스펙핏</title>
+<meta name="description" content="VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/local-llm-start-guide.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드 | 스펙핏">
+<meta property="og:description" content="VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/local-llm-start-guide.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드","description":"VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-start-guide.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드","item":"https://specfit.kr/posts/local-llm-start-guide.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"그래픽카드가 없어도 되나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다. 체험은 되지만 실제로 쓰기는 어렵습니다."}},{"@type":"Question","name":"노트북으로도 되나요","acceptedAnswer":{"@type":"Answer","text":"노트북 그래픽카드의 메모리를 확인하세요. 같은 이름이라도 데스크톱보다 메모리가 적은 경우가 많습니다. 확인 방법은 위 2번과 같습니다."}},{"@type":"Question","name":"인터넷 서비스보다 성능이 떨어지나요","acceptedAnswer":{"@type":"Answer","text":"떨어집니다. 개인 장비에서 돌릴 수 있는 크기에 한계가 있기 때문입니다. 다만 번역·요약·간단한 코딩 보조 같은 일상적인 작업은 충분히 됩니다."}},{"@type":"Question","name":"무료인가요","acceptedAnswer":{"@type":"Answer","text":"모델과 프로그램 모두 무료입니다. 전기요금만 듭니다. 다만 장비가 부족하면 그걸 사는 비용이 듭니다."}},{"@type":"Question","name":"얼마나 어렵나요","acceptedAnswer":{"@type":"Answer","text":"Ollama 기준으로 설치 후 명령어 한 줄입니다. 어려운 건 설치가 아니라 **내 장비로 뭐가 되는지 판단하는 것**이고, 그게 이 사이트가 하는 일입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/posts/local-llm-start-guide.html" aria-current="page">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/about.html">소개</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-15">2026년 8월 15일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>&quot;내 컴퓨터에서 AI를 돌린다&quot;는 이야기를 보고 오셨다면, 아마 이런 상태일 겁니다.</p>
+<ul>
+<li>되는지 안 되는지부터 모르겠다</li>
+<li>VRAM, 양자화, 7B 같은 말이 무슨 뜻인지 모르겠다</li>
+<li>뭘 사야 하는지는 더 모르겠다</li>
+</ul>
+<p><strong>셋 다 몰라도 됩니다.</strong> 순서대로만 확인하면 됩니다.</p>
+<h2 id="1-로컬-llm이-뭔가요">1. 로컬 LLM이 뭔가요</h2>
+<p>ChatGPT 같은 걸 <strong>인터넷 없이 내 컴퓨터 안에서</strong> 돌리는 것입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>인터넷 서비스</th><th>로컬 LLM</th></tr></thead>
+<tbody>
+<tr><td>비용</td><td>매달 구독료</td><td>전기요금만</td></tr>
+<tr><td>개인정보</td><td>서버로 전송됨</td><td><strong>내 컴퓨터 밖으로 안 나감</strong></td></tr>
+<tr><td>인터넷</td><td>필요</td><td>필요 없음</td></tr>
+<tr><td>성능</td><td>최상급</td><td>내 장비 수준까지</td></tr>
+</tbody>
+</table></div>
+<p><strong>공짜이고 내 자료가 밖으로 안 나간다</strong>는 게 핵심입니다.
+대신 아무 컴퓨터에서나 잘 돌지는 않습니다.</p>
+<h2 id="2-되는지부터-확인하세요">2. 되는지부터 확인하세요</h2>
+<p><strong>필요한 건 그래픽카드의 메모리입니다.</strong> 컴퓨터 전체 사양이 아닙니다.</p>
+<p><strong>윈도우에서 확인하는 법</strong></p>
+<ol>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>Esc</code> 를 눌러 작업 관리자를 엽니다</li>
+<li><strong>성능</strong> 탭 → 왼쪽에서 <strong>GPU</strong> 클릭</li>
+<li>오른쪽 아래 <strong>전용 GPU 메모리</strong> 숫자를 봅니다</li>
+</ol>
+<p><strong>맥에서 확인하는 법</strong></p>
+<p>화면 왼쪽 위 사과 아이콘 → <strong>이 Mac에 관하여</strong> → 메모리 숫자를 봅니다.</p>
+<p>이 숫자만 알면 됩니다. 아래 계산기에 넣어보세요.</p>
+<p><div data-vram-tool></div></p>
+<h2 id="3-결과를-어떻게-읽나요">3. 결과를 어떻게 읽나요</h2>
+<p>계산기가 네 가지 중 하나로 답합니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>표시</th><th>뜻</th></tr></thead>
+<tbody>
+<tr><td><strong>여유</strong></td><td>쾌적하게 씁니다</td></tr>
+<tr><td><strong>빠듯</strong></td><td>되긴 하는데 짧은 내용만</td></tr>
+<tr><td><strong>느림</strong></td><td>답답할 정도로 느립니다</td></tr>
+<tr><td><strong>불가</strong></td><td>사실상 못 씁니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>&quot;느림&quot;이 가장 헷갈리는 지점입니다.</strong> 에러가 나면 안 되는 줄 알 텐데,
+로컬 LLM은 <strong>에러 없이 그냥 느려집니다.</strong></p>
+<p><figure class="fig">
+<svg viewBox="0 0 640 168" width="640" height="168" role="img" aria-label="8GB 카드에 14B 모델을 올리면 2GB가 CPU로 넘어가 느려진다">
+<title>8GB 카드에 14B 모델을 올리면 2GB가 CPU로 넘어가 느려진다</title>
+
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">8GB 카드에 14B 모델을 올리면</text>
+
+<rect x="16" y="38" width="368" height="40" fill="var(--fig-fit)" rx="4"/>
+<rect x="384" y="38" width="92" height="40" fill="var(--fig-over)" rx="4"/>
+<text x="200" y="63" fill="#fff" font-size="13" font-weight="600" text-anchor="middle">VRAM 안 · 8GB</text>
+<text x="430" y="63" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">+2GB</text>
+
+<text x="200" y="98" fill="var(--fg-muted)" font-size="12" text-anchor="middle">그래픽카드가 처리 — 빠름</text>
+<text x="430" y="98" fill="var(--fg-muted)" font-size="12" text-anchor="middle">CPU 로</text>
+
+<line x1="384" y1="30" x2="384" y2="108" stroke="var(--border)" stroke-dasharray="4 3"/>
+
+<text x="16" y="134" fill="var(--fg)" font-size="13" font-weight="600">이 2GB 때문에 전체가 느려집니다.</text>
+<text x="16" y="154" fill="var(--fg-muted)" font-size="12">에러가 나는 게 아니라 속도만 떨어져서 원인을 알기 어렵습니다.</text>
+</svg>
+<figcaption>넘친 몫은 시스템 램과 CPU 가 떠맡습니다. 대역폭이 VRAM 의 10 분의 1 수준이라 그만큼 느려집니다.</figcaption>
+</figure></p>
+<p>그래서 &quot;돌아간다&quot;와 &quot;쓸 만하다&quot;는 다릅니다.</p>
+<h2 id="4-대충-이-정도입니다">4. 대충 이 정도입니다</h2>
+<p>숫자를 외울 필요는 없습니다. 감만 잡으시면 됩니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>그래픽카드 메모리</th><th>할 수 있는 것</th></tr></thead>
+<tbody>
+<tr><td><strong>8GB</strong></td><td>번역, 간단한 질문, 짧은 글 다듬기</td></tr>
+<tr><td><strong>12GB</strong></td><td>코딩 도우미, 문서 요약</td></tr>
+<tr><td><strong>16GB</strong></td><td>위 전부 + 조금 더 큰 모델</td></tr>
+<tr><td><strong>24GB 이상</strong></td><td>전문적인 작업</td></tr>
+</tbody>
+</table></div>
+<p><strong>8GB가 사실상 하한선입니다.</strong> 그 아래는 답답합니다.</p>
+<h2 id="5-그래서-뭘-사야-하나요">5. 그래서 뭘 사야 하나요</h2>
+<p><strong>아직 사지 마세요.</strong> 순서가 있습니다.</p>
+<ol>
+<li><strong>지금 컴퓨터로 먼저 해보세요.</strong> 8GB만 있어도 시작은 됩니다</li>
+<li>써보고 <strong>답답한 지점이 생기면</strong> 그때 뭐가 부족한지 압니다</li>
+<li>그다음에 사면 됩니다</li>
+</ol>
+<p>로컬 LLM은 안 써보고는 뭐가 필요한지 알 수 없습니다.
+<strong>&quot;코딩 보조로 쓰고 싶다&quot;는 걸 알아야 12GB가 필요한 줄 압니다.</strong></p>
+<h2 id="6-용어-여기까지-왔으면-이제-봐도-됩니다">6. 용어 — 여기까지 왔으면 이제 봐도 됩니다</h2>
+<p>앞에서 일부러 안 썼던 말들입니다.</p>
+<p><strong>VRAM (브이램)</strong>
+그래픽카드에 붙어 있는 메모리입니다. 위에서 확인한 &quot;전용 GPU 메모리&quot;가 이겁니다.
+컴퓨터 램과는 다른 것입니다.</p>
+<p><strong>7B, 14B, 32B</strong>
+AI 모델의 크기입니다. B는 10억(billion)이고, 숫자가 클수록 똑똑하고 무겁습니다.
+사람으로 치면 &quot;얼마나 많이 배웠나&quot;에 가깝습니다.</p>
+<p><strong>양자화 (Q4, Q8)</strong>
+모델을 압축해서 용량을 줄이는 기술입니다.
+<strong>Q4가 사실상 표준</strong>이고, 그보다 낮추면 품질이 떨어지기 시작합니다.
+몰라도 됩니다 — 기본값이 Q4입니다.</p>
+<p><strong>컨텍스트</strong>
+AI가 한 번에 기억하는 내용의 길이입니다.
+<strong>길수록 메모리를 더 씁니다.</strong> &quot;처음엔 빨랐는데 대화가 길어지니 느려진다&quot;가 이것 때문입니다.</p>
+<p><strong>Ollama (올라마)</strong>
+로컬 LLM을 돌리는 프로그램 중 가장 많이 쓰는 것입니다.
+설치하고 명령어 한 줄이면 시작됩니다.</p>
+<h2 id="7-다음은-여기부터">7. 다음은 여기부터</h2>
+<p>이제 궁금한 게 생겼을 겁니다. 상황에 맞는 곳으로 가세요.</p>
+<p><strong>&quot;내 카드로 뭐가 되는지 더 자세히&quot;</strong>
+→ <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 — VRAM별 정리</a></p>
+<p><strong>&quot;8GB인데 아쉽다&quot;</strong>
+→ <a href="/posts/rtx4060-local-llm.html">8GB 카드의 한계선</a></p>
+<p><strong>&quot;램을 늘리면 되나요&quot;</strong>
+→ <a href="/posts/local-llm-ram-vs-vram.html">램과 VRAM은 뭐가 다른가</a>
+→ <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a></p>
+<p><strong>&quot;살 카드를 고르고 있다&quot;</strong>
+→ <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB vs 5070</a> — 신품 중급
+→ <a href="/posts/rtx3060-12gb-local-llm.html">중고 3060 12GB</a> — 최대한 싸게
+→ <a href="/posts/rtx3090-vs-4070-local-llm.html">중고 3090 vs 신품</a> — 큰 모델을 노릴 때</p>
+<p><strong>&quot;맥인데요&quot;</strong>
+→ <a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 몇 GB를 사야 하나</a></p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="그래픽카드가-없어도-되나요">그래픽카드가 없어도 되나요</h3>
+<p>돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다.
+체험은 되지만 실제로 쓰기는 어렵습니다.</p>
+<h3 id="노트북으로도-되나요">노트북으로도 되나요</h3>
+<p>노트북 그래픽카드의 메모리를 확인하세요. 같은 이름이라도
+데스크톱보다 메모리가 적은 경우가 많습니다. 확인 방법은 위 2번과 같습니다.</p>
+<h3 id="인터넷-서비스보다-성능이-떨어지나요">인터넷 서비스보다 성능이 떨어지나요</h3>
+<p>떨어집니다. 개인 장비에서 돌릴 수 있는 크기에 한계가 있기 때문입니다.
+다만 번역·요약·간단한 코딩 보조 같은 일상적인 작업은 충분히 됩니다.</p>
+<h3 id="무료인가요">무료인가요</h3>
+<p>모델과 프로그램 모두 무료입니다. 전기요금만 듭니다.
+다만 장비가 부족하면 그걸 사는 비용이 듭니다.</p>
+<h3 id="얼마나-어렵나요">얼마나 어렵나요</h3>
+<p>Ollama 기준으로 설치 후 명령어 한 줄입니다.
+어려운 건 설치가 아니라 <strong>내 장비로 뭐가 되는지 판단하는 것</strong>이고,
+그게 이 사이트가 하는 일입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>필요한 건 <strong>그래픽카드 메모리</strong> 하나입니다</li>
+<li><strong>8GB가 하한선</strong>, 12GB면 코딩 보조까지 됩니다</li>
+<li>메모리가 모자라면 <strong>에러가 아니라 느려집니다</strong></li>
+<li><strong>사기 전에 지금 장비로 먼저 해보세요</strong></li>
+<li>용어는 나중에 알아도 됩니다</li>
+</ol>
+<p>궁금한 게 풀리지 않으면 <a href="/contact.html">알려주세요</a>. 같은 질문이 반복되면 글로 정리합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">로컬LLM</span> <span class="tag">입문</span> <span class="tag">Ollama</span> <span class="tag">VRAM</span> <span class="tag">초보</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/rtx4060ti-16gb-vs-4070.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">RTX 5060 Ti 16GB vs RTX 5070 — VRAM이냐 속도냐</span>
+        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 5060 Ti는 VRAM 16GB, 5070은 대역폭 1.5배. 단종된 4060 Ti·4070을 보고 계셨다면 이 글이 대체입니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/rtx4060-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">RTX 4060으로 로컬 LLM — 8GB로 어디까지 되나</span>
+        <span class="card-desc">가장 흔한 입문 카드인 RTX 4060의 VRAM은 8GB입니다. 어떤 크기 모델이 쾌적하게 돌고 어디서 막히는지, 8GB의 한계선을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/rtx3060-12gb-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">중고 RTX 3060 12GB — 로컬 LLM 입문에 아직 쓸 만한가</span>
+        <span class="card-desc">단종된 구형 카드지만 VRAM 12GB로 14B 모델이 여유롭게 돌아갑니다. 신품 4060 8GB와 비교해 어느 쪽이 맞는지, 중고로 살 때 확인할 것을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m4-16","name":"Mac M4 · 16GB","vram":10,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-24","name":"Mac M4 · 24GB","vram":16,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-32","name":"Mac M4 · 32GB","vram":22,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-24","name":"Mac M4 Pro · 24GB","vram":16,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-48","name":"Mac M4 Pro · 48GB","vram":34,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-64","name":"Mac M4 Pro · 64GB","vram":46,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-36","name":"Mac M4 Max · 36GB","vram":26,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-64","name":"Mac M4 Max · 64GB","vram":46,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-128","name":"Mac M4 Max · 128GB","vram":96,"bw":546,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script src="/assets/vram.js" defer></script>
+</body>
+</html>

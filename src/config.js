@@ -46,8 +46,11 @@ export const config = {
     slotInArticle: '',
   },
 
+  // 처음 온 사람이 곧바로 VRAM·양자화 이야기에 부딪히면 나갑니다.
+  // 시작 가이드를 메뉴 앞쪽에 두어 진입점을 만듭니다.
   nav: [
     { href: '/', label: '홈' },
+    { href: '/posts/local-llm-start-guide.html', label: '처음이신가요' },
     { href: '/tools/vram.html', label: 'VRAM 계산기' },
     { href: '/gpu.html', label: 'GPU' },
     { href: '/laptop.html', label: '노트북' },

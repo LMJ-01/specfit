@@ -36,6 +36,7 @@
     </a>
     <nav class="site-nav" aria-label="주요 메뉴">
       <a href="/">홈</a>
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
       <a href="/tools/vram.html">VRAM 계산기</a>
       <a href="/gpu.html">GPU</a>
       <a href="/laptop.html">노트북</a>
@@ -81,8 +82,32 @@
 <p><strong>VRAM이 충분하면 시스템 램은 생각보다 적게 듭니다.</strong>
 반대로 VRAM이 모자라면 그 부족분을 시스템 램이 떠안습니다.</p>
 <h2 id="둘은-역할이-다릅니다">둘은 역할이 다릅니다</h2>
-<pre><code>VRAM  →  모델이 실제로 연산되는 곳.  빠름.  용량 작음.
-RAM   →  모델을 읽어 올리는 통로.    느림.  용량 큼.</code></pre>
+<p><figure class="fig">
+<svg viewBox="0 0 640 194" width="640" height="194" role="img" aria-label="VRAM 은 연산하는 곳, 시스템 램은 모델을 읽어 올리는 통로">
+<title>VRAM 은 연산하는 곳, 시스템 램은 모델을 읽어 올리는 통로</title>
+
+
+<rect x="16" y="16" width="290" height="116" fill="var(--bg-soft)" rx="4" stroke="var(--accent)"/>
+<text x="30" y="42" fill="var(--accent)" font-size="14" font-weight="700">VRAM (그래픽카드)</text>
+<text x="30" y="66" fill="var(--fg-muted)" font-size="12">모델이 실제로 연산되는 곳</text>
+<text x="30" y="86" fill="var(--fg-muted)" font-size="12">빠릅니다 · 용량이 작습니다</text>
+<text x="30" y="106" fill="var(--fg-muted)" font-size="12">여기 다 올라가면 쾌적</text>
+
+<rect x="334" y="16" width="290" height="116" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/>
+<text x="348" y="42" fill="var(--fg)" font-size="14" font-weight="700">시스템 램</text>
+<text x="348" y="66" fill="var(--fg-muted)" font-size="12">모델을 읽어 올리는 통로</text>
+<text x="348" y="86" fill="var(--fg-muted)" font-size="12">느립니다 · 용량이 큽니다</text>
+<text x="348" y="106" fill="var(--fg-muted)" font-size="12">VRAM 이 모자랄 때만 일합니다</text>
+
+<path d="M306 74 L334 74" stroke="var(--border)" stroke-width="2" marker-end="url(#fig-arrow)"/>
+<defs><marker id="fig-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M0 0 L8 4 L0 8 z" fill="var(--border)"/></marker></defs>
+
+<text x="16" y="160" fill="var(--fg)" font-size="13" font-weight="600">모델이 VRAM 에 다 들어가면 시스템 램은 거의 놀고 있습니다.</text>
+<text x="16" y="180" fill="var(--fg-muted)" font-size="12">그래서 램 16GB 로도 충분한 경우가 많습니다.</text>
+</svg>
+<figcaption>둘은 대체재가 아닙니다. 램을 늘려도 VRAM 이 하는 일을 대신하지 못합니다.</figcaption>
+</figure></p>
 <h3 id="정상-동작일-때">정상 동작일 때</h3>
 <ol>
 <li>디스크에서 모델 파일을 읽습니다 (시스템 램 경유)</li>
