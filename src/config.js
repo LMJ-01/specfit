@@ -46,15 +46,20 @@ export const config = {
     slotInArticle: '',
   },
 
-  // 처음 온 사람이 곧바로 VRAM·양자화 이야기에 부딪히면 나갑니다.
-  // 시작 가이드를 메뉴 앞쪽에 두어 진입점을 만듭니다.
+  // 카테고리 앞에 붙는 고정 메뉴.
+  //
+  // ⚠️ 카테고리는 여기 적지 마세요. 빌드가 categories 에서 자동으로 붙입니다.
+  //    손으로 관리하니 모니터·메모리 카테고리에 글이 쌓인 뒤에도
+  //    메뉴에 안 나오는 일이 있었습니다.
+  //
+  // 홈은 왼쪽 사이트명이, 소개는 푸터가 맡습니다. 메뉴가 길어지면
+  // 모바일에서 두 줄로 접혀 오히려 안 보입니다.
+  //
+  // 처음 온 사람이 곧바로 VRAM·양자화 이야기에 부딪히면 나가므로
+  // 시작 가이드를 맨 앞에 둡니다.
   nav: [
-    { href: '/', label: '홈' },
     { href: '/posts/local-llm-start-guide.html', label: '처음이신가요' },
     { href: '/tools/vram.html', label: 'VRAM 계산기' },
-    { href: '/gpu.html', label: 'GPU' },
-    { href: '/laptop.html', label: '노트북' },
-    { href: '/about.html', label: '소개' },
   ],
 
   // 카테고리 정의. slug 는 frontmatter 의 category 와 매칭됩니다.

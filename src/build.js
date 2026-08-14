@@ -170,6 +170,22 @@ async function build() {
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 
+  // ---- 메뉴 조립 ----
+  // 카테고리를 손으로 적어두면 글이 쌓여도 메뉴에 안 나옵니다. 실제로 그랬습니다.
+  // 글이 있는 카테고리만 자동으로 붙입니다 — 빈 카테고리로 보내면 헛걸음입니다.
+  const activeCategories = config.categories.filter((c) =>
+    posts.some((p) => p.category === c.slug)
+  );
+  config.nav = [
+    ...config.nav,
+    ...activeCategories.map((c) => ({ href: `/${c.slug}.html`, label: c.label })),
+  ];
+  for (const cat of config.categories) {
+    if (!activeCategories.includes(cat)) {
+      warnings.push(`카테고리 '${cat.slug}' 에 글이 없어 메뉴에서 빠집니다`);
+    }
+  }
+
   // 품질 점검 — seo-checklist.md 항목을 빌드 때 강제합니다.
   for (const p of posts) {
     if (!p.description) warnings.push(`${p.slug}: description 없음 (검색 스니펫에 불리)`);
