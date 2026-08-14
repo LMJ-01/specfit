@@ -64,6 +64,14 @@ ${config.verification.google ? `<meta name="google-site-verification" content="$
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/style.css">
 <script>${themeBoot}</script>
+${
+  // 애드센스 로더. 심사 단계에서는 이게 곧 소유권 확인 수단이고,
+  // 승인 후에는 자동 광고가 여기서 동작합니다.
+  // async 라 렌더링을 막지 않습니다.
+  config.adsense.client
+    ? `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${config.adsense.client}" crossorigin="anonymous"></script>`
+    : ''
+}
 ${ld}
 </head>
 <body class="${bodyClass}">

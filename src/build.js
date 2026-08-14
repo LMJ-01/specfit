@@ -422,6 +422,24 @@ Sitemap: ${base}/sitemap.xml
     console.log('   광고 슬롯과 ads.txt 가 자동으로 생성됩니다.');
   }
 
+  // ---- 남은 생성물 점검 ----
+  // 카테고리를 지우거나 글을 삭제해도 예전 생성물이 그대로 남습니다.
+  // 실제로 테스트용 카테고리를 지웠는데 cpu.html 이 배포까지 간 적이 있습니다.
+  // 지우지는 않습니다 — 사람이 손으로 만든 파일을 지울 위험이 있기 때문입니다. 경고만 합니다.
+  const expected = new Set(written.map((p) => p.replace(/\\/g, '/')));
+  const scan = async (dir, prefix = '') => {
+    for (const name of await readdir(join(root, dir || '.'))) {
+      const rel = prefix ? `${prefix}/${name}` : name;
+      if (['src', 'assets', 'node_modules', '.git', 'tools'].includes(rel)) continue;
+      const full = join(root, rel);
+      const stat = await import('node:fs/promises').then((m) => m.stat(full));
+      if (stat.isDirectory()) await scan(rel, rel);
+      else if (name.endsWith('.html') && !expected.has(rel))
+        warnings.push(`생성물에 없는 HTML 이 남아 있습니다: ${rel} — 지워야 할 수 있습니다`);
+    }
+  };
+  await scan('');
+
   console.log(`\n생성 완료: ${written.length}개 파일`);
   console.log(`  글 ${posts.length} · 카테고리 ${config.categories.length} · 페이지 ${rawPages.length}`);
 
