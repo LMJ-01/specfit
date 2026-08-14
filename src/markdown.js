@@ -256,12 +256,15 @@ export function parseFrontmatter(raw) {
       value = value
         .slice(1, -1)
         .split(',')
-        .map((s) => s.trim().replace(/^["']|["']$/g, ''))
+        .map((s) => s.trim().replace(/^(["'])([\s\S]*)\1$/, '$2'))
         .filter(Boolean);
     } else if (value === 'true' || value === 'false') {
       value = value === 'true';
     } else {
-      value = value.replace(/^["']|["']$/g, '');
+      // 값 전체를 감싼 짝지어진 따옴표만 벗깁니다.
+      // 앞뒤를 따로 떼면 «"32GB 사세요"는 답이 아닙니다» 같은 값에서
+      // 앞 따옴표만 사라져 검색 스니펫에 «32GB 사세요"는» 이 나갑니다.
+      value = value.replace(/^(["'])([\s\S]*)\1$/, '$2');
     }
     data[kv[1]] = value;
   }
