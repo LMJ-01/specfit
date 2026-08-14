@@ -405,6 +405,48 @@ tbody tr:last-child td {
   color: var(--fg-muted);
 }
 
+/* ---- 구매 링크 박스 ----
+   본문 흐름을 끊지 않으면서 눈에는 띄어야 합니다.
+   광고처럼 보이면 오히려 안 눌립니다. */
+
+.buy-box {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin: 1.8rem 0;
+  padding: 1rem 1.1rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.buy-btn {
+  flex: 0 0 auto;
+  padding: 0.55rem 1.1rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.buy-btn:hover {
+  filter: brightness(1.08);
+}
+.buy-btn::after {
+  content: ' ↗';
+  font-weight: 400;
+}
+
+.buy-note {
+  flex: 1 1 14rem;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
 /* ---- 광고 슬롯 ----
    승인 전에도 자리를 확보해 둡니다. 나중에 삽입하면 CLS 가 발생합니다. */
 

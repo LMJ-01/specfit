@@ -15,6 +15,7 @@ import { markdownToHtml, parseFrontmatter } from './markdown.js';
 import { postPage, listPage, staticPage, toolPage } from './templates.js';
 import { gpus, models, quants, contexts, useCases, lengths } from './gpu-data.js';
 import { figures } from './figures.js';
+import { buyBox } from './products.js';
 
 const toolData = { gpus, models, quants, contexts, useCases, lengths };
 
@@ -47,6 +48,20 @@ function renderFigures(html, warn) {
   });
 }
 
+// {{BUY:ram}} → GPU 가 아닌 제품의 구매 링크 박스.
+const BUY_RE = /\{\{BUY:([^}]*)\}\}/gi;
+
+function renderBuyLinks(html, warn) {
+  return html.replace(BUY_RE, (full, id) => {
+    const box = buyBox(id.trim().toLowerCase());
+    if (!box) {
+      warn(`알 수 없는 제품 id: ${id} — products.js 에 없는 항목입니다`);
+      return '';
+    }
+    return box;
+  });
+}
+
 /**
  * 위젯 자리표시자를 실제 iframe 으로 바꿉니다.
  *
@@ -68,6 +83,22 @@ function renderWidgets(html, warn) {
     const reserve = h ? ` style="min-height:${h[1]}px"` : '';
     return `<div class="coupang-widget"${reserve}>${gpu.widget}</div>`;
   });
+}
+
+/**
+ * 마크다운 → HTML 로 바꾼 뒤 자리표시자를 순서대로 채웁니다.
+ *
+ * 계산기 → 위젯 → 도해 → 구매 링크 순입니다.
+ * 순서가 중요한 이유는 하나뿐입니다 — 마크다운 변환이 가장 먼저여야
+ * 자리표시자가 문단으로 감싸지지 않습니다.
+ * 나머지는 서로 겹치지 않아 순서가 자유롭습니다.
+ */
+function renderShortcodes(body, warn) {
+  const withTool = markdownToHtml(body).replace(
+    new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'),
+    '<div data-vram-tool></div>'
+  );
+  return renderBuyLinks(renderFigures(renderWidgets(withTool, warn), warn), warn);
 }
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -155,16 +186,7 @@ async function build() {
           p.data.affiliate === true || (usesTool && toolHasAffiliate) || usesWidget,
         image: p.data.image || '',
         faq,
-        html: renderFigures(
-          renderWidgets(
-            markdownToHtml(p.body).replace(
-              new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'),
-              '<div data-vram-tool></div>'
-            ),
-            (msg) => warnings.push(`${p.slug}: ${msg}`)
-          ),
-          (msg) => warnings.push(`${p.slug}: ${msg}`)
-        ),
+        html: renderShortcodes(p.body, (msg) => warnings.push(`${p.slug}: ${msg}`)),
         text: p.body.replace(/[#>*`|_-]/g, ' ').replace(/\s+/g, ' ').trim(),
       };
     })
