@@ -73,6 +73,13 @@
 신품 입문 가격대에서 무난하고, 전력도 115W로 낮아 기존 PC에 그냥 꽂히기 때문입니다.</p>
 <p>그런데 이 카드의 VRAM은 <strong>8GB</strong>입니다.
 로컬 LLM에서 8GB는 애매한 자리이고, 그래서 &quot;되긴 되는데 왜 이러지&quot; 하는 질문이 가장 많이 나옵니다.</p>
+<blockquote><p><strong>⚠️ 지금 새로 사시려는 거라면</strong> — RTX 4060은 단종되어 재고 소진 단계입니다.
+대응되는 현행 카드는 <strong>RTX 5060</strong>이고, VRAM은 같은 8GB인데 대역폭이
+272 GB/s → <strong>448 GB/s</strong>로 올랐습니다(1.65배).</p>
+<p><strong>이 글의 결론은 5060에도 그대로 적용됩니다.</strong> VRAM이 8GB로 같아서
+돌아가는 모델 크기가 같기 때문입니다. 같은 모델이 더 빨라질 뿐입니다.
+아래 &quot;8GB의 벽&quot; 이야기는 두 카드 모두의 이야기입니다.</p>
+<p>16GB로 올라가는 선택지는 <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB vs 5070</a>에 있습니다.</p></blockquote>
 <h2 id="바로-확인하기">바로 확인하기</h2>
 <p>용도와 다루는 내용의 길이를 고르면, 지금 카드로 어디까지 되는지 바로 나옵니다.</p>
 <p><div data-vram-tool></div></p>
@@ -119,7 +126,9 @@
 </table></div>
 <p>4060 Ti 8GB는 게이밍에서는 4060보다 빠르지만, <strong>로컬 LLM에서는 같은 자리</strong>입니다.
 VRAM이 같으면 올라가는 모델도 같습니다.</p>
-<p>돈을 더 쓸 거라면 4060 Ti가 아니라 <strong>4060 Ti 16GB</strong>여야 의미가 있습니다.</p>
+<p>돈을 더 쓸 거라면 4060 Ti가 아니라 <strong>16GB 쪽</strong>이어야 의미가 있습니다.
+지금 신품으로 사신다면 그 자리는 <strong>5060 Ti 16GB</strong>입니다
+(4060 Ti도 단종이고, 5060 Ti 16GB는 대역폭이 1.56배입니다).</p>
 <h3 id="2-중고-3060-12gb보다는-신품-4060이-낫겠지">2. &quot;중고 3060 12GB보다는 신품 4060이 낫겠지&quot;</h3>
 <p>로컬 LLM만 놓고 보면 <strong>반대입니다.</strong></p>
 <div class="table-wrap"><table>
@@ -158,7 +167,8 @@ CPU로 넘어가는 양이 줄어 조금은 나아집니다. 짧은 질문 위�
 <p><strong>7~8B로 충분한 용도라면 4060으로 됩니다.</strong> 저전력에 신품 보증이 있고, 파워서플라이를
 바꿀 필요도 거의 없습니다. 번역·요약·간단한 질문이 주 용도라면 더 쓸 이유가 없습니다.</p>
 <p><strong>코딩 보조가 목적이라면 8GB는 좁습니다.</strong> 코드를 이해시키려면 12~14B 이상이 편하고,
-그러면 <strong>12GB 이상</strong>이 필요합니다. 신품 기준으로는 4060 Ti 16GB나 4070부터입니다.</p>
+그러면 <strong>12GB 이상</strong>이 필요합니다. 신품 기준으로는
+<a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB나 5070</a>부터입니다.</p>
 <p>위 계산기에서 용도를 &quot;코딩 도우미&quot;로 바꿔보시면 판정이 어떻게 달라지는지 바로 보입니다.</p>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
 <h3 id="rtx-4060-8gb로-ollama가-돌아가나요">RTX 4060 8GB로 Ollama가 돌아가나요</h3>
@@ -202,8 +212,8 @@ CPU로 넘어가는 양이 줄어 조금은 나아집니다. 짧은 질문 위�
     <li class="card">
       <a href="/posts/rtx4060ti-16gb-vs-4070.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">RTX 4060 Ti 16GB vs RTX 4070 — VRAM이냐 속도냐</span>
-        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 4060 Ti는 VRAM 16GB, 4070은 대역폭 1.75배. 어느 쪽이 맞는지 모델 크기별로 갈랐습니다.</span>
+        <span class="card-title">RTX 5060 Ti 16GB vs RTX 5070 — VRAM이냐 속도냐</span>
+        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 5060 Ti는 VRAM 16GB, 5070은 대역폭 1.5배. 단종된 4060 Ti·4070을 보고 계셨다면 이 글이 대체입니다.</span>
       </a>
     </li>
     <li class="card">

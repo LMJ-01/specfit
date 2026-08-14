@@ -69,6 +69,12 @@
 <p>로컬 LLM을 시작하려는 사람이 자주 부딪히는 선택입니다.
 비슷한 가격대에서 <strong>구형 상위 카드</strong>와 <strong>신형 중급 카드</strong> 중 무엇을 살 것인가.</p>
 <p>게이밍이라면 신형이 낫습니다. 하지만 <strong>로컬 LLM에서는 답이 다릅니다.</strong></p>
+<blockquote><p><strong>⚠️ RTX 4070은 단종됐습니다.</strong> 지금 신품으로 사는 자리는 <strong>RTX 5070</strong>입니다.
+VRAM은 같은 12GB이고 대역폭이 504 → <strong>672 GB/s</strong>로 올랐습니다.</p>
+<p><strong>이 글의 결론은 바뀌지 않습니다.</strong> VRAM 12GB라는 한계선이 같기 때문입니다.
+다만 대역폭 격차는 줄었습니다 — 3090의 936 GB/s 대비 4070은 1.86배 차이였는데
+5070은 1.39배입니다. 아래 본문은 4070 기준으로 읽으시고,
+신품 구매라면 5070으로 바꿔 생각하시면 됩니다.</p></blockquote>
 <h2 id="결론부터">결론부터</h2>
 <p><strong>로컬 LLM 용도라면 3090입니다.</strong> VRAM이 두 배이고 대역폭도 높습니다.</p>
 <div class="table-wrap"><table>
@@ -139,14 +145,15 @@ Qwen 14B, Gemma 12B 정도로 코딩 보조나 문서 요약을 한다면 12GB�
 <div class="table-wrap"><table>
 <thead><tr><th>카드</th><th>VRAM</th><th>특징</th></tr></thead>
 <tbody>
-<tr><td>RTX 4060 Ti 16GB</td><td>16GB</td><td>신품 + 저전력(165W). <strong>14B 여유, 32B 느림</strong></td></tr>
-<tr><td>RTX 4070 Ti Super</td><td>16GB</td><td>4070보다 VRAM 4GB 많음</td></tr>
+<tr><td>RTX 5060 Ti 16GB</td><td>16GB</td><td>신품 + 저전력(180W). <strong>14B 여유, 32B 느림</strong></td></tr>
+<tr><td>RTX 5070 Ti</td><td>16GB</td><td>5070보다 VRAM 4GB 많고 대역폭 896 GB/s</td></tr>
 <tr><td>RTX 3090 Ti</td><td>24GB</td><td>3090과 VRAM 동일, 대역폭 약간 높음, 더 뜨거움</td></tr>
 </tbody>
 </table></div>
-<p><strong>4060 Ti 16GB</strong>는 특히 눈여겨볼 만합니다.
-성능은 3090보다 낮지만 VRAM 16GB에 신품·보증·저전력이라,
-중고가 부담스러운 경우의 현실적인 대안입니다.</p>
+<p><strong>5060 Ti 16GB</strong>는 특히 눈여겨볼 만합니다.
+대역폭은 3090보다 낮지만 VRAM 16GB에 신품·보증·저전력이라,
+중고가 부담스러운 경우의 현실적인 대안입니다.
+자세한 비교는 <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB vs 5070</a>에 있습니다.</p>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
 <h3 id="3090-두-장이-4090-한-장보다-나은가요">3090 두 장이 4090 한 장보다 나은가요</h3>
 <p>VRAM 총량은 48GB로 4090(24GB)의 두 배라 더 큰 모델을 올릴 수 있습니다.
@@ -169,7 +176,7 @@ Qwen 14B, Gemma 12B 정도로 코딩 보조나 문서 요약을 한다면 12GB�
 <li><strong>로컬 LLM은 VRAM이 먼저</strong>입니다 — 세대나 연산 성능이 아니라</li>
 <li>3090은 VRAM 24GB, 대역폭 936GB/s로 <strong>4070을 두 지표에서 앞섭니다</strong></li>
 <li>대신 <strong>350W·3슬롯·중고 리스크</strong>를 받아들여야 합니다</li>
-<li><strong>14B 이하만 쓴다면</strong> 4070이나 4060 Ti 16GB로 충분합니다</li>
+<li><strong>14B 이하만 쓴다면</strong> 5070이나 5060 Ti 16GB로 충분합니다 (4070은 단종)</li>
 </ol>
 <p>VRAM 용량별로 어떤 모델이 돌아가는지는
 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>에 표로 정리했습니다.</p>
@@ -187,8 +194,8 @@ Qwen 14B, Gemma 12B 정도로 코딩 보조나 문서 요약을 한다면 12GB�
     <li class="card">
       <a href="/posts/rtx4060ti-16gb-vs-4070.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">RTX 4060 Ti 16GB vs RTX 4070 — VRAM이냐 속도냐</span>
-        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 4060 Ti는 VRAM 16GB, 4070은 대역폭 1.75배. 어느 쪽이 맞는지 모델 크기별로 갈랐습니다.</span>
+        <span class="card-title">RTX 5060 Ti 16GB vs RTX 5070 — VRAM이냐 속도냐</span>
+        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 5060 Ti는 VRAM 16GB, 5070은 대역폭 1.5배. 단종된 4060 Ti·4070을 보고 계셨다면 이 글이 대체입니다.</span>
       </a>
     </li>
     <li class="card">

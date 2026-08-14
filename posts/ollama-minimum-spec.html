@@ -81,13 +81,16 @@
 <div class="table-wrap"><table>
 <thead><tr><th>VRAM</th><th>여유 (전부 VRAM에)</th><th>그 위</th><th>대표 GPU</th></tr></thead>
 <tbody>
-<tr><td>8GB</td><td>7~8B</td><td>12~14B 느림</td><td>RTX 4060, 3070</td></tr>
-<tr><td>12GB</td><td>12~14B</td><td>20~22B 느림</td><td>RTX 4070, 3060 12GB</td></tr>
-<tr><td>16GB</td><td>14B</td><td>20~22B 빠듯 · 32B 느림</td><td>RTX 4070 Ti Super, 4060 Ti 16GB</td></tr>
-<tr><td>24GB</td><td>32B</td><td>70B 불가</td><td>RTX 4090, 3090</td></tr>
+<tr><td>8GB</td><td>7~8B</td><td>12~14B 느림</td><td>RTX 5060, 5050</td></tr>
+<tr><td>12GB</td><td>12~14B</td><td>20~22B 느림</td><td>RTX 5070, 3060 12GB</td></tr>
+<tr><td>16GB</td><td>14B</td><td>20~22B 빠듯 · 32B 느림</td><td>RTX 5060 Ti 16GB, 5070 Ti</td></tr>
+<tr><td>24GB</td><td>32B</td><td>70B 불가</td><td>RTX 3090(중고)</td></tr>
+<tr><td>32GB</td><td>32B</td><td>70B 불가</td><td>RTX 5090</td></tr>
 <tr><td>48GB+</td><td>32B</td><td>70B 빠듯 · 120B 불가</td><td>RTX 6000 Ada, A6000</td></tr>
 </tbody>
 </table></div>
+<p>대표 GPU는 <strong>지금 신품으로 살 수 있는 카드</strong> 기준입니다.
+RTX 40 시리즈는 단종되어 뺐습니다 — 같은 VRAM의 현행 카드는 대역폭이 더 높습니다.</p>
 <p>판정은 위 계산기와 같은 기준입니다. 글과 도구가 다른 답을 내면 안 되기 때문입니다.</p>
 <p><strong>8GB가 실질적인 하한선입니다.</strong> 그 아래는 7B 모델도 컨텍스트를 크게 줄여야 하고,
 사용 경험이 급격히 나빠집니다.</p>
@@ -144,8 +147,8 @@ VRAM을 100% 채우도록 계산하면 실제로는 안 돌아갑니다.</p>
 VRAM이 부족하면 아무리 빠른 GPU라도 CPU로 넘어가면서 느려집니다.</p>
 <p>그래서 이런 역전이 생깁니다.</p>
 <ul>
-<li>RTX 4060 Ti <strong>16GB</strong> &gt; RTX 4070 <strong>12GB</strong> — 32B 모델을 돌릴 때</li>
-<li>RTX 3090 <strong>24GB</strong> &gt; RTX 4070 Ti <strong>12GB</strong> — 세대가 낮아도 VRAM이 크면 유리</li>
+<li>RTX 5060 Ti <strong>16GB</strong> &gt; RTX 5070 <strong>12GB</strong> — 32B 모델을 돌릴 때</li>
+<li>RTX 3090 <strong>24GB</strong> &gt; RTX 5070 <strong>12GB</strong> — 세대가 낮아도 VRAM이 크면 유리</li>
 </ul>
 <p>중고 3090이 로컬 LLM 용도로 꾸준히 언급되는 이유가 이것입니다.</p>
 <h3 id="메모리-대역폭">메모리 대역폭</h3>
@@ -196,8 +199,8 @@ VRAM이 부족하면 아무리 빠른 GPU라도 CPU로 넘어가면서 느려집
     <li class="card">
       <a href="/posts/rtx4060ti-16gb-vs-4070.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">RTX 4060 Ti 16GB vs RTX 4070 — VRAM이냐 속도냐</span>
-        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 4060 Ti는 VRAM 16GB, 4070은 대역폭 1.75배. 어느 쪽이 맞는지 모델 크기별로 갈랐습니다.</span>
+        <span class="card-title">RTX 5060 Ti 16GB vs RTX 5070 — VRAM이냐 속도냐</span>
+        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 5060 Ti는 VRAM 16GB, 5070은 대역폭 1.5배. 단종된 4060 Ti·4070을 보고 계셨다면 이 글이 대체입니다.</span>
       </a>
     </li>
     <li class="card">
