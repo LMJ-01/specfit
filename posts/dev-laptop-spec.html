@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개발용 노트북 사양 — 나중에 못 바꾸는 것부터 고르세요 | 스펙핏</title>
+<meta name="description" content="노트북은 부품 대부분을 나중에 못 바꿉니다. 램, 화면, 그래픽카드 순으로 살 때 정해야 할 것과 나중에 해도 되는 것을 갈랐습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/dev-laptop-spec.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="개발용 노트북 사양 — 나중에 못 바꾸는 것부터 고르세요 | 스펙핏">
+<meta property="og:description" content="노트북은 부품 대부분을 나중에 못 바꿉니다. 램, 화면, 그래픽카드 순으로 살 때 정해야 할 것과 나중에 해도 되는 것을 갈랐습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/dev-laptop-spec.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 노트북 사양 — 나중에 못 바꾸는 것부터 고르세요","description":"노트북은 부품 대부분을 나중에 못 바꿉니다. 램, 화면, 그래픽카드 순으로 살 때 정해야 할 것과 나중에 해도 되는 것을 갈랐습니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dev-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"개발용 노트북 사양 — 나중에 못 바꾸는 것부터 고르세요","item":"https://specfit.kr/posts/dev-laptop-spec.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"로컬 LLM용으로 노트북이 괜찮나요","acceptedAnswer":{"@type":"Answer","text":"가능하지만 데스크톱보다 불리합니다. VRAM이 적고 전력 제한이 있으며 발열로 속도가 떨어질 수 있습니다. **들고 다녀야 하는 게 아니라면 데스크톱**이 낫습니다."}},{"@type":"Question","name":"맥북과 윈도우 노트북 중에서는","acceptedAnswer":{"@type":"Answer","text":"로컬 LLM만 놓고 보면 **큰 모델을 원하면 맥, 속도를 원하면 윈도우 + 전용 GPU**입니다. 맥은 통합 메모리라 128GB까지 가고, 윈도우 노트북은 대역폭이 높은 편입니다."}},{"@type":"Question","name":"램 16GB인데 32GB로 늘릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"슬롯이 있으면 가능합니다. 제품 사양이나 분해 후기에서 확인하세요. **온보드면 불가능합니다.**"}},{"@type":"Question","name":"화면은 나중에 모니터를 붙이면 되지 않나요","acceptedAnswer":{"@type":"Answer","text":"책상에서만 쓴다면 맞습니다. 다만 들고 다닐 때는 내장 화면이 전부입니다. **주로 어디서 쓸지**를 먼저 정하시면 답이 나옵니다."}},{"@type":"Question","name":"게이밍 노트북이 개발에도 좋나요","acceptedAnswer":{"@type":"Answer","text":"그래픽카드와 램 슬롯이 있어 로컬 LLM에는 유리합니다. 대신 무겁고 배터리가 짧습니다. **들고 다니는 빈도**가 판단 기준입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>개발용 노트북 사양 — 나중에 못 바꾸는 것부터 고르세요</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-15">2026년 8월 15일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>노트북은 데스크톱과 고르는 방식이 다릅니다.</p>
+<p><strong>부품 대부분을 나중에 못 바꾸기 때문</strong>입니다.
+그래서 &quot;지금 필요한 것&quot;이 아니라 <strong>&quot;바꿀 수 없는 것&quot;</strong>부터 정해야 합니다.</p>
+<h2 id="결론부터-순서가-중요합니다">결론부터 — 순서가 중요합니다</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>순위</th><th>항목</th><th>나중에 바꿀 수 있나</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>램</strong></td><td>대개 못 바꿉니다</td></tr>
+<tr><td>2</td><td><strong>화면</strong></td><td>못 바꿉니다</td></tr>
+<tr><td>3</td><td><strong>그래픽카드</strong></td><td>못 바꿉니다</td></tr>
+<tr><td>4</td><td>SSD</td><td><strong>바꿀 수 있는 경우가 많습니다</strong></td></tr>
+<tr><td>5</td><td>CPU</td><td>못 바꾸지만 대개 충분합니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>SSD만 나중에 해결됩니다.</strong> 나머지는 살 때 정해집니다.
+그러니 예산이 빠듯하면 <strong>SSD를 가장 작게 잡고 나머지에 쓰는 편</strong>이 낫습니다.</p>
+<h2 id="1-램-슬롯이-있는지부터-확인">1. 램 — 슬롯이 있는지부터 확인</h2>
+<p><strong>최근 얇은 노트북은 램이 메인보드에 납땜되어 있습니다.</strong>
+LPDDR 계열을 쓰는 모델이 특히 그렇습니다.</p>
+<p>사기 전에 확인할 것:</p>
+<ul>
+<li>제품 사양에 <strong>&quot;온보드&quot;</strong> 또는 <strong>&quot;교체 불가&quot;</strong> 표기가 있는지</li>
+<li>램 슬롯 개수가 명시되어 있는지</li>
+<li>분해 후기에서 슬롯이 보이는지</li>
+</ul>
+<p><strong>슬롯이 없다면 살 때 32GB를 골라야 합니다.</strong></p>
+<h3 id="몇-gb를-골라야-하나">몇 GB를 골라야 하나</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>권장</th></tr></thead>
+<tbody>
+<tr><td>웹 개발, 가벼운 작업</td><td>16GB</td></tr>
+<tr><td>도커·가상머신·에뮬레이터</td><td><strong>32GB</strong></td></tr>
+<tr><td>로컬 LLM을 CPU로</td><td>32GB 이상</td></tr>
+</tbody>
+</table></div>
+<p><strong>도커나 안드로이드 에뮬레이터를 쓴다면 16GB는 좁습니다.</strong>
+자세한 기준은 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 정리했습니다.</p>
+<p><strong>맥은 전부 통합 메모리라 무조건 못 늘립니다.</strong>
+게다가 램이 VRAM 역할까지 하므로 계산이 다릅니다 —
+<a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 글</a>을 보세요.</p>
+<h2 id="2-화면-해상도와-크기">2. 화면 — 해상도와 크기</h2>
+<p>노트북은 모니터를 나중에 붙일 수 있지만, <strong>들고 다닐 때는 내장 화면이 전부</strong>입니다.</p>
+<p>PPI를 계산하면 이렇습니다.</p>
+<pre><code>PPI = 대각선 픽셀 수 ÷ 화면 인치</code></pre>
+<div class="table-wrap"><table>
+<thead><tr><th>크기·해상도</th><th>PPI</th><th>코딩에서</th></tr></thead>
+<tbody>
+<tr><td>15.6&quot; FHD (1920×1080)</td><td>141</td><td>무난합니다</td></tr>
+<tr><td>14&quot; FHD+ (1920×1200)</td><td>162</td><td>세로가 조금 더 깁니다</td></tr>
+<tr><td>16&quot; WQXGA (2560×1600)</td><td>189</td><td>선명하고 넓습니다</td></tr>
+<tr><td>14&quot; 2.8K (2880×1800)</td><td>243</td><td>매우 선명, 배율 필수</td></tr>
+</tbody>
+</table></div>
+<p><strong>세로 픽셀이 코딩에서는 중요합니다.</strong>
+<code>1920×1200</code> 이 <code>1920×1080</code> 보다 코드가 한 화면에 더 들어갑니다.
+16:10 비율을 쓰는 모델을 눈여겨보세요.</p>
+<p>배율과 작업 영역의 관계는
+<a href="/posts/coding-monitor-resolution.html">코딩용 모니터 글</a>에 자세히 적었습니다.</p>
+<h2 id="3-그래픽카드-로컬-llm을-할-거라면">3. 그래픽카드 — 로컬 LLM을 할 거라면</h2>
+<p><strong>노트북 그래픽카드는 같은 이름이라도 데스크톱과 다릅니다.</strong></p>
+<p>두 가지를 확인하세요.</p>
+<p><strong>VRAM 용량</strong>
+이름이 같아도 노트북 쪽이 적은 경우가 있습니다.
+<a href="/posts/ollama-minimum-spec.html">로컬 LLM에서는 VRAM이 먼저</a>이므로 이게 가장 중요합니다.</p>
+<p><strong>전력 제한</strong>
+같은 카드라도 노트북마다 허용 전력이 다릅니다.
+얇은 모델일수록 낮게 잡혀 성능이 떨어집니다.
+제품 사양에 최대 전력이 표기되어 있으면 확인하세요.</p>
+<h3 id="로컬-llm-기준-최소선">로컬 LLM 기준 최소선</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>VRAM</th><th>할 수 있는 것</th></tr></thead>
+<tbody>
+<tr><td>6GB 이하</td><td>3B 정도. 아쉽습니다</td></tr>
+<tr><td><strong>8GB</strong></td><td>7~8B. 실질적 하한선</td></tr>
+<tr><td>12GB 이상</td><td>12~14B. 코딩 보조가 됩니다</td></tr>
+</tbody>
+</table></div>
+<p><div data-vram-tool></div></p>
+<p>내장그래픽만 있는 모델은 로컬 LLM에 적합하지 않습니다.
+이유는 <a href="/posts/local-llm-without-gpu.html">CPU로 돌리면 얼마나 느린가</a>에 있습니다.</p>
+<h2 id="4-ssd-여기서-아끼세요">4. SSD — 여기서 아끼세요</h2>
+<p><strong>대부분의 노트북은 SSD를 교체하거나 추가할 수 있습니다.</strong></p>
+<p>슬롯이 두 개인 모델이면 나중에 하나 더 꽂으면 됩니다.
+하나뿐이어도 더 큰 것으로 갈아끼울 수 있습니다.</p>
+<p><strong>그러니 살 때 512GB로 시작해도 됩니다.</strong>
+그 차액을 램이나 화면에 쓰는 편이 낫습니다.</p>
+<p>다만 로컬 LLM을 할 계획이라면 <strong>용량이 생각보다 빨리 찹니다.</strong>
+모델 하나가 5~20GB이고, 이것저것 받다 보면 금방 수십 GB가 됩니다.</p>
+<h2 id="5-cpu-대개-신경-안-써도-됩니다">5. CPU — 대개 신경 안 써도 됩니다</h2>
+<p><strong>요즘 노트북 CPU는 개발 작업에 대체로 충분합니다.</strong></p>
+<ul>
+<li>컴파일이 잦다면 코어 수가 도움이 됩니다</li>
+<li>로컬 LLM에서는 <strong>CPU보다 그래픽카드</strong>가 훨씬 중요합니다</li>
+<li>배터리를 중시하면 저전력 계열이 유리합니다</li>
+</ul>
+<p><strong>예산을 CPU 등급에 올리기보다 램이나 화면에 쓰는 편</strong>이 체감이 큽니다.</p>
+<h2 id="자주-봐야-할-함정">자주 봐야 할 함정</h2>
+<p><strong>같은 모델명, 다른 구성</strong>
+노트북은 같은 이름 안에서 램·SSD·GPU가 갈립니다.
+<strong>상세 구성을 반드시 확인하세요.</strong> 리뷰에서 본 성능과 다른 물건일 수 있습니다.</p>
+<p><strong>&quot;최대 32GB 지원&quot;</strong>
+지금 32GB가 들어있다는 뜻이 아닙니다. 슬롯이 받는 최대치입니다.</p>
+<p><strong>노트북 GPU 이름</strong>
+데스크톱과 같은 이름이어도 다른 물건입니다. VRAM을 직접 확인하세요.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="로컬-llm용으로-노트북이-괜찮나요">로컬 LLM용으로 노트북이 괜찮나요</h3>
+<p>가능하지만 데스크톱보다 불리합니다. VRAM이 적고 전력 제한이 있으며
+발열로 속도가 떨어질 수 있습니다. <strong>들고 다녀야 하는 게 아니라면 데스크톱</strong>이 낫습니다.</p>
+<h3 id="맥북과-윈도우-노트북-중에서는">맥북과 윈도우 노트북 중에서는</h3>
+<p>로컬 LLM만 놓고 보면 <strong>큰 모델을 원하면 맥, 속도를 원하면 윈도우 + 전용 GPU</strong>입니다.
+맥은 통합 메모리라 128GB까지 가고, 윈도우 노트북은 대역폭이 높은 편입니다.</p>
+<h3 id="램-16gb인데-32gb로-늘릴-수-있나요">램 16GB인데 32GB로 늘릴 수 있나요</h3>
+<p>슬롯이 있으면 가능합니다. 제품 사양이나 분해 후기에서 확인하세요.
+<strong>온보드면 불가능합니다.</strong></p>
+<h3 id="화면은-나중에-모니터를-붙이면-되지-않나요">화면은 나중에 모니터를 붙이면 되지 않나요</h3>
+<p>책상에서만 쓴다면 맞습니다. 다만 들고 다닐 때는 내장 화면이 전부입니다.
+<strong>주로 어디서 쓸지</strong>를 먼저 정하시면 답이 나옵니다.</p>
+<h3 id="게이밍-노트북이-개발에도-좋나요">게이밍 노트북이 개발에도 좋나요</h3>
+<p>그래픽카드와 램 슬롯이 있어 로컬 LLM에는 유리합니다.
+대신 무겁고 배터리가 짧습니다. <strong>들고 다니는 빈도</strong>가 판단 기준입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>바꿀 수 없는 것부터</strong> 고르세요. 램 → 화면 → 그래픽카드 순입니다</li>
+<li><strong>램 슬롯이 있는지 확인하세요.</strong> 없으면 살 때 32GB여야 합니다</li>
+<li>코딩에는 <strong>세로 픽셀</strong>이 중요합니다. 16:10 비율을 보세요</li>
+<li><strong>SSD는 나중에 바꿀 수 있으니</strong> 여기서 아끼세요</li>
+<li>노트북 GPU는 이름이 같아도 다릅니다. <strong>VRAM을 직접 확인</strong>하세요</li>
+</ol>
+<p>스펙이나 판단이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">개발용노트북</span> <span class="tag">노트북사양</span> <span class="tag">램</span> <span class="tag">로컬LLM</span> <span class="tag">해상도</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mac-unified-memory-local-llm.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">맥으로 로컬 LLM — 통합메모리 몇 GB를 사야 하나</span>
+        <span class="card-desc">맥은 램이 VRAM 역할까지 합니다. 그런데 전체를 다 쓰지는 못하고, 속도는 용량이 아니라 칩이 정합니다. 살 때 정해지고 나중에 못 바꿉니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m4-16","name":"Mac M4 · 16GB","vram":10,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-24","name":"Mac M4 · 24GB","vram":16,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-32","name":"Mac M4 · 32GB","vram":22,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-24","name":"Mac M4 Pro · 24GB","vram":16,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-48","name":"Mac M4 Pro · 48GB","vram":34,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-64","name":"Mac M4 Pro · 64GB","vram":46,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-36","name":"Mac M4 Max · 36GB","vram":26,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-64","name":"Mac M4 Max · 64GB","vram":46,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-128","name":"Mac M4 Max · 128GB","vram":96,"bw":546,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script src="/assets/vram.js" defer></script>
+</body>
+</html>

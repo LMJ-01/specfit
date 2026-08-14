@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>양자화 Q4 Q5 Q8 — 올리면 뭐가 좋아지나 | 스펙핏</title>
+<meta name="description" content="Q8이 Q4보다 용량을 73% 더 씁니다. 그 대가로 얻는 게 무엇인지, 같은 VRAM이라면 어느 쪽이 나은지 실측 용량으로 계산했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/quantization-q4-q5-q8.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="양자화 Q4 Q5 Q8 — 올리면 뭐가 좋아지나 | 스펙핏">
+<meta property="og:description" content="Q8이 Q4보다 용량을 73% 더 씁니다. 그 대가로 얻는 게 무엇인지, 같은 VRAM이라면 어느 쪽이 나은지 실측 용량으로 계산했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/quantization-q4-q5-q8.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"양자화 Q4 Q5 Q8 — 올리면 뭐가 좋아지나","description":"Q8이 Q4보다 용량을 73% 더 씁니다. 그 대가로 얻는 게 무엇인지, 같은 VRAM이라면 어느 쪽이 나은지 실측 용량으로 계산했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/quantization-q4-q5-q8.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"양자화 Q4 Q5 Q8 — 올리면 뭐가 좋아지나","item":"https://specfit.kr/posts/quantization-q4-q5-q8.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ollama에서 기본으로 받으면 뭐가 오나요","acceptedAnswer":{"@type":"Answer","text":"대개 Q4 계열이 기본입니다. **태그를 붙이지 않으면 기본값이 받아집니다.** 크기를 정확히 알고 싶다면 태그를 직접 지정하세요."}},{"@type":"Question","name":"K_M, K_S 같은 건 뭔가요","acceptedAnswer":{"@type":"Answer","text":"같은 Q4 안에서도 세부 방식이 나뉜 것입니다."}},{"@type":"Question","name":"Q4로 받았는데 파일 크기가 표와 다릅니다","acceptedAnswer":{"@type":"Answer","text":"배포판마다 조금씩 다릅니다. 위 수치는 대표 모델 9종의 평균이라 개별 모델은 ±10% 정도 차이날 수 있습니다. 정확한 값은 `ollama.com` 의 해당 모델 페이지에서 확인하세요."}},{"@type":"Question","name":"양자화하면 한국어가 나빠지나요","acceptedAnswer":{"@type":"Answer","text":"양자화는 언어를 가리지 않고 전체 정밀도를 낮춥니다. 다만 원래 한국어가 약한 모델은 양자화 후 더 티가 날 수 있습니다. **모델 종류를 먼저 고르시는 편**이 낫습니다."}},{"@type":"Question","name":"32B를 Q8로 쓰려면 어떤 카드가 필요한가요","acceptedAnswer":{"@type":"Answer","text":"32B Q8이면 약 36GB입니다. **개인용 그래픽카드로는 불가능합니다.** 맥 통합메모리 64GB 이상이라면 가능합니다 — [맥 통합메모리 글](/posts/mac-unified-memory-local-llm.html)을 참고하세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>양자화 Q4 Q5 Q8 — 올리면 뭐가 좋아지나</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-15">2026년 8월 15일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>Ollama에서 모델을 받다 보면 <code>q4_K_M</code>, <code>q5_K_M</code>, <code>q8_0</code> 같은 꼬리표를 보게 됩니다.</p>
+<p><strong>숫자가 클수록 좋아 보이지만, 그만큼 VRAM을 더 씁니다.</strong>
+그 거래가 남는 장사인지 계산해 봤습니다.</p>
+<h2 id="양자화가-뭔가요">양자화가 뭔가요</h2>
+<p>모델을 <strong>압축해서 용량을 줄이는 기술</strong>입니다.</p>
+<p>원본 모델은 숫자 하나를 정밀하게 저장하는데,
+양자화는 그 정밀도를 낮춰서 파일을 작게 만듭니다.
+사진을 JPEG로 저장하는 것과 비슷한 발상입니다.</p>
+<p><strong>Q 뒤의 숫자가 정밀도</strong>입니다. Q8이 Q4보다 정밀합니다.</p>
+<h2 id="용량이-얼마나-차이나나">용량이 얼마나 차이나나</h2>
+<p><code>ollama.com</code> 의 실제 배포 파일 크기를 재서 뽑은 값입니다(2026-08-15 확인).</p>
+<div class="table-wrap"><table>
+<thead><tr><th>양자화</th><th>파라미터당</th><th>Q4 대비</th></tr></thead>
+<tbody>
+<tr><td><strong>Q4</strong></td><td>0.63 GB</td><td>기준</td></tr>
+<tr><td>Q5</td><td>0.74 GB</td><td><strong>+17%</strong></td></tr>
+<tr><td>Q8</td><td>1.09 GB</td><td><strong>+73%</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>Q8은 Q4보다 73% 더 씁니다.</strong> 거의 두 배에 가깝습니다.</p>
+<p>14B 모델로 환산하면 이렇습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>양자화</th><th>14B 필요 메모리</th><th>여유롭게 돌리려면</th></tr></thead>
+<tbody>
+<tr><td><strong>Q4</strong></td><td>약 10.0GB</td><td><strong>12GB</strong></td></tr>
+<tr><td>Q5</td><td>약 11.5GB</td><td>16GB</td></tr>
+<tr><td>Q8</td><td>약 16.4GB</td><td><strong>24GB 이상</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>같은 14B 모델인데 필요한 카드가 12GB에서 24GB로 바뀝니다.</strong>
+가격대가 완전히 달라지는 폭입니다.</p>
+<p><div data-vram-tool></div></p>
+<p>계산기의 &quot;다른 용도도 함께 보기&quot;를 열면 품질 설정을 바꿔볼 수 있습니다.</p>
+<h2 id="그래서-뭐가-좋아지나">그래서 뭐가 좋아지나</h2>
+<p><strong>정밀도가 올라간 만큼 원본에 가까워집니다.</strong></p>
+<p>다만 <strong>Q4에서 Q8로 올렸을 때 체감 차이는 크지 않다</strong>는 것이 일반적인 경향입니다.
+Q4가 사실상 표준으로 자리 잡은 이유이기도 합니다.</p>
+<blockquote><p>⚠️ 이 부분은 <strong>저희가 직접 측정한 것이 아닙니다.</strong>
+공개된 자료와 커뮤니티 보고를 근거로 한 서술입니다.
+용량 수치는 실측이지만, 품질 차이는 그렇지 않습니다.</p></blockquote>
+<h2 id="핵심-같은-vram이면-어느-쪽인가">핵심 — 같은 VRAM이면 어느 쪽인가</h2>
+<p>여기가 실제로 판단이 필요한 지점입니다.</p>
+<p><strong>16GB 카드를 가지고 있다고 해봅시다.</strong> 두 가지 선택이 있습니다.</p>
+<pre><code>A.  14B 를 Q8 로      →  16.4GB  →  안 들어감
+B.  14B 를 Q4 로      →  10.0GB  →  여유
+C.  22B 를 Q4 로      →  15.1GB  →  빠듯하게 들어감</code></pre>
+<p><strong>A는 아예 안 됩니다.</strong> 그러면 B와 C 중에서 고르게 되는데,
+<strong>대체로 C가 낫습니다.</strong> 더 큰 모델이 주는 이득이 양자화 정밀도보다 크기 때문입니다.</p>
+<blockquote><p><strong>같은 VRAM이라면 &quot;작은 모델을 Q8로&quot;보다 &quot;큰 모델을 Q4로&quot;가 대체로 낫습니다.</strong></p></blockquote>
+<p>이건 반대 방향으로도 성립합니다.
+<strong>Q4 아래(Q3, Q2)로 내려서 더 큰 모델을 욱여넣는 것은 권하지 않습니다.</strong>
+그 아래로는 품질 저하가 체감되기 시작합니다.</p>
+<pre><code>Q2·Q3   ←  너무 낮음, 품질 저하 체감
+Q4      ←  여기가 균형점
+Q5      ←  여유 있으면 고려
+Q8      ←  용량 대비 이득이 작음</code></pre>
+<h2 id="언제-q5나-q8을-쓰나">언제 Q5나 Q8을 쓰나</h2>
+<p><strong>VRAM이 남을 때만입니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>권장</th></tr></thead>
+<tbody>
+<tr><td>VRAM이 빠듯하다</td><td><strong>Q4</strong> — 고민할 필요 없습니다</td></tr>
+<tr><td>한 단계 큰 모델이 Q4로 들어간다</td><td><strong>큰 모델 + Q4</strong></td></tr>
+<tr><td>더 큰 모델이 어차피 안 들어간다</td><td>Q5로 올려볼 만합니다</td></tr>
+<tr><td>VRAM이 크게 남는다</td><td>Q8도 괜찮습니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>세 번째가 실제로 쓸모 있는 경우입니다.</strong> 다만 생각보다 자리가 좁습니다.</p>
+<p>예를 들어 12GB 카드에서 14B는 Q4로 10.0GB이고, 그다음 크기(22B)는
+Q4로도 15.1GB라 어차피 안 들어갑니다. 그러면 Q5를 시도해 볼 만한데
+14B Q5가 11.5GB라 <strong>여유가 아니라 &quot;빠듯&quot;입니다.</strong> 긴 내용을 다루면 밀립니다.</p>
+<p>16GB 카드라면 14B Q5가 11.5GB로 여유롭게 들어갑니다.
+<strong>Q5를 편하게 쓸 수 있는 건 16GB부터</strong>입니다.</p>
+<h2 id="vram별-정리">VRAM별 정리</h2>
+<p>Q4 기준으로 여유롭게 돌아가는 조합입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>VRAM</th><th>Q4</th><th>Q5</th><th>Q8</th></tr></thead>
+<tbody>
+<tr><td>8GB</td><td>7~8B</td><td>7~8B</td><td><strong>3B</strong></td></tr>
+<tr><td>12GB</td><td>12~14B</td><td><strong>7~8B</strong></td><td>7~8B</td></tr>
+<tr><td>16GB</td><td>12~14B</td><td>12~14B</td><td><strong>7~8B</strong></td></tr>
+<tr><td>24GB</td><td>32B</td><td>20~22B</td><td>12~14B</td></tr>
+<tr><td>32GB</td><td>32B</td><td>32B</td><td>20~22B</td></tr>
+</tbody>
+</table></div>
+<p><strong>Q8 칸은 Q4보다 한두 체급 내려갑니다.</strong>
+16GB 카드에서 Q8을 쓰면 7~8B가 상한입니다 — Q4였다면 14B가 돌아갈 자리입니다.</p>
+<p><strong>12GB 줄이 특히 아깝습니다.</strong> Q4로는 14B가 여유롭게 도는데,
+Q5로만 올려도 곧바로 8B로 내려갑니다(14B Q5 = 11.5GB, 12GB의 90%인 10.8GB를 넘김).</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="ollama에서-기본으로-받으면-뭐가-오나요">Ollama에서 기본으로 받으면 뭐가 오나요</h3>
+<p>대개 Q4 계열이 기본입니다. <strong>태그를 붙이지 않으면 기본값이 받아집니다.</strong>
+크기를 정확히 알고 싶다면 태그를 직접 지정하세요.</p>
+<h3 id="k_m-k_s-같은-건-뭔가요">K_M, K_S 같은 건 뭔가요</h3>
+<p>같은 Q4 안에서도 세부 방식이 나뉜 것입니다.
+<code>K_M</code> 이 무난한 선택으로 널리 쓰입니다. <strong>처음에는 신경 쓰지 않으셔도 됩니다.</strong></p>
+<h3 id="q4로-받았는데-파일-크기가-표와-다릅니다">Q4로 받았는데 파일 크기가 표와 다릅니다</h3>
+<p>배포판마다 조금씩 다릅니다. 위 수치는 대표 모델 9종의 평균이라
+개별 모델은 ±10% 정도 차이날 수 있습니다.
+정확한 값은 <code>ollama.com</code> 의 해당 모델 페이지에서 확인하세요.</p>
+<h3 id="양자화하면-한국어가-나빠지나요">양자화하면 한국어가 나빠지나요</h3>
+<p>양자화는 언어를 가리지 않고 전체 정밀도를 낮춥니다.
+다만 원래 한국어가 약한 모델은 양자화 후 더 티가 날 수 있습니다.
+<strong>모델 종류를 먼저 고르시는 편</strong>이 낫습니다.</p>
+<h3 id="32b를-q8로-쓰려면-어떤-카드가-필요한가요">32B를 Q8로 쓰려면 어떤 카드가 필요한가요</h3>
+<p>32B Q8이면 약 36GB입니다. <strong>개인용 그래픽카드로는 불가능합니다.</strong>
+맥 통합메모리 64GB 이상이라면 가능합니다 —
+<a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 글</a>을 참고하세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>Q8은 Q4보다 용량을 73% 더 씁니다.</strong> 거의 두 배입니다</li>
+<li>같은 14B라도 <strong>Q4는 12GB, Q8은 24GB 이상</strong>이 필요합니다</li>
+<li><strong>같은 VRAM이면 &quot;큰 모델 + Q4&quot;가 대체로 낫습니다</strong></li>
+<li><strong>Q4 아래로는 내려가지 마세요.</strong> 품질 저하가 체감됩니다</li>
+<li>Q5·Q8은 <strong>VRAM이 남을 때만</strong> 고려하세요</li>
+</ol>
+<p>VRAM 용량별 전체 표는 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>에,
+8GB에서의 실전 요령은 <a href="/posts/vram-8gb-tips.html">8GB 활용법</a>에 있습니다.</p>
+<p>실제 사용 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">양자화</span> <span class="tag">Q4</span> <span class="tag">로컬LLM</span> <span class="tag">VRAM</span> <span class="tag">Ollama</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ram-16gb-vs-32gb.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점</span>
+        <span class="card-desc">32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/local-llm-without-gpu.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가</span>
+        <span class="card-desc">그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/local-llm-ram-vs-vram.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">로컬 LLM 램 몇 GB 필요한가 — VRAM과 뭐가 다른가</span>
+        <span class="card-desc">로컬 LLM에서 시스템 램과 VRAM은 역할이 다릅니다. 어느 쪽이 부족할 때 무슨 일이 생기는지, 얼마나 필요한지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m4-16","name":"Mac M4 · 16GB","vram":10,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-24","name":"Mac M4 · 24GB","vram":16,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-32","name":"Mac M4 · 32GB","vram":22,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-24","name":"Mac M4 Pro · 24GB","vram":16,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-48","name":"Mac M4 Pro · 48GB","vram":34,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-64","name":"Mac M4 Pro · 64GB","vram":46,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-36","name":"Mac M4 Max · 36GB","vram":26,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-64","name":"Mac M4 Max · 64GB","vram":46,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-128","name":"Mac M4 Max · 128GB","vram":96,"bw":546,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script src="/assets/vram.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에 | 스펙핏</title>
+<meta name="description" content="8GB는 좁지만 쓸 수 없는 건 아닙니다. 컨텍스트를 늘려도 되는 이유, 양자화를 올리면 안 되는 이유를 계산으로 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/vram-8gb-tips.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에 | 스펙핏">
+<meta property="og:description" content="8GB는 좁지만 쓸 수 없는 건 아닙니다. 컨텍스트를 늘려도 되는 이유, 양자화를 올리면 안 되는 이유를 계산으로 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/vram-8gb-tips.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에","description":"8GB는 좁지만 쓸 수 없는 건 아닙니다. 컨텍스트를 늘려도 되는 이유, 양자화를 올리면 안 되는 이유를 계산으로 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/vram-8gb-tips.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에","item":"https://specfit.kr/posts/vram-8gb-tips.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"8GB에서 14B를 억지로 돌리면 어떻게 되나요","acceptedAnswer":{"@type":"Answer","text":"돌아갑니다. 다만 일부가 CPU로 넘어가 몇 배에서 수십 배 느려집니다. **에러 없이 그냥 느려져서** 처음에는 원인을 알기 어렵습니다."}},{"@type":"Question","name":"컨텍스트를 최대로 해도 정말 괜찮나요","acceptedAnswer":{"@type":"Answer","text":"8B 기준으로는 괜찮습니다. 위 표대로 가장 긴 설정에서도 6.8GB입니다. 다만 **14B처럼 이미 빠듯한 모델**에서는 컨텍스트가 결정타가 될 수 있습니다."}},{"@type":"Question","name":"Q3나 Q2로 내리면 14B가 들어가나요","acceptedAnswer":{"@type":"Answer","text":"용량은 줄어듭니다. 다만 Q4 아래로 가면 품질 저하가 체감되기 시작합니다. **\"14B를 강하게 양자화\"보다 \"8B를 Q4로\"가 대체로 낫습니다.**"}},{"@type":"Question","name":"램을 늘리면 도움이 되나요","acceptedAnswer":{"@type":"Answer","text":"VRAM을 넘긴 부분을 램이 떠맡으므로 **최소한의 도움**은 됩니다. 다만 속도 문제는 해결되지 않습니다. 자세한 기준은 [램 16GB vs 32GB](/posts/ram-16gb-vs-32gb.html)에 있습니다."}},{"@type":"Question","name":"8GB 카드 두 장을 꽂으면요","acceptedAnswer":{"@type":"Answer","text":"용량이 단순히 합쳐지지 않고 통신 오버헤드가 생깁니다. **8GB 두 장보다 16GB 한 장이 낫습니다.**"}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-15">2026년 8월 15일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>8GB 카드로 로컬 LLM을 시작한 분들이 가장 먼저 부딪히는 게
+<strong>&quot;14B가 안 돌아간다&quot;</strong>입니다.</p>
+<p><a href="/posts/rtx4060-local-llm.html">그 벽은 사라지지 않습니다</a> — 모델 파일만 9GB이기 때문입니다.
+다만 <strong>8GB 안에서 할 수 있는 게 생각보다 많습니다.</strong>
+카드를 바꾸기 전에 이것부터 해보세요.</p>
+<h2 id="1-컨텍스트는-늘려도-됩니다">1. 컨텍스트는 늘려도 됩니다</h2>
+<p>가장 많이 오해하는 부분입니다. <strong>컨텍스트를 아껴봐야 얻는 게 별로 없습니다.</strong></p>
+<p>8B 모델을 8GB 카드에서 돌릴 때, 컨텍스트를 늘려도 이 정도만 늘어납니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>다루는 길이</th><th>필요 메모리</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td>짧은 대화</td><td>약 6.1GB</td><td>여유</td></tr>
+<tr><td>A4 두세 장</td><td>약 6.1GB</td><td>여유</td></tr>
+<tr><td>A4 열 장</td><td>약 6.4GB</td><td>여유</td></tr>
+<tr><td>아주 긴 내용</td><td>약 6.8GB</td><td>여유</td></tr>
+</tbody>
+</table></div>
+<p><strong>가장 긴 설정으로 써도 6.8GB입니다.</strong> 8GB 안에 넉넉히 들어갑니다.</p>
+<p><figure class="fig">
+<svg viewBox="0 0 640 162" width="640" height="162" role="img" aria-label="필요 메모리는 가중치와 여유가 대부분이고 컨텍스트 몫은 작다">
+<title>필요 메모리는 가중치와 여유가 대부분이고 컨텍스트 몫은 작다</title>
+
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">14B 모델이 필요한 메모리 = 약 10GB</text>
+
+
+<rect x="16" y="40" width="457.6" height="38" fill="var(--fig-fit)" rx="4"/>
+<text x="244.8" y="64" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">가중치 8.8GB</text>
+
+<rect x="473.6" y="40" width="10.4" height="38" fill="var(--accent)" rx="4"/>
+<text x="478.8" y="64" fill="#fff" font-size="12" font-weight="600" text-anchor="middle"></text>
+
+<rect x="484" y="40" width="52" height="38" fill="var(--fig-over)" rx="4"/>
+<text x="510" y="64" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">여유 1GB</text>
+
+<text x="16" y="98" fill="var(--fg-muted)" font-size="12">컨텍스트와 무관 — 항상 먼저 들어갑니다</text>
+<text x="536" y="98" fill="var(--fg-muted)" font-size="12" text-anchor="end">↑ 컨텍스트</text>
+
+<text x="16" y="128" fill="var(--fg)" font-size="13" font-weight="600">컨텍스트를 0 으로 해도 9.8GB 입니다.</text>
+<text x="16" y="148" fill="var(--fg-muted)" font-size="12">8GB 카드에서 "짧게 물어보면 되지 않나" 가 통하지 않는 이유입니다.</text>
+</svg>
+<figcaption>가중치와 여유는 컨텍스트와 무관하게 먼저 들어갑니다. 그 합이 이미 VRAM 을 넘으면 컨텍스트를 줄여도 넘습니다.</figcaption>
+</figure></p>
+<p>메모리를 잡아먹는 건 <strong>가중치</strong>이고, 컨텍스트 몫은 그에 비하면 작습니다.
+그러니 8B를 쓰신다면 <strong>컨텍스트를 아끼실 이유가 없습니다.</strong>
+긴 문서를 넣고 요약시켜도 됩니다.</p>
+<h2 id="2-양자화를-올리면-안-됩니다">2. 양자화를 올리면 안 됩니다</h2>
+<p>&quot;Q4 대신 Q8을 쓰면 더 똑똑해지지 않나&quot; — 8GB에서는 안 됩니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>양자화</th><th>8B 모델</th><th>8GB 카드에서</th></tr></thead>
+<tbody>
+<tr><td><strong>Q4 (표준)</strong></td><td>약 6.1GB</td><td><strong>여유</strong></td></tr>
+<tr><td>Q5</td><td>약 7.0GB</td><td>여유</td></tr>
+<tr><td>Q8</td><td>약 9.8GB</td><td><strong>느림</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>Q8로 올리면 8B조차 안 들어갑니다.</strong> 용량이 Q4 대비 73% 늘어나기 때문입니다.</p>
+<p>Q5는 들어가지만 여유가 줄어듭니다.
+<strong>8GB에서는 Q4가 정답</strong>이고, 이건 대부분의 경우에도 그렇습니다.</p>
+<h2 id="3-8b를-제대로-고르세요">3. 8B를 제대로 고르세요</h2>
+<p>같은 8B라도 모델마다 잘하는 게 다릅니다.
+<strong>크기가 고정이라면 종류를 고르는 게 유일하게 남은 선택지</strong>입니다.</p>
+<ul>
+<li>한국어 위주라면 한국어를 잘하는 계열</li>
+<li>코드 위주라면 코드 특화 계열</li>
+<li>범용이면 무난한 계열</li>
+</ul>
+<p><code>ollama.com/library</code> 에서 8B 근처 모델들을 몇 개 받아 비교해 보세요.
+받는 것은 용량만 있으면 되고, 안 쓰는 건 <code>ollama rm</code> 으로 지우면 됩니다.</p>
+<p>설치와 명령어는 <a href="/posts/ollama-install-guide.html">Ollama 설치 가이드</a>에 있습니다.</p>
+<h2 id="4-3b도-다시-보세요">4. 3B도 다시 보세요</h2>
+<p><strong>용도에 따라서는 3B로 충분합니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>용도</th><th>3B로 되나</th></tr></thead>
+<tbody>
+<tr><td>번역</td><td>됩니다</td></tr>
+<tr><td>맞춤법·문장 다듬기</td><td>됩니다</td></tr>
+<tr><td>간단한 질문</td><td>됩니다</td></tr>
+<tr><td>요약</td><td>짧은 글이면 됩니다</td></tr>
+<tr><td>코드 작성</td><td>어렵습니다</td></tr>
+<tr><td>복잡한 추론</td><td>어렵습니다</td></tr>
+</tbody>
+</table></div>
+<p>3B는 약 2.9GB라 <strong>8GB에서 아주 여유롭습니다.</strong>
+빠르기도 훨씬 빠릅니다. 간단한 작업은 3B로 돌리고,
+무거운 것만 8B로 돌리는 식으로 나눠 쓰면 체감이 좋아집니다.</p>
+<h2 id="5-다른-프로그램이-vram을-먹고-있습니다">5. 다른 프로그램이 VRAM을 먹고 있습니다</h2>
+<p><strong>게임이나 브라우저도 VRAM을 씁니다.</strong></p>
+<ul>
+<li>브라우저 탭이 많으면 수백 MB에서 1GB 이상</li>
+<li>영상 편집 프로그램</li>
+<li>게임 런처</li>
+</ul>
+<p>8GB는 여유가 적어서 이런 것들이 체감에 영향을 줍니다.
+<strong>작업 관리자 → 성능 → GPU</strong> 에서 전용 GPU 메모리 사용량을 확인해 보세요.
+모델을 올리기 전에 이미 2GB가 차 있다면 그만큼 손해입니다.</p>
+<h2 id="6-안-쓰는-모델은-메모리에서-내리세요">6. 안 쓰는 모델은 메모리에서 내리세요</h2>
+<p>Ollama는 모델을 한 번 올리면 잠시 메모리에 유지합니다.
+<code>ollama ps</code> 로 확인하고, 다른 모델을 쓸 거면 정리하는 편이 낫습니다.</p>
+<p><strong>두 모델이 동시에 올라가 있으면 VRAM을 나눠 씁니다.</strong> 8GB에서는 치명적입니다.</p>
+<h2 id="그래도-14b가-필요하다면">그래도 14B가 필요하다면</h2>
+<p>여기까지 해도 안 되는 게 있습니다. <strong>14B 이상은 8GB로 해결되지 않습니다.</strong></p>
+<pre><code>14B 모델 파일만 9.0GB  →  8GB 카드에 애초에 안 들어감</code></pre>
+<p>이때는 카드를 바꾸는 수밖에 없습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>목표</th><th>필요한 VRAM</th><th>신품 선택지</th></tr></thead>
+<tbody>
+<tr><td>14B 여유</td><td>12GB</td><td>RTX 5070</td></tr>
+<tr><td>22B까지</td><td>16GB</td><td>RTX 5060 Ti 16GB</td></tr>
+<tr><td>32B 여유</td><td>32GB</td><td>RTX 5090</td></tr>
+</tbody>
+</table></div>
+<p>비교는 <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB vs 5070</a>에 있습니다.</p>
+<p><div data-vram-tool></div></p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="8gb에서-14b를-억지로-돌리면-어떻게-되나요">8GB에서 14B를 억지로 돌리면 어떻게 되나요</h3>
+<p>돌아갑니다. 다만 일부가 CPU로 넘어가 몇 배에서 수십 배 느려집니다.
+<strong>에러 없이 그냥 느려져서</strong> 처음에는 원인을 알기 어렵습니다.</p>
+<h3 id="컨텍스트를-최대로-해도-정말-괜찮나요">컨텍스트를 최대로 해도 정말 괜찮나요</h3>
+<p>8B 기준으로는 괜찮습니다. 위 표대로 가장 긴 설정에서도 6.8GB입니다.
+다만 <strong>14B처럼 이미 빠듯한 모델</strong>에서는 컨텍스트가 결정타가 될 수 있습니다.</p>
+<h3 id="q3나-q2로-내리면-14b가-들어가나요">Q3나 Q2로 내리면 14B가 들어가나요</h3>
+<p>용량은 줄어듭니다. 다만 Q4 아래로 가면 품질 저하가 체감되기 시작합니다.
+<strong>&quot;14B를 강하게 양자화&quot;보다 &quot;8B를 Q4로&quot;가 대체로 낫습니다.</strong></p>
+<h3 id="램을-늘리면-도움이-되나요">램을 늘리면 도움이 되나요</h3>
+<p>VRAM을 넘긴 부분을 램이 떠맡으므로 <strong>최소한의 도움</strong>은 됩니다.
+다만 속도 문제는 해결되지 않습니다.
+자세한 기준은 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 있습니다.</p>
+<h3 id="8gb-카드-두-장을-꽂으면요">8GB 카드 두 장을 꽂으면요</h3>
+<p>용량이 단순히 합쳐지지 않고 통신 오버헤드가 생깁니다.
+<strong>8GB 두 장보다 16GB 한 장이 낫습니다.</strong></p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>컨텍스트는 아끼지 마세요.</strong> 8B는 가장 긴 설정에서도 6.8GB입니다</li>
+<li><strong>양자화는 Q4를 유지하세요.</strong> Q8로 올리면 8B도 안 들어갑니다</li>
+<li><strong>3B를 다시 보세요.</strong> 번역·다듬기는 3B로 충분하고 훨씬 빠릅니다</li>
+<li>다른 프로그램이 먹는 VRAM을 확인하세요</li>
+<li><strong>14B 이상은 8GB로 해결되지 않습니다.</strong> 그때는 카드를 바꿔야 합니다</li>
+</ol>
+<p>8GB 카드의 한계선 자체는 <a href="/posts/rtx4060-local-llm.html">8GB로 어디까지 되나</a>에 정리했습니다.</p>
+<p>실제 사용 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">VRAM</span> <span class="tag">8GB</span> <span class="tag">로컬LLM</span> <span class="tag">양자화</span> <span class="tag">Ollama</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/rtx5070ti-vs-5080.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">RTX 5070 Ti vs 5080 — 로컬 LLM에서는 같은 카드입니다</span>
+        <span class="card-desc">VRAM이 둘 다 16GB이고 대역폭 차이는 7%입니다. 돌아가는 모델 크기가 완전히 같습니다. 로컬 LLM만 본다면 더 비싼 쪽을 살 이유가 없습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/rtx4060ti-16gb-vs-4070.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">RTX 5060 Ti 16GB vs RTX 5070 — VRAM이냐 속도냐</span>
+        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 5060 Ti는 VRAM 16GB, 5070은 대역폭 1.5배. 단종된 4060 Ti·4070을 보고 계셨다면 이 글이 대체입니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/rtx4060-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">RTX 4060으로 로컬 LLM — 8GB로 어디까지 되나</span>
+        <span class="card-desc">가장 흔한 입문 카드인 RTX 4060의 VRAM은 8GB입니다. 어떤 크기 모델이 쾌적하게 돌고 어디서 막히는지, 8GB의 한계선을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m4-16","name":"Mac M4 · 16GB","vram":10,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-24","name":"Mac M4 · 24GB","vram":16,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4-32","name":"Mac M4 · 32GB","vram":22,"bw":120,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-24","name":"Mac M4 Pro · 24GB","vram":16,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-48","name":"Mac M4 Pro · 48GB","vram":34,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4pro-64","name":"Mac M4 Pro · 64GB","vram":46,"bw":273,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-36","name":"Mac M4 Max · 36GB","vram":26,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-64","name":"Mac M4 Max · 64GB","vram":46,"bw":410,"tdp":0,"mac":true,"tier":"mac"},{"id":"m4max-128","name":"Mac M4 Max · 128GB","vram":96,"bw":546,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script src="/assets/vram.js" defer></script>
+</body>
+</html>
