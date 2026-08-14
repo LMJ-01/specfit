@@ -405,6 +405,23 @@ Sitemap: ${base}/sitemap.xml
     )
   );
 
+  // ---- ads.txt ----
+  // 애드센스가 "이 사이트의 광고를 누가 팔 권한이 있는가" 를 확인하는 파일입니다.
+  // 없으면 승인 후에도 "수익 손실 위험" 경고가 뜨고 광고 단가가 떨어질 수 있습니다.
+  //
+  // config.adsense.client 를 채우면 자동으로 생성됩니다.
+  // 승인 전에는 만들지 않습니다 — 잘못된 게시자 ID 가 적힌 ads.txt 는 없느니만 못합니다.
+  if (config.adsense.client) {
+    // 'ca-pub-0000...' 에서 'ca-' 를 뗀 형태가 ads.txt 규격입니다.
+    const pub = config.adsense.client.replace(/^ca-/, '');
+    written.push(
+      await write('ads.txt', `google.com, ${pub}, DIRECT, f08c47fec0942fa0\n`)
+    );
+  } else {
+    console.log('\n💡 애드센스 승인 후 config.js 의 adsense.client 를 채우면');
+    console.log('   광고 슬롯과 ads.txt 가 자동으로 생성됩니다.');
+  }
+
   console.log(`\n생성 완료: ${written.length}개 파일`);
   console.log(`  글 ${posts.length} · 카테고리 ${config.categories.length} · 페이지 ${rawPages.length}`);
 
