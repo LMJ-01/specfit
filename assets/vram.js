@@ -13,7 +13,7 @@
   const state = {
     use: 'coding',
     len: 'medium',
-    gpu: 'rtx4060ti16',
+    gpu: 'rtx5060ti16',
     quant: 'q4',
     advanced: false,
   };
@@ -39,12 +39,33 @@
     no: { badge: '불가', desc: '실사용이 어려움' },
   };
 
-  // 여유 있게 돌아가는 가장 작은 카드.
-  // 단종된 카드(new: false)는 제외합니다 — 지금 살 사람에게 권할 수 없습니다.
+  /**
+   * 여유 있게 돌아가는 가장 작은 카드.
+   * 단종된 카드(new: false)는 제외합니다 — 지금 살 사람에게 권할 수 없습니다.
+   *
+   * 정렬: VRAM → 등급 → 대역폭 → 전력.
+   *
+   * 왜 이 순서인지가 중요합니다. 둘 다 틀리는 방식을 겪었습니다.
+   *   전력만 보면  → 5050(GDDR6 320GB/s, 130W)이 5060(GDDR7 448GB/s, 145W)을 이깁니다.
+   *                  15W 아끼자고 40% 느린 카드를 권하게 됩니다.
+   *   대역폭만 보면 → 16GB 구간에서 5060 Ti(448)를 제치고 5080(960)이 뽑힙니다.
+   *                  "가장 저렴한 선택지"라고 해놓고 최상급을 권하게 됩니다.
+   *
+   * 등급(tier)을 먼저 보면 둘 다 해결됩니다. 가격대를 대신하는 값이고,
+   * 같은 등급 안에서만 대역폭으로 가리므로 체급을 넘어가지 않습니다.
+   */
+  const TIER_RANK = { entry: 0, mid: 1, high: 2, flagship: 3 };
+
+  const byFit = (a, b) =>
+    a.vram - b.vram ||
+    (TIER_RANK[a.tier] ?? 9) - (TIER_RANK[b.tier] ?? 9) ||
+    b.bw - a.bw ||
+    a.tdp - b.tdp;
+
   function recommend(needed) {
     return gpus
       .filter((g) => !g.mac && g.new && needed <= g.vram * 0.9)
-      .sort((a, b) => a.vram - b.vram || a.tdp - b.tdp)[0];
+      .sort(byFit)[0];
   }
 
   /**
@@ -61,7 +82,7 @@
   function recommendTight(needed) {
     return gpus
       .filter((g) => !g.mac && g.new && needed > g.vram * 0.9 && needed <= g.vram)
-      .sort((a, b) => a.vram - b.vram || a.tdp - b.tdp)[0];
+      .sort(byFit)[0];
   }
 
   const opts = (list, sel, fmt) =>

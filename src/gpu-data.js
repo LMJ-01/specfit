@@ -26,18 +26,38 @@
 //   partners.coupang.com → 상품 링크 → 상품명 검색 → 링크 생성 → 짧은 링크 복사
 //   형태: https://link.coupang.com/a/XXXXXX
 
+// ── 현행 세대: RTX 50 (Blackwell) ─────────────────────────────────
+// 스펙 출처: nvidia.com 공식 사양 비교 페이지, 2026-08-15 확인.
+// GDDR7 로 바뀌면서 같은 128비트 버스에서도 대역폭이 크게 올랐습니다.
+// 예: 5060 Ti 16GB 448GB/s vs 4060 Ti 16GB 288GB/s (1.56배)
+// 로컬 LLM 생성 속도는 대역폭에 묶이므로 이 차이가 그대로 체감됩니다.
 export const gpus = [
   { id: 'rtx5090', name: 'RTX 5090', vram: 32, bw: 1792, tdp: 575, tier: 'flagship', new: true, buy: 'https://link.coupang.com/a/gbIXLiOL36', widget: '' },
   { id: 'rtx5080', name: 'RTX 5080', vram: 16, bw: 960, tdp: 360, tier: 'high', new: true, buy: '', widget: '' },
-  { id: 'rtx4090', name: 'RTX 4090', vram: 24, bw: 1008, tdp: 450, tier: 'flagship', new: true, buy: 'https://link.coupang.com/a/gbIVZFcbWC', widget: '' },
-  { id: 'rtx4080s', name: 'RTX 4080 Super', vram: 16, bw: 736, tdp: 320, tier: 'high', new: true, buy: '', widget: '' },
-  { id: 'rtx4070tis', name: 'RTX 4070 Ti Super', vram: 16, bw: 672, tdp: 285, tier: 'high', new: true, buy: '', widget: '' },
-  { id: 'rtx4070s', name: 'RTX 4070 Super', vram: 12, bw: 504, tdp: 220, tier: 'mid', new: true, buy: '', widget: '' },
-  { id: 'rtx4070', name: 'RTX 4070', vram: 12, bw: 504, tdp: 200, tier: 'mid', new: true, buy: 'https://link.coupang.com/a/gbIQDWmjn2', widget: '' },
-  { id: 'rtx4060ti16', name: 'RTX 4060 Ti 16GB', vram: 16, bw: 288, tdp: 165, tier: 'mid', new: true, buy: '', widget: '' },
-  { id: 'rtx4060ti8', name: 'RTX 4060 Ti 8GB', vram: 8, bw: 288, tdp: 160, tier: 'entry', new: true, buy: '', widget: '' },
-  { id: 'rtx4060', name: 'RTX 4060', vram: 8, bw: 272, tdp: 115, tier: 'entry', new: true, buy: 'https://link.coupang.com/a/gbITRwz3ts', widget: '' },
-  // ── 아래는 단종. 진단용으로만 목록에 둡니다 (추천 대상 아님) ──
+  { id: 'rtx5070ti', name: 'RTX 5070 Ti', vram: 16, bw: 896, tdp: 300, tier: 'high', new: true, buy: '', widget: '' },
+  { id: 'rtx5070', name: 'RTX 5070', vram: 12, bw: 672, tdp: 250, tier: 'mid', new: true, buy: '', widget: '' },
+  { id: 'rtx5060ti16', name: 'RTX 5060 Ti 16GB', vram: 16, bw: 448, tdp: 180, tier: 'mid', new: true, buy: '', widget: '' },
+  { id: 'rtx5060ti8', name: 'RTX 5060 Ti 8GB', vram: 8, bw: 448, tdp: 180, tier: 'entry', new: true, buy: '', widget: '' },
+  { id: 'rtx5060', name: 'RTX 5060', vram: 8, bw: 448, tdp: 145, tier: 'entry', new: true, buy: '', widget: '' },
+  { id: 'rtx5050', name: 'RTX 5050', vram: 8, bw: 320, tdp: 130, tier: 'entry', new: true, buy: '', widget: '' },
+
+  // ── RTX 40 (Ada): 생산 종료 ────────────────────────────────────
+  // NVIDIA 가 AD102/103/104/106 생산을 끝냈습니다 (4090·4080·4070 계열 단종).
+  // 4060 계열만 일부 남아 있으나 재고 소진 단계입니다.
+  //
+  // ⚠️ new: false 로 두면 추천에서 빠집니다. 쿠팡 링크도 함께 무력화됩니다.
+  //    국내 유통 재고가 아직 충분하다면 개별적으로 true 로 되돌려도 됩니다.
+  //    판단 기준은 "지금 신품을 살 수 있는가" 입니다.
+  { id: 'rtx4090', name: 'RTX 4090 (단종)', vram: 24, bw: 1008, tdp: 450, tier: 'flagship', new: false, buy: 'https://link.coupang.com/a/gbIVZFcbWC', widget: '' },
+  { id: 'rtx4080s', name: 'RTX 4080 Super (단종)', vram: 16, bw: 736, tdp: 320, tier: 'high', new: false, buy: '', widget: '' },
+  { id: 'rtx4070tis', name: 'RTX 4070 Ti Super (단종)', vram: 16, bw: 672, tdp: 285, tier: 'high', new: false, buy: '', widget: '' },
+  { id: 'rtx4070s', name: 'RTX 4070 Super (단종)', vram: 12, bw: 504, tdp: 220, tier: 'mid', new: false, buy: '', widget: '' },
+  { id: 'rtx4070', name: 'RTX 4070 (단종)', vram: 12, bw: 504, tdp: 200, tier: 'mid', new: false, buy: 'https://link.coupang.com/a/gbIQDWmjn2', widget: '' },
+  { id: 'rtx4060ti16', name: 'RTX 4060 Ti 16GB (단종)', vram: 16, bw: 288, tdp: 165, tier: 'mid', new: false, buy: '', widget: '' },
+  { id: 'rtx4060ti8', name: 'RTX 4060 Ti 8GB (단종)', vram: 8, bw: 288, tdp: 160, tier: 'entry', new: false, buy: '', widget: '' },
+  { id: 'rtx4060', name: 'RTX 4060 (단종)', vram: 8, bw: 272, tdp: 115, tier: 'entry', new: false, buy: 'https://link.coupang.com/a/gbITRwz3ts', widget: '' },
+
+  // ── RTX 30 (Ampere): 단종. 진단용으로만 목록에 둡니다 ──────────
   { id: 'rtx3090', name: 'RTX 3090 (중고)', vram: 24, bw: 936, tdp: 350, tier: 'high', new: false, buy: '', widget: '' },
   { id: 'rtx3080', name: 'RTX 3080 10GB', vram: 10, bw: 760, tdp: 320, tier: 'mid', new: false, buy: '', widget: '' },
   { id: 'rtx3070', name: 'RTX 3070', vram: 8, bw: 448, tdp: 220, tier: 'entry', new: false, buy: '', widget: '' },
