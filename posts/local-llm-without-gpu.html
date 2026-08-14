@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가 | 스펙핏</title>
+<meta name="description" content="그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/local-llm-without-gpu.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가 | 스펙핏">
+<meta property="og:description" content="그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/local-llm-without-gpu.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가","description":"그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-without-gpu.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가","item":"https://specfit.kr/posts/local-llm-without-gpu.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"CPU가 좋으면 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"조금 빨라지지만 크게 달라지지 않습니다. **병목이 연산이 아니라 메모리 읽기 속도**이기 때문입니다. 코어를 늘려도 램에서 읽어오는 속도가 그대로면 한계가 있습니다."}},{"@type":"Question","name":"DDR5로 바꾸면 얼마나 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"DDR4-3200에서 DDR5-5600이면 대역폭이 약 1.75배입니다. 체감이 되긴 하지만, **그래픽카드와의 격차를 메우지는 못합니다.** 이것 때문에 메인보드와 CPU까지 바꿀 정도는 아닙니다."}},{"@type":"Question","name":"그래픽카드를 사면 얼마나 나아지나요","acceptedAnswer":{"@type":"Answer","text":"가장 저렴한 신품(RTX 5060)만 해도 대역폭이 5배입니다. 게다가 모델이 VRAM에 다 올라가면 시스템 램은 거의 쓰이지 않습니다. **차원이 다른 경험이 됩니다.** 어느 카드가 맞는지는 [Ollama 최소 사양 정리](/posts/ollama-minimum-spec.html)를 보세요."}},{"@type":"Question","name":"노트북 내장그래픽으로는요","acceptedAnswer":{"@type":"Answer","text":"위에 적은 대로 내장그래픽은 시스템 램을 나눠 쓰므로 큰 도움이 안 됩니다. 다만 최근 노트북용 통합 칩 중에는 대역폭이 높은 것도 있으니, 본인 기기의 메모리 규격을 확인해 보세요."}},{"@type":"Question","name":"램만 잔뜩 늘리면 큰 모델이 돌아가나요","acceptedAnswer":{"@type":"Answer","text":"**돌아가긴 합니다.** 32B도 램 32GB면 올라갑니다. 다만 대역폭이 그대로라 속도는 더 느려집니다 — 읽을 양이 늘었기 때문입니다. **용량 문제가 아니라 속도 문제**입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/">홈</a>
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/about.html">소개</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-15">2026년 8월 15일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>&quot;그래픽카드가 없는데 로컬 LLM이 되나요?&quot;</p>
+<p><strong>됩니다.</strong> 그런데 대부분 써보고는 포기합니다. 너무 느리기 때문입니다.</p>
+<p>왜 느린지는 짐작이 아니라 <strong>숫자로 설명됩니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>가능 여부</th><th>실용성</th></tr></thead>
+<tbody>
+<tr><td>3B 모델</td><td>돌아감</td><td>견딜 만합니다</td></tr>
+<tr><td>7~8B 모델</td><td>돌아감</td><td>답답합니다</td></tr>
+<tr><td>14B 이상</td><td>돌아감</td><td><strong>사실상 불가</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>CPU만으로는 3B가 현실적인 상한</strong>입니다.
+7~8B도 되긴 하지만, 답변 하나에 한참 걸립니다.</p>
+<h2 id="왜-느린가-대역폭-때문입니다">왜 느린가 — 대역폭 때문입니다</h2>
+<p>LLM은 답변 한 글자를 만들 때마다 <strong>모델 전체를 한 번씩 읽습니다.</strong>
+그래서 속도를 정하는 건 연산 능력이 아니라 <strong>메모리를 얼마나 빨리 읽느냐</strong>입니다.</p>
+<p><figure class="fig">
+<svg viewBox="0 0 640 266" width="640" height="266" role="img" aria-label="그래픽카드와 시스템 램의 메모리 대역폭 격차">
+<title>그래픽카드와 시스템 램의 메모리 대역폭 격차</title>
+
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">모델 가중치를 읽어오는 속도</text>
+<text x="16" y="55" fill="var(--fg)" font-size="12">RTX 5090</text>
+<rect x="160" y="43" width="380" height="16" fill="var(--accent)" rx="3"/>
+<text x="548" y="55" fill="var(--fg-muted)" font-size="11">1792 GB/s</text>
+<text x="16" y="85" fill="var(--fg)" font-size="12">RTX 5070</text>
+<rect x="160" y="73" width="142.5" height="16" fill="var(--accent)" rx="3"/>
+<text x="310.5" y="85" fill="var(--fg-muted)" font-size="11">672 GB/s</text>
+<text x="16" y="115" fill="var(--fg)" font-size="12">RTX 5060</text>
+<rect x="160" y="103" width="95" height="16" fill="var(--accent)" rx="3"/>
+<text x="263" y="115" fill="var(--fg-muted)" font-size="11">448 GB/s</text>
+<text x="16" y="145" fill="var(--fg)" font-size="12">Mac M4</text>
+<rect x="160" y="133" width="25.44642857142857" height="16" fill="var(--accent)" rx="3"/>
+<text x="193.44642857142856" y="145" fill="var(--fg-muted)" font-size="11">120 GB/s</text>
+<text x="16" y="175" fill="var(--fg)" font-size="12">DDR5-5600 듀얼</text>
+<rect x="160" y="163" width="19" height="16" fill="var(--fig-over)" rx="3"/>
+<text x="187" y="175" fill="var(--fg-muted)" font-size="11">89.6 GB/s</text>
+<text x="16" y="205" fill="var(--fg)" font-size="12">DDR4-3200 듀얼</text>
+<rect x="160" y="193" width="10.857142857142858" height="16" fill="var(--fig-over)" rx="3"/>
+<text x="178.85714285714286" y="205" fill="var(--fg-muted)" font-size="11">51.2 GB/s</text>
+
+<line x1="152" y1="152" x2="540" y2="152" stroke="var(--border)" stroke-dasharray="4 3"/>
+<text x="16" y="148" fill="var(--fg-muted)" font-size="11">↑ 그래픽카드</text>
+<text x="16" y="172" fill="var(--fg-muted)" font-size="11">↓ 시스템 램</text>
+
+<text x="16" y="232" fill="var(--fg)" font-size="13" font-weight="600">CPU 로 넘어간 몫은 이 아래쪽 속도로 처리됩니다.</text>
+<text x="16" y="252" fill="var(--fg-muted)" font-size="12">5060 과 DDR5 만 비교해도 5 배 차이입니다.</text>
+</svg>
+<figcaption>DDR5-5600 듀얼채널은 89.6GB/s 입니다. 5060(448) 의 5 분의 1, 5090(1792) 의 20 분의 1 입니다.</figcaption>
+</figure></p>
+<h3 id="시스템-램의-대역폭은-계산됩니다">시스템 램의 대역폭은 계산됩니다</h3>
+<pre><code>DDR5-5600 듀얼채널
+  5600 × 8바이트 × 2채널 = 89,600 MB/s = 약 89.6 GB/s
+
+DDR4-3200 듀얼채널
+  3200 × 8바이트 × 2채널 = 51,200 MB/s = 약 51.2 GB/s</code></pre>
+<p>그래픽카드와 나란히 놓으면 이렇습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>대역폭</th><th>DDR5-5600 대비</th></tr></thead>
+<tbody>
+<tr><td>RTX 5090</td><td>1792 GB/s</td><td><strong>20배</strong></td></tr>
+<tr><td>RTX 5070</td><td>672 GB/s</td><td>7.5배</td></tr>
+<tr><td>RTX 5060</td><td>448 GB/s</td><td>5배</td></tr>
+<tr><td>Mac M4</td><td>120 GB/s</td><td>1.3배</td></tr>
+<tr><td><strong>DDR5-5600 듀얼</strong></td><td><strong>89.6 GB/s</strong></td><td>1배</td></tr>
+<tr><td>DDR4-3200 듀얼</td><td>51.2 GB/s</td><td>0.6배</td></tr>
+</tbody>
+</table></div>
+<p><strong>가장 저렴한 신품 그래픽카드와 비교해도 5배 차이입니다.</strong></p>
+<p>다만 이 배수가 곧 체감 속도 배수는 아닙니다.
+CPU 쪽은 연산 능력에서도 밀리고, 실제 차이는 이보다 더 벌어지는 경우가 많습니다.</p>
+<h2 id="그래도-해볼-만한-경우">그래도 해볼 만한 경우</h2>
+<h3 id="1-될지-안-될지-먼저-보고-싶을-때">1. 될지 안 될지 먼저 보고 싶을 때</h3>
+<p><strong>사기 전에 체험하는 용도로는 충분합니다.</strong>
+3B 모델을 받아 돌려보면 &quot;이런 거구나&quot;는 확실히 알 수 있습니다.</p>
+<p>그다음에 그래픽카드를 살지 정하면 됩니다.
+<a href="/posts/local-llm-start-guide.html">시작 가이드</a>에서도 같은 순서를 권합니다.</p>
+<h3 id="2-속도가-상관없는-작업">2. 속도가 상관없는 작업</h3>
+<p>밤새 돌려두는 일괄 처리라면 느려도 상관없습니다.
+문서 수백 개를 정리해두는 식의 작업이 여기 해당합니다.</p>
+<h3 id="3-맥이라면-이야기가-다릅니다">3. 맥이라면 이야기가 다릅니다</h3>
+<p><strong>애플 실리콘은 전용 그래픽카드가 없어도 통합 메모리를 GPU가 씁니다.</strong>
+그래서 &quot;CPU로만 돌린다&quot;에 해당하지 않습니다.</p>
+<p>맥북에어라도 M4 기준 120 GB/s로 DDR5보다 빠릅니다.
+자세한 내용은 <a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 글</a>에 있습니다.</p>
+<h2 id="내장그래픽은-도움이-되나요">내장그래픽은 도움이 되나요</h2>
+<p><strong>거의 안 됩니다.</strong></p>
+<p>내장그래픽은 별도 메모리가 없어서 <strong>시스템 램을 나눠 씁니다.</strong>
+결국 같은 대역폭을 쓰므로 CPU로 돌리는 것과 크게 다르지 않습니다.</p>
+<p>전용 그래픽카드의 값어치는 연산 능력보다 <strong>전용 고속 메모리</strong>에 있습니다.</p>
+<h2 id="cpu로-돌릴-때-램은-얼마나-필요한가">CPU로 돌릴 때 램은 얼마나 필요한가</h2>
+<p>VRAM에 안 올리므로 <strong>모델이 통째로 시스템 램에 들어갑니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>모델</th><th>파일 크기 (Q4)</th><th>필요한 램</th></tr></thead>
+<tbody>
+<tr><td>3B</td><td>약 2GB</td><td>8GB로 가능</td></tr>
+<tr><td>7~8B</td><td>약 4.7GB</td><td>16GB 권장</td></tr>
+<tr><td>14B</td><td>약 9GB</td><td>16GB로 빠듯, 32GB 권장</td></tr>
+<tr><td>32B</td><td>약 20GB</td><td>32GB 이상</td></tr>
+</tbody>
+</table></div>
+<p><strong>모델 크기 + 8GB</strong> 정도로 잡으면 대체로 맞습니다.
+운영체제와 다른 프로그램 몫이 필요하기 때문입니다.</p>
+<p>램이 모자라면 디스크로 넘어가는데, 그때는 <strong>초당 1토큰도 안 나옵니다.</strong>
+자세한 기준은 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 있습니다.</p>
+<h2 id="속도를-조금이라도-올리려면">속도를 조금이라도 올리려면</h2>
+<p>CPU로 돌리기로 했다면 이 정도가 할 수 있는 전부입니다.</p>
+<p><strong>듀얼 채널로 꽂으세요</strong>
+같은 32GB라도 16GB 두 장이 대역폭 두 배입니다.
+CPU 추론에서는 이게 그대로 속도입니다. 싱글 채널이면 절반만 씁니다.</p>
+<p><strong>작은 모델을 쓰세요</strong>
+3B와 8B는 읽어야 할 양이 두 배 이상 차이납니다.</p>
+<p><strong>컨텍스트를 줄이세요</strong>
+긴 대화는 그만큼 더 읽어야 합니다.</p>
+<p><strong>기대치를 낮추세요</strong>
+CPU 추론은 근본적으로 대역폭에 막혀 있어서, 설정으로 해결되지 않습니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="cpu가-좋으면-빨라지나요">CPU가 좋으면 빨라지나요</h3>
+<p>조금 빨라지지만 크게 달라지지 않습니다.
+<strong>병목이 연산이 아니라 메모리 읽기 속도</strong>이기 때문입니다.
+코어를 늘려도 램에서 읽어오는 속도가 그대로면 한계가 있습니다.</p>
+<h3 id="ddr5로-바꾸면-얼마나-빨라지나요">DDR5로 바꾸면 얼마나 빨라지나요</h3>
+<p>DDR4-3200에서 DDR5-5600이면 대역폭이 약 1.75배입니다.
+체감이 되긴 하지만, <strong>그래픽카드와의 격차를 메우지는 못합니다.</strong>
+이것 때문에 메인보드와 CPU까지 바꿀 정도는 아닙니다.</p>
+<h3 id="그래픽카드를-사면-얼마나-나아지나요">그래픽카드를 사면 얼마나 나아지나요</h3>
+<p>가장 저렴한 신품(RTX 5060)만 해도 대역폭이 5배입니다.
+게다가 모델이 VRAM에 다 올라가면 시스템 램은 거의 쓰이지 않습니다.
+<strong>차원이 다른 경험이 됩니다.</strong></p>
+<p>어느 카드가 맞는지는 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>를 보세요.</p>
+<h3 id="노트북-내장그래픽으로는요">노트북 내장그래픽으로는요</h3>
+<p>위에 적은 대로 내장그래픽은 시스템 램을 나눠 쓰므로 큰 도움이 안 됩니다.
+다만 최근 노트북용 통합 칩 중에는 대역폭이 높은 것도 있으니,
+본인 기기의 메모리 규격을 확인해 보세요.</p>
+<h3 id="램만-잔뜩-늘리면-큰-모델이-돌아가나요">램만 잔뜩 늘리면 큰 모델이 돌아가나요</h3>
+<p><strong>돌아가긴 합니다.</strong> 32B도 램 32GB면 올라갑니다.
+다만 대역폭이 그대로라 속도는 더 느려집니다 — 읽을 양이 늘었기 때문입니다.
+<strong>용량 문제가 아니라 속도 문제</strong>입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>CPU만으로도 돌아갑니다.</strong> 다만 3B가 현실적인 상한입니다</li>
+<li>느린 이유는 <strong>대역폭</strong>입니다. DDR5-5600이 89.6GB/s, RTX 5060이 448GB/s</li>
+<li><strong>내장그래픽은 시스템 램을 나눠 쓰므로</strong> 큰 도움이 안 됩니다</li>
+<li><strong>맥은 예외</strong>입니다. 통합 메모리를 GPU가 직접 씁니다</li>
+<li>사기 전 <strong>체험용으로는 충분</strong>합니다. 써보고 결정하세요</li>
+</ol>
+<p>처음이시라면 <a href="/posts/local-llm-start-guide.html">시작 가이드</a>부터,
+설치는 <a href="/posts/ollama-install-guide.html">Ollama 설치 가이드</a>를 보세요.</p>
+<p>수치가 실제 환경과 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">로컬LLM</span> <span class="tag">CPU</span> <span class="tag">내장그래픽</span> <span class="tag">메모리대역폭</span> <span class="tag">Ollama</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ram-16gb-vs-32gb.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점</span>
+        <span class="card-desc">32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/local-llm-ram-vs-vram.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">로컬 LLM 램 몇 GB 필요한가 — VRAM과 뭐가 다른가</span>
+        <span class="card-desc">로컬 LLM에서 시스템 램과 VRAM은 역할이 다릅니다. 어느 쪽이 부족할 때 무슨 일이 생기는지, 얼마나 필요한지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>

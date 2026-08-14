@@ -180,9 +180,136 @@ ${t(16, 232, '용량이 "되느냐" 를 정하고, 대역폭이 "얼마나 빠�
   );
 }
 
+/**
+ * 시스템 램과 GPU 의 대역폭 격차.
+ * "CPU 로도 돌아간다는데 왜 이렇게 느리냐" 에 대한 답이 이 그림입니다.
+ */
+function cpuVsGpuBandwidth() {
+  const W = 640;
+  const rows = [
+    ['RTX 5090', 1792, COLOR.accent],
+    ['RTX 5070', 672, COLOR.accent],
+    ['RTX 5060', 448, COLOR.accent],
+    ['Mac M4', 120, COLOR.accent],
+    ['DDR5-5600 듀얼', 89.6, COLOR.over],
+    ['DDR4-3200 듀얼', 51.2, COLOR.over],
+  ];
+  const max = 1792;
+  const barX = 160;
+  const barW = 380;
+
+  const body = `
+${t(16, 22, '모델 가중치를 읽어오는 속도', { weight: 600, size: 14 })}
+${rows
+  .map(([name, bw, fill], i) => {
+    const y = 40 + i * 30;
+    const w = Math.max(3, (bw / max) * barW);
+    return `${t(16, y + 15, name, { size: 12 })}
+${rect(barX, y + 3, w, 16, fill, { r: 3 })}
+${t(barX + w + 8, y + 15, bw + ' GB/s', { size: 11, fill: COLOR.mute })}`;
+  })
+  .join('\n')}
+
+<line x1="${barX - 8}" y1="152" x2="${barX + barW}" y2="152" stroke="${COLOR.line}" stroke-dasharray="4 3"/>
+${t(16, 148, '↑ 그래픽카드', { size: 11, fill: COLOR.mute })}
+${t(16, 172, '↓ 시스템 램', { size: 11, fill: COLOR.mute })}
+
+${t(16, 232, 'CPU 로 넘어간 몫은 이 아래쪽 속도로 처리됩니다.', { weight: 600 })}
+${t(16, 252, '5060 과 DDR5 만 비교해도 5 배 차이입니다.', { fill: COLOR.mute, size: 12 })}`;
+
+  return figure(
+    '그래픽카드와 시스템 램의 메모리 대역폭 격차',
+    W,
+    266,
+    body,
+    'DDR5-5600 듀얼채널은 89.6GB/s 입니다. 5060(448) 의 5 분의 1, 5090(1792) 의 20 분의 1 입니다.'
+  );
+}
+
+/** 해상도별 작업 영역. 모니터 글에서 "넓다" 를 숫자로 보여줍니다. */
+function resolutionArea() {
+  const W = 640;
+  const s = 0.13; // 픽셀 → 도해 픽셀
+  const boxes = [
+    ['3840×2160 · 4K', 3840, 2160, COLOR.accent],
+    ['2560×1440 · QHD', 2560, 1440, COLOR.fit],
+    ['1920×1080 · FHD', 1920, 1080, COLOR.over],
+  ];
+  const x0 = 16;
+  const y0 = 40;
+
+  const body = `
+${t(16, 22, '같은 화면에 들어가는 작업 영역', { weight: 600, size: 14 })}
+${boxes
+  .map(
+    ([, w, h, fill]) =>
+      `<rect x="${x0}" y="${y0}" width="${w * s}" height="${h * s}" fill="none" stroke="${fill}" stroke-width="2" rx="3"/>`
+  )
+  .join('\n')}
+${boxes
+  .map(([label, w, h, fill], i) => {
+    const y = y0 + 24 + i * 22;
+    return `${rect(x0 + 3840 * s + 24, y - 10, 12, 12, fill, { r: 2 })}
+${t(x0 + 3840 * s + 44, y, label, { size: 12 })}`;
+  })
+  .join('\n')}
+${t(x0 + 3840 * s + 44, y0 + 116, 'FHD 대비', { size: 11, fill: COLOR.mute, weight: 600 })}
+${t(x0 + 3840 * s + 44, y0 + 136, '4K = 4.0배 · QHD = 1.8배', { size: 11, fill: COLOR.mute })}
+
+${t(16, 336, '4K 는 FHD 네 장을 붙인 넓이입니다.', { weight: 600 })}
+${t(16, 356, '다만 그대로 쓰면 글자가 작아서, 보통 배율을 올려 씁니다.', { fill: COLOR.mute, size: 12 })}`;
+
+  return figure(
+    'FHD·QHD·4K 의 작업 영역 넓이 비교',
+    W,
+    370,
+    body,
+    '넓이는 픽셀 수로 정해집니다. 4K 는 FHD 의 4 배, QHD 는 1.8 배입니다.'
+  );
+}
+
+/** Ollama 첫 실행까지의 흐름. */
+function ollamaFlow() {
+  const W = 640;
+  const step = (i, x, title, sub) => {
+    const w = 176;
+    return `${rect(x, 40, w, 76, COLOR.soft, { stroke: COLOR.line })}
+${rect(x + 14, 54, 22, 22, COLOR.accent, { r: 11 })}
+${t(x + 25, 70, String(i), { anchor: 'middle', fill: '#fff', weight: 700, size: 13 })}
+${t(x + 46, 70, title, { weight: 600, size: 13 })}
+${t(x + 14, 98, sub, { fill: COLOR.mute, size: 11 })}`;
+  };
+  const arrow = (x) =>
+    `<path d="M${x} 78 L${x + 20} 78" stroke="${COLOR.line}" stroke-width="2" marker-end="url(#fig-arrow2)"/>`;
+
+  const body = `
+${t(16, 22, '설치부터 첫 답변까지', { weight: 600, size: 14 })}
+<defs><marker id="fig-arrow2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M0 0 L8 4 L0 8 z" fill="${COLOR.line}"/></marker></defs>
+${step(1, 16, '설치', '내려받아 실행')}
+${arrow(192)}
+${step(2, 232, '모델 받기', 'ollama pull')}
+${arrow(408)}
+${step(3, 448, '대화', 'ollama run')}
+
+${t(16, 152, '명령어 두 줄이면 끝납니다.', { weight: 600 })}
+${t(16, 172, '어려운 건 설치가 아니라 어떤 모델을 고르느냐입니다.', { fill: COLOR.mute, size: 12 })}`;
+
+  return figure(
+    'Ollama 설치, 모델 받기, 대화 세 단계',
+    W,
+    186,
+    body,
+    '설치 자체는 몇 분이면 됩니다. 판단이 필요한 지점은 모델 크기 선택입니다.'
+  );
+}
+
 export const figures = {
   'vram-overflow': vramOverflow,
   'memory-parts': memoryParts,
   'ram-vs-vram': ramVsVram,
   'bandwidth': bandwidthLadder,
+  'cpu-vs-gpu-bandwidth': cpuVsGpuBandwidth,
+  'resolution-area': resolutionArea,
+  'ollama-flow': ollamaFlow,
 };

@@ -23,7 +23,7 @@
 <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드","description":"VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-start-guide.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드","item":"https://specfit.kr/posts/local-llm-start-guide.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"그래픽카드가 없어도 되나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다. 체험은 되지만 실제로 쓰기는 어렵습니다."}},{"@type":"Question","name":"노트북으로도 되나요","acceptedAnswer":{"@type":"Answer","text":"노트북 그래픽카드의 메모리를 확인하세요. 같은 이름이라도 데스크톱보다 메모리가 적은 경우가 많습니다. 확인 방법은 위 2번과 같습니다."}},{"@type":"Question","name":"인터넷 서비스보다 성능이 떨어지나요","acceptedAnswer":{"@type":"Answer","text":"떨어집니다. 개인 장비에서 돌릴 수 있는 크기에 한계가 있기 때문입니다. 다만 번역·요약·간단한 코딩 보조 같은 일상적인 작업은 충분히 됩니다."}},{"@type":"Question","name":"무료인가요","acceptedAnswer":{"@type":"Answer","text":"모델과 프로그램 모두 무료입니다. 전기요금만 듭니다. 다만 장비가 부족하면 그걸 사는 비용이 듭니다."}},{"@type":"Question","name":"얼마나 어렵나요","acceptedAnswer":{"@type":"Answer","text":"Ollama 기준으로 설치 후 명령어 한 줄입니다. 어려운 건 설치가 아니라 **내 장비로 뭐가 되는지 판단하는 것**이고, 그게 이 사이트가 하는 일입니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"그래픽카드가 없어도 되나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다. 체험은 되지만 실제로 쓰기는 어렵습니다. 왜 그런지는 [CPU로 돌리면 얼마나 느린가](/posts/local-llm-without-gpu.html)에 계산해 뒀습니다."}},{"@type":"Question","name":"노트북으로도 되나요","acceptedAnswer":{"@type":"Answer","text":"노트북 그래픽카드의 메모리를 확인하세요. 같은 이름이라도 데스크톱보다 메모리가 적은 경우가 많습니다. 확인 방법은 위 2번과 같습니다."}},{"@type":"Question","name":"인터넷 서비스보다 성능이 떨어지나요","acceptedAnswer":{"@type":"Answer","text":"떨어집니다. 개인 장비에서 돌릴 수 있는 크기에 한계가 있기 때문입니다. 다만 번역·요약·간단한 코딩 보조 같은 일상적인 작업은 충분히 됩니다."}},{"@type":"Question","name":"무료인가요","acceptedAnswer":{"@type":"Answer","text":"모델과 프로그램 모두 무료입니다. 전기요금만 듭니다. 다만 장비가 부족하면 그걸 사는 비용이 듭니다."}},{"@type":"Question","name":"얼마나 어렵나요","acceptedAnswer":{"@type":"Answer","text":"Ollama 기준으로 설치 후 명령어 한 줄입니다. 어려운 건 설치가 아니라 **내 장비로 뭐가 되는지 판단하는 것**이고, 그게 이 사이트가 하는 일입니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -178,6 +178,10 @@ AI가 한 번에 기억하는 내용의 길이입니다.
 설치하고 명령어 한 줄이면 시작됩니다.</p>
 <h2 id="7-다음은-여기부터">7. 다음은 여기부터</h2>
 <p>이제 궁금한 게 생겼을 겁니다. 상황에 맞는 곳으로 가세요.</p>
+<p><strong>&quot;일단 깔아보고 싶다&quot;</strong>
+→ <a href="/posts/ollama-install-guide.html">Ollama 설치부터 첫 대화까지</a></p>
+<p><strong>&quot;그래픽카드가 없는데요&quot;</strong>
+→ <a href="/posts/local-llm-without-gpu.html">CPU로 돌리면 얼마나 느린가</a></p>
 <p><strong>&quot;내 카드로 뭐가 되는지 더 자세히&quot;</strong>
 → <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 — VRAM별 정리</a></p>
 <p><strong>&quot;8GB인데 아쉽다&quot;</strong>
@@ -194,7 +198,8 @@ AI가 한 번에 기억하는 내용의 길이입니다.
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
 <h3 id="그래픽카드가-없어도-되나요">그래픽카드가 없어도 되나요</h3>
 <p>돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다.
-체험은 되지만 실제로 쓰기는 어렵습니다.</p>
+체험은 되지만 실제로 쓰기는 어렵습니다.
+왜 그런지는 <a href="/posts/local-llm-without-gpu.html">CPU로 돌리면 얼마나 느린가</a>에 계산해 뒀습니다.</p>
 <h3 id="노트북으로도-되나요">노트북으로도 되나요</h3>
 <p>노트북 그래픽카드의 메모리를 확인하세요. 같은 이름이라도
 데스크톱보다 메모리가 적은 경우가 많습니다. 확인 방법은 위 2번과 같습니다.</p>

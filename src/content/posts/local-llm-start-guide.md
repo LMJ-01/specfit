@@ -127,6 +127,12 @@ AI가 한 번에 기억하는 내용의 길이입니다.
 
 이제 궁금한 게 생겼을 겁니다. 상황에 맞는 곳으로 가세요.
 
+**"일단 깔아보고 싶다"**
+→ [Ollama 설치부터 첫 대화까지](/posts/ollama-install-guide.html)
+
+**"그래픽카드가 없는데요"**
+→ [CPU로 돌리면 얼마나 느린가](/posts/local-llm-without-gpu.html)
+
 **"내 카드로 뭐가 되는지 더 자세히"**
 → [Ollama 최소 사양 — VRAM별 정리](/posts/ollama-minimum-spec.html)
 
@@ -151,6 +157,7 @@ AI가 한 번에 기억하는 내용의 길이입니다.
 
 돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다.
 체험은 되지만 실제로 쓰기는 어렵습니다.
+왜 그런지는 [CPU로 돌리면 얼마나 느린가](/posts/local-llm-without-gpu.html)에 계산해 뒀습니다.
 
 ### 노트북으로도 되나요
 
