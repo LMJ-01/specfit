@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>안드로이드 스튜디오 노트북 사양 — 에뮬레이터가 문제입니다 | 스펙핏</title>
+<meta name="description" content="안드로이드 스튜디오는 IDE보다 에뮬레이터가 램을 먹습니다. 에뮬레이터 하나가 가상머신 한 대라서 16GB가 어디서 터지는지 계산했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/android-studio-laptop-spec.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="안드로이드 스튜디오 노트북 사양 — 에뮬레이터가 문제입니다 | 스펙핏">
+<meta property="og:description" content="안드로이드 스튜디오는 IDE보다 에뮬레이터가 램을 먹습니다. 에뮬레이터 하나가 가상머신 한 대라서 16GB가 어디서 터지는지 계산했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/android-studio-laptop-spec.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"안드로이드 스튜디오 노트북 사양 — 에뮬레이터가 문제입니다","description":"안드로이드 스튜디오는 IDE보다 에뮬레이터가 램을 먹습니다. 에뮬레이터 하나가 가상머신 한 대라서 16GB가 어디서 터지는지 계산했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/android-studio-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"안드로이드 스튜디오 노트북 사양 — 에뮬레이터가 문제입니다","item":"https://specfit.kr/posts/android-studio-laptop-spec.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"에뮬레이터 없이 개발할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"**실기기를 USB로 연결하면 됩니다.** 오히려 이쪽이 정확하고 가볍습니다. 안 쓰는 폰이 있다면 개발자 옵션에서 USB 디버깅을 켜고 연결하세요."}},{"@type":"Question","name":"에뮬레이터가 너무 느립니다","acceptedAnswer":{"@type":"Answer","text":"램 부족이거나 하드웨어 가속이 꺼져 있을 수 있습니다. 윈도우에서는 가상화 기능이 켜져 있어야 합니다 — BIOS 설정과 윈도우 기능을 확인해 보세요."}},{"@type":"Question","name":"16GB인데 32GB로 늘리면 확실히 나아지나요","acceptedAnswer":{"@type":"Answer","text":"**에뮬레이터를 쓰신다면 네.** 지금 스왑이 일어나고 있을 가능성이 큽니다. 작업 관리자에서 **\"커밋된 메모리\"가 물리 램보다 크면** 이미 디스크로 넘어가고 있다는 뜻입니다."}},{"@type":"Question","name":"게이밍 노트북이 나은가요","acceptedAnswer":{"@type":"Answer","text":"램 슬롯이 있고 냉각이 좋아 유리한 면이 있습니다. 다만 무겁고 배터리가 짧습니다. **들고 다니는 빈도**로 판단하세요."}},{"@type":"Question","name":"도커도 같이 쓰는데요","acceptedAnswer":{"@type":"Answer","text":"그러면 32GB는 사실상 필수입니다. 에뮬레이터와 도커가 각각 램을 통째로 예약합니다. [도커 노트북 사양](/posts/docker-laptop-spec.html)에 그쪽 기준을 적었습니다."}},{"@type":"Question","name":"로컬 LLM도 같이 할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 다만 **로컬 LLM은 VRAM, 에뮬레이터는 시스템 램**으로 서로 다른 자원을 씁니다. 둘 다 하시려면 램 32GB + VRAM 12GB 이상이 편합니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>안드로이드 스튜디오 노트북 사양 — 에뮬레이터가 문제입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-16">2026년 8월 16일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>안드로이드 개발용 노트북을 고를 때 &quot;IDE 돌리는 거니까 적당하면 되겠지&quot; 하면 곤란해집니다.</p>
+<p><strong>안드로이드 스튜디오 자체는 그렇게 무겁지 않습니다. 문제는 에뮬레이터입니다.</strong></p>
+<p>에뮬레이터는 <strong>가상의 안드로이드 폰을 통째로 하나 띄우는 것</strong>입니다. 앱 하나가 아니라 기기 한 대가 컴퓨터 안에서 돌아갑니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>작업 방식</th><th>필요한 램</th></tr></thead>
+<tbody>
+<tr><td>실기기만 연결해서 개발</td><td><strong>16GB로 됩니다</strong></td></tr>
+<tr><td>에뮬레이터 1대 + IDE</td><td><strong>16GB는 빠듯합니다</strong></td></tr>
+<tr><td>에뮬레이터 1대 + IDE + 브라우저</td><td><strong>32GB</strong></td></tr>
+<tr><td>에뮬레이터 여러 대 (화면 크기별 테스트)</td><td><strong>32GB 이상</strong></td></tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>판단</th></tr></thead>
+<tbody>
+<tr><td><strong>램</strong></td><td><strong>여기가 전부입니다</strong></td></tr>
+<tr><td>CPU</td><td>코어 수가 빌드 시간에 영향을 줍니다</td></tr>
+<tr><td>SSD</td><td>512GB는 빠듯합니다. <strong>1TB 권장</strong></td></tr>
+<tr><td>그래픽카드</td><td>전용 카드는 필요 없습니다</td></tr>
+<tr><td>화면</td><td><strong>세로 픽셀</strong>이 중요합니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="1-에뮬레이터가-램을-먹는-구조">1. 에뮬레이터가 램을 먹는 구조</h2>
+<p><strong>에뮬레이터는 프로그램이 아니라 기기입니다.</strong></p>
+<p>가상의 폰 한 대를 만드는 것이라, 그 폰이 쓸 램을 컴퓨터에서 떼어줘야 합니다.</p>
+<pre><code>내 컴퓨터
+ └ 안드로이드 스튜디오        1.5~3GB
+ └ 에뮬레이터 (가상 폰 한 대)   2~4GB   ← 통째로 예약됩니다
+ └ 그레이들 빌드                1~2GB</code></pre>
+<p><strong>AVD를 만들 때 램 크기를 정하는데, 그만큼이 실제로 빠져나갑니다.</strong> 기본값이 2GB 안팎이고, 화면이 큰 태블릿 프로필은 더 잡습니다.</p>
+<h3 id="16gb가-터지는-지점">16GB가 터지는 지점</h3>
+<p>실제로 이렇게 쌓입니다.</p>
+<pre><code>윈도우 자체                    4~6GB
+안드로이드 스튜디오             1.5~3GB
+에뮬레이터 1대                 2~4GB
+그레이들 빌드 (빌드 중)          1~2GB
+브라우저 (문서·스택오버플로)      1~3GB
+──────────────────────────────────
+합계                        9.5~18GB</code></pre>
+<p><strong>16GB에서는 빌드하는 순간 아슬아슬해집니다.</strong></p>
+<p>증상이 이렇습니다.</p>
+<ul>
+<li>빌드를 걸면 에뮬레이터가 멈칫합니다</li>
+<li>IDE가 &quot;메모리 부족&quot; 경고를 띄웁니다</li>
+<li>에뮬레이터가 갑자기 죽습니다</li>
+<li>디스크가 계속 돌아갑니다 (스왑)</li>
+</ul>
+<p><strong>에러가 명확히 안 나고 전체가 느려지는 것</strong>이라 원인을 찾기 어렵습니다. 램 부족의 전형적인 양상입니다.</p>
+<p>내 램이 실제로 부족한지 확인하는 법은
+<a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 있습니다.</p>
+<h2 id="2-16gb로-버티는-법">2. 16GB로 버티는 법</h2>
+<p>램을 못 늘리는 상황이라면 이 정도가 할 수 있는 전부입니다.</p>
+<p><strong>① 실기기를 쓰세요 — 이게 가장 큽니다</strong></p>
+<p>안 쓰는 안드로이드 폰이 있다면 USB로 연결해서 개발하면 됩니다.
+<strong>에뮬레이터를 안 띄우면 2~4GB가 통째로 남습니다.</strong></p>
+<p>게다가 실기기가 더 정확합니다. 카메라·센서·성능이 실제와 같으니까요.</p>
+<p><strong>② AVD 램을 줄이세요</strong></p>
+<p>AVD 설정에서 램 크기를 조절할 수 있습니다. 기본값보다 낮춰도 간단한 앱은 돕니다.
+다만 너무 줄이면 에뮬레이터가 느려지거나 죽습니다.</p>
+<p><strong>③ 에뮬레이터는 하나만</strong></p>
+<p>화면 크기별로 여러 대를 띄우고 싶어지는데, 16GB에서는 하나씩 돌리세요.</p>
+<p><strong>④ 그레이들 데몬 메모리 제한</strong></p>
+<p><code>gradle.properties</code>에서 빌드에 쓸 메모리 상한을 정할 수 있습니다.
+너무 낮추면 빌드가 느려지니 조금씩 조절하세요.</p>
+<p><strong>⑤ 브라우저 탭을 줄이세요</strong></p>
+<p>의외로 여기서 몇 GB가 나옵니다.</p>
+<h2 id="3-cpu-빌드-시간에만-영향을-줍니다">3. CPU — 빌드 시간에만 영향을 줍니다</h2>
+<p><strong>안드로이드 빌드는 코어를 여럿 씁니다.</strong> 그래서 도커나 웹 개발과 달리, CPU가 실제로 체감되는 영역이 있습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>CPU 영향</th></tr></thead>
+<tbody>
+<tr><td>그레이들 빌드</td><td><strong>코어 수가 도움이 됩니다</strong></td></tr>
+<tr><td>에뮬레이터 실행</td><td>조금</td></tr>
+<tr><td>코드 편집·인덱싱</td><td>거의 없음</td></tr>
+</tbody>
+</table></div>
+<p><strong>다만 우선순위는 여전히 램입니다.</strong> 램이 모자라 스왑이 걸리면 CPU가 아무리 좋아도 느립니다.</p>
+<pre><code>램 부족  →  CPU 가 좋아도 느림
+램 충분  →  그때부터 CPU 코어 수가 빌드 시간을 줄임</code></pre>
+<p><strong>예산이 있으면 CPU 등급을 올리기보다 램 32GB로 가세요.</strong>
+CPU를 어디까지 봐야 하는지는 <a href="/posts/dev-laptop-cpu.html">개발용 노트북 CPU</a>에 정리했습니다.</p>
+<h2 id="4-전용-그래픽카드는-필요-없습니다">4. 전용 그래픽카드는 필요 없습니다</h2>
+<p><strong>에뮬레이터가 GPU를 쓰긴 하지만, 내장 그래픽으로 충분합니다.</strong></p>
+<p>게임을 만드는 게 아니라면 전용 카드에 돈을 쓸 이유가 없습니다. 그 돈을 <strong>램이나 화면</strong>에 쓰는 편이 체감이 큽니다.</p>
+<blockquote><p><strong>로컬 LLM을 겸하실 거라면 이야기가 다릅니다.</strong>
+그건 VRAM이 필요해서 전용 카드가 있어야 합니다 —
+<a href="/posts/local-llm-laptop-choose.html">로컬 LLM 되는 노트북 고르기</a>를 보세요.</p></blockquote>
+<h2 id="5-화면-세로가-중요합니다">5. 화면 — 세로가 중요합니다</h2>
+<p>안드로이드 스튜디오는 <strong>화면을 많이 씁니다.</strong> 왼쪽에 프로젝트 트리, 가운데 코드, 오른쪽에 미리보기, 아래에 로그캣.</p>
+<p>여기에 <strong>에뮬레이터 창까지 띄워야 합니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>화면</th><th>안드로이드 스튜디오에서</th></tr></thead>
+<tbody>
+<tr><td>15.6&quot; FHD (1920×1080)</td><td>좁습니다. 창을 계속 접었다 폈다 하게 됩니다</td></tr>
+<tr><td>16&quot; WQXGA (2560×1600)</td><td><strong>여유롭습니다</strong></td></tr>
+<tr><td>14&quot; FHD+ (1920×1200)</td><td>세로가 조금 더 나아 도움이 됩니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>16:10 비율이 유리합니다.</strong> 세로 픽셀이 더 많아 로그캣을 띄워도 코드가 남습니다.</p>
+<p>외부 모니터를 붙이신다면 <a href="/posts/dual-monitor-vs-single.html">듀얼 모니터</a>나
+<a href="/posts/vertical-monitor-coding.html">세로 모니터</a>가 도움이 됩니다.
+<strong>로그캣은 세로 화면에 띄우기 좋은 대표적인 것</strong>입니다.</p>
+<h2 id="6-ssd-생각보다-빨리-찹니다">6. SSD — 생각보다 빨리 찹니다</h2>
+<p>안드로이드 개발은 용량을 꽤 먹습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>대략</th></tr></thead>
+<tbody>
+<tr><td>안드로이드 스튜디오</td><td>3~5GB</td></tr>
+<tr><td>SDK (여러 API 레벨)</td><td><strong>10~30GB</strong></td></tr>
+<tr><td>에뮬레이터 이미지 (1개당)</td><td>5~10GB</td></tr>
+<tr><td>그레이들 캐시</td><td>몇 GB, 계속 쌓입니다</td></tr>
+<tr><td>프로젝트별 빌드 산출물</td><td>프로젝트당 수백 MB~</td></tr>
+</tbody>
+</table></div>
+<p><strong>512GB로 시작하면 금방 답답해집니다.</strong> 에뮬레이터 이미지를 두세 개만 받아도 20~30GB입니다.</p>
+<p><strong>1TB를 권합니다.</strong> 노트북은 <a href="/posts/laptop-ssd-upgrade.html">SSD를 나중에 바꿀 수 있으니</a> 당장은 512GB로 시작해도 되지만, 슬롯이 있는지는 확인하세요.</p>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdspuKuC8O" target="_blank" rel="sponsored nofollow noopener">NVMe SSD 1TB 보기</a>
+  <span class="buy-note">모델 파일이 하나에 5~20GB 라 금방 찹니다</span>
+</aside></p>
+<h2 id="7-맥은-어떤가">7. 맥은 어떤가</h2>
+<p><strong>애플 실리콘 맥에서 안드로이드 개발은 잘 됩니다.</strong></p>
+<p>에뮬레이터도 ARM 이미지를 쓰면 원활합니다. 맥의 칩이 ARM이라 <strong>변환 없이 그대로 도는 구조</strong>이기 때문입니다.</p>
+<p>다만 <strong>맥은 램을 나중에 못 늘립니다.</strong> 살 때 정해야 합니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>최소</th></tr></thead>
+<tbody>
+<tr><td>실기기 위주</td><td>16GB</td></tr>
+<tr><td><strong>에뮬레이터 상시</strong></td><td><strong>24GB 이상</strong></td></tr>
+</tbody>
+</table></div>
+<p>기준은 <a href="/posts/macbook-air-vs-pro-dev.html">맥북 에어 vs 프로</a>에 정리했습니다.</p>
+<h2 id="8-그래서-어떤-노트북을-사야-하나">8. 그래서 어떤 노트북을 사야 하나</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>우선순위</th><th>확인</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>램 32GB</strong> 또는 <strong>슬롯이 있는 16GB</strong></td></tr>
+<tr><td>2</td><td>화면 — 16:10 비율, 세로 1200 이상</td></tr>
+<tr><td>3</td><td>SSD 1TB 또는 슬롯 2개</td></tr>
+<tr><td>4</td><td>CPU — 코어 수가 빌드에 도움</td></tr>
+<tr><td>—</td><td>전용 그래픽카드는 불필요</td></tr>
+</tbody>
+</table></div>
+<p><strong>램 슬롯이 있는지가 지금 특히 중요합니다.</strong> 2026년 들어 램 값이 크게 올라서, 32GB 구성의 웃돈이 예전보다 큽니다. 슬롯이 있으면 16GB로 시작해 나중에 늘릴 수 있습니다 —
+<a href="/posts/ram-price-2026.html">램 값이 올랐습니다</a>를 참고하세요.</p>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsmkd62Ls" target="_blank" rel="sponsored nofollow noopener">개발용 노트북 보기</a>
+  <span class="buy-note">램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요</span>
+</aside></p>
+<p>전체 순서는 <a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에 있습니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="에뮬레이터-없이-개발할-수-있나요">에뮬레이터 없이 개발할 수 있나요</h3>
+<p><strong>실기기를 USB로 연결하면 됩니다.</strong> 오히려 이쪽이 정확하고 가볍습니다.
+안 쓰는 폰이 있다면 개발자 옵션에서 USB 디버깅을 켜고 연결하세요.</p>
+<h3 id="에뮬레이터가-너무-느립니다">에뮬레이터가 너무 느립니다</h3>
+<p>램 부족이거나 하드웨어 가속이 꺼져 있을 수 있습니다.
+윈도우에서는 가상화 기능이 켜져 있어야 합니다 — BIOS 설정과 윈도우 기능을 확인해 보세요.</p>
+<h3 id="16gb인데-32gb로-늘리면-확실히-나아지나요">16GB인데 32GB로 늘리면 확실히 나아지나요</h3>
+<p><strong>에뮬레이터를 쓰신다면 네.</strong> 지금 스왑이 일어나고 있을 가능성이 큽니다.
+작업 관리자에서 <strong>&quot;커밋된 메모리&quot;가 물리 램보다 크면</strong> 이미 디스크로 넘어가고 있다는 뜻입니다.</p>
+<h3 id="게이밍-노트북이-나은가요">게이밍 노트북이 나은가요</h3>
+<p>램 슬롯이 있고 냉각이 좋아 유리한 면이 있습니다.
+다만 무겁고 배터리가 짧습니다. <strong>들고 다니는 빈도</strong>로 판단하세요.</p>
+<h3 id="도커도-같이-쓰는데요">도커도 같이 쓰는데요</h3>
+<p>그러면 32GB는 사실상 필수입니다. 에뮬레이터와 도커가 각각 램을 통째로 예약합니다.
+<a href="/posts/docker-laptop-spec.html">도커 노트북 사양</a>에 그쪽 기준을 적었습니다.</p>
+<h3 id="로컬-llm도-같이-할-수-있나요">로컬 LLM도 같이 할 수 있나요</h3>
+<p>됩니다. 다만 <strong>로컬 LLM은 VRAM, 에뮬레이터는 시스템 램</strong>으로 서로 다른 자원을 씁니다.
+둘 다 하시려면 램 32GB + VRAM 12GB 이상이 편합니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>IDE가 아니라 에뮬레이터가 문제</strong>입니다. 가상 기기 한 대를 띄우는 것입니다</li>
+<li>에뮬레이터를 상시로 쓰면 <strong>32GB</strong>입니다. 실기기만 쓰면 16GB로 됩니다</li>
+<li><strong>실기기 연결이 가장 확실한 절약</strong>입니다. 2~4GB가 통째로 남습니다</li>
+<li>CPU는 <strong>빌드 시간에만</strong> 영향을 줍니다. 램이 먼저입니다</li>
+<li><strong>전용 그래픽카드는 필요 없습니다.</strong> 그 돈을 램이나 화면에 쓰세요</li>
+<li>SDK와 에뮬레이터 이미지가 커서 <strong>SSD 1TB</strong>를 권합니다</li>
+</ol>
+<p>실제 사용 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">안드로이드스튜디오</span> <span class="tag">에뮬레이터</span> <span class="tag">개발용노트북</span> <span class="tag">램</span> <span class="tag">안드로이드개발</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/wsl2-memory-limit.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">WSL2가 램을 다 먹을 때 — Vmmem 잡는 법</span>
+        <span class="card-desc">작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/docker-laptop-spec.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">도커 돌리는 노트북 사양 — 램 16GB로 되나</span>
+        <span class="card-desc">도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dev-laptop-cpu.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">개발용 노트북 CPU — 어디까지 신경 써야 하나</span>
+        <span class="card-desc">CPU 이름은 복잡한데 개발에서 실제로 갈리는 건 두 가지뿐입니다. 모델명 읽는 법과, NPU 성능이 로컬 LLM과 무관한 이유를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>

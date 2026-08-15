@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개발용 노트북 CPU — 어디까지 신경 써야 하나 | 스펙핏</title>
+<meta name="description" content="CPU 이름은 복잡한데 개발에서 실제로 갈리는 건 두 가지뿐입니다. 모델명 읽는 법과, NPU 성능이 로컬 LLM과 무관한 이유를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/dev-laptop-cpu.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="개발용 노트북 CPU — 어디까지 신경 써야 하나 | 스펙핏">
+<meta property="og:description" content="CPU 이름은 복잡한데 개발에서 실제로 갈리는 건 두 가지뿐입니다. 모델명 읽는 법과, NPU 성능이 로컬 LLM과 무관한 이유를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/dev-laptop-cpu.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 노트북 CPU — 어디까지 신경 써야 하나","description":"CPU 이름은 복잡한데 개발에서 실제로 갈리는 건 두 가지뿐입니다. 모델명 읽는 법과, NPU 성능이 로컬 LLM과 무관한 이유를 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dev-laptop-cpu.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"개발용 노트북 CPU — 어디까지 신경 써야 하나","item":"https://specfit.kr/posts/dev-laptop-cpu.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"인텔과 AMD 중 어느 쪽인가요","acceptedAnswer":{"@type":"Answer","text":"개발 작업에서 큰 차이는 없습니다. **같은 가격대면 코어 수와 전력 등급을 비교**하시는 게 실질적입니다. 특정 도구가 한쪽에서만 문제를 일으키는 경우가 드물게 있으니, 쓰시는 스택에 알려진 이슈가 있는지만 확인해 보세요."}},{"@type":"Question","name":"클럭이 높으면 빌드가 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"조금 빨라집니다. 다만 **빌드는 여러 코어를 동시에 쓰는 작업**이라 코어 수의 영향이 더 큽니다. 클럭은 마지막에 보셔도 됩니다."}},{"@type":"Question","name":"배터리를 오래 쓰고 싶은데요","acceptedAnswer":{"@type":"Answer","text":"저전력형이 유리합니다. 다만 **빌드가 잦으면 결국 전원을 꽂고 쓰게** 됩니다. 주로 어디서 작업하실지를 먼저 정하시면 답이 나옵니다."}},{"@type":"Question","name":"발열로 성능이 떨어진다던데요","acceptedAnswer":{"@type":"Answer","text":"얇은 노트북에서 실제로 생깁니다. 오래 돌리면 열이 쌓여 CPU가 스스로 속도를 낮춥니다. **긴 빌드나 로컬 LLM처럼 오래 돌리는 작업**이라면 냉각이 좋은 모델이 유리합니다."}},{"@type":"Question","name":"중고 노트북은 CPU 세대를 얼마나 봐야 하나요","acceptedAnswer":{"@type":"Answer","text":"개발 작업만 놓고 보면 **몇 세대 전 CPU도 대체로 충분합니다.** 그보다 **램이 늘어나는지, SSD를 바꿀 수 있는지**를 보시는 편이 실질적입니다."}},{"@type":"Question","name":"로컬 LLM 때문에 CPU를 올려야 하나요","acceptedAnswer":{"@type":"Answer","text":"**그래픽카드로 돌린다면 아닙니다.** CPU는 거의 놀고 있습니다. [GPU 없이 CPU로만 돌린다면](/posts/local-llm-without-gpu.html) 이야기가 다르지만, 그 경우에도 병목은 CPU 성능이 아니라 **메모리 대역폭**입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>개발용 노트북 CPU — 어디까지 신경 써야 하나</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-16">2026년 8월 16일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>노트북 살 때 CPU 이름을 보면 이렇게 생겼습니다.</p>
+<pre><code>인텔 코어 울트라 7 268V
+AMD 라이젠 AI 9 365</code></pre>
+<p>숫자와 알파벳이 섞여 있고, 뭐가 좋은 건지 감이 안 옵니다. 그런데,</p>
+<p><strong>개발용으로는 실제로 볼 게 두 가지뿐입니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>개발에서 중요도</th></tr></thead>
+<tbody>
+<tr><td><strong>코어 수</strong></td><td>⭐⭐⭐ 빌드·컴파일 시간</td></tr>
+<tr><td><strong>전력 등급 (접미사)</strong></td><td>⭐⭐⭐ 같은 이름이어도 성능이 갈립니다</td></tr>
+<tr><td>세대</td><td>⭐⭐ 최근 것이면 대개 충분</td></tr>
+<tr><td>클럭</td><td>⭐ 거의 신경 안 쓰셔도 됩니다</td></tr>
+<tr><td><strong>NPU (AI 성능)</strong></td><td>⭐ <strong>개발·로컬 LLM과 거의 무관합니다</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>그리고 무엇보다 — CPU보다 램이 먼저입니다.</strong></p>
+<pre><code>램 부족  →  CPU 가 아무리 좋아도 느립니다
+램 충분  →  그때부터 CPU 가 빌드 시간을 줄입니다</code></pre>
+<h2 id="1-이름-읽는-법">1. 이름 읽는 법</h2>
+<p>복잡해 보이지만 자리마다 뜻이 정해져 있습니다.</p>
+<pre><code>코어 울트라  7  268V
+   │        │   │
+   브랜드   등급  세대·모델·접미사</code></pre>
+<div class="table-wrap"><table>
+<thead><tr><th>자리</th><th>뜻</th></tr></thead>
+<tbody>
+<tr><td><strong>등급 숫자</strong> (5 / 7 / 9)</td><td>높을수록 코어가 많고 비쌉니다</td></tr>
+<tr><td>세대</td><td>최근 것일수록 전력 효율이 낫습니다</td></tr>
+<tr><td><strong>접미사</strong></td><td><strong>여기가 함정입니다</strong> — 아래를 보세요</td></tr>
+</tbody>
+</table></div>
+<p>AMD도 구조는 같습니다. <code>라이젠 AI 9 365</code>에서 <code>9</code>가 등급입니다.</p>
+<p><strong>등급 숫자만 봐도 대략은 맞습니다.</strong> 5는 보급, 7이 무난, 9는 상급.</p>
+<h2 id="2-접미사-같은-이름인데-성능이-다릅니다">2. ⚠️ 접미사 — 같은 이름인데 성능이 다릅니다</h2>
+<p><strong>여기서 가장 많이 속습니다.</strong></p>
+<p>노트북 CPU는 같은 등급이라도 <strong>얼마나 전력을 쓰게 허용하느냐</strong>로 성능이 갈립니다. 그리고 그게 이름 끝 알파벳에 들어 있습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>성격</th><th>특징</th><th>개발에서</th></tr></thead>
+<tbody>
+<tr><td><strong>저전력형</strong></td><td>얇고 조용, 배터리 김</td><td>가벼운 개발에 충분</td></tr>
+<tr><td><strong>고성능형</strong></td><td>두껍고 팬 소리, 배터리 짧음</td><td><strong>빌드가 잦으면 유리</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>같은 &quot;코어 울트라 7&quot;이어도 얇은 노트북에 들어간 것과 게이밍 노트북에 들어간 것은 다른 물건입니다.</strong></p>
+<p>체계가 제조사·세대마다 조금씩 달라서 알파벳을 외우실 필요는 없습니다. 대신 이렇게 보세요.</p>
+<ul>
+<li><strong>노트북 두께와 무게</strong> — 얇으면 저전력형입니다</li>
+<li><strong>제품 사양의 CPU 전력(TDP·PBP) 표기</strong> — 있으면 그게 가장 정확합니다</li>
+<li><strong>팬이 있는가</strong> — 없으면 확실히 저전력형입니다</li>
+</ul>
+<blockquote><p>노트북 GPU에도 <a href="/posts/local-llm-laptop-choose.html">똑같은 함정이 있습니다</a>.
+이름이 같아도 노트북마다 성능이 다릅니다. <strong>CPU도 GPU도 같은 이야기입니다.</strong></p></blockquote>
+<h2 id="3-코어-수-빌드할-때만-갈립니다">3. 코어 수 — 빌드할 때만 갈립니다</h2>
+<p><strong>개발 작업 중 CPU를 제대로 쓰는 건 빌드와 컴파일입니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>CPU</th></tr></thead>
+<tbody>
+<tr><td><strong>빌드·컴파일</strong></td><td><strong>코어 수가 그대로 도움이 됩니다</strong></td></tr>
+<tr><td>안드로이드 그레이들 빌드</td><td>코어 수</td></tr>
+<tr><td>코드 편집·자동완성</td><td>거의 안 씁니다</td></tr>
+<tr><td>브라우저·문서</td><td>거의 안 씁니다</td></tr>
+<tr><td>도커 컨테이너 실행</td><td>대부분 놀고 있습니다</td></tr>
+<tr><td>로컬 LLM (GPU 사용 시)</td><td><strong>거의 안 씁니다</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>빌드가 하루에 몇 번인지가 기준입니다.</strong></p>
+<ul>
+<li>대형 프로젝트를 자주 빌드한다 → 코어 수가 시간을 줄여줍니다</li>
+<li>웹 개발 위주라 빌드가 가볍다 → <strong>요즘 CPU면 아무거나 충분합니다</strong></li>
+</ul>
+<p>현행 세대 기준으로 상위 모델이 16코어 안팎입니다. <strong>일반적인 개발이라면 그 절반으로도 충분합니다.</strong></p>
+<h2 id="4-npu-마케팅의-중심인데-개발과-무관합니다">4. ⚠️ NPU — 마케팅의 중심인데 개발과 무관합니다</h2>
+<p>요즘 노트북 광고에 <strong>&quot;AI 성능 40 TOPS&quot;</strong> 같은 문구가 크게 붙습니다. 실제로 현행 세대는 전 모델이 NPU를 달고 나옵니다.</p>
+<p><strong>그런데 개발에서 이걸 쓸 일이 거의 없습니다.</strong></p>
+<p>NPU는 화상회의 배경 흐리기, 자막 생성처럼 <strong>운영체제와 일부 앱이 쓰는 전용 칩</strong>입니다. 개발 도구가 이걸 쓰지 않습니다.</p>
+<h3 id="로컬-llm에도-안-쓰입니다-이게-중요합니다">로컬 LLM에도 안 쓰입니다 — 이게 중요합니다</h3>
+<p><strong>&quot;AI 노트북이니까 로컬 LLM이 잘 돌겠지&quot;는 틀립니다.</strong></p>
+<p>현재 주요 실행 프로그램(Ollama 등)은 <strong>그래픽카드나 CPU를 씁니다. NPU를 쓰지 않습니다.</strong></p>
+<pre><code>로컬 LLM 이 실제로 쓰는 것
+  1순위   그래픽카드 VRAM      ← 여기서 다 결정됩니다
+  2순위   CPU + 시스템 램      (VRAM 을 넘길 때)
+  안 씀   NPU</code></pre>
+<p>그래서 <strong>NPU 성능이 아무리 높아도 <a href="/posts/ollama-minimum-spec.html">VRAM이 8GB면 8GB만큼만 돌아갑니다</a>.</strong></p>
+<p><div data-vram-tool></div></p>
+<p>계산기에 NPU 항목이 없는 이유가 이것입니다. <strong>판정에 관여하지 않습니다.</strong></p>
+<blockquote><p>⚠️ 이건 <strong>현재 기준</strong>입니다. NPU를 쓰는 실행 프로그램이 늘어나면 달라질 수 있습니다.
+다만 지금 노트북을 고르실 때는 NPU 숫자를 근거로 삼지 마세요.</p></blockquote>
+<h2 id="5-그래서-예산을-어디에-쓰나">5. 그래서 예산을 어디에 쓰나</h2>
+<p><strong>CPU 등급을 한 단계 올리는 값이면, 대개 램이나 화면에 쓰는 게 체감이 큽니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>같은 값이면</th><th>어느 쪽</th></tr></thead>
+<tbody>
+<tr><td>CPU 7 → 9 vs <strong>램 16 → 32GB</strong></td><td><strong>램</strong> (도커·에뮬레이터를 쓴다면 확실히)</td></tr>
+<tr><td>CPU 7 → 9 vs <strong>FHD → 16:10 고해상도</strong></td><td><strong>화면</strong> (하루 종일 봅니다)</td></tr>
+<tr><td>CPU 7 → 9 vs SSD 512GB → 1TB</td><td>상황에 따라 — SSD는 나중에 바꿀 수 있습니다</td></tr>
+<tr><td><strong>CPU 5 → 7</strong> vs 나머지</td><td>빌드가 잦으면 CPU도 값어치가 있습니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>바꿀 수 없는 것부터 정하는 게 원칙입니다.</strong> CPU도 램도 화면도 노트북에서는 못 바꿉니다. 그중에서 <strong>부족할 때 제일 아픈 게 램</strong>입니다.</p>
+<p>순서는 <a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에 정리했습니다.</p>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsmkd62Ls" target="_blank" rel="sponsored nofollow noopener">개발용 노트북 보기</a>
+  <span class="buy-note">램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요</span>
+</aside></p>
+<h2 id="6-맥은-고민이-더-단순합니다">6. 맥은 고민이 더 단순합니다</h2>
+<p>애플은 선택지가 적습니다. <strong>M5 / M5 Pro / M5 Max</strong> 중에서 고르면 됩니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>칩</th><th>개발에서</th></tr></thead>
+<tbody>
+<tr><td>M5</td><td>일반 개발에 충분합니다</td></tr>
+<tr><td>M5 Pro</td><td>빌드가 잦거나 <strong>로컬 LLM을 진지하게</strong> 할 때</td></tr>
+<tr><td>M5 Max</td><td>70B급 모델을 노릴 때만</td></tr>
+</tbody>
+</table></div>
+<p><strong>맥에서는 CPU보다 메모리 용량과 대역폭이 갈림길입니다.</strong>
+자세한 기준은 <a href="/posts/macbook-air-vs-pro-dev.html">맥북 에어 vs 프로</a>에 있습니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="인텔과-amd-중-어느-쪽인가요">인텔과 AMD 중 어느 쪽인가요</h3>
+<p>개발 작업에서 큰 차이는 없습니다. <strong>같은 가격대면 코어 수와 전력 등급을 비교</strong>하시는 게 실질적입니다.
+특정 도구가 한쪽에서만 문제를 일으키는 경우가 드물게 있으니, 쓰시는 스택에 알려진 이슈가 있는지만 확인해 보세요.</p>
+<h3 id="클럭이-높으면-빌드가-빨라지나요">클럭이 높으면 빌드가 빨라지나요</h3>
+<p>조금 빨라집니다. 다만 <strong>빌드는 여러 코어를 동시에 쓰는 작업</strong>이라 코어 수의 영향이 더 큽니다.
+클럭은 마지막에 보셔도 됩니다.</p>
+<h3 id="배터리를-오래-쓰고-싶은데요">배터리를 오래 쓰고 싶은데요</h3>
+<p>저전력형이 유리합니다. 다만 <strong>빌드가 잦으면 결국 전원을 꽂고 쓰게</strong> 됩니다.
+주로 어디서 작업하실지를 먼저 정하시면 답이 나옵니다.</p>
+<h3 id="발열로-성능이-떨어진다던데요">발열로 성능이 떨어진다던데요</h3>
+<p>얇은 노트북에서 실제로 생깁니다. 오래 돌리면 열이 쌓여 CPU가 스스로 속도를 낮춥니다.
+<strong>긴 빌드나 로컬 LLM처럼 오래 돌리는 작업</strong>이라면 냉각이 좋은 모델이 유리합니다.</p>
+<h3 id="중고-노트북은-cpu-세대를-얼마나-봐야-하나요">중고 노트북은 CPU 세대를 얼마나 봐야 하나요</h3>
+<p>개발 작업만 놓고 보면 <strong>몇 세대 전 CPU도 대체로 충분합니다.</strong>
+그보다 <strong>램이 늘어나는지, SSD를 바꿀 수 있는지</strong>를 보시는 편이 실질적입니다.</p>
+<h3 id="로컬-llm-때문에-cpu를-올려야-하나요">로컬 LLM 때문에 CPU를 올려야 하나요</h3>
+<p><strong>그래픽카드로 돌린다면 아닙니다.</strong> CPU는 거의 놀고 있습니다.
+<a href="/posts/local-llm-without-gpu.html">GPU 없이 CPU로만 돌린다면</a> 이야기가 다르지만,
+그 경우에도 병목은 CPU 성능이 아니라 <strong>메모리 대역폭</strong>입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>개발에서 갈리는 건 <strong>코어 수와 전력 등급</strong> 두 가지입니다</li>
+<li><strong>접미사에 속지 마세요.</strong> 같은 이름이어도 얇은 노트북 쪽이 느립니다</li>
+<li>코어 수는 <strong>빌드할 때만</strong> 도움이 됩니다. 편집·도커는 거의 안 씁니다</li>
+<li><strong>NPU는 개발·로컬 LLM과 무관합니다.</strong> 로컬 LLM은 VRAM이 정합니다</li>
+<li>CPU 등급을 올리는 값이면 <strong>램이나 화면</strong>이 대개 낫습니다</li>
+<li><strong>램이 부족하면 CPU가 좋아도 느립니다.</strong> 순서가 있습니다</li>
+</ol>
+<p>세대가 바뀌어 내용이 낡았다면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">노트북CPU</span> <span class="tag">코어울트라</span> <span class="tag">라이젠</span> <span class="tag">NPU</span> <span class="tag">개발용노트북</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/wsl2-memory-limit.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">WSL2가 램을 다 먹을 때 — Vmmem 잡는 법</span>
+        <span class="card-desc">작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/docker-laptop-spec.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">도커 돌리는 노트북 사양 — 램 16GB로 되나</span>
+        <span class="card-desc">도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/android-studio-laptop-spec.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">안드로이드 스튜디오 노트북 사양 — 에뮬레이터가 문제입니다</span>
+        <span class="card-desc">안드로이드 스튜디오는 IDE보다 에뮬레이터가 램을 먹습니다. 에뮬레이터 하나가 가상머신 한 대라서 16GB가 어디서 터지는지 계산했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m5-16","name":"Mac M5 · 16GB","vram":10,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-24","name":"Mac M5 · 24GB","vram":16,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-32","name":"Mac M5 · 32GB","vram":22,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-24","name":"Mac M5 Pro · 24GB","vram":16,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-48","name":"Mac M5 Pro · 48GB","vram":34,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-64","name":"Mac M5 Pro · 64GB","vram":46,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-64","name":"Mac M5 Max · 64GB","vram":46,"bw":460,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-128","name":"Mac M5 Max · 128GB","vram":96,"bw":614,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script src="/assets/vram.js" defer></script>
+</body>
+</html>

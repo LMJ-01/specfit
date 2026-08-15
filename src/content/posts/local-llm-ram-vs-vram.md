@@ -4,7 +4,7 @@ description: 로컬 LLM에서 시스템 램과 VRAM은 역할이 다릅니다. �
 date: 2026-08-14
 category: memory
 tags: [로컬LLM, RAM, VRAM, 메모리, Ollama]
-affiliate: false
+affiliate: true
 ---
 
 <!--
@@ -102,6 +102,8 @@ VRAM 부족과 증상이 다릅니다.
 메모리 대역폭이 두 배가 되기 때문이고, CPU 오프로딩 상황에서 체감 차이가 납니다.
 
 메인보드 슬롯이 4개면 보통 **2번·4번**에 꽂습니다. 설명서를 확인하세요.
+
+{{BUY:ram}}
 
 ## 맥은 다릅니다
 
