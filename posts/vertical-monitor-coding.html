@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>세로 모니터 코딩 — 27인치가 아니라 24인치인 이유 | 스펙핏</title>
+<meta name="description" content="모니터를 세로로 돌리면 코드가 1.8배 보입니다. 다만 27인치를 돌리면 화면 높이가 60cm가 되고, 글자가 뿌옇게 보이는 문제가 따로 있습니다. 계산해서 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/vertical-monitor-coding.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="세로 모니터 코딩 — 27인치가 아니라 24인치인 이유 | 스펙핏">
+<meta property="og:description" content="모니터를 세로로 돌리면 코드가 1.8배 보입니다. 다만 27인치를 돌리면 화면 높이가 60cm가 되고, 글자가 뿌옇게 보이는 문제가 따로 있습니다. 계산해서 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/vertical-monitor-coding.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"세로 모니터 코딩 — 27인치가 아니라 24인치인 이유","description":"모니터를 세로로 돌리면 코드가 1.8배 보입니다. 다만 27인치를 돌리면 화면 높이가 60cm가 되고, 글자가 뿌옇게 보이는 문제가 따로 있습니다. 계산해서 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/vertical-monitor-coding.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"세로 모니터 코딩 — 27인치가 아니라 24인치인 이유","item":"https://specfit.kr/posts/vertical-monitor-coding.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"세로로 돌리면 해상도를 따로 설정해야 하나요","acceptedAnswer":{"@type":"Answer","text":"윈도우 기준으로 **디스플레이 설정 → 화면 방향 → 세로**로 바꾸면 됩니다. 해상도 숫자는 자동으로 뒤집힙니다(`2560×1440` → `1440×2560`). 화면만 돌리고 설정을 안 바꾸면 화면이 옆으로 누운 채로 나옵니다."}},{"@type":"Question","name":"27인치를 세로로 쓰면 정말 불편한가요","acceptedAnswer":{"@type":"Answer","text":"높이가 60cm가 됩니다. **책상 깊이와 앉은키에 따라 갈립니다.** 화면과 눈 사이가 멀수록(70cm 이상) 견딜 만하고, 가까우면 위쪽을 보기 어렵습니다. 이미 27인치를 갖고 계시다면 사기 전에 며칠 돌려서 써보시는 게 가장 정확합니다."}},{"@type":"Question","name":"게임이나 영상은 어떻게 하나요","acceptedAnswer":{"@type":"Answer","text":"세로 화면에서는 안 됩니다. 위아래로 검은 띠가 크게 생깁니다. **가로 주 모니터를 따로 두는 구성**이 전제입니다."}},{"@type":"Question","name":"노트북 화면은 못 돌리나요","acceptedAnswer":{"@type":"Answer","text":"내장 화면은 못 돌립니다. 외부 모니터를 붙여야 합니다. 노트북 화면 자체의 세로 픽셀 기준은 [개발용 노트북 사양](/posts/dev-laptop-spec.html)에 정리했습니다 — 16:10 비율이 유리합니다."}},{"@type":"Question","name":"울트라와이드를 세로로 돌리면요","acceptedAnswer":{"@type":"Answer","text":"권하지 않습니다. 34인치 울트라와이드를 돌리면 높이가 80cm에 가까워집니다. 울트라와이드는 **가로로 창을 나눠 쓰라고 만든 제품**입니다."}},{"@type":"Question","name":"로컬 LLM 성능에 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"없습니다. 모니터는 그래픽카드 메모리를 거의 쓰지 않습니다. 세로로 돌려도 [VRAM은 그대로](/posts/ollama-minimum-spec.html)입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>세로 모니터 코딩 — 27인치가 아니라 24인치인 이유</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-16">2026년 8월 16일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>개발자 책상 사진에서 모니터 하나가 세로로 서 있는 걸 보신 적이 있을 겁니다.</p>
+<p><strong>코드는 세로로 길기 때문입니다.</strong> 가로로 넓은 화면은 오른쪽이 비는데, 세로로 돌리면 그 공간이 전부 코드 줄이 됩니다.</p>
+<p>그런데 막상 따라 했다가 되돌리는 경우가 많습니다. 이유는 두 가지인데, <strong>둘 다 사기 전에 계산으로 알 수 있습니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>판단</th></tr></thead>
+<tbody>
+<tr><td><strong>몇 인치를 세로로?</strong></td><td><strong>24인치.</strong> 27인치는 화면 높이가 60cm가 됩니다</td></tr>
+<tr><td>코드가 얼마나 더 보이나</td><td><strong>약 1.8배</strong> (75줄 → 134줄)</td></tr>
+<tr><td>주 모니터로 쓸 수 있나</td><td>아니요. <strong>보조로 두 번째 화면</strong> 자리입니다</td></tr>
+<tr><td>미리 확인할 것</td><td><strong>피벗 지원</strong> 또는 VESA 100×100 + 모니터암</td></tr>
+<tr><td>글자가 뿌옇게 보이면</td><td>정상입니다. 윈도우 쪽 문제이고 아래에 해결법이 있습니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="1-코드가-얼마나-더-보이나-18배">1. 코드가 얼마나 더 보이나 — 1.8배</h2>
+<p><strong>픽셀 수는 그대로입니다. 배치만 바뀝니다.</strong></p>
+<p>27인치 QHD를 돌리면 <code>2560×1440</code>이 <code>1440×2560</code>이 됩니다.</p>
+<p><figure class="fig">
+<svg viewBox="0 0 640 294" width="640" height="294" role="img" aria-label="같은 모니터를 세로로 돌리면 코드가 약 1.8배 더 보인다">
+<title>같은 모니터를 세로로 돌리면 코드가 약 1.8배 더 보인다</title>
+
+<text x="16" y="24" fill="var(--fg)" font-size="14" font-weight="600">같은 27인치 QHD 모니터를 돌리기만 했을 때</text>
+
+<rect x="16" y="88" width="192" height="108" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/>
+<rect x="24" y="96" width="70.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="103" width="118.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="110" width="166.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="117" width="102.39999999999999" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="124" width="150.39999999999998" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="131" width="86.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="138" width="134.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="145" width="70.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="152" width="118.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="159" width="166.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="166" width="102.39999999999999" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="173" width="150.39999999999998" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="180" width="86.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="24" y="187" width="134.4" height="2" fill="var(--fg-muted)" rx="1"/>
+<text x="16" y="262" fill="var(--fg)" font-size="12" font-weight="600">가로 · 2560×1440</text>
+<text x="16" y="280" fill="var(--fg-muted)" font-size="12">약 75줄</text>
+
+<rect x="300" y="46" width="108" height="192" fill="var(--bg-soft)" rx="4" stroke="var(--accent)"/>
+<rect x="308" y="54" width="36.800000000000004" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="61" width="61.89090909090909" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="68" width="86.98181818181818" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="75" width="53.527272727272724" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="82" width="78.61818181818181" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="89" width="45.16363636363637" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="96" width="70.25454545454545" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="103" width="36.800000000000004" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="110" width="61.89090909090909" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="117" width="86.98181818181818" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="124" width="53.527272727272724" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="131" width="78.61818181818181" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="138" width="45.16363636363637" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="145" width="70.25454545454545" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="152" width="36.800000000000004" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="159" width="61.89090909090909" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="166" width="86.98181818181818" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="173" width="53.527272727272724" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="180" width="78.61818181818181" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="187" width="45.16363636363637" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="194" width="70.25454545454545" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="201" width="36.800000000000004" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="208" width="61.89090909090909" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="215" width="86.98181818181818" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="222" width="53.527272727272724" height="2" fill="var(--fg-muted)" rx="1"/>
+<rect x="308" y="229" width="78.61818181818181" height="2" fill="var(--fg-muted)" rx="1"/>
+<text x="300" y="262" fill="var(--fg)" font-size="12" font-weight="600">세로 · 1440×2560</text>
+<text x="300" y="280" fill="var(--accent)" font-size="12" font-weight="600">약 134줄</text>
+
+<text x="452" y="132" fill="var(--accent)" font-size="30" font-weight="700">1.8배</text>
+<text x="452" y="156" fill="var(--fg-muted)" font-size="12">더 보입니다</text>
+<text x="452" y="194" fill="var(--fg-muted)" font-size="12">픽셀 수는 그대로입니다.</text>
+<text x="452" y="212" fill="var(--fg-muted)" font-size="12">배치만 바뀝니다.</text>
+</svg>
+<figcaption>글꼴 14px · 줄 높이 19px 기준으로 계산했습니다. 실제로는 탭 막대와 상태 표시줄이 빠져 이보다 조금 적습니다.</figcaption>
+</figure></p>
+<p>줄 수로 환산하면 이렇습니다. 글꼴 14px, 줄 높이 19px 기준입니다.</p>
+<pre><code>가로 1440px ÷ 19px = 약 75줄
+세로 2560px ÷ 19px = 약 134줄</code></pre>
+<p><strong>59줄이 더 보입니다.</strong> 함수 하나가 통째로 들어가느냐 아니냐가 갈리는 폭입니다.</p>
+<p>로그를 볼 때는 차이가 더 큽니다. 스크롤을 덜 하게 되니까요.</p>
+<h2 id="2-그런데-27인치를-돌리면-너무-높습니다">2. ⚠️ 그런데 27인치를 돌리면 너무 높습니다</h2>
+<p><strong>여기서 대부분 실패합니다.</strong> 인치는 대각선이라 감이 안 오는데, 계산하면 바로 보입니다.</p>
+<pre><code>16:9 화면의 가로 = 인치 × 16 ÷ √(16² + 9²)
+                = 인치 × 16 ÷ 18.36</code></pre>
+<p>돌리면 이 <strong>가로가 세로 높이</strong>가 됩니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>크기</th><th>가로</th><th>세로로 돌리면 높이</th></tr></thead>
+<tbody>
+<tr><td>24인치</td><td>53cm</td><td><strong>53cm</strong></td></tr>
+<tr><td>27인치</td><td>60cm</td><td><strong>60cm</strong></td></tr>
+<tr><td>32인치</td><td>71cm</td><td><strong>71cm</strong> — 논외입니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>A4 용지가 29.7cm입니다.</strong> 27인치를 세로로 두면 A4 두 장을 세로로 이어붙인 높이가 됩니다.</p>
+<p>그러면 이렇게 됩니다.</p>
+<ul>
+<li>화면 맨 위를 보려면 <strong>고개를 들어야</strong> 합니다</li>
+<li>책상이 낮으면 위쪽이 시야에서 벗어납니다</li>
+<li>스탠드 높이까지 더해지면 더 올라갑니다</li>
+</ul>
+<p>목이 아픈 것은 자세 문제가 아니라 <strong>화면이 시야보다 큰 것</strong>입니다. 눈은 위아래로 잘 안 움직입니다.</p>
+<p><strong>24인치가 세로 모니터의 기본값인 이유가 이것입니다.</strong> 53cm면 고개를 크게 들지 않고 위아래가 다 들어옵니다.</p>
+<h2 id="3-글자가-뿌옇게-보이는-문제">3. ⚠️ 글자가 뿌옇게 보이는 문제</h2>
+<p><strong>세로로 돌리자마자 글자 테두리에 색이 번져 보인다면, 고장이 아닙니다.</strong></p>
+<p>이걸 모르고 사면 &quot;불량인가?&quot; 하게 되는데, 원인이 명확합니다.</p>
+<h3 id="왜-그런가">왜 그런가</h3>
+<p>화면의 점 하나는 사실 <strong>빨강·초록·파랑 세 칸이 가로로 나란히</strong> 붙어 있는 구조입니다.</p>
+<p>윈도우는 이 세 칸을 따로 켜서 글자 테두리를 매끄럽게 만듭니다. 이걸 <strong>ClearType</strong>이라고 합니다.</p>
+<p><strong>그런데 이 기능은 세 칸이 가로로 놓여 있다고 전제합니다.</strong> 모니터를 90도 돌리면 세 칸이 세로로 서 버립니다. 전제가 깨지니까 글자 테두리에 색이 번지고, 노란빛이나 보랏빛 테두리가 보이게 됩니다.</p>
+<p>MS 문서에도 <strong>ClearType은 세로 줄무늬(RGB 순서)에만 구현되어 있다</strong>고 명시돼 있습니다. 새 화면 방향에 맞춰 다시 계산해주지 않습니다.</p>
+<h3 id="해결법">해결법</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>방법</th><th>어떻게</th></tr></thead>
+<tbody>
+<tr><td><strong>ClearType 끄기</strong></td><td>시작 메뉴에서 <code>ClearType</code> 검색 → 조정 마법사 → 체크 해제</td></tr>
+<tr><td>편집기만 따로 끄기</td><td>VS Code 계열은 <code>--disable-lcd-text</code> 옵션으로 실행</td></tr>
+</tbody>
+</table></div>
+<p><strong>끄면 글자가 아주 약간 흐릿해지지만 색 번짐은 사라집니다.</strong> 세로 화면에서는 이쪽이 대체로 낫습니다.</p>
+<p>참고로 색 번짐이 없어진다고 읽기가 나빠지지는 않습니다. <strong>ClearType이 가독성이나 읽기 속도를 실제로 높여주지는 않는다</strong>는 연구 결과가 있습니다 — 다만 사람들이 그 쪽을 더 <strong>선호</strong>할 뿐입니다.</p>
+<blockquote><p><strong>맥은 해당하지 않습니다.</strong> 애플이 서브픽셀 방식을 이미 걷어냈기 때문에
+돌려도 이 문제가 생기지 않습니다.</p></blockquote>
+<h2 id="4-피벗이-되는지부터-확인하세요">4. 피벗이 되는지부터 확인하세요</h2>
+<p><strong>모든 모니터가 돌아가지 않습니다.</strong> 화면을 90도 돌리려면 스탠드가 받쳐줘야 합니다.</p>
+<h3 id="방법-1-피벗-지원-스탠드">방법 1 — 피벗 지원 스탠드</h3>
+<p>제품 사양에서 찾을 단어입니다.</p>
+<ul>
+<li><strong>&quot;피벗&quot;</strong> 또는 <strong>&quot;Pivot&quot;</strong> — 이게 있으면 됩니다</li>
+<li>&quot;높이 조절&quot; 만 있는 것과 다릅니다. 높이만 되고 회전은 안 되는 제품이 많습니다</li>
+<li>스위블(좌우), 틸트(상하 각도)와도 다릅니다</li>
+</ul>
+<p><strong>대개 높이 조절이 되는 제품에 피벗이 같이 붙습니다.</strong> 스탠드가 위로 늘어나야 돌릴 공간이 나오기 때문입니다. 가장 싼 모니터는 기울기만 되는 고정 스탠드라 안 됩니다.</p>
+<h3 id="방법-2-vesa-모니터암">방법 2 — VESA + 모니터암</h3>
+<p>스탠드가 피벗을 지원하지 않아도, 뒷면에 나사 구멍이 있으면 모니터암으로 해결됩니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>확인할 것</th><th>흔한 값</th></tr></thead>
+<tbody>
+<tr><td>VESA 규격</td><td><strong>100×100</strong> 또는 75×75 (mm)</td></tr>
+<tr><td>모니터 무게</td><td>27인치 일반형이 대략 4~7kg</td></tr>
+<tr><td>암의 지지 하중</td><td>모니터 무게보다 넉넉하게</td></tr>
+</tbody>
+</table></div>
+<p><strong>규격이 안 맞으면 어댑터가 필요한 모델도 있으니 사기 전에 확인하세요.</strong></p>
+<p>모니터암을 쓰면 좌우 배치도 자유로워져서, 세로 화면을 주 모니터 옆에 딱 붙일 수 있습니다.</p>
+<h2 id="5-세로가-답이-아닌-경우">5. 세로가 답이 아닌 경우</h2>
+<p><strong>세로 모니터는 주 모니터가 아닙니다.</strong> 두 번째 화면입니다.</p>
+<p>가로 폭이 1440px(27인치 QHD 기준)로 줄어들기 때문에 이런 것들이 불편해집니다.</p>
+<ul>
+<li>좌우로 넓은 표나 대시보드</li>
+<li>나란히 놓고 보는 코드 비교(diff)</li>
+<li>영상 — 위아래로 검은 띠가 크게 생깁니다</li>
+<li>디자인 도구처럼 패널이 양옆에 붙는 프로그램</li>
+</ul>
+<p>그래서 실제 구성은 대개 이렇게 됩니다.</p>
+<pre><code>주 모니터(가로)  +  보조 모니터(세로)
+   코드 편집         로그 · 문서 · 터미널</code></pre>
+<p><strong>모니터가 한 대뿐이라면 세로로 돌리지 마세요.</strong> 얻는 것보다 잃는 게 큽니다.</p>
+<p>주 모니터를 아직 안 고르셨다면 <a href="/posts/coding-monitor-resolution.html">코딩용 모니터 — 27인치 QHD와 4K 중 어느 쪽인가</a>를 먼저 보세요. 배율을 안 건드리고 쓸 수 있는 조합을 정리해 뒀습니다.</p>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsnkTpck0" target="_blank" rel="sponsored nofollow noopener">27인치 QHD 모니터 보기</a>
+  <span class="buy-note">배율을 안 건드리고 쓸 수 있는 조합입니다</span>
+</aside></p>
+<h2 id="6-그럼-뭘-사야-하나">6. 그럼 뭘 사야 하나</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>선택</th></tr></thead>
+<tbody>
+<tr><td>세로 전용으로 한 대 더</td><td><strong>24인치 FHD 피벗 지원</strong> — 53cm, 세로 1920px</td></tr>
+<tr><td>이미 27인치가 있다</td><td>돌려서 며칠 써보세요. 높이가 감당되면 그대로</td></tr>
+<tr><td>선명함까지 원한다</td><td>24인치 QHD — 픽셀이 촘촘해 글자가 낫습니다</td></tr>
+<tr><td>스탠드가 안 돌아간다</td><td>VESA 확인 후 모니터암</td></tr>
+</tbody>
+</table></div>
+<p><strong>세로용으로 비싼 제품을 살 이유는 적습니다.</strong> 주사율·색재현율·응답속도가 전부 필요 없는 용도입니다. 로그와 문서를 띄워둘 화면이니까요.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="세로로-돌리면-해상도를-따로-설정해야-하나요">세로로 돌리면 해상도를 따로 설정해야 하나요</h3>
+<p>윈도우 기준으로 <strong>디스플레이 설정 → 화면 방향 → 세로</strong>로 바꾸면 됩니다.
+해상도 숫자는 자동으로 뒤집힙니다(<code>2560×1440</code> → <code>1440×2560</code>).
+화면만 돌리고 설정을 안 바꾸면 화면이 옆으로 누운 채로 나옵니다.</p>
+<h3 id="27인치를-세로로-쓰면-정말-불편한가요">27인치를 세로로 쓰면 정말 불편한가요</h3>
+<p>높이가 60cm가 됩니다. <strong>책상 깊이와 앉은키에 따라 갈립니다.</strong>
+화면과 눈 사이가 멀수록(70cm 이상) 견딜 만하고, 가까우면 위쪽을 보기 어렵습니다.
+이미 27인치를 갖고 계시다면 사기 전에 며칠 돌려서 써보시는 게 가장 정확합니다.</p>
+<h3 id="게임이나-영상은-어떻게-하나요">게임이나 영상은 어떻게 하나요</h3>
+<p>세로 화면에서는 안 됩니다. 위아래로 검은 띠가 크게 생깁니다.
+<strong>가로 주 모니터를 따로 두는 구성</strong>이 전제입니다.</p>
+<h3 id="노트북-화면은-못-돌리나요">노트북 화면은 못 돌리나요</h3>
+<p>내장 화면은 못 돌립니다. 외부 모니터를 붙여야 합니다.
+노트북 화면 자체의 세로 픽셀 기준은
+<a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에 정리했습니다 — 16:10 비율이 유리합니다.</p>
+<h3 id="울트라와이드를-세로로-돌리면요">울트라와이드를 세로로 돌리면요</h3>
+<p>권하지 않습니다. 34인치 울트라와이드를 돌리면 높이가 80cm에 가까워집니다.
+울트라와이드는 <strong>가로로 창을 나눠 쓰라고 만든 제품</strong>입니다.</p>
+<h3 id="로컬-llm-성능에-영향이-있나요">로컬 LLM 성능에 영향이 있나요</h3>
+<p>없습니다. 모니터는 그래픽카드 메모리를 거의 쓰지 않습니다.
+세로로 돌려도 <a href="/posts/ollama-minimum-spec.html">VRAM은 그대로</a>입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>세로로 돌리면 코드가 <strong>약 1.8배</strong> 보입니다 (75줄 → 134줄)</li>
+<li><strong>27인치는 돌리면 높이가 60cm</strong>입니다. 세로용은 <strong>24인치</strong>가 기본값입니다</li>
+<li><strong>글자가 뿌옇게 보이는 건 고장이 아닙니다.</strong> ClearType을 끄면 됩니다</li>
+<li>사기 전에 <strong>&quot;피벗&quot;</strong> 표기 또는 <strong>VESA 100×100</strong>을 확인하세요</li>
+<li><strong>세로는 두 번째 화면입니다.</strong> 한 대뿐이면 돌리지 마세요</li>
+</ol>
+<p>실제로 써보신 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 본문을 고치고 갱신일을 표시합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">세로모니터</span> <span class="tag">피벗</span> <span class="tag">코딩용모니터</span> <span class="tag">VESA</span> <span class="tag">모니터암</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/dual-monitor-vs-single.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터 vs 큰 모니터 한 대 — 코딩에서는</span>
+        <span class="card-desc">두 대로 넓히면 세로는 그대로입니다. 코드를 더 보고 싶은 건지 참고 자료를 띄우고 싶은 건지에 따라 답이 갈립니다. 픽셀로 계산했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/coding-monitor-resolution.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">코딩용 모니터 — 27인치 QHD와 4K 중 어느 쪽인가</span>
+        <span class="card-desc">코딩에서 갈리는 건 주사율이나 색재현율이 아니라 해상도와 크기의 조합입니다. PPI를 직접 계산해 어느 조합이 맞는지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>

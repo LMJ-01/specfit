@@ -304,6 +304,68 @@ ${t(16, 172, '어려운 건 설치가 아니라 어떤 모델을 고르느냐입
   );
 }
 
+/**
+ * 같은 모니터를 돌렸을 때 한 화면에 들어가는 코드 줄 수.
+ *
+ * "세로로 쓰면 더 보인다" 는 말은 많은데 얼마나 더 보이는지는 아무도 안 적습니다.
+ * 픽셀 수는 그대로이고 배치만 바뀐다는 것을 그림 하나로 보여주는 편이 빠릅니다.
+ */
+function pivotLines() {
+  const W = 640;
+  const s = 0.075; // 화면 픽셀 → 도해 픽셀
+  const LW = 2560 * s; // 가로 모드 너비 192
+  const LH = 1440 * s; // 가로 모드 높이 108
+  const PW = 1440 * s; // 세로 모드 너비 108
+  const PH = 2560 * s; // 세로 모드 높이 192
+
+  // 화면 안을 코드 줄로 채웁니다. 줄 간격을 두 화면에서 같게 두면
+  // 들어가는 줄 수의 비가 그대로 눈에 보입니다 — 그게 이 그림의 전부입니다.
+  const GAP = 7;
+  const codeLines = (x, y, w, h) => {
+    const out = [];
+    let i = 0;
+    for (let ly = y + 8; ly < y + h - 5; ly += GAP, i++) {
+      // 줄마다 길이를 달리해 코드처럼 보이게 합니다
+      const frac = 0.4 + ((i * 3) % 7) / 11;
+      out.push(rect(x + 8, ly, (w - 16) * frac, 2, COLOR.mute, { r: 1 }));
+    }
+    return out.join('\n');
+  };
+
+  const top = 46;
+  const lx = 16;
+  const ly = top + (PH - LH) / 2; // 세로 화면과 가운데를 맞춥니다
+  const px = 300;
+  const labelA = top + PH + 24;
+  const labelB = labelA + 18;
+
+  const body = `
+${t(16, 24, '같은 27인치 QHD 모니터를 돌리기만 했을 때', { weight: 600, size: 14 })}
+
+${rect(lx, ly, LW, LH, COLOR.soft, { stroke: COLOR.line })}
+${codeLines(lx, ly, LW, LH)}
+${t(lx, labelA, '가로 · 2560×1440', { weight: 600, size: 12 })}
+${t(lx, labelB, '약 75줄', { fill: COLOR.mute, size: 12 })}
+
+${rect(px, top, PW, PH, COLOR.soft, { stroke: COLOR.accent })}
+${codeLines(px, top, PW, PH)}
+${t(px, labelA, '세로 · 1440×2560', { weight: 600, size: 12 })}
+${t(px, labelB, '약 134줄', { fill: COLOR.accent, size: 12, weight: 600 })}
+
+${t(452, top + 86, '1.8배', { size: 30, weight: 700, fill: COLOR.accent })}
+${t(452, top + 110, '더 보입니다', { size: 12, fill: COLOR.mute })}
+${t(452, top + 148, '픽셀 수는 그대로입니다.', { size: 12, fill: COLOR.mute })}
+${t(452, top + 166, '배치만 바뀝니다.', { size: 12, fill: COLOR.mute })}`;
+
+  return figure(
+    '같은 모니터를 세로로 돌리면 코드가 약 1.8배 더 보인다',
+    W,
+    labelB + 14,
+    body,
+    '글꼴 14px · 줄 높이 19px 기준으로 계산했습니다. 실제로는 탭 막대와 상태 표시줄이 빠져 이보다 조금 적습니다.'
+  );
+}
+
 export const figures = {
   'vram-overflow': vramOverflow,
   'memory-parts': memoryParts,
@@ -312,4 +374,5 @@ export const figures = {
   'cpu-vs-gpu-bandwidth': cpuVsGpuBandwidth,
   'resolution-area': resolutionArea,
   'ollama-flow': ollamaFlow,
+  'pivot-lines': pivotLines,
 };

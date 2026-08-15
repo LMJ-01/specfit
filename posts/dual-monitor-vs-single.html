@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>듀얼 모니터 vs 큰 모니터 한 대 — 코딩에서는 | 스펙핏</title>
+<meta name="description" content="두 대로 넓히면 세로는 그대로입니다. 코드를 더 보고 싶은 건지 참고 자료를 띄우고 싶은 건지에 따라 답이 갈립니다. 픽셀로 계산했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/dual-monitor-vs-single.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="듀얼 모니터 vs 큰 모니터 한 대 — 코딩에서는 | 스펙핏">
+<meta property="og:description" content="두 대로 넓히면 세로는 그대로입니다. 코드를 더 보고 싶은 건지 참고 자료를 띄우고 싶은 건지에 따라 답이 갈립니다. 픽셀로 계산했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/dual-monitor-vs-single.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"듀얼 모니터 vs 큰 모니터 한 대 — 코딩에서는","description":"두 대로 넓히면 세로는 그대로입니다. 코드를 더 보고 싶은 건지 참고 자료를 띄우고 싶은 건지에 따라 답이 갈립니다. 픽셀로 계산했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dual-monitor-vs-single.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"듀얼 모니터 vs 큰 모니터 한 대 — 코딩에서는","item":"https://specfit.kr/posts/dual-monitor-vs-single.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"듀얼로 하면 그래픽카드에 부담이 되나요","acceptedAnswer":{"@type":"Answer","text":"일반적인 코딩 작업에서는 거의 없습니다. 화면 출력은 그래픽카드에 가벼운 일입니다. **로컬 LLM에 쓸 VRAM도 거의 안 줄어듭니다** — 자세한 기준은 [Ollama 최소 사양](/posts/ollama-minimum-spec.html)에 있습니다."}},{"@type":"Question","name":"해상도가 다른 두 대를 쓰면 어떻게 되나요","acceptedAnswer":{"@type":"Answer","text":"동작은 합니다. 다만 배율이 달라서 **창을 옮길 때 크기가 튑니다.** 프로그램에 따라 옮긴 뒤 흐릿하게 보이는 경우도 있습니다. 쓸 수는 있지만 같은 해상도가 확실히 편합니다."}},{"@type":"Question","name":"세로 한 대 + 가로 한 대는 어떤가요","acceptedAnswer":{"@type":"Answer","text":"**코딩에는 이 조합이 꽤 좋습니다.** 가로에서 코드를 짜고 세로에 로그·문서를 띄웁니다. 다만 세로용은 24인치를 권합니다. 27인치를 세로로 두면 높이가 60cm가 됩니다 — [세로 모니터 글](/posts/vertical-monitor-coding.html)에 계산해 뒀습니다."}},{"@type":"Question","name":"울트라와이드 한 대면 듀얼을 대신하나요","acceptedAnswer":{"@type":"Answer","text":"가로는 대신합니다. 34\" UWQHD가 `3440×1440`이라 창을 좌우로 나누기 좋습니다. **다만 세로는 1440으로 27\" QHD와 같습니다.** 코드 줄 수는 안 늘어납니다. 화면 경계가 없다는 게 장점입니다."}},{"@type":"Question","name":"3대 이상은요","acceptedAnswer":{"@type":"Answer","text":"창을 옮기는 것보다 **고개를 돌리는 게** 더 힘들어지는 지점이 옵니다. 대개 2대에서 만족도가 가장 높고, 3대째는 상시로 보는 화면이 아니라 모니터링용이 됩니다."}},{"@type":"Question","name":"주사율이 다른 두 대를 쓰면 문제가 되나요","acceptedAnswer":{"@type":"Answer","text":"코딩에서는 문제없습니다. 코드는 움직이지 않아서 60Hz로 충분합니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>듀얼 모니터 vs 큰 모니터 한 대 — 코딩에서는</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-16">2026년 8월 16일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>모니터를 하나 더 살까, 아니면 큰 걸로 바꿀까.</p>
+<p>책상에 자리는 한정돼 있고 예산도 그렇습니다. 그런데 이 질문에는 <strong>답이 하나로 안 나옵니다.</strong> 무엇이 부족한지에 따라 정반대가 되기 때문입니다.</p>
+<p><strong>픽셀로 계산하면 바로 갈립니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>지금 뭐가 아쉬운가</th><th>답</th></tr></thead>
+<tbody>
+<tr><td><strong>코드가 몇 줄 더 보였으면</strong></td><td>❌ 듀얼은 도움이 안 됩니다 → <strong>해상도 높은 한 대</strong></td></tr>
+<tr><td><strong>참고 자료를 같이 띄우고 싶다</strong></td><td>✅ <strong>듀얼</strong></td></tr>
+<tr><td>창을 계속 바꾸는 게 귀찮다</td><td>✅ 듀얼</td></tr>
+<tr><td>화면이 작아서 답답하다</td><td>한 대를 큰 걸로</td></tr>
+</tbody>
+</table></div>
+<p><strong>&quot;넓다&quot;와 &quot;많이 보인다&quot;가 다릅니다.</strong> 여기서 대부분 헷갈립니다.</p>
+<h2 id="1-듀얼로-늘어나는-건-가로뿐입니다">1. 듀얼로 늘어나는 건 가로뿐입니다</h2>
+<p>가장 중요한 이야기라 먼저 하겠습니다.</p>
+<p><strong>같은 모니터 두 대를 나란히 놓으면 세로 픽셀은 그대로입니다.</strong></p>
+<pre><code>27&quot; QHD 한 대   →  2560 × 1440
+27&quot; QHD 두 대   →  5120 × 1440   ← 세로는 1440 그대로</code></pre>
+<p><strong>코드는 세로로 깁니다.</strong> 한 화면에 몇 줄 보이느냐를 정하는 건 세로 픽셀인데, 듀얼은 그걸 안 늘려줍니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>구성</th><th>세로 픽셀</th><th>한 화면 코드 줄 수</th></tr></thead>
+<tbody>
+<tr><td>27&quot; QHD 한 대</td><td>1440</td><td>약 75줄</td></tr>
+<tr><td><strong>27&quot; QHD 두 대</strong></td><td><strong>1440</strong></td><td><strong>약 75줄</strong> ← 안 늘어납니다</td></tr>
+<tr><td>27&quot; 4K 한 대 (배율 150%)</td><td>1440 상당</td><td>약 75줄</td></tr>
+<tr><td>32&quot; 4K 한 대 (배율 125%)</td><td>1728 상당</td><td><strong>약 90줄</strong></td></tr>
+<tr><td><strong>27&quot; QHD 세로로 한 대</strong></td><td><strong>2560</strong></td><td><strong>약 134줄</strong></td></tr>
+</tbody>
+</table></div>
+<p>글꼴 14px, 줄 높이 19px 기준입니다.</p>
+<p><strong>&quot;코드가 더 보였으면&quot;이 목적이라면 듀얼은 답이 아닙니다.</strong> 두 배로 돈을 쓰고 같은 줄 수를 보게 됩니다.</p>
+<p>그 경우 답은 <a href="/posts/vertical-monitor-coding.html">세로 모니터</a>이거나 32&quot; 4K입니다.</p>
+<h2 id="2-그럼-듀얼은-언제-쓰나-동시에-볼-때">2. 그럼 듀얼은 언제 쓰나 — 동시에 볼 때</h2>
+<p><strong>듀얼의 값어치는 &quot;넓이&quot;가 아니라 &quot;안 가리는 것&quot;입니다.</strong></p>
+<p>한 화면에서 창을 좌우로 나누면 각각이 좁아집니다. 두 대면 <strong>양쪽 다 온전한 크기</strong>로 씁니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>배치</th><th>실제로 쓰는 폭</th></tr></thead>
+<tbody>
+<tr><td>27&quot; QHD 한 대에 창 두 개</td><td>각 1280px — 좁습니다</td></tr>
+<tr><td><strong>27&quot; QHD 두 대</strong></td><td><strong>각 2560px</strong></td></tr>
+</tbody>
+</table></div>
+<p>이런 작업에서 확실히 차이가 납니다.</p>
+<ul>
+<li>코드 보면서 <strong>문서·API 레퍼런스</strong> 띄우기</li>
+<li>코드 짜면서 <strong>브라우저로 결과 확인</strong></li>
+<li>터미널·로그를 <strong>계속 띄워두기</strong></li>
+<li>화상회의를 켜둔 채 작업</li>
+</ul>
+<p><strong>&quot;창을 왔다 갔다 하는 게 귀찮다&quot;가 진짜 이유라면 듀얼이 맞습니다.</strong></p>
+<h2 id="3-세-가지-구성을-나란히-놓으면">3. 세 가지 구성을 나란히 놓으면</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>듀얼 27&quot; QHD</th><th>32&quot; 4K 한 대</th><th>27&quot; QHD + 세로 27&quot;</th></tr></thead>
+<tbody>
+<tr><td>코드 줄 수</td><td>75줄</td><td><strong>90줄</strong></td><td><strong>134줄</strong>(세로 쪽)</td></tr>
+<tr><td>동시에 보기</td><td><strong>최고</strong></td><td>보통</td><td>좋음</td></tr>
+<tr><td>책상 폭</td><td><strong>120cm+</strong></td><td>71cm</td><td>약 95cm</td></tr>
+<tr><td>배율 손대야 하나</td><td>아니요</td><td>예 (125%)</td><td>아니요</td></tr>
+<tr><td>화면 사이 경계</td><td><strong>있음</strong></td><td>없음</td><td>있음</td></tr>
+</tbody>
+</table></div>
+<h3 id="책상-폭이-실제-제약입니다">책상 폭이 실제 제약입니다</h3>
+<p>27인치 가로 폭이 약 60cm입니다. 계산은 이렇습니다.</p>
+<pre><code>16:9 화면의 가로 = 인치 × 16 ÷ 18.36
+
+27인치 → 60cm
+32인치 → 71cm</code></pre>
+<p><strong>듀얼이면 120cm가 넘습니다.</strong> 여기에 받침대까지 들어갑니다.</p>
+<p>일반적인 책상 폭이 120~140cm라 <strong>딱 맞거나 모자랍니다.</strong> 스피커나 노트북을 옆에 두신다면 더 그렇습니다.</p>
+<p><strong>32&quot; 한 대는 71cm면 됩니다.</strong> 자리가 좁으면 이쪽이 현실적입니다.</p>
+<h3 id="화면-사이-경계는-생각보다-거슬립니다">화면 사이 경계는 생각보다 거슬립니다</h3>
+<p>두 대 사이에는 테두리가 있습니다. 요즘 제품은 얇아졌지만 <strong>없어지지는 않습니다.</strong></p>
+<ul>
+<li>창 하나를 두 화면에 걸쳐 놓으면 가운데가 끊깁니다</li>
+<li><strong>두 화면에 걸치는 배치는 사실상 못 씁니다.</strong> 각 화면에 하나씩 두게 됩니다</li>
+</ul>
+<p>그래서 듀얼은 &quot;넓은 화면 하나&quot;가 아니라 <strong>&quot;화면 두 개&quot;</strong>로 쓰게 됩니다. 그게 목적이면 문제없고, 넓은 화면을 원한 거라면 실망합니다.</p>
+<h2 id="4-듀얼로-간다면-같은-모델이-편합니다">4. 듀얼로 간다면 — 같은 모델이 편합니다</h2>
+<p>두 대의 <strong>크기·해상도·배율이 다르면</strong> 창을 옮길 때마다 크기가 튑니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>왜</th></tr></thead>
+<tbody>
+<tr><td><strong>해상도가 같을 것</strong></td><td>배율이 달라지면 창 크기가 바뀝니다</td></tr>
+<tr><td>크기가 같을 것</td><td>높이를 맞추기 쉽습니다</td></tr>
+<tr><td>높이 조절이 될 것</td><td>눈높이가 안 맞으면 목이 아픕니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>기존 모니터에 한 대를 더하는 상황이라면</strong>, 같은 모델을 구하는 게 가장 편합니다. 단종됐으면 <strong>최소한 해상도만이라도 맞추세요.</strong></p>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsnkTpck0" target="_blank" rel="sponsored nofollow noopener">27인치 QHD 모니터 보기</a>
+  <span class="buy-note">배율을 안 건드리고 쓸 수 있는 조합입니다</span>
+</aside></p>
+<h3 id="배치-정면이-하나여야-합니다">배치 — 정면이 하나여야 합니다</h3>
+<p>두 대를 <strong>똑같이 가운데 놓으면</strong> 둘 다 비스듬해집니다.</p>
+<pre><code>주 모니터  →  정면
+보조       →  옆에 살짝 각도를 줘서</code></pre>
+<p>주로 보는 쪽을 정면에 두고, 보조를 옆에 안쪽으로 돌려놓는 배치가 목에 부담이 적습니다.</p>
+<h2 id="5-노트북-외부-모니터는-어떤가">5. 노트북 + 외부 모니터는 어떤가</h2>
+<p><strong>이미 듀얼입니다.</strong> 노트북 화면이 한 대 역할을 합니다.</p>
+<p>다만 노트북 화면은 <strong>작고 낮습니다.</strong> 그래서 이렇게 쓰는 경우가 많습니다.</p>
+<ul>
+<li>외부 모니터를 정면에 <strong>눈높이로</strong> 두고 주 화면으로</li>
+<li>노트북은 옆에 두고 <strong>터미널·메신저</strong> 같은 걸 띄워두기</li>
+</ul>
+<p>노트북을 받침대로 올려 눈높이를 맞추면 훨씬 낫습니다. <strong>화면 두 개의 높이가 다른 게 목에 제일 안 좋습니다.</strong></p>
+<p>노트북 화면 자체 기준은 <a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에 있습니다.</p>
+<h2 id="6-그래서-뭘-사야-하나">6. 그래서 뭘 사야 하나</h2>
+<p><strong>코드를 더 보고 싶다</strong> → 듀얼이 아닙니다.
+<a href="/posts/vertical-monitor-coding.html">세로 모니터</a>(24인치)를 한 대 더하거나, 32&quot; 4K로 바꾸세요.</p>
+<p><strong>참고 자료를 같이 띄우고 싶다</strong> → 듀얼입니다.
+같은 해상도로 맞추세요.</p>
+<p><strong>책상이 좁다</strong> → 32&quot; 4K 한 대.
+71cm면 되고 화면 경계도 없습니다.</p>
+<p><strong>예산이 빠듯하다</strong> → 지금 모니터에 한 대를 더하는 게 대개 쌉니다.
+해상도만 맞추면 됩니다.</p>
+<p>주 모니터를 아직 안 정하셨다면
+<a href="/posts/coding-monitor-resolution.html">코딩용 모니터 — 27인치 QHD와 4K 중 어느 쪽인가</a>를 먼저 보세요.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="듀얼로-하면-그래픽카드에-부담이-되나요">듀얼로 하면 그래픽카드에 부담이 되나요</h3>
+<p>일반적인 코딩 작업에서는 거의 없습니다. 화면 출력은 그래픽카드에 가벼운 일입니다.
+<strong>로컬 LLM에 쓸 VRAM도 거의 안 줄어듭니다</strong> — 자세한 기준은
+<a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양</a>에 있습니다.</p>
+<h3 id="해상도가-다른-두-대를-쓰면-어떻게-되나요">해상도가 다른 두 대를 쓰면 어떻게 되나요</h3>
+<p>동작은 합니다. 다만 배율이 달라서 <strong>창을 옮길 때 크기가 튑니다.</strong>
+프로그램에 따라 옮긴 뒤 흐릿하게 보이는 경우도 있습니다.
+쓸 수는 있지만 같은 해상도가 확실히 편합니다.</p>
+<h3 id="세로-한-대-가로-한-대는-어떤가요">세로 한 대 + 가로 한 대는 어떤가요</h3>
+<p><strong>코딩에는 이 조합이 꽤 좋습니다.</strong> 가로에서 코드를 짜고 세로에 로그·문서를 띄웁니다.
+다만 세로용은 24인치를 권합니다. 27인치를 세로로 두면 높이가 60cm가 됩니다 —
+<a href="/posts/vertical-monitor-coding.html">세로 모니터 글</a>에 계산해 뒀습니다.</p>
+<h3 id="울트라와이드-한-대면-듀얼을-대신하나요">울트라와이드 한 대면 듀얼을 대신하나요</h3>
+<p>가로는 대신합니다. 34&quot; UWQHD가 <code>3440×1440</code>이라 창을 좌우로 나누기 좋습니다.
+<strong>다만 세로는 1440으로 27&quot; QHD와 같습니다.</strong> 코드 줄 수는 안 늘어납니다.
+화면 경계가 없다는 게 장점입니다.</p>
+<h3 id="3대-이상은요">3대 이상은요</h3>
+<p>창을 옮기는 것보다 <strong>고개를 돌리는 게</strong> 더 힘들어지는 지점이 옵니다.
+대개 2대에서 만족도가 가장 높고, 3대째는 상시로 보는 화면이 아니라 모니터링용이 됩니다.</p>
+<h3 id="주사율이-다른-두-대를-쓰면-문제가-되나요">주사율이 다른 두 대를 쓰면 문제가 되나요</h3>
+<p>코딩에서는 문제없습니다. 코드는 움직이지 않아서 60Hz로 충분합니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>듀얼은 가로만 늘립니다.</strong> 세로 픽셀은 그대로라 코드 줄 수가 안 늘어납니다</li>
+<li>코드를 더 보고 싶으면 <strong>세로 모니터나 32&quot; 4K</strong>입니다</li>
+<li>듀얼의 값어치는 <strong>동시에 띄워두는 것</strong>입니다. 그게 목적이면 정답입니다</li>
+<li><strong>책상 폭 120cm</strong>가 필요합니다. 좁으면 32&quot; 한 대가 현실적입니다</li>
+<li>두 대를 쓴다면 <strong>해상도를 맞추세요.</strong> 배율이 달라지면 창이 튑니다</li>
+<li>노트북 + 외부 모니터는 이미 듀얼입니다. <strong>높이만 맞추세요</strong></li>
+</ol>
+<p>실제로 써보신 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">듀얼모니터</span> <span class="tag">모니터</span> <span class="tag">코딩용모니터</span> <span class="tag">해상도</span> <span class="tag">32인치</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/vertical-monitor-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">세로 모니터 코딩 — 27인치가 아니라 24인치인 이유</span>
+        <span class="card-desc">모니터를 세로로 돌리면 코드가 1.8배 보입니다. 다만 27인치를 돌리면 화면 높이가 60cm가 되고, 글자가 뿌옇게 보이는 문제가 따로 있습니다. 계산해서 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/coding-monitor-resolution.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">코딩용 모니터 — 27인치 QHD와 4K 중 어느 쪽인가</span>
+        <span class="card-desc">코딩에서 갈리는 건 주사율이나 색재현율이 아니라 해상도와 크기의 조합입니다. PPI를 직접 계산해 어느 조합이 맞는지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>

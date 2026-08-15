@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSL2가 램을 다 먹을 때 — Vmmem 잡는 법 | 스펙핏</title>
+<meta name="description" content="작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/wsl2-memory-limit.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="WSL2가 램을 다 먹을 때 — Vmmem 잡는 법 | 스펙핏">
+<meta property="og:description" content="작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/wsl2-memory-limit.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","description":"작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/wsl2-memory-limit.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","item":"https://specfit.kr/posts/wsl2-memory-limit.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vmmem을 그냥 강제 종료하면 안 되나요","acceptedAnswer":{"@type":"Answer","text":"작업 관리자에서 끄면 **WSL과 도커가 통째로 내려갑니다.** 저장 안 한 작업은 날아갑니다. 정상적인 방법은 `wsl --shutdown` 입니다."}},{"@type":"Question","name":"`.wslconfig` 를 만들었는데 적용이 안 됩니다","acceptedAnswer":{"@type":"Answer","text":"세 가지를 확인하세요."}},{"@type":"Question","name":"WSL 안에서 `free -h` 를 보면 이미 꽉 차 있는데요","acceptedAnswer":{"@type":"Answer","text":"리눅스는 남는 램을 **캐시로 채워둡니다.** `available` 값을 보세요. 그게 넉넉하면 실제로는 여유가 있는 것입니다."}},{"@type":"Question","name":"도커 데스크톱에도 메모리 설정이 있던데요","acceptedAnswer":{"@type":"Answer","text":"윈도우에서 도커가 WSL2 위에서 돌 때는 **`.wslconfig` 쪽이 상위 설정**입니다. 여기서 정한 상한을 도커가 넘을 수 없습니다."}},{"@type":"Question","name":"`processors` 는 얼마로 하나요","acceptedAnswer":{"@type":"Answer","text":"기본값(전체 코어)으로 두셔도 대개 문제없습니다. 빌드 중에 윈도우가 버벅이면 그때 한두 개 줄여보세요."}},{"@type":"Question","name":"로컬 LLM에 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"**GPU로 돌린다면 없습니다.** 로컬 LLM은 VRAM을 쓰고, WSL2는 시스템 램을 씁니다. 다만 [CPU로 돌린다면](/posts/local-llm-without-gpu.html) 같은 램을 나눠 쓰게 되니 영향이 있습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>WSL2가 램을 다 먹을 때 — Vmmem 잡는 법</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-16">2026년 8월 16일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>윈도우에서 개발하다 보면 작업 관리자에서 이걸 보게 됩니다.</p>
+<pre><code>Vmmem          9.2GB</code></pre>
+<p><strong>&quot;이게 뭔데 램을 이렇게 먹지?&quot;</strong></p>
+<p>프로그램을 켠 기억도 없는데 램의 절반이 사라져 있습니다. 바이러스도 아니고 정상 동작입니다. 다만 <strong>기본값이 좀 과합니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><td>Vmmem이 뭔가</td><td><strong>WSL2</strong>(윈도우 안의 리눅스)가 쓰는 램입니다</td></tr>
+<tr><td>왜 이렇게 큰가</td><td>기본값이 <strong>전체 램의 50% 또는 8GB 중 작은 값</strong></td></tr>
+<tr><td>줄일 수 있나</td><td>됩니다. <code>.wslconfig</code> 파일 하나 만들면 됩니다</td></tr>
+<tr><td>얼마로 잡나</td><td>램 16GB면 <strong>4~6GB</strong>, 32GB면 8~12GB</td></tr>
+<tr><td>껐다 켜야 하나</td><td>네. <code>wsl --shutdown</code> 한 번</td></tr>
+</tbody>
+</table></div>
+<h2 id="1-vmmem이-뭔가">1. Vmmem이 뭔가</h2>
+<p><strong>WSL2는 윈도우 안에서 진짜 리눅스를 돌립니다.</strong> 예전 방식처럼 흉내만 내는 게 아니라, 가벼운 가상 환경 안에서 리눅스 커널이 실제로 돌아갑니다.</p>
+<p><code>Vmmem</code>은 <strong>그 가상 환경이 쓰는 램</strong>을 윈도우가 한 덩어리로 묶어 보여주는 것입니다.</p>
+<pre><code>작업 관리자에 보이는 Vmmem
+  = WSL2 리눅스 + 그 안에서 도는 것 전부
+  = 도커를 쓴다면 컨테이너들도 여기 포함</code></pre>
+<p><strong>도커 데스크톱을 쓰신다면 도커도 이 안에 들어 있습니다.</strong> 그래서 도커를 안 켠 것 같은데도 램이 잡혀 있는 겁니다.</p>
+<h2 id="2-왜-이렇게-많이-잡나">2. 왜 이렇게 많이 잡나</h2>
+<p><strong>기본값이 &quot;전체 램의 50% 또는 8GB 중 작은 값&quot;이기 때문입니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>내 램</th><th>WSL2가 쓸 수 있는 상한</th></tr></thead>
+<tbody>
+<tr><td>8GB</td><td>4GB</td></tr>
+<tr><td><strong>16GB</strong></td><td><strong>8GB</strong> ← 절반입니다</td></tr>
+<tr><td>32GB</td><td>8GB</td></tr>
+<tr><td>64GB</td><td>8GB</td></tr>
+</tbody>
+</table></div>
+<p>16GB에서 8GB면 <strong>절반이 통째로</strong> 넘어갑니다. 윈도우 자체가 4~6GB를 쓰니까, 브라우저와 IDE가 나눠 쓸 게 거의 안 남습니다.</p>
+<blockquote><p>이 기본값은 <strong>윈도우 빌드에 따라 다릅니다.</strong> 오래된 빌드는 80%까지 잡았습니다.
+내 환경에서 실제로 얼마인지는 아래 방법으로 확인하는 게 정확합니다.</p></blockquote>
+<h3 id="그리고-잡은-램을-잘-안-놓습니다">그리고 잡은 램을 잘 안 놓습니다</h3>
+<p>리눅스는 남는 램을 캐시로 씁니다. <strong>&quot;안 쓰면 아까우니 미리 채워두는&quot;</strong> 방식이라 그 자체는 합리적입니다.</p>
+<p>문제는 윈도우 입장에서는 그게 <strong>그냥 쓰이고 있는 램</strong>으로 보인다는 것입니다. 그래서 작업이 끝나도 Vmmem 숫자가 안 내려갑니다.</p>
+<h2 id="3-해결-wslconfig-하나-만들면-됩니다">3. 해결 — <code>.wslconfig</code> 하나 만들면 됩니다</h2>
+<p><strong>파일 하나 만들고 재시작하면 끝입니다.</strong></p>
+<h3 id="1단계-파일-만들기">1단계 — 파일 만들기</h3>
+<p><code>C:\Users\사용자명\.wslconfig</code> 위치에 만듭니다.
+(파일 이름이 <code>.</code>으로 시작합니다. 확장자는 없습니다.)</p>
+<p>가장 쉬운 방법은 메모장을 열고 아래 내용을 붙여넣은 뒤,
+<strong>파일 형식을 &quot;모든 파일&quot;로 바꾸고</strong> <code>.wslconfig</code> 라는 이름으로 저장하는 것입니다.</p>
+<pre><code>[wsl2]
+memory=6GB
+processors=4
+swap=2GB</code></pre>
+<h3 id="2단계-값-정하기">2단계 — 값 정하기</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>내 램</th><th><code>memory</code> 권장</th></tr></thead>
+<tbody>
+<tr><td>16GB</td><td><strong>4~6GB</strong></td></tr>
+<tr><td>32GB</td><td>8~12GB</td></tr>
+<tr><td>64GB</td><td>16GB~</td></tr>
+</tbody>
+</table></div>
+<p><strong>너무 적게 잡으면 안 됩니다.</strong> 컨테이너가 상한을 넘기면 강제 종료됩니다.
+데이터베이스를 여러 개 띄우신다면 <a href="/posts/docker-laptop-spec.html">컨테이너별 사용량</a>을 먼저 보고 정하세요.</p>
+<p>각 항목은 이렇습니다.</p>
+<ul>
+<li><strong><code>memory</code></strong> — 상한입니다. 이만큼 항상 쓰는 게 아니라 여기까지만 쓴다는 뜻입니다</li>
+<li><strong><code>processors</code></strong> — 쓸 CPU 코어 수. 보통 건드릴 필요 없습니다</li>
+<li><strong><code>swap</code></strong> — 램이 모자랄 때 쓸 디스크 공간. <code>0</code>으로 끄면 상한을 넘길 때 바로 죽습니다</li>
+</ul>
+<h3 id="3단계-재시작">3단계 — 재시작</h3>
+<p>PowerShell이나 명령 프롬프트에서:</p>
+<pre><code>wsl --shutdown</code></pre>
+<p>그다음 WSL이나 도커를 다시 켜면 적용됩니다.</p>
+<blockquote><p>⚠️ <strong><code>wsl --shutdown</code> 은 돌고 있는 걸 전부 끕니다.</strong>
+도커 컨테이너도 같이 내려가니, 작업 중이면 저장하고 실행하세요.</p></blockquote>
+<h3 id="4단계-확인">4단계 — 확인</h3>
+<p>WSL 안에서:</p>
+<pre><code>free -h</code></pre>
+<p><code>total</code> 값이 방금 정한 숫자로 나오면 적용된 것입니다.</p>
+<h2 id="4-그래도-램이-부족하다면">4. 그래도 램이 부족하다면</h2>
+<p><code>.wslconfig</code>는 <strong>나눠 쓰는 비율을 조절하는 것</strong>이지 램을 늘려주지는 않습니다.</p>
+<pre><code>16GB 에서 WSL2 를 6GB 로 제한
+  → 윈도우 쪽이 10GB 로 늘어남
+  → 대신 컨테이너를 많이 못 띄움</code></pre>
+<p><strong>이쪽을 줄이면 저쪽이 늘어나는 관계</strong>입니다. 둘 다 부족하면 그건 조절로 해결이 안 됩니다.</p>
+<p>그때 판단 기준은 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 있습니다.
+작업 관리자에서 <strong>&quot;커밋된 메모리&quot;가 물리 램보다 크면</strong> 이미 디스크로 넘어가고 있다는 뜻입니다.</p>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsop7IrsG" target="_blank" rel="sponsored nofollow noopener">DDR5 32GB 보기</a>
+  <span class="buy-note">같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다</span>
+</aside></p>
+<blockquote><p>⚠️ 2026년 들어 램 값이 크게 올랐습니다. 늘리기 전에
+<a href="/posts/ram-price-2026.html">지금 사야 하는지</a> 먼저 보시는 걸 권합니다.
+<strong><code>.wslconfig</code> 로 해결되는 상황이면 그게 훨씬 쌉니다.</strong></p></blockquote>
+<h2 id="5-램-말고-디스크도-봐야-합니다">5. 램 말고 디스크도 봐야 합니다</h2>
+<p>WSL2는 리눅스 파일을 <strong>가상 디스크 파일 하나</strong>에 담아둡니다. 그리고 이 파일은 <strong>커지기만 하고 저절로 줄어들지 않습니다.</strong></p>
+<p>리눅스 안에서 파일을 지워도 윈도우 쪽 용량은 그대로입니다.</p>
+<p>용량이 신경 쓰이면 도커 쪽부터 정리하는 게 효과가 큽니다.</p>
+<pre><code>docker system df      # 얼마나 쓰는지
+docker system prune   # 안 쓰는 것 정리</code></pre>
+<p>SSD 용량 기준은 <a href="/posts/dev-ssd-choose.html">개발용 SSD 고르기</a>에 있습니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="vmmem을-그냥-강제-종료하면-안-되나요">Vmmem을 그냥 강제 종료하면 안 되나요</h3>
+<p>작업 관리자에서 끄면 <strong>WSL과 도커가 통째로 내려갑니다.</strong> 저장 안 한 작업은 날아갑니다.
+정상적인 방법은 <code>wsl --shutdown</code> 입니다.</p>
+<h3 id="wslconfig-를-만들었는데-적용이-안-됩니다"><code>.wslconfig</code> 를 만들었는데 적용이 안 됩니다</h3>
+<p>세 가지를 확인하세요.</p>
+<ul>
+<li>위치가 <code>C:\Users\사용자명\.wslconfig</code> 가 맞는지 (다른 폴더면 안 읽습니다)</li>
+<li>파일 이름이 <code>.wslconfig.txt</code> 로 저장되지 않았는지 (메모장이 자주 그럽니다)</li>
+<li><code>wsl --shutdown</code> 을 했는지</li>
+</ul>
+<h3 id="wsl-안에서-free--h-를-보면-이미-꽉-차-있는데요">WSL 안에서 <code>free -h</code> 를 보면 이미 꽉 차 있는데요</h3>
+<p>리눅스는 남는 램을 <strong>캐시로 채워둡니다.</strong> <code>available</code> 값을 보세요.
+그게 넉넉하면 실제로는 여유가 있는 것입니다.</p>
+<h3 id="도커-데스크톱에도-메모리-설정이-있던데요">도커 데스크톱에도 메모리 설정이 있던데요</h3>
+<p>윈도우에서 도커가 WSL2 위에서 돌 때는 <strong><code>.wslconfig</code> 쪽이 상위 설정</strong>입니다.
+여기서 정한 상한을 도커가 넘을 수 없습니다.</p>
+<h3 id="processors-는-얼마로-하나요"><code>processors</code> 는 얼마로 하나요</h3>
+<p>기본값(전체 코어)으로 두셔도 대개 문제없습니다.
+빌드 중에 윈도우가 버벅이면 그때 한두 개 줄여보세요.</p>
+<h3 id="로컬-llm에-영향이-있나요">로컬 LLM에 영향이 있나요</h3>
+<p><strong>GPU로 돌린다면 없습니다.</strong> 로컬 LLM은 VRAM을 쓰고, WSL2는 시스템 램을 씁니다.
+다만 <a href="/posts/local-llm-without-gpu.html">CPU로 돌린다면</a> 같은 램을 나눠 쓰게 되니 영향이 있습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><code>Vmmem</code>은 <strong>WSL2가 쓰는 램</strong>입니다. 도커를 쓰면 컨테이너도 여기 포함입니다</li>
+<li>기본 상한이 <strong>전체 램의 50% 또는 8GB 중 작은 값</strong>입니다. 16GB에선 절반입니다</li>
+<li><strong><code>.wslconfig</code> 파일 하나</strong>로 제한됩니다. 만들고 <code>wsl --shutdown</code></li>
+<li>램 16GB면 <strong>4~6GB</strong>로 잡으세요. 너무 적으면 컨테이너가 죽습니다</li>
+<li><strong>나눠 쓰는 비율을 바꾸는 것</strong>이지 램이 늘어나는 건 아닙니다</li>
+<li>가상 디스크는 <strong>커지기만 합니다.</strong> 가끔 정리하세요</li>
+</ol>
+<p>설정이 실제와 다르게 동작하면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">WSL2</span> <span class="tag">Vmmem</span> <span class="tag">윈도우</span> <span class="tag">개발환경</span> <span class="tag">램</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/docker-laptop-spec.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">도커 돌리는 노트북 사양 — 램 16GB로 되나</span>
+        <span class="card-desc">도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/macbook-air-vs-pro-dev.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">맥북 에어 vs 프로 — 개발용으로 어디서 갈리나</span>
+        <span class="card-desc">M5 에어와 프로는 메모리 한계와 대역폭이 다릅니다. 에어는 32GB가 천장이고 프로는 128GB까지 갑니다. 로컬 LLM을 할 거면 여기서 갈립니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mac-unified-memory-local-llm.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">맥으로 로컬 LLM — 통합메모리 몇 GB를 사야 하나</span>
+        <span class="card-desc">맥은 램이 VRAM 역할까지 합니다. 그런데 전체를 다 쓰지는 못하고, 속도는 용량이 아니라 칩이 정합니다. 살 때 정해지고 나중에 못 바꿉니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>

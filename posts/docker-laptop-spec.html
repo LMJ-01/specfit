@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>도커 돌리는 노트북 사양 — 램 16GB로 되나 | 스펙핏</title>
+<meta name="description" content="도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/docker-laptop-spec.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="도커 돌리는 노트북 사양 — 램 16GB로 되나 | 스펙핏">
+<meta property="og:description" content="도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/docker-laptop-spec.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"도커 돌리는 노트북 사양 — 램 16GB로 되나","description":"도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/docker-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"도커 돌리는 노트북 사양 — 램 16GB로 되나","item":"https://specfit.kr/posts/docker-laptop-spec.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥에서 도커가 느린데 정상인가요","acceptedAnswer":{"@type":"Answer","text":"맥의 도커도 가상 환경 위에서 돌아서, 특히 **파일 접근이 느린** 편입니다. 소스 폴더를 컨테이너에 연결해 쓰면 체감됩니다. 구조상의 특성이라 설정으로 크게 해결되지는 않습니다."}},{"@type":"Question","name":"WSL2가 램을 안 돌려줍니다","acceptedAnswer":{"@type":"Answer","text":"한 번 잡은 램을 바로 안 놓는 동작이 있습니다."}},{"@type":"Question","name":"컨테이너마다 램을 제한할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 실행할 때 메모리 상한 옵션을 주면 됩니다. 다만 **상한을 넘기면 컨테이너가 강제 종료**되므로, DB 같은 건 넉넉히 잡으셔야 합니다."}},{"@type":"Question","name":"16GB인데 32GB로 늘리면 확실히 나아지나요","acceptedAnswer":{"@type":"Answer","text":"**도커를 쓰신다면 네.** 지금 스왑이 일어나고 있을 가능성이 큽니다. 작업 관리자 → 성능 → 메모리에서 **\"커밋된 메모리\"가 물리 램보다 크면** 이미 디스크로 넘어가고 있다는 뜻입니다. 판단 기준은 [램 16GB vs 32GB](/posts/ram-16gb-vs-32gb.html)에 있습니다."}},{"@type":"Question","name":"도커 대신 쓸 방법은 없나요","acceptedAnswer":{"@type":"Answer","text":"가벼운 대안들이 있지만 **램을 먹는 구조 자체는 비슷합니다.** 윈도우에서는 결국 리눅스 환경이 하나 떠야 하기 때문입니다."}},{"@type":"Question","name":"로컬 LLM이랑 같이 돌려도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 다만 **로컬 LLM은 VRAM, 도커는 시스템 램**으로 서로 다른 자원을 씁니다. 둘 다 하실 거면 램 32GB + VRAM 12GB 이상이 편합니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>도커 돌리는 노트북 사양 — 램 16GB로 되나</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-16">2026년 8월 16일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>&quot;개발용 노트북 램 16GB면 되나요?&quot;</p>
+<p>이 질문에는 <strong>도커를 쓰느냐 아니냐로 답이 갈립니다.</strong> 웹 개발만 하면 16GB로 충분한데, 도커를 띄우기 시작하면 이야기가 완전히 달라집니다.</p>
+<p><strong>도커는 CPU보다 램을 먼저 먹습니다.</strong> 그리고 그게 노트북에서 문제가 되는 이유는, <a href="/posts/laptop-ram-onboard-lpcamm2.html">램은 나중에 못 늘리는 경우가 많기</a> 때문입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>쓰는 방식</th><th>필요한 램</th></tr></thead>
+<tbody>
+<tr><td>컨테이너 1~2개 (웹 서버 + DB 하나)</td><td><strong>16GB로 됩니다</strong></td></tr>
+<tr><td>컨테이너 3~5개 (DB + 캐시 + 큐 + 앱)</td><td><strong>32GB</strong></td></tr>
+<tr><td>컨테이너 여럿 + IDE + 브라우저 상시</td><td><strong>32GB 이상</strong></td></tr>
+<tr><td>쿠버네티스 로컬 클러스터</td><td>32GB 이상</td></tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>판단</th></tr></thead>
+<tbody>
+<tr><td>CPU</td><td>요즘 노트북이면 대개 충분합니다</td></tr>
+<tr><td><strong>램</strong></td><td><strong>여기가 전부입니다</strong></td></tr>
+<tr><td>SSD</td><td><strong>1TB 권장</strong> — 이미지가 생각보다 큽니다</td></tr>
+<tr><td>그래픽카드</td><td>도커와 무관합니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="1-도커가-램을-먹는-구조-윈도우가-특히-다릅니다">1. 도커가 램을 먹는 구조 — 윈도우가 특히 다릅니다</h2>
+<p><strong>리눅스에서는 컨테이너가 그냥 프로세스입니다.</strong> 쓰는 만큼만 램을 먹습니다.</p>
+<p><strong>윈도우에서는 다릅니다.</strong> 도커가 WSL2라는 리눅스 환경 위에서 돌기 때문에, 그 리눅스가 먼저 램을 잡습니다.</p>
+<pre><code>윈도우
+ └ WSL2 (리눅스 가상 환경)   ← 여기가 램을 통째로 예약합니다
+    └ 도커
+       └ 컨테이너들</code></pre>
+<p>작업 관리자에서 <strong><code>Vmmem</code></strong> 이라는 게 램을 잔뜩 먹고 있는 걸 보신 적이 있다면, 그게 이겁니다. 도커가 아니라 그 아래 리눅스입니다.</p>
+<p><strong>기본값이 &quot;전체 램의 50% 또는 8GB 중 작은 값&quot;입니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>내 램</th><th>WSL2가 가져갈 수 있는 몫</th></tr></thead>
+<tbody>
+<tr><td>16GB</td><td>8GB</td></tr>
+<tr><td>32GB</td><td>8GB</td></tr>
+<tr><td>64GB</td><td>8GB</td></tr>
+</tbody>
+</table></div>
+<p>16GB에서는 <strong>절반이 통째로</strong> 넘어갑니다. 여기에 윈도우와 브라우저와 IDE가 얹히면 남는 게 없습니다.</p>
+<p>이 값은 조절할 수 있습니다. 방법은 <a href="/posts/wsl2-memory-limit.html">WSL2가 램을 다 먹을 때</a>에 따로 적었습니다.</p>
+<p><strong>맥도 비슷합니다.</strong> 맥의 도커도 가상 환경 위에서 돌아서 별도로 램을 예약합니다.</p>
+<h2 id="2-컨테이너-하나가-얼마나-먹나">2. 컨테이너 하나가 얼마나 먹나</h2>
+<p>기본 설정 기준의 <strong>대략치</strong>입니다. 이미지와 설정에 따라 크게 달라집니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>컨테이너</th><th>대략적인 램</th></tr></thead>
+<tbody>
+<tr><td>Nginx · 간단한 웹 서버</td><td>수십 MB</td></tr>
+<tr><td>Node · Python 앱</td><td>100~300MB</td></tr>
+<tr><td>PostgreSQL · MySQL</td><td><strong>300MB~1GB</strong></td></tr>
+<tr><td>Redis</td><td>100MB~ (넣는 데이터만큼)</td></tr>
+<tr><td>Elasticsearch</td><td><strong>1~2GB</strong> ← 혼자 제일 큽니다</td></tr>
+<tr><td>Kafka · RabbitMQ</td><td>500MB~1GB</td></tr>
+</tbody>
+</table></div>
+<p><strong>앱은 작고 데이터베이스 계열이 큽니다.</strong> 그래서 &quot;컨테이너 몇 개&quot;보다 <strong>&quot;DB를 몇 개 띄우느냐&quot;</strong>가 실제 기준입니다.</p>
+<h3 id="내-환경에서-직접-재는-법">내 환경에서 직접 재는 법</h3>
+<p>추측하지 말고 재보는 게 정확합니다.</p>
+<pre><code>docker stats</code></pre>
+<p>지금 돌고 있는 컨테이너의 램 사용량이 실시간으로 나옵니다. <strong>평소 작업을 다 띄운 상태에서 한 번 보세요.</strong></p>
+<h2 id="3-16gb가-터지는-지점">3. 16GB가 터지는 지점</h2>
+<p>실제로 이렇게 쌓입니다.</p>
+<pre><code>윈도우 자체              4~6GB
+브라우저 탭 여러 개       2~4GB
+IDE (인텔리제이·VS Code)  1~3GB
+────────────────────────────
+여기까지 이미           7~13GB
+
+WSL2 + 도커가 가져갈 몫    최대 8GB</code></pre>
+<p><strong>16GB에서는 숫자가 안 맞습니다.</strong> 그래서 도커를 띄우면 갑자기 전체가 느려지는 경험을 하게 됩니다.</p>
+<p><strong>증상이 이렇습니다.</strong></p>
+<ul>
+<li>컨테이너를 띄우는 순간 다른 프로그램이 버벅입니다</li>
+<li>브라우저 탭이 저절로 새로고침됩니다</li>
+<li>빌드 중에 IDE가 멈칫합니다</li>
+<li>디스크가 계속 돌아갑니다 (스왑)</li>
+</ul>
+<p><strong>에러가 나는 게 아니라 전체가 느려지는 것</strong>이라 원인을 찾기 어렵습니다. <a href="/posts/rtx4060-local-llm.html">로컬 LLM에서 VRAM이 모자랄 때와 같은 양상</a>입니다.</p>
+<h3 id="16gb로-버티는-법">16GB로 버티는 법</h3>
+<p>램을 못 늘리는 상황이라면 이 정도가 할 수 있는 전부입니다.</p>
+<ul>
+<li><strong>WSL2 상한을 직접 정하세요</strong> — 기본 8GB를 4~6GB로 줄이면 나머지가 숨을 쉽니다</li>
+<li><strong>안 쓰는 컨테이너는 끄세요</strong> — <code>docker ps</code> 로 확인하고 정리합니다</li>
+<li><strong>Elasticsearch 같은 큰 것은 필요할 때만</strong> 띄웁니다</li>
+<li><strong>브라우저 탭을 줄이세요</strong> — 의외로 여기서 몇 GB가 나옵니다</li>
+</ul>
+<h2 id="4-디스크-여기서-자주-당합니다">4. 디스크 — 여기서 자주 당합니다</h2>
+<p><strong>램만 보다가 SSD에서 터지는 경우가 많습니다.</strong></p>
+<p>도커는 이미지를 쌓아둡니다. 그리고 안 지웁니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>대략</th></tr></thead>
+<tbody>
+<tr><td>언어 런타임 이미지 하나</td><td>300MB~1GB</td></tr>
+<tr><td>DB 이미지 하나</td><td>300MB~700MB</td></tr>
+<tr><td>빌드 캐시</td><td><strong>금방 수십 GB</strong></td></tr>
+<tr><td>안 쓰는 이미지·볼륨</td><td>계속 쌓입니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>몇 달 쓰면 도커가 혼자 50GB를 넘기는 일이 흔합니다.</strong></p>
+<p>정리는 이 명령으로 합니다.</p>
+<pre><code>docker system df      # 얼마나 쓰고 있는지 확인
+docker system prune   # 안 쓰는 것 정리</code></pre>
+<blockquote><p>⚠️ <code>prune</code> 은 안 쓰는 이미지·컨테이너·네트워크를 지웁니다.
+볼륨(데이터)까지 지우는 옵션은 따로 있으니, <strong>뭘 지우는지 보고 실행하세요.</strong></p></blockquote>
+<p><strong>노트북 SSD는 1TB를 권합니다.</strong> 로컬 LLM까지 겸하면 <a href="/posts/dev-ssd-choose.html">모델 파일이 하나에 5~20GB</a>라 더 빨리 찹니다.</p>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdspuKuC8O" target="_blank" rel="sponsored nofollow noopener">NVMe SSD 1TB 보기</a>
+  <span class="buy-note">모델 파일이 하나에 5~20GB 라 금방 찹니다</span>
+</aside></p>
+<h2 id="5-cpu와-그래픽카드는-신경-안-쓰셔도-됩니다">5. CPU와 그래픽카드는 신경 안 쓰셔도 됩니다</h2>
+<p><strong>CPU</strong> — 컨테이너는 대부분 놀고 있습니다. 빌드할 때만 일하고, 그건 코어 수가 도와줍니다. 요즘 노트북 CPU면 대개 충분합니다.</p>
+<p><strong>그래픽카드</strong> — 도커와 아무 관계 없습니다. 로컬 LLM을 겸할 거라면 그건 <a href="/posts/local-llm-laptop-choose.html">따로 판단</a>하셔야 합니다.</p>
+<p><strong>예산이 있다면 CPU 등급을 올리는 것보다 램을 32GB로 가는 편</strong>이 도커 환경에서는 체감이 훨씬 큽니다.</p>
+<h2 id="6-그래서-어떤-노트북을-사야-하나">6. 그래서 어떤 노트북을 사야 하나</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>확인</th><th>왜</th></tr></thead>
+<tbody>
+<tr><td><strong>램 슬롯이 있는가</strong></td><td>없으면 살 때 32GB여야 합니다</td></tr>
+<tr><td>램 32GB 구성이 있는가</td><td>온보드면 이게 상한입니다</td></tr>
+<tr><td>SSD 1TB 또는 슬롯 2개</td><td>이미지가 쌓입니다</td></tr>
+<tr><td>CPU 등급</td><td>대개 신경 안 쓰셔도 됩니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>순서가 중요합니다.</strong> 노트북은 바꿀 수 없는 것부터 정해야 합니다 —
+<a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에 그 순서를 정리해 뒀습니다.</p>
+<p><aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsmkd62Ls" target="_blank" rel="sponsored nofollow noopener">개발용 노트북 보기</a>
+  <span class="buy-note">램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요</span>
+</aside></p>
+<blockquote><p>⚠️ 2026년 들어 램 값이 크게 올라서, 32GB 구성의 웃돈이 예전보다 큽니다.
+<strong>슬롯이 있는 모델의 값어치가 지금 특히 큽니다</strong> —
+<a href="/posts/ram-price-2026.html">램 값이 올랐습니다</a>를 함께 보세요.</p></blockquote>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="맥에서-도커가-느린데-정상인가요">맥에서 도커가 느린데 정상인가요</h3>
+<p>맥의 도커도 가상 환경 위에서 돌아서, 특히 <strong>파일 접근이 느린</strong> 편입니다.
+소스 폴더를 컨테이너에 연결해 쓰면 체감됩니다. 구조상의 특성이라 설정으로 크게 해결되지는 않습니다.</p>
+<h3 id="wsl2가-램을-안-돌려줍니다">WSL2가 램을 안 돌려줍니다</h3>
+<p>한 번 잡은 램을 바로 안 놓는 동작이 있습니다.
+<code>.wslconfig</code> 로 상한을 정하면 됩니다 — <a href="/posts/wsl2-memory-limit.html">WSL2가 램을 다 먹을 때</a>에 적었습니다.</p>
+<h3 id="컨테이너마다-램을-제한할-수-있나요">컨테이너마다 램을 제한할 수 있나요</h3>
+<p>가능합니다. 실행할 때 메모리 상한 옵션을 주면 됩니다.
+다만 <strong>상한을 넘기면 컨테이너가 강제 종료</strong>되므로, DB 같은 건 넉넉히 잡으셔야 합니다.</p>
+<h3 id="16gb인데-32gb로-늘리면-확실히-나아지나요">16GB인데 32GB로 늘리면 확실히 나아지나요</h3>
+<p><strong>도커를 쓰신다면 네.</strong> 지금 스왑이 일어나고 있을 가능성이 큽니다.
+작업 관리자 → 성능 → 메모리에서 <strong>&quot;커밋된 메모리&quot;가 물리 램보다 크면</strong> 이미 디스크로 넘어가고 있다는 뜻입니다.
+판단 기준은 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 있습니다.</p>
+<h3 id="도커-대신-쓸-방법은-없나요">도커 대신 쓸 방법은 없나요</h3>
+<p>가벼운 대안들이 있지만 <strong>램을 먹는 구조 자체는 비슷합니다.</strong>
+윈도우에서는 결국 리눅스 환경이 하나 떠야 하기 때문입니다.</p>
+<h3 id="로컬-llm이랑-같이-돌려도-되나요">로컬 LLM이랑 같이 돌려도 되나요</h3>
+<p>됩니다. 다만 <strong>로컬 LLM은 VRAM, 도커는 시스템 램</strong>으로 서로 다른 자원을 씁니다.
+둘 다 하실 거면 램 32GB + VRAM 12GB 이상이 편합니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>도커에서 갈리는 건 <strong>램 하나</strong>입니다. CPU·그래픽카드는 거의 무관합니다</li>
+<li><strong>윈도우는 WSL2가 램을 먼저 예약</strong>합니다. 기본값이 최대 8GB입니다</li>
+<li><strong>DB 계열 컨테이너가 큽니다.</strong> 개수보다 &quot;DB를 몇 개 띄우나&quot;가 기준입니다</li>
+<li>컨테이너 3개 이상이면 <strong>32GB</strong>입니다. 1~2개면 16GB로 됩니다</li>
+<li><strong>SSD가 조용히 찹니다.</strong> <code>docker system df</code> 로 가끔 확인하세요</li>
+<li>노트북은 <strong>램 슬롯이 있는지부터</strong> 확인하세요</li>
+</ol>
+<p>실제 사용 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">도커</span> <span class="tag">Docker</span> <span class="tag">개발용노트북</span> <span class="tag">램</span> <span class="tag">WSL2</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/wsl2-memory-limit.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">WSL2가 램을 다 먹을 때 — Vmmem 잡는 법</span>
+        <span class="card-desc">작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/macbook-air-vs-pro-dev.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">맥북 에어 vs 프로 — 개발용으로 어디서 갈리나</span>
+        <span class="card-desc">M5 에어와 프로는 메모리 한계와 대역폭이 다릅니다. 에어는 32GB가 천장이고 프로는 128GB까지 갑니다. 로컬 LLM을 할 거면 여기서 갈립니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mac-unified-memory-local-llm.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">맥으로 로컬 LLM — 통합메모리 몇 GB를 사야 하나</span>
+        <span class="card-desc">맥은 램이 VRAM 역할까지 합니다. 그런데 전체를 다 쓰지는 못하고, 속도는 용량이 아니라 칩이 정합니다. 살 때 정해지고 나중에 못 바꿉니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+
+</body>
+</html>

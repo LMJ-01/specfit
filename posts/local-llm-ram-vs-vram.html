@@ -138,13 +138,17 @@
 <p>시스템 램까지 부족하면 디스크 스왑으로 넘어갑니다.
 이 단계에서는 초당 1토큰도 안 나오는 경우가 많고, 프로세스가 죽기도 합니다.</p>
 <h2 id="얼마나-사면-되나">얼마나 사면 되나</h2>
-<h3 id="32gb가-무난합니다">32GB가 무난합니다</h3>
-<p>지금 새로 맞춘다면 <strong>32GB를 권합니다.</strong> 이유는 세 가지입니다.</p>
+<h3 id="32gb가-무난합니다-다만-지금은-값을-먼저-보세요">32GB가 무난합니다 — 다만 지금은 값을 먼저 보세요</h3>
+<p>용량만 놓고 보면 <strong>32GB를 권합니다.</strong> 이유는 두 가지입니다.</p>
 <ul>
 <li>VRAM을 넘기는 모델을 언젠가 쓰게 됩니다</li>
 <li>브라우저·IDE·도커를 같이 띄우면 16GB는 금방 찹니다</li>
-<li>32GB와 16GB의 가격 차이가 크지 않습니다</li>
 </ul>
+<blockquote><p><strong>⚠️ 2026-08-16 정정.</strong> 이 자리에 원래 <strong>&quot;32GB와 16GB의 가격 차이가 크지 않습니다&quot;</strong>
+라고 적혀 있었습니다. <strong>지금은 사실이 아닙니다.</strong></p>
+<p>AI 서버 수요로 D램 값이 2026년 들어 크게 올랐습니다. 용량을 한 단계 올리는
+비용이 예전과 완전히 달라졌으므로, <strong>용량 권장을 값과 함께 판단해야 합니다.</strong></p>
+<p>→ <a href="/posts/ram-price-2026.html">램 값이 올랐습니다 — 지금 사야 하나</a></p></blockquote>
 <h3 id="64gb가-필요한-경우">64GB가 필요한 경우</h3>
 <ul>
 <li>GPU 없이 <strong>CPU만으로</strong> 큰 모델을 돌릴 계획</li>
@@ -202,24 +206,24 @@
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/ram-price-2026.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램 값이 올랐습니다 — 2026년에 지금 사야 하나</span>
+        <span class="card-desc">AI 서버 수요로 D램 값이 2026년 들어 크게 올랐습니다. 왜 올랐고 언제 내려가는지, 그래서 지금 사야 하는지 상황별로 갈랐습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ddr4-vs-ddr5.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">DDR4와 DDR5 차이 — 고를 수 있는 게 아닙니다</span>
+        <span class="card-desc">DDR4와 DDR5는 슬롯이 달라 물리적으로 안 바뀝니다. 메인보드가 정하는 것이라 고민할 일이 아닙니다. 성능 차이와 DDR4 단종 상황을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/ram-16gb-vs-32gb.html">
         <span class="card-cat">메모리·스토리지</span>
         <span class="card-title">램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점</span>
         <span class="card-desc">32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/quantization-q4-q5-q8.html">
-        <span class="card-cat">메모리·스토리지</span>
-        <span class="card-title">양자화 Q4 Q5 Q8 — 올리면 뭐가 좋아지나</span>
-        <span class="card-desc">Q8이 Q4보다 용량을 73% 더 씁니다. 그 대가로 얻는 게 무엇인지, 같은 VRAM이라면 어느 쪽이 나은지 실측 용량으로 계산했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/local-llm-without-gpu.html">
-        <span class="card-cat">메모리·스토리지</span>
-        <span class="card-title">그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가</span>
-        <span class="card-desc">그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.</span>
       </a>
     </li>
   </ul>
