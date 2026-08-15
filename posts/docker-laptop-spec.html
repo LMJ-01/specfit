@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="/assets/style.css">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"도커 돌리는 노트북 사양 — 램 16GB로 되나","description":"도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/docker-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"도커 돌리는 노트북 사양 — 램 16GB로 되나","item":"https://specfit.kr/posts/docker-laptop-spec.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥에서 도커가 느린데 정상인가요","acceptedAnswer":{"@type":"Answer","text":"맥의 도커도 가상 환경 위에서 돌아서, 특히 **파일 접근이 느린** 편입니다. 소스 폴더를 컨테이너에 연결해 쓰면 체감됩니다. 구조상의 특성이라 설정으로 크게 해결되지는 않습니다."}},{"@type":"Question","name":"WSL2가 램을 안 돌려줍니다","acceptedAnswer":{"@type":"Answer","text":"한 번 잡은 램을 바로 안 놓는 동작이 있습니다."}},{"@type":"Question","name":"컨테이너마다 램을 제한할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 실행할 때 메모리 상한 옵션을 주면 됩니다. 다만 **상한을 넘기면 컨테이너가 강제 종료**되므로, DB 같은 건 넉넉히 잡으셔야 합니다."}},{"@type":"Question","name":"16GB인데 32GB로 늘리면 확실히 나아지나요","acceptedAnswer":{"@type":"Answer","text":"**도커를 쓰신다면 네.** 지금 스왑이 일어나고 있을 가능성이 큽니다. 작업 관리자 → 성능 → 메모리에서 **\"커밋된 메모리\"가 물리 램보다 크면** 이미 디스크로 넘어가고 있다는 뜻입니다. 판단 기준은 [램 16GB vs 32GB](/posts/ram-16gb-vs-32gb.html)에 있습니다."}},{"@type":"Question","name":"도커 대신 쓸 방법은 없나요","acceptedAnswer":{"@type":"Answer","text":"가벼운 대안들이 있지만 **램을 먹는 구조 자체는 비슷합니다.** 윈도우에서는 결국 리눅스 환경이 하나 떠야 하기 때문입니다."}},{"@type":"Question","name":"로컬 LLM이랑 같이 돌려도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 다만 **로컬 LLM은 VRAM, 도커는 시스템 램**으로 서로 다른 자원을 씁니다. 둘 다 하실 거면 램 32GB + VRAM 12GB 이상이 편합니다."}}]}</script>
@@ -292,6 +294,17 @@ document.querySelector('[data-theme-toggle]').addEventListener('click',function(
   el.setAttribute('data-theme',next);
   try{localStorage.setItem('theme',next)}catch(e){}
 });
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
 </script>
 
 </body>

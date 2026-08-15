@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="/assets/style.css">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","description":"작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/wsl2-memory-limit.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","item":"https://specfit.kr/posts/wsl2-memory-limit.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vmmem을 그냥 강제 종료하면 안 되나요","acceptedAnswer":{"@type":"Answer","text":"작업 관리자에서 끄면 **WSL과 도커가 통째로 내려갑니다.** 저장 안 한 작업은 날아갑니다. 정상적인 방법은 `wsl --shutdown` 입니다."}},{"@type":"Question","name":"`.wslconfig` 를 만들었는데 적용이 안 됩니다","acceptedAnswer":{"@type":"Answer","text":"세 가지를 확인하세요."}},{"@type":"Question","name":"WSL 안에서 `free -h` 를 보면 이미 꽉 차 있는데요","acceptedAnswer":{"@type":"Answer","text":"리눅스는 남는 램을 **캐시로 채워둡니다.** `available` 값을 보세요. 그게 넉넉하면 실제로는 여유가 있는 것입니다."}},{"@type":"Question","name":"도커 데스크톱에도 메모리 설정이 있던데요","acceptedAnswer":{"@type":"Answer","text":"윈도우에서 도커가 WSL2 위에서 돌 때는 **`.wslconfig` 쪽이 상위 설정**입니다. 여기서 정한 상한을 도커가 넘을 수 없습니다."}},{"@type":"Question","name":"`processors` 는 얼마로 하나요","acceptedAnswer":{"@type":"Answer","text":"기본값(전체 코어)으로 두셔도 대개 문제없습니다. 빌드 중에 윈도우가 버벅이면 그때 한두 개 줄여보세요."}},{"@type":"Question","name":"로컬 LLM에 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"**GPU로 돌린다면 없습니다.** 로컬 LLM은 VRAM을 쓰고, WSL2는 시스템 램을 씁니다. 다만 [CPU로 돌린다면](/posts/local-llm-without-gpu.html) 같은 램을 나눠 쓰게 되니 영향이 있습니다."}}]}</script>
@@ -262,6 +264,17 @@ document.querySelector('[data-theme-toggle]').addEventListener('click',function(
   el.setAttribute('data-theme',next);
   try{localStorage.setItem('theme',next)}catch(e){}
 });
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
 </script>
 
 </body>

@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="/assets/style.css">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 SSD 교체 — 램과 달리 이건 바꿀 수 있습니다","description":"노트북에서 램은 대개 못 늘리지만 SSD는 바꿀 수 있는 경우가 많습니다. 슬롯 확인법, 규격 고르는 법, 교체 전에 알아둘 것을 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-ssd-upgrade.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"노트북 SSD 교체 — 램과 달리 이건 바꿀 수 있습니다","item":"https://specfit.kr/posts/laptop-ssd-upgrade.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"램도 같이 늘릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"**대개 못 늘립니다.** 최근 얇은 노트북은 램이 납땜되어 있습니다. 뒷판을 열었을 때 램 슬롯이 보이면 가능합니다 — [노트북 램 나중에 못 늘립니다](/posts/laptop-ram-onboard-lpcamm2.html)에 확인법이 있습니다."}},{"@type":"Question","name":"기존 SSD는 어떻게 하나요","acceptedAnswer":{"@type":"Answer","text":"외장 케이스에 넣으면 **외장 SSD로 쓸 수 있습니다.** 백업용으로 유용합니다. 로컬 LLM 모델 중 자주 안 쓰는 것을 여기 옮겨두는 것도 방법입니다."}},{"@type":"Question","name":"복제하면 윈도우 정품 인증이 풀리나요","acceptedAnswer":{"@type":"Answer","text":"같은 노트북 안에서 저장장치만 바꾸는 것이라 대개 유지됩니다. 다만 안 되는 경우가 있으니 **마이크로소프트 계정에 연결해두면** 복구가 쉽습니다."}},{"@type":"Question","name":"SSD를 바꾸면 개발이 얼마나 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"**하드디스크에서 바꾸는 거라면 크게 빨라집니다.** 이미 SSD를 쓰고 계셨다면 체감은 작습니다 — 개발 작업의 병목이 순차 속도가 아니기 때문입니다. 자세한 이유는 [NVMe와 SATA](/posts/nvme-vs-sata.html)에 있습니다. **용량이 부족해서 바꾸는 거라면 그건 확실한 이유입니다.**"}},{"@type":"Question","name":"로컬 LLM 속도가 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 모델을 처음 읽어 올릴 때만 쓰이고, 이후 연산은 VRAM 안에서 일어납니다. **용량 문제를 푸는 것이지 속도 문제를 푸는 게 아닙니다.**"}},{"@type":"Question","name":"뒷판이 안 열립니다","acceptedAnswer":{"@type":"Answer","text":"나사를 다 뺐는데 안 열리면 **숨은 나사가 고무 발 아래**에 있는 경우가 많습니다. 무리하게 벌리면 걸쇠가 부러집니다. 분해 영상을 한 번 보고 하시는 게 안전합니다."}}]}</script>
@@ -287,6 +289,17 @@ document.querySelector('[data-theme-toggle]').addEventListener('click',function(
   el.setAttribute('data-theme',next);
   try{localStorage.setItem('theme',next)}catch(e){}
 });
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
 </script>
 
 </body>

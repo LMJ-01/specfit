@@ -265,6 +265,27 @@ async function build() {
 
   // ---- 고정 페이지 ----
   const rawPages = await readMarkdownDir(join(contentDir, 'pages'));
+
+  // 개인정보처리방침과 실제 설정이 어긋나는지 점검합니다.
+  // 쿠키를 쓰면서 안 쓴다고 적어두는 것도 부정확한 고지입니다.
+  // 사람이 기억해서 맞추면 언젠가 빠뜨리므로 여기서 잡습니다.
+  const privacy = rawPages.find((p) => p.slug === 'privacy');
+  if (privacy) {
+    const saysUnused = /구글 애널리틱스[^\n]*\n?[^\n]*사용하지 않습니다|애널리틱스\*\* — 사용하지 않습니다/.test(
+      privacy.body
+    );
+    if (config.analytics.ga4 && saysUnused) {
+      warnings.push(
+        'privacy.md: 애널리틱스를 켰는데 "사용하지 않습니다" 로 적혀 있습니다 ⚠️ ' +
+          '— 해당 절과 시행일을 고치세요'
+      );
+    }
+    if (!config.analytics.ga4 && !saysUnused && /애널리틱스/.test(privacy.body)) {
+      warnings.push(
+        'privacy.md: 애널리틱스가 꺼져 있는데 쓴다고 적혀 있을 수 있습니다 — 확인하세요'
+      );
+    }
+  }
   for (const page of rawPages) {
     written.push(
       await write(

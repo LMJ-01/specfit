@@ -72,6 +72,14 @@ ${
     ? `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${config.adsense.client}" crossorigin="anonymous"></script>`
     : ''
 }
+${
+  // 애널리틱스. 비어 있으면 스크립트 자체가 안 들어갑니다.
+  // async 라 렌더링을 막지 않습니다 (INP 보호).
+  config.analytics.ga4
+    ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${config.analytics.ga4}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${config.analytics.ga4}')</script>`
+    : ''
+}
 ${ld}
 </head>
 <body class="${bodyClass}">
@@ -126,6 +134,28 @@ document.querySelector('[data-theme-toggle]').addEventListener('click',function(
   try{localStorage.setItem('theme',next)}catch(e){}
 });
 </script>
+${
+  // 제휴 링크 클릭 추적.
+  //
+  // 문서에 한 번만 걸고 위임으로 처리합니다. 계산기 버튼은 JS 가 나중에 그리므로
+  // 개별 요소에 걸면 안 잡힙니다. 여기서 잡아야 계산기 전환이 측정됩니다.
+  //
+  // rel="sponsored" 하나로 세 경로가 모두 걸립니다 —
+  // 본문 링크(markdown.js), 구매 박스(products.js), 계산기 버튼(vram.js).
+  config.analytics.ga4
+    ? `<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>`
+    : ''
+}
 ${scripts}
 </body>
 </html>`;

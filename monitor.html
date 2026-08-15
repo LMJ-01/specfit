@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="/assets/style.css">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"모니터","description":"코딩용 모니터 — 스펙핏","url":"https://specfit.kr/monitor.html"}</script>
 </head>
 <body class="is-list">
@@ -105,6 +107,17 @@ document.querySelector('[data-theme-toggle]').addEventListener('click',function(
   el.setAttribute('data-theme',next);
   try{localStorage.setItem('theme',next)}catch(e){}
 });
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
 </script>
 
 </body>
