@@ -2,6 +2,7 @@
 title: 로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드
 description: VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.
 date: 2026-08-15
+updated: 2026-08-18
 category: gpu
 tags: [로컬LLM, 입문, Ollama, VRAM, 초보]
 affiliate: true
@@ -147,6 +148,16 @@ AI가 한 번에 기억하는 내용의 길이입니다.
 → [5060 Ti 16GB vs 5070](/posts/rtx4060ti-16gb-vs-4070.html) — 신품 중급
 → [중고 3060 12GB](/posts/rtx3060-12gb-local-llm.html) — 최대한 싸게
 → [중고 3090 vs 신품](/posts/rtx3090-vs-4070-local-llm.html) — 큰 모델을 노릴 때
+→ [RTX 5090 32GB](/posts/rtx5090-local-llm.html) — 개인용 상한선
+
+**"제 카드가 라데온인데요"**
+→ [AMD 라데온으로 로컬 LLM](/posts/amd-radeon-local-llm.html)
+
+**"카드를 두 장 꽂으면 되지 않나요"**
+→ [그래픽카드 두 장 — VRAM이 합쳐지나요](/posts/multi-gpu-local-llm.html)
+
+**"전기요금이 걱정됩니다"**
+→ [로컬 LLM 전기요금 — 정말 공짜인가](/posts/local-llm-power-cost.html)
 
 **"맥인데요"**
 → [맥 통합메모리 몇 GB를 사야 하나](/posts/mac-unified-memory-local-llm.html)
@@ -173,6 +184,10 @@ AI가 한 번에 기억하는 내용의 길이입니다.
 
 모델과 프로그램 모두 무료입니다. 전기요금만 듭니다.
 다만 장비가 부족하면 그걸 사는 비용이 듭니다.
+
+전기요금이 얼마인지는 계산해 두었습니다 — 하루 한두 시간이면 신경 쓸 금액이 아니고,
+**24시간 켜두면 이야기가 달라집니다.**
+[로컬 LLM 전기요금](/posts/local-llm-power-cost.html)에 계산식과 확인처를 적었습니다.
 
 ### 얼마나 어렵나요
 

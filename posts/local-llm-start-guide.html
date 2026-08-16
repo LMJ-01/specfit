@@ -24,9 +24,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드","description":"VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-start-guide.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드","description":"VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-start-guide.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드","item":"https://specfit.kr/posts/local-llm-start-guide.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"그래픽카드가 없어도 되나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다. 체험은 되지만 실제로 쓰기는 어렵습니다. 왜 그런지는 [CPU로 돌리면 얼마나 느린가](/posts/local-llm-without-gpu.html)에 계산해 뒀습니다."}},{"@type":"Question","name":"노트북으로도 되나요","acceptedAnswer":{"@type":"Answer","text":"노트북 그래픽카드의 메모리를 확인하세요. 같은 이름이라도 데스크톱보다 메모리가 적은 경우가 많습니다. 확인 방법은 위 2번과 같습니다."}},{"@type":"Question","name":"인터넷 서비스보다 성능이 떨어지나요","acceptedAnswer":{"@type":"Answer","text":"떨어집니다. 개인 장비에서 돌릴 수 있는 크기에 한계가 있기 때문입니다. 다만 번역·요약·간단한 코딩 보조 같은 일상적인 작업은 충분히 됩니다."}},{"@type":"Question","name":"무료인가요","acceptedAnswer":{"@type":"Answer","text":"모델과 프로그램 모두 무료입니다. 전기요금만 듭니다. 다만 장비가 부족하면 그걸 사는 비용이 듭니다."}},{"@type":"Question","name":"얼마나 어렵나요","acceptedAnswer":{"@type":"Answer","text":"Ollama 기준으로 설치 후 명령어 한 줄입니다. 어려운 건 설치가 아니라 **내 장비로 뭐가 되는지 판단하는 것**이고, 그게 이 사이트가 하는 일입니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"그래픽카드가 없어도 되나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다. 체험은 되지만 실제로 쓰기는 어렵습니다. 왜 그런지는 [CPU로 돌리면 얼마나 느린가](/posts/local-llm-without-gpu.html)에 계산해 뒀습니다."}},{"@type":"Question","name":"노트북으로도 되나요","acceptedAnswer":{"@type":"Answer","text":"노트북 그래픽카드의 메모리를 확인하세요. 같은 이름이라도 데스크톱보다 메모리가 적은 경우가 많습니다. 확인 방법은 위 2번과 같습니다."}},{"@type":"Question","name":"인터넷 서비스보다 성능이 떨어지나요","acceptedAnswer":{"@type":"Answer","text":"떨어집니다. 개인 장비에서 돌릴 수 있는 크기에 한계가 있기 때문입니다. 다만 번역·요약·간단한 코딩 보조 같은 일상적인 작업은 충분히 됩니다."}},{"@type":"Question","name":"무료인가요","acceptedAnswer":{"@type":"Answer","text":"모델과 프로그램 모두 무료입니다. 전기요금만 듭니다. 다만 장비가 부족하면 그걸 사는 비용이 듭니다. 전기요금이 얼마인지는 계산해 두었습니다 — 하루 한두 시간이면 신경 쓸 금액이 아니고, **24시간 켜두면 이야기가 달라집니다.** [로컬 LLM 전기요금](/posts/local-llm-power-cost.html)에 계산식과 확인처를 적었습니다."}},{"@type":"Question","name":"얼마나 어렵나요","acceptedAnswer":{"@type":"Answer","text":"Ollama 기준으로 설치 후 명령어 한 줄입니다. 어려운 건 설치가 아니라 **내 장비로 뭐가 되는지 판단하는 것**이고, 그게 이 사이트가 하는 일입니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -63,7 +63,7 @@
     <h1>로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드</h1>
     <p class="post-meta">
       <time datetime="2026-08-15">2026년 8월 15일</time>
-      
+      <span class="updated">· 2026년 8월 18일 갱신</span>
     </p>
   </header>
 
@@ -195,7 +195,14 @@ AI가 한 번에 기억하는 내용의 길이입니다.
 <p><strong>&quot;살 카드를 고르고 있다&quot;</strong>
 → <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB vs 5070</a> — 신품 중급
 → <a href="/posts/rtx3060-12gb-local-llm.html">중고 3060 12GB</a> — 최대한 싸게
-→ <a href="/posts/rtx3090-vs-4070-local-llm.html">중고 3090 vs 신품</a> — 큰 모델을 노릴 때</p>
+→ <a href="/posts/rtx3090-vs-4070-local-llm.html">중고 3090 vs 신품</a> — 큰 모델을 노릴 때
+→ <a href="/posts/rtx5090-local-llm.html">RTX 5090 32GB</a> — 개인용 상한선</p>
+<p><strong>&quot;제 카드가 라데온인데요&quot;</strong>
+→ <a href="/posts/amd-radeon-local-llm.html">AMD 라데온으로 로컬 LLM</a></p>
+<p><strong>&quot;카드를 두 장 꽂으면 되지 않나요&quot;</strong>
+→ <a href="/posts/multi-gpu-local-llm.html">그래픽카드 두 장 — VRAM이 합쳐지나요</a></p>
+<p><strong>&quot;전기요금이 걱정됩니다&quot;</strong>
+→ <a href="/posts/local-llm-power-cost.html">로컬 LLM 전기요금 — 정말 공짜인가</a></p>
 <p><strong>&quot;맥인데요&quot;</strong>
 → <a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 몇 GB를 사야 하나</a></p>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
@@ -212,6 +219,9 @@ AI가 한 번에 기억하는 내용의 길이입니다.
 <h3 id="무료인가요">무료인가요</h3>
 <p>모델과 프로그램 모두 무료입니다. 전기요금만 듭니다.
 다만 장비가 부족하면 그걸 사는 비용이 듭니다.</p>
+<p>전기요금이 얼마인지는 계산해 두었습니다 — 하루 한두 시간이면 신경 쓸 금액이 아니고,
+<strong>24시간 켜두면 이야기가 달라집니다.</strong>
+<a href="/posts/local-llm-power-cost.html">로컬 LLM 전기요금</a>에 계산식과 확인처를 적었습니다.</p>
 <h3 id="얼마나-어렵나요">얼마나 어렵나요</h3>
 <p>Ollama 기준으로 설치 후 명령어 한 줄입니다.
 어려운 건 설치가 아니라 <strong>내 장비로 뭐가 되는지 판단하는 것</strong>이고,
@@ -236,24 +246,24 @@ AI가 한 번에 기억하는 내용의 길이입니다.
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/ollama-install-guide.html">
+      <a href="/posts/amd-radeon-local-llm.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">Ollama 설치부터 첫 대화까지 — 명령어 두 줄</span>
-        <span class="card-desc">로컬 LLM을 처음 돌려보는 가장 빠른 길입니다. 설치, 모델 받기, 대화까지 순서대로. 어떤 모델을 골라야 하는지도 함께 정리했습니다.</span>
+        <span class="card-title">AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다</span>
+        <span class="card-desc">VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨어가 아니라 소프트웨어입니다. 어디서 막히는지, 이미 갖고 계신 경우와 새로 사는 경우를 갈랐습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/rtx3060-12gb-local-llm.html">
+      <a href="/posts/local-llm-power-cost.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">중고 RTX 3060 12GB — 로컬 LLM 입문에 아직 쓸 만한가</span>
-        <span class="card-desc">단종된 구형 카드지만 VRAM 12GB로 14B 모델이 여유롭게 돌아갑니다. 신품 4060 8GB와 비교해 어느 쪽이 맞는지, 중고로 살 때 확인할 것을 정리했습니다.</span>
+        <span class="card-title">로컬 LLM 전기요금 — 정말 공짜인가</span>
+        <span class="card-desc">전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/rtx4060-local-llm.html">
+      <a href="/posts/multi-gpu-local-llm.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">RTX 4060으로 로컬 LLM — 8GB로 어디까지 되나</span>
-        <span class="card-desc">가장 흔한 입문 카드인 RTX 4060의 VRAM은 8GB입니다. 어떤 크기 모델이 쾌적하게 돌고 어디서 막히는지, 8GB의 한계선을 정리했습니다.</span>
+        <span class="card-title">그래픽카드 두 장 — VRAM이 합쳐지나요</span>
+        <span class="card-desc">합쳐지지 않습니다. 나눠 올릴 수는 있지만 속도는 더해지지 않습니다. 8GB 두 장과 16GB 한 장이 왜 다른지, 두 장이 의미 있는 경우는 언제인지 정리했습니다.</span>
       </a>
     </li>
   </ul>

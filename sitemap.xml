@@ -10,6 +10,10 @@
   <url><loc>https://specfit.kr/contact.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/amd-radeon-local-llm.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/local-llm-power-cost.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/multi-gpu-local-llm.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/rtx5090-local-llm.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dp-vs-hdmi-coding.html</loc><lastmod>2026-08-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gaming-laptop-for-dev.html</loc><lastmod>2026-08-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-battery-dev.html</loc><lastmod>2026-08-17</lastmod><priority>0.8</priority></url>
@@ -33,7 +37,7 @@
   <url><loc>https://specfit.kr/posts/dev-ssd-choose.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-ram-onboard-lpcamm2.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/local-llm-laptop-choose.html</loc><lastmod>2026-08-17</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/local-llm-start-guide.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/local-llm-start-guide.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/local-llm-without-gpu.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mac-unified-memory-local-llm.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/macbook-air-vs-pro-dev.html</loc><lastmod>2026-08-17</lastmod><priority>0.8</priority></url>
@@ -41,11 +45,11 @@
   <url><loc>https://specfit.kr/posts/quantization-q4-q5-q8.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-16gb-vs-32gb.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/rtx3060-12gb-local-llm.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/rtx4060-local-llm.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/rtx4060-local-llm.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/rtx4060ti-16gb-vs-4070.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/rtx5070ti-vs-5080.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/vram-8gb-tips.html</loc><lastmod>2026-08-15</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/rtx5070ti-vs-5080.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/vram-8gb-tips.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/local-llm-ram-vs-vram.html</loc><lastmod>2026-08-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/rtx3090-vs-4070-local-llm.html</loc><lastmod>2026-08-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/ollama-minimum-spec.html</loc><lastmod>2026-08-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/ollama-minimum-spec.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
 </urlset>

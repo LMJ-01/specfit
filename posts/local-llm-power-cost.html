@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로컬 LLM 전기요금 — 정말 공짜인가 | 스펙핏</title>
+<meta name="description" content="전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/local-llm-power-cost.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="로컬 LLM 전기요금 — 정말 공짜인가 | 스펙핏">
+<meta property="og:description" content="전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/local-llm-power-cost.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 전기요금 — 정말 공짜인가","description":"전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-power-cost.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"로컬 LLM 전기요금 — 정말 공짜인가","item":"https://specfit.kr/posts/local-llm-power-cost.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"대기 중에도 전기를 먹나요","acceptedAnswer":{"@type":"Answer","text":"모델이 메모리에 올라가 있으면 완전히 쉬지 못합니다. 다만 계산 중일 때와는 차이가 큽니다. 오래 안 쓰실 거면 내려두세요."}},{"@type":"Question","name":"CPU 로 돌리면 전기를 덜 쓰나요","acceptedAnswer":{"@type":"Answer","text":"소비 전력은 낮습니다. 다만 **훨씬 오래 걸립니다.** 같은 답을 얻는 데 드는 총 전력은 오히려 비슷하거나 더 많을 수 있습니다. [CPU 추론이 왜 느린지](/posts/local-llm-without-gpu.html)는 따로 정리했습니다."}},{"@type":"Question","name":"노트북은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"소비 전력이 훨씬 낮아 전기요금은 문제가 안 됩니다. 대신 **배터리로는 오래 못 갑니다** — [개발용 노트북 배터리](/posts/laptop-battery-dev.html)에 계산해 뒀습니다."}},{"@type":"Question","name":"맥은요","acceptedAnswer":{"@type":"Answer","text":"애플 실리콘은 전력 대비 효율이 좋은 편이라 이 항목에서 유리합니다. 용량과 속도의 성격은 다르므로 [맥 통합메모리 글](/posts/mac-unified-memory-local-llm.html)을 함께 보세요."}},{"@type":"Question","name":"전기요금이 얼마인지 정확히 알고 싶습니다","acceptedAnswer":{"@type":"Answer","text":"한전 사이버지점에서 우리 집의 최근 사용량과 요금을 볼 수 있습니다. 거기에 위 계산으로 나온 kWh 를 더해 보시면 구간이 바뀌는지 알 수 있습니다."}},{"@type":"Question","name":"파워서플라이 용량은요","acceptedAnswer":{"@type":"Answer","text":"TDP 에 나머지 부품과 여유를 더해 잡습니다. 카드를 두 장 꽂으면 계산이 또 달라집니다 — [그래픽카드 두 장](/posts/multi-gpu-local-llm.html)에 적었습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>로컬 LLM 전기요금 — 정말 공짜인가</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-18">2026년 8월 18일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p><a href="/posts/local-llm-start-guide.html">시작 가이드</a>에 <strong>&quot;공짜이고 전기요금만 듭니다&quot;</strong>라고 적었습니다.</p>
+<p>맞는 말인데 <strong>그 전기요금이 얼마인지는 안 적었습니다.</strong> 계산해 보면 경우에 따라
+무시할 수 없는 금액이 나옵니다. 특히 <strong>누진 구간에 걸릴 때</strong> 그렇습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>쓰는 방식</th><th>전기요금</th></tr></thead>
+<tbody>
+<tr><td>하루 1~2시간, 중급 카드</td><td><strong>신경 안 쓰셔도 됩니다</strong></td></tr>
+<tr><td>하루 종일 띄워두되 가끔 질문</td><td>생각보다 적습니다</td></tr>
+<tr><td><strong>24시간 계속 돌리는 서버</strong></td><td>⚠️ <strong>여기서 갈립니다</strong></td></tr>
+<tr><td>상급 카드 + 장시간</td><td>⚠️ 누진 최고 구간에 들어갑니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>핵심은 시간이 아니라 &quot;우리 집이 이미 몇 kWh 를 쓰고 있는가&quot;입니다.</strong>
+누진제 때문에 <strong>같은 사용량이라도 집집마다 요금이 다릅니다.</strong></p>
+<h2 id="1-계산은-곱셈-하나입니다">1. 계산은 곱셈 하나입니다</h2>
+<pre><code>쓴 전력량(kWh) = 소비 전력(W) × 시간 ÷ 1000</code></pre>
+<p>카드의 소비 전력은 사양표의 <strong>TDP</strong> 를 보시면 됩니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>카드</th><th>TDP</th></tr></thead>
+<tbody>
+<tr><td>RTX 5060</td><td>145W</td></tr>
+<tr><td>RTX 5070</td><td>250W</td></tr>
+<tr><td>RTX 5070 Ti</td><td>300W</td></tr>
+<tr><td>RTX 5080</td><td>360W</td></tr>
+<tr><td><strong>RTX 5090</strong></td><td><strong>575W</strong></td></tr>
+</tbody>
+</table></div>
+<p>하루 2시간씩 한 달(30일) 쓴다고 하면 이렇습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>카드</th><th>한 달 전력량</th></tr></thead>
+<tbody>
+<tr><td>RTX 5060</td><td>약 8.7 kWh</td></tr>
+<tr><td>RTX 5070</td><td>약 15 kWh</td></tr>
+<tr><td>RTX 5090</td><td>약 34.5 kWh</td></tr>
+</tbody>
+</table></div>
+<p><strong>하루 두 시간이면 대부분 큰 부담이 아닙니다.</strong> 여기까지가 좋은 소식입니다.</p>
+<h3 id="tdp-로-계산한-값은-상한입니다">⚠️ TDP 로 계산한 값은 상한입니다</h3>
+<p><strong>실제로는 이보다 덜 씁니다.</strong></p>
+<p>이 사이트가 반복해 온 이야기인데, 로컬 LLM 은
+<a href="/posts/local-llm-without-gpu.html">메모리를 얼마나 빨리 읽느냐에 묶여 있습니다</a>.
+그래서 <strong>계산하는 부분은 오히려 놀고 있습니다.</strong> 게임처럼 카드를 꽉 채워 쓰지 않습니다.</p>
+<p>다만 <strong>얼마나 덜 쓰는지는 재봐야 압니다.</strong> 이 사이트는 측정하지 않았습니다.
+그래서 위 표는 <strong>&quot;이보다는 안 나온다&quot;는 상한</strong>으로 읽으시는 편이 맞습니다.</p>
+<h2 id="2-진짜-변수는-누진제입니다">2. 진짜 변수는 누진제입니다</h2>
+<p><strong>같은 10kWh 를 더 써도 집마다 요금이 다릅니다.</strong></p>
+<p>주택용 저압 요금은 쓴 양에 따라 단가가 올라가는 3단계 구조입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>구간</th><th>한 달 사용량</th></tr></thead>
+<tbody>
+<tr><td>1단계</td><td>200kWh 이하</td></tr>
+<tr><td>2단계</td><td>200 초과 ~ 400kWh</td></tr>
+<tr><td><strong>3단계</strong></td><td><strong>400kWh 초과</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>중요한 건 추가로 쓴 몫이 어느 구간에서 계산되느냐입니다.</strong></p>
+<pre><code>평소 150kWh 쓰는 집이 15kWh 를 더 씀   →  아직 1단계. 부담 작음
+평소 390kWh 쓰는 집이 15kWh 를 더 씀   →  3단계로 넘어감. 부담 큼</code></pre>
+<p><strong>로컬 LLM 이 문제가 아니라, 그것 때문에 구간이 바뀌는 게 문제</strong>입니다.
+여름에 에어컨을 쓰는 집이라면 특히 그렇습니다.</p>
+<blockquote><p><strong>단가는 이 글에 적지 않았습니다.</strong> 요금은 개정되고, 숫자를 박아두면
+이 글이 금방 틀린 글이 됩니다. <strong>한전 사이버지점에서 지금 우리 집 사용량과
+요금표를 직접 보시는 편이 정확합니다.</strong></p></blockquote>
+<h2 id="3-24시간-돌리면-이야기가-달라집니다">3. 24시간 돌리면 이야기가 달라집니다</h2>
+<p><strong>여기가 실제로 갈리는 지점입니다.</strong></p>
+<p>로컬 LLM 을 항상 켜두고 API 처럼 쓰거나, 밤새 일괄 처리를 돌리는 경우입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>카드</th><th>24시간 × 30일</th></tr></thead>
+<tbody>
+<tr><td>RTX 5060 (145W)</td><td>약 104 kWh</td></tr>
+<tr><td>RTX 5070 (250W)</td><td>약 180 kWh</td></tr>
+<tr><td><strong>RTX 5090 (575W)</strong></td><td><strong>약 414 kWh</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>마지막 줄을 보세요.</strong> 그래픽카드 하나만으로 <strong>누진 3단계 경계(400kWh)를 넘깁니다.</strong>
+집에서 쓰는 다른 전기는 계산에 넣지도 않았는데 그렇습니다.</p>
+<p>⚠️ 실제로는 24시간 내내 계산하는 게 아니라 <strong>요청이 있을 때만</strong> 돌아갑니다.
+대기 중에는 훨씬 적게 씁니다. 그래도 <strong>켜두는 것만으로 드는 몫이 있고</strong>,
+위 숫자는 그 상한을 보여줍니다.</p>
+<p><strong>24시간 구성을 생각하신다면 소비 전력이 낮은 카드가 유리합니다.</strong>
+같은 VRAM 이면 TDP 를 보세요 — 예를 들어 16GB 구간에서
+<a href="/posts/rtx5070ti-vs-5080.html">5060 Ti(180W)와 5080(360W)은 돌아가는 모델이 같습니다</a>.</p>
+<div data-vram-tool></div>
+<h2 id="4-그래도-구독보다-싼가">4. 그래도 구독보다 싼가</h2>
+<p><strong>대부분의 개인 사용에서는 그렇습니다.</strong> 다만 이유가 전기요금 때문만은 아닙니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>로컬 LLM</th><th>구독 서비스</th></tr></thead>
+<tbody>
+<tr><td>매달 나가는 돈</td><td>전기요금</td><td>구독료</td></tr>
+<tr><td>처음 드는 돈</td><td><strong>그래픽카드 값</strong></td><td>0</td></tr>
+<tr><td>성능</td><td>내 장비 수준까지</td><td>최상급</td></tr>
+<tr><td>개인정보</td><td><strong>밖으로 안 나감</strong></td><td>서버로 전송</td></tr>
+</tbody>
+</table></div>
+<p><strong>하루 두 시간 쓰는 정도면 전기요금은 구독료보다 확실히 적습니다.</strong></p>
+<p>다만 <strong>카드값을 먼저 치렀다는 점</strong>을 빼놓으면 안 됩니다.
+이미 게이밍용으로 카드가 있다면 추가 비용이 전기요금뿐이라 유리하고,
+로컬 LLM 하나 때문에 카드를 새로 산다면 <strong>본전을 뽑는 데 오래 걸립니다.</strong></p>
+<p><strong>그래서 <a href="/posts/local-llm-start-guide.html">시작 가이드</a>에서 &quot;일단 지금 장비로 먼저 해보라&quot;고 적었습니다.</strong></p>
+<p><strong>돈으로만 따지면 구독이 이기는 경우도 많습니다.</strong>
+로컬 LLM 의 값어치는 대개 <strong>내 자료가 밖으로 안 나간다</strong>는 쪽에 있습니다.</p>
+<h2 id="5-줄이는-방법">5. 줄이는 방법</h2>
+<p><strong>① 안 쓸 때는 모델을 내리세요</strong>
+메모리에 올라가 있으면 카드가 완전히 쉬지 못합니다.
+<code>ollama ps</code> 로 확인하고 정리하시면 됩니다.</p>
+<p><strong>② 작은 모델로 충분한 일은 작은 모델로</strong>
+<a href="/posts/vram-8gb-tips.html">3B 로 되는 일이 생각보다 많습니다</a>.
+읽을 양이 적으면 그만큼 빨리 끝나고, 빨리 끝나면 전기도 덜 씁니다.</p>
+<p><strong>③ 24시간 구성이라면 저전력 카드로</strong>
+같은 VRAM 이면 TDP 가 낮은 쪽이 유리합니다.</p>
+<p><strong>④ 우리 집이 몇 kWh 를 쓰는지 먼저 보세요</strong>
+누진 구간에 여유가 있으면 신경 쓸 일이 아니고, 400kWh 근처라면 다릅니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="대기-중에도-전기를-먹나요">대기 중에도 전기를 먹나요</h3>
+<p>모델이 메모리에 올라가 있으면 완전히 쉬지 못합니다.
+다만 계산 중일 때와는 차이가 큽니다. 오래 안 쓰실 거면 내려두세요.</p>
+<h3 id="cpu-로-돌리면-전기를-덜-쓰나요">CPU 로 돌리면 전기를 덜 쓰나요</h3>
+<p>소비 전력은 낮습니다. 다만 <strong>훨씬 오래 걸립니다.</strong>
+같은 답을 얻는 데 드는 총 전력은 오히려 비슷하거나 더 많을 수 있습니다.
+<a href="/posts/local-llm-without-gpu.html">CPU 추론이 왜 느린지</a>는 따로 정리했습니다.</p>
+<h3 id="노트북은-어떤가요">노트북은 어떤가요</h3>
+<p>소비 전력이 훨씬 낮아 전기요금은 문제가 안 됩니다.
+대신 <strong>배터리로는 오래 못 갑니다</strong> — <a href="/posts/laptop-battery-dev.html">개발용 노트북 배터리</a>에 계산해 뒀습니다.</p>
+<h3 id="맥은요">맥은요</h3>
+<p>애플 실리콘은 전력 대비 효율이 좋은 편이라 이 항목에서 유리합니다.
+용량과 속도의 성격은 다르므로 <a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 글</a>을 함께 보세요.</p>
+<h3 id="전기요금이-얼마인지-정확히-알고-싶습니다">전기요금이 얼마인지 정확히 알고 싶습니다</h3>
+<p>한전 사이버지점에서 우리 집의 최근 사용량과 요금을 볼 수 있습니다.
+거기에 위 계산으로 나온 kWh 를 더해 보시면 구간이 바뀌는지 알 수 있습니다.</p>
+<h3 id="파워서플라이-용량은요">파워서플라이 용량은요</h3>
+<p>TDP 에 나머지 부품과 여유를 더해 잡습니다. 카드를 두 장 꽂으면 계산이 또 달라집니다 —
+<a href="/posts/multi-gpu-local-llm.html">그래픽카드 두 장</a>에 적었습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>계산은 곱셈 하나입니다 — <strong>W × 시간 ÷ 1000</strong></li>
+<li><strong>TDP 로 계산한 값은 상한</strong>입니다. 추론은 카드를 꽉 채워 쓰지 않습니다</li>
+<li><strong>하루 1~2시간이면 신경 쓸 금액이 아닙니다</strong></li>
+<li>진짜 변수는 <strong>누진 구간</strong>입니다. 우리 집이 이미 얼마나 쓰는지가 정합니다</li>
+<li><strong>24시간 구성은 다릅니다.</strong> 5090 은 그것만으로 400kWh 를 넘깁니다</li>
+<li>금액은 <strong>한전 사이버지점</strong>에서 직접 확인하세요. 이 글에 안 적은 이유입니다</li>
+</ol>
+<p>요금 체계가 바뀌었거나 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">전기요금</span> <span class="tag">누진제</span> <span class="tag">로컬LLM</span> <span class="tag">TDP</span> <span class="tag">전력</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/amd-radeon-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다</span>
+        <span class="card-desc">VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨어가 아니라 소프트웨어입니다. 어디서 막히는지, 이미 갖고 계신 경우와 새로 사는 경우를 갈랐습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/multi-gpu-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 두 장 — VRAM이 합쳐지나요</span>
+        <span class="card-desc">합쳐지지 않습니다. 나눠 올릴 수는 있지만 속도는 더해지지 않습니다. 8GB 두 장과 16GB 한 장이 왜 다른지, 두 장이 의미 있는 경우는 언제인지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/rtx5090-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">RTX 5090 32GB — 개인용 상한선입니다</span>
+        <span class="card-desc">32GB는 개인용 신품 그래픽카드의 천장입니다. 32B를 여유롭게 쓰는 유일한 선택지이고 70B는 여전히 안 됩니다. 575W라는 대가와 함께 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m5-16","name":"Mac M5 · 16GB","vram":10,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-24","name":"Mac M5 · 24GB","vram":16,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-32","name":"Mac M5 · 32GB","vram":22,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-24","name":"Mac M5 Pro · 24GB","vram":16,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-48","name":"Mac M5 Pro · 48GB","vram":34,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-64","name":"Mac M5 Pro · 64GB","vram":46,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-64","name":"Mac M5 Max · 64GB","vram":46,"bw":460,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-128","name":"Mac M5 Max · 128GB","vram":96,"bw":614,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script src="/assets/vram.js" defer></script>
+</body>
+</html>

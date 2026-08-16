@@ -24,9 +24,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-08-13","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","item":"https://specfit.kr/posts/ollama-minimum-spec.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"VRAM 8GB인데 14B 모델을 돌릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 컨텍스트를 크게 줄여야 하고, 일부 레이어가 CPU로 넘어가 속도가 떨어집니다. 8GB에서는 7~8B 모델을 쓰는 편이 훨씬 쾌적합니다."}},{"@type":"Question","name":"그래픽카드 두 장을 꽂으면 VRAM이 합쳐지나요","acceptedAnswer":{"@type":"Answer","text":"Ollama는 여러 GPU에 레이어를 나눠 올릴 수 있어 큰 모델을 돌리는 데 도움이 됩니다. 다만 단순히 용량이 더해지는 것은 아니고, 카드 간 통신 오버헤드가 생겨 같은 용량의 단일 카드보다 느립니다."}},{"@type":"Question","name":"시스템 램은 얼마나 필요한가요","acceptedAnswer":{"@type":"Answer","text":"모델을 VRAM에 전부 올린다면 시스템 램은 16GB로도 충분합니다. 다만 VRAM을 넘기는 모델을 쓸 계획이라면 32GB 이상을 권합니다."}},{"@type":"Question","name":"양자화를 낮추면 더 큰 모델을 돌릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. Q4 대신 Q3나 Q2를 쓰면 용량이 줄어듭니다. 다만 Q4 아래로 내려가면 품질 저하가 체감되기 시작합니다. **같은 VRAM이라면 \"더 큰 모델을 강하게 양자화\"보다 \"작은 모델을 Q4로\"가 대체로 낫습니다.**"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"VRAM 8GB인데 14B 모델을 돌릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 컨텍스트를 크게 줄여야 하고, 일부 레이어가 CPU로 넘어가 속도가 떨어집니다. 8GB에서는 7~8B 모델을 쓰는 편이 훨씬 쾌적합니다."}},{"@type":"Question","name":"그래픽카드 두 장을 꽂으면 VRAM이 합쳐지나요","acceptedAnswer":{"@type":"Answer","text":"용량은 늘어나지만 속도는 합쳐지지 않습니다. 카드들이 동시가 아니라 순서대로 일하고, 중간 결과를 주고받는 시간이 더 붙습니다. **8GB 두 장보다 16GB 한 장이 낫습니다.** 파워·슬롯 간격까지 포함한 판단은 [그래픽카드 두 장](/posts/multi-gpu-local-llm.html)에 정리했습니다."}},{"@type":"Question","name":"AMD 라데온으로도 되나요","acceptedAnswer":{"@type":"Answer","text":"VRAM 과 대역폭 규칙은 제조사와 무관하게 같습니다. 갈리는 건 실행 프로그램의 지원 범위입니다. 확인할 것은 [AMD 라데온으로 로컬 LLM](/posts/amd-radeon-local-llm.html)에 적었습니다."}},{"@type":"Question","name":"시스템 램은 얼마나 필요한가요","acceptedAnswer":{"@type":"Answer","text":"모델을 VRAM에 전부 올린다면 시스템 램은 16GB로도 충분합니다. 다만 VRAM을 넘기는 모델을 쓸 계획이라면 32GB 이상을 권합니다."}},{"@type":"Question","name":"양자화를 낮추면 더 큰 모델을 돌릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. Q4 대신 Q3나 Q2를 쓰면 용량이 줄어듭니다. 다만 Q4 아래로 내려가면 품질 저하가 체감되기 시작합니다. **같은 VRAM이라면 \"더 큰 모델을 강하게 양자화\"보다 \"작은 모델을 Q4로\"가 대체로 낫습니다.**"}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -63,7 +63,7 @@
     <h1>Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나</h1>
     <p class="post-meta">
       <time datetime="2026-08-13">2026년 8월 13일</time>
-      
+      <span class="updated">· 2026년 8월 18일 갱신</span>
     </p>
   </header>
 
@@ -171,9 +171,13 @@ VRAM이 부족하면 아무리 빠른 GPU라도 CPU로 넘어가면서 느려집
 <p>돌아가긴 합니다. 다만 컨텍스트를 크게 줄여야 하고, 일부 레이어가 CPU로 넘어가
 속도가 떨어집니다. 8GB에서는 7~8B 모델을 쓰는 편이 훨씬 쾌적합니다.</p>
 <h3 id="그래픽카드-두-장을-꽂으면-vram이-합쳐지나요">그래픽카드 두 장을 꽂으면 VRAM이 합쳐지나요</h3>
-<p>Ollama는 여러 GPU에 레이어를 나눠 올릴 수 있어 큰 모델을 돌리는 데 도움이 됩니다.
-다만 단순히 용량이 더해지는 것은 아니고, 카드 간 통신 오버헤드가 생겨
-같은 용량의 단일 카드보다 느립니다.</p>
+<p>용량은 늘어나지만 속도는 합쳐지지 않습니다. 카드들이 동시가 아니라 순서대로 일하고,
+중간 결과를 주고받는 시간이 더 붙습니다. <strong>8GB 두 장보다 16GB 한 장이 낫습니다.</strong>
+파워·슬롯 간격까지 포함한 판단은
+<a href="/posts/multi-gpu-local-llm.html">그래픽카드 두 장</a>에 정리했습니다.</p>
+<h3 id="amd-라데온으로도-되나요">AMD 라데온으로도 되나요</h3>
+<p>VRAM 과 대역폭 규칙은 제조사와 무관하게 같습니다. 갈리는 건 실행 프로그램의 지원 범위입니다.
+확인할 것은 <a href="/posts/amd-radeon-local-llm.html">AMD 라데온으로 로컬 LLM</a>에 적었습니다.</p>
 <h3 id="시스템-램은-얼마나-필요한가요">시스템 램은 얼마나 필요한가요</h3>
 <p>모델을 VRAM에 전부 올린다면 시스템 램은 16GB로도 충분합니다.
 다만 VRAM을 넘기는 모델을 쓸 계획이라면 32GB 이상을 권합니다.</p>
@@ -201,24 +205,24 @@ VRAM이 부족하면 아무리 빠른 GPU라도 CPU로 넘어가면서 느려집
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/local-llm-start-guide.html">
+      <a href="/posts/amd-radeon-local-llm.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드</span>
-        <span class="card-desc">VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.</span>
+        <span class="card-title">AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다</span>
+        <span class="card-desc">VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨어가 아니라 소프트웨어입니다. 어디서 막히는지, 이미 갖고 계신 경우와 새로 사는 경우를 갈랐습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/ollama-install-guide.html">
+      <a href="/posts/local-llm-power-cost.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">Ollama 설치부터 첫 대화까지 — 명령어 두 줄</span>
-        <span class="card-desc">로컬 LLM을 처음 돌려보는 가장 빠른 길입니다. 설치, 모델 받기, 대화까지 순서대로. 어떤 모델을 골라야 하는지도 함께 정리했습니다.</span>
+        <span class="card-title">로컬 LLM 전기요금 — 정말 공짜인가</span>
+        <span class="card-desc">전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/rtx3060-12gb-local-llm.html">
+      <a href="/posts/multi-gpu-local-llm.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">중고 RTX 3060 12GB — 로컬 LLM 입문에 아직 쓸 만한가</span>
-        <span class="card-desc">단종된 구형 카드지만 VRAM 12GB로 14B 모델이 여유롭게 돌아갑니다. 신품 4060 8GB와 비교해 어느 쪽이 맞는지, 중고로 살 때 확인할 것을 정리했습니다.</span>
+        <span class="card-title">그래픽카드 두 장 — VRAM이 합쳐지나요</span>
+        <span class="card-desc">합쳐지지 않습니다. 나눠 올릴 수는 있지만 속도는 더해지지 않습니다. 8GB 두 장과 16GB 한 장이 왜 다른지, 두 장이 의미 있는 경우는 언제인지 정리했습니다.</span>
       </a>
     </li>
   </ul>

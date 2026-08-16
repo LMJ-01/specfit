@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RTX 5090 32GB — 개인용 상한선입니다 | 스펙핏</title>
+<meta name="description" content="32GB는 개인용 신품 그래픽카드의 천장입니다. 32B를 여유롭게 쓰는 유일한 선택지이고 70B는 여전히 안 됩니다. 575W라는 대가와 함께 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/rtx5090-local-llm.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="RTX 5090 32GB — 개인용 상한선입니다 | 스펙핏">
+<meta property="og:description" content="32GB는 개인용 신품 그래픽카드의 천장입니다. 32B를 여유롭게 쓰는 유일한 선택지이고 70B는 여전히 안 됩니다. 575W라는 대가와 함께 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/rtx5090-local-llm.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RTX 5090 32GB — 개인용 상한선입니다","description":"32GB는 개인용 신품 그래픽카드의 천장입니다. 32B를 여유롭게 쓰는 유일한 선택지이고 70B는 여전히 안 됩니다. 575W라는 대가와 함께 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/rtx5090-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"RTX 5090 32GB — 개인용 상한선입니다","item":"https://specfit.kr/posts/rtx5090-local-llm.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"5090 이면 70B 가 돌아가나요","acceptedAnswer":{"@type":"Answer","text":"안 됩니다. 70B 는 Q4 로도 40GB 를 넘습니다. 개인 장비에서 70B 를 돌리는 현실적인 길은 [맥 통합메모리 128GB](/posts/mac-unified-memory-local-llm.html)입니다."}},{"@type":"Question","name":"5090 두 장이면 64GB 인가요","acceptedAnswer":{"@type":"Answer","text":"총량은 늘어납니다. 다만 속도가 합쳐지지 않고 파워가 1150W 를 넘습니다. [그래픽카드 두 장](/posts/multi-gpu-local-llm.html)에 정리했습니다."}},{"@type":"Question","name":"노트북용 5090 도 32GB 인가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. **노트북 5090 은 24GB** 입니다. 이름은 같지만 다른 물건입니다. 표는 [로컬 LLM 되는 노트북 고르기](/posts/local-llm-laptop-choose.html)에 있습니다."}},{"@type":"Question","name":"파워를 몇 W 로 잡아야 하나요","acceptedAnswer":{"@type":"Answer","text":"카드만 575W 이므로 나머지와 여유를 더해 1000W 급을 봅니다. 기존 파워로 되는 경우가 드물어 **교체 비용을 함께 계산**하셔야 합니다."}},{"@type":"Question","name":"시스템 램도 늘려야 하나요","acceptedAnswer":{"@type":"Answer","text":"32B 가 VRAM 에 다 올라간다면 램은 16GB 로도 됩니다. [램 요구량은 VRAM 을 얼마나 넘기느냐가 정합니다](/posts/ram-16gb-vs-32gb.html)."}},{"@type":"Question","name":"게이밍 성능은요","acceptedAnswer":{"@type":"Answer","text":"이 글은 로컬 LLM 기준으로만 썼습니다. 게이밍을 겸하신다면 그쪽 리뷰를 함께 보세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>RTX 5090 32GB — 개인용 상한선입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-18">2026년 8월 18일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>이 사이트의 여러 글이 <strong>&quot;32GB 로 올라가려면 5090&quot;</strong>이라고만 적고 넘어갔습니다.
+그 카드가 실제로 무엇을 여는지 정리합니다.</p>
+<p><strong>결론부터 말하면, 이 카드의 값어치는 성능이 아니라 천장입니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>RTX 5090</th></tr></thead>
+<tbody>
+<tr><td>VRAM</td><td><strong>32GB</strong> — 개인용 신품 최대</td></tr>
+<tr><td>메모리 대역폭</td><td>1792 GB/s</td></tr>
+<tr><td>TDP</td><td><strong>575W</strong></td></tr>
+<tr><td>32B 모델</td><td>✅ <strong>여유</strong></td></tr>
+<tr><td>70B 모델</td><td>❌ <strong>여전히 안 됩니다</strong></td></tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead><tr><th>이런 분</th><th>답</th></tr></thead>
+<tbody>
+<tr><td><strong>32B 를 상시로 쓰고 싶다</strong></td><td>✅ 신품에서는 이것뿐입니다</td></tr>
+<tr><td>16GB 로 모자란다</td><td>✅ 다음 칸이 여기입니다. 사이에 아무것도 없습니다</td></tr>
+<tr><td>70B 를 노린다</td><td>❌ <strong>32GB 로도 안 됩니다.</strong> 맥이나 여러 장</td></tr>
+<tr><td>14B 면 충분하다</td><td>❌ 돈이 남는 게 아니라 그냥 남습니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="1-32gb-가-여는-것-32b-한-칸">1. 32GB 가 여는 것 — 32B 한 칸</h2>
+<p><strong>딱 한 칸 올라갑니다. 그런데 그 한 칸이 큽니다.</strong></p>
+<p>Q4 양자화, A4 두세 장 분량 기준입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>모델 크기</th><th>필요 메모리</th><th>16GB 에서</th><th><strong>32GB 에서</strong></th></tr></thead>
+<tbody>
+<tr><td>12~14B</td><td>약 10.0GB</td><td>여유</td><td>여유</td></tr>
+<tr><td>20~22B</td><td>약 15.1GB</td><td>빠듯</td><td><strong>여유</strong></td></tr>
+<tr><td><strong>32B</strong></td><td><strong>약 21.5GB</strong></td><td><strong>느림</strong></td><td><strong>여유</strong></td></tr>
+<tr><td>70B</td><td>약 45GB</td><td>불가</td><td><strong>불가</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>16GB 에서 &quot;느림&quot;이던 32B 가 &quot;여유&quot;가 됩니다.</strong>
+<a href="/posts/rtx4060-local-llm.html">여러 글에서 설명한 대로</a> 느림과 여유의 차이는
+속도 차이가 아니라 <strong>쓸 만한가 아닌가</strong>의 차이입니다.</p>
+<div data-vram-tool></div>
+<p>계산기에서 5090 을 골라 보시면 다른 카드와 어디서 갈리는지 바로 보입니다.</p>
+<h3 id="그리고-대역폭도-최상급입니다">그리고 대역폭도 최상급입니다</h3>
+<p>1792 GB/s 입니다. 이 사이트가 다룬 것 중 가장 높습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 246" width="640" height="246" role="img" aria-label="카드별 메모리 대역폭 비교">
+<title>카드별 메모리 대역폭 비교</title>
+
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">메모리 대역폭 — 모델이 다 올라간 뒤 속도를 정하는 값</text>
+<text x="16" y="55" fill="var(--fg)" font-size="12">RTX 5090</text>
+<rect x="150" y="43" width="400" height="16" fill="var(--accent)" rx="3"/>
+<text x="558" y="55" fill="var(--fg-muted)" font-size="11">1792 GB/s</text>
+<text x="16" y="85" fill="var(--fg)" font-size="12">RTX 5070</text>
+<rect x="150" y="73" width="150" height="16" fill="var(--accent)" rx="3"/>
+<text x="308" y="85" fill="var(--fg-muted)" font-size="11">672 GB/s</text>
+<text x="16" y="115" fill="var(--fg)" font-size="12">M5 Max (상위)</text>
+<rect x="150" y="103" width="137.05357142857142" height="16" fill="var(--accent)" rx="3"/>
+<text x="295.05357142857144" y="115" fill="var(--fg-muted)" font-size="11">614 GB/s</text>
+<text x="16" y="145" fill="var(--fg)" font-size="12">RTX 5060 Ti</text>
+<rect x="150" y="133" width="100" height="16" fill="var(--accent)" rx="3"/>
+<text x="258" y="145" fill="var(--fg-muted)" font-size="11">448 GB/s</text>
+<text x="16" y="175" fill="var(--fg)" font-size="12">M5 Pro</text>
+<rect x="150" y="163" width="68.52678571428571" height="16" fill="var(--accent)" rx="3"/>
+<text x="226.52678571428572" y="175" fill="var(--fg-muted)" font-size="11">307 GB/s</text>
+<text x="16" y="205" fill="var(--fg)" font-size="12">M5</text>
+<rect x="150" y="193" width="34.151785714285715" height="16" fill="var(--accent)" rx="3"/>
+<text x="192.15178571428572" y="205" fill="var(--fg-muted)" font-size="11">153 GB/s</text>
+
+<text x="16" y="232" fill="var(--fg)" font-size="13" font-weight="600">용량이 "되느냐" 를 정하고, 대역폭이 "얼마나 빠르냐" 를 정합니다.</text>
+</svg>
+<figcaption>같은 모델이 둘 다 VRAM 에 올라간다면, 그다음은 이 값이 체감을 가릅니다.</figcaption>
+</figure>
+<p><strong>모델이 다 올라간 다음에는 이 값이 체감을 정합니다.</strong>
+같은 32B 를 돌려도 5090 이 눈에 띄게 빠릅니다.</p>
+<h2 id="2-32gb-가-못-여는-것-70b">2. 32GB 가 못 여는 것 — 70B</h2>
+<p><strong>여기서 실망하는 분이 많습니다.</strong></p>
+<p>70B 급은 Q4 로도 40GB 를 넘습니다. <strong>32GB 로는 못 올립니다.</strong></p>
+<pre><code>70B (Q4)  약 45GB  →  32GB 카드로도 절반 이상이 CPU 로</code></pre>
+<p>즉 <strong>&quot;제일 비싼 걸 사면 다 되겠지&quot;가 안 통합니다.</strong>
+개인용 신품 그래픽카드는 32GB 에서 끝나고, 그 위는 다른 길로 가야 합니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>70B 를 노린다면</th><th></th></tr></thead>
+<tbody>
+<tr><td><strong>맥 통합메모리 128GB</strong></td><td>가장 현실적입니다. <a href="/posts/mac-unified-memory-local-llm.html">맥 글</a></td></tr>
+<tr><td>카드 여러 장</td><td>됩니다. 다만 <a href="/posts/multi-gpu-local-llm.html">속도는 안 합쳐집니다</a></td></tr>
+<tr><td>32GB 한 장</td><td>❌</td></tr>
+</tbody>
+</table></div>
+<p><strong>용량이 필요하면 맥, 속도가 필요하면 그래픽카드</strong> — 이 사이트가 반복해 온 갈림길이
+여기서 가장 뚜렷해집니다.</p>
+<h2 id="3-575w-라는-대가">3. 575W 라는 대가</h2>
+<p><strong>이 카드의 진짜 문제는 값이 아니라 전력일 수 있습니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>RTX 5090</th><th>RTX 5070 Ti</th></tr></thead>
+<tbody>
+<tr><td>TDP</td><td><strong>575W</strong></td><td>300W</td></tr>
+<tr><td>VRAM</td><td>32GB</td><td>16GB</td></tr>
+</tbody>
+</table></div>
+<h3 id="파워서플라이">파워서플라이</h3>
+<p><strong>카드만 575W 입니다.</strong> CPU 와 나머지를 더하고 여유를 얹으면
+<strong>1000W 급</strong>을 봐야 합니다. 기존 파워로는 대개 안 되고, <strong>교체 비용이 따라옵니다.</strong></p>
+<h3 id="발열과-소음">발열과 소음</h3>
+<p>575W 는 그대로 열입니다. 케이스 통풍이 나쁘면 온도가 올라가고,
+팬이 그만큼 돕니다. <strong>조용한 방에서 오래 돌리실 거라면 감안하셔야 합니다.</strong></p>
+<h3 id="전기요금">전기요금</h3>
+<p>하루 두 시간이면 큰 부담이 아닙니다. <strong>문제는 오래 켜둘 때입니다.</strong></p>
+<pre><code>575W × 24시간 × 30일 ≈ 414 kWh</code></pre>
+<p><strong>그래픽카드 하나만으로 누진 3단계 경계(400kWh)를 넘깁니다.</strong>
+집에서 쓰는 다른 전기는 넣지도 않은 숫자입니다.
+계산과 확인처는 <a href="/posts/local-llm-power-cost.html">로컬 LLM 전기요금</a>에 정리했습니다.</p>
+<h2 id="4-그-아래와-비교하면">4. 그 아래와 비교하면</h2>
+<p><strong>5090 아래는 전부 16GB 입니다.</strong> 이게 중요합니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>카드</th><th>VRAM</th><th>대역폭</th><th>돌아가는 모델</th></tr></thead>
+<tbody>
+<tr><td>RTX 5060 Ti 16GB</td><td>16GB</td><td>448 GB/s</td><td>14B 여유</td></tr>
+<tr><td>RTX 5070 Ti</td><td>16GB</td><td>896 GB/s</td><td>14B 여유</td></tr>
+<tr><td>RTX 5080</td><td>16GB</td><td>960 GB/s</td><td>14B 여유</td></tr>
+<tr><td><strong>RTX 5090</strong></td><td><strong>32GB</strong></td><td>1792 GB/s</td><td><strong>32B 여유</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>위 세 줄은 돌아가는 모델이 전부 같고 속도만 다릅니다.</strong>
+줄이 바뀌는 건 5090 하나뿐입니다.</p>
+<p>그래서 <a href="/posts/rtx5070ti-vs-5080.html">5070 Ti vs 5080</a>에서
+<strong>&quot;5080 에 돈을 더 쓰는 대신 32GB 로 한 번에 올라가는 편이 낫다&quot;</strong>고 적었습니다.
+<strong>그 사이에는 아무것도 없습니다.</strong></p>
+<h2 id="5-중고-24gb-는-어떤가">5. 중고 24GB 는 어떤가</h2>
+<p><strong>32B 를 노린다면 24GB 도 후보입니다.</strong> 3090·4090 이 여기 있습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>3090 (중고)</th><th>5090 (신품)</th></tr></thead>
+<tbody>
+<tr><td>VRAM</td><td>24GB</td><td><strong>32GB</strong></td></tr>
+<tr><td>32B (21.5GB)</td><td><strong>빠듯</strong></td><td>여유</td></tr>
+<tr><td>대역폭</td><td>936 GB/s</td><td><strong>1792 GB/s</strong></td></tr>
+<tr><td>TDP</td><td>350W</td><td>575W</td></tr>
+<tr><td>보증</td><td>없음</td><td>있음</td></tr>
+</tbody>
+</table></div>
+<p><strong>24GB 에서 32B 는 &quot;빠듯&quot;입니다.</strong> 긴 내용을 다루면 밀립니다.
+중고 리스크와 함께 판단하셔야 하고, 자세한 내용은
+<a href="/posts/rtx3090-vs-4070-local-llm.html">중고 3090 글</a>에 있습니다.</p>
+<h2 id="6-그래서-살-만한가">6. 그래서 살 만한가</h2>
+<p><strong>&quot;32B 를 상시로 쓸 것인가&quot; 하나로 갈립니다.</strong></p>
+<pre><code>32B 를 매일 쓴다            →  신품에서는 이것뿐입니다
+가끔 무거운 걸 돌린다       →  16GB 에서 &quot;느림&quot; 으로 견딜 만합니다
+14B 로 충분하다             →  [5060 Ti 16GB 나 5070]로 갑니다
+70B 를 노린다               →  이 카드로도 안 됩니다. 맥을 보세요</code></pre>
+<p><strong>14B 면 충분한데 &quot;나중을 위해&quot; 사는 것은 권하지 않습니다.</strong>
+이 사이트가 <a href="/posts/laptop-ram-onboard-lpcamm2.html">노트북 메모리</a>에서는
+&quot;애매하면 한 단계 위&quot;라고 적었는데, <strong>그래픽카드는 나중에 바꿀 수 있어서 이야기가 다릅니다.</strong></p>
+<p>신품 중급 구간 비교는
+<a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB vs 5070</a>에 있습니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="5090-이면-70b-가-돌아가나요">5090 이면 70B 가 돌아가나요</h3>
+<p>안 됩니다. 70B 는 Q4 로도 40GB 를 넘습니다.
+개인 장비에서 70B 를 돌리는 현실적인 길은 <a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 128GB</a>입니다.</p>
+<h3 id="5090-두-장이면-64gb-인가요">5090 두 장이면 64GB 인가요</h3>
+<p>총량은 늘어납니다. 다만 속도가 합쳐지지 않고 파워가 1150W 를 넘습니다.
+<a href="/posts/multi-gpu-local-llm.html">그래픽카드 두 장</a>에 정리했습니다.</p>
+<h3 id="노트북용-5090-도-32gb-인가요">노트북용 5090 도 32GB 인가요</h3>
+<p>아닙니다. <strong>노트북 5090 은 24GB</strong> 입니다. 이름은 같지만 다른 물건입니다.
+표는 <a href="/posts/local-llm-laptop-choose.html">로컬 LLM 되는 노트북 고르기</a>에 있습니다.</p>
+<h3 id="파워를-몇-w-로-잡아야-하나요">파워를 몇 W 로 잡아야 하나요</h3>
+<p>카드만 575W 이므로 나머지와 여유를 더해 1000W 급을 봅니다.
+기존 파워로 되는 경우가 드물어 <strong>교체 비용을 함께 계산</strong>하셔야 합니다.</p>
+<h3 id="시스템-램도-늘려야-하나요">시스템 램도 늘려야 하나요</h3>
+<p>32B 가 VRAM 에 다 올라간다면 램은 16GB 로도 됩니다.
+<a href="/posts/ram-16gb-vs-32gb.html">램 요구량은 VRAM 을 얼마나 넘기느냐가 정합니다</a>.</p>
+<h3 id="게이밍-성능은요">게이밍 성능은요</h3>
+<p>이 글은 로컬 LLM 기준으로만 썼습니다. 게이밍을 겸하신다면 그쪽 리뷰를 함께 보세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>32GB 는 개인용 신품의 천장</strong>입니다. 그 위가 없습니다</li>
+<li>여는 것은 <strong>32B 한 칸</strong>입니다. 16GB 의 &quot;느림&quot;이 &quot;여유&quot;가 됩니다</li>
+<li><strong>70B 는 여전히 안 됩니다.</strong> 그건 맥이나 여러 장의 영역입니다</li>
+<li><strong>575W 가 실질적인 대가</strong>입니다. 파워 교체와 전기요금이 따라옵니다</li>
+<li>5090 아래는 <strong>전부 16GB</strong> 입니다. 사이에 아무것도 없습니다</li>
+<li><strong>14B 로 충분하면 사지 마세요.</strong> 그래픽카드는 나중에 바꿀 수 있습니다</li>
+</ol>
+<p>스펙이나 판단이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">RTX5090</span> <span class="tag">VRAM</span> <span class="tag">로컬LLM</span> <span class="tag">32GB</span> <span class="tag">파워서플라이</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/amd-radeon-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다</span>
+        <span class="card-desc">VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨어가 아니라 소프트웨어입니다. 어디서 막히는지, 이미 갖고 계신 경우와 새로 사는 경우를 갈랐습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/local-llm-power-cost.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">로컬 LLM 전기요금 — 정말 공짜인가</span>
+        <span class="card-desc">전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/multi-gpu-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 두 장 — VRAM이 합쳐지나요</span>
+        <span class="card-desc">합쳐지지 않습니다. 나눠 올릴 수는 있지만 속도는 더해지지 않습니다. 8GB 두 장과 16GB 한 장이 왜 다른지, 두 장이 의미 있는 경우는 언제인지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m5-16","name":"Mac M5 · 16GB","vram":10,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-24","name":"Mac M5 · 24GB","vram":16,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-32","name":"Mac M5 · 32GB","vram":22,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-24","name":"Mac M5 Pro · 24GB","vram":16,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-48","name":"Mac M5 Pro · 48GB","vram":34,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-64","name":"Mac M5 Pro · 64GB","vram":46,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-64","name":"Mac M5 Max · 64GB","vram":46,"bw":460,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-128","name":"Mac M5 Max · 128GB","vram":96,"bw":614,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script src="/assets/vram.js" defer></script>
+</body>
+</html>
