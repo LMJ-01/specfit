@@ -58,9 +58,33 @@
     history.replaceState(null, '', `${location.pathname}?${q}${location.hash}`);
   }
 
-  // 필요 VRAM = 가중치 + KV 캐시 + 여유
+  // 프로그램이 돌아가는 데 필요한 몫. 컨텍스트와 무관하게 항상 붙습니다.
+  const OVERHEAD = 1;
+
+  // 용도(useCases)는 파라미터 수만 갖고 있습니다.
+  // KV 캐시는 레이어 수를 따라가므로 같은 크기의 모델 항목에서 값을 가져옵니다.
+  const modelFor = (params) =>
+    models.find((m) => m.params === params) ||
+    models.reduce((a, b) => (Math.abs(b.params - params) < Math.abs(a.params - params) ? b : a));
+
+  /**
+   * 필요 VRAM = 가중치 + KV 캐시 + 여유
+   *
+   * ⚠️ KV 캐시를 파라미터 수에 비례시키면 안 됩니다.
+   *    레이어 수 × KV 헤드 수 × 헤드 차원이 정합니다 — gpu-data.js 의 kvPerK 주석 참고.
+   *    이전 판은 그걸 params 로 어림했고, 실제보다 최대 12 배 적게 잡고 있었습니다.
+   *
+   * 양자화는 가중치만 줄입니다. KV 캐시는 별도 자료형(기본 f16)이라
+   * quant 를 곱하지 않습니다.
+   */
+  function parts(params, quant, tokens) {
+    const weights = params * quant.perB;
+    const kv = modelFor(params).kvPerK * (tokens / 1024);
+    return { weights, kv, overhead: OVERHEAD, total: weights + kv + OVERHEAD };
+  }
+
   function estimate(params, quant, tokens) {
-    return params * quant.perB + params * 0.012 * (tokens / 4096) + 1;
+    return parts(params, quant, tokens).total;
   }
 
   function verdict(total, vram) {
@@ -134,7 +158,8 @@
     const gpu = gpus.find((g) => g.id === state.gpu);
     const quant = quants.find((q) => q.id === state.quant);
 
-    const needed = estimate(use.params, quant, len.tokens);
+    const p = parts(use.params, quant, len.tokens);
+    const needed = p.total;
     const v = verdict(needed, gpu.vram);
 
     // ── 결론 문장 (전문 용어 없이) ──
@@ -209,11 +234,13 @@
     // ── 상세 표 (원하는 사람만) ──
     const rows = models
       .map((m) => {
-        const t = estimate(m.params, quant, len.tokens);
+        const mp = parts(m.params, quant, len.tokens);
+        const t = mp.total;
         const mv = verdict(t, gpu.vram);
         return `<tr>
           <td><strong>${esc(m.label)}</strong><br><span class="vr-ex">${esc(m.examples)}</span></td>
-          <td class="vr-num">${t.toFixed(1)}GB</td>
+          <td class="vr-num">${t.toFixed(1)}GB<br>
+              <span class="vr-ex">가중치 ${mp.weights.toFixed(1)} · 컨텍스트 ${mp.kv.toFixed(1)}</span></td>
           <td><span class="vr-badge vr-badge-${mv}">${VERDICT_TEXT[mv].badge}</span><br>
               <span class="vr-ex">${VERDICT_TEXT[mv].desc}</span></td>
         </tr>`;
@@ -241,6 +268,11 @@
     <p class="vr-headline"><span class="vr-badge vr-badge-${v}">${VERDICT_TEXT[v].badge}</span> ${headline}</p>
     <p class="vr-advice">${advice}</p>
     <p class="vr-why">${esc(use.why)}</p>
+    <p class="vr-parts">
+      필요 <strong>${needed.toFixed(1)}GB</strong>
+      <span class="vr-parts-eq">= 가중치 ${p.weights.toFixed(1)} + 컨텍스트 ${p.kv.toFixed(1)} + 여유 ${p.overhead.toFixed(1)}</span>
+      <span class="vr-parts-vs">내 카드 ${gpu.vram}GB</span>
+    </p>
     <p class="vr-share">
       <button type="button" class="vr-share-btn" data-share>이 결과 링크 복사</button>
       <span class="vr-share-msg" role="status" data-share-msg></span>

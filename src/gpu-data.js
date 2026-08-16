@@ -91,14 +91,44 @@ export const gpus = [
 ];
 
 // params: 파라미터 수(B). 대표 모델명은 예시입니다.
+//
+// kvPerK: 컨텍스트 1,024 토큰당 KV 캐시 크기(GiB).
+//
+// ── 2026-08-18 정정 ─────────────────────────────────────────────
+// 이전에는 KV 캐시를 `params × 0.012 × (tokens/4096)` 으로 파라미터 수에
+// 비례시켰습니다. **틀렸습니다.** KV 캐시는 파라미터가 아니라 레이어 수를 따라갑니다.
+//
+//   KV = 2(K,V) × 레이어 수 × KV 헤드 수 × 헤드 차원 × 토큰 수 × 2바이트(f16)
+//
+// 요즘 모델은 전부 GQA 라 KV 헤드가 8 개로 고정입니다. 그래서 파라미터가
+// 늘어도 KV 는 레이어 수만큼만 늘어납니다. 3B 와 8B 의 KV 가 비슷한 이유입니다.
+//
+// 이전 식은 실제보다 1.5~12 배 적게 잡고 있었고, 긴 컨텍스트에서 특히 심했습니다.
+// 120 개 조합 중 16 개의 판정이 바뀌었으며 **전부 낙관 방향** 이었습니다.
+//
+//   모델                레이어  KV헤드  헤드차원  토큰당      1K당(GiB)
+//   llama3.2:3b            28      8     128    112 KiB     0.109
+//   llama3.1:8b            32      8     128    128 KiB     0.125
+//   qwen2.5:14b            48      8     128    192 KiB     0.188
+//   mistral-small:22b      56      8     128    224 KiB     0.219
+//   qwen2.5:32b            64      8     128    256 KiB     0.250
+//   llama3.1:70b           80      8     128    320 KiB     0.313
+//
+// ⚠️ f16 KV 기준입니다. 실행 프로그램에서 KV 를 양자화하면 이보다 작아집니다.
+//    기본값이 f16 이므로 기본 기준으로 잡았습니다.
+// ⚠️ 모델마다 레이어 수가 다릅니다. 위는 각 구간의 대표 모델이고,
+//    같은 구간이라도 모델에 따라 ±30% 정도 차이날 수 있습니다.
+// ⚠️ 새 모델 구간을 추가할 때는 그 모델의 config 에서 레이어 수와 KV 헤드 수를
+//    확인해 직접 계산하세요. params 로 어림하면 다시 틀립니다.
 export const models = [
-  { id: '3b', params: 3, label: '3B', examples: 'Llama 3.2 3B, Qwen 3B' },
-  { id: '8b', params: 8, label: '7~8B', examples: 'Llama 3.1 8B, Qwen 7B' },
-  { id: '14b', params: 14, label: '12~14B', examples: 'Qwen 14B, Gemma 12B' },
-  { id: '22b', params: 22, label: '20~22B', examples: 'Mistral Small' },
-  { id: '32b', params: 32, label: '32B', examples: 'Qwen 32B, QwQ 32B' },
-  { id: '70b', params: 70, label: '70B', examples: 'Llama 3.3 70B' },
-  { id: '120b', params: 120, label: '120B+', examples: 'Mixtral 8x22B급' },
+  { id: '3b', params: 3, kvPerK: 0.109, label: '3B', examples: 'Llama 3.2 3B, Qwen 3B' },
+  { id: '8b', params: 8, kvPerK: 0.125, label: '7~8B', examples: 'Llama 3.1 8B, Qwen 7B' },
+  { id: '14b', params: 14, kvPerK: 0.188, label: '12~14B', examples: 'Qwen 14B, Gemma 12B' },
+  { id: '22b', params: 22, kvPerK: 0.219, label: '20~22B', examples: 'Mistral Small' },
+  { id: '32b', params: 32, kvPerK: 0.25, label: '32B', examples: 'Qwen 32B, QwQ 32B' },
+  { id: '70b', params: 70, kvPerK: 0.313, label: '70B', examples: 'Llama 3.3 70B' },
+  // MoE 라 가중치·KV 모두 어림값입니다. 어차피 개인용 카드에서는 전부 '불가' 입니다.
+  { id: '120b', params: 120, kvPerK: 0.25, label: '120B+', examples: 'Mixtral 8x22B급' },
 ];
 
 // 파라미터당 GB. Q4 가 사실상 표준입니다.

@@ -77,12 +77,21 @@ ${t(x0, 154, '에러가 나는 게 아니라 속도만 떨어져서 원인을 �
 
 /**
  * 필요 메모리의 구성. "컨텍스트만 줄이면 되지 않나" 를 막는 그림입니다.
+ *
+ * ⚠️ 2026-08-18 — kv 값을 0.2 → 0.75 로 고쳤습니다.
+ *    계산기가 KV 캐시를 파라미터 수에 비례시키고 있었고 그 값을 그대로 썼습니다.
+ *    실제로는 레이어 수를 따라갑니다 (gpu-data.js 의 kvPerK 주석 참고).
+ *
+ *    이 그림은 **A4 두세 장(4,096 토큰) 기준**입니다. 그 길이에서는 여전히
+ *    가중치가 대부분이라 그림의 결론이 유지됩니다.
+ *    다만 긴 컨텍스트에서는 KV 가 가중치에 육박하므로,
+ *    이 그림을 "컨텍스트는 항상 작다" 로 읽히게 쓰면 안 됩니다.
  */
 function memoryParts() {
   const W = 640;
   const scale = 52;
   const x0 = 16;
-  const w = { weights: 8.8, kv: 0.2, over: 1 };
+  const w = { weights: 8.8, kv: 0.75, over: 1 };
 
   const seg = (x, width, fill, label, sub) => `
 ${rect(x, 40, width, 38, fill)}
@@ -93,24 +102,24 @@ ${t(x + width / 2, 64, label, { anchor: 'middle', fill: '#fff', weight: 600, siz
   const x3 = x2 + w.kv * scale;
 
   const body = `
-${t(x0, 22, '14B 모델이 필요한 메모리 = 약 10GB', { weight: 600, size: 14 })}
+${t(x0, 22, '14B 모델이 필요한 메모리 = 약 10.6GB  (A4 두세 장 기준)', { weight: 600, size: 14 })}
 
 ${seg(x1, w.weights * scale, COLOR.fit, '가중치 8.8GB')}
 ${seg(x2, w.kv * scale, COLOR.accent, '')}
 ${seg(x3, w.over * scale, COLOR.over, '여유 1GB')}
 
 ${t(x1, 98, '컨텍스트와 무관 — 항상 먼저 들어갑니다', { fill: COLOR.mute, size: 12 })}
-${t(x3 + w.over * scale, 98, '↑ 컨텍스트', { anchor: 'end', fill: COLOR.mute, size: 12 })}
+${t(x3 + w.over * scale, 98, '↑ 컨텍스트 0.75GB', { anchor: 'end', fill: COLOR.mute, size: 12 })}
 
 ${t(x0, 128, '컨텍스트를 0 으로 해도 9.8GB 입니다.', { weight: 600 })}
 ${t(x0, 148, '8GB 카드에서 "짧게 물어보면 되지 않나" 가 통하지 않는 이유입니다.', { fill: COLOR.mute, size: 12 })}`;
 
   return figure(
-    '필요 메모리는 가중치와 여유가 대부분이고 컨텍스트 몫은 작다',
+    '짧은 길이에서는 가중치가 대부분이라 컨텍스트를 줄여도 소용이 없다',
     W,
     162,
     body,
-    '가중치와 여유는 컨텍스트와 무관하게 먼저 들어갑니다. 그 합이 이미 VRAM 을 넘으면 컨텍스트를 줄여도 넘습니다.'
+    '가중치와 여유는 컨텍스트와 무관하게 먼저 들어갑니다. 그 합이 이미 VRAM 을 넘으면 컨텍스트를 줄여도 넘습니다. 반대로 아주 긴 내용을 다루면 컨텍스트 몫이 가중치에 육박하므로, 그때는 이야기가 달라집니다.'
   );
 }
 

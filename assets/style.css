@@ -771,6 +771,32 @@ tbody tr:last-child td {
   color: var(--fg-muted);
 }
 
+/* 계산 근거.
+   숫자만 던지면 믿을 근거가 없습니다. 무엇을 더해서 나온 값인지 보여줍니다.
+   컨텍스트 몫이 얼마나 큰지가 여기서 바로 보입니다 — 이게 가장 자주 오해되는 부분입니다. */
+.vr-parts {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem 0.7rem;
+  flex-wrap: wrap;
+  margin: 0.8rem 0 0;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+}
+.vr-parts strong {
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+.vr-parts-eq {
+  font-variant-numeric: tabular-nums;
+}
+.vr-parts-vs::before {
+  content: '·';
+  margin-right: 0.5rem;
+}
+
 /* 결과 공유.
    눈에 확 띄면 안 됩니다 — 결론을 읽는 것이 먼저이고 이건 그다음입니다. */
 .vr-share {
