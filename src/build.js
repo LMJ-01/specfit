@@ -13,11 +13,11 @@ import { fileURLToPath } from 'node:url';
 import { config } from './config.js';
 import { markdownToHtml, parseFrontmatter } from './markdown.js';
 import { postPage, listPage, staticPage, toolPage, fmtShort } from './templates.js';
-import { gpus, models, quants, contexts, useCases, lengths } from './gpu-data.js';
+import { gpus, models, quants, lengths } from './gpu-data.js';
 import { figures } from './figures.js';
 import { buyBox } from './products.js';
 
-const toolData = { gpus, models, quants, contexts, useCases, lengths };
+const toolData = { gpus, models, quants, lengths };
 
 // 계산기에 쿠팡 링크가 하나라도 있으면, 계산기를 실은 페이지는 '제휴 페이지'입니다.
 // 공정위 고지가 자동으로 붙어야 합니다 — 하단 표기나 누락은 수익 전액 몰수 사유입니다.

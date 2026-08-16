@@ -120,15 +120,24 @@ export const gpus = [
 //    같은 구간이라도 모델에 따라 ±30% 정도 차이날 수 있습니다.
 // ⚠️ 새 모델 구간을 추가할 때는 그 모델의 config 에서 레이어 수와 KV 헤드 수를
 //    확인해 직접 계산하세요. params 로 어림하면 다시 틀립니다.
+// purpose: 그 크기가 실제로 쓸 만한 용도.
+//
+// ── 2026-08-18 개편 ─────────────────────────────────────────────
+// 이전에는 '용도'(useCases)를 따로 물었습니다. 없앴습니다.
+//   - 선택지 4 개 중 2 개('코딩 도우미'·'긴 문서 요약')가 똑같이 14B 로 가서
+//     답이 안 달라지는 질문이었습니다
+//   - '긴 문서 요약'을 골라도 길이 컨트롤은 그대로였습니다. 이름값을 못 했습니다
+//   - 고른 것이 몇 B 인지 화면에 안 보였습니다. 결과에만 나왔습니다
+// 용도를 모델 크기의 설명으로 합쳐서, 고르는 순간 크기가 보이게 했습니다.
 export const models = [
-  { id: '3b', params: 3, kvPerK: 0.109, label: '3B', examples: 'Llama 3.2 3B, Qwen 3B' },
-  { id: '8b', params: 8, kvPerK: 0.125, label: '7~8B', examples: 'Llama 3.1 8B, Qwen 7B' },
-  { id: '14b', params: 14, kvPerK: 0.188, label: '12~14B', examples: 'Qwen 14B, Gemma 12B' },
-  { id: '22b', params: 22, kvPerK: 0.219, label: '20~22B', examples: 'Mistral Small' },
-  { id: '32b', params: 32, kvPerK: 0.25, label: '32B', examples: 'Qwen 32B, QwQ 32B' },
-  { id: '70b', params: 70, kvPerK: 0.313, label: '70B', examples: 'Llama 3.3 70B' },
+  { id: '3b', params: 3, kvPerK: 0.109, label: '3B', purpose: '번역·맞춤법', examples: 'Llama 3.2 3B, Qwen 3B' },
+  { id: '8b', params: 8, kvPerK: 0.125, label: '7~8B', purpose: '간단한 질문·짧은 글', examples: 'Llama 3.1 8B, Qwen 7B' },
+  { id: '14b', params: 14, kvPerK: 0.188, label: '12~14B', purpose: '코딩 도우미·문서 요약', examples: 'Qwen 14B, Gemma 12B' },
+  { id: '22b', params: 22, kvPerK: 0.219, label: '20~22B', purpose: '좀 더 정확한 작업', examples: 'Mistral Small' },
+  { id: '32b', params: 32, kvPerK: 0.25, label: '32B', purpose: '복잡한 추론', examples: 'Qwen 32B, QwQ 32B' },
+  { id: '70b', params: 70, kvPerK: 0.313, label: '70B', purpose: '개인 장비로는 어려움', examples: 'Llama 3.3 70B' },
   // MoE 라 가중치·KV 모두 어림값입니다. 어차피 개인용 카드에서는 전부 '불가' 입니다.
-  { id: '120b', params: 120, kvPerK: 0.25, label: '120B+', examples: 'Mixtral 8x22B급' },
+  { id: '120b', params: 120, kvPerK: 0.25, label: '120B+', purpose: '서버급', examples: 'Mixtral 8x22B급' },
 ];
 
 // 파라미터당 GB. Q4 가 사실상 표준입니다.
@@ -159,46 +168,20 @@ export const quants = [
   { id: 'q8', label: 'Q8 (고품질)', perB: 1.09 },
 ];
 
-// ── 사람 말 입력 ──────────────────────────────────────────
-// 이 사이트의 핵심은 "요구사항 → 스펙 번역"입니다.
-// 사용자는 "32B 모델"을 모릅니다. "코딩 도우미로 쓰고 싶다"를 압니다.
-
-export const useCases = [
-  {
-    id: 'chat',
-    label: '간단한 질문·번역',
-    desc: '궁금한 것 물어보기, 번역, 짧은 글 다듬기',
-    params: 8,
-    why: '가벼운 모델로도 충분합니다.',
-  },
-  {
-    id: 'coding',
-    label: '코딩 도우미',
-    desc: '코드 작성, 오류 찾기, 설명 듣기',
-    params: 14,
-    why: '코드를 이해하려면 중간 크기 이상이 필요합니다.',
-  },
-  {
-    id: 'docs',
-    label: '긴 문서 읽고 요약',
-    desc: '보고서·논문·매뉴얼 정리',
-    params: 14,
-    why: '문서가 길수록 메모리를 많이 씁니다.',
-  },
-  {
-    id: 'quality',
-    label: '전문적인 작업',
-    desc: '복잡한 추론, 품질이 중요한 글',
-    params: 32,
-    why: '큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다.',
-  },
-];
-
+// ── 한 번에 다루는 양 ────────────────────────────────────
+//
+// ⚠️ 라벨은 이 사이트 독자 기준으로 씁니다. 개발자는 A4 장수로 세지 않습니다.
+//    이전 라벨('A4 두세 장' / 설명 '짧은 문서 한 편')은 같은 말의 반복이라
+//    고르는 데 아무 도움이 안 됐습니다.
+//
+// desc 에는 라벨을 되풀이하지 말고 **다른 축의 정보**를 넣습니다.
+// 여기서는 "대화가 길어지면 자연히 아래 칸으로 내려간다" 를 알려줍니다 —
+// 처음엔 빠르다가 느려지는 현상의 정체가 이것이기 때문입니다.
 export const lengths = [
-  { id: 'short', label: '짧은 대화', desc: '몇 마디 주고받는 정도', tokens: 2048 },
-  { id: 'medium', label: 'A4 두세 장', desc: '짧은 문서 한 편', tokens: 4096 },
-  { id: 'long', label: 'A4 열 장', desc: '보고서나 논문 한 편', tokens: 16384 },
-  { id: 'huge', label: '아주 긴 내용', desc: '코드 파일 여러 개를 한 번에', tokens: 32768 },
+  { id: 'short', label: '짧은 질문', desc: '몇 마디 주고받는 정도', tokens: 2048 },
+  { id: 'medium', label: '파일 한 개 정도', desc: 'A4 두세 장 · 대화 몇 번이면 여기', tokens: 4096 },
+  { id: 'long', label: '파일 여러 개', desc: '긴 문서 한 편 · 대화가 길어지면 여기까지 옵니다', tokens: 16384 },
+  { id: 'huge', label: '코드베이스 일부', desc: '아주 긴 내용을 한 번에 넣을 때', tokens: 32768 },
 ];
 
 export const contexts = [

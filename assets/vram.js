@@ -1,17 +1,22 @@
 // VRAM 계산기.
 //
-// 설계 원칙: 사용자는 "32B 모델"이나 "Q4 양자화"를 모릅니다.
-//   "코딩 도우미로 쓰고 싶다"를 압니다. 그 번역이 이 도구의 존재 이유입니다.
-//   전문 용어는 기본 화면에서 전부 치우고, 원하는 사람만 고급 설정에서 봅니다.
+// 설계 원칙: 묻는 것마다 답이 달라져야 합니다.
+//   이전 판은 '용도'와 '모델 크기'를 따로 다뤘는데, 용도 선택지 넷 중 둘이
+//   같은 크기로 가서 만져도 결과가 안 바뀌었습니다. 물어놓고 안 쓰는 질문이었습니다.
+//   지금은 셋 다 서로 다른 축입니다 — 무엇을 · 얼마나 길게 · 어떤 카드로.
+//
+//   전문 용어를 감추는 대신 **옆에 붙여서** 보여줍니다.
+//   "12~14B · 코딩 도우미" 처럼 두면 모르는 사람은 뒤를 읽고,
+//   아는 사람은 앞을 읽습니다. 감추면 아는 사람이 못 고릅니다.
 
 (function () {
   const mount = document.querySelector('[data-vram-tool]');
   if (!mount || !window.SPECFIT_DATA) return;
 
-  const { gpus, models, quants, lengths, useCases } = window.SPECFIT_DATA;
+  const { gpus, models, quants, lengths } = window.SPECFIT_DATA;
 
   const state = {
-    use: 'coding',
+    model: '14b',
     len: 'medium',
     gpu: 'rtx5060ti16',
     quant: 'q4',
@@ -33,11 +38,15 @@
   // 색인 걱정은 없습니다. 모든 페이지에 canonical 이 박혀 있어서
   // ?gpu=... 가 붙은 주소는 원래 주소로 합쳐집니다.
   const PARAMS = [
-    ['use', useCases],
+    ['model', models],
     ['len', lengths],
     ['gpu', gpus],
     ['quant', quants],
   ];
+
+  // 이전 판은 '용도'(use)를 물었습니다. 그때 공유된 링크가 아직 돌아다니므로
+  // 예전 값을 모델 크기로 옮겨 받습니다. 링크를 깨뜨리면 공유의 의미가 없습니다.
+  const LEGACY_USE = { chat: '8b', coding: '14b', docs: '14b', quality: '32b' };
 
   function readUrl() {
     const q = new URLSearchParams(location.search);
@@ -47,6 +56,8 @@
       // 낡은 링크나 오타 때문에 화면이 비면 안 됩니다.
       if (v && list.some((x) => x.id === v)) state[key] = v;
     }
+    const legacy = q.get('use');
+    if (!q.get('model') && legacy && LEGACY_USE[legacy]) state.model = LEGACY_USE[legacy];
   }
 
   function writeUrl() {
@@ -61,12 +72,6 @@
   // 프로그램이 돌아가는 데 필요한 몫. 컨텍스트와 무관하게 항상 붙습니다.
   const OVERHEAD = 1;
 
-  // 용도(useCases)는 파라미터 수만 갖고 있습니다.
-  // KV 캐시는 레이어 수를 따라가므로 같은 크기의 모델 항목에서 값을 가져옵니다.
-  const modelFor = (params) =>
-    models.find((m) => m.params === params) ||
-    models.reduce((a, b) => (Math.abs(b.params - params) < Math.abs(a.params - params) ? b : a));
-
   /**
    * 필요 VRAM = 가중치 + KV 캐시 + 여유
    *
@@ -77,14 +82,14 @@
    * 양자화는 가중치만 줄입니다. KV 캐시는 별도 자료형(기본 f16)이라
    * quant 를 곱하지 않습니다.
    */
-  function parts(params, quant, tokens) {
-    const weights = params * quant.perB;
-    const kv = modelFor(params).kvPerK * (tokens / 1024);
+  function parts(model, quant, tokens) {
+    const weights = model.params * quant.perB;
+    const kv = model.kvPerK * (tokens / 1024);
     return { weights, kv, overhead: OVERHEAD, total: weights + kv + OVERHEAD };
   }
 
-  function estimate(params, quant, tokens) {
-    return parts(params, quant, tokens).total;
+  function estimate(model, quant, tokens) {
+    return parts(model, quant, tokens).total;
   }
 
   function verdict(total, vram) {
@@ -152,13 +157,16 @@
       .map((x) => `<option value="${x.id}"${x.id === sel ? ' selected' : ''}>${fmt(x)}</option>`)
       .join('');
 
+  // 2048 → '2K'. 라벨 옆에 붙여서 고른 값이 실제로 얼마인지 보이게 합니다.
+  const kTokens = (n) => `${Math.round(n / 1024)}K`;
+
   function render() {
-    const use = useCases.find((u) => u.id === state.use);
+    const model = models.find((m) => m.id === state.model);
     const len = lengths.find((l) => l.id === state.len);
     const gpu = gpus.find((g) => g.id === state.gpu);
     const quant = quants.find((q) => q.id === state.quant);
 
-    const p = parts(use.params, quant, len.tokens);
+    const p = parts(model, quant, len.tokens);
     const needed = p.total;
     const v = verdict(needed, gpu.vram);
 
@@ -174,18 +182,18 @@
 
     if (v === 'ok') {
       headline = `쓸 수 있습니다`;
-      advice = `<strong>${esc(gpu.name)}</strong>로 <strong>${esc(use.label)}</strong> 용도는 무리 없습니다.
+      advice = `<strong>${esc(gpu.name)}</strong>로 <strong>${esc(model.label)}</strong> 모델은 무리 없습니다.
         지금 카드를 그대로 쓰시면 됩니다.`;
 
       // 지금 카드로 감당되는 가장 큰 모델의 '다음 단계'를 알려줍니다.
       // 결론(충분하다)은 그대로 두고, 더 하고 싶을 때 뭐가 필요한지만 덧붙입니다.
       const okModels = models.filter(
-        (m) => verdict(estimate(m.params, quant, len.tokens), gpu.vram) === 'ok'
+        (m) => verdict(estimate(m, quant, len.tokens), gpu.vram) === 'ok'
       );
       const largest = okModels[okModels.length - 1];
       const next = largest ? models[models.indexOf(largest) + 1] : models[0];
       if (next) {
-        const up = recommend(estimate(next.params, quant, len.tokens));
+        const up = recommend(estimate(next, quant, len.tokens));
         if (up && up.vram > gpu.vram) {
           advice += `<span class="vr-next">지금 카드로는 <strong>${esc(largest ? largest.label : '')}</strong>까지입니다.
             더 큰 <strong>${esc(next.label)}</strong> 모델까지 돌리려면
@@ -209,7 +217,7 @@
       const tight = recommendTight(needed);
       headline = v === 'slow' ? `느릴 겁니다` : `이 카드로는 어렵습니다`;
       if (rec) {
-        advice = `<strong>${esc(use.label)}</strong> 용도라면 메모리 <strong>${rec.vram}GB</strong> 이상이 필요합니다.
+        advice = `<strong>${esc(model.label)}</strong> 모델이라면 메모리 <strong>${rec.vram}GB</strong> 이상이 필요합니다.
            여유 있게 쓰려면 <strong class="vr-hl">${esc(rec.name)}</strong>입니다.`;
         // 제휴 링크는 rel="sponsored" 가 필수입니다. 없으면 구글이 링크 스팸으로 봅니다.
         advice += buyBtn(rec);
@@ -222,19 +230,29 @@
           advice += buyBtn(tight);
         }
       } else if (tight) {
-        advice = `<strong>${esc(use.label)}</strong> 용도를 여유 있게 돌릴 카드는 없습니다.
+        advice = `<strong>${esc(model.label)}</strong> 모델을 여유 있게 돌릴 카드는 없습니다.
            <strong class="vr-hl">${esc(tight.name)}</strong>(메모리 ${tight.vram}GB)에
            <strong>빠듯하게</strong> 들어가는 정도입니다.`;
         advice += buyBtn(tight);
       } else {
-        advice = `이 용도는 개인용 그래픽카드로는 감당하기 어렵습니다. 더 가벼운 용도를 골라보세요.`;
+        advice = `<strong>${esc(model.label)}</strong> 모델은 개인용 그래픽카드로는 감당하기 어렵습니다.
+           더 작은 모델을 골라보세요.`;
       }
     }
+
+    // 길이를 줄이는 게 도움이 되는 상황인지 알려줍니다.
+    // 이게 없으면 "짧게 물어보면 되지 않나" 를 매번 헛짚습니다 —
+    // 가중치가 대부분인 구간에서는 길이를 줄여도 거의 안 줄어듭니다.
+    const kvShare = Math.round((p.kv / p.total) * 100);
+    const whyLine =
+      kvShare >= 25
+        ? `이 길이에서는 <strong>컨텍스트가 ${kvShare}%</strong> 를 차지합니다. 짧게 쓰면 그만큼 줄어듭니다.`
+        : `이 길이에서는 대부분이 모델 가중치입니다. <strong>짧게 써도 크게 안 줄어듭니다.</strong>`;
 
     // ── 상세 표 (원하는 사람만) ──
     const rows = models
       .map((m) => {
-        const mp = parts(m.params, quant, len.tokens);
+        const mp = parts(m, quant, len.tokens);
         const t = mp.total;
         const mv = verdict(t, gpu.vram);
         return `<tr>
@@ -250,12 +268,12 @@
     mount.innerHTML = `
 <div class="vr">
   <div class="vr-controls">
-    <label>어디에 쓰시나요?
-      <select data-k="use">${opts(useCases, state.use, (u) => u.label)}</select>
-      <span class="vr-hint">${esc(use.desc)}</span>
+    <label>쓰려는 모델
+      <select data-k="model">${opts(models, state.model, (m) => `${m.label} · ${m.purpose}`)}</select>
+      <span class="vr-hint">${esc(model.examples)} · 가중치 ${p.weights.toFixed(1)}GB</span>
     </label>
-    <label>얼마나 긴 내용을 다루나요?
-      <select data-k="len">${opts(lengths, state.len, (l) => l.label)}</select>
+    <label>한 번에 다루는 양
+      <select data-k="len">${opts(lengths, state.len, (l) => `${l.label} · ${kTokens(l.tokens)}`)}</select>
       <span class="vr-hint">${esc(len.desc)}</span>
     </label>
     <label>쓰고 계신 그래픽카드
@@ -267,7 +285,7 @@
   <div class="vr-result vr-result-${v}">
     <p class="vr-headline"><span class="vr-badge vr-badge-${v}">${VERDICT_TEXT[v].badge}</span> ${headline}</p>
     <p class="vr-advice">${advice}</p>
-    <p class="vr-why">${esc(use.why)}</p>
+    <p class="vr-why">${whyLine}</p>
     <p class="vr-parts">
       필요 <strong>${needed.toFixed(1)}GB</strong>
       <span class="vr-parts-eq">= 가중치 ${p.weights.toFixed(1)} + 컨텍스트 ${p.kv.toFixed(1)} + 여유 ${p.overhead.toFixed(1)}</span>
@@ -280,7 +298,7 @@
   </div>
 
   <details class="vr-details"${state.advanced ? ' open' : ''} data-adv>
-    <summary>다른 용도도 함께 보기</summary>
+    <summary>다른 크기도 함께 보기</summary>
     <div class="table-wrap">
       <table class="vr-table">
         <thead><tr><th>모델 크기</th><th>필요 메모리</th><th>내 카드에서</th></tr></thead>
