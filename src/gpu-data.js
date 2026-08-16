@@ -184,10 +184,3 @@ export const lengths = [
   { id: 'huge', label: '코드베이스 일부', desc: '아주 긴 내용을 한 번에 넣을 때', tokens: 32768 },
 ];
 
-export const contexts = [
-  { id: '2k', label: '2K (짧은 대화)', tokens: 2048 },
-  { id: '4k', label: '4K (일반)', tokens: 4096 },
-  { id: '8k', label: '8K (긴 대화)', tokens: 8192 },
-  { id: '16k', label: '16K (문서 처리)', tokens: 16384 },
-  { id: '32k', label: '32K (코드베이스)', tokens: 32768 },
-];
