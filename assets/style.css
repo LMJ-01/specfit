@@ -465,50 +465,139 @@ tbody tr:last-child td {
   margin-bottom: 1.8rem;
 }
 
-/* ---- 홈 진입 카드 ----
-   홈이 글 목록으로 바로 시작하면 처음 온 사람은 어디부터 볼지 모릅니다.
-   두 개뿐이라 나란히 놓고, 좁아지면 알아서 쌓입니다. */
+/* ---- 홈 상단 ----
+   아래가 전부 카드라서 여기까지 카드로 만들면 홈이 상자 벽이 됩니다.
+   한 덩어리로 두고, 누를 곳을 하나만 확실하게 보여줍니다. */
 
 .hero {
-  display: grid;
-  gap: 0.9rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
-  margin-top: 1.4rem;
+  margin-top: 1.5rem;
+  padding: 1.4rem 1.5rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+}
+.hero-lead {
+  margin: 0 0 1.1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem 1.1rem;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.hero-btn {
+  padding: 0.6rem 1.2rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.97rem;
+  white-space: nowrap;
+}
+.hero-btn:hover {
+  filter: brightness(1.08);
+}
+.hero-link {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  text-decoration: none;
+}
+.hero-link:hover {
+  color: var(--accent);
+}
+.hero-link::after {
+  content: ' →';
 }
 
-.hero-card {
+/* 카테고리 — 칩 한 줄.
+   카드로 만들면 상자만 네 개 늘어납니다. 여긴 이정표이지 읽을거리가 아닙니다. */
+
+.cats {
   display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  padding: 1.1rem 1.2rem;
-  background: var(--bg-raised);
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.1rem;
+}
+.cats a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.cats a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.cats-n {
+  font-size: 0.76rem;
+  color: var(--fg-muted);
+}
+
+/* 최신 글 — 줄 목록.
+   위에 추천 카드가 이미 여섯 장 있습니다. 여기까지 카드면 같은 것이 열여덟 장
+   이어져서 눈이 어디에도 안 멈춥니다. 150편이 되어도 형태가 안 무너집니다. */
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+.post-list li {
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+}
+.post-list a {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  gap: 0.2rem 0.9rem;
+  align-items: baseline;
+  padding: 0.75rem 0.4rem;
   text-decoration: none;
   color: var(--fg);
 }
-.hero-card:hover {
-  border-color: var(--accent);
+.post-list a:hover {
+  background: var(--bg-soft);
 }
-/* 계산기 쪽을 눈에 띄게 둡니다. 이 사이트에서 남들과 다른 건 그것뿐입니다. */
-.hero-card.is-primary {
-  background: var(--accent-soft);
-  border-color: var(--accent);
-}
-.hero-kicker {
-  font-size: 0.78rem;
-  font-weight: 700;
+.post-list a:hover .row-title {
   color: var(--accent);
 }
-.hero-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.4;
+.row-cat {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
 }
-.hero-desc {
-  font-size: 0.87rem;
+.row-title {
+  font-weight: 500;
+  line-height: 1.5;
+}
+.row-date {
+  font-size: 0.78rem;
   color: var(--fg-muted);
-  line-height: 1.6;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 좁은 화면에서는 분류를 제목 위로 올립니다.
+   5.5rem 을 왼쪽에 계속 비워두면 제목이 두 글자씩 끊깁니다. */
+@media (max-width: 560px) {
+  .post-list a {
+    grid-template-columns: 1fr auto;
+  }
+  .row-cat {
+    grid-column: 1 / -1;
+  }
 }
 
 .search {
@@ -552,49 +641,6 @@ tbody tr:last-child td {
   margin: 1.1rem 0 0;
   font-size: 0.87rem;
   color: var(--fg-muted);
-}
-
-/* 카테고리 판 */
-
-.cat-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.7rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
-}
-
-.cat-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  height: 100%;
-  padding: 0.9rem 1rem;
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  text-decoration: none;
-  color: var(--fg);
-}
-.cat-card:hover {
-  border-color: var(--accent);
-}
-.cat-label {
-  font-weight: 700;
-  font-size: 1rem;
-}
-.cat-desc {
-  font-size: 0.82rem;
-  color: var(--fg-muted);
-  line-height: 1.55;
-}
-.cat-count {
-  margin-top: auto;
-  padding-top: 0.4rem;
-  font-size: 0.78rem;
-  color: var(--accent);
-  font-weight: 600;
 }
 
 .card-list {

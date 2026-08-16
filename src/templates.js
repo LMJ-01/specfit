@@ -9,6 +9,12 @@ const fmtDate = (iso) => {
   return `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일`;
 };
 
+// 목록용 짧은 날짜. 줄 끝에 붙으므로 연도까지 적으면 제목 자리를 먹습니다.
+export const fmtShort = (iso) => {
+  const d = new Date(iso);
+  return `${d.getMonth() + 1}.${d.getDate()}`;
+};
+
 // 테마 깜빡임 방지. 페인트 전에 실행되어야 하므로 인라인입니다.
 const themeBoot = `(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()`;
 
@@ -286,6 +292,23 @@ ${
   });
 }
 
+/**
+ * 목록 한 줄. 홈의 '새로 쓴 글' 에 씁니다.
+ *
+ * ⚠️ search.js 가 검색 결과를 같은 모양으로 그립니다.
+ *    여기를 고치면 그쪽도 맞춰야 목록과 결과가 따로 놀지 않습니다.
+ */
+function postRow(post) {
+  const cat = config.categories.find((c) => c.slug === post.category);
+  return `<li>
+      <a href="${post.url}">
+        <span class="row-cat">${cat ? escapeHtml(cat.label) : ''}</span>
+        <span class="row-title">${escapeHtml(post.title)}</span>
+        <time class="row-date" datetime="${post.date}">${fmtShort(post.date)}</time>
+      </a>
+    </li>`;
+}
+
 function cardItem(post) {
   const cat = config.categories.find((c) => c.slug === post.category);
   return `<li class="card">
@@ -310,40 +333,37 @@ export function listPage({
   featured = [],
   totalPosts = 0,
 }) {
-  // 진입 카드는 홈에만 붙입니다. 카테고리 목록에 붙이면
+  // 홈 상단. 홈에만 붙입니다 — 카테고리 목록에 붙이면
   // 이미 무엇을 찾는지 아는 사람에게 같은 말을 반복하는 셈입니다.
+  //
+  // 카드가 아니라 한 덩어리입니다. 아래가 전부 카드라서, 여기까지 카드면
+  // 홈이 똑같이 생긴 상자 벽이 되고 눈이 어디에도 멈추지 않습니다.
+  const h = config.hero;
   const heroBox =
-    hero && config.hero && config.hero.length
-      ? `<nav class="hero" aria-label="시작하기">
-    ${config.hero
+    hero && h
+      ? // 제목이 없으므로 section 이 아니라 div 입니다.
+        // 제목 없는 section 은 문서 구조상 빈 칸이 되어 스크린리더에서 어색합니다.
+        `<div class="hero">
+    <p class="hero-lead">${escapeHtml(h.lead)}</p>
+    <p class="hero-actions">
+      <a class="hero-btn" href="${h.action.href}">${escapeHtml(h.action.label)}</a>
+      <a class="hero-link" href="${h.secondary.href}">${escapeHtml(h.secondary.label)}</a>
+    </p>
+  </div>`
+      : '';
+
+  // 카테고리. 카드가 아니라 칩 한 줄입니다.
+  // 이 사이트가 무엇을 다루는지 한 줄로 보여주면 충분하고,
+  // 카드로 만들면 상자만 네 개 더 늘어납니다. 글 수는 빈 껍데기가 아님을 보여줍니다.
+  const catBox = catCards.length
+    ? `<nav class="cats" aria-label="분류" data-search-hide>
+    ${catCards
       .map(
-        (h) => `<a class="hero-card${h.primary ? ' is-primary' : ''}" href="${h.href}">
-      <span class="hero-kicker">${escapeHtml(h.kicker)}</span>
-      <span class="hero-title">${escapeHtml(h.title)}</span>
-      <span class="hero-desc">${escapeHtml(h.desc)}</span>
-    </a>`
+        (c) =>
+          `<a href="/${c.slug}.html">${escapeHtml(c.label)}<span class="cats-n">${c.count}</span></a>`
       )
       .join('\n    ')}
   </nav>`
-      : '';
-
-  // 카테고리 판. 이 사이트가 무엇을 다루는지 한 화면에 보여줍니다.
-  // 글 수를 함께 적는 이유는, 빈 껍데기가 아니라는 걸 보여야 눌리기 때문입니다.
-  const catBox = catCards.length
-    ? `<section class="home-sec" data-search-hide>
-  <h2>무엇을 고르시나요</h2>
-  <ul class="cat-list">
-    ${catCards
-      .map(
-        (c) => `<li><a class="cat-card" href="/${c.slug}.html">
-      <span class="cat-label">${escapeHtml(c.label)}</span>
-      <span class="cat-desc">${escapeHtml(c.description)}</span>
-      <span class="cat-count">${c.count}편</span>
-    </a></li>`
-      )
-      .join('\n    ')}
-  </ul>
-</section>`
     : '';
 
   // 손으로 고른 목록. 날짜순만으로는 먼저 읽어야 할 글이 아래로 밀립니다.
@@ -368,6 +388,7 @@ export function listPage({
   <h1>${escapeHtml(heading)}</h1>
   ${intro ? `<p class="lead">${escapeHtml(intro)}</p>` : ''}
   ${heroBox}
+  ${catBox}
   ${
     searchable
       ? `<div class="search">
@@ -378,13 +399,21 @@ export function listPage({
       : ''
   }
 </section>
-${catBox}
 ${featuredBox}
 <section${hero ? ' class="home-sec"' : ''}>
   ${hero ? '<h2 data-search-hide>새로 쓴 글</h2>' : ''}
-  <ul class="card-list" data-list>
+  ${
+    // 홈의 최신 목록은 카드가 아니라 줄입니다.
+    // 위에 추천 카드 6장이 이미 있어서, 여기까지 카드면 같은 것이 18장 이어집니다.
+    // 줄로 하면 훑기 쉽고 150편이 되어도 형태가 안 무너집니다.
+    hero
+      ? `<ul class="post-list" data-list>
+    ${posts.map(postRow).join('\n    ')}
+  </ul>`
+      : `<ul class="card-list" data-list>
     ${posts.map(cardItem).join('\n    ')}
-  </ul>
+  </ul>`
+  }
   ${more}
   ${posts.length === 0 ? '<p class="empty">아직 글이 없습니다.</p>' : ''}
 </section>`;

@@ -48,13 +48,16 @@
       return;
     }
     status.textContent = `${items.length}개 찾았습니다.`;
+    // 홈의 '새로 쓴 글' 과 같은 모양입니다 (templates.js 의 postRow).
+    // 한쪽만 고치면 검색했을 때 목록 모양이 바뀌어 버립니다.
     list.innerHTML = items
       .map(
         (p) =>
-          `<li class="card"><a href="${p.u}">` +
-          `<span class="card-cat">${p.c || ''}</span>` +
-          `<span class="card-title">${p.t}</span>` +
-          `<span class="card-desc">${p.d}</span></a></li>`
+          `<li><a href="${p.u}">` +
+          `<span class="row-cat">${p.c || ''}</span>` +
+          `<span class="row-title">${p.t}</span>` +
+          `<time class="row-date">${p.dt || ''}</time>` +
+          `</a></li>`
       )
       .join('');
   };

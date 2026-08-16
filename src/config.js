@@ -106,30 +106,18 @@ export const config = {
     { href: '/tools/vram.html', label: 'VRAM 계산기' },
   ],
 
-  // 홈 상단 진입 카드.
+  // 홈 상단.
   //
-  // 홈이 글 목록으로 바로 시작하면 처음 온 사람은 어디부터 볼지 모릅니다.
-  // 제목만 훑다가 나가고, 그게 검색 유입을 다 날립니다.
+  // 처음 온 사람에게 고를 것을 여러 개 주면 아무것도 안 누릅니다.
+  // 확실한 행동 하나(계산기)와 도망갈 곳 하나(시작 가이드)만 둡니다.
   //
-  // 갈래를 둘만 둡니다 — 아무것도 모르는 사람과, 자기 카드로 되는지만 궁금한 사람.
-  // 셋 이상 두면 고르는 것 자체가 일이 되어 아무것도 안 누릅니다.
-  //
-  // 메뉴에도 같은 두 개가 있지만, 메뉴는 작고 처음 온 사람은 잘 안 봅니다.
-  hero: [
-    {
-      href: '/posts/local-llm-start-guide.html',
-      kicker: '처음이신가요',
-      title: '용어 없이 읽는 시작 가이드',
-      desc: 'VRAM·양자화를 몰라도 됩니다. 내 컴퓨터로 되는지부터 확인합니다.',
-    },
-    {
-      href: '/tools/vram.html',
-      kicker: '바로 확인',
-      title: 'VRAM 계산기',
-      desc: '그래픽카드를 고르면 어떤 크기의 모델이 돌아가는지 표로 나옵니다.',
-      primary: true,
-    },
-  ],
+  // ⚠️ 카드를 여러 장 늘어놓지 마세요. 아래 카테고리·추천·최신이 전부
+  //    카드라서, 여기까지 카드면 홈이 똑같이 생긴 상자 벽이 됩니다.
+  hero: {
+    lead: '내 그래픽카드로 어떤 크기의 AI 모델이 돌아가는지 30초면 확인됩니다.',
+    action: { href: '/tools/vram.html', label: 'VRAM 계산기 열기' },
+    secondary: { href: '/posts/local-llm-start-guide.html', label: '처음이신가요? 시작 가이드' },
+  },
 
   // 카테고리 정의. slug 는 frontmatter 의 category 와 매칭됩니다.
   categories: [

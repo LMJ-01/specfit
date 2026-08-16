@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 import { config } from './config.js';
 import { markdownToHtml, parseFrontmatter } from './markdown.js';
-import { postPage, listPage, staticPage, toolPage } from './templates.js';
+import { postPage, listPage, staticPage, toolPage, fmtShort } from './templates.js';
 import { gpus, models, quants, contexts, useCases, lengths } from './gpu-data.js';
 import { figures } from './figures.js';
 import { buyBox } from './products.js';
@@ -413,14 +413,21 @@ async function build() {
   written.push(
     await write(
       'assets/search-index.json',
+      // 검색 결과는 홈의 '새로 쓴 글' 과 같은 모양으로 그려집니다.
+      // 그래서 화면에 필요한 것(분류 이름·짧은 날짜)을 여기서 미리 만들어 둡니다.
+      // slug 를 그대로 내보내면 결과에 'gpu' 같은 영문이 노출됩니다.
       JSON.stringify(
-        posts.map((p) => ({
-          u: p.url,
-          t: p.title,
-          d: p.description,
-          c: p.category,
-          k: `${p.title} ${p.description} ${p.tags.join(' ')} ${p.text.slice(0, 600)}`.toLowerCase(),
-        }))
+        posts.map((p) => {
+          const cat = config.categories.find((c) => c.slug === p.category);
+          return {
+            u: p.url,
+            t: p.title,
+            d: p.description,
+            c: cat ? cat.label : '',
+            dt: fmtShort(p.date),
+            k: `${p.title} ${p.description} ${p.tags.join(' ')} ${p.text.slice(0, 600)}`.toLowerCase(),
+          };
+        })
       )
     )
   );
