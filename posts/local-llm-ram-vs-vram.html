@@ -88,7 +88,7 @@
 <p><strong>VRAM이 충분하면 시스템 램은 생각보다 적게 듭니다.</strong>
 반대로 VRAM이 모자라면 그 부족분을 시스템 램이 떠안습니다.</p>
 <h2 id="둘은-역할이-다릅니다">둘은 역할이 다릅니다</h2>
-<p><figure class="fig">
+<figure class="fig">
 <svg viewBox="0 0 640 194" width="640" height="194" role="img" aria-label="VRAM 은 연산하는 곳, 시스템 램은 모델을 읽어 올리는 통로">
 <title>VRAM 은 연산하는 곳, 시스템 램은 모델을 읽어 올리는 통로</title>
 
@@ -113,7 +113,7 @@
 <text x="16" y="180" fill="var(--fg-muted)" font-size="12">그래서 램 16GB 로도 충분한 경우가 많습니다.</text>
 </svg>
 <figcaption>둘은 대체재가 아닙니다. 램을 늘려도 VRAM 이 하는 일을 대신하지 못합니다.</figcaption>
-</figure></p>
+</figure>
 <h3 id="정상-동작일-때">정상 동작일 때</h3>
 <ol>
 <li>디스크에서 모델 파일을 읽습니다 (시스템 램 경유)</li>
@@ -166,10 +166,10 @@
 <p>같은 32GB라도 <strong>16GB 두 장(듀얼 채널)</strong>이 <strong>32GB 한 장(싱글 채널)</strong>보다 빠릅니다.
 메모리 대역폭이 두 배가 되기 때문이고, CPU 오프로딩 상황에서 체감 차이가 납니다.</p>
 <p>메인보드 슬롯이 4개면 보통 <strong>2번·4번</strong>에 꽂습니다. 설명서를 확인하세요.</p>
-<p><aside class="buy-box">
+<aside class="buy-box">
   <a class="buy-btn" href="https://link.coupang.com/a/gdsop7IrsG" target="_blank" rel="sponsored nofollow noopener">DDR5 32GB 보기</a>
   <span class="buy-note">같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다</span>
-</aside></p>
+</aside>
 <h2 id="맥은-다릅니다">맥은 다릅니다</h2>
 <p>애플 실리콘은 <strong>통합 메모리(Unified Memory)</strong> 구조라 램과 VRAM이 분리되어 있지 않습니다.</p>
 <pre><code>맥 메모리 32GB  →  약 21~24GB 를 모델에 쓸 수 있음
@@ -215,17 +215,10 @@
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/ram-price-2026.html">
+      <a href="/posts/ddr4-vs-ddr5.html">
         <span class="card-cat">메모리·스토리지</span>
-        <span class="card-title">램 값이 올랐습니다 — 2026년에 지금 사야 하나</span>
-        <span class="card-desc">AI 서버 수요로 D램 값이 2026년 들어 크게 올랐습니다. 왜 올랐고 언제 내려가는지, 그래서 지금 사야 하는지 상황별로 갈랐습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/nvme-vs-sata.html">
-        <span class="card-cat">메모리·스토리지</span>
-        <span class="card-title">NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배</span>
-        <span class="card-desc">M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생김새가 같은데 속도가 6배 차이나고, 슬롯이 안 받는 경우도 있습니다. 사기 전에 확인할 것을 정리했습니다.</span>
+        <span class="card-title">DDR4와 DDR5 차이 — 고를 수 있는 게 아닙니다</span>
+        <span class="card-desc">DDR4와 DDR5는 슬롯이 달라 물리적으로 안 바뀝니다. 메인보드가 정하는 것이라 고민할 일이 아닙니다. 성능 차이와 DDR4 단종 상황을 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
@@ -233,6 +226,13 @@
         <span class="card-cat">메모리·스토리지</span>
         <span class="card-title">노트북 SSD 교체 — 램과 달리 이건 바꿀 수 있습니다</span>
         <span class="card-desc">노트북에서 램은 대개 못 늘리지만 SSD는 바꿀 수 있는 경우가 많습니다. 슬롯 확인법, 규격 고르는 법, 교체 전에 알아둘 것을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/nvme-vs-sata.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배</span>
+        <span class="card-desc">M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생김새가 같은데 속도가 6배 차이나고, 슬롯이 안 받는 경우도 있습니다. 사기 전에 확인할 것을 정리했습니다.</span>
       </a>
     </li>
   </ul>

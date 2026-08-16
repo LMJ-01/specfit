@@ -24,7 +24,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"세로 모니터 코딩 — 27인치가 아니라 24인치인 이유","description":"모니터를 세로로 돌리면 코드가 1.8배 보입니다. 다만 27인치를 돌리면 화면 높이가 60cm가 되고, 글자가 뿌옇게 보이는 문제가 따로 있습니다. 계산해서 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/vertical-monitor-coding.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"세로 모니터 코딩 — 27인치가 아니라 24인치인 이유","description":"모니터를 세로로 돌리면 코드가 1.8배 보입니다. 다만 27인치를 돌리면 화면 높이가 60cm가 되고, 글자가 뿌옇게 보이는 문제가 따로 있습니다. 계산해서 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/vertical-monitor-coding.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"세로 모니터 코딩 — 27인치가 아니라 24인치인 이유","item":"https://specfit.kr/posts/vertical-monitor-coding.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"세로로 돌리면 해상도를 따로 설정해야 하나요","acceptedAnswer":{"@type":"Answer","text":"윈도우 기준으로 **디스플레이 설정 → 화면 방향 → 세로**로 바꾸면 됩니다. 해상도 숫자는 자동으로 뒤집힙니다(`2560×1440` → `1440×2560`). 화면만 돌리고 설정을 안 바꾸면 화면이 옆으로 누운 채로 나옵니다."}},{"@type":"Question","name":"27인치를 세로로 쓰면 정말 불편한가요","acceptedAnswer":{"@type":"Answer","text":"높이가 60cm가 됩니다. **책상 깊이와 앉은키에 따라 갈립니다.** 화면과 눈 사이가 멀수록(70cm 이상) 견딜 만하고, 가까우면 위쪽을 보기 어렵습니다. 이미 27인치를 갖고 계시다면 사기 전에 며칠 돌려서 써보시는 게 가장 정확합니다."}},{"@type":"Question","name":"게임이나 영상은 어떻게 하나요","acceptedAnswer":{"@type":"Answer","text":"세로 화면에서는 안 됩니다. 위아래로 검은 띠가 크게 생깁니다. **가로 주 모니터를 따로 두는 구성**이 전제입니다."}},{"@type":"Question","name":"노트북 화면은 못 돌리나요","acceptedAnswer":{"@type":"Answer","text":"내장 화면은 못 돌립니다. 외부 모니터를 붙여야 합니다. 노트북 화면 자체의 세로 픽셀 기준은 [개발용 노트북 사양](/posts/dev-laptop-spec.html)에 정리했습니다 — 16:10 비율이 유리합니다."}},{"@type":"Question","name":"울트라와이드를 세로로 돌리면요","acceptedAnswer":{"@type":"Answer","text":"권하지 않습니다. 34인치 울트라와이드를 돌리면 높이가 80cm에 가까워집니다. 울트라와이드는 **가로로 창을 나눠 쓰라고 만든 제품**입니다."}},{"@type":"Question","name":"로컬 LLM 성능에 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"없습니다. 모니터는 그래픽카드 메모리를 거의 쓰지 않습니다. 세로로 돌려도 [VRAM은 그대로](/posts/ollama-minimum-spec.html)입니다."}}]}</script>
 </head>
@@ -63,7 +63,7 @@
     <h1>세로 모니터 코딩 — 27인치가 아니라 24인치인 이유</h1>
     <p class="post-meta">
       <time datetime="2026-08-16">2026년 8월 16일</time>
-      
+      <span class="updated">· 2026년 8월 17일 갱신</span>
     </p>
   </header>
 
@@ -90,7 +90,7 @@
 <h2 id="1-코드가-얼마나-더-보이나-18배">1. 코드가 얼마나 더 보이나 — 1.8배</h2>
 <p><strong>픽셀 수는 그대로입니다. 배치만 바뀝니다.</strong></p>
 <p>27인치 QHD를 돌리면 <code>2560×1440</code>이 <code>1440×2560</code>이 됩니다.</p>
-<p><figure class="fig">
+<figure class="fig">
 <svg viewBox="0 0 640 294" width="640" height="294" role="img" aria-label="같은 모니터를 세로로 돌리면 코드가 약 1.8배 더 보인다">
 <title>같은 모니터를 세로로 돌리면 코드가 약 1.8배 더 보인다</title>
 
@@ -150,7 +150,7 @@
 <text x="452" y="212" fill="var(--fg-muted)" font-size="12">배치만 바뀝니다.</text>
 </svg>
 <figcaption>글꼴 14px · 줄 높이 19px 기준으로 계산했습니다. 실제로는 탭 막대와 상태 표시줄이 빠져 이보다 조금 적습니다.</figcaption>
-</figure></p>
+</figure>
 <p>줄 수로 환산하면 이렇습니다. 글꼴 14px, 줄 높이 19px 기준입니다.</p>
 <pre><code>가로 1440px ÷ 19px = 약 75줄
 세로 2560px ÷ 19px = 약 134줄</code></pre>
@@ -198,6 +198,9 @@
 <p>참고로 색 번짐이 없어진다고 읽기가 나빠지지는 않습니다. <strong>ClearType이 가독성이나 읽기 속도를 실제로 높여주지는 않는다</strong>는 연구 결과가 있습니다 — 다만 사람들이 그 쪽을 더 <strong>선호</strong>할 뿐입니다.</p>
 <blockquote><p><strong>맥은 해당하지 않습니다.</strong> 애플이 서브픽셀 방식을 이미 걷어냈기 때문에
 돌려도 이 문제가 생기지 않습니다.</p></blockquote>
+<p><strong>같은 문제가 OLED 모니터에서도 생깁니다.</strong> 돌리지 않아도 그렇습니다.
+QD-OLED·WOLED 는 서브픽셀 배열 자체가 표준과 달라서 전제가 처음부터 깨져 있습니다 —
+<a href="/posts/oled-monitor-coding.html">OLED 모니터 코딩</a>에 정리했습니다. 해결법은 같습니다.</p>
 <h2 id="4-피벗이-되는지부터-확인하세요">4. 피벗이 되는지부터 확인하세요</h2>
 <p><strong>모든 모니터가 돌아가지 않습니다.</strong> 화면을 90도 돌리려면 스탠드가 받쳐줘야 합니다.</p>
 <h3 id="방법-1-피벗-지원-스탠드">방법 1 — 피벗 지원 스탠드</h3>
@@ -234,10 +237,10 @@
    코드 편집         로그 · 문서 · 터미널</code></pre>
 <p><strong>모니터가 한 대뿐이라면 세로로 돌리지 마세요.</strong> 얻는 것보다 잃는 게 큽니다.</p>
 <p>주 모니터를 아직 안 고르셨다면 <a href="/posts/coding-monitor-resolution.html">코딩용 모니터 — 27인치 QHD와 4K 중 어느 쪽인가</a>를 먼저 보세요. 배율을 안 건드리고 쓸 수 있는 조합을 정리해 뒀습니다.</p>
-<p><aside class="buy-box">
+<aside class="buy-box">
   <a class="buy-btn" href="https://link.coupang.com/a/gdsnkTpck0" target="_blank" rel="sponsored nofollow noopener">27인치 QHD 모니터 보기</a>
   <span class="buy-note">배율을 안 건드리고 쓸 수 있는 조합입니다</span>
-</aside></p>
+</aside>
 <h2 id="6-그럼-뭘-사야-하나">6. 그럼 뭘 사야 하나</h2>
 <div class="table-wrap"><table>
 <thead><tr><th>상황</th><th>선택</th></tr></thead>
@@ -291,17 +294,24 @@
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/dual-monitor-vs-single.html">
+      <a href="/posts/dp-vs-hdmi-coding.html">
         <span class="card-cat">모니터</span>
-        <span class="card-title">듀얼 모니터 vs 큰 모니터 한 대 — 코딩에서는</span>
-        <span class="card-desc">두 대로 넓히면 세로는 그대로입니다. 코드를 더 보고 싶은 건지 참고 자료를 띄우고 싶은 건지에 따라 답이 갈립니다. 픽셀로 계산했습니다.</span>
+        <span class="card-title">DP와 HDMI — 코딩용 모니터에 뭘 꽂아야 하나</span>
+        <span class="card-desc">코딩은 60Hz면 되기 때문에 대부분 아무 단자나 됩니다. 막히는 건 4K부터입니다. 필요한 대역폭을 직접 계산해서 어디서 걸리는지 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/coding-monitor-resolution.html">
+      <a href="/posts/monitor-5k-vs-4k-coding.html">
         <span class="card-cat">모니터</span>
-        <span class="card-title">코딩용 모니터 — 27인치 QHD와 4K 중 어느 쪽인가</span>
-        <span class="card-desc">코딩에서 갈리는 건 주사율이나 색재현율이 아니라 해상도와 크기의 조합입니다. PPI를 직접 계산해 어느 조합이 맞는지 정리했습니다.</span>
+        <span class="card-title">27인치 5K vs 4K — 배율이 정수로 떨어진다는 것</span>
+        <span class="card-desc">27인치 5K는 200% 배율에서 작업 영역이 정확히 QHD가 됩니다. 4K를 150%로 쓴 것과 넓이가 같고 선명도만 다릅니다. PPI와 배율을 계산해 갈랐습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-usb-c-one-cable.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">노트북 모니터 원케이블 연결 — USB-C 하나로 되는 조건</span>
+        <span class="card-desc">케이블 하나로 화면·충전·허브를 다 하려면 세 가지가 맞아야 합니다. 노트북 포트, 모니터가 주는 전력, 케이블. 어디서 막히는지 순서대로 정리했습니다.</span>
       </a>
     </li>
   </ul>

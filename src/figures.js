@@ -366,6 +366,121 @@ ${t(452, top + 166, '배치만 바뀝니다.', { size: 12, fill: COLOR.mute })}`
   );
 }
 
+/**
+ * USB-C 케이블 안의 통로(레인) 4개를 어떻게 나누는가.
+ *
+ * "원케이블로 4K 되나요" 의 답이 조건부인 이유가 이 그림 하나입니다.
+ * 말로 쓰면 길어지는데 그림으로는 두 줄이면 끝납니다.
+ */
+function usbcLanes() {
+  const W = 640;
+  const x0 = 16;
+  const barX = 132;
+  const lw = 84;
+  const gap = 6;
+
+  const lane = (i, y, fill, label) =>
+    `${rect(barX + i * (lw + gap), y, lw, 28, fill, { r: 3 })}
+${t(barX + i * (lw + gap) + lw / 2, y + 19, label, { anchor: 'middle', fill: '#fff', weight: 600, size: 11 })}`;
+
+  const noteX = 500;
+
+  const body = `
+${t(x0, 22, 'USB-C 케이블 안의 통로 4개를 어떻게 나누느냐', { weight: 600, size: 14 })}
+
+${t(x0, 63, '화면만', { weight: 600, size: 12 })}
+${[0, 1, 2, 3].map((i) => lane(i, 44, COLOR.fit, '화면')).join('\n')}
+${t(noteX, 58, '최대 해상도', { size: 11, fill: COLOR.mute })}
+${t(noteX, 74, 'USB 는 느린 속도로', { size: 11, fill: COLOR.mute })}
+
+${t(x0, 123, '화면 + USB', { weight: 600, size: 12 })}
+${[0, 1].map((i) => lane(i, 104, COLOR.fit, '화면')).join('\n')}
+${[2, 3].map((i) => lane(i, 104, COLOR.accent, 'USB')).join('\n')}
+${t(noteX, 118, '화면 몫이 절반', { size: 11, fill: COLOR.mute })}
+${t(noteX, 134, '허브가 제 속도로', { size: 11, fill: COLOR.mute })}
+
+${t(x0, 176, '통로 수는 정해져 있고, 나눠 쓰면 화면 몫이 줄어듭니다.', { weight: 600 })}
+${t(x0, 196, '"허브를 꽂으니 주사율이 떨어졌다" 는 고장이 아니라 이 구조입니다.', { fill: COLOR.mute, size: 12 })}`;
+
+  return figure(
+    'USB-C 레인 4개를 화면에만 쓸 때와 USB 와 나눠 쓸 때의 차이',
+    W,
+    210,
+    body,
+    '화면 신호와 USB 데이터가 같은 케이블을 나눠 씁니다. 압축(DSC)이 이 제약을 상당히 덜어주지만, 없애지는 못합니다.'
+  );
+}
+
+/**
+ * 정수 배율과 분수 배율의 차이.
+ *
+ * "5K 가 왜 더 선명한가" 를 PPI 로만 설명하면 반쪽입니다.
+ * 논리 픽셀 하나가 물리 픽셀에 정확히 떨어지느냐가 실제 이유이고,
+ * 그건 격자 두 개를 나란히 놓으면 설명이 끝납니다.
+ */
+function pixelScaling() {
+  const W = 640;
+  const cell = 15;
+  const n = 8;
+  const size = cell * n;
+  const top = 56;
+
+  const grid = (gx) => {
+    const out = [rect(gx, top, size, size, COLOR.soft, { r: 2, stroke: COLOR.line })];
+    for (let i = 1; i < n; i++) {
+      out.push(
+        `<line x1="${gx + i * cell}" y1="${top}" x2="${gx + i * cell}" y2="${top + size}" stroke="${COLOR.line}"/>`
+      );
+      out.push(
+        `<line x1="${gx}" y1="${top + i * cell}" x2="${gx + size}" y2="${top + i * cell}" stroke="${COLOR.line}"/>`
+      );
+    }
+    return out.join('\n');
+  };
+
+  // 논리 픽셀 경계. 정수 배율이면 물리 격자선 위에 정확히 얹히고,
+  // 분수 배율이면 칸 한가운데를 지나갑니다.
+  const overlay = (gx, step, color) => {
+    const out = [];
+    for (let v = step; v < size - 0.5; v += step) {
+      out.push(
+        `<line x1="${gx + v}" y1="${top}" x2="${gx + v}" y2="${top + size}" stroke="${color}" stroke-width="2.5"/>`
+      );
+      out.push(
+        `<line x1="${gx}" y1="${top + v}" x2="${gx + size}" y2="${top + v}" stroke="${color}" stroke-width="2.5"/>`
+      );
+    }
+    return out.join('\n');
+  };
+
+  const ax = 60;
+  const bx = 380;
+
+  const body = `
+${t(16, 22, '가는 선이 실제 픽셀, 굵은 선이 화면에 그려질 경계', { weight: 600, size: 14 })}
+
+${grid(ax)}
+${overlay(ax, cell * 2, COLOR.fit)}
+${t(ax, top + size + 26, '배율 200% — 정수', { weight: 600, size: 12 })}
+${t(ax, top + size + 44, '경계가 픽셀 선에 딱 얹힘', { fill: COLOR.mute, size: 11 })}
+
+${grid(bx)}
+${overlay(bx, cell * 1.5, COLOR.over)}
+${t(bx, top + size + 26, '배율 150% — 분수', { weight: 600, size: 12 })}
+${t(bx, top + size + 44, '경계가 픽셀 한가운데를 지남', { fill: COLOR.mute, size: 11 })}
+
+${t(16, top + size + 84, '오른쪽은 반 픽셀을 켤 수 없어 옆 픽셀에 흐리게 나눠 칠합니다.', { weight: 600 })}
+${t(16, top + size + 104, '글자 테두리가 미세하게 뭉개지는 이유이고, PPI 와는 별개의 문제입니다.', { fill: COLOR.mute, size: 12 })}`;
+
+  return figure(
+    '정수 배율은 픽셀 경계가 맞고 분수 배율은 픽셀 한가운데를 지난다',
+    W,
+    top + size + 120,
+    body,
+    '논리 픽셀 하나가 물리 픽셀 정수 개에 떨어지면 어긋남이 없습니다. 27인치 5K 의 200% 가 그 경우입니다.'
+  );
+}
+
 export const figures = {
   'vram-overflow': vramOverflow,
   'memory-parts': memoryParts,
@@ -375,4 +490,6 @@ export const figures = {
   'resolution-area': resolutionArea,
   'ollama-flow': ollamaFlow,
   'pivot-lines': pivotLines,
+  'usb-c-lanes': usbcLanes,
+  'pixel-scaling': pixelScaling,
 };

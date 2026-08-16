@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>노트북 발열과 성능 저하 — 얇으면 왜 느려지나 | 스펙핏</title>
+<meta name="description" content="짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/laptop-thermal-throttling.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="노트북 발열과 성능 저하 — 얇으면 왜 느려지나 | 스펙핏">
+<meta property="og:description" content="짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/laptop-thermal-throttling.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 발열과 성능 저하 — 얇으면 왜 느려지나","description":"짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-thermal-throttling.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"노트북 발열과 성능 저하 — 얇으면 왜 느려지나","item":"https://specfit.kr/posts/laptop-thermal-throttling.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"온도가 90℃를 넘는데 고장인가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 노트북은 그 근처에서 동작하도록 설계됩니다. **온도가 높은 것 자체보다 그때 속도가 얼마나 떨어지는지**가 중요합니다."}},{"@type":"Question","name":"팬 소리가 커지는 게 나쁜 건가요","acceptedAnswer":{"@type":"Answer","text":"오히려 반대입니다. **팬이 돌아야 열을 버립니다.** 소리가 안 나면서 느려지고 있다면 그게 더 나쁜 상태입니다."}},{"@type":"Question","name":"쿨링 패드가 효과 있나요","acceptedAnswer":{"@type":"Answer","text":"바닥을 띄워 공기 길을 확보하는 것만으로도 도움이 됩니다. 다만 **설계상의 지속 전력을 넘기게 해주지는 않습니다.** 기대치를 조정하세요."}},{"@type":"Question","name":"벤치마크 점수를 보면 알 수 있나요","acceptedAnswer":{"@type":"Answer","text":"짧게 재는 점수로는 알기 어렵습니다. **같은 작업을 오래 돌렸을 때의 결과**를 보여주는 리뷰를 찾으시는 편이 낫습니다."}},{"@type":"Question","name":"데스크톱은 이 문제가 없나요","acceptedAnswer":{"@type":"Answer","text":"훨씬 덜합니다. 공간과 냉각 여유가 비교가 안 됩니다. **이동이 필요 없다면 데스크톱이 같은 예산에서 유리한 이유** 중 하나입니다."}},{"@type":"Question","name":"로컬 LLM에서 얼마나 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"VRAM에 다 올라간다면 발열은 **속도 문제**이지 가능 여부를 바꾸지는 않습니다. **돌아가느냐 아니냐는 여전히 VRAM이 정합니다** — [Ollama 최소 사양](/posts/ollama-minimum-spec.html)에 기준이 있습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>노트북 발열과 성능 저하 — 얇으면 왜 느려지나</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-17">2026년 8월 17일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>노트북 리뷰에서 좋다던 성능이 <strong>내 작업에서는 안 나오는 경우</strong>가 있습니다.</p>
+<p>특히 이런 상황입니다.</p>
+<ul>
+<li>빌드를 걸면 처음엔 빠르다가 <strong>뒤로 갈수록 느려집니다</strong></li>
+<li>로컬 LLM이 <strong>처음 몇 분만 쓸 만합니다</strong></li>
+<li>에뮬레이터를 오래 켜두면 <strong>전체가 굼떠집니다</strong></li>
+</ul>
+<p><strong>고장이 아닙니다.</strong> 설계대로 동작하는 것이고, 사양에서 어느 정도 미리 알 수 있습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><td>왜 느려지나</td><td>열이 쌓이면 <strong>스스로 속도를 낮춥니다</strong></td></tr>
+<tr><td>왜 처음엔 빠른가</td><td>짧은 시간은 <strong>높은 전력을 허용</strong>하기 때문입니다</td></tr>
+<tr><td>언제 문제가 되나</td><td><strong>몇 분 이상 이어지는 작업</strong></td></tr>
+<tr><td>사양에서 볼 것</td><td><strong>최대 전력 표기 · 두께와 무게 · 팬 유무</strong></td></tr>
+<tr><td>해결되나</td><td>근본적으로는 아닙니다. <strong>덜 나빠지게만</strong> 할 수 있습니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>리뷰의 벤치마크 점수로는 이걸 알 수 없습니다.</strong> 짧게 재기 때문입니다.</p>
+<h2 id="1-구조-열을-못-버리면-속도를-낮춥니다">1. 구조 — 열을 못 버리면 속도를 낮춥니다</h2>
+<p>칩은 전력을 쓴 만큼 열을 냅니다. 그 열을 밖으로 못 내보내면 온도가 올라가고,
+<strong>대략 90~100℃ 근처의 상한</strong>에 닿으면 칩이 스스로 속도를 낮춥니다.</p>
+<pre><code>전력을 많이 씀  →  열이 많이 남  →  못 버리면 온도 상승
+                                  →  상한 도달  →  속도를 낮춤</code></pre>
+<p><strong>타지 않으려고 스스로 늦추는 것</strong>입니다. 보호 동작이라 끌 수 없습니다.</p>
+<p><strong>얇은 노트북은 열을 버릴 공간이 적습니다.</strong> 히트파이프도 팬도 작습니다.
+그래서 같은 칩이라도 <strong>얇을수록 빨리 상한에 닿습니다.</strong></p>
+<h2 id="2-왜-처음에는-빠른가-부스트-구간">2. 왜 처음에는 빠른가 — 부스트 구간</h2>
+<p>여기가 벤치마크와 실사용이 갈리는 지점입니다.</p>
+<p><strong>칩은 짧은 시간 동안 평소보다 높은 전력을 쓰도록 허용됩니다.</strong>
+아직 열이 안 쌓였으니 잠깐은 괜찮기 때문입니다.</p>
+<pre><code>처음 짧은 구간   높은 전력   ← 빠릅니다. 벤치마크가 재는 구간
+그다음           낮은 전력   ← 여기가 실제 지속 성능</code></pre>
+<p><strong>개발 작업 대부분은 뒤쪽 구간에 있습니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>어느 구간인가</th></tr></thead>
+<tbody>
+<tr><td>파일 저장 후 다시 빌드</td><td>앞쪽 — 문제없습니다</td></tr>
+<tr><td>코드 편집·자동완성</td><td>앞쪽</td></tr>
+<tr><td><strong>전체 빌드</strong></td><td><strong>뒤쪽</strong></td></tr>
+<tr><td><strong>에뮬레이터 상시 실행</strong></td><td><strong>뒤쪽</strong></td></tr>
+<tr><td><strong>로컬 LLM</strong></td><td><strong>뒤쪽 — 가장 잘 걸립니다</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>로컬 LLM은 몇 분씩 연속으로 계산합니다.</strong> 부스트 구간이 아예 의미가 없습니다.</p>
+<div data-vram-tool></div>
+<h2 id="3-같은-이름인데-성능이-다른-이유">3. 같은 이름인데 성능이 다른 이유</h2>
+<p><a href="/posts/dev-laptop-cpu.html">개발용 노트북 CPU</a>에서 <strong>&quot;접미사에 속지 마세요&quot;</strong>라고 적었는데,
+그 이야기의 뿌리가 이것입니다.</p>
+<p><strong>노트북 제조사가 칩에 허용할 전력을 직접 정합니다.</strong>
+얇은 모델은 낮게 잡고, 두꺼운 모델은 높게 잡습니다.</p>
+<pre><code>같은 &quot;코어 울트라 7&quot;
+  얇은 노트북에 들어가면   →  낮은 전력  →  느림
+  게이밍 노트북에 들어가면 →  높은 전력  →  빠름</code></pre>
+<p><strong>같은 이름을 달고 다른 성능을 냅니다.</strong> 그리고 그 차이는 오래 돌릴수록 벌어집니다.</p>
+<h2 id="4-사양에서-미리-아는-법">4. 사양에서 미리 아는 법</h2>
+<p><strong>정확히는 못 알지만 방향은 보입니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>확인할 것</th><th>어떻게 읽나</th></tr></thead>
+<tbody>
+<tr><td><strong>CPU 최대 전력 표기</strong></td><td>있으면 가장 정확합니다. 높을수록 여유</td></tr>
+<tr><td><strong>최대 그래픽 전력</strong></td><td>전용 GPU가 있으면 함께 표기됩니다</td></tr>
+<tr><td><strong>두께와 무게</strong></td><td>얇고 가벼울수록 열에 불리합니다</td></tr>
+<tr><td><strong>팬 개수</strong></td><td>두 개면 여유가 있는 설계입니다</td></tr>
+<tr><td>팬이 없음</td><td>확실히 낮은 전력 설계입니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>무게가 의외로 좋은 지표입니다.</strong> 냉각 부품이 무겁기 때문입니다.
+1kg 대 노트북과 2kg 대 노트북은 같은 칩이라도 지속 성능이 다릅니다.</p>
+<p>이 항목들이 <a href="/posts/gaming-laptop-for-dev.html">게이밍 노트북이 개발에 유리한</a> 이유이기도 합니다.</p>
+<h2 id="5-맥은-어떤가">5. 맥은 어떤가</h2>
+<p><strong>맥북 에어에는 팬이 없습니다.</strong> 열을 몸체로만 버립니다.</p>
+<p>조용하고 가볍다는 장점의 반대편입니다. <strong>오래 돌리면 속도를 낮춥니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>에어에서</th></tr></thead>
+<tbody>
+<tr><td>편집·짧은 빌드</td><td>문제없습니다</td></tr>
+<tr><td>긴 컴파일</td><td>뒤로 갈수록 느려질 수 있습니다</td></tr>
+<tr><td><strong>로컬 LLM 장시간</strong></td><td><strong>영향을 받습니다</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>가끔 쓸 거면 상관없고, 상시로 쓸 거면 프로 쪽</strong>입니다.
+칩·냉각 차이는 <a href="/posts/macbook-air-vs-pro-dev.html">맥북 에어 vs 프로</a>에 정리했습니다.</p>
+<h2 id="6-할-수-있는-것-근본-해결은-아닙니다">6. 할 수 있는 것 — 근본 해결은 아닙니다</h2>
+<p><strong>설계를 바꿀 수는 없습니다.</strong> 덜 나빠지게만 할 수 있습니다.</p>
+<p><strong>① 받침대로 바닥을 띄우세요</strong>
+대부분의 노트북은 <strong>바닥으로 공기를 빨아들입니다.</strong> 책상에 딱 붙어 있으면 그 길이 막힙니다.
+침대나 이불 위에서 쓰면 최악입니다. <strong>가장 값싸고 효과가 확실한 방법</strong>입니다.</p>
+<p><strong>② 실내 온도를 보세요</strong>
+들어오는 공기가 뜨거우면 열을 못 버립니다. 여름에 유난히 느려지는 이유입니다.</p>
+<p><strong>③ 전원 프로파일을 확인하세요</strong>
+제조사 유틸리티에 성능·균형·조용함 모드가 있는 경우가 많습니다.
+<strong>조용함 모드로 두면 일부러 성능을 낮춥니다.</strong></p>
+<p><strong>④ 배기구를 막지 마세요</strong>
+옆이나 뒤에 열이 나가는 구멍이 있습니다. 가방이나 벽에 붙여두면 막힙니다.</p>
+<p><strong>⑤ 먼지가 쌓이면 나빠집니다</strong>
+몇 년 쓰면 팬과 방열판에 먼지가 낍니다. ⚠️ <strong>분해 청소나 서멀 재도포는 보증 문제</strong>가
+생길 수 있으니 제조사 서비스를 먼저 알아보세요.</p>
+<h2 id="7-살-때-어떻게-반영하나">7. 살 때 어떻게 반영하나</h2>
+<p><strong>&quot;오래 돌리는 작업을 하는가&quot;</strong> 하나로 갈립니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>하는 일</th><th>판단</th></tr></thead>
+<tbody>
+<tr><td>웹 개발·편집 위주</td><td>얇은 노트북으로 충분합니다</td></tr>
+<tr><td>큰 프로젝트를 자주 빌드</td><td>두께에 여유가 있는 쪽</td></tr>
+<tr><td><strong>에뮬레이터 상시</strong></td><td>두꺼운 쪽</td></tr>
+<tr><td><strong>로컬 LLM</strong></td><td><strong>냉각이 가장 중요한 용도입니다</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>웹 개발만 하신다면 이 글의 내용은 거의 해당하지 않습니다</strong> —
+<a href="/posts/web-dev-laptop-spec.html">웹 개발용 노트북 사양</a>에 기준을 따로 적었습니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsmkd62Ls" target="_blank" rel="sponsored nofollow noopener">개발용 노트북 보기</a>
+  <span class="buy-note">램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요</span>
+</aside>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="온도가-90를-넘는데-고장인가요">온도가 90℃를 넘는데 고장인가요</h3>
+<p>아닙니다. 노트북은 그 근처에서 동작하도록 설계됩니다.
+<strong>온도가 높은 것 자체보다 그때 속도가 얼마나 떨어지는지</strong>가 중요합니다.</p>
+<h3 id="팬-소리가-커지는-게-나쁜-건가요">팬 소리가 커지는 게 나쁜 건가요</h3>
+<p>오히려 반대입니다. <strong>팬이 돌아야 열을 버립니다.</strong>
+소리가 안 나면서 느려지고 있다면 그게 더 나쁜 상태입니다.</p>
+<h3 id="쿨링-패드가-효과-있나요">쿨링 패드가 효과 있나요</h3>
+<p>바닥을 띄워 공기 길을 확보하는 것만으로도 도움이 됩니다.
+다만 <strong>설계상의 지속 전력을 넘기게 해주지는 않습니다.</strong> 기대치를 조정하세요.</p>
+<h3 id="벤치마크-점수를-보면-알-수-있나요">벤치마크 점수를 보면 알 수 있나요</h3>
+<p>짧게 재는 점수로는 알기 어렵습니다.
+<strong>같은 작업을 오래 돌렸을 때의 결과</strong>를 보여주는 리뷰를 찾으시는 편이 낫습니다.</p>
+<h3 id="데스크톱은-이-문제가-없나요">데스크톱은 이 문제가 없나요</h3>
+<p>훨씬 덜합니다. 공간과 냉각 여유가 비교가 안 됩니다.
+<strong>이동이 필요 없다면 데스크톱이 같은 예산에서 유리한 이유</strong> 중 하나입니다.</p>
+<h3 id="로컬-llm에서-얼마나-영향이-있나요">로컬 LLM에서 얼마나 영향이 있나요</h3>
+<p>VRAM에 다 올라간다면 발열은 <strong>속도 문제</strong>이지 가능 여부를 바꾸지는 않습니다.
+<strong>돌아가느냐 아니냐는 여전히 VRAM이 정합니다</strong> —
+<a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양</a>에 기준이 있습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>열을 못 버리면 칩이 <strong>스스로 속도를 낮춥니다.</strong> 보호 동작입니다</li>
+<li><strong>처음이 빠른 건 부스트 구간</strong>입니다. 개발 작업 대부분은 그 뒤에 있습니다</li>
+<li><strong>같은 CPU 이름이라도 노트북마다 허용 전력이 다릅니다</strong></li>
+<li>사양에서는 <strong>최대 전력 표기 · 두께와 무게 · 팬 개수</strong>를 보세요</li>
+<li><strong>받침대로 바닥을 띄우는 것</strong>이 가장 값싸고 확실합니다</li>
+<li><strong>로컬 LLM이 가장 잘 걸리는 작업</strong>입니다. 냉각을 우선순위에 넣으세요</li>
+</ol>
+<p>실제 사용 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">노트북발열</span> <span class="tag">스로틀링</span> <span class="tag">지속성능</span> <span class="tag">개발용노트북</span> <span class="tag">냉각</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/gaming-laptop-for-dev.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">게이밍 노트북 개발용으로 괜찮나 — 무게로 갈립니다</span>
+        <span class="card-desc">확장성과 냉각은 게이밍 노트북이 확실히 낫습니다. 대신 무게, 배터리, 충전 방식에서 대가를 냅니다. 스펙으로 확인되는 것만 갈라 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-battery-dev.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">개발용 노트북 배터리 — 표기 시간이 안 맞는 이유</span>
+        <span class="card-desc">제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/web-dev-laptop-spec.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">웹 개발용 노트북 사양 — 램 16GB로 되나</span>
+        <span class="card-desc">웹 개발은 생각보다 요구가 낮습니다. 램을 먹는 건 프레임워크가 아니라 브라우저와 도커입니다. 어디서 16GB가 부족해지는지 갈라서 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m5-16","name":"Mac M5 · 16GB","vram":10,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-24","name":"Mac M5 · 24GB","vram":16,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-32","name":"Mac M5 · 32GB","vram":22,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-24","name":"Mac M5 Pro · 24GB","vram":16,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-48","name":"Mac M5 Pro · 48GB","vram":34,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-64","name":"Mac M5 Pro · 64GB","vram":46,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-64","name":"Mac M5 Max · 64GB","vram":46,"bw":460,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-128","name":"Mac M5 Max · 128GB","vram":96,"bw":614,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"label":"3B","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"label":"7~8B","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"label":"12~14B","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"label":"20~22B","examples":"Mistral Small"},{"id":"32b","params":32,"label":"32B","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"label":"70B","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"label":"120B+","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"contexts":[{"id":"2k","label":"2K (짧은 대화)","tokens":2048},{"id":"4k","label":"4K (일반)","tokens":4096},{"id":"8k","label":"8K (긴 대화)","tokens":8192},{"id":"16k","label":"16K (문서 처리)","tokens":16384},{"id":"32k","label":"32K (코드베이스)","tokens":32768}],"useCases":[{"id":"chat","label":"간단한 질문·번역","desc":"궁금한 것 물어보기, 번역, 짧은 글 다듬기","params":8,"why":"가벼운 모델로도 충분합니다."},{"id":"coding","label":"코딩 도우미","desc":"코드 작성, 오류 찾기, 설명 듣기","params":14,"why":"코드를 이해하려면 중간 크기 이상이 필요합니다."},{"id":"docs","label":"긴 문서 읽고 요약","desc":"보고서·논문·매뉴얼 정리","params":14,"why":"문서가 길수록 메모리를 많이 씁니다."},{"id":"quality","label":"전문적인 작업","desc":"복잡한 추론, 품질이 중요한 글","params":32,"why":"큰 모델일수록 좋지만 그만큼 비싼 카드가 필요합니다."}],"lengths":[{"id":"short","label":"짧은 대화","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"A4 두세 장","desc":"짧은 문서 한 편","tokens":4096},{"id":"long","label":"A4 열 장","desc":"보고서나 논문 한 편","tokens":16384},{"id":"huge","label":"아주 긴 내용","desc":"코드 파일 여러 개를 한 번에","tokens":32768}]}</script>
+<script src="/assets/vram.js" defer></script>
+</body>
+</html>

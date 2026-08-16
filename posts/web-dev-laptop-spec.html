@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>웹 개발용 노트북 사양 — 램 16GB로 되나 | 스펙핏</title>
+<meta name="description" content="웹 개발은 생각보다 요구가 낮습니다. 램을 먹는 건 프레임워크가 아니라 브라우저와 도커입니다. 어디서 16GB가 부족해지는지 갈라서 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/web-dev-laptop-spec.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="웹 개발용 노트북 사양 — 램 16GB로 되나 | 스펙핏">
+<meta property="og:description" content="웹 개발은 생각보다 요구가 낮습니다. 램을 먹는 건 프레임워크가 아니라 브라우저와 도커입니다. 어디서 16GB가 부족해지는지 갈라서 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/web-dev-laptop-spec.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"웹 개발용 노트북 사양 — 램 16GB로 되나","description":"웹 개발은 생각보다 요구가 낮습니다. 램을 먹는 건 프레임워크가 아니라 브라우저와 도커입니다. 어디서 16GB가 부족해지는지 갈라서 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/web-dev-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"웹 개발용 노트북 사양 — 램 16GB로 되나","item":"https://specfit.kr/posts/web-dev-laptop-spec.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥북으로 웹 개발해도 되나요","acceptedAnswer":{"@type":"Answer","text":"잘 됩니다. 개발 도구 대부분이 맥을 우선 지원합니다. 다만 **맥은 램을 나중에 못 늘립니다.** 도커를 쓰실 거면 24GB 이상을 권합니다. 기준은 [맥북 에어 vs 프로](/posts/macbook-air-vs-pro-dev.html)에 있습니다."}},{"@type":"Question","name":"개발 서버가 느린데 노트북 탓인가요","acceptedAnswer":{"@type":"Answer","text":"프로젝트 크기와 설정 문제인 경우가 많습니다. 작업 관리자에서 램 \"사용 중\" 수치부터 보세요. 14GB 이상이면 이미 부족한 상태이고, 그때는 하드웨어 문제가 맞습니다. 판단 기준은 [램 16GB vs 32GB](/posts/ram-16gb-vs-32gb.html)에 있습니다."}},{"@type":"Question","name":"브라우저 탭을 줄이면 정말 나아지나요","acceptedAnswer":{"@type":"Answer","text":"나아집니다. 탭 하나가 작아도 수십 개면 몇 GB가 됩니다. 16GB에서 도커까지 쓰신다면 **여기서 나오는 몫이 의외로 큽니다.**"}},{"@type":"Question","name":"중고 노트북도 괜찮나요","acceptedAnswer":{"@type":"Answer","text":"웹 개발만 하신다면 몇 세대 전 CPU로도 충분합니다. **램을 늘릴 수 있는지, SSD를 바꿀 수 있는지**를 먼저 보세요. 그게 CPU 세대보다 중요합니다."}},{"@type":"Question","name":"모니터를 사는 게 나을까요 노트북을 올리는 게 나을까요","acceptedAnswer":{"@type":"Answer","text":"**웹 개발이라면 모니터 쪽이 대개 체감이 큽니다.** 화면을 나눠 쓰는 일이 많아서입니다. 같은 값이면 노트북 등급을 올리는 것보다 외부 모니터를 붙이는 편을 권합니다."}},{"@type":"Question","name":"로컬 LLM도 같이 하려면요","acceptedAnswer":{"@type":"Answer","text":"램이 아니라 **VRAM**을 봐야 합니다. 전용 그래픽카드가 필요하고, 노트북은 이름이 같아도 VRAM이 다릅니다 — [로컬 LLM 되는 노트북 고르기](/posts/local-llm-laptop-choose.html)에 표를 넣어뒀습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>웹 개발용 노트북 사양 — 램 16GB로 되나</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-17">2026년 8월 17일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>&quot;웹 개발하는데 노트북 뭐 사야 하나요&quot;</p>
+<p>이 질문에는 <strong>좋은 소식이 있습니다. 웹 개발은 요구가 낮은 편입니다.</strong>
+<a href="/posts/docker-laptop-spec.html">도커</a>나 <a href="/posts/android-studio-laptop-spec.html">안드로이드 에뮬레이터</a>처럼
+가상 환경을 통째로 띄우는 작업이 없기 때문입니다.</p>
+<p><strong>다만 &quot;웹 개발&quot;이라는 말이 가리키는 범위가 사람마다 다릅니다.</strong>
+브라우저에서 화면만 만드는 것과, 로컬에 DB를 띄우고 API까지 돌리는 것은
+필요한 사양이 두 배 차이납니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>어떻게 일하는가</th><th>필요한 램</th></tr></thead>
+<tbody>
+<tr><td>프론트만 — 에디터 + 브라우저 + 개발 서버</td><td><strong>16GB로 충분합니다</strong></td></tr>
+<tr><td>백엔드 포함 — 서버 + DB 하나를 로컬에</td><td><strong>16GB로 됩니다</strong></td></tr>
+<tr><td><strong>도커로 여러 서비스를 띄운다</strong></td><td><strong>32GB</strong></td></tr>
+<tr><td>모노레포 · 서비스 여러 개 동시</td><td><strong>32GB</strong></td></tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead><tr><th>항목</th><th>판단</th></tr></thead>
+<tbody>
+<tr><td><strong>램</strong></td><td>여기가 거의 전부입니다</td></tr>
+<tr><td>CPU</td><td>요즘 노트북이면 대개 충분합니다</td></tr>
+<tr><td><strong>화면</strong></td><td><strong>체감이 가장 큽니다</strong> — 아래를 보세요</td></tr>
+<tr><td>SSD</td><td>512GB로 시작해도 됩니다</td></tr>
+<tr><td>전용 그래픽카드</td><td><strong>필요 없습니다</strong></td></tr>
+</tbody>
+</table></div>
+<h2 id="1-램을-먹는-건-프레임워크가-아닙니다">1. 램을 먹는 건 프레임워크가 아닙니다</h2>
+<p>여기가 오해가 가장 많은 지점입니다.</p>
+<p><strong>개발 서버 자체는 무겁지 않습니다.</strong> 무거운 건 그 옆에 켜져 있는 것들입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>무엇</th><th>대략적인 램</th></tr></thead>
+<tbody>
+<tr><td>에디터 (VS Code 계열)</td><td>500MB~1.5GB</td></tr>
+<tr><td>개발 서버 (node 프로세스)</td><td>300MB~1GB</td></tr>
+<tr><td><strong>브라우저 탭 여러 개</strong></td><td><strong>1~4GB</strong></td></tr>
+<tr><td>브라우저 개발자 도구</td><td>수백 MB~</td></tr>
+<tr><td>타입 검사·린터 백그라운드</td><td>500MB~1.5GB</td></tr>
+</tbody>
+</table></div>
+<p><strong>브라우저가 제일 큽니다.</strong> 그리고 웹 개발자는 브라우저를 안 닫습니다.
+문서 탭, 스택오버플로 탭, 디자인 시안 탭, 실행 중인 화면 탭이 전부 열려 있습니다.</p>
+<pre><code>윈도우 자체              4~6GB
+에디터 + 개발 서버        1~2.5GB
+브라우저 탭들            2~4GB
+────────────────────────────
+합계                    7~12.5GB</code></pre>
+<p><strong>16GB면 여유가 남습니다.</strong> 여기까지가 &quot;웹 개발은 16GB로 된다&quot;의 근거입니다.</p>
+<h2 id="2-그럼-언제-32gb가-되나-도커가-들어올-때">2. 그럼 언제 32GB가 되나 — 도커가 들어올 때</h2>
+<p><strong>로컬에 DB나 캐시를 띄우기 시작하면 계산이 바뀝니다.</strong></p>
+<p>윈도우에서는 도커가 리눅스 환경 위에서 돌고, 그 환경이 램을 <strong>미리 예약</strong>합니다.
+기본값이 전체 램의 절반 또는 8GB 중 작은 값이라, 16GB에서는 절반이 통째로 넘어갑니다.</p>
+<pre><code>16GB
+ └ WSL2 + 도커가 최대 8GB 예약
+ └ 남은 8GB 로 윈도우 · 에디터 · 브라우저를 전부</code></pre>
+<p><strong>여기서 터집니다.</strong> 컨테이너를 띄우는 순간 브라우저가 버벅이기 시작합니다.</p>
+<p>이 예약량은 조절할 수 있습니다 —
+<a href="/posts/wsl2-memory-limit.html">WSL2가 램을 다 먹을 때</a>에 방법을 적었습니다.
+<strong>램을 늘리는 것보다 이게 먼저 시도할 일입니다.</strong></p>
+<p>컨테이너별 사용량과 판단 기준은
+<a href="/posts/docker-laptop-spec.html">도커 노트북 사양</a>에 있습니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsop7IrsG" target="_blank" rel="sponsored nofollow noopener">DDR5 32GB 보기</a>
+  <span class="buy-note">같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다</span>
+</aside>
+<h2 id="3-화면이-체감이-가장-큽니다">3. ⚠️ 화면이 체감이 가장 큽니다</h2>
+<p><strong>사양표에서 가장 과소평가되는 항목입니다.</strong></p>
+<p>웹 개발은 화면을 나눠 씁니다. <strong>에디터와 브라우저를 동시에 봐야 하고,
+브라우저 안에서 또 개발자 도구를 열어야 합니다.</strong></p>
+<pre><code>왼쪽   에디터
+오른쪽 브라우저
+       └ 그 안에서 또 개발자 도구가 절반을 가져감</code></pre>
+<p><strong>FHD 노트북에서는 이 배치가 안 나옵니다.</strong> 창을 계속 접었다 폈다 하게 됩니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>화면</th><th>웹 개발에서</th></tr></thead>
+<tbody>
+<tr><td>15.6&quot; FHD (1920×1080)</td><td>좁습니다. 창을 계속 바꾸게 됩니다</td></tr>
+<tr><td><strong>14&quot; FHD+ (1920×1200)</strong></td><td>세로가 120px 더 있어 낫습니다</td></tr>
+<tr><td><strong>16&quot; WQXGA (2560×1600)</strong></td><td><strong>좌우로 나눠 써도 여유</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>16:10 비율을 찾으세요.</strong> 세로 픽셀이 더 많아 개발자 도구를 열어도 코드가 남습니다.</p>
+<p>외부 모니터를 쓰실 거라면 그쪽이 훨씬 큽니다 —
+<a href="/posts/dual-monitor-vs-single.html">듀얼 모니터 vs 큰 모니터 한 대</a>에 정리했습니다.
+<strong>웹 개발은 &quot;참고 자료를 같이 띄우는&quot; 쪽이라 듀얼이 잘 맞는 용도입니다.</strong></p>
+<h2 id="4-cpu-신경-안-쓰셔도-됩니다">4. CPU — 신경 안 쓰셔도 됩니다</h2>
+<p><strong>웹 개발에서 CPU가 오래 일하는 구간이 별로 없습니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>CPU</th></tr></thead>
+<tbody>
+<tr><td>개발 서버 실행 중</td><td>거의 놀고 있습니다</td></tr>
+<tr><td>파일 저장 시 다시 빌드</td><td>잠깐 씁니다</td></tr>
+<tr><td><strong>전체 빌드 · 타입 검사</strong></td><td>코어 수가 도움이 됩니다</td></tr>
+<tr><td><code>npm install</code></td><td><strong>CPU가 아니라 디스크와 네트워크</strong></td></tr>
+</tbody>
+</table></div>
+<p>마지막 줄이 자주 오해되는 부분입니다. 설치가 느린 건 CPU 탓이 아닙니다.
+<strong>작은 파일 수만 개를 만드는 작업</strong>이라 저장장치의 성질에 걸립니다.</p>
+<p>그렇다고 빠른 SSD를 사면 해결되는 것도 아닙니다 — 순차 속도가 병목이 아니기 때문입니다.
+이유는 <a href="/posts/nvme-vs-sata.html">NVMe와 SATA</a>에 적었습니다.</p>
+<p>CPU를 어디까지 봐야 하는지는
+<a href="/posts/dev-laptop-cpu.html">개발용 노트북 CPU</a>에 정리했습니다.
+<strong>결론은 &quot;등급을 올리는 값이면 램이나 화면에 쓰라&quot;입니다.</strong></p>
+<h2 id="5-전용-그래픽카드는-필요-없습니다">5. 전용 그래픽카드는 필요 없습니다</h2>
+<p><strong>웹 개발에 전용 그래픽카드가 쓰일 일이 없습니다.</strong></p>
+<p>내장 그래픽으로 충분하고, 그 돈을 램이나 화면에 쓰는 편이 체감이 큽니다.
+게다가 전용 카드가 있으면 무거워지고 배터리가 짧아집니다.</p>
+<blockquote><p><strong>로컬 LLM을 겸하실 거라면 이야기가 완전히 다릅니다.</strong>
+그건 VRAM이 필요해서 전용 카드가 있어야 합니다 —
+<a href="/posts/local-llm-laptop-choose.html">로컬 LLM 되는 노트북 고르기</a>를 보세요.
+<strong>웹 개발 때문에 사는 게 아니라 로컬 LLM 때문에 사는 것</strong>이라고 구분하셔야 합니다.</p></blockquote>
+<h2 id="6-ssd-여기서-아끼세요">6. SSD — 여기서 아끼세요</h2>
+<p><strong>노트북에서 나중에 바꿀 수 있는 건 사실상 SSD 하나입니다.</strong></p>
+<p><code>node_modules</code> 가 프로젝트마다 수백 MB씩 쌓이지만, 그래도 512GB면 한동안 됩니다.
+<strong>차액을 램이나 화면에 쓰는 편이 낫습니다.</strong></p>
+<p>다만 <strong>살 때 슬롯이 있는지는 확인하세요.</strong> 교체 방법은
+<a href="/posts/laptop-ssd-upgrade.html">노트북 SSD 교체</a>에 적었습니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdspuKuC8O" target="_blank" rel="sponsored nofollow noopener">NVMe SSD 1TB 보기</a>
+  <span class="buy-note">모델 파일이 하나에 5~20GB 라 금방 찹니다</span>
+</aside>
+<h2 id="7-그래서-어떻게-고르나">7. 그래서 어떻게 고르나</h2>
+<p><strong>바꿀 수 없는 것부터 정합니다.</strong> 순서는
+<a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>과 같습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>우선순위</th><th>확인</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>램 슬롯이 있는가</strong> — 없으면 살 때 정해집니다</td></tr>
+<tr><td>2</td><td><strong>화면 16:10, 세로 1200 이상</strong></td></tr>
+<tr><td>3</td><td>램 16GB (도커를 쓰면 32GB)</td></tr>
+<tr><td>4</td><td>SSD 512GB 또는 슬롯 2개</td></tr>
+<tr><td>—</td><td>전용 그래픽카드는 불필요</td></tr>
+</tbody>
+</table></div>
+<p><strong>1번이 지금 특히 중요합니다.</strong> 2026년 들어 램 값이 크게 올라서 32GB 구성의 웃돈이 커졌습니다.
+슬롯이 있으면 16GB로 시작해 필요할 때 늘리면 됩니다 —
+<a href="/posts/ram-price-2026.html">램 값이 올랐습니다</a>에 판단 기준을 적었습니다.</p>
+<p>슬롯이 있는지 확인하는 법은
+<a href="/posts/laptop-ram-onboard-lpcamm2.html">노트북 램 나중에 못 늘립니다</a>에 있습니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsmkd62Ls" target="_blank" rel="sponsored nofollow noopener">개발용 노트북 보기</a>
+  <span class="buy-note">램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요</span>
+</aside>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="맥북으로-웹-개발해도-되나요">맥북으로 웹 개발해도 되나요</h3>
+<p>잘 됩니다. 개발 도구 대부분이 맥을 우선 지원합니다.
+다만 <strong>맥은 램을 나중에 못 늘립니다.</strong> 도커를 쓰실 거면 24GB 이상을 권합니다.
+기준은 <a href="/posts/macbook-air-vs-pro-dev.html">맥북 에어 vs 프로</a>에 있습니다.</p>
+<h3 id="개발-서버가-느린데-노트북-탓인가요">개발 서버가 느린데 노트북 탓인가요</h3>
+<p>프로젝트 크기와 설정 문제인 경우가 많습니다.
+작업 관리자에서 램 &quot;사용 중&quot; 수치부터 보세요.
+14GB 이상이면 이미 부족한 상태이고, 그때는 하드웨어 문제가 맞습니다.
+판단 기준은 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 있습니다.</p>
+<h3 id="브라우저-탭을-줄이면-정말-나아지나요">브라우저 탭을 줄이면 정말 나아지나요</h3>
+<p>나아집니다. 탭 하나가 작아도 수십 개면 몇 GB가 됩니다.
+16GB에서 도커까지 쓰신다면 <strong>여기서 나오는 몫이 의외로 큽니다.</strong></p>
+<h3 id="중고-노트북도-괜찮나요">중고 노트북도 괜찮나요</h3>
+<p>웹 개발만 하신다면 몇 세대 전 CPU로도 충분합니다.
+<strong>램을 늘릴 수 있는지, SSD를 바꿀 수 있는지</strong>를 먼저 보세요. 그게 CPU 세대보다 중요합니다.</p>
+<h3 id="모니터를-사는-게-나을까요-노트북을-올리는-게-나을까요">모니터를 사는 게 나을까요 노트북을 올리는 게 나을까요</h3>
+<p><strong>웹 개발이라면 모니터 쪽이 대개 체감이 큽니다.</strong> 화면을 나눠 쓰는 일이 많아서입니다.
+같은 값이면 노트북 등급을 올리는 것보다 외부 모니터를 붙이는 편을 권합니다.</p>
+<h3 id="로컬-llm도-같이-하려면요">로컬 LLM도 같이 하려면요</h3>
+<p>램이 아니라 <strong>VRAM</strong>을 봐야 합니다. 전용 그래픽카드가 필요하고,
+노트북은 이름이 같아도 VRAM이 다릅니다 —
+<a href="/posts/local-llm-laptop-choose.html">로컬 LLM 되는 노트북 고르기</a>에 표를 넣어뒀습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>웹 개발은 요구가 낮습니다.</strong> 프론트·백엔드 모두 16GB로 됩니다</li>
+<li>램을 먹는 건 프레임워크가 아니라 <strong>브라우저</strong>입니다</li>
+<li><strong>도커가 들어오면 32GB</strong>입니다. 그전에 WSL2 설정부터 조절해 보세요</li>
+<li><strong>화면이 체감이 가장 큽니다.</strong> 16:10, 세로 1200 이상을 보세요</li>
+<li>CPU와 전용 그래픽카드는 <strong>신경 안 쓰셔도 됩니다</strong></li>
+<li><strong>SSD에서 아끼고</strong> 램 슬롯이 있는지 확인하세요</li>
+</ol>
+<p>실제 사용 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">웹개발</span> <span class="tag">개발용노트북</span> <span class="tag">램</span> <span class="tag">node</span> <span class="tag">프론트엔드</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/gaming-laptop-for-dev.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">게이밍 노트북 개발용으로 괜찮나 — 무게로 갈립니다</span>
+        <span class="card-desc">확장성과 냉각은 게이밍 노트북이 확실히 낫습니다. 대신 무게, 배터리, 충전 방식에서 대가를 냅니다. 스펙으로 확인되는 것만 갈라 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-battery-dev.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">개발용 노트북 배터리 — 표기 시간이 안 맞는 이유</span>
+        <span class="card-desc">제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-thermal-throttling.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">노트북 발열과 성능 저하 — 얇으면 왜 느려지나</span>
+        <span class="card-desc">짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

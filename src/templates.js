@@ -297,11 +297,77 @@ function cardItem(post) {
     </li>`;
 }
 
-export function listPage({ posts, title, description, path, heading, intro, searchable }) {
+export function listPage({
+  posts,
+  title,
+  description,
+  path,
+  heading,
+  intro,
+  searchable,
+  hero = false,
+  catCards = [],
+  featured = [],
+  totalPosts = 0,
+}) {
+  // 진입 카드는 홈에만 붙입니다. 카테고리 목록에 붙이면
+  // 이미 무엇을 찾는지 아는 사람에게 같은 말을 반복하는 셈입니다.
+  const heroBox =
+    hero && config.hero && config.hero.length
+      ? `<nav class="hero" aria-label="시작하기">
+    ${config.hero
+      .map(
+        (h) => `<a class="hero-card${h.primary ? ' is-primary' : ''}" href="${h.href}">
+      <span class="hero-kicker">${escapeHtml(h.kicker)}</span>
+      <span class="hero-title">${escapeHtml(h.title)}</span>
+      <span class="hero-desc">${escapeHtml(h.desc)}</span>
+    </a>`
+      )
+      .join('\n    ')}
+  </nav>`
+      : '';
+
+  // 카테고리 판. 이 사이트가 무엇을 다루는지 한 화면에 보여줍니다.
+  // 글 수를 함께 적는 이유는, 빈 껍데기가 아니라는 걸 보여야 눌리기 때문입니다.
+  const catBox = catCards.length
+    ? `<section class="home-sec" data-search-hide>
+  <h2>무엇을 고르시나요</h2>
+  <ul class="cat-list">
+    ${catCards
+      .map(
+        (c) => `<li><a class="cat-card" href="/${c.slug}.html">
+      <span class="cat-label">${escapeHtml(c.label)}</span>
+      <span class="cat-desc">${escapeHtml(c.description)}</span>
+      <span class="cat-count">${c.count}편</span>
+    </a></li>`
+      )
+      .join('\n    ')}
+  </ul>
+</section>`
+    : '';
+
+  // 손으로 고른 목록. 날짜순만으로는 먼저 읽어야 할 글이 아래로 밀립니다.
+  const featuredBox = featured.length
+    ? `<section class="home-sec" data-search-hide>
+  <h2>골라 읽기 좋은 글</h2>
+  <ul class="card-list">
+    ${featured.map(cardItem).join('\n    ')}
+  </ul>
+</section>`
+    : '';
+
+  // data-search-hide 가 붙은 것은 검색 중에 숨습니다.
+  // 안 숨기면 검색 결과 위아래로 상관없는 카드가 남아 결과가 묻힙니다.
+  const more =
+    hero && totalPosts > posts.length
+      ? `<p class="see-more" data-search-hide>전체 ${totalPosts}편은 위 카테고리에서 볼 수 있습니다. 찾는 것이 있으면 검색을 쓰세요.</p>`
+      : '';
+
   const body = `
 <section class="list-head">
   <h1>${escapeHtml(heading)}</h1>
   ${intro ? `<p class="lead">${escapeHtml(intro)}</p>` : ''}
+  ${heroBox}
   ${
     searchable
       ? `<div class="search">
@@ -312,11 +378,16 @@ export function listPage({ posts, title, description, path, heading, intro, sear
       : ''
   }
 </section>
-
-<ul class="card-list" data-list>
-  ${posts.map(cardItem).join('\n  ')}
-</ul>
-${posts.length === 0 ? '<p class="empty">아직 글이 없습니다.</p>' : ''}`;
+${catBox}
+${featuredBox}
+<section${hero ? ' class="home-sec"' : ''}>
+  ${hero ? '<h2 data-search-hide>새로 쓴 글</h2>' : ''}
+  <ul class="card-list" data-list>
+    ${posts.map(cardItem).join('\n    ')}
+  </ul>
+  ${more}
+  ${posts.length === 0 ? '<p class="empty">아직 글이 없습니다.</p>' : ''}
+</section>`;
 
   return layout({
     title,

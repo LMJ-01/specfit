@@ -24,7 +24,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"맥북 에어 vs 프로 — 개발용으로 어디서 갈리나","description":"M5 에어와 프로는 메모리 한계와 대역폭이 다릅니다. 에어는 32GB가 천장이고 프로는 128GB까지 갑니다. 로컬 LLM을 할 거면 여기서 갈립니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/macbook-air-vs-pro-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"맥북 에어 vs 프로 — 개발용으로 어디서 갈리나","description":"M5 에어와 프로는 메모리 한계와 대역폭이 다릅니다. 에어는 32GB가 천장이고 프로는 128GB까지 갑니다. 로컬 LLM을 할 거면 여기서 갈립니다.","datePublished":"2026-08-15","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/macbook-air-vs-pro-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"맥북 에어 vs 프로 — 개발용으로 어디서 갈리나","item":"https://specfit.kr/posts/macbook-air-vs-pro-dev.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"에어 32GB와 프로 24GB 중 어느 쪽인가요","acceptedAnswer":{"@type":"Answer","text":"**로컬 LLM을 한다면 프로 24GB**입니다. 대역폭이 153 대 307로 두 배입니다. **용량이 더 필요하면 에어 32GB**입니다. 22B급을 넘보려면 32GB가 필요합니다. 같은 값이면 **무엇을 돌릴지**로 정하세요."}},{"@type":"Question","name":"나중에 메모리를 늘릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"**없습니다.** 애플 실리콘은 메모리가 칩 패키지에 붙어 있습니다. 부족하면 기기를 바꾸는 수밖에 없어서, 애매하면 한 단계 위가 안전합니다."}},{"@type":"Question","name":"13인치와 15인치 에어는 성능이 같나요","acceptedAnswer":{"@type":"Answer","text":"같은 M5 칩입니다. 화면 크기와 무게가 다릅니다. **코딩에는 세로 픽셀이 중요**하니 화면 사양을 확인하세요 — 기준은 [코딩용 모니터 글](/posts/coding-monitor-resolution.html)에 있습니다."}},{"@type":"Question","name":"프로 14인치 M5 기본형은요","acceptedAnswer":{"@type":"Answer","text":"칩은 에어와 같은 M5(153 GB/s)입니다. 대역폭 이득이 없습니다. **팬과 화면 때문에 사는 구성**이라고 보시면 됩니다. 대역폭이 목적이면 M5 Pro부터입니다."}},{"@type":"Question","name":"개발용으로 16GB면 정말 부족한가요","acceptedAnswer":{"@type":"Answer","text":"일반 웹 개발만 하면 됩니다. 다만 도커·에뮬레이터·브라우저 탭이 겹치면 좁습니다. **나중에 못 늘린다**는 점을 감안하면 24GB부터가 안전합니다. 기준은 [램 16GB vs 32GB](/posts/ram-16gb-vs-32gb.html)에 정리했습니다."}}]}</script>
 </head>
@@ -63,7 +63,7 @@
     <h1>맥북 에어 vs 프로 — 개발용으로 어디서 갈리나</h1>
     <p class="post-meta">
       <time datetime="2026-08-15">2026년 8월 15일</time>
-      
+      <span class="updated">· 2026년 8월 17일 갱신</span>
     </p>
   </header>
 
@@ -108,11 +108,11 @@ CPU 성능 차이는 리뷰가 많은데, <strong>정작 개발에서 갈리는 
 </table></div>
 <p><strong>32B 이상을 넘본다면 에어로는 안 됩니다.</strong></p>
 <p>구성을 골라보시면 어디까지 되는지 바로 나옵니다.</p>
-<p><div data-vram-tool></div></p>
+<div data-vram-tool></div>
 <p>자세한 기준은 <a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 글</a>에 있습니다.</p>
 <h2 id="2-대역폭-로컬-llm에서만-크게-갈립니다">2. 대역폭 — 로컬 LLM에서만 크게 갈립니다</h2>
 <p>맥은 램이 VRAM 역할까지 하므로, <strong>대역폭이 곧 생성 속도</strong>입니다.</p>
-<p><figure class="fig">
+<figure class="fig">
 <svg viewBox="0 0 640 246" width="640" height="246" role="img" aria-label="카드별 메모리 대역폭 비교">
 <title>카드별 메모리 대역폭 비교</title>
 
@@ -139,7 +139,7 @@ CPU 성능 차이는 리뷰가 많은데, <strong>정작 개발에서 갈리는 
 <text x="16" y="232" fill="var(--fg)" font-size="13" font-weight="600">용량이 "되느냐" 를 정하고, 대역폭이 "얼마나 빠르냐" 를 정합니다.</text>
 </svg>
 <figcaption>같은 모델이 둘 다 VRAM 에 올라간다면, 그다음은 이 값이 체감을 가릅니다.</figcaption>
-</figure></p>
+</figure>
 <div class="table-wrap"><table>
 <thead><tr><th>칩</th><th>대역폭</th><th>에어 대비</th></tr></thead>
 <tbody>
@@ -167,6 +167,8 @@ CPU 성능 차이는 리뷰가 많은데, <strong>정작 개발에서 갈리는 
 </table></div>
 <p>로컬 LLM은 몇 분씩 연속으로 돌리는 작업이라 여기 해당합니다.
 <strong>가끔 쓸 거면 상관없고, 상시로 쓸 거면 프로가 맞습니다.</strong></p>
+<p>열이 쌓이면 왜 속도가 떨어지는지, 그 구조 자체는 윈도우 노트북과 같습니다 —
+<a href="/posts/laptop-thermal-throttling.html">노트북 발열과 성능 저하</a>에 정리했습니다.</p>
 <h2 id="그래서-누가-뭘-사야-하나">그래서 누가 뭘 사야 하나</h2>
 <p><strong>에어 16GB — 권하지 않습니다</strong></p>
 <p>일반 코딩은 되지만 도커를 띄우면 금방 찹니다.
@@ -243,24 +245,24 @@ CPU 성능 차이는 리뷰가 많은데, <strong>정작 개발에서 갈리는 
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/wsl2-memory-limit.html">
+      <a href="/posts/gaming-laptop-for-dev.html">
         <span class="card-cat">노트북</span>
-        <span class="card-title">WSL2가 램을 다 먹을 때 — Vmmem 잡는 법</span>
-        <span class="card-desc">작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.</span>
+        <span class="card-title">게이밍 노트북 개발용으로 괜찮나 — 무게로 갈립니다</span>
+        <span class="card-desc">확장성과 냉각은 게이밍 노트북이 확실히 낫습니다. 대신 무게, 배터리, 충전 방식에서 대가를 냅니다. 스펙으로 확인되는 것만 갈라 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/docker-laptop-spec.html">
+      <a href="/posts/laptop-battery-dev.html">
         <span class="card-cat">노트북</span>
-        <span class="card-title">도커 돌리는 노트북 사양 — 램 16GB로 되나</span>
-        <span class="card-desc">도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.</span>
+        <span class="card-title">개발용 노트북 배터리 — 표기 시간이 안 맞는 이유</span>
+        <span class="card-desc">제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/dev-laptop-cpu.html">
+      <a href="/posts/laptop-thermal-throttling.html">
         <span class="card-cat">노트북</span>
-        <span class="card-title">개발용 노트북 CPU — 어디까지 신경 써야 하나</span>
-        <span class="card-desc">CPU 이름은 복잡한데 개발에서 실제로 갈리는 건 두 가지뿐입니다. 모델명 읽는 법과, NPU 성능이 로컬 LLM과 무관한 이유를 정리했습니다.</span>
+        <span class="card-title">노트북 발열과 성능 저하 — 얇으면 왜 느려지나</span>
+        <span class="card-desc">짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.</span>
       </a>
     </li>
   </ul>

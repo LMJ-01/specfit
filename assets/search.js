@@ -8,6 +8,11 @@
   if (!input || !list) return;
 
   const original = list.innerHTML;
+
+  // 검색 중에는 홈의 다른 판(카테고리·골라 읽기 좋은 글)을 접습니다.
+  // 그대로 두면 결과가 상관없는 카드 사이에 끼어 안 보입니다.
+  const foldable = document.querySelectorAll('[data-search-hide]');
+
   let index = null;
   let loading = null;
   let timer = 0;
@@ -29,6 +34,9 @@
   };
 
   const render = (items, query) => {
+    foldable.forEach((el) => {
+      el.hidden = !!query;
+    });
     if (!query) {
       list.innerHTML = original;
       status.textContent = '';

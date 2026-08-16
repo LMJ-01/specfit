@@ -85,19 +85,29 @@ function renderWidgets(html, warn) {
   });
 }
 
+// 자리표시자만 홀로 있는 문단.
+//
+// 마크다운 변환기는 `{{FIG:x}}` 한 줄을 평범한 문단으로 봅니다. 그래서 치환하면
+// <p><figure>…</figure></p> 가 되는데, figure·div 는 p 안에 올 수 없습니다.
+// 브라우저가 알아서 p 를 닫아주기 때문에 화면은 멀쩡했고, 그래서 오래 안 보였습니다.
+// 남는 것은 빈 </p> 하나와 유효하지 않은 HTML 입니다.
+//
+// 치환 전에 껍데기를 벗깁니다. 문단 안에 자리표시자 하나만 있을 때로 한정하므로
+// 문장 중간에 쓴 경우는 그대로 둡니다.
+const LONE_PLACEHOLDER_RE = /<p>(\{\{[^}]*\}\})<\/p>/g;
+
 /**
  * 마크다운 → HTML 로 바꾼 뒤 자리표시자를 순서대로 채웁니다.
  *
  * 계산기 → 위젯 → 도해 → 구매 링크 순입니다.
  * 순서가 중요한 이유는 하나뿐입니다 — 마크다운 변환이 가장 먼저여야
- * 자리표시자가 문단으로 감싸지지 않습니다.
+ * 자리표시자 안의 내용이 마크다운으로 해석되지 않습니다.
  * 나머지는 서로 겹치지 않아 순서가 자유롭습니다.
  */
 function renderShortcodes(body, warn) {
-  const withTool = markdownToHtml(body).replace(
-    new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'),
-    '<div data-vram-tool></div>'
-  );
+  const withTool = markdownToHtml(body)
+    .replace(LONE_PLACEHOLDER_RE, '$1')
+    .replace(new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'), '<div data-vram-tool></div>');
   return renderBuyLinks(renderFigures(renderWidgets(withTool, warn), warn), warn);
 }
 
@@ -190,7 +200,11 @@ async function build() {
         text: p.body.replace(/[#>*`|_-]/g, ' ').replace(/\s+/g, ' ').trim(),
       };
     })
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    // 최신순. 날짜가 같으면 slug 로 가릅니다.
+    //
+    // 0 을 반환하지 않는 비교 함수를 쓰면 같은 날짜끼리 순서가 뒤집힙니다.
+    // 이 사이트는 하루에 여러 편을 올리는 일이 잦아서 실제로 그랬습니다.
+    .sort((a, b) => (a.date === b.date ? a.slug.localeCompare(b.slug) : a.date < b.date ? 1 : -1));
 
   // ---- 메뉴 조립 ----
   // 카테고리를 손으로 적어두면 글이 쌓여도 메뉴에 안 나옵니다. 실제로 그랬습니다.
@@ -229,17 +243,40 @@ async function build() {
   }
 
   // ---- 홈 ----
+  //
+  // 홈은 목록이 아니라 안내판입니다.
+  // 글을 전부 쏟으면 처음 온 사람은 제목만 훑다 나가고, 150편이 되면 더 심해집니다.
+  //   진입 카드 → 카테고리 → 골라 읽기 좋은 글 → 새로 쓴 글 순으로 좁혀 갑니다.
+
+  // 글이 있는 카테고리만. 빈 칸을 보여주면 헛걸음입니다.
+  const catCards = config.categories
+    .map((c) => ({ ...c, count: posts.filter((p) => p.category === c.slug).length }))
+    .filter((c) => c.count > 0);
+
+  const featured = config.featured
+    .map((slug) => {
+      const post = posts.find((p) => p.slug === slug);
+      // 글을 지우거나 파일명을 바꾸면 여기가 조용히 비어버립니다. 경고로 잡습니다.
+      if (!post) warnings.push(`config.featured 에 없는 글: ${slug} — 이름이 바뀌었거나 지워졌습니다`);
+      return post;
+    })
+    .filter(Boolean);
+
   written.push(
     await write(
       'index.html',
       listPage({
-        posts,
+        posts: posts.slice(0, config.postsPerPage),
         title: config.siteName,
         description: config.description,
         path: '/',
         heading: `${config.siteName} — ${config.tagline}`,
         intro: config.description,
         searchable: true,
+        hero: true,
+        catCards,
+        featured,
+        totalPosts: posts.length,
       })
     )
   );

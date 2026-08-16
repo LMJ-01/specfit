@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OLED 모니터 코딩 — 번인이 실제로 문제가 되는 조건 | 스펙핏</title>
+<meta name="description" content="코딩은 번인에 가장 불리한 사용 방식입니다. 같은 자리에 같은 화면이 하루 종일 켜져 있기 때문입니다. 구조를 설명하고 스펙으로 확인되는 것만 갈랐습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/oled-monitor-coding.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="OLED 모니터 코딩 — 번인이 실제로 문제가 되는 조건 | 스펙핏">
+<meta property="og:description" content="코딩은 번인에 가장 불리한 사용 방식입니다. 같은 자리에 같은 화면이 하루 종일 켜져 있기 때문입니다. 구조를 설명하고 스펙으로 확인되는 것만 갈랐습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/oled-monitor-coding.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OLED 모니터 코딩 — 번인이 실제로 문제가 되는 조건","description":"코딩은 번인에 가장 불리한 사용 방식입니다. 같은 자리에 같은 화면이 하루 종일 켜져 있기 때문입니다. 구조를 설명하고 스펙으로 확인되는 것만 갈랐습니다.","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/oled-monitor-coding.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"OLED 모니터 코딩 — 번인이 실제로 문제가 되는 조건","item":"https://specfit.kr/posts/oled-monitor-coding.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"요즘 OLED는 번인이 해결됐다던데요","acceptedAnswer":{"@type":"Answer","text":"많이 나아진 것은 맞습니다. 다만 **원인 자체가 사라진 게 아니라 늦춘 것**입니다. 소자가 켜진 시간만큼 닳는다는 구조는 그대로입니다."}},{"@type":"Question","name":"하루 몇 시간까지 괜찮나요","acceptedAnswer":{"@type":"Answer","text":"**답할 수 없습니다.** 밝기, 화면 내용, 개체 차이에 전부 걸려 있습니다. 시간으로 기준을 제시하는 글은 근거가 없을 가능성이 큽니다."}},{"@type":"Question","name":"다크 테마를 쓰면 안전한가요","acceptedAnswer":{"@type":"Answer","text":"안전해지는 게 아니라 유리해집니다. 켜져 있는 픽셀이 줄어들기 때문입니다. 다만 사이드바나 탭 막대처럼 **고정된 밝은 요소는 다크 테마에서도 그대로** 남습니다."}},{"@type":"Question","name":"화면이 어둡게 느껴집니다","acceptedAnswer":{"@type":"Answer","text":"ABL 때문일 수 있습니다. 화면 전체가 밝을수록 최대 밝기가 억제됩니다. 고장이 아니라 사양대로 동작하는 것이고, 설정으로 없앨 수는 없습니다."}},{"@type":"Question","name":"글자가 번져 보입니다","acceptedAnswer":{"@type":"Answer","text":"서브픽셀 배열이 표준과 달라서 그렇습니다. 윈도우라면 ClearType 을 끄면 사라집니다. [세로 모니터 글](/posts/vertical-monitor-coding.html)에 같은 문제를 자세히 적었습니다."}},{"@type":"Question","name":"로컬 LLM이나 성능에 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"없습니다. 패널 종류는 그래픽카드 메모리와 무관합니다. 기준은 [Ollama 최소 사양](/posts/ollama-minimum-spec.html)에 있습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>OLED 모니터 코딩 — 번인이 실제로 문제가 되는 조건</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-17">2026년 8월 17일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>OLED 모니터는 검은색이 진짜 검고 응답이 빠릅니다. 리뷰 평가도 좋습니다.</p>
+<p><strong>그런데 코딩은 OLED에 가장 불리한 사용 방식입니다.</strong>
+제품이 나빠서가 아니라 <strong>쓰는 방식이 정확히 약점을 겨냥하기 때문</strong>입니다.</p>
+<p>이 글은 &quot;사지 마세요&quot;가 아닙니다. <strong>무엇이 구조적으로 정해져 있고 무엇이 아닌지</strong>를 가릅니다.</p>
+<h2 id="먼저-이-글이-말할-수-없는-것">먼저 — 이 글이 말할 수 없는 것</h2>
+<p>이 사이트는 <a href="/about.html">스펙으로 판단할 수 있는 것만 다룹니다</a>.
+번인은 그 경계에 걸쳐 있습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>말할 수 있음</th><th>말할 수 없음</th></tr></thead>
+<tbody>
+<tr><td>왜 생기는가</td><td>✅ 구조입니다</td><td></td></tr>
+<tr><td>코딩이 왜 불리한가</td><td>✅ 구조입니다</td><td></td></tr>
+<tr><td><strong>몇 년 쓰면 생기는가</strong></td><td></td><td>❌ <strong>아무도 모릅니다</strong></td></tr>
+<tr><td>이 제품이 안전한가</td><td></td><td>❌ 장기 사용 없이는 불가</td></tr>
+<tr><td>보증이 어떻게 되는가</td><td>✅ 문서에 적혀 있습니다</td><td></td></tr>
+</tbody>
+</table></div>
+<p><strong>&quot;몇 시간 쓰면 번인이 온다&quot;는 수치를 내는 글은 의심하세요.</strong>
+사용 밝기, 화면 내용, 개체 차이에 전부 걸려 있어서 하나로 못 뽑습니다.</p>
+<h2 id="1-왜-생기는가-소자가-늙습니다">1. 왜 생기는가 — 소자가 늙습니다</h2>
+<p><strong>OLED는 픽셀 하나하나가 스스로 빛을 냅니다.</strong> 뒤에서 비추는 조명이 따로 없습니다.</p>
+<p>빛을 내는 재료가 유기물이라 <strong>켜져 있던 시간만큼 밝기가 조금씩 떨어집니다.</strong>
+모든 픽셀이 똑같이 늙으면 티가 안 납니다. 문제는 그렇지 않을 때입니다.</p>
+<pre><code>화면이 계속 바뀜   →  픽셀들이 고르게 늙음   →  티 안 남
+같은 곳만 켜져 있음 →  그 부분만 먼저 늙음   →  잔상으로 보임</code></pre>
+<p><strong>이게 번인입니다.</strong> 타는 게 아니라 <strong>한쪽만 먼저 닳는 것</strong>입니다.</p>
+<h2 id="2-코딩이-왜-최악인가">2. 코딩이 왜 최악인가</h2>
+<p>화면을 떠올려 보세요. <strong>하루 종일 같은 자리에 같은 것이 있습니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>화면 요소</th><th>위치가 바뀌나</th></tr></thead>
+<tbody>
+<tr><td>편집기 탭 막대</td><td>❌ 항상 위</td></tr>
+<tr><td>파일 탐색기 사이드바</td><td>❌ 항상 왼쪽</td></tr>
+<tr><td>상태 표시줄</td><td>❌ 항상 아래</td></tr>
+<tr><td>터미널 프롬프트</td><td>❌ 거의 같은 자리</td></tr>
+<tr><td>작업 표시줄·시계</td><td>❌ 고정</td></tr>
+<tr><td>코드 본문</td><td>⭕ 바뀝니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>바뀌는 건 가운데뿐입니다.</strong> 나머지는 켜는 순간부터 끄는 순간까지 그대로입니다.</p>
+<p>영상이나 게임은 정반대입니다. 화면이 통째로 계속 바뀌어서 픽셀이 고르게 늙습니다.
+<strong>같은 OLED라도 용도에 따라 위험이 크게 다른 이유</strong>가 이것입니다.</p>
+<h3 id="밝은-테마가-더-불리합니다">밝은 테마가 더 불리합니다</h3>
+<p><strong>흰 배경은 소자를 세게, 오래 켜는 것</strong>입니다.
+검은 배경이면 그 픽셀은 아예 꺼져 있습니다 — OLED에서 검정은 소자를 끄는 것이니까요.</p>
+<pre><code>다크 테마   →  대부분의 픽셀이 꺼져 있음
+라이트 테마 →  화면 전체가 계속 켜져 있음</code></pre>
+<p><strong>OLED를 쓰신다면 다크 테마가 구조적으로 유리합니다.</strong> 취향 문제가 아닙니다.</p>
+<h2 id="3-번인보다-먼저-만나는-문제-밝기가-내려갑니다">3. ⚠️ 번인보다 먼저 만나는 문제 — 밝기가 내려갑니다</h2>
+<p><strong>이건 몇 년 뒤가 아니라 첫날부터 겪습니다.</strong> 그런데 잘 안 알려져 있습니다.</p>
+<p>OLED는 <strong>화면 전체가 밝아지면 최대 밝기를 스스로 낮춥니다.</strong> 전력과 발열 때문입니다.
+ABL 이라고 부릅니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>화면</th><th>ABL 동작</th></tr></thead>
+<tbody>
+<tr><td>어두운 장면에 밝은 부분 조금</td><td>아주 밝게 낼 수 있습니다</td></tr>
+<tr><td>영화·게임</td><td>대체로 문제없습니다</td></tr>
+<tr><td><strong>흰 문서 전체 화면</strong></td><td>⚠️ <strong>밝기가 억제됩니다</strong></td></tr>
+<tr><td><strong>라이트 테마 IDE</strong></td><td>⚠️ <strong>같은 상황입니다</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>코딩 화면은 대개 전체가 균일합니다.</strong> OLED가 가장 잘하는 조건의 반대입니다.</p>
+<p>그래서 이런 일이 생깁니다.</p>
+<ul>
+<li>밝은 방에서 흰 배경 문서를 보면 <strong>생각보다 어둡습니다</strong></li>
+<li>창을 바꿀 때 <strong>화면 밝기가 미묘하게 출렁입니다</strong></li>
+</ul>
+<p><strong>번인은 확률이지만 이건 사양대로 항상 일어납니다.</strong> 실사용에서 이쪽을 먼저 체감합니다.</p>
+<h2 id="4-글자-테두리에-색이-번지는-문제">4. 글자 테두리에 색이 번지는 문제</h2>
+<p><strong>세로 모니터 글에서 다뤘던 것과 원인이 같습니다.</strong></p>
+<p>화면의 점 하나는 빨강·초록·파랑 칸이 <strong>가로로 나란히</strong> 붙어 있는 구조입니다.
+윈도우는 이 배열을 전제로 글자 테두리를 다듬습니다.</p>
+<p><strong>그런데 OLED는 그 배열이 아닙니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>패널</th><th>서브픽셀 배열</th></tr></thead>
+<tbody>
+<tr><td>일반 LCD</td><td>빨강·초록·파랑 가로 배열 — <strong>표준</strong></td></tr>
+<tr><td>QD-OLED</td><td>삼각형 배열</td></tr>
+<tr><td>WOLED</td><td>흰색 칸이 추가된 배열</td></tr>
+</tbody>
+</table></div>
+<p><strong>둘 다 표준이 아니라서</strong> 글자 테두리에 색이 비칠 수 있습니다.
+<a href="/posts/vertical-monitor-coding.html">모니터를 세로로 돌렸을 때</a> 생기는 문제와 뿌리가 같습니다.</p>
+<p><strong>해결도 같습니다.</strong> 윈도우에서 <code>ClearType</code>을 검색해 조정 마법사를 열고 끄면
+색 번짐이 사라집니다. 대신 글자가 아주 약간 흐릿해집니다.</p>
+<blockquote><p><strong>맥은 해당하지 않습니다.</strong> 애플이 서브픽셀 방식을 이미 걷어냈습니다.</p></blockquote>
+<h2 id="5-제조사가-넣는-대책과-그-대가">5. 제조사가 넣는 대책과 그 대가</h2>
+<p><strong>대책은 다 들어 있습니다.</strong> 다만 공짜가 아닙니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>대책</th><th>하는 일</th><th>대가</th></tr></thead>
+<tbody>
+<tr><td>픽셀 시프트</td><td>화면을 몇 픽셀씩 미세하게 옮김</td><td>가장자리가 아주 조금 잘림</td></tr>
+<tr><td>로고 밝기 감소</td><td>고정된 밝은 부분을 어둡게</td><td><strong>UI 일부가 어두워질 수 있음</strong></td></tr>
+<tr><td>패널 보정</td><td>꺼질 때 소자 상태를 고름</td><td>끄고 나서 잠깐 기다려야 함</td></tr>
+<tr><td>화면 끄기</td><td>자리를 비우면 꺼짐</td><td>—</td></tr>
+</tbody>
+</table></div>
+<p><strong>두 번째가 코딩에서 성가실 수 있습니다.</strong> 고정된 밝은 영역을 감지해서 낮추는 기능이라,
+탭 막대나 사이드바가 대상이 되는 경우가 있습니다.</p>
+<p><strong>그리고 &quot;패널 보정&quot;은 전원을 완전히 뽑으면 못 합니다.</strong>
+멀티탭으로 전원을 끊어두는 습관이 있으시면 이 기능이 동작하지 않습니다.</p>
+<h2 id="6-스펙으로-확인되는-유일한-항목-보증">6. 스펙으로 확인되는 유일한 항목 — 보증</h2>
+<p>번인 위험을 숫자로 잴 수는 없습니다. <strong>그런데 보증은 문서에 적혀 있습니다.</strong></p>
+<p><strong>&quot;번인(잔상)을 보증에 포함하는가&quot;</strong> — 이걸 확인하세요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>확인할 것</th><th>왜</th></tr></thead>
+<tbody>
+<tr><td>번인이 보증 대상인가</td><td>명시적으로 <strong>제외</strong>하는 제품이 있습니다</td></tr>
+<tr><td>기간이 몇 년인가</td><td>제조사·모델마다 다릅니다</td></tr>
+<tr><td>조건이 붙는가</td><td>사용 시간·용도 제한이 있을 수 있습니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>제조사가 번인을 보증한다는 건 그만큼 자신이 있다는 신호</strong>이기도 합니다.
+이 사이트의 원칙에서 이건 <strong>추측이 아니라 확인 가능한 사실</strong>이라 판단 근거로 씁니다.</p>
+<p>⚠️ <strong>보증 내용은 모델과 지역에 따라 다릅니다.</strong> 제품 페이지가 아니라
+<strong>보증서 문구를 직접 확인</strong>하세요.</p>
+<h2 id="7-그래서-사도-되나">7. 그래서 사도 되나</h2>
+<p><strong>주 코딩 화면 한 대뿐이라면 — 지금은 권하지 않습니다.</strong></p>
+<p>같은 화면이 하루 8시간 이상 고정되는 조건이고, ABL 때문에 밝은 문서에서 손해를 봅니다.
+<a href="/posts/coding-monitor-resolution.html">27&quot; QHD 나 4K LCD</a>가 안전한 선택입니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsnkTpck0" target="_blank" rel="sponsored nofollow noopener">27인치 QHD 모니터 보기</a>
+  <span class="buy-note">배율을 안 건드리고 쓸 수 있는 조합입니다</span>
+</aside>
+<p><strong>코딩 겸 영상·게임이라면 — 조건부로 괜찮습니다.</strong></p>
+<p>용도가 섞이면 화면이 바뀌는 시간이 늘어나 위험이 줄어듭니다. 대신 이렇게 쓰세요.</p>
+<ul>
+<li><strong>다크 테마를 쓰세요</strong> — 가장 효과가 큽니다</li>
+<li>자리를 비울 때 화면이 꺼지도록 짧게 설정하세요</li>
+<li>픽셀 시프트를 켜두세요</li>
+<li>전원을 완전히 뽑지 마세요 (패널 보정이 안 됩니다)</li>
+<li><strong>번인 보증을 확인하고 사세요</strong></li>
+</ul>
+<p><strong>두 대를 쓴다면 역할을 나누세요.</strong>
+<a href="/posts/dual-monitor-vs-single.html">듀얼 구성</a>이라면 고정 UI가 많은 쪽을 LCD로,
+OLED를 보조로 두는 배치가 유리합니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="요즘-oled는-번인이-해결됐다던데요">요즘 OLED는 번인이 해결됐다던데요</h3>
+<p>많이 나아진 것은 맞습니다. 다만 <strong>원인 자체가 사라진 게 아니라 늦춘 것</strong>입니다.
+소자가 켜진 시간만큼 닳는다는 구조는 그대로입니다.</p>
+<h3 id="하루-몇-시간까지-괜찮나요">하루 몇 시간까지 괜찮나요</h3>
+<p><strong>답할 수 없습니다.</strong> 밝기, 화면 내용, 개체 차이에 전부 걸려 있습니다.
+시간으로 기준을 제시하는 글은 근거가 없을 가능성이 큽니다.</p>
+<h3 id="다크-테마를-쓰면-안전한가요">다크 테마를 쓰면 안전한가요</h3>
+<p>안전해지는 게 아니라 유리해집니다. 켜져 있는 픽셀이 줄어들기 때문입니다.
+다만 사이드바나 탭 막대처럼 <strong>고정된 밝은 요소는 다크 테마에서도 그대로</strong> 남습니다.</p>
+<h3 id="화면이-어둡게-느껴집니다">화면이 어둡게 느껴집니다</h3>
+<p>ABL 때문일 수 있습니다. 화면 전체가 밝을수록 최대 밝기가 억제됩니다.
+고장이 아니라 사양대로 동작하는 것이고, 설정으로 없앨 수는 없습니다.</p>
+<h3 id="글자가-번져-보입니다">글자가 번져 보입니다</h3>
+<p>서브픽셀 배열이 표준과 달라서 그렇습니다. 윈도우라면 ClearType 을 끄면 사라집니다.
+<a href="/posts/vertical-monitor-coding.html">세로 모니터 글</a>에 같은 문제를 자세히 적었습니다.</p>
+<h3 id="로컬-llm이나-성능에-영향이-있나요">로컬 LLM이나 성능에 영향이 있나요</h3>
+<p>없습니다. 패널 종류는 그래픽카드 메모리와 무관합니다.
+기준은 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양</a>에 있습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>번인은 타는 게 아니라 <strong>한쪽 소자만 먼저 닳는 것</strong>입니다</li>
+<li><strong>코딩은 화면이 거의 안 바뀝니다.</strong> 구조적으로 가장 불리한 용도입니다</li>
+<li><strong>번인보다 ABL 을 먼저 만납니다.</strong> 흰 화면에서 밝기가 억제됩니다</li>
+<li>글자 테두리 색 번짐은 <strong>서브픽셀 배열</strong> 때문입니다. ClearType 을 끄면 됩니다</li>
+<li><strong>&quot;몇 년이면 생긴다&quot;는 아무도 모릅니다.</strong> 그런 수치는 믿지 마세요</li>
+<li>스펙으로 확인되는 건 하나뿐입니다 — <strong>번인 보증</strong></li>
+</ol>
+<p>실제로 오래 써보신 결과가 다르면 <a href="/contact.html">알려주세요</a>.
+이 주제는 특히 장기 사용 경험이 값집니다. 확인 후 본문을 고치고 갱신일을 표시합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">OLED</span> <span class="tag">번인</span> <span class="tag">QD-OLED</span> <span class="tag">코딩용모니터</span> <span class="tag">서브픽셀</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/dp-vs-hdmi-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">DP와 HDMI — 코딩용 모니터에 뭘 꽂아야 하나</span>
+        <span class="card-desc">코딩은 60Hz면 되기 때문에 대부분 아무 단자나 됩니다. 막히는 건 4K부터입니다. 필요한 대역폭을 직접 계산해서 어디서 걸리는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-5k-vs-4k-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">27인치 5K vs 4K — 배율이 정수로 떨어진다는 것</span>
+        <span class="card-desc">27인치 5K는 200% 배율에서 작업 영역이 정확히 QHD가 됩니다. 4K를 150%로 쓴 것과 넓이가 같고 선명도만 다릅니다. PPI와 배율을 계산해 갈랐습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-usb-c-one-cable.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">노트북 모니터 원케이블 연결 — USB-C 하나로 되는 조건</span>
+        <span class="card-desc">케이블 하나로 화면·충전·허브를 다 하려면 세 가지가 맞아야 합니다. 노트북 포트, 모니터가 주는 전력, 케이블. 어디서 막히는지 순서대로 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

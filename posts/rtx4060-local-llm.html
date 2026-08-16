@@ -86,7 +86,7 @@
 <p>16GB로 올라가는 선택지는 <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB vs 5070</a>에 있습니다.</p></blockquote>
 <h2 id="바로-확인하기">바로 확인하기</h2>
 <p>용도와 다루는 내용의 길이를 고르면, 지금 카드로 어디까지 되는지 바로 나옵니다.</p>
-<p><div data-vram-tool></div></p>
+<div data-vram-tool></div>
 <h2 id="결론부터">결론부터</h2>
 <p>RTX 4060(8GB)에서 <strong>Q4 양자화, A4 두세 장 분량</strong> 기준입니다.</p>
 <div class="table-wrap"><table>
@@ -101,7 +101,7 @@
 </table></div>
 <p><strong>7~8B가 4060의 자리입니다.</strong> 여기서는 전부 VRAM에 올라가 쾌적하게 돌아갑니다.</p>
 <p>그리고 <strong>14B에서 벽이 옵니다.</strong> 10GB가 필요한데 8GB뿐이라 일부가 CPU로 넘어갑니다.</p>
-<p><figure class="fig">
+<figure class="fig">
 <svg viewBox="0 0 640 168" width="640" height="168" role="img" aria-label="8GB 카드에 14B 모델을 올리면 2GB가 CPU로 넘어가 느려진다">
 <title>8GB 카드에 14B 모델을 올리면 2GB가 CPU로 넘어가 느려진다</title>
 
@@ -121,9 +121,9 @@
 <text x="16" y="154" fill="var(--fg-muted)" font-size="12">에러가 나는 게 아니라 속도만 떨어져서 원인을 알기 어렵습니다.</text>
 </svg>
 <figcaption>넘친 몫은 시스템 램과 CPU 가 떠맡습니다. 대역폭이 VRAM 의 10 분의 1 수준이라 그만큼 느려집니다.</figcaption>
-</figure></p>
+</figure>
 <p><strong>컨텍스트를 줄여도 이 벽은 사라지지 않습니다.</strong> 모델 파일 자체가 이미 8GB를 넘기 때문입니다.</p>
-<p><figure class="fig">
+<figure class="fig">
 <svg viewBox="0 0 640 162" width="640" height="162" role="img" aria-label="필요 메모리는 가중치와 여유가 대부분이고 컨텍스트 몫은 작다">
 <title>필요 메모리는 가중치와 여유가 대부분이고 컨텍스트 몫은 작다</title>
 
@@ -146,7 +146,7 @@
 <text x="16" y="148" fill="var(--fg-muted)" font-size="12">8GB 카드에서 "짧게 물어보면 되지 않나" 가 통하지 않는 이유입니다.</text>
 </svg>
 <figcaption>가중치와 여유는 컨텍스트와 무관하게 먼저 들어갑니다. 그 합이 이미 VRAM 을 넘으면 컨텍스트를 줄여도 넘습니다.</figcaption>
-</figure></p>
+</figure>
 <p>9.0GB는 계산값이 아니라 <code>ollama.com</code> 에 표시된 <strong>실제 파일 크기</strong>입니다(2026-08-15 확인).
 <strong>&quot;짧게 물어보면 되지 않나&quot;가 통하지 않는 구간입니다.</strong></p>
 <h2 id="8gb가-애매한-이유">8GB가 애매한 이유</h2>
@@ -255,24 +255,24 @@ CPU로 넘어가는 양이 줄어 조금은 나아집니다. 짧은 질문 위�
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/vram-8gb-tips.html">
+      <a href="/posts/local-llm-start-guide.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에</span>
-        <span class="card-desc">8GB는 좁지만 쓸 수 없는 건 아닙니다. 컨텍스트를 늘려도 되는 이유, 양자화를 올리면 안 되는 이유를 계산으로 정리했습니다.</span>
+        <span class="card-title">로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드</span>
+        <span class="card-desc">VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/rtx5070ti-vs-5080.html">
+      <a href="/posts/ollama-install-guide.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">RTX 5070 Ti vs 5080 — 로컬 LLM에서는 같은 카드입니다</span>
-        <span class="card-desc">VRAM이 둘 다 16GB이고 대역폭 차이는 7%입니다. 돌아가는 모델 크기가 완전히 같습니다. 로컬 LLM만 본다면 더 비싼 쪽을 살 이유가 없습니다.</span>
+        <span class="card-title">Ollama 설치부터 첫 대화까지 — 명령어 두 줄</span>
+        <span class="card-desc">로컬 LLM을 처음 돌려보는 가장 빠른 길입니다. 설치, 모델 받기, 대화까지 순서대로. 어떤 모델을 골라야 하는지도 함께 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/rtx4060ti-16gb-vs-4070.html">
+      <a href="/posts/rtx3060-12gb-local-llm.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">RTX 5060 Ti 16GB vs RTX 5070 — VRAM이냐 속도냐</span>
-        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 5060 Ti는 VRAM 16GB, 5070은 대역폭 1.5배. 단종된 4060 Ti·4070을 보고 계셨다면 이 글이 대체입니다.</span>
+        <span class="card-title">중고 RTX 3060 12GB — 로컬 LLM 입문에 아직 쓸 만한가</span>
+        <span class="card-desc">단종된 구형 카드지만 VRAM 12GB로 14B 모델이 여유롭게 돌아갑니다. 신품 4060 8GB와 비교해 어느 쪽이 맞는지, 중고로 살 때 확인할 것을 정리했습니다.</span>
       </a>
     </li>
   </ul>

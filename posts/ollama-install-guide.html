@@ -76,7 +76,7 @@
 <p><a href="/posts/local-llm-start-guide.html">시작 가이드</a>에서 내 장비로 뭐가 되는지 확인하셨다면,
 이제 실제로 돌려볼 차례입니다.</p>
 <p><strong>Ollama가 가장 빠른 길입니다.</strong> 설치하고 명령어 두 줄이면 대화가 시작됩니다.</p>
-<p><figure class="fig">
+<figure class="fig">
 <svg viewBox="0 0 640 186" width="640" height="186" role="img" aria-label="Ollama 설치, 모델 받기, 대화 세 단계">
 <title>Ollama 설치, 모델 받기, 대화 세 단계</title>
 
@@ -105,7 +105,7 @@
 <text x="16" y="172" fill="var(--fg-muted)" font-size="12">어려운 건 설치가 아니라 어떤 모델을 고르느냐입니다.</text>
 </svg>
 <figcaption>설치 자체는 몇 분이면 됩니다. 판단이 필요한 지점은 모델 크기 선택입니다.</figcaption>
-</figure></p>
+</figure>
 <h2 id="1-설치">1. 설치</h2>
 <p><code>ollama.com</code> 에서 내려받아 실행하면 됩니다.</p>
 <div class="table-wrap"><table>
@@ -137,7 +137,7 @@
 <p>용량이 꽤 큽니다. 8B가 약 4.7GB, 14B가 약 9GB입니다.
 받는 동안 진행률이 표시됩니다.</p>
 <p>내 조합에서 어떤 크기가 맞는지는 아래에서 바로 확인하실 수 있습니다.</p>
-<p><div data-vram-tool></div></p>
+<div data-vram-tool></div>
 <h2 id="3-대화">3. 대화</h2>
 <pre><code>ollama run qwen2.5:7b</code></pre>
 <p>프롬프트가 뜨면 그냥 한국어로 물어보시면 됩니다.
@@ -220,24 +220,24 @@ Ollama를 먼저 설치해두면 그런 프로그램들이 자동으로 붙습�
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/vram-8gb-tips.html">
+      <a href="/posts/local-llm-start-guide.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에</span>
-        <span class="card-desc">8GB는 좁지만 쓸 수 없는 건 아닙니다. 컨텍스트를 늘려도 되는 이유, 양자화를 올리면 안 되는 이유를 계산으로 정리했습니다.</span>
+        <span class="card-title">로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드</span>
+        <span class="card-desc">VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/rtx5070ti-vs-5080.html">
+      <a href="/posts/rtx3060-12gb-local-llm.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">RTX 5070 Ti vs 5080 — 로컬 LLM에서는 같은 카드입니다</span>
-        <span class="card-desc">VRAM이 둘 다 16GB이고 대역폭 차이는 7%입니다. 돌아가는 모델 크기가 완전히 같습니다. 로컬 LLM만 본다면 더 비싼 쪽을 살 이유가 없습니다.</span>
+        <span class="card-title">중고 RTX 3060 12GB — 로컬 LLM 입문에 아직 쓸 만한가</span>
+        <span class="card-desc">단종된 구형 카드지만 VRAM 12GB로 14B 모델이 여유롭게 돌아갑니다. 신품 4060 8GB와 비교해 어느 쪽이 맞는지, 중고로 살 때 확인할 것을 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/rtx4060ti-16gb-vs-4070.html">
+      <a href="/posts/rtx4060-local-llm.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">RTX 5060 Ti 16GB vs RTX 5070 — VRAM이냐 속도냐</span>
-        <span class="card-desc">신품 중급 구간에서 가장 많이 갈리는 선택입니다. 5060 Ti는 VRAM 16GB, 5070은 대역폭 1.5배. 단종된 4060 Ti·4070을 보고 계셨다면 이 글이 대체입니다.</span>
+        <span class="card-title">RTX 4060으로 로컬 LLM — 8GB로 어디까지 되나</span>
+        <span class="card-desc">가장 흔한 입문 카드인 RTX 4060의 VRAM은 8GB입니다. 어떤 크기 모델이 쾌적하게 돌고 어디서 막히는지, 8GB의 한계선을 정리했습니다.</span>
       </a>
     </li>
   </ul>

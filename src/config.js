@@ -18,8 +18,27 @@ export const config = {
     email: 'lmj010903@naver.com',
   },
 
-  // 목록 페이지당 글 수
+  // 홈에 보여줄 '새로 쓴 글' 개수.
+  // 전부 쏟아내면 처음 온 사람이 제목만 훑다가 나갑니다.
+  // 나머지는 카테고리와 검색으로 갑니다.
   postsPerPage: 12,
+
+  // 홈 '골라 읽기 좋은 글'.
+  //
+  // 날짜순만으로는 안 됩니다. 이 사이트는 글이 며칠 사이에 몰려 있어서
+  // 최신순이 사실상 무작위이고, 정작 먼저 읽어야 할 글이 아래로 밀립니다.
+  // 손으로 고른 목록이 필요한 이유입니다.
+  //
+  // 고르는 기준: 카테고리를 대표하면서, 그 글 하나만 읽어도 판단이 서는 것.
+  // 새 글이 쌓이면 여기를 갱신하세요. 없는 slug 를 적으면 빌드가 경고합니다.
+  featured: [
+    'ollama-minimum-spec',
+    'rtx4060ti-16gb-vs-4070',
+    'dev-laptop-spec',
+    'coding-monitor-resolution',
+    'ram-16gb-vs-32gb',
+    'ram-price-2026',
+  ],
 
   // 공정거래위원회 대가성 고지 문구.
   // frontmatter 에 affiliate: true 인 글이면 본문 '맨 위'에 자동 삽입됩니다.
@@ -85,6 +104,31 @@ export const config = {
   nav: [
     { href: '/posts/local-llm-start-guide.html', label: '처음이신가요' },
     { href: '/tools/vram.html', label: 'VRAM 계산기' },
+  ],
+
+  // 홈 상단 진입 카드.
+  //
+  // 홈이 글 목록으로 바로 시작하면 처음 온 사람은 어디부터 볼지 모릅니다.
+  // 제목만 훑다가 나가고, 그게 검색 유입을 다 날립니다.
+  //
+  // 갈래를 둘만 둡니다 — 아무것도 모르는 사람과, 자기 카드로 되는지만 궁금한 사람.
+  // 셋 이상 두면 고르는 것 자체가 일이 되어 아무것도 안 누릅니다.
+  //
+  // 메뉴에도 같은 두 개가 있지만, 메뉴는 작고 처음 온 사람은 잘 안 봅니다.
+  hero: [
+    {
+      href: '/posts/local-llm-start-guide.html',
+      kicker: '처음이신가요',
+      title: '용어 없이 읽는 시작 가이드',
+      desc: 'VRAM·양자화를 몰라도 됩니다. 내 컴퓨터로 되는지부터 확인합니다.',
+    },
+    {
+      href: '/tools/vram.html',
+      kicker: '바로 확인',
+      title: 'VRAM 계산기',
+      desc: '그래픽카드를 고르면 어떤 크기의 모델이 돌아가는지 표로 나옵니다.',
+      primary: true,
+    },
   ],
 
   // 카테고리 정의. slug 는 frontmatter 의 category 와 매칭됩니다.

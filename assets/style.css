@@ -465,6 +465,52 @@ tbody tr:last-child td {
   margin-bottom: 1.8rem;
 }
 
+/* ---- 홈 진입 카드 ----
+   홈이 글 목록으로 바로 시작하면 처음 온 사람은 어디부터 볼지 모릅니다.
+   두 개뿐이라 나란히 놓고, 좁아지면 알아서 쌓입니다. */
+
+.hero {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  margin-top: 1.4rem;
+}
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.1rem 1.2rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--fg);
+}
+.hero-card:hover {
+  border-color: var(--accent);
+}
+/* 계산기 쪽을 눈에 띄게 둡니다. 이 사이트에서 남들과 다른 건 그것뿐입니다. */
+.hero-card.is-primary {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.hero-kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.hero-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.hero-desc {
+  font-size: 0.87rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
 .search {
   margin-top: 1.2rem;
 }
@@ -483,6 +529,72 @@ tbody tr:last-child td {
   color: var(--fg-muted);
   margin: 0.5rem 0 0;
   min-height: 1.3em;
+}
+
+/* ---- 홈 구획 ----
+   홈은 목록이 아니라 안내판입니다. 진입 카드 → 카테고리 → 추천 → 최신 순으로
+   좁혀 가고, 각 판이 구분되어 보여야 훑을 수 있습니다. */
+
+.home-sec {
+  margin-top: 2.6rem;
+}
+.home-sec > h2 {
+  margin: 0 0 0.9rem;
+  padding-top: 0;
+  font-size: 1.15rem;
+}
+/* 검색 중에는 접힙니다. hidden 을 확실히 먹이려면 display 를 눌러야 합니다. */
+[hidden] {
+  display: none !important;
+}
+
+.see-more {
+  margin: 1.1rem 0 0;
+  font-size: 0.87rem;
+  color: var(--fg-muted);
+}
+
+/* 카테고리 판 */
+
+.cat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+}
+
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  height: 100%;
+  padding: 0.9rem 1rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--fg);
+}
+.cat-card:hover {
+  border-color: var(--accent);
+}
+.cat-label {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.cat-desc {
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+.cat-count {
+  margin-top: auto;
+  padding-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .card-list {
@@ -621,6 +733,37 @@ tbody tr:last-child td {
   margin: 0.5rem 0 0;
   font-size: 0.82rem;
   color: var(--fg-muted);
+}
+
+/* 결과 공유.
+   눈에 확 띄면 안 됩니다 — 결론을 읽는 것이 먼저이고 이건 그다음입니다. */
+.vr-share {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0.9rem 0 0;
+}
+.vr-share-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--fg-muted);
+  border-radius: 7px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+.vr-share-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.vr-share-msg {
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+  /* 클립보드가 막힌 환경에서는 주소가 그대로 들어옵니다. 줄을 넘겨야 합니다. */
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
 
 /* ---- 쿠팡 상품 위젯 ----

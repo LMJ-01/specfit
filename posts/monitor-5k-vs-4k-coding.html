@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>27인치 5K vs 4K — 배율이 정수로 떨어진다는 것 | 스펙핏</title>
+<meta name="description" content="27인치 5K는 200% 배율에서 작업 영역이 정확히 QHD가 됩니다. 4K를 150%로 쓴 것과 넓이가 같고 선명도만 다릅니다. PPI와 배율을 계산해 갈랐습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/monitor-5k-vs-4k-coding.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="27인치 5K vs 4K — 배율이 정수로 떨어진다는 것 | 스펙핏">
+<meta property="og:description" content="27인치 5K는 200% 배율에서 작업 영역이 정확히 QHD가 됩니다. 4K를 150%로 쓴 것과 넓이가 같고 선명도만 다릅니다. PPI와 배율을 계산해 갈랐습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/monitor-5k-vs-4k-coding.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"27인치 5K vs 4K — 배율이 정수로 떨어진다는 것","description":"27인치 5K는 200% 배율에서 작업 영역이 정확히 QHD가 됩니다. 4K를 150%로 쓴 것과 넓이가 같고 선명도만 다릅니다. PPI와 배율을 계산해 갈랐습니다.","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/monitor-5k-vs-4k-coding.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"27인치 5K vs 4K — 배율이 정수로 떨어진다는 것","item":"https://specfit.kr/posts/monitor-5k-vs-4k-coding.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"5K를 사면 코드가 더 보이나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 200% 배율에서 작업 영역이 2560×1440이라 27\" QHD와 줄 수가 같습니다. 약 75줄입니다. 더 보고 싶으시면 32\" 4K나 세로 모니터 쪽입니다."}},{"@type":"Question","name":"5K를 배율 100%로 쓰면 넓지 않나요","acceptedAnswer":{"@type":"Answer","text":"넓습니다. 다만 218 PPI에서 100%면 글자가 극단적으로 작아져 실제로 읽기 어렵습니다. 그렇게 쓸 거라면 애초에 5K를 살 이유가 없습니다."}},{"@type":"Question","name":"27인치 4K를 200%로 쓰면 정수 배율 아닌가요","acceptedAnswer":{"@type":"Answer","text":"맞습니다. 다만 그때 작업 영역이 1920×1080으로 내려갑니다. 27인치에서 FHD만큼만 쓰게 되는 것이라 코딩에서는 손해가 큽니다. 그래서 대부분 150%로 쓰게 되고, 그 순간 분수 배율이 됩니다."}},{"@type":"Question","name":"윈도우에서 분수 배율이 그렇게 나쁜가요","acceptedAnswer":{"@type":"Answer","text":"최신 앱만 쓰신다면 글자는 선명합니다. 문제는 오래된 프로그램이 섞일 때입니다. 개발 도구 중에도 아직 그런 것이 있어서, 창마다 흐릿함이 다른 상황이 생깁니다."}},{"@type":"Question","name":"그래픽카드가 좋아야 하나요","acceptedAnswer":{"@type":"Answer","text":"코딩 용도로는 아닙니다. 화면 출력은 그래픽카드에 가벼운 일입니다. 로컬 LLM에 쓸 VRAM도 거의 줄지 않습니다. 기준은 [Ollama 최소 사양](/posts/ollama-minimum-spec.html)에 있습니다."}},{"@type":"Question","name":"노트북 화면에도 같은 이야기가 적용되나요","acceptedAnswer":{"@type":"Answer","text":"적용됩니다. 노트북은 화면 크기 대비 해상도가 높아 배율을 거의 항상 쓰게 됩니다. 다만 화면을 고를 수 없고 살 때 정해집니다 — 기준은 [개발용 노트북 사양](/posts/dev-laptop-spec.html)에 정리했습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>27인치 5K vs 4K — 배율이 정수로 떨어진다는 것</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-17">2026년 8월 17일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p><a href="/posts/coding-monitor-resolution.html">코딩용 모니터 글</a>에서 <strong>27인치 4K는 넓어지는 게 아니라 선명해지는 것</strong>이라고 적었습니다.
+배율을 올려 쓰기 때문에 실질 작업 영역이 QHD와 비슷해진다는 이야기였습니다.</p>
+<p>그러면 자연스럽게 다음 질문이 나옵니다. <strong>그럼 5K는 뭐가 다른가?</strong></p>
+<p>넓이로 보면 27인치 5K도 4K와 결국 같은 자리에 도착합니다.
+<strong>그런데 도착하는 방식이 다르고, 그 차이가 글자에 그대로 나옵니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>조합</th><th>PPI</th><th>흔한 배율</th><th>작업 영역</th><th>배율이 정수인가</th></tr></thead>
+<tbody>
+<tr><td>27&quot; QHD</td><td>109</td><td>100%</td><td>2560×1440</td><td>✅ <strong>배율 자체가 없음</strong></td></tr>
+<tr><td>27&quot; 4K</td><td>163</td><td>150%</td><td>2560×1440 상당</td><td>❌ 분수</td></tr>
+<tr><td><strong>27&quot; 5K</strong></td><td><strong>218</strong></td><td><strong>200%</strong></td><td><strong>2560×1440</strong></td><td>✅ <strong>정확히 2배</strong></td></tr>
+<tr><td>24&quot; 4K</td><td>184</td><td>200%</td><td>1920×1080</td><td>✅ 정수지만 좁음</td></tr>
+<tr><td>32&quot; 4K</td><td>138</td><td>125%</td><td>3072×1728 상당</td><td>❌ 분수</td></tr>
+<tr><td>32인치급 6K</td><td>약 218</td><td>200%</td><td>3008×1692</td><td>✅ 넓고 선명</td></tr>
+</tbody>
+</table></div>
+<p><strong>셋 다 작업 영역이 2560×1440으로 같습니다.</strong> 넓이는 승부처가 아닙니다.
+갈리는 건 <strong>거기 도달하는 방식</strong>입니다.</p>
+<h2 id="정수-배율이-뭔가">정수 배율이 뭔가</h2>
+<p>화면에 글자를 그릴 때, <strong>프로그램이 생각하는 픽셀</strong>과 <strong>화면의 실제 픽셀</strong>이 따로 있습니다.
+배율은 그 둘 사이의 비율입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 296" width="640" height="296" role="img" aria-label="정수 배율은 픽셀 경계가 맞고 분수 배율은 픽셀 한가운데를 지난다">
+<title>정수 배율은 픽셀 경계가 맞고 분수 배율은 픽셀 한가운데를 지난다</title>
+
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">가는 선이 실제 픽셀, 굵은 선이 화면에 그려질 경계</text>
+
+<rect x="60" y="56" width="120" height="120" fill="var(--bg-soft)" rx="2" stroke="var(--border)"/>
+<line x1="75" y1="56" x2="75" y2="176" stroke="var(--border)"/>
+<line x1="60" y1="71" x2="180" y2="71" stroke="var(--border)"/>
+<line x1="90" y1="56" x2="90" y2="176" stroke="var(--border)"/>
+<line x1="60" y1="86" x2="180" y2="86" stroke="var(--border)"/>
+<line x1="105" y1="56" x2="105" y2="176" stroke="var(--border)"/>
+<line x1="60" y1="101" x2="180" y2="101" stroke="var(--border)"/>
+<line x1="120" y1="56" x2="120" y2="176" stroke="var(--border)"/>
+<line x1="60" y1="116" x2="180" y2="116" stroke="var(--border)"/>
+<line x1="135" y1="56" x2="135" y2="176" stroke="var(--border)"/>
+<line x1="60" y1="131" x2="180" y2="131" stroke="var(--border)"/>
+<line x1="150" y1="56" x2="150" y2="176" stroke="var(--border)"/>
+<line x1="60" y1="146" x2="180" y2="146" stroke="var(--border)"/>
+<line x1="165" y1="56" x2="165" y2="176" stroke="var(--border)"/>
+<line x1="60" y1="161" x2="180" y2="161" stroke="var(--border)"/>
+<line x1="90" y1="56" x2="90" y2="176" stroke="var(--fig-fit)" stroke-width="2.5"/>
+<line x1="60" y1="86" x2="180" y2="86" stroke="var(--fig-fit)" stroke-width="2.5"/>
+<line x1="120" y1="56" x2="120" y2="176" stroke="var(--fig-fit)" stroke-width="2.5"/>
+<line x1="60" y1="116" x2="180" y2="116" stroke="var(--fig-fit)" stroke-width="2.5"/>
+<line x1="150" y1="56" x2="150" y2="176" stroke="var(--fig-fit)" stroke-width="2.5"/>
+<line x1="60" y1="146" x2="180" y2="146" stroke="var(--fig-fit)" stroke-width="2.5"/>
+<text x="60" y="202" fill="var(--fg)" font-size="12" font-weight="600">배율 200% — 정수</text>
+<text x="60" y="220" fill="var(--fg-muted)" font-size="11">경계가 픽셀 선에 딱 얹힘</text>
+
+<rect x="380" y="56" width="120" height="120" fill="var(--bg-soft)" rx="2" stroke="var(--border)"/>
+<line x1="395" y1="56" x2="395" y2="176" stroke="var(--border)"/>
+<line x1="380" y1="71" x2="500" y2="71" stroke="var(--border)"/>
+<line x1="410" y1="56" x2="410" y2="176" stroke="var(--border)"/>
+<line x1="380" y1="86" x2="500" y2="86" stroke="var(--border)"/>
+<line x1="425" y1="56" x2="425" y2="176" stroke="var(--border)"/>
+<line x1="380" y1="101" x2="500" y2="101" stroke="var(--border)"/>
+<line x1="440" y1="56" x2="440" y2="176" stroke="var(--border)"/>
+<line x1="380" y1="116" x2="500" y2="116" stroke="var(--border)"/>
+<line x1="455" y1="56" x2="455" y2="176" stroke="var(--border)"/>
+<line x1="380" y1="131" x2="500" y2="131" stroke="var(--border)"/>
+<line x1="470" y1="56" x2="470" y2="176" stroke="var(--border)"/>
+<line x1="380" y1="146" x2="500" y2="146" stroke="var(--border)"/>
+<line x1="485" y1="56" x2="485" y2="176" stroke="var(--border)"/>
+<line x1="380" y1="161" x2="500" y2="161" stroke="var(--border)"/>
+<line x1="402.5" y1="56" x2="402.5" y2="176" stroke="var(--fig-over)" stroke-width="2.5"/>
+<line x1="380" y1="78.5" x2="500" y2="78.5" stroke="var(--fig-over)" stroke-width="2.5"/>
+<line x1="425" y1="56" x2="425" y2="176" stroke="var(--fig-over)" stroke-width="2.5"/>
+<line x1="380" y1="101" x2="500" y2="101" stroke="var(--fig-over)" stroke-width="2.5"/>
+<line x1="447.5" y1="56" x2="447.5" y2="176" stroke="var(--fig-over)" stroke-width="2.5"/>
+<line x1="380" y1="123.5" x2="500" y2="123.5" stroke="var(--fig-over)" stroke-width="2.5"/>
+<line x1="470" y1="56" x2="470" y2="176" stroke="var(--fig-over)" stroke-width="2.5"/>
+<line x1="380" y1="146" x2="500" y2="146" stroke="var(--fig-over)" stroke-width="2.5"/>
+<line x1="492.5" y1="56" x2="492.5" y2="176" stroke="var(--fig-over)" stroke-width="2.5"/>
+<line x1="380" y1="168.5" x2="500" y2="168.5" stroke="var(--fig-over)" stroke-width="2.5"/>
+<text x="380" y="202" fill="var(--fg)" font-size="12" font-weight="600">배율 150% — 분수</text>
+<text x="380" y="220" fill="var(--fg-muted)" font-size="11">경계가 픽셀 한가운데를 지남</text>
+
+<text x="16" y="260" fill="var(--fg)" font-size="13" font-weight="600">오른쪽은 반 픽셀을 켤 수 없어 옆 픽셀에 흐리게 나눠 칠합니다.</text>
+<text x="16" y="280" fill="var(--fg-muted)" font-size="12">글자 테두리가 미세하게 뭉개지는 이유이고, PPI 와는 별개의 문제입니다.</text>
+</svg>
+<figcaption>논리 픽셀 하나가 물리 픽셀 정수 개에 떨어지면 어긋남이 없습니다. 27인치 5K 의 200% 가 그 경우입니다.</figcaption>
+</figure>
+<p><strong>200%면 프로그램의 픽셀 하나가 실제 픽셀 정확히 네 칸(2×2)이 됩니다.</strong>
+어긋날 데가 없습니다.</p>
+<p><strong>150%면 픽셀 하나가 1.5칸씩 차지합니다.</strong> 그런데 화면은 픽셀 반 칸을 켤 수 없습니다.
+그래서 경계에 걸친 부분을 옆 픽셀에 흐리게 나눠 칠하게 됩니다.</p>
+<pre><code>200%  →  1 : 4   정확히 나눠떨어짐
+150%  →  1 : 2.25  나눠떨어지지 않음</code></pre>
+<p><strong>이건 PPI와 별개의 문제입니다.</strong> PPI가 높아도 배율이 분수면 어긋남은 생깁니다.
+27인치 5K가 좋은 이유는 PPI가 218이라서만이 아니라, <strong>그 PPI에서 200%가 자연스러운 값</strong>이기 때문입니다.</p>
+<h3 id="5120은-2560의-정확히-두-배입니다">5120은 2560의 정확히 두 배입니다</h3>
+<p>이게 전부입니다.</p>
+<pre><code>5120 ÷ 2 = 2560
+2880 ÷ 2 = 1440</code></pre>
+<p><strong>27인치 QHD로 쓰던 화면이 그대로, 픽셀만 네 배로 촘촘해진 것</strong>입니다.
+줄 수도 그대로 약 75줄입니다.</p>
+<p>4K에서 같은 작업 영역을 만들려면 3840 ÷ 1.5 = 2560 으로 가야 하는데,
+<strong>나눗셈은 떨어져도 픽셀 매핑이 안 떨어집니다.</strong></p>
+<h2 id="그래서-얼마나-차이나나-솔직하게">그래서 얼마나 차이나나 — 솔직하게</h2>
+<p><strong>생각보다 작습니다.</strong> 이 글의 결론이 &quot;5K를 사세요&quot;가 아닌 이유입니다.</p>
+<p>분수 배율의 흐릿함이 어디서 나오는지는 운영체제마다 다릅니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>윈도우</th><th>맥</th></tr></thead>
+<tbody>
+<tr><td>글자</td><td>최신 앱은 <strong>원래 해상도로 그려서 선명</strong></td><td>2배로 그린 뒤 축소</td></tr>
+<tr><td>흐릿함이 나오는 곳</td><td><strong>구형 앱, 비트맵 아이콘</strong></td><td>전반적으로 아주 약간</td></tr>
+<tr><td>앱마다 다른가</td><td><strong>예</strong> — 여기가 성가십니다</td><td>아니요, 일관적입니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>윈도우에서 분수 배율의 진짜 불편은 선명도보다 일관성입니다.</strong>
+어떤 창은 멀쩡하고 어떤 창만 흐릿한 상황이 생깁니다.</p>
+<p><strong>맥은 일관적인 대신 대가가 있습니다.</strong> 2배로 그린 다음 줄이는 방식이라
+그래픽카드가 할 일이 늘어납니다. 코딩에서는 체감되지 않지만 구조는 그렇습니다.</p>
+<blockquote><p>이 절은 <strong>저희가 나란히 놓고 재본 것이 아닙니다.</strong>
+배율이 정수로 떨어지느냐는 계산으로 확정되지만, <strong>그 차이를 얼마나 느끼는지는 사람마다 다릅니다.</strong>
+이 사이트의 원칙대로 계산할 수 있는 것과 아닌 것을 갈라 적었습니다.</p></blockquote>
+<h2 id="5k의-대가">5K의 대가</h2>
+<p><strong>선명함 말고는 얻는 게 없습니다.</strong> 그리고 잃는 게 꽤 있습니다.</p>
+<p><strong>① 제품이 적습니다</strong>
+4K는 선택지가 많고 가격대도 넓습니다. 5K는 만드는 곳이 몇 안 됩니다.</p>
+<p><strong>② 값이 크게 높습니다</strong>
+같은 27인치인데 체급이 다릅니다. <strong>그 차액이면 <a href="/posts/dual-monitor-vs-single.html">모니터를 한 대 더</a> 놓을 수 있는 정도</strong>입니다.</p>
+<p><strong>③ 연결이 까다롭습니다</strong>
+픽셀이 4K의 1.78배라 신호도 그만큼 큽니다. <strong>HDMI 2.0 으로는 5K 60Hz 가 안 나갑니다.</strong>
+DisplayPort 나 USB-C 로 붙여야 하고, 케이블도 가려야 합니다.
+계산은 <a href="/posts/dp-vs-hdmi-coding.html">DP와 HDMI</a>에 적었습니다.</p>
+<p><strong>④ 작업 영역은 안 늘어납니다</strong>
+반복해서 적는 이유가 있습니다. <strong>넓이를 원해서 5K를 사면 실망합니다.</strong>
+넓이가 목적이면 32&quot; 4K나 <a href="/posts/vertical-monitor-coding.html">세로 모니터</a>입니다.</p>
+<h2 id="그럼-뭘-사야-하나">그럼 뭘 사야 하나</h2>
+<p><strong>넓이가 아쉽다 → 5K가 아닙니다</strong>
+32&quot; 4K로 가시거나 화면을 한 대 더하세요. 5K는 넓이 문제를 안 풀어줍니다.</p>
+<p><strong>글자를 하루 종일 보는 게 힘들다 → 5K가 답에 가깝습니다</strong>
+특히 <strong>맥을 쓰신다면</strong> 값어치가 가장 큽니다. 맥은 분수 배율에서 늘 축소를 거치는데,
+5K에서는 그 단계가 통째로 사라집니다.</p>
+<p><strong>값을 아끼면서 배율 고민을 없애고 싶다 → 27&quot; QHD 입니다</strong>
+배율 100%로 그대로 씁니다. <strong>분수 배율 문제가 아예 발생하지 않습니다.</strong>
+선명도는 5K에 못 미치지만, <strong>작업 영역은 똑같이 2560×1440</strong>입니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsnkTpck0" target="_blank" rel="sponsored nofollow noopener">27인치 QHD 모니터 보기</a>
+  <span class="buy-note">배율을 안 건드리고 쓸 수 있는 조합입니다</span>
+</aside>
+<p><strong>24&quot; 4K도 정수 배율입니다.</strong> 200%로 쓰면 논리 해상도가 1920×1080이 되고 매우 선명합니다.
+다만 작업 영역이 FHD로 내려가서 코딩용으로는 좁습니다 —
+<a href="/posts/coding-monitor-resolution.html">코딩용 모니터 글</a>에서 효율이 떨어진다고 적은 조합이 이것입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="5k를-사면-코드가-더-보이나요">5K를 사면 코드가 더 보이나요</h3>
+<p>아닙니다. 200% 배율에서 작업 영역이 2560×1440이라 27&quot; QHD와 줄 수가 같습니다.
+약 75줄입니다. 더 보고 싶으시면 32&quot; 4K나 세로 모니터 쪽입니다.</p>
+<h3 id="5k를-배율-100로-쓰면-넓지-않나요">5K를 배율 100%로 쓰면 넓지 않나요</h3>
+<p>넓습니다. 다만 218 PPI에서 100%면 글자가 극단적으로 작아져 실제로 읽기 어렵습니다.
+그렇게 쓸 거라면 애초에 5K를 살 이유가 없습니다.</p>
+<h3 id="27인치-4k를-200로-쓰면-정수-배율-아닌가요">27인치 4K를 200%로 쓰면 정수 배율 아닌가요</h3>
+<p>맞습니다. 다만 그때 작업 영역이 1920×1080으로 내려갑니다.
+27인치에서 FHD만큼만 쓰게 되는 것이라 코딩에서는 손해가 큽니다.
+그래서 대부분 150%로 쓰게 되고, 그 순간 분수 배율이 됩니다.</p>
+<h3 id="윈도우에서-분수-배율이-그렇게-나쁜가요">윈도우에서 분수 배율이 그렇게 나쁜가요</h3>
+<p>최신 앱만 쓰신다면 글자는 선명합니다. 문제는 오래된 프로그램이 섞일 때입니다.
+개발 도구 중에도 아직 그런 것이 있어서, 창마다 흐릿함이 다른 상황이 생깁니다.</p>
+<h3 id="그래픽카드가-좋아야-하나요">그래픽카드가 좋아야 하나요</h3>
+<p>코딩 용도로는 아닙니다. 화면 출력은 그래픽카드에 가벼운 일입니다.
+로컬 LLM에 쓸 VRAM도 거의 줄지 않습니다. 기준은 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양</a>에 있습니다.</p>
+<h3 id="노트북-화면에도-같은-이야기가-적용되나요">노트북 화면에도 같은 이야기가 적용되나요</h3>
+<p>적용됩니다. 노트북은 화면 크기 대비 해상도가 높아 배율을 거의 항상 쓰게 됩니다.
+다만 화면을 고를 수 없고 살 때 정해집니다 —
+기준은 <a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에 정리했습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>27&quot; 5K는 <strong>200%에서 작업 영역이 정확히 2560×1440</strong>입니다. QHD와 같습니다</li>
+<li><strong>넓이가 아니라 선명도를 사는 것</strong>입니다. 4K도 그랬고 5K는 더 그렇습니다</li>
+<li>정수 배율은 <strong>픽셀 경계가 어긋나지 않는다</strong>는 뜻이고, PPI와는 별개의 이야기입니다</li>
+<li><strong>차이는 생각보다 작습니다.</strong> 값 차이만큼인지는 따져보셔야 합니다</li>
+<li><strong>맥에서 값어치가 가장 큽니다.</strong> 축소 단계가 통째로 사라집니다</li>
+<li>배율 고민을 없애는 가장 싼 답은 <strong>27&quot; QHD 100%</strong> 입니다</li>
+</ol>
+<p>수치나 판단이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">5K모니터</span> <span class="tag">4K모니터</span> <span class="tag">PPI</span> <span class="tag">배율</span> <span class="tag">코딩용모니터</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/dp-vs-hdmi-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">DP와 HDMI — 코딩용 모니터에 뭘 꽂아야 하나</span>
+        <span class="card-desc">코딩은 60Hz면 되기 때문에 대부분 아무 단자나 됩니다. 막히는 건 4K부터입니다. 필요한 대역폭을 직접 계산해서 어디서 걸리는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-usb-c-one-cable.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">노트북 모니터 원케이블 연결 — USB-C 하나로 되는 조건</span>
+        <span class="card-desc">케이블 하나로 화면·충전·허브를 다 하려면 세 가지가 맞아야 합니다. 노트북 포트, 모니터가 주는 전력, 케이블. 어디서 막히는지 순서대로 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/oled-monitor-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">OLED 모니터 코딩 — 번인이 실제로 문제가 되는 조건</span>
+        <span class="card-desc">코딩은 번인에 가장 불리한 사용 방식입니다. 같은 자리에 같은 화면이 하루 종일 켜져 있기 때문입니다. 구조를 설명하고 스펙으로 확인되는 것만 갈랐습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

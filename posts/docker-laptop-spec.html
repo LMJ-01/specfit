@@ -24,7 +24,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"도커 돌리는 노트북 사양 — 램 16GB로 되나","description":"도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/docker-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"도커 돌리는 노트북 사양 — 램 16GB로 되나","description":"도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/docker-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"도커 돌리는 노트북 사양 — 램 16GB로 되나","item":"https://specfit.kr/posts/docker-laptop-spec.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥에서 도커가 느린데 정상인가요","acceptedAnswer":{"@type":"Answer","text":"맥의 도커도 가상 환경 위에서 돌아서, 특히 **파일 접근이 느린** 편입니다. 소스 폴더를 컨테이너에 연결해 쓰면 체감됩니다. 구조상의 특성이라 설정으로 크게 해결되지는 않습니다."}},{"@type":"Question","name":"WSL2가 램을 안 돌려줍니다","acceptedAnswer":{"@type":"Answer","text":"한 번 잡은 램을 바로 안 놓는 동작이 있습니다."}},{"@type":"Question","name":"컨테이너마다 램을 제한할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 실행할 때 메모리 상한 옵션을 주면 됩니다. 다만 **상한을 넘기면 컨테이너가 강제 종료**되므로, DB 같은 건 넉넉히 잡으셔야 합니다."}},{"@type":"Question","name":"16GB인데 32GB로 늘리면 확실히 나아지나요","acceptedAnswer":{"@type":"Answer","text":"**도커를 쓰신다면 네.** 지금 스왑이 일어나고 있을 가능성이 큽니다. 작업 관리자 → 성능 → 메모리에서 **\"커밋된 메모리\"가 물리 램보다 크면** 이미 디스크로 넘어가고 있다는 뜻입니다. 판단 기준은 [램 16GB vs 32GB](/posts/ram-16gb-vs-32gb.html)에 있습니다."}},{"@type":"Question","name":"도커 대신 쓸 방법은 없나요","acceptedAnswer":{"@type":"Answer","text":"가벼운 대안들이 있지만 **램을 먹는 구조 자체는 비슷합니다.** 윈도우에서는 결국 리눅스 환경이 하나 떠야 하기 때문입니다."}},{"@type":"Question","name":"로컬 LLM이랑 같이 돌려도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 다만 **로컬 LLM은 VRAM, 도커는 시스템 램**으로 서로 다른 자원을 씁니다. 둘 다 하실 거면 램 32GB + VRAM 12GB 이상이 편합니다."}}]}</script>
 </head>
@@ -63,7 +63,7 @@
     <h1>도커 돌리는 노트북 사양 — 램 16GB로 되나</h1>
     <p class="post-meta">
       <time datetime="2026-08-16">2026년 8월 16일</time>
-      
+      <span class="updated">· 2026년 8월 17일 갱신</span>
     </p>
   </header>
 
@@ -74,7 +74,7 @@
 
   <div class="post-body">
 <p>&quot;개발용 노트북 램 16GB면 되나요?&quot;</p>
-<p>이 질문에는 <strong>도커를 쓰느냐 아니냐로 답이 갈립니다.</strong> 웹 개발만 하면 16GB로 충분한데, 도커를 띄우기 시작하면 이야기가 완전히 달라집니다.</p>
+<p>이 질문에는 <strong>도커를 쓰느냐 아니냐로 답이 갈립니다.</strong> <a href="/posts/web-dev-laptop-spec.html">웹 개발만 하면 16GB로 충분한데</a>, 도커를 띄우기 시작하면 이야기가 완전히 달라집니다.</p>
 <p><strong>도커는 CPU보다 램을 먼저 먹습니다.</strong> 그리고 그게 노트북에서 문제가 되는 이유는, <a href="/posts/laptop-ram-onboard-lpcamm2.html">램은 나중에 못 늘리는 경우가 많기</a> 때문입니다.</p>
 <h2 id="결론부터">결론부터</h2>
 <div class="table-wrap"><table>
@@ -178,10 +178,10 @@ docker system prune   # 안 쓰는 것 정리</code></pre>
 <blockquote><p>⚠️ <code>prune</code> 은 안 쓰는 이미지·컨테이너·네트워크를 지웁니다.
 볼륨(데이터)까지 지우는 옵션은 따로 있으니, <strong>뭘 지우는지 보고 실행하세요.</strong></p></blockquote>
 <p><strong>노트북 SSD는 1TB를 권합니다.</strong> 로컬 LLM까지 겸하면 <a href="/posts/dev-ssd-choose.html">모델 파일이 하나에 5~20GB</a>라 더 빨리 찹니다.</p>
-<p><aside class="buy-box">
+<aside class="buy-box">
   <a class="buy-btn" href="https://link.coupang.com/a/gdspuKuC8O" target="_blank" rel="sponsored nofollow noopener">NVMe SSD 1TB 보기</a>
   <span class="buy-note">모델 파일이 하나에 5~20GB 라 금방 찹니다</span>
-</aside></p>
+</aside>
 <h2 id="5-cpu와-그래픽카드는-신경-안-쓰셔도-됩니다">5. CPU와 그래픽카드는 신경 안 쓰셔도 됩니다</h2>
 <p><strong>CPU</strong> — 컨테이너는 대부분 놀고 있습니다. 빌드할 때만 일하고, 그건 코어 수가 도와줍니다. 요즘 노트북 CPU면 대개 충분합니다.</p>
 <p><strong>그래픽카드</strong> — 도커와 아무 관계 없습니다. 로컬 LLM을 겸할 거라면 그건 <a href="/posts/local-llm-laptop-choose.html">따로 판단</a>하셔야 합니다.</p>
@@ -198,10 +198,10 @@ docker system prune   # 안 쓰는 것 정리</code></pre>
 </table></div>
 <p><strong>순서가 중요합니다.</strong> 노트북은 바꿀 수 없는 것부터 정해야 합니다 —
 <a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에 그 순서를 정리해 뒀습니다.</p>
-<p><aside class="buy-box">
+<aside class="buy-box">
   <a class="buy-btn" href="https://link.coupang.com/a/gdsmkd62Ls" target="_blank" rel="sponsored nofollow noopener">개발용 노트북 보기</a>
   <span class="buy-note">램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요</span>
-</aside></p>
+</aside>
 <blockquote><p>⚠️ 2026년 들어 램 값이 크게 올라서, 32GB 구성의 웃돈이 예전보다 큽니다.
 <strong>슬롯이 있는 모델의 값어치가 지금 특히 큽니다</strong> —
 <a href="/posts/ram-price-2026.html">램 값이 올랐습니다</a>를 함께 보세요.</p></blockquote>
@@ -246,24 +246,24 @@ docker system prune   # 안 쓰는 것 정리</code></pre>
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/wsl2-memory-limit.html">
+      <a href="/posts/gaming-laptop-for-dev.html">
         <span class="card-cat">노트북</span>
-        <span class="card-title">WSL2가 램을 다 먹을 때 — Vmmem 잡는 법</span>
-        <span class="card-desc">작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.</span>
+        <span class="card-title">게이밍 노트북 개발용으로 괜찮나 — 무게로 갈립니다</span>
+        <span class="card-desc">확장성과 냉각은 게이밍 노트북이 확실히 낫습니다. 대신 무게, 배터리, 충전 방식에서 대가를 냅니다. 스펙으로 확인되는 것만 갈라 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/dev-laptop-cpu.html">
+      <a href="/posts/laptop-battery-dev.html">
         <span class="card-cat">노트북</span>
-        <span class="card-title">개발용 노트북 CPU — 어디까지 신경 써야 하나</span>
-        <span class="card-desc">CPU 이름은 복잡한데 개발에서 실제로 갈리는 건 두 가지뿐입니다. 모델명 읽는 법과, NPU 성능이 로컬 LLM과 무관한 이유를 정리했습니다.</span>
+        <span class="card-title">개발용 노트북 배터리 — 표기 시간이 안 맞는 이유</span>
+        <span class="card-desc">제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/android-studio-laptop-spec.html">
+      <a href="/posts/laptop-thermal-throttling.html">
         <span class="card-cat">노트북</span>
-        <span class="card-title">안드로이드 스튜디오 노트북 사양 — 에뮬레이터가 문제입니다</span>
-        <span class="card-desc">안드로이드 스튜디오는 IDE보다 에뮬레이터가 램을 먹습니다. 에뮬레이터 하나가 가상머신 한 대라서 16GB가 어디서 터지는지 계산했습니다.</span>
+        <span class="card-title">노트북 발열과 성능 저하 — 얇으면 왜 느려지나</span>
+        <span class="card-desc">짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.</span>
       </a>
     </li>
   </ul>
