@@ -220,6 +220,12 @@ async function build() {
     if (!activeCategories.includes(cat)) {
       warnings.push(`카테고리 '${cat.slug}' 에 글이 없어 메뉴에서 빠집니다`);
     }
+    // 카테고리 description 은 그대로 검색 스니펫이 됩니다.
+    // 짧으면 검색 결과에 그 몇 글자만 나가서 클릭이 안 됩니다.
+    if (cat.description.length < 30)
+      warnings.push(
+        `카테고리 '${cat.slug}': description 이 ${cat.description.length}자 — 검색 스니펫으로 너무 짧습니다`
+      );
   }
 
   // 품질 점검 — seo-checklist.md 항목을 빌드 때 강제합니다.

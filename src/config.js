@@ -126,10 +126,35 @@ export const config = {
   },
 
   // 카테고리 정의. slug 는 frontmatter 의 category 와 매칭됩니다.
+  //
+  // ⚠️ description 은 두 군데에 쓰입니다 — 화면의 소개 문장과 검색 스니펫.
+  //    그래서 한 문장으로 끝내지 말고 **무엇을 어떤 기준으로 다루는지**까지 적습니다.
+  //    "코딩용 모니터" 처럼 짧으면 검색 결과에 그 여섯 글자만 나갑니다.
+  //    빌드가 30자 미만이면 경고합니다.
   categories: [
-    { slug: 'gpu', label: 'GPU', description: '로컬 LLM·딥러닝용 그래픽카드' },
-    { slug: 'laptop', label: '노트북', description: '개발·AI 작업용 노트북' },
-    { slug: 'monitor', label: '모니터', description: '코딩용 모니터' },
-    { slug: 'memory', label: '메모리·스토리지', description: '램과 SSD' },
+    {
+      slug: 'gpu',
+      label: 'GPU',
+      description:
+        '로컬 LLM·딥러닝용 그래픽카드를 VRAM 기준으로 고릅니다. 어떤 카드로 몇 B 모델이 돌아가는지 계산기로 바로 확인할 수 있습니다.',
+    },
+    {
+      slug: 'laptop',
+      label: '노트북',
+      description:
+        '개발·AI 작업용 노트북. 나중에 못 바꾸는 램·화면·그래픽카드부터 정하는 순서로 정리했습니다.',
+    },
+    {
+      slug: 'monitor',
+      label: '모니터',
+      description:
+        '코딩용 모니터. 주사율이나 색재현율이 아니라 해상도와 크기의 조합이 갈림길입니다. PPI와 배율을 계산해 정리했습니다.',
+    },
+    {
+      slug: 'memory',
+      label: '메모리·스토리지',
+      description:
+        '램과 SSD. 얼마나 필요한지는 VRAM을 얼마나 넘기느냐가 정합니다. 값이 오른 2026년 기준으로 갈랐습니다.',
+    },
   ],
 };
