@@ -332,7 +332,18 @@ export function listPage({
   catCards = [],
   featured = [],
   totalPosts = 0,
+  toolData = null,
+  affiliate = false,
 }) {
+  // 계산기에 제휴 링크가 있으면 고지가 '첫 부분'에 있어야 합니다.
+  // 하단 표기나 누락은 수익 전액 몰수 사유입니다. 사람이 기억할 일이 아니라
+  // 도구를 싣는 순간 자동으로 따라붙어야 합니다.
+  const noticeBox = affiliate
+    ? `<aside class="notice notice-affiliate" role="note">
+    <strong>${escapeHtml(config.affiliateNotice)}</strong>
+    <span>${escapeHtml(config.methodNotice)}</span>
+  </aside>`
+    : '';
   // 홈 상단. 홈에만 붙입니다 — 카테고리 목록에 붙이면
   // 이미 무엇을 찾는지 아는 사람에게 같은 말을 반복하는 셈입니다.
   //
@@ -343,10 +354,13 @@ export function listPage({
     hero && h
       ? // 제목이 없으므로 section 이 아니라 div 입니다.
         // 제목 없는 section 은 문서 구조상 빈 칸이 되어 스크린리더에서 어색합니다.
+        //
+        // 배경도 테두리도 없습니다. 안에 들어가는 계산기가 이미 테두리를 갖고 있어서
+        // 여기까지 상자로 만들면 상자 안의 상자가 됩니다.
         `<div class="hero">
     <p class="hero-lead">${escapeHtml(h.lead)}</p>
+    ${toolData ? '<div data-vram-tool></div>' : ''}
     <p class="hero-actions">
-      <a class="hero-btn" href="${h.action.href}">${escapeHtml(h.action.label)}</a>
       <a class="hero-link" href="${h.secondary.href}">${escapeHtml(h.secondary.label)}</a>
     </p>
   </div>`
@@ -386,6 +400,7 @@ export function listPage({
   const body = `
 <section class="list-head">
   <h1>${escapeHtml(heading)}</h1>
+  ${noticeBox}
   ${intro ? `<p class="lead">${escapeHtml(intro)}</p>` : ''}
   ${heroBox}
   ${catBox}
@@ -433,7 +448,16 @@ ${featuredBox}
         url: abs(path),
       },
     ],
-    scripts: searchable ? '<script src="/assets/search.js" defer></script>' : '',
+    // 계산기를 실은 페이지에만 그 데이터와 스크립트를 붙입니다.
+    scripts: [
+      toolData
+        ? `<script>window.SPECFIT_DATA=${JSON.stringify(toolData)}</script>
+<script src="/assets/vram.js" defer></script>`
+        : '',
+      searchable ? '<script src="/assets/search.js" defer></script>' : '',
+    ]
+      .filter(Boolean)
+      .join('\n'),
   });
 }
 

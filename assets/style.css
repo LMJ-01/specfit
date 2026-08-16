@@ -469,38 +469,28 @@ tbody tr:last-child td {
    아래가 전부 카드라서 여기까지 카드로 만들면 홈이 상자 벽이 됩니다.
    한 덩어리로 두고, 누를 곳을 하나만 확실하게 보여줍니다. */
 
+/* 배경도 테두리도 주지 않습니다. 안의 계산기가 이미 테두리를 갖고 있어서
+   여기까지 상자로 만들면 상자 안의 상자가 됩니다. */
 .hero {
-  margin-top: 1.5rem;
-  padding: 1.4rem 1.5rem;
-  background: var(--accent-soft);
-  border: 1px solid var(--accent);
-  border-radius: var(--radius);
+  margin-top: 1.3rem;
 }
 .hero-lead {
-  margin: 0 0 1.1rem;
-  font-size: 1.1rem;
+  margin: 0 0 0.9rem;
+  font-size: 1.12rem;
   font-weight: 600;
   line-height: 1.6;
+}
+/* 계산기가 홈 첫 화면에 오므로 위쪽 여백을 줄입니다.
+   본문 중간에 실릴 때(1.8rem)와 기준이 다릅니다. */
+.hero .vr {
+  margin-top: 0;
 }
 .hero-actions {
   display: flex;
   align-items: center;
   gap: 0.5rem 1.1rem;
   flex-wrap: wrap;
-  margin: 0;
-}
-.hero-btn {
-  padding: 0.6rem 1.2rem;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.97rem;
-  white-space: nowrap;
-}
-.hero-btn:hover {
-  filter: brightness(1.08);
+  margin: 0.9rem 0 0;
 }
 .hero-link {
   font-size: 0.9rem;

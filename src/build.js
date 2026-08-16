@@ -271,12 +271,18 @@ async function build() {
         description: config.description,
         path: '/',
         heading: `${config.siteName} — ${config.tagline}`,
-        intro: config.description,
+        // intro 를 빼둡니다. 아래 hero.lead 와 카테고리 칩이 같은 일을 하고 있어서
+        // 셋 다 두면 계산기 앞에 설명 문단이 두 개 겹칩니다.
+        // (config.description 은 meta description 으로는 계속 쓰입니다)
         searchable: true,
         hero: true,
         catCards,
         featured,
         totalPosts: posts.length,
+        // 홈에 계산기를 그대로 싣습니다. 링크로 보내면 처음 온 사람은 안 누릅니다.
+        toolData,
+        // 계산기에 제휴 링크가 있으면 공정위 고지가 홈 상단에 자동으로 붙습니다.
+        affiliate: toolHasAffiliate,
       })
     )
   );
