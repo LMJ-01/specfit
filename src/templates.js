@@ -1,5 +1,6 @@
 import { config } from './config.js';
 import { escapeHtml } from './markdown.js';
+import { toolMountHtml } from '../assets/vram-render.js';
 
 const abs = (path) =>
   `${config.siteUrl.replace(/\/$/, '')}${path.startsWith('/') ? path : `/${path}`}`;
@@ -287,7 +288,7 @@ ${
     // 본문에 계산기를 심은 글에만 스크립트를 붙입니다 (불필요한 JS 로딩 방지 — INP)
     scripts: post.toolData
       ? `<script>window.SPECFIT_DATA=${JSON.stringify(post.toolData)}</script>
-<script src="/assets/vram.js" defer></script>`
+<script type="module" src="/assets/vram.js"></script>`
       : '',
   });
 }
@@ -359,7 +360,7 @@ export function listPage({
         // 여기까지 상자로 만들면 상자 안의 상자가 됩니다.
         `<div class="hero">
     <p class="hero-lead">${escapeHtml(h.lead)}</p>
-    ${toolData ? '<div data-vram-tool></div>' : ''}
+    ${toolData ? toolMountHtml(toolData) : ''}
     <p class="hero-actions">
       <a class="hero-link" href="${h.secondary.href}">${escapeHtml(h.secondary.label)}</a>
     </p>
@@ -452,7 +453,7 @@ ${featuredBox}
     scripts: [
       toolData
         ? `<script>window.SPECFIT_DATA=${JSON.stringify(toolData)}</script>
-<script src="/assets/vram.js" defer></script>`
+<script type="module" src="/assets/vram.js"></script>`
         : '',
       searchable ? '<script src="/assets/search.js" defer></script>' : '',
     ]
@@ -494,13 +495,13 @@ export function toolPage({ title, description, path, intro, data, body = '', aff
 </aside>`
       : ''
   }
-  <div data-vram-tool></div>
+  ${toolMountHtml(data)}
   <div class="post-body">
 ${body}
   </div>
 </article>`,
     scripts: `<script>window.SPECFIT_DATA=${JSON.stringify(data)}</script>
-<script src="/assets/vram.js" defer></script>`,
+<script type="module" src="/assets/vram.js"></script>`,
   });
 }
 

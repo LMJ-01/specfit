@@ -119,7 +119,104 @@
 </tbody>
 </table></div>
 <p><strong>로컬 LLM은 몇 분씩 연속으로 계산합니다.</strong> 부스트 구간이 아예 의미가 없습니다.</p>
-<div data-vram-tool></div>
+<div data-vram-tool>
+<div class="vr">
+  <div class="vr-controls">
+    <label>쓰려는 모델
+      <select data-k="model"><option value="3b">3B · 번역·맞춤법</option><option value="8b">7~8B · 간단한 질문·짧은 글</option><option value="14b" selected>12~14B · 코딩 도우미·문서 요약</option><option value="22b">20~22B · 좀 더 정확한 작업</option><option value="32b">32B · 복잡한 추론</option><option value="70b">70B · 개인 장비로는 어려움</option><option value="120b">120B+ · 서버급</option></select>
+      <span class="vr-hint">Qwen 14B, Gemma 12B · 가중치 8.8GB</span>
+    </label>
+    <label>한 번에 다루는 양
+      <select data-k="len"><option value="short">짧은 질문 · 2K</option><option value="medium" selected>파일 한 개 정도 · 4K</option><option value="long">파일 여러 개 · 16K</option><option value="huge">코드베이스 일부 · 32K</option></select>
+      <span class="vr-hint">A4 두세 장 · 대화 몇 번이면 여기</span>
+    </label>
+    <label>쓰고 계신 그래픽카드
+      <select data-k="gpu"><option value="rtx5090">RTX 5090 (메모리 32GB)</option><option value="rtx5080">RTX 5080 (메모리 16GB)</option><option value="rtx5070ti">RTX 5070 Ti (메모리 16GB)</option><option value="rtx5070">RTX 5070 (메모리 12GB)</option><option value="rtx5060ti16" selected>RTX 5060 Ti 16GB (메모리 16GB)</option><option value="rtx5060ti8">RTX 5060 Ti 8GB (메모리 8GB)</option><option value="rtx5060">RTX 5060 (메모리 8GB)</option><option value="rtx5050">RTX 5050 (메모리 8GB)</option><option value="rtx4090">RTX 4090 (단종) (메모리 24GB)</option><option value="rtx4080s">RTX 4080 Super (단종) (메모리 16GB)</option><option value="rtx4070tis">RTX 4070 Ti Super (단종) (메모리 16GB)</option><option value="rtx4070s">RTX 4070 Super (단종) (메모리 12GB)</option><option value="rtx4070">RTX 4070 (단종) (메모리 12GB)</option><option value="rtx4060ti16">RTX 4060 Ti 16GB (단종) (메모리 16GB)</option><option value="rtx4060ti8">RTX 4060 Ti 8GB (단종) (메모리 8GB)</option><option value="rtx4060">RTX 4060 (단종) (메모리 8GB)</option><option value="rtx3090">RTX 3090 (중고) (메모리 24GB)</option><option value="rtx3080">RTX 3080 10GB (메모리 10GB)</option><option value="rtx3070">RTX 3070 (메모리 8GB)</option><option value="rtx3060">RTX 3060 12GB (메모리 12GB)</option><option value="m5-16">Mac M5 · 16GB (메모리 10GB)</option><option value="m5-24">Mac M5 · 24GB (메모리 16GB)</option><option value="m5-32">Mac M5 · 32GB (메모리 22GB)</option><option value="m5pro-24">Mac M5 Pro · 24GB (메모리 16GB)</option><option value="m5pro-48">Mac M5 Pro · 48GB (메모리 34GB)</option><option value="m5pro-64">Mac M5 Pro · 64GB (메모리 46GB)</option><option value="m5max-64">Mac M5 Max · 64GB (메모리 46GB)</option><option value="m5max-128">Mac M5 Max · 128GB (메모리 96GB)</option></select>
+      <span class="vr-hint"><a href="/tools/vram.html#내-그래픽카드-확인하는-법">내 그래픽카드 확인하는 법</a></span>
+    </label>
+  </div>
+
+  <div class="vr-result vr-result-ok">
+    <p class="vr-headline"><span class="vr-badge vr-badge-ok">여유</span> 쓸 수 있습니다</p>
+    <p class="vr-advice"><strong>RTX 5060 Ti 16GB</strong>로 <strong>12~14B</strong> 모델은 무리 없습니다.
+        지금 카드를 그대로 쓰시면 됩니다.<span class="vr-next">지금 카드로는 <strong>12~14B</strong>까지입니다.
+            더 큰 <strong>20~22B</strong> 모델까지 돌리려면
+            <strong class="vr-hl">RTX 5090</strong>(메모리 32GB) 이상이 필요합니다.</span><a class="vr-buy" href="https://link.coupang.com/a/gbIXLiOL36" target="_blank"
+             rel="sponsored nofollow noopener">RTX 5090 가격 보기</a></p>
+    <p class="vr-why">이 길이에서는 대부분이 모델 가중치입니다. <strong>짧게 써도 크게 안 줄어듭니다.</strong></p>
+    <p class="vr-parts">
+      필요 <strong>10.6GB</strong>
+      <span class="vr-parts-eq">= 가중치 8.8 + 컨텍스트 0.8 + 여유 1.0</span>
+      <span class="vr-parts-vs">내 카드 16GB</span>
+    </p>
+    <p class="vr-share">
+      <button type="button" class="vr-share-btn" data-share>이 결과 링크 복사</button>
+      <span class="vr-share-msg" role="status" data-share-msg></span>
+    </p>
+  </div>
+
+  <details class="vr-details" data-adv>
+    <summary>다른 크기도 함께 보기</summary>
+    <div class="table-wrap">
+      <table class="vr-table">
+        <thead><tr><th>모델 크기</th><th>필요 메모리</th><th>내 카드에서</th></tr></thead>
+        <tbody><tr>
+          <td><strong>3B</strong><br><span class="vr-ex">Llama 3.2 3B, Qwen 3B</span></td>
+          <td class="vr-num">3.3GB<br>
+              <span class="vr-ex">가중치 1.9 · 컨텍스트 0.4</span></td>
+          <td><span class="vr-badge vr-badge-ok">여유</span><br>
+              <span class="vr-ex">전부 그래픽카드 메모리에 올라감</span></td>
+        </tr><tr>
+          <td><strong>7~8B</strong><br><span class="vr-ex">Llama 3.1 8B, Qwen 7B</span></td>
+          <td class="vr-num">6.5GB<br>
+              <span class="vr-ex">가중치 5.0 · 컨텍스트 0.5</span></td>
+          <td><span class="vr-badge vr-badge-ok">여유</span><br>
+              <span class="vr-ex">전부 그래픽카드 메모리에 올라감</span></td>
+        </tr><tr>
+          <td><strong>12~14B</strong><br><span class="vr-ex">Qwen 14B, Gemma 12B</span></td>
+          <td class="vr-num">10.6GB<br>
+              <span class="vr-ex">가중치 8.8 · 컨텍스트 0.8</span></td>
+          <td><span class="vr-badge vr-badge-ok">여유</span><br>
+              <span class="vr-ex">전부 그래픽카드 메모리에 올라감</span></td>
+        </tr><tr>
+          <td><strong>20~22B</strong><br><span class="vr-ex">Mistral Small</span></td>
+          <td class="vr-num">15.7GB<br>
+              <span class="vr-ex">가중치 13.9 · 컨텍스트 0.9</span></td>
+          <td><span class="vr-badge vr-badge-tight">빠듯</span><br>
+              <span class="vr-ex">짧은 내용만 다루면 가능</span></td>
+        </tr><tr>
+          <td><strong>32B</strong><br><span class="vr-ex">Qwen 32B, QwQ 32B</span></td>
+          <td class="vr-num">22.2GB<br>
+              <span class="vr-ex">가중치 20.2 · 컨텍스트 1.0</span></td>
+          <td><span class="vr-badge vr-badge-slow">느림</span><br>
+              <span class="vr-ex">일부가 CPU로 넘어가 답답해짐</span></td>
+        </tr><tr>
+          <td><strong>70B</strong><br><span class="vr-ex">Llama 3.3 70B</span></td>
+          <td class="vr-num">46.4GB<br>
+              <span class="vr-ex">가중치 44.1 · 컨텍스트 1.3</span></td>
+          <td><span class="vr-badge vr-badge-no">불가</span><br>
+              <span class="vr-ex">실사용이 어려움</span></td>
+        </tr><tr>
+          <td><strong>120B+</strong><br><span class="vr-ex">Mixtral 8x22B급</span></td>
+          <td class="vr-num">77.6GB<br>
+              <span class="vr-ex">가중치 75.6 · 컨텍스트 1.0</span></td>
+          <td><span class="vr-badge vr-badge-no">불가</span><br>
+              <span class="vr-ex">실사용이 어려움</span></td>
+        </tr></tbody>
+      </table>
+    </div>
+    <label class="vr-quant">품질 설정
+      <select data-k="quant"><option value="q4" selected>Q4 (표준)</option><option value="q5">Q5 (품질↑)</option><option value="q8">Q8 (고품질)</option></select>
+      <span class="vr-hint">기본값(Q4)이 대부분의 경우 가장 무난합니다.</span>
+    </label>
+  </details>
+
+  <p class="vr-note">
+    
+    <strong>근사치입니다.</strong> 실제로 쓸 모델의 파일 크기는 배포판마다 다릅니다.
+    경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
+  </p>
+</div></div>
 <h2 id="3-같은-이름인데-성능이-다른-이유">3. 같은 이름인데 성능이 다른 이유</h2>
 <p><a href="/posts/dev-laptop-cpu.html">개발용 노트북 CPU</a>에서 <strong>&quot;접미사에 속지 마세요&quot;</strong>라고 적었는데,
 그 이야기의 뿌리가 이것입니다.</p>
@@ -291,6 +388,6 @@ document.addEventListener('click',function(e){
 },true);
 </script>
 <script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"m5-16","name":"Mac M5 · 16GB","vram":10,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-24","name":"Mac M5 · 24GB","vram":16,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-32","name":"Mac M5 · 32GB","vram":22,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-24","name":"Mac M5 Pro · 24GB","vram":16,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-48","name":"Mac M5 Pro · 48GB","vram":34,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-64","name":"Mac M5 Pro · 64GB","vram":46,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-64","name":"Mac M5 Max · 64GB","vram":46,"bw":460,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-128","name":"Mac M5 Max · 128GB","vram":96,"bw":614,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"kvPerK":0.109,"label":"3B","purpose":"번역·맞춤법","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"kvPerK":0.125,"label":"7~8B","purpose":"간단한 질문·짧은 글","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"kvPerK":0.188,"label":"12~14B","purpose":"코딩 도우미·문서 요약","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"kvPerK":0.219,"label":"20~22B","purpose":"좀 더 정확한 작업","examples":"Mistral Small"},{"id":"32b","params":32,"kvPerK":0.25,"label":"32B","purpose":"복잡한 추론","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"kvPerK":0.313,"label":"70B","purpose":"개인 장비로는 어려움","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"kvPerK":0.25,"label":"120B+","purpose":"서버급","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"lengths":[{"id":"short","label":"짧은 질문","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"파일 한 개 정도","desc":"A4 두세 장 · 대화 몇 번이면 여기","tokens":4096},{"id":"long","label":"파일 여러 개","desc":"긴 문서 한 편 · 대화가 길어지면 여기까지 옵니다","tokens":16384},{"id":"huge","label":"코드베이스 일부","desc":"아주 긴 내용을 한 번에 넣을 때","tokens":32768}]}</script>
-<script src="/assets/vram.js" defer></script>
+<script type="module" src="/assets/vram.js"></script>
 </body>
 </html>

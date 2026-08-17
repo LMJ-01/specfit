@@ -16,8 +16,14 @@ import { postPage, listPage, staticPage, toolPage, fmtShort } from './templates.
 import { gpus, models, quants, lengths } from './gpu-data.js';
 import { figures } from './figures.js';
 import { buyBox } from './products.js';
+import { toolMountHtml } from '../assets/vram-render.js';
 
 const toolData = { gpus, models, quants, lengths };
+
+// 계산기를 기본 상태로 미리 그려둡니다. 브라우저와 같은 함수를 쓰므로
+// JS 가 켜졌을 때 다시 그려도 결과가 같습니다 — 화면이 튀지 않습니다.
+// 모든 페이지에서 같은 문자열이라 한 번만 만듭니다.
+const toolMount = toolMountHtml(toolData);
 
 // 계산기에 쿠팡 링크가 하나라도 있으면, 계산기를 실은 페이지는 '제휴 페이지'입니다.
 // 공정위 고지가 자동으로 붙어야 합니다 — 하단 표기나 누락은 수익 전액 몰수 사유입니다.
@@ -107,7 +113,7 @@ const LONE_PLACEHOLDER_RE = /<p>(\{\{[^}]*\}\})<\/p>/g;
 function renderShortcodes(body, warn) {
   const withTool = markdownToHtml(body)
     .replace(LONE_PLACEHOLDER_RE, '$1')
-    .replace(new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'), '<div data-vram-tool></div>');
+    .replace(new RegExp(TOOL_MARK.replace(/[{}]/g, '\\$&'), 'g'), () => toolMount);
   return renderBuyLinks(renderFigures(renderWidgets(withTool, warn), warn), warn);
 }
 
