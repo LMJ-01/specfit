@@ -234,6 +234,9 @@ CPU 로 넘어갈 때 느려지는 것과 같은 종류의 문제이고, 정도�
 <p>TDP 250W 짜리 두 장이면 카드만 500W 입니다. 여기에 나머지를 더하면
 <strong>850W 이상</strong>을 봐야 하고, 상급 카드면 더 올라갑니다.
 파워 교체 비용이 카드값에 얹힌다고 보셔야 합니다.</p>
+<p><strong>커넥터 개수도 함께 봐야 합니다.</strong> 한 장 기준으로 산 파워는 두 번째 카드에
+꽂을 자리가 없는 경우가 많습니다 —
+<a href="/posts/gpu-psu-wattage.html">그래픽카드 파워 용량</a>에 계산식과 함께 정리했습니다.</p>
 <h3 id="슬롯-간격과-케이스">슬롯 간격과 케이스</h3>
 <p><strong>요즘 카드는 대부분 두께가 3슬롯입니다.</strong> 두 장을 꽂으려면 6슬롯이 필요한데,
 일반 메인보드의 두 번째 슬롯 위치가 거기까지 안 벌어지는 경우가 많습니다.</p>
@@ -302,17 +305,17 @@ CPU 로 넘어갈 때 느려지는 것과 같은 종류의 문제이고, 정도�
       </a>
     </li>
     <li class="card">
+      <a href="/posts/gpu-psu-wattage.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</span>
+        <span class="card-desc">카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/local-llm-power-cost.html">
         <span class="card-cat">GPU</span>
         <span class="card-title">로컬 LLM 전기요금 — 정말 공짜인가</span>
         <span class="card-desc">전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/rtx5090-local-llm.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">RTX 5090 32GB — 개인용 상한선입니다</span>
-        <span class="card-desc">32GB는 개인용 신품 그래픽카드의 천장입니다. 32B를 여유롭게 쓰는 유일한 선택지이고 70B는 여전히 안 됩니다. 575W라는 대가와 함께 정리했습니다.</span>
       </a>
     </li>
   </ul>

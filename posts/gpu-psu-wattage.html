@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>로컬 LLM 전기요금 — 정말 공짜인가 | 스펙핏</title>
-<meta name="description" content="전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.">
-<link rel="canonical" href="https://specfit.kr/posts/local-llm-power-cost.html">
+<title>그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다 | 스펙핏</title>
+<meta name="description" content="카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.">
+<link rel="canonical" href="https://specfit.kr/posts/gpu-psu-wattage.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="스펙핏">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="로컬 LLM 전기요금 — 정말 공짜인가 | 스펙핏">
-<meta property="og:description" content="전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.">
-<meta property="og:url" content="https://specfit.kr/posts/local-llm-power-cost.html">
+<meta property="og:title" content="그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다 | 스펙핏">
+<meta property="og:description" content="카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.">
+<meta property="og:url" content="https://specfit.kr/posts/gpu-psu-wattage.html">
 <meta property="og:image" content="https://specfit.kr/assets/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -24,9 +24,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 전기요금 — 정말 공짜인가","description":"전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-power-cost.html","image":"https://specfit.kr/assets/og-default.png"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"로컬 LLM 전기요금 — 정말 공짜인가","item":"https://specfit.kr/posts/local-llm-power-cost.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"대기 중에도 전기를 먹나요","acceptedAnswer":{"@type":"Answer","text":"모델이 메모리에 올라가 있으면 완전히 쉬지 못합니다. 다만 계산 중일 때와는 차이가 큽니다. 오래 안 쓰실 거면 내려두세요."}},{"@type":"Question","name":"CPU 로 돌리면 전기를 덜 쓰나요","acceptedAnswer":{"@type":"Answer","text":"소비 전력은 낮습니다. 다만 훨씬 오래 걸립니다. 같은 답을 얻는 데 드는 총 전력은 오히려 비슷하거나 더 많을 수 있습니다. CPU 추론이 왜 느린지는 따로 정리했습니다."}},{"@type":"Question","name":"노트북은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"소비 전력이 훨씬 낮아 전기요금은 문제가 안 됩니다. 대신 배터리로는 오래 못 갑니다 — 개발용 노트북 배터리에 계산해 뒀습니다."}},{"@type":"Question","name":"맥은요","acceptedAnswer":{"@type":"Answer","text":"애플 실리콘은 전력 대비 효율이 좋은 편이라 이 항목에서 유리합니다. 용량과 속도의 성격은 다르므로 맥 통합메모리 글을 함께 보세요."}},{"@type":"Question","name":"전기요금이 얼마인지 정확히 알고 싶습니다","acceptedAnswer":{"@type":"Answer","text":"한전 사이버지점에서 우리 집의 최근 사용량과 요금을 볼 수 있습니다. 거기에 위 계산으로 나온 kWh 를 더해 보시면 구간이 바뀌는지 알 수 있습니다."}},{"@type":"Question","name":"파워서플라이 용량은요","acceptedAnswer":{"@type":"Answer","text":"TDP 에 나머지 부품과 여유를 더해 잡습니다. 카드를 두 장 꽂으면 계산이 또 달라집니다 — 그래픽카드 두 장에 적었습니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다","description":"카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/gpu-psu-wattage.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다","item":"https://specfit.kr/posts/gpu-psu-wattage.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"권장보다 큰 파워를 사면 전기를 더 먹나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 파워 용량은 상한이고, 실제 소비는 부품이 쓰는 만큼입니다. 1000W 파워를 달아도 300W 를 쓰면 300W 만 나갑니다. 오히려 부하율이 낮으면 효율이 좋은 구간에 들어갑니다."}},{"@type":"Question","name":"지금 파워 W 를 어디서 확인하나요","acceptedAnswer":{"@type":"Answer","text":"파워 본체 옆면 스티커에 적혀 있습니다. 케이스를 열어야 보이는 경우가 많습니다. 모델명을 검색하면 커넥터 구성과 규격까지 나옵니다 — W 만 보지 마세요."}},{"@type":"Question","name":"어댑터로 8핀을 모아 쓰면 안 되나요","acceptedAnswer":{"@type":"Answer","text":"동작은 합니다. 카드에 딸려 오는 정품 어댑터라면 규격 안에서 쓰는 것입니다. 다만 여러 갈래를 하나로 모으는 구조라 파워 쪽 배선과 접점에 부담이 갑니다. 새로 사실 거면 처음부터 12V-2x6 이 있는 쪽을 권합니다."}},{"@type":"Question","name":"게임은 되는데 로컬 LLM 돌릴 때 꺼집니다","acceptedAnswer":{"@type":"Answer","text":"순서가 반대라 이상해 보이지만 가능합니다. 로컬 LLM은 오래 켜두는 작업이라 파워가 뜨거워진 상태로 계속 갑니다. 보호 회로는 온도에도 반응합니다. 케이스 통풍과 파워 나이를 함께 보세요."}},{"@type":"Question","name":"80 PLUS 등급은 봐야 하나요","acceptedAnswer":{"@type":"Answer","text":"효율 등급입니다. 높으면 같은 일에 전기를 덜 쓰고 발열이 적습니다. 오래 켜두는 용도라면 값어치가 있습니다 — 얼마나 차이 나는지는 로컬 LLM 전기요금의 계산식에 본인 사용 시간을 넣어보시면 나옵니다."}},{"@type":"Question","name":"파워는 나중에 바꿀 수 있나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 데스크톱에서 가장 바꾸기 쉬운 부품 중 하나입니다. 다만 카드를 먼저 사고 파워가 안 맞으면 그날 컴퓨터를 못 씁니다. 카드와 함께 확인하세요."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -60,7 +60,7 @@
   </nav>
 
   <header class="post-head">
-    <h1>로컬 LLM 전기요금 — 정말 공짜인가</h1>
+    <h1>그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-18">2026년 8월 18일</time>
       
@@ -73,89 +73,81 @@
 </aside>
 
   <div class="post-body">
-<p><a href="/posts/local-llm-start-guide.html">시작 가이드</a>에 <strong>&quot;공짜이고 전기요금만 듭니다&quot;</strong>라고 적었습니다.</p>
-<p>맞는 말인데 <strong>그 전기요금이 얼마인지는 안 적었습니다.</strong> 계산해 보면 경우에 따라
-무시할 수 없는 금액이 나옵니다. 특히 <strong>누진 구간에 걸릴 때</strong> 그렇습니다.</p>
+<p>&quot;5090 쓰려면 파워 몇 W짜리 사야 하나요&quot;</p>
+<p>커뮤니티에서 반복되는 질문입니다. 답이 갈리는 이유가 있습니다 —
+<strong>W 숫자만으로 정해지지 않기 때문입니다.</strong></p>
+<p>용량이 충분한 파워를 갖고 있어도 <strong>커넥터가 없어서 못 꽂는 경우</strong>가 있습니다.
+그게 최근 세대에서 실제로 생기는 일입니다.</p>
 <h2 id="결론부터">결론부터</h2>
 <div class="table-wrap"><table>
-<thead><tr><th>쓰는 방식</th><th>전기요금</th></tr></thead>
+<thead><tr><th>확인할 것</th><th>왜</th></tr></thead>
 <tbody>
-<tr><td>하루 1~2시간, 중급 카드</td><td><strong>신경 안 쓰셔도 됩니다</strong></td></tr>
-<tr><td>하루 종일 띄워두되 가끔 질문</td><td>생각보다 적습니다</td></tr>
-<tr><td><strong>24시간 계속 돌리는 서버</strong></td><td>⚠️ <strong>여기서 갈립니다</strong></td></tr>
-<tr><td>상급 카드 + 장시간</td><td>⚠️ 누진 최고 구간에 들어갑니다</td></tr>
+<tr><td>1. <strong>커넥터</strong></td><td>12V-2x6 이 있는가 — <strong>없으면 W와 무관하게 못 꽂습니다</strong></td></tr>
+<tr><td>2. 용량</td><td>아래 계산식</td></tr>
+<tr><td>3. 규격</td><td>ATX 3.1 이면 순간 부하를 견디게 설계돼 있습니다</td></tr>
 </tbody>
 </table></div>
-<p><strong>핵심은 시간이 아니라 &quot;우리 집이 이미 몇 kWh 를 쓰고 있는가&quot;입니다.</strong>
-누진제 때문에 <strong>같은 사용량이라도 집집마다 요금이 다릅니다.</strong></p>
-<h2 id="1-계산은-곱셈-하나입니다">1. 계산은 곱셈 하나입니다</h2>
-<pre><code>쓴 전력량(kWh) = 소비 전력(W) × 시간 ÷ 1000</code></pre>
-<p>카드의 소비 전력은 사양표의 <strong>TDP</strong> 를 보시면 됩니다.</p>
+<p><strong>순서가 이렇습니다.</strong> 1번을 안 보고 W만 맞추면 상자를 열고 나서 알게 됩니다.</p>
+<h2 id="1-카드별-권장-용량">1. 카드별 권장 용량</h2>
+<p>계산식은 이렇습니다.</p>
+<pre><code>권장 용량 = (그래픽카드 TDP + CPU + 나머지) × 1.3
+              나머지 = 메인보드·SSD·팬 등, 대략 80W</code></pre>
+<p><code>× 1.3</code> 은 여유입니다. 파워는 <strong>부하 50~80% 구간에서 효율이 가장 좋고</strong>,
+꽉 채워 쓰면 발열과 소음이 올라갑니다.</p>
+<p>아래는 <strong>CPU 150W</strong> 를 가정한 값입니다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>카드</th><th>TDP</th></tr></thead>
+<thead><tr><th>그래픽카드</th><th>TDP</th><th>계산값</th><th>권장</th></tr></thead>
 <tbody>
-<tr><td>RTX 5060</td><td>145W</td></tr>
-<tr><td>RTX 5070</td><td>250W</td></tr>
-<tr><td>RTX 5070 Ti</td><td>300W</td></tr>
-<tr><td>RTX 5080</td><td>360W</td></tr>
-<tr><td><strong>RTX 5090</strong></td><td><strong>575W</strong></td></tr>
+<tr><td><strong>RTX 5090</strong></td><td>575W</td><td>1,047W</td><td><strong>1000~1200W</strong></td></tr>
+<tr><td>RTX 5080</td><td>360W</td><td>767W</td><td>850W</td></tr>
+<tr><td>RTX 5070 Ti</td><td>300W</td><td>689W</td><td>750W</td></tr>
+<tr><td>RTX 5070</td><td>250W</td><td>624W</td><td>650~750W</td></tr>
+<tr><td>RTX 5060 Ti</td><td>180W</td><td>533W</td><td>550~650W</td></tr>
+<tr><td>RTX 5060</td><td>145W</td><td>488W</td><td>550W</td></tr>
+<tr><td>RTX 5050</td><td>130W</td><td>468W</td><td>500~550W</td></tr>
 </tbody>
 </table></div>
-<p>하루 2시간씩 한 달(30일) 쓴다고 하면 이렇습니다.</p>
+<p>⚠️ <strong>CPU 150W 는 가정입니다.</strong> 상급 CPU를 쓰거나 오버클럭을 하면 더 올라갑니다.
+본인 CPU의 전력 표기(TDP·PBP)를 넣어 다시 계산하시는 게 정확합니다.</p>
+<pre><code>예) 5070 + CPU 65W 저전력 구성
+    (250 + 65 + 80) × 1.3 = 514W  →  550W</code></pre>
+<p><strong>같은 카드인데 CPU에 따라 한 단계 달라집니다.</strong></p>
+<h2 id="2-커넥터-여기가-먼저-막힙니다">2. ⚠️ 커넥터 — 여기가 먼저 막힙니다</h2>
+<p>최근 상급 카드는 <strong>12V-2x6</strong> 이라는 전용 커넥터를 씁니다.
+예전 8핀(PCIe 6+2) 여러 개를 꽂던 방식과 다릅니다.</p>
+<pre><code>구형 파워 850W  +  5080          →  W 는 충분한데 커넥터가 없습니다</code></pre>
+<p><strong>변환 어댑터가 딸려 오는 경우도 있지만</strong>, 8핀 여러 개를 하나로 모으는 구조라
+파워 쪽 배선에 부담이 갑니다. <strong>처음부터 12V-2x6 을 내주는 파워</strong>가 안전합니다.</p>
+<h3 id="atx-31-을-보세요">ATX 3.1 을 보세요</h3>
+<p>이 규격은 <strong>순간적으로 크게 튀는 부하를 견디도록</strong> 설계 기준을 정한 것입니다.
+그래픽카드는 평균 소비보다 순간 소비가 훨씬 클 수 있는데, 옛 파워는 그때
+보호 회로가 작동해 컴퓨터가 꺼지는 일이 있었습니다.</p>
+<p><strong>W 가 충분한데 게임 중에 꺼진다면 대개 이 문제입니다.</strong></p>
+<ul>
+<li>커넥터가 있는지 — <strong><code>12V-2x6</code> 또는 <code>12VHPWR</code> 표기</strong></li>
+<li>규격 — <code>ATX 3.1</code> (또는 최소한 <code>ATX 3.0</code>)</li>
+<li>그다음 W</li>
+</ul>
+<h2 id="3-로컬-llm은-게임과-부하가-다릅니다">3. 로컬 LLM은 게임과 부하가 다릅니다</h2>
+<p>여기가 이 사이트에서 따로 적어둘 부분입니다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>카드</th><th>한 달 전력량</th></tr></thead>
+<thead><tr><th></th><th>게임</th><th>로컬 LLM 추론</th></tr></thead>
 <tbody>
-<tr><td>RTX 5060</td><td>약 8.7 kWh</td></tr>
-<tr><td>RTX 5070</td><td>약 15 kWh</td></tr>
-<tr><td>RTX 5090</td><td>약 34.5 kWh</td></tr>
+<tr><td>GPU 부하</td><td>연산부가 계속 일합니다</td><td><strong>메모리를 읽는 데 묶입니다</strong></td></tr>
+<tr><td>소비 전력</td><td>TDP 근처까지</td><td><strong>TDP 상한까지는 안 갑니다</strong></td></tr>
+<tr><td>지속 시간</td><td>몇 시간</td><td><strong>켜두면 계속</strong></td></tr>
 </tbody>
 </table></div>
-<p><strong>하루 두 시간이면 대부분 큰 부담이 아닙니다.</strong> 여기까지가 좋은 소식입니다.</p>
-<h3 id="tdp-로-계산한-값은-상한입니다">⚠️ TDP 로 계산한 값은 상한입니다</h3>
-<p><strong>실제로는 이보다 덜 씁니다.</strong></p>
-<p>이 사이트가 반복해 온 이야기인데, 로컬 LLM 은
-<a href="/posts/local-llm-without-gpu.html">메모리를 얼마나 빨리 읽느냐에 묶여 있습니다</a>.
-그래서 <strong>계산하는 부분은 오히려 놀고 있습니다.</strong> 게임처럼 카드를 꽉 채워 쓰지 않습니다.</p>
-<p>다만 <strong>얼마나 덜 쓰는지는 재봐야 압니다.</strong> 이 사이트는 측정하지 않았습니다.
-그래서 위 표는 <strong>&quot;이보다는 안 나온다&quot;는 상한</strong>으로 읽으시는 편이 맞습니다.</p>
-<h2 id="2-진짜-변수는-누진제입니다">2. 진짜 변수는 누진제입니다</h2>
-<p><strong>같은 10kWh 를 더 써도 집마다 요금이 다릅니다.</strong></p>
-<p>주택용 저압 요금은 쓴 양에 따라 단가가 올라가는 3단계 구조입니다.</p>
-<div class="table-wrap"><table>
-<thead><tr><th>구간</th><th>한 달 사용량</th></tr></thead>
-<tbody>
-<tr><td>1단계</td><td>200kWh 이하</td></tr>
-<tr><td>2단계</td><td>200 초과 ~ 400kWh</td></tr>
-<tr><td><strong>3단계</strong></td><td><strong>400kWh 초과</strong></td></tr>
-</tbody>
-</table></div>
-<p><strong>중요한 건 추가로 쓴 몫이 어느 구간에서 계산되느냐입니다.</strong></p>
-<pre><code>평소 150kWh 쓰는 집이 15kWh 를 더 씀   →  아직 1단계. 부담 작음
-평소 390kWh 쓰는 집이 15kWh 를 더 씀   →  3단계로 넘어감. 부담 큼</code></pre>
-<p><strong>로컬 LLM 이 문제가 아니라, 그것 때문에 구간이 바뀌는 게 문제</strong>입니다.
-여름에 에어컨을 쓰는 집이라면 특히 그렇습니다.</p>
-<blockquote><p><strong>단가는 이 글에 적지 않았습니다.</strong> 요금은 개정되고, 숫자를 박아두면
-이 글이 금방 틀린 글이 됩니다. <strong>한전 사이버지점에서 지금 우리 집 사용량과
-요금표를 직접 보시는 편이 정확합니다.</strong></p></blockquote>
-<h2 id="3-24시간-돌리면-이야기가-달라집니다">3. 24시간 돌리면 이야기가 달라집니다</h2>
-<p><strong>여기가 실제로 갈리는 지점입니다.</strong></p>
-<p>로컬 LLM 을 항상 켜두고 API 처럼 쓰거나, 밤새 일괄 처리를 돌리는 경우입니다.</p>
-<div class="table-wrap"><table>
-<thead><tr><th>카드</th><th>24시간 × 30일</th></tr></thead>
-<tbody>
-<tr><td>RTX 5060 (145W)</td><td>약 104 kWh</td></tr>
-<tr><td>RTX 5070 (250W)</td><td>약 180 kWh</td></tr>
-<tr><td><strong>RTX 5090 (575W)</strong></td><td><strong>약 414 kWh</strong></td></tr>
-</tbody>
-</table></div>
-<p><strong>마지막 줄을 보세요.</strong> 그래픽카드 하나만으로 <strong>누진 3단계 경계(400kWh)를 넘깁니다.</strong>
-집에서 쓰는 다른 전기는 계산에 넣지도 않았는데 그렇습니다.</p>
-<p>⚠️ 실제로는 24시간 내내 계산하는 게 아니라 <strong>요청이 있을 때만</strong> 돌아갑니다.
-대기 중에는 훨씬 적게 씁니다. 그래도 <strong>켜두는 것만으로 드는 몫이 있고</strong>,
-위 숫자는 그 상한을 보여줍니다.</p>
-<p><strong>24시간 구성을 생각하신다면 소비 전력이 낮은 카드가 유리합니다.</strong>
-같은 VRAM 이면 TDP 를 보세요 — 예를 들어 16GB 구간에서
-<a href="/posts/rtx5070ti-vs-5080.html">5060 Ti(180W)와 5080(360W)은 돌아가는 모델이 같습니다</a>.</p>
+<p><strong>로컬 LLM은 대역폭에 묶이는 작업</strong>이라 연산부가 노는 구간이 생깁니다.
+그래서 같은 카드로 게임할 때보다 소비가 낮습니다 —
+<a href="/posts/local-llm-without-gpu.html">왜 대역폭이 속도를 정하는지</a>에 계산해 뒀습니다.</p>
+<blockquote><p>⚠️ <strong>&quot;몇 % 낮다&quot; 는 적지 않겠습니다.</strong> 구조상 낮은 것은 맞지만
+측정하지 않았습니다. 전기요금 계산에서도 같은 이유로
+<a href="/posts/local-llm-power-cost.html">TDP 를 상한으로만 썼습니다</a>.</p></blockquote>
+<p><strong>그래서 파워 기준은 게임용과 같게 잡으면 됩니다.</strong> 여유가 남을 뿐입니다.
+다만 <strong>오래 켜두는 쪽</strong>이라 효율과 소음이 더 중요해집니다.</p>
+<h3 id="어떤-카드가-필요한지부터-정하세요">어떤 카드가 필요한지부터 정하세요</h3>
+<p>파워는 카드가 정해진 다음 문제입니다. 필요한 카드가 무엇인지부터 확인하세요.</p>
 <div data-vram-tool>
 <div class="vr">
   <div class="vr-controls">
@@ -254,70 +246,60 @@
     경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
   </p>
 </div></div>
-<h2 id="4-그래도-구독보다-싼가">4. 그래도 구독보다 싼가</h2>
-<p><strong>대부분의 개인 사용에서는 그렇습니다.</strong> 다만 이유가 전기요금 때문만은 아닙니다.</p>
-<div class="table-wrap"><table>
-<thead><tr><th></th><th>로컬 LLM</th><th>구독 서비스</th></tr></thead>
-<tbody>
-<tr><td>매달 나가는 돈</td><td>전기요금</td><td>구독료</td></tr>
-<tr><td>처음 드는 돈</td><td><strong>그래픽카드 값</strong></td><td>0</td></tr>
-<tr><td>성능</td><td>내 장비 수준까지</td><td>최상급</td></tr>
-<tr><td>개인정보</td><td><strong>밖으로 안 나감</strong></td><td>서버로 전송</td></tr>
-</tbody>
-</table></div>
-<p><strong>하루 두 시간 쓰는 정도면 전기요금은 구독료보다 확실히 적습니다.</strong></p>
-<p>다만 <strong>카드값을 먼저 치렀다는 점</strong>을 빼놓으면 안 됩니다.
-이미 게이밍용으로 카드가 있다면 추가 비용이 전기요금뿐이라 유리하고,
-로컬 LLM 하나 때문에 카드를 새로 산다면 <strong>본전을 뽑는 데 오래 걸립니다.</strong></p>
-<p><strong>그래서 <a href="/posts/local-llm-start-guide.html">시작 가이드</a>에서 &quot;일단 지금 장비로 먼저 해보라&quot;고 적었습니다.</strong></p>
-<p><strong>돈으로만 따지면 구독이 이기는 경우도 많습니다.</strong>
-로컬 LLM 의 값어치는 대개 <strong>내 자료가 밖으로 안 나간다</strong>는 쪽에 있습니다.</p>
-<h2 id="5-줄이는-방법">5. 줄이는 방법</h2>
-<p><strong>① 안 쓸 때는 모델을 내리세요</strong>
-메모리에 올라가 있으면 카드가 완전히 쉬지 못합니다.
-<code>ollama ps</code> 로 확인하고 정리하시면 됩니다.</p>
-<p><strong>② 작은 모델로 충분한 일은 작은 모델로</strong>
-<a href="/posts/vram-8gb-tips.html">3B 로 되는 일이 생각보다 많습니다</a>.
-읽을 양이 적으면 그만큼 빨리 끝나고, 빨리 끝나면 전기도 덜 씁니다.</p>
-<p><strong>③ 24시간 구성이라면 저전력 카드로</strong>
-같은 VRAM 이면 TDP 가 낮은 쪽이 유리합니다.</p>
-<p><strong>④ 우리 집이 몇 kWh 를 쓰는지 먼저 보세요</strong>
-누진 구간에 여유가 있으면 신경 쓸 일이 아니고, 400kWh 근처라면 다릅니다.</p>
+<p>카드가 정해지면 위 1번 표에서 그 줄을 보시면 됩니다.</p>
+<h2 id="4-두-장을-꽂는다면">4. 두 장을 꽂는다면</h2>
+<p>TDP 가 그대로 더해집니다.</p>
+<pre><code>5060 Ti 두 장  →  180 × 2 = 360W
+(360 + 150 + 80) × 1.3 = 767W  →  850W</code></pre>
+<p>커넥터 개수도 함께 봐야 합니다. <strong>한 장 기준으로 산 파워는 두 번째 카드에
+꽂을 커넥터가 없는 경우가 많습니다.</strong></p>
+<p>다만 <strong>두 장이 생각만큼 좋지 않습니다</strong> —
+<a href="/posts/multi-gpu-local-llm.html">VRAM이 합쳐지나요</a>에 정리했습니다.
+전력과 발열은 두 배인데 속도는 합쳐지지 않습니다.</p>
+<h2 id="5-노트북은-해당-없습니다">5. 노트북은 해당 없습니다</h2>
+<p>노트북은 어댑터가 정해져 나옵니다. 대신 다른 것이 걸립니다 —
+어댑터 전력과 USB-C 충전 한계입니다.
+<a href="/posts/laptop-battery-dev.html">개발용 노트북 배터리</a>에 적었습니다.</p>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="대기-중에도-전기를-먹나요">대기 중에도 전기를 먹나요</h3>
-<p>모델이 메모리에 올라가 있으면 완전히 쉬지 못합니다.
-다만 계산 중일 때와는 차이가 큽니다. 오래 안 쓰실 거면 내려두세요.</p>
-<h3 id="cpu-로-돌리면-전기를-덜-쓰나요">CPU 로 돌리면 전기를 덜 쓰나요</h3>
-<p>소비 전력은 낮습니다. 다만 <strong>훨씬 오래 걸립니다.</strong>
-같은 답을 얻는 데 드는 총 전력은 오히려 비슷하거나 더 많을 수 있습니다.
-<a href="/posts/local-llm-without-gpu.html">CPU 추론이 왜 느린지</a>는 따로 정리했습니다.</p>
-<h3 id="노트북은-어떤가요">노트북은 어떤가요</h3>
-<p>소비 전력이 훨씬 낮아 전기요금은 문제가 안 됩니다.
-대신 <strong>배터리로는 오래 못 갑니다</strong> — <a href="/posts/laptop-battery-dev.html">개발용 노트북 배터리</a>에 계산해 뒀습니다.</p>
-<h3 id="맥은요">맥은요</h3>
-<p>애플 실리콘은 전력 대비 효율이 좋은 편이라 이 항목에서 유리합니다.
-용량과 속도의 성격은 다르므로 <a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 글</a>을 함께 보세요.</p>
-<h3 id="전기요금이-얼마인지-정확히-알고-싶습니다">전기요금이 얼마인지 정확히 알고 싶습니다</h3>
-<p>한전 사이버지점에서 우리 집의 최근 사용량과 요금을 볼 수 있습니다.
-거기에 위 계산으로 나온 kWh 를 더해 보시면 구간이 바뀌는지 알 수 있습니다.</p>
-<h3 id="파워서플라이-용량은요">파워서플라이 용량은요</h3>
-<p>TDP 에 나머지 부품과 여유를 더해 잡습니다. 카드를 두 장 꽂으면 계산이 또 달라집니다 —
-<a href="/posts/multi-gpu-local-llm.html">그래픽카드 두 장</a>에 적었습니다.</p>
+<h3 id="권장보다-큰-파워를-사면-전기를-더-먹나요">권장보다 큰 파워를 사면 전기를 더 먹나요</h3>
+<p><strong>아닙니다.</strong> 파워 용량은 상한이고, 실제 소비는 부품이 쓰는 만큼입니다.
+1000W 파워를 달아도 300W 를 쓰면 300W 만 나갑니다.
+오히려 부하율이 낮으면 효율이 좋은 구간에 들어갑니다.</p>
+<h3 id="지금-파워-w-를-어디서-확인하나요">지금 파워 W 를 어디서 확인하나요</h3>
+<p>파워 본체 옆면 스티커에 적혀 있습니다. 케이스를 열어야 보이는 경우가 많습니다.
+<strong>모델명을 검색하면 커넥터 구성과 규격까지 나옵니다</strong> — W 만 보지 마세요.</p>
+<h3 id="어댑터로-8핀을-모아-쓰면-안-되나요">어댑터로 8핀을 모아 쓰면 안 되나요</h3>
+<p>동작은 합니다. 카드에 딸려 오는 정품 어댑터라면 규격 안에서 쓰는 것입니다.
+다만 <strong>여러 갈래를 하나로 모으는 구조</strong>라 파워 쪽 배선과 접점에 부담이 갑니다.
+새로 사실 거면 처음부터 12V-2x6 이 있는 쪽을 권합니다.</p>
+<h3 id="게임은-되는데-로컬-llm-돌릴-때-꺼집니다">게임은 되는데 로컬 LLM 돌릴 때 꺼집니다</h3>
+<p><strong>순서가 반대라 이상해 보이지만 가능합니다.</strong> 로컬 LLM은 오래 켜두는 작업이라
+파워가 뜨거워진 상태로 계속 갑니다. 보호 회로는 온도에도 반응합니다.
+케이스 통풍과 파워 나이를 함께 보세요.</p>
+<h3 id="80-plus-등급은-봐야-하나요">80 PLUS 등급은 봐야 하나요</h3>
+<p>효율 등급입니다. 높으면 같은 일에 전기를 덜 쓰고 발열이 적습니다.
+<strong>오래 켜두는 용도라면 값어치가 있습니다</strong> —
+얼마나 차이 나는지는 <a href="/posts/local-llm-power-cost.html">로컬 LLM 전기요금</a>의
+계산식에 본인 사용 시간을 넣어보시면 나옵니다.</p>
+<h3 id="파워는-나중에-바꿀-수-있나요">파워는 나중에 바꿀 수 있나요</h3>
+<p>됩니다. 데스크톱에서 <strong>가장 바꾸기 쉬운 부품 중 하나</strong>입니다.
+다만 카드를 먼저 사고 파워가 안 맞으면 그날 컴퓨터를 못 씁니다.
+<strong>카드와 함께 확인하세요.</strong></p>
 <h2 id="정리">정리</h2>
 <ol>
-<li>계산은 곱셈 하나입니다 — <strong>W × 시간 ÷ 1000</strong></li>
-<li><strong>TDP 로 계산한 값은 상한</strong>입니다. 추론은 카드를 꽉 채워 쓰지 않습니다</li>
-<li><strong>하루 1~2시간이면 신경 쓸 금액이 아닙니다</strong></li>
-<li>진짜 변수는 <strong>누진 구간</strong>입니다. 우리 집이 이미 얼마나 쓰는지가 정합니다</li>
-<li><strong>24시간 구성은 다릅니다.</strong> 5090 은 그것만으로 400kWh 를 넘깁니다</li>
-<li>금액은 <strong>한전 사이버지점</strong>에서 직접 확인하세요. 이 글에 안 적은 이유입니다</li>
+<li><strong>커넥터를 먼저 보세요.</strong> <code>12V-2x6</code> 이 없으면 W 와 무관하게 못 꽂습니다</li>
+<li>용량은 <strong>(GPU TDP + CPU + 80W) × 1.3</strong> 입니다</li>
+<li><strong>CPU 에 따라 한 단계 달라집니다.</strong> 본인 값으로 계산하세요</li>
+<li><code>ATX 3.1</code> 은 순간 부하 기준입니다. W 가 충분한데 꺼지면 대개 이 문제입니다</li>
+<li><strong>로컬 LLM은 TDP 상한까지 안 갑니다.</strong> 게임 기준으로 잡으면 여유가 남습니다</li>
+<li>두 장은 <strong>TDP 도 커넥터도 두 배</strong>입니다</li>
 </ol>
-<p>요금 체계가 바뀌었거나 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+<p>실제 구성에서 계산과 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
   
 
-  <p class="tags"><span class="tag">전기요금</span> <span class="tag">누진제</span> <span class="tag">로컬LLM</span> <span class="tag">TDP</span> <span class="tag">전력</span></p>
+  <p class="tags"><span class="tag">파워서플라이</span> <span class="tag">TDP</span> <span class="tag">RTX5090</span> <span class="tag">ATX3.1</span> <span class="tag">로컬LLM</span></p>
 </article>
 
 <section class="related" aria-labelledby="related-h">
@@ -331,10 +313,10 @@
       </a>
     </li>
     <li class="card">
-      <a href="/posts/gpu-psu-wattage.html">
+      <a href="/posts/local-llm-power-cost.html">
         <span class="card-cat">GPU</span>
-        <span class="card-title">그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</span>
-        <span class="card-desc">카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.</span>
+        <span class="card-title">로컬 LLM 전기요금 — 정말 공짜인가</span>
+        <span class="card-desc">전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
