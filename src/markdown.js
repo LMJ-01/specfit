@@ -188,8 +188,23 @@ function render(md) {
       while (i < lines.length) {
         const m = /^(\s*)([-*]|\d+\.)\s+(.*)$/.exec(lines[i]);
         if (!m) break;
-        const content = m[3];
-        const task = /^\[([ xX])\]\s+(.*)$/.exec(content);
+        let content = m[3];
+        i++;
+
+        // 이어지는 들여쓴 줄은 같은 항목입니다.
+        // 이걸 안 붙이면 두 줄짜리 항목의 둘째 줄이 목록 밖으로 <p> 로 튀어나옵니다.
+        while (
+          i < lines.length &&
+          lines[i].trim() &&
+          /^\s/.test(lines[i]) &&
+          !/^\s*([-*]|\d+\.)\s/.test(lines[i]) &&
+          !/^\s*```/.test(lines[i])
+        ) {
+          content += `\n${lines[i].trim()}`;
+          i++;
+        }
+
+        const task = /^\[([ xX])\]\s+([\s\S]*)$/.exec(content);
         if (task) {
           const checked = task[1].toLowerCase() === 'x' ? ' checked' : '';
           items.push(
@@ -198,7 +213,6 @@ function render(md) {
         } else {
           items.push(`<li>${inline(content)}</li>`);
         }
-        i++;
       }
       out.push(`<${tag}>\n${items.join('\n')}\n</${tag}>`);
       continue;
@@ -238,6 +252,25 @@ function promoteFirstImage(html) {
 
 export function markdownToHtml(md) {
   return promoteFirstImage(render(md));
+}
+
+/**
+ * 인라인 마크다운을 평문으로 되돌립니다. 구조화 데이터(JSON-LD)용입니다.
+ *
+ * 리치 결과에는 본문이 그대로 나가므로 **강조** 나 [링크](/주소) 기호가 남아 있으면
+ * 검색 결과에 그 기호가 보입니다. HTML 로 바꿔서도 안 됩니다 — FAQPage 의
+ * answer 에 허용되는 태그는 제한적이고, 이 사이트는 평문으로 충분합니다.
+ */
+export function inlineToText(src) {
+  return src
+    .replace(/`([^`]+)`/g, '$1')
+    // 이미지가 링크보다 먼저입니다. 순서를 바꾸면 ![alt](…) 의 '!' 가 남습니다.
+    .replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/(^|[^*])\*([^*]+)\*/g, '$1$2')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 // frontmatter (--- 로 감싼 key: value) 를 떼어냅니다.

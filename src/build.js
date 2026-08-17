@@ -11,7 +11,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { config } from './config.js';
-import { markdownToHtml, parseFrontmatter } from './markdown.js';
+import { markdownToHtml, parseFrontmatter, inlineToText } from './markdown.js';
 import { postPage, listPage, staticPage, toolPage, fmtShort } from './templates.js';
 import { gpus, models, quants, lengths } from './gpu-data.js';
 import { figures } from './figures.js';
@@ -156,13 +156,21 @@ function extractFaq(markdown) {
       current = { q: q[1].trim(), a: '' };
       continue;
     }
-    if (current && line.trim() && !/^[#>`|-]/.test(line)) {
-      current.a += (current.a ? ' ' : '') + line.trim();
-    }
+    if (!current || !line.trim()) continue;
+
+    // 인용·표·코드펜스·구분선은 답변에서 뺍니다.
+    if (/^\s*(>|\||```|---)/.test(line)) continue;
+
+    // 목록 항목은 마커만 떼고 답변에 넣습니다.
+    // 이걸 빼면 "세 가지를 확인하세요." 처럼 정작 내용이 없는 답변이
+    // 리치 결과에 나갑니다 — 목록에 답이 들어 있는 글이 여러 편 있습니다.
+    const text = line.trim().replace(/^([-*]|\d+\.)\s+/, '');
+    current.a += (current.a ? ' ' : '') + text;
   }
   if (current && current.a) faq.push(current);
 
-  return faq;
+  // 마크다운 기호가 그대로 검색 결과에 나가지 않도록 평문으로 되돌립니다.
+  return faq.map((f) => ({ q: inlineToText(f.q), a: inlineToText(f.a) }));
 }
 
 async function build() {
@@ -197,7 +205,15 @@ async function build() {
         image: p.data.image || '',
         faq,
         html: renderShortcodes(p.body, (msg) => warnings.push(`${p.slug}: ${msg}`)),
-        text: p.body.replace(/[#>*`|_-]/g, ' ').replace(/\s+/g, ' ').trim(),
+        // 작성용 메모(<!-- 공개 전 확인 -->)를 먼저 걷어냅니다.
+        // 이게 없으면 대부분의 글에서 앞 600자가 통째로 메모라, 공개되는
+        // 검색 인덱스에 내부 메모가 실리고 정작 본문은 색인되지 않습니다.
+        // 주석 제거가 '-' 제거보다 먼저여야 합니다 — 순서를 바꾸면 --> 가 사라집니다.
+        text: p.body
+          .replace(/<!--[\s\S]*?-->/g, ' ')
+          .replace(/[#>*`|_-]/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim(),
       };
     })
     // 최신순. 날짜가 같으면 slug 로 가릅니다.
