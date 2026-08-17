@@ -59,6 +59,11 @@ export const gpus = [
 
   // ── RTX 30 (Ampere): 단종. 진단용으로만 목록에 둡니다 ──────────
   { id: 'rtx3090', name: 'RTX 3090 (중고)', vram: 24, bw: 936, tdp: 350, tier: 'high', new: false, buy: '', widget: '' },
+  // ⚠️ 3080 은 10GB(760GB/s·320W)와 12GB(912GB/s·350W) 두 판이 있습니다.
+  //    여기 있는 것은 **10GB 판**이고, 그래서 이름에 용량을 박아뒀습니다.
+  //    nvidia.com 30 시리즈 페이지는 지금 12GB 판만 싣고 있어서,
+  //    스펙을 재확인하다 "10GB 가 틀렸다" 고 고치기 쉽습니다 — 다른 제품입니다.
+  //    중고 시장에 10GB 가 훨씬 많아서 이쪽을 남겨둡니다. (2026-08-18 확인)
   { id: 'rtx3080', name: 'RTX 3080 10GB', vram: 10, bw: 760, tdp: 320, tier: 'mid', new: false, buy: '', widget: '' },
   { id: 'rtx3070', name: 'RTX 3070', vram: 8, bw: 448, tdp: 220, tier: 'entry', new: false, buy: '', widget: '' },
   { id: 'rtx3060', name: 'RTX 3060 12GB', vram: 12, bw: 360, tdp: 170, tier: 'entry', new: false, buy: '', widget: '' },
