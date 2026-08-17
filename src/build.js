@@ -16,7 +16,7 @@ import { postPage, listPage, staticPage, toolPage, fmtShort } from './templates.
 import { gpus, models, quants, lengths } from './gpu-data.js';
 import { figures } from './figures.js';
 import { buyBox } from './products.js';
-import { toolMountHtml } from '../assets/vram-render.js';
+import { toolMountHtml, parts, verdict } from '../assets/vram-render.js';
 
 const toolData = { gpus, models, quants, lengths };
 
@@ -179,6 +179,157 @@ function extractFaq(markdown) {
   return faq.map((f) => ({ q: inlineToText(f.q), a: inlineToText(f.a) }));
 }
 
+// ---- 글의 표가 계산기와 어긋나는지 검사 ----
+//
+// 이 사이트의 유일한 차별점은 수치가 맞는다는 것입니다. 그런데 글의 표는 손으로
+// 적고 계산기는 코드로 냅니다. 한쪽만 고치면 둘이 다른 답을 하고, 그때
+// 빌드는 아무 말도 하지 않았습니다.
+//
+// 실제로 겪은 일입니다 — KV 캐시를 파라미터 수에 비례시켜 놓은 것을 고쳤을 때
+// 글 열 편의 표가 함께 틀린 상태가 됐습니다. `perB` 재측정은 반년마다 하기로
+// 되어 있으므로(side-income-plan/docs/next-steps.md '정기 점검') 또 생깁니다.
+//
+// 표에 적힌 기준(양자화·길이)은 본문 산문에 있어서 기계가 읽기 어렵습니다.
+// 그래서 **표 안에서 스스로 증명하게** 합니다 — 올바른 표라면 모든 행이
+// 같은 기준 하나로 설명돼야 합니다. 행마다 가능한 기준을 구해 교집합을 내고,
+// 비면 그 표는 낡았거나 서로 안 맞는 것입니다.
+const MODEL_PATTERNS = [
+  [/(^|[^\d])3B/, '3b'],
+  [/(7~8B|(^|[^\d~])8B|(^|[^\d~])7B)/, '8b'],
+  [/(12~14B|(^|[^\d~])14B|(^|[^\d~])12B)/, '14b'],
+  [/(20~22B|(^|[^\d~])22B)/, '22b'],
+  [/(^|[^\d~])32B/, '32b'],
+  [/(^|[^\d~])70B/, '70b'],
+  [/120B/, '120b'],
+];
+
+const VERDICT_WORD = { ok: '여유', tight: '빠듯', slow: '느림', no: '불가' };
+
+const modelIdOf = (text) => {
+  for (const [re, id] of MODEL_PATTERNS) if (re.test(text)) return id;
+  return null;
+};
+
+const cellsOf = (row) =>
+  row
+    .trim()
+    .replace(/^\|/, '')
+    .replace(/\|$/, '')
+    .split('|')
+    .map((c) => c.replace(/\*\*/g, '').trim());
+
+// 모든 (양자화 × 길이) 조합. 표의 기준을 여기서 좁혀 나갑니다.
+const BASES = quants.flatMap((q) => lengths.map((l) => ({ q, l, key: `${q.id}/${l.id}` })));
+
+/**
+ * 판정 열 헤더에서 그 열이 가리키는 카드의 VRAM 을 알아냅니다.
+ * 글마다 표기가 다릅니다 — '16GB 에서', '3060 12GB에서', '5060 Ti 16GB', '5070 Ti', '5080'.
+ *
+ * 용량이 적혀 있으면 그걸 쓰고, 이름만 적혀 있으면 gpu-data.js 에서 찾습니다.
+ * **여러 카드에 걸리면 포기합니다** — '5060 Ti' 는 16GB 와 8GB 두 종류가 있어서
+ * 어느 쪽인지 알 수 없습니다. 찍어서 경고를 내면 오탐이 됩니다.
+ */
+const normName = (s) => s.replace(/RTX|GeForce|\(.*?\)|[\s·]/gi, '').toLowerCase();
+
+function cardVramOf(headerCell) {
+  // '8GB × 2' 는 두 장 이야기라 8GB 카드 하나로 볼 수 없습니다.
+  if (/[×x]\s*\d/.test(headerCell)) return null;
+
+  const gb = /(\d+)\s*GB/.exec(headerCell);
+  if (gb) return Number(gb[1]);
+
+  const key = normName(headerCell);
+  if (!key || key.length < 4) return null;
+  const hit = gpus.filter((g) => normName(g.name).startsWith(key));
+  return hit.length === 1 ? hit[0].vram : null;
+}
+
+function checkToolTables(body, warn) {
+  const lines = body.split('\n');
+
+  for (let i = 0; i < lines.length; i++) {
+    if (!lines[i].trim().startsWith('|')) continue;
+    if (!/^\s*\|[\s:|-]+\|/.test(lines[i + 1] || '')) continue;
+
+    const head = cellsOf(lines[i]);
+
+    // 첫 열이 '무엇을 돌리나' 축인 표만 봅니다.
+    //
+    // '필요 메모리' 라는 말이 이 사이트에서 두 뜻으로 쓰입니다 —
+    //   ① 모델이 쓰는 양   (| 모델 크기 | 필요 메모리 | …)  ← 계산기와 맞아야 하는 값
+    //   ② 사야 할 용량     (| 작업 | 필요 메모리 | …)       ← 맥 통합메모리 권장치
+    // 축을 안 보면 ②가 전부 경고로 뜹니다. 경고가 오탐으로 차면 아무도 안 봅니다.
+    if (!/^(모델|다루는 길이|양자화)/.test(head[0] || '')) continue;
+
+    // '필요한 VRAM' 도 같은 이유로 뺍니다 — 그건 살 카드 용량입니다.
+    const needCol = head.findIndex((h) => /필요\s*메모리/.test(h));
+
+    const cardCols = head
+      .map((h, idx) => {
+        if (idx === 0 || idx === needCol) return null;
+        const vram = cardVramOf(h);
+        return vram ? { idx, vram } : null;
+      })
+      .filter(Boolean);
+
+    if (needCol === -1 && !cardCols.length) continue;
+
+    const rows = [];
+    let j = i + 2;
+    for (; j < lines.length && lines[j].trim().startsWith('|') && lines[j].trim(); j++) {
+      const c = cellsOf(lines[j]);
+      const id = modelIdOf(c[0] || '');
+      if (id) rows.push({ c, id, model: models.find((m) => m.id === id) });
+    }
+    i = j - 1;
+    if (!rows.length) continue;
+
+    // ① 각 행의 '필요 메모리' 를 설명할 수 있는 기준만 남깁니다.
+    let bases = BASES;
+    if (needCol !== -1) {
+      for (const r of rows) {
+        const m = /([\d.]+)\s*GB/i.exec(r.c[needCol] || '');
+        if (!m) continue;
+        const stated = Number(m[1]);
+        // 소수점을 안 쓴 값('약 46GB')은 반올림 폭을 넓게 봅니다.
+        const tol = m[1].includes('.') ? 0.1 : 0.5;
+        const fit = bases.filter(
+          (b) => Math.abs(parts(r.model, b.q, b.l.tokens).total - stated) <= tol
+        );
+        if (!fit.length) {
+          warn(
+            `표의 필요 메모리가 계산기와 맞지 않습니다 — ${r.model.label} ${stated}GB ` +
+              `(어떤 양자화·길이로도 안 나옴). gpu-data.js 를 고쳤다면 이 표도 고치세요`
+          );
+          bases = [];
+          break;
+        }
+        bases = fit;
+      }
+      if (!bases.length) continue;
+    }
+
+    // ② 판정 열을 남은 기준으로 검사합니다.
+    for (const { idx, vram } of cardCols) {
+      for (const r of rows) {
+        const said = Object.entries(VERDICT_WORD).find(([, w]) => (r.c[idx] || '').includes(w));
+        if (!said) continue;
+        const okAny = bases.some(
+          (b) => verdict(parts(r.model, b.q, b.l.tokens).total, vram) === said[0]
+        );
+        if (!okAny) {
+          const b = bases[0];
+          const got = VERDICT_WORD[verdict(parts(r.model, b.q, b.l.tokens).total, vram)];
+          warn(
+            `판정이 계산기와 다릅니다 — ${r.model.label} @ ${vram}GB: ` +
+              `글은 "${said[1]}", 계산기는 "${got}" (${b.key})`
+          );
+        }
+      }
+    }
+  }
+}
+
 async function build() {
   const written = [];
   const warnings = [];
@@ -190,6 +341,8 @@ async function build() {
     .filter((p) => p.data.draft !== true)
     .map((p) => {
       const faq = extractFaq(p.body);
+      // 글의 표가 계산기와 어긋나면 여기서 잡습니다.
+      checkToolTables(p.body, (msg) => warnings.push(`${p.slug}: ${msg}`));
       const usesTool = p.body.includes(TOOL_MARK);
       // 위젯을 쓰면 그 자체가 제휴 링크이므로 공정위 고지가 붙어야 합니다.
       const usesWidget = WIDGET_RE.test(p.body);
