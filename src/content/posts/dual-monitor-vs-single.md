@@ -148,6 +148,10 @@ affiliate: true
 조건은 [DP와 HDMI](/posts/dp-vs-hdmi-coding.html)와
 [원케이블 연결](/posts/monitor-usb-c-one-cable.html)에 적었습니다.
 
+**노트북이라면 그 전에 확인할 것이 있습니다** — 내보낼 수 있는 화면 수가 정해져 있고
+내장 화면도 거기 들어갑니다.
+[노트북에 모니터 두 대](/posts/laptop-dual-monitor-output.html)에 순서를 적었습니다.
+
 ### 배치 — 정면이 하나여야 합니다
 
 두 대를 **똑같이 가운데 놓으면** 둘 다 비스듬해집니다.

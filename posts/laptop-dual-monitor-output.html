@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>노트북에 모니터 두 대 — 왜 한 대만 나오나 | 스펙핏</title>
+<meta name="description" content="포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/laptop-dual-monitor-output.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="노트북에 모니터 두 대 — 왜 한 대만 나오나 | 스펙핏">
+<meta property="og:description" content="포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/laptop-dual-monitor-output.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북에 모니터 두 대 — 왜 한 대만 나오나","description":"포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-dual-monitor-output.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"노트북에 모니터 두 대 — 왜 한 대만 나오나","item":"https://specfit.kr/posts/laptop-dual-monitor-output.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"포트가 두 개인데 왜 한 대만 나오나요","acceptedAnswer":{"@type":"Answer","text":"셋 중 하나입니다. 노트북의 동시 디스플레이 상한에 걸렸습니다 (내장 화면 포함 — 위 1번) 그 USB-C 포트가 화면을 안 내보내는 포트입니다 (위 2번) 독이 MST 방식이고 맥을 쓰고 계십니다 (위 3번)"}},{"@type":"Question","name":"독을 샀는데 두 화면에 같은 그림이 나옵니다","acceptedAnswer":{"@type":"Answer","text":"MST 가 안 먹은 것입니다. 맥이라면 위 3번의 제약에 해당하고, 윈도우라면 디스플레이 설정에서 \"복제\" 가 아니라 \"확장\" 으로 바꾸면 됩니다."}},{"@type":"Question","name":"DisplayLink 독을 코딩용으로 써도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 정지된 텍스트 화면이라 보낼 것이 적습니다. 다만 드라이버를 깔아야 하고, 운영체제를 크게 올릴 때 드라이버 호환을 한 번 확인하셔야 합니다."}},{"@type":"Question","name":"노트북 화면을 끄면 한 대 더 붙나요","acceptedAnswer":{"@type":"Answer","text":"상한에 걸린 경우라면 됩니다. 내장 화면도 그 수에 들어가기 때문입니다. 덮개를 닫고 외부 모니터만 쓰는 구성으로 바꿔보세요."}},{"@type":"Question","name":"해상도가 높으면 두 대가 안 되나요","acceptedAnswer":{"@type":"Answer","text":"대역폭이 모자라면 그럴 수 있습니다. 특히 데이지체인이나 MST 로 하나를 쪼개 쓸 때 두 대가 통로를 나눠 쓰므로 고해상도에서 한계가 옵니다. 계산은 DP와 HDMI에 있습니다."}},{"@type":"Question","name":"어떤 독을 사야 하나요","acceptedAnswer":{"@type":"Answer","text":"노트북과 운영체제로 먼저 갈립니다. 윈도우 + USB-C → MST 독으로 충분합니다 맥 → DisplayLink 또는 썬더볼트 썬더볼트 포트가 있다면 → 썬더볼트가 가장 안 깨집니다 제품 페이지에서 \"지원 디스플레이 수\"와 \"macOS 지원\" 두 항목을 보세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>노트북에 모니터 두 대 — 왜 한 대만 나오나</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-18">2026년 8월 18일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>포트가 두 개인데 모니터는 한 대만 나옵니다. 케이블도 바꿔보고 드라이버도 다시 깔았는데
+그대로입니다.</p>
+<p><strong>대개 고장이 아닙니다.</strong> 노트북이 <strong>동시에 내보낼 수 있는 화면 수</strong>가 정해져 있고,
+거기에 걸린 것입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>확인 순서</th><th>무엇을</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>노트북이 몇 대까지 내보내나</strong> — 내장 화면도 그 수에 들어갑니다</td></tr>
+<tr><td>2</td><td><strong>그 포트가 화면을 내보내는 포트인가</strong> — USB-C 는 다 되는 게 아닙니다</td></tr>
+<tr><td>3</td><td><strong>독을 쓴다면 어떤 방식인가</strong> — MST / DisplayLink / 썬더볼트</td></tr>
+</tbody>
+</table></div>
+<p>3번에서 갈립니다. <strong>독을 샀는데 한 대만 나오는 경우가 여기 해당</strong>합니다.</p>
+<h2 id="1-노트북은-몇-대까지-내보내나">1. 노트북은 몇 대까지 내보내나</h2>
+<p>내장 그래픽에 <strong>동시에 그릴 수 있는 화면 수 상한</strong>이 있습니다.
+제품 사양이나 칩 사양에 적혀 있습니다.</p>
+<p><strong>여기서 놓치는 것 하나</strong> — <strong>노트북 자기 화면도 그 수에 들어갑니다.</strong></p>
+<pre><code>상한이 세 대인 노트북
+  내장 화면 1 + 외부 2  =  3   ← 됩니다
+  내장 화면 1 + 외부 3  =  4   ← 안 됩니다</code></pre>
+<p>그래서 <strong>노트북 화면을 끄면 외부를 한 대 더 붙일 수 있는 경우</strong>가 있습니다.
+덮개를 닫고 외부만 쓰는 구성이 그렇습니다.</p>
+<h3 id="확인하는-법">확인하는 법</h3>
+<ul>
+<li>제품 사양에서 <strong>&quot;최대 지원 디스플레이&quot;</strong> 또는 <strong>&quot;멀티 디스플레이&quot;</strong> 항목</li>
+<li>없으면 <strong>CPU·칩 모델명 + 사양</strong> 으로 검색하면 내장 그래픽 항목에 나옵니다</li>
+<li>전용 그래픽카드가 있는 노트북은 <strong>어느 쪽에 포트가 연결됐는지</strong>에 따라 달라집니다</li>
+</ul>
+<p><strong>숫자를 여기 적지 않는 이유</strong>는 세대·모델마다 다르기 때문입니다.
+본인 제품 사양을 보시는 게 유일하게 정확합니다.</p>
+<h2 id="2-그-포트가-화면을-내보내는-포트인가">2. 그 포트가 화면을 내보내는 포트인가</h2>
+<p><strong>USB-C 가 있다고 다 되는 게 아닙니다.</strong> 화면을 내보내려면
+그 포트가 <strong>DP Alt Mode</strong> 를 지원해야 합니다.</p>
+<ul>
+<li>포트 옆에 <strong><code>D</code> 모양 또는 <code>DP</code> 표기</strong>가 있으면 됩니다</li>
+<li>번개 표시(썬더볼트)면 됩니다</li>
+<li><strong>아무 표시도 없으면 데이터 전용일 수 있습니다</strong></li>
+</ul>
+<p>조건과 표기 방식은
+<a href="/posts/monitor-usb-c-one-cable.html">노트북 모니터 원케이블 연결</a>에 정리했습니다.</p>
+<h2 id="3-독을-썼는데-한-대만-나온다">3. ⚠️ 독을 썼는데 한 대만 나온다</h2>
+<p>여기가 이 글의 핵심입니다. <strong>독은 세 가지 방식이 있고, 결과가 다릅니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>방식</th><th>어떻게 화면을 만드나</th><th>맥에서</th></tr></thead>
+<tbody>
+<tr><td><strong>MST</strong></td><td>한 출력을 하드웨어로 쪼갭니다</td><td>⚠️ <strong>애플 실리콘에서 안 됩니다</strong></td></tr>
+<tr><td><strong>DisplayLink</strong></td><td>드라이버가 화면을 만들어 USB로 보냅니다</td><td>✅ 됩니다 (드라이버 설치)</td></tr>
+<tr><td><strong>썬더볼트</strong></td><td>포트마다 독립 출력을 갖습니다</td><td>✅ 됩니다</td></tr>
+</tbody>
+</table></div>
+<h3 id="mst-윈도우에서는-되는데-맥에서는-안-됩니다">MST — 윈도우에서는 되는데 맥에서는 안 됩니다</h3>
+<p>MST 는 <strong>출력 하나를 여러 화면으로 쪼개는 하드웨어 방식</strong>입니다.
+싼 USB-C 독 대부분이 이 방식이고, <strong>윈도우에서는 잘 됩니다.</strong></p>
+<p><strong>그런데 애플 실리콘 맥은 지금까지 MST 를 지원하지 않습니다.</strong>
+그래서 같은 독을 맥에 꽂으면 <strong>두 화면에 같은 그림이 나오거나 한 대만 켜집니다.</strong></p>
+<pre><code>윈도우 노트북 + MST 독  →  두 대가 각각 다른 화면
+애플 실리콘 맥 + MST 독  →  복제되거나 한 대만</code></pre>
+<blockquote><p>⚠️ <strong>세대별로 바뀔 수 있습니다.</strong> 지금까지 알려진 제약이고, 사실 이건
+독 제조사 페이지의 &quot;macOS 지원&quot; 표기를 확인하는 편이 정확합니다.
+같은 이유로 <a href="/posts/dp-vs-hdmi-coding.html">데이지체인 글</a>에서도 단정하지 않았습니다.</p></blockquote>
+<h3 id="displaylink-맥에서-듀얼을-만드는-우회로">DisplayLink — 맥에서 듀얼을 만드는 우회로</h3>
+<p><strong>드라이버가 화면을 그려서 USB 로 보내는 방식</strong>입니다. 운영체제의 MST 지원과
+무관하게 동작하므로 <strong>맥에서도 됩니다.</strong></p>
+<p>대신 대가가 있습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>MST · 썬더볼트</th><th>DisplayLink</th></tr></thead>
+<tbody>
+<tr><td>드라이버</td><td>필요 없음</td><td><strong>설치 필요</strong></td></tr>
+<tr><td>처리</td><td>하드웨어</td><td><strong>CPU 가 관여합니다</strong></td></tr>
+<tr><td>코딩·문서</td><td>문제없음</td><td>문제없음</td></tr>
+<tr><td>영상·게임</td><td>문제없음</td><td><strong>불리합니다</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>코딩 화면으로는 무난합니다.</strong> 정지된 텍스트가 대부분이라 보낼 것이 적습니다.
+영상 재생이나 게임을 그 화면에서 할 거면 피하세요.</p>
+<blockquote><p>⚠️ &quot;CPU 를 몇 % 쓴다&quot; 는 적지 않겠습니다. 구조상 관여하는 것은 맞지만
+측정하지 않았습니다.</p></blockquote>
+<h3 id="썬더볼트-가장-확실하고-가장-비쌉니다">썬더볼트 — 가장 확실하고 가장 비쌉니다</h3>
+<p>포트마다 독립된 출력을 갖기 때문에 <strong>쪼개는 문제가 없습니다.</strong>
+노트북 쪽에도 썬더볼트 포트가 있어야 합니다.</p>
+<p><strong>맥에서 화면 두 대를 제대로 쓰려면 사실상 이쪽이나 DisplayLink 입니다.</strong></p>
+<h2 id="4-독-없이-두-대를-쓰는-방법">4. 독 없이 두 대를 쓰는 방법</h2>
+<p>포트가 두 개면 독이 필요 없습니다.</p>
+<pre><code>USB-C(DP Alt Mode) → 모니터 1
+HDMI               → 모니터 2</code></pre>
+<p><strong>이게 가장 단순하고 안 깨집니다.</strong> 노트북 포트를 먼저 세어보세요.</p>
+<p>그리고 <strong>데이지체인</strong>이라는 방법이 있습니다 — 첫 모니터에서 두 번째로 잇는 방식입니다.
+DisplayPort 에만 있고 조건이 몇 개 붙습니다:
+<a href="/posts/dp-vs-hdmi-coding.html">DP와 HDMI</a>의 6번 절에 정리했습니다.</p>
+<h3 id="두-번째-화면을-새로-살-거면">두 번째 화면을 새로 살 거면</h3>
+<p><strong>해상도와 배율을 첫 대와 맞추는 편이 낫습니다.</strong> 다르면 창을 옮길 때마다 크기가 튑니다 —
+<a href="/posts/dual-monitor-vs-single.html">듀얼 모니터 vs 큰 모니터 한 대</a>에 적었습니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsnkTpck0" target="_blank" rel="sponsored nofollow noopener">27인치 QHD 모니터 보기</a>
+  <span class="buy-note">배율을 안 건드리고 쓸 수 있는 조합입니다</span>
+</aside>
+<p><strong>두 대가 정말 나에게 맞는지</strong>도 같은 글에서 갈랐습니다.
+코드를 더 보고 싶은 것이라면 두 대가 답이 아닙니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="포트가-두-개인데-왜-한-대만-나오나요">포트가 두 개인데 왜 한 대만 나오나요</h3>
+<p>셋 중 하나입니다.</p>
+<ul>
+<li>노트북의 <strong>동시 디스플레이 상한</strong>에 걸렸습니다 (내장 화면 포함 — 위 1번)</li>
+<li>그 USB-C 포트가 <strong>화면을 안 내보내는 포트</strong>입니다 (위 2번)</li>
+<li>독이 <strong>MST 방식이고 맥을 쓰고 계십니다</strong> (위 3번)</li>
+</ul>
+<h3 id="독을-샀는데-두-화면에-같은-그림이-나옵니다">독을 샀는데 두 화면에 같은 그림이 나옵니다</h3>
+<p><strong>MST 가 안 먹은 것입니다.</strong> 맥이라면 위 3번의 제약에 해당하고,
+윈도우라면 디스플레이 설정에서 &quot;복제&quot; 가 아니라 <strong>&quot;확장&quot;</strong> 으로 바꾸면 됩니다.</p>
+<h3 id="displaylink-독을-코딩용으로-써도-되나요">DisplayLink 독을 코딩용으로 써도 되나요</h3>
+<p><strong>됩니다.</strong> 정지된 텍스트 화면이라 보낼 것이 적습니다.
+다만 드라이버를 깔아야 하고, 운영체제를 크게 올릴 때 드라이버 호환을 한 번 확인하셔야 합니다.</p>
+<h3 id="노트북-화면을-끄면-한-대-더-붙나요">노트북 화면을 끄면 한 대 더 붙나요</h3>
+<p><strong>상한에 걸린 경우라면 됩니다.</strong> 내장 화면도 그 수에 들어가기 때문입니다.
+덮개를 닫고 외부 모니터만 쓰는 구성으로 바꿔보세요.</p>
+<h3 id="해상도가-높으면-두-대가-안-되나요">해상도가 높으면 두 대가 안 되나요</h3>
+<p>대역폭이 모자라면 그럴 수 있습니다. 특히 <strong>데이지체인이나 MST 로 하나를 쪼개 쓸 때</strong>
+두 대가 통로를 나눠 쓰므로 고해상도에서 한계가 옵니다.
+계산은 <a href="/posts/dp-vs-hdmi-coding.html">DP와 HDMI</a>에 있습니다.</p>
+<h3 id="어떤-독을-사야-하나요">어떤 독을 사야 하나요</h3>
+<p><strong>노트북과 운영체제로 먼저 갈립니다.</strong></p>
+<ul>
+<li>윈도우 + USB-C → MST 독으로 충분합니다</li>
+<li>맥 → <strong>DisplayLink 또는 썬더볼트</strong></li>
+<li>썬더볼트 포트가 있다면 → 썬더볼트가 가장 안 깨집니다</li>
+</ul>
+<p>제품 페이지에서 <strong>&quot;지원 디스플레이 수&quot;와 &quot;macOS 지원&quot;</strong> 두 항목을 보세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>노트북의 동시 디스플레이 상한</strong>을 먼저 보세요. 사양에 있습니다</li>
+<li><strong>내장 화면도 그 수에 들어갑니다.</strong> 덮개를 닫으면 여유가 생깁니다</li>
+<li>USB-C 가 있다고 다 되는 게 아닙니다 — <strong>DP Alt Mode</strong> 표기 확인</li>
+<li>독은 <strong>MST / DisplayLink / 썬더볼트</strong> 세 방식이고 결과가 다릅니다</li>
+<li><strong>애플 실리콘 맥에서는 MST 독으로 듀얼이 안 됩니다.</strong> 이게 가장 많이 걸립니다</li>
+<li><strong>포트가 두 개면 독이 필요 없습니다.</strong> 가장 단순한 방법이 가장 안 깨집니다</li>
+</ol>
+<p>실제 구성에서 다르게 동작하면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">듀얼모니터</span> <span class="tag">도킹스테이션</span> <span class="tag">MST</span> <span class="tag">DisplayLink</span> <span class="tag">노트북</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/monitor-arm-vesa.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">모니터 암 — VESA만 맞으면 되는 게 아닙니다</span>
+        <span class="card-desc">나사 구멍 간격이 맞아도 안 되는 경우가 세 가지 있습니다. 하중 하한, 책상 두께, 나사 길이입니다. 사기 전에 재야 하는 숫자를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dp-vs-hdmi-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">DP와 HDMI — 코딩용 모니터에 뭘 꽂아야 하나</span>
+        <span class="card-desc">코딩은 60Hz면 되기 때문에 대부분 아무 단자나 됩니다. 막히는 건 4K부터입니다. 필요한 대역폭을 직접 계산해서 어디서 걸리는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-5k-vs-4k-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">27인치 5K vs 4K — 배율이 정수로 떨어진다는 것</span>
+        <span class="card-desc">27인치 5K는 200% 배율에서 작업 영역이 정확히 QHD가 됩니다. 4K를 150%로 쓴 것과 넓이가 같고 선명도만 다릅니다. PPI와 배율을 계산해 갈랐습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
