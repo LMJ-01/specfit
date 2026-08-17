@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>개발용 노트북 CPU — 어디까지 신경 써야 하나 | 스펙핏</title>
-<meta name="description" content="CPU 이름은 복잡한데 개발에서 실제로 갈리는 건 두 가지뿐입니다. 모델명 읽는 법과, NPU 성능이 로컬 LLM과 무관한 이유를 정리했습니다.">
+<title>개발용 노트북 CPU 등급 — 어디까지 올려야 하나 | 스펙핏</title>
+<meta name="description" content="5·7·9 중 어느 등급을 살지, 같은 등급인데 성능이 갈리는 이유(접미사)를 정리했습니다. NPU 성능이 로컬 LLM과 무관한 이유도 함께 넣었습니다.">
 <link rel="canonical" href="https://specfit.kr/posts/dev-laptop-cpu.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="스펙핏">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="개발용 노트북 CPU — 어디까지 신경 써야 하나 | 스펙핏">
-<meta property="og:description" content="CPU 이름은 복잡한데 개발에서 실제로 갈리는 건 두 가지뿐입니다. 모델명 읽는 법과, NPU 성능이 로컬 LLM과 무관한 이유를 정리했습니다.">
+<meta property="og:title" content="개발용 노트북 CPU 등급 — 어디까지 올려야 하나 | 스펙핏">
+<meta property="og:description" content="5·7·9 중 어느 등급을 살지, 같은 등급인데 성능이 갈리는 이유(접미사)를 정리했습니다. NPU 성능이 로컬 LLM과 무관한 이유도 함께 넣었습니다.">
 <meta property="og:url" content="https://specfit.kr/posts/dev-laptop-cpu.html">
 <meta property="og:image" content="https://specfit.kr/assets/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,9 +24,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 노트북 CPU — 어디까지 신경 써야 하나","description":"CPU 이름은 복잡한데 개발에서 실제로 갈리는 건 두 가지뿐입니다. 모델명 읽는 법과, NPU 성능이 로컬 LLM과 무관한 이유를 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dev-laptop-cpu.html","image":"https://specfit.kr/assets/og-default.png"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"개발용 노트북 CPU — 어디까지 신경 써야 하나","item":"https://specfit.kr/posts/dev-laptop-cpu.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"인텔과 AMD 중 어느 쪽인가요","acceptedAnswer":{"@type":"Answer","text":"개발 작업에서 큰 차이는 없습니다. 같은 가격대면 코어 수와 전력 등급을 비교하시는 게 실질적입니다. 특정 도구가 한쪽에서만 문제를 일으키는 경우가 드물게 있으니, 쓰시는 스택에 알려진 이슈가 있는지만 확인해 보세요."}},{"@type":"Question","name":"클럭이 높으면 빌드가 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"조금 빨라집니다. 다만 빌드는 여러 코어를 동시에 쓰는 작업이라 코어 수의 영향이 더 큽니다. 클럭은 마지막에 보셔도 됩니다."}},{"@type":"Question","name":"배터리를 오래 쓰고 싶은데요","acceptedAnswer":{"@type":"Answer","text":"저전력형이 유리합니다. 다만 빌드가 잦으면 결국 전원을 꽂고 쓰게 됩니다. 주로 어디서 작업하실지를 먼저 정하시면 답이 나옵니다."}},{"@type":"Question","name":"발열로 성능이 떨어진다던데요","acceptedAnswer":{"@type":"Answer","text":"얇은 노트북에서 실제로 생깁니다. 오래 돌리면 열이 쌓여 CPU가 스스로 속도를 낮춥니다. 긴 빌드나 로컬 LLM처럼 오래 돌리는 작업이라면 냉각이 좋은 모델이 유리합니다. 왜 처음엔 빠르다가 느려지는지, 사양에서 뭘 보면 미리 아는지는 노트북 발열과 성능 저하에 정리했습니다."}},{"@type":"Question","name":"중고 노트북은 CPU 세대를 얼마나 봐야 하나요","acceptedAnswer":{"@type":"Answer","text":"개발 작업만 놓고 보면 몇 세대 전 CPU도 대체로 충분합니다. 그보다 램이 늘어나는지, SSD를 바꿀 수 있는지를 보시는 편이 실질적입니다."}},{"@type":"Question","name":"로컬 LLM 때문에 CPU를 올려야 하나요","acceptedAnswer":{"@type":"Answer","text":"그래픽카드로 돌린다면 아닙니다. CPU는 거의 놀고 있습니다. GPU 없이 CPU로만 돌린다면 이야기가 다르지만, 그 경우에도 병목은 CPU 성능이 아니라 메모리 대역폭입니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 노트북 CPU 등급 — 어디까지 올려야 하나","description":"5·7·9 중 어느 등급을 살지, 같은 등급인데 성능이 갈리는 이유(접미사)를 정리했습니다. NPU 성능이 로컬 LLM과 무관한 이유도 함께 넣었습니다.","datePublished":"2026-08-16","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dev-laptop-cpu.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"개발용 노트북 CPU 등급 — 어디까지 올려야 하나","item":"https://specfit.kr/posts/dev-laptop-cpu.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"CPU 등급을 한 단계 올릴까요 램을 올릴까요","acceptedAnswer":{"@type":"Answer","text":"램입니다. 램이 부족하면 CPU가 좋아도 느려지지만, 반대는 성립하지 않습니다. 예외는 하나입니다 — 대형 프로젝트를 하루에 여러 번 빌드하는 경우. 그때는 코어 수가 시간을 직접 줄여줍니다."}},{"@type":"Question","name":"같은 등급인데 성능이 다르다는 게 무슨 말인가요","acceptedAnswer":{"@type":"Answer","text":"노트북 CPU는 전력을 얼마나 쓰게 허용하는지가 제품마다 다릅니다. 그게 이름 끝 알파벳(접미사)에 들어 있어서, 같은 \"7\"이어도 얇은 노트북에 들어간 것과 두꺼운 노트북에 들어간 것은 다른 물건입니다. 두께·무게·팬 유무로 짐작할 수 있고, 사양에 CPU 전력 표기가 있으면 그게 가장 정확합니다."}},{"@type":"Question","name":"인텔과 AMD 중 어느 쪽인가요","acceptedAnswer":{"@type":"Answer","text":"개발 작업에서 큰 차이는 없습니다. 같은 가격대면 코어 수와 전력 등급을 비교하시는 게 실질적입니다. 특정 도구가 한쪽에서만 문제를 일으키는 경우가 드물게 있으니, 쓰시는 스택에 알려진 이슈가 있는지만 확인해 보세요."}},{"@type":"Question","name":"클럭이 높으면 빌드가 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"조금 빨라집니다. 다만 빌드는 여러 코어를 동시에 쓰는 작업이라 코어 수의 영향이 더 큽니다. 클럭은 마지막에 보셔도 됩니다."}},{"@type":"Question","name":"배터리를 오래 쓰고 싶은데요","acceptedAnswer":{"@type":"Answer","text":"저전력형이 유리합니다. 다만 빌드가 잦으면 결국 전원을 꽂고 쓰게 됩니다. 주로 어디서 작업하실지를 먼저 정하시면 답이 나옵니다."}},{"@type":"Question","name":"발열로 성능이 떨어진다던데요","acceptedAnswer":{"@type":"Answer","text":"얇은 노트북에서 실제로 생깁니다. 오래 돌리면 열이 쌓여 CPU가 스스로 속도를 낮춥니다. 긴 빌드나 로컬 LLM처럼 오래 돌리는 작업이라면 냉각이 좋은 모델이 유리합니다. 왜 처음엔 빠르다가 느려지는지, 사양에서 뭘 보면 미리 아는지는 노트북 발열과 성능 저하에 정리했습니다."}},{"@type":"Question","name":"중고 노트북은 CPU 세대를 얼마나 봐야 하나요","acceptedAnswer":{"@type":"Answer","text":"개발 작업만 놓고 보면 몇 세대 전 CPU도 대체로 충분합니다. 그보다 램이 늘어나는지, SSD를 바꿀 수 있는지를 보시는 편이 실질적입니다."}},{"@type":"Question","name":"로컬 LLM 때문에 CPU를 올려야 하나요","acceptedAnswer":{"@type":"Answer","text":"그래픽카드로 돌린다면 아닙니다. CPU는 거의 놀고 있습니다. GPU 없이 CPU로만 돌린다면 이야기가 다르지만, 그 경우에도 병목은 CPU 성능이 아니라 메모리 대역폭입니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -60,10 +60,10 @@
   </nav>
 
   <header class="post-head">
-    <h1>개발용 노트북 CPU — 어디까지 신경 써야 하나</h1>
+    <h1>개발용 노트북 CPU 등급 — 어디까지 올려야 하나</h1>
     <p class="post-meta">
       <time datetime="2026-08-16">2026년 8월 16일</time>
-      <span class="updated">· 2026년 8월 17일 갱신</span>
+      <span class="updated">· 2026년 8월 18일 갱신</span>
     </p>
   </header>
 
@@ -107,6 +107,21 @@ AMD 라이젠 AI 9 365</code></pre>
 </table></div>
 <p>AMD도 구조는 같습니다. <code>라이젠 AI 9 365</code>에서 <code>9</code>가 등급입니다.</p>
 <p><strong>등급 숫자만 봐도 대략은 맞습니다.</strong> 5는 보급, 7이 무난, 9는 상급.</p>
+<h3 id="그래서-579-중-어느-것">그래서 5·7·9 중 어느 것</h3>
+<p><strong>개발용으로는 7이 기본값입니다.</strong> 위아래로 움직일 이유가 분명할 때만 옮기세요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>등급</th><th>개발에서</th><th>이럴 때</th></tr></thead>
+<tbody>
+<tr><td><strong>5</strong></td><td>편집·웹 개발에는 충분합니다</td><td>빌드가 가볍고 <strong>예산을 램·화면에 몰고 싶다</strong></td></tr>
+<tr><td><strong>7</strong></td><td><strong>기본값</strong></td><td>대부분 — 빌드가 하루 몇 번 있는 정도</td></tr>
+<tr><td><strong>9</strong></td><td>코어 수가 늘어납니다</td><td><strong>대형 프로젝트를 하루에 여러 번 빌드한다</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>9로 올리는 값어치는 빌드 횟수에서만 나옵니다.</strong> 편집·도커·로컬 LLM에서는
+9와 7의 차이가 거의 안 보입니다 — 아래 3번과 4번이 그 이유입니다.</p>
+<blockquote><p>⚠️ <strong>등급을 올리기 전에 접미사를 보세요.</strong> 같은 예산이면
+<strong>&quot;9 저전력형&quot;보다 &quot;7 고성능형&quot;이 빌드에서 빠른 경우</strong>가 있습니다.
+등급은 코어 수를, 접미사는 그 코어를 얼마나 쓰게 해줄지를 정합니다. 다음 절입니다.</p></blockquote>
 <h2 id="2-접미사-같은-이름인데-성능이-다릅니다">2. ⚠️ 접미사 — 같은 이름인데 성능이 다릅니다</h2>
 <p><strong>여기서 가장 많이 속습니다.</strong></p>
 <p>노트북 CPU는 같은 등급이라도 <strong>얼마나 전력을 쓰게 허용하느냐</strong>로 성능이 갈립니다. 그리고 그게 이름 끝 알파벳에 들어 있습니다.</p>
@@ -288,6 +303,15 @@ AMD 라이젠 AI 9 365</code></pre>
 <p><strong>맥에서는 CPU보다 메모리 용량과 대역폭이 갈림길입니다.</strong>
 자세한 기준은 <a href="/posts/macbook-air-vs-pro-dev.html">맥북 에어 vs 프로</a>에 있습니다.</p>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="cpu-등급을-한-단계-올릴까요-램을-올릴까요">CPU 등급을 한 단계 올릴까요 램을 올릴까요</h3>
+<p><strong>램입니다.</strong> 램이 부족하면 CPU가 좋아도 느려지지만, 반대는 성립하지 않습니다.
+예외는 하나입니다 — <strong>대형 프로젝트를 하루에 여러 번 빌드</strong>하는 경우.
+그때는 코어 수가 시간을 직접 줄여줍니다.</p>
+<h3 id="같은-등급인데-성능이-다르다는-게-무슨-말인가요">같은 등급인데 성능이 다르다는 게 무슨 말인가요</h3>
+<p>노트북 CPU는 <strong>전력을 얼마나 쓰게 허용하는지</strong>가 제품마다 다릅니다.
+그게 이름 끝 알파벳(접미사)에 들어 있어서, 같은 &quot;7&quot;이어도
+얇은 노트북에 들어간 것과 두꺼운 노트북에 들어간 것은 다른 물건입니다.
+두께·무게·팬 유무로 짐작할 수 있고, 사양에 CPU 전력 표기가 있으면 그게 가장 정확합니다.</p>
 <h3 id="인텔과-amd-중-어느-쪽인가요">인텔과 AMD 중 어느 쪽인가요</h3>
 <p>개발 작업에서 큰 차이는 없습니다. <strong>같은 가격대면 코어 수와 전력 등급을 비교</strong>하시는 게 실질적입니다.
 특정 도구가 한쪽에서만 문제를 일으키는 경우가 드물게 있으니, 쓰시는 스택에 알려진 이슈가 있는지만 확인해 보세요.</p>

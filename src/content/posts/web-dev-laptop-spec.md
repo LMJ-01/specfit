@@ -142,8 +142,8 @@ affiliate: true
 그렇다고 빠른 SSD를 사면 해결되는 것도 아닙니다 — 순차 속도가 병목이 아니기 때문입니다.
 이유는 [NVMe와 SATA](/posts/nvme-vs-sata.html)에 적었습니다.
 
-CPU를 어디까지 봐야 하는지는
-[개발용 노트북 CPU](/posts/dev-laptop-cpu.html)에 정리했습니다.
+어느 등급까지 올려야 하는지는
+[개발용 노트북 CPU 등급](/posts/dev-laptop-cpu.html)에 정리했습니다.
 **결론은 "등급을 올리는 값이면 램이나 화면에 쓰라"입니다.**
 
 ## 5. 전용 그래픽카드는 필요 없습니다
