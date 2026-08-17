@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개 | 스펙핏</title>
+<meta name="description" content="슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/laptop-ram-upgrade.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개 | 스펙핏">
+<meta property="og:description" content="슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/laptop-ram-upgrade.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개","description":"슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-ram-upgrade.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개","item":"https://specfit.kr/posts/laptop-ram-upgrade.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"지금 꽂혀 있는 램과 다른 제조사를 사도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 규격과 속도만 맞으면 동작합니다. 같은 제품으로 맞추면 더 안전하긴 하지만, 다른 제조사라서 안 되는 경우는 드뭅니다. 안 켜지면 제조사 문제보다 덜 꽂힌 쪽을 먼저 의심하세요."}},{"@type":"Question","name":"8GB 한 장에 16GB 한 장을 더해도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 총 24GB로 잡힙니다. 겹치는 8GB 구간만 두 장으로 읽고 나머지는 한 장으로 읽습니다. 한 장보다는 낫습니다. 다만 같은 용량 두 장이 가장 빠릅니다."}},{"@type":"Question","name":"속도가 높은 램을 사면 더 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"메인보드와 기존 램 중 낮은 쪽으로 맞춰집니다. 5600 짜리가 꽂혀 있는데 6400 을 사도 5600 으로 돕니다. 웃돈을 낼 이유가 없습니다."}},{"@type":"Question","name":"램을 늘리면 로컬 LLM이 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"그래픽카드로 돌린다면 거의 아닙니다. 그건 VRAM 이 정합니다 — 차이는 램과 VRAM은 뭐가 다른가에 있습니다. CPU로 돌린다면 이야기가 다릅니다. 속도가 메모리 대역폭에 묶여 있어서, 한 장 → 두 장으로 가면 그게 그대로 반영됩니다."}},{"@type":"Question","name":"32GB 한 장을 사둘까요 16GB 두 장을 살까요","acceptedAnswer":{"@type":"Answer","text":"슬롯이 두 개라면 16GB 두 장입니다. 대역폭이 두 배입니다. 나중에 64GB까지 갈 생각이고 슬롯이 두 개뿐이라면 32GB 한 장으로 시작하는 것도 방법이지만, 그 사이 기간을 절반 대역폭으로 쓰게 됩니다."}},{"@type":"Question","name":"LPCAMM2 는 뭔가요","acceptedAnswer":{"@type":"Answer","text":"납땜의 장점(얇음·저전력)과 슬롯의 장점(교체 가능)을 같이 가져가려는 새 규격입니다. 노트북 램 나중에 못 늘립니다에 정리했습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-18">2026년 8월 18일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p><a href="/posts/laptop-ssd-upgrade.html">노트북 SSD는 대개 바꿀 수 있다</a>고 적었습니다.
+램은 그보다 갈립니다 — <strong>바꿀 수 있는 노트북과 아예 못 바꾸는 노트북이 나뉩니다.</strong></p>
+<p>바꿀 수 있는 쪽이라면 어렵지 않습니다. 다만 <strong>틀리기 쉬운 지점이 세 개</strong> 있고,
+그중 하나는 틀려도 잘 돌아가서 모르고 지나갑니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>확인할 것</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>슬롯이 있는가</strong> — 없으면 여기서 끝입니다</td></tr>
+<tr><td>2</td><td><strong>DDR4냐 DDR5냐</strong> — 메인보드가 정합니다. 섞이지 않습니다</td></tr>
+<tr><td>3</td><td><strong>몇 장을 꽂는가</strong> ← 여기가 모르고 지나가는 지점</td></tr>
+</tbody>
+</table></div>
+<p>3번이 이 글의 핵심입니다. <strong>한 장만 꽂으면 용량은 맞는데 대역폭이 절반</strong>이 됩니다.
+에러도 안 나고 그냥 느립니다.</p>
+<h2 id="1-슬롯이-있는가">1. 슬롯이 있는가</h2>
+<p>이게 갈리는 지점이고, <strong>살 때 정해집니다.</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>방식</th><th>교체</th></tr></thead>
+<tbody>
+<tr><td>온보드 (LPDDR5X 납땜)</td><td>❌ 불가</td></tr>
+<tr><td>SO-DIMM 슬롯</td><td>✅ 가능</td></tr>
+<tr><td>LPCAMM2</td><td>✅ 가능</td></tr>
+</tbody>
+</table></div>
+<p>확인하는 법은 <a href="/posts/laptop-ram-onboard-lpcamm2.html">노트북 램 나중에 못 늘립니다</a>에
+정리해 뒀습니다 — 여기서 반복하지 않겠습니다.</p>
+<p><strong>요약하면</strong>, 제품 사양에 &quot;슬롯&quot; 이나 &quot;확장&quot; 이라는 말이 있으면 되고,
+<code>LPDDR</code> 로 시작하는 램이 적혀 있으면 대개 납땜입니다.</p>
+<h3 id="이미-쓰고-계신-노트북이라면">이미 쓰고 계신 노트북이라면</h3>
+<p><code>Ctrl</code> + <code>Shift</code> + <code>Esc</code> → <strong>성능</strong> → <strong>메모리</strong>. 오른쪽 아래를 보세요.</p>
+<pre><code>사용된 슬롯    1/2      ← 슬롯이 두 개고 한 개가 비어 있음
+속도           5600 MT/s
+폼 팩터        SODIMM   ← 이게 'DIMM' 이면 데스크톱, 온보드면 표시가 없기도 합니다</code></pre>
+<p><strong><code>1/2</code> 로 나오면 가장 좋은 경우입니다.</strong> 빈 슬롯에 한 장 더 꽂으면 됩니다 —
+용량도 늘고 아래 3번의 대역폭 문제도 같이 해결됩니다.</p>
+<h2 id="2-규격-고를-수-있는-게-아닙니다">2. 규격 — 고를 수 있는 게 아닙니다</h2>
+<p><strong>메인보드가 받는 것만 들어갑니다.</strong> DDR4와 DDR5는 슬롯 모양이 달라
+물리적으로 안 바뀝니다. 왜 그런지는
+<a href="/posts/ddr4-vs-ddr5.html">DDR4와 DDR5 차이</a>에 적었습니다.</p>
+<p>노트북은 <strong>SO-DIMM</strong> 이라는 짧은 모듈을 씁니다.
+데스크톱용 DIMM 은 길이가 달라 안 들어갑니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>규격</th><th>노트북용 이름</th><th>표준 속도</th></tr></thead>
+<tbody>
+<tr><td>DDR4</td><td>DDR4 SO-DIMM</td><td>3200 MT/s</td></tr>
+<tr><td>DDR5</td><td>DDR5 SO-DIMM</td><td>4800 · 5600 MT/s</td></tr>
+</tbody>
+</table></div>
+<p><strong>살 때 볼 것은 세 단어입니다</strong> — <code>SO-DIMM</code>, <code>DDR4</code> 또는 <code>DDR5</code>, 그리고 용량.
+속도는 그다음입니다.</p>
+<h3 id="속도는-낮은-쪽으로-통일됩니다">속도는 낮은 쪽으로 통일됩니다</h3>
+<p>이미 꽂혀 있는 것보다 빠른 램을 사도 <strong>느린 쪽 속도로 맞춰집니다.</strong></p>
+<pre><code>기존 5600 + 새로 6400  →  둘 다 5600 으로 동작</code></pre>
+<p>그래서 <strong>더 빠른 걸 사는 값어치가 크지 않습니다.</strong> 기존과 같은 속도로 맞추는 편이
+싸고, 어차피 결과가 같습니다.</p>
+<h2 id="3-한-장이냐-두-장이냐-여기가-진짜-지점">3. ⚠️ 한 장이냐 두 장이냐 — 여기가 진짜 지점</h2>
+<p><strong>용량만 맞추고 장수를 안 보면 절반을 버립니다.</strong></p>
+<p>램은 여러 장을 나눠 꽂으면 동시에 읽습니다. 한 장이면 그 길이 하나뿐입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>구성</th><th>총 용량</th><th>대역폭</th></tr></thead>
+<tbody>
+<tr><td>32GB 한 장</td><td>32GB</td><td><strong>44.8 GB/s</strong></td></tr>
+<tr><td><strong>16GB 두 장</strong></td><td>32GB</td><td><strong>89.6 GB/s</strong></td></tr>
+</tbody>
+</table></div>
+<p>같은 32GB인데 <strong>대역폭이 두 배 차이</strong>입니다.
+계산식은 <code>클럭 × 8바이트 × 장수</code> 이고, DDR5-5600 기준입니다
+— <a href="/posts/local-llm-without-gpu.html">CPU로 로컬 LLM을 돌릴 때</a> 쓴 것과 같은 식입니다.</p>
+<h3 id="어디서-체감되나">어디서 체감되나</h3>
+<p>전부는 아닙니다. <strong>메모리를 얼마나 자주 읽느냐</strong>에 따라 갈립니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>체감</th></tr></thead>
+<tbody>
+<tr><td>내장 그래픽으로 화면 출력</td><td><strong>큽니다</strong> — 전용 메모리가 없어 시스템 램을 씁니다</td></tr>
+<tr><td>CPU로 AI 모델 돌리기</td><td><strong>큽니다</strong> — 대역폭이 곧 속도입니다</td></tr>
+<tr><td>빌드·컴파일</td><td>있습니다</td></tr>
+<tr><td>에디터·브라우저</td><td>거의 없습니다</td></tr>
+</tbody>
+</table></div>
+<p>앞의 두 개가 큰 이유는 같습니다 — <strong>메모리를 계속 읽는 작업</strong>이기 때문입니다.
+전용 그래픽카드가 없는 노트북이라면 첫 줄이 그대로 화면 성능입니다.</p>
+<h3 id="그래서-이렇게-고르세요">그래서 이렇게 고르세요</h3>
+<pre><code>슬롯 2개 · 한 장만 꽂혀 있다  →  같은 용량 한 장 추가   ← 가장 남는 장사
+슬롯 2개 · 두 장 다 찼다      →  둘 다 큰 것으로 교체
+슬롯 1개                     →  선택지가 없습니다. 한 장으로 최대 용량</code></pre>
+<p><strong>첫 줄이 가장 값어치가 큽니다.</strong> 용량이 두 배가 되면서 대역폭도 두 배가 됩니다.</p>
+<blockquote><p>⚠️ <strong>용량이 다른 두 장을 꽂아도 됩니다.</strong> 8GB + 16GB 처럼요.
+겹치는 8GB 구간만 두 장으로 읽고 나머지는 한 장으로 읽습니다.
+한 장보다 낫고 같은 용량 두 장보다 못합니다 — <strong>같은 용량으로 맞추는 편이 낫습니다.</strong></p></blockquote>
+<h2 id="4-얼마를-넣나">4. 얼마를 넣나</h2>
+<p>용량 기준은 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 정리했습니다.
+짧게는 이렇습니다.</p>
+<ul>
+<li><strong>웹 개발만</strong> — 16GB로 됩니다</li>
+<li><strong>도커를 띄운다</strong> — 32GB</li>
+<li><strong>CPU로 AI 모델을 돌린다</strong> — 모델 크기 + 8GB</li>
+</ul>
+<blockquote><p>⚠️ <strong>2026년에는 값을 먼저 보세요.</strong> 램 값이 크게 올라서 32GB 구성의 웃돈이
+커졌습니다. <a href="/posts/ram-price-2026.html">지금 사야 하는지</a>에 판단 기준을 적었습니다.</p>
+<p>그리고 <strong>늘리기 전에 <a href="/posts/wsl2-memory-limit.html">WSL2 설정</a>을 먼저 보세요.</strong>
+도커 때문에 부족한 것이라면 파일 하나로 해결되는 경우가 있습니다. 그게 훨씬 쌉니다.</p></blockquote>
+<h2 id="5-절차-어렵지-않습니다">5. 절차 — 어렵지 않습니다</h2>
+<p>SSD 교체와 거의 같습니다. 자세한 주의사항은
+<a href="/posts/laptop-ssd-upgrade.html">노트북 SSD 교체</a>에 적어둔 것과 같습니다.</p>
+<ol>
+<li><strong>전원을 끄고 어댑터를 뽑습니다.</strong> 완전히 종료여야 합니다 — 절전은 안 됩니다</li>
+<li>뒷판 나사를 풉니다. <strong>길이가 다른 나사가 섞여 있으니 자리를 기억하세요</strong></li>
+<li>램 슬롯 양옆 <strong>금속 클립을 벌립니다.</strong> 모듈이 비스듬히 튀어 오릅니다</li>
+<li>새 모듈을 <strong>비스듬히 끝까지 밀어 넣고</strong>, 그다음 아래로 눌러 클립이 걸리게 합니다</li>
+<li>뒷판을 덮고 켭니다</li>
+</ol>
+<p><strong>4번이 유일하게 헷갈리는 단계입니다.</strong> 위에서 수직으로 누르는 게 아니라
+<strong>비스듬히 넣고 눕히는</strong> 순서입니다.</p>
+<ul>
+<li>금속 단자를 손으로 만지지 마세요</li>
+<li>옆면을 잡으세요</li>
+<li>안 켜지면 대개 <strong>덜 들어간 것</strong>입니다. 다시 눌러보세요</li>
+</ul>
+<blockquote><p>⚠️ <strong>보증이 깨지는지는 제조사마다 다릅니다.</strong> 램 슬롯은 사용자 교체를 전제로
+설계된 부품이라 대개 문제없지만, 봉인 스티커가 붙어 있는 모델도 있습니다.
+<strong>뜯기 전에 제조사 정책을 확인하세요.</strong></p></blockquote>
+<h2 id="6-끝나고-확인할-것">6. 끝나고 확인할 것</h2>
+<p>용량만 보고 넘어가면 3번을 놓칩니다. <strong>둘 다 보세요.</strong></p>
+<p><code>Ctrl</code> + <code>Shift</code> + <code>Esc</code> → <strong>성능</strong> → <strong>메모리</strong></p>
+<pre><code>총 용량        32.0GB      ← 늘었나
+사용된 슬롯    2/2         ← 두 장으로 잡혔나  ★
+속도           5600 MT/s   ← 낮은 쪽으로 떨어지지 않았나</code></pre>
+<p><strong>가운데 줄이 이 글에서 가장 중요한 확인입니다.</strong>
+<code>1/2</code> 인데 용량이 늘었다면 한 장이 큰 것으로만 바뀐 것이고, 대역폭은 그대로입니다.</p>
+<h2 id="7-슬롯이-없다면">7. 슬롯이 없다면</h2>
+<p><strong>방법이 없습니다.</strong> 램이 납땜된 노트북은 산 용량이 그 노트북의 수명입니다.</p>
+<p>이때 할 수 있는 건 두 가지입니다.</p>
+<ul>
+<li><strong><a href="/posts/wsl2-memory-limit.html">WSL2·도커가 먹는 몫을 줄이기</a></strong> — 나눠 쓰는 비율만 바꿉니다</li>
+<li>노트북을 바꾸기</li>
+</ul>
+<p>바꾸실 거라면 <strong>다음에는 슬롯부터 보세요.</strong> 용량보다 그게 먼저입니다 —
+슬롯이 있으면 16GB로 시작해 필요할 때 늘리면 되고, 없으면 그 순간 정해집니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gdsmkd62Ls" target="_blank" rel="sponsored nofollow noopener">개발용 노트북 보기</a>
+  <span class="buy-note">램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요</span>
+</aside>
+<p>고르는 순서 전체는 <a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에 있습니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="지금-꽂혀-있는-램과-다른-제조사를-사도-되나요">지금 꽂혀 있는 램과 다른 제조사를 사도 되나요</h3>
+<p>됩니다. 규격과 속도만 맞으면 동작합니다.
+같은 제품으로 맞추면 더 안전하긴 하지만, <strong>다른 제조사라서 안 되는 경우는 드뭅니다.</strong>
+안 켜지면 제조사 문제보다 덜 꽂힌 쪽을 먼저 의심하세요.</p>
+<h3 id="8gb-한-장에-16gb-한-장을-더해도-되나요">8GB 한 장에 16GB 한 장을 더해도 되나요</h3>
+<p>됩니다. 총 24GB로 잡힙니다.
+겹치는 8GB 구간만 두 장으로 읽고 나머지는 한 장으로 읽습니다.
+<strong>한 장보다는 낫습니다.</strong> 다만 같은 용량 두 장이 가장 빠릅니다.</p>
+<h3 id="속도가-높은-램을-사면-더-빨라지나요">속도가 높은 램을 사면 더 빨라지나요</h3>
+<p><strong>메인보드와 기존 램 중 낮은 쪽으로 맞춰집니다.</strong>
+5600 짜리가 꽂혀 있는데 6400 을 사도 5600 으로 돕니다.
+웃돈을 낼 이유가 없습니다.</p>
+<h3 id="램을-늘리면-로컬-llm이-빨라지나요">램을 늘리면 로컬 LLM이 빨라지나요</h3>
+<p><strong>그래픽카드로 돌린다면 거의 아닙니다.</strong> 그건 VRAM 이 정합니다 —
+차이는 <a href="/posts/local-llm-ram-vs-vram.html">램과 VRAM은 뭐가 다른가</a>에 있습니다.</p>
+<p><strong>CPU로 돌린다면 이야기가 다릅니다.</strong> 속도가 메모리 대역폭에 묶여 있어서,
+한 장 → 두 장으로 가면 그게 그대로 반영됩니다.</p>
+<h3 id="32gb-한-장을-사둘까요-16gb-두-장을-살까요">32GB 한 장을 사둘까요 16GB 두 장을 살까요</h3>
+<p><strong>슬롯이 두 개라면 16GB 두 장</strong>입니다. 대역폭이 두 배입니다.</p>
+<p>나중에 64GB까지 갈 생각이고 슬롯이 두 개뿐이라면 32GB 한 장으로 시작하는 것도
+방법이지만, <strong>그 사이 기간을 절반 대역폭으로 쓰게 됩니다.</strong></p>
+<h3 id="lpcamm2-는-뭔가요">LPCAMM2 는 뭔가요</h3>
+<p>납땜의 장점(얇음·저전력)과 슬롯의 장점(교체 가능)을 같이 가져가려는 새 규격입니다.
+<a href="/posts/laptop-ram-onboard-lpcamm2.html">노트북 램 나중에 못 늘립니다</a>에 정리했습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>슬롯이 있는지가 먼저</strong>입니다. 없으면 방법이 없습니다</li>
+<li><strong>DDR4/DDR5는 고를 수 없습니다.</strong> 메인보드가 정합니다. 노트북은 <code>SO-DIMM</code></li>
+<li><strong>장수를 보세요.</strong> 32GB 한 장은 16GB 두 장보다 대역폭이 절반입니다</li>
+<li>빠른 램을 사도 <strong>낮은 쪽으로 맞춰집니다.</strong> 웃돈이 아깝습니다</li>
+<li>끝나고 <strong><code>사용된 슬롯</code>이 <code>2/2</code>인지</strong> 확인하세요. 여기서 놓칩니다</li>
+<li>늘리기 전에 <strong>WSL2 설정과 램 값</strong>을 먼저 보세요</li>
+</ol>
+<p>절차가 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">노트북램</span> <span class="tag">램교체</span> <span class="tag">SO-DIMM</span> <span class="tag">듀얼채널</span> <span class="tag">개발용노트북</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ddr4-vs-ddr5.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">DDR4와 DDR5 차이 — 고를 수 있는 게 아닙니다</span>
+        <span class="card-desc">DDR4와 DDR5는 슬롯이 달라 물리적으로 안 바뀝니다. 메인보드가 정하는 것이라 고민할 일이 아닙니다. 성능 차이와 DDR4 단종 상황을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-ssd-upgrade.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">노트북 SSD 교체 — 램과 달리 이건 바꿀 수 있습니다</span>
+        <span class="card-desc">노트북에서 램은 대개 못 늘리지만 SSD는 바꿀 수 있는 경우가 많습니다. 슬롯 확인법, 규격 고르는 법, 교체 전에 알아둘 것을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/nvme-vs-sata.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배</span>
+        <span class="card-desc">M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생김새가 같은데 속도가 6배 차이나고, 슬롯이 안 받는 경우도 있습니다. 사기 전에 확인할 것을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
