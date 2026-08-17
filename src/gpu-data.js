@@ -67,6 +67,35 @@ export const gpus = [
   { id: 'rtx3080', name: 'RTX 3080 10GB', vram: 10, bw: 760, tdp: 320, tier: 'mid', new: false, buy: '', widget: '' },
   { id: 'rtx3070', name: 'RTX 3070', vram: 8, bw: 448, tdp: 220, tier: 'entry', new: false, buy: '', widget: '' },
   { id: 'rtx3060', name: 'RTX 3060 12GB', vram: 12, bw: 360, tdp: 170, tier: 'entry', new: false, buy: '', widget: '' },
+
+  // ── 노트북 GPU: 진단용. 추천에서는 제외됩니다 ──────────────────
+  //
+  // 왜 넣었나 — 같은 이름이어도 노트북은 VRAM 이 다릅니다.
+  //   노트북 RTX 5070 은 8GB, 데스크톱은 12GB 입니다. 판정이 완전히 갈립니다.
+  //   전에는 목록에 없어서 "같은 용량의 데스크톱 카드를 골라 보라" 고 안내했는데,
+  //   그러려면 사용자가 먼저 자기 노트북 VRAM 을 알아야 했습니다. 순서가 거꾸로였습니다.
+  //
+  // ⚠️ laptop: true 는 추천에서 제외한다는 뜻입니다. mac 과 같은 취급입니다.
+  //   "노트북을 쓰는 사람에게 그래픽카드를 사라" 고 권할 수 없기 때문입니다.
+  //   드롭다운에는 남깁니다 — 진단은 받아야 합니다.
+  //
+  // VRAM 출처: nvidia.com 노트북 GPU 비교, 2026-08-15 확인.
+  //   local-llm-laptop-choose.md 의 표와 **같은 값**입니다. 한쪽을 고치면 양쪽을 맞추세요.
+  //
+  // ⚠️ bw·tdp 를 비워뒀습니다. 노트북은 전력 제한(TGP)이 제조사·모델마다 달라서
+  //   하나로 적을 수 없습니다. 없는 값을 지어 넣는 것보다 비우는 편이 맞습니다.
+  //   추천에서 빠지므로 정렬(byFit)에 쓰이지 않습니다.
+  //
+  // ⚠️ 노트북 5070 은 출처마다 8GB·12GB 가 갈립니다. 둘 다 넣었습니다 —
+  //   본인 제품 사양을 봐야 하고, 그게 이 항목을 두 개로 둔 이유입니다.
+  { id: 'nb5090', name: '노트북 RTX 5090', vram: 24, bw: null, tdp: null, laptop: true, tier: 'laptop' },
+  { id: 'nb5080', name: '노트북 RTX 5080', vram: 16, bw: null, tdp: null, laptop: true, tier: 'laptop' },
+  { id: 'nb5070ti', name: '노트북 RTX 5070 Ti', vram: 12, bw: null, tdp: null, laptop: true, tier: 'laptop' },
+  { id: 'nb5070-12', name: '노트북 RTX 5070 12GB 구성', vram: 12, bw: null, tdp: null, laptop: true, tier: 'laptop' },
+  { id: 'nb5070-8', name: '노트북 RTX 5070 8GB 구성', vram: 8, bw: null, tdp: null, laptop: true, tier: 'laptop' },
+  { id: 'nb5060', name: '노트북 RTX 5060', vram: 8, bw: null, tdp: null, laptop: true, tier: 'laptop' },
+  { id: 'nb5050', name: '노트북 RTX 5050', vram: 8, bw: null, tdp: null, laptop: true, tier: 'laptop' },
+
   // ── 애플 실리콘 ────────────────────────────────────────────────
   // ⚠️ 맥은 대역폭이 '용량'이 아니라 '칩 등급'으로 정해집니다.
   //    이전 버전은 용량별로 100/150/200/300/400 을 매겨뒀는데 전부 틀린 값이었습니다.

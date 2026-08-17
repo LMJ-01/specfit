@@ -82,15 +82,26 @@ const TIER_RANK = { entry: 0, mid: 1, high: 2, flagship: 3 };
 const byFit = (a, b) =>
   a.vram - b.vram ||
   (TIER_RANK[a.tier] ?? 9) - (TIER_RANK[b.tier] ?? 9) ||
-  b.bw - a.bw ||
-  a.tdp - b.tdp;
+  (b.bw ?? 0) - (a.bw ?? 0) ||
+  (a.tdp ?? 0) - (b.tdp ?? 0);
+
+/**
+ * 추천 대상이 되는 카드.
+ *
+ * 셋을 뺍니다.
+ *   mac      — 맥을 쓰는 사람에게 그래픽카드를 사라고 할 수 없습니다
+ *   laptop   — 같은 이유입니다. 노트북 GPU 는 따로 살 수 있는 물건이 아닙니다
+ *   new:false — 단종된 카드를 "이걸 사세요" 라고 권할 수 없습니다
+ *
+ * 셋 다 **드롭다운에는 남습니다.** 진단은 받아야 하기 때문입니다.
+ */
+const buyable = (g) => !g.mac && !g.laptop && g.new;
 
 /**
  * 여유 있게 돌아가는 가장 작은 카드.
- * 단종된 카드(new: false)는 제외합니다 — 지금 살 사람에게 권할 수 없습니다.
  */
 function recommend(gpus, needed) {
-  return gpus.filter((g) => !g.mac && g.new && needed <= g.vram * 0.9).sort(byFit)[0];
+  return gpus.filter((g) => buyable(g) && needed <= g.vram * 0.9).sort(byFit)[0];
 }
 
 /**
@@ -106,7 +117,7 @@ function recommend(gpus, needed) {
  */
 function recommendTight(gpus, needed) {
   return gpus
-    .filter((g) => !g.mac && g.new && needed > g.vram * 0.9 && needed <= g.vram)
+    .filter((g) => buyable(g) && needed > g.vram * 0.9 && needed <= g.vram)
     .sort(byFit)[0];
 }
 
@@ -279,7 +290,7 @@ export function renderVram(data, state = DEFAULT_STATE) {
   </details>
 
   <p class="vr-note">
-    ${gpu.mac ? '맥은 시스템이 메모리 일부를 쓰므로 전체 용량을 다 쓰지는 못합니다. 위 수치는 실제 사용 가능분 기준입니다. ' : ''}
+    ${gpu.mac ? '맥은 시스템이 메모리 일부를 쓰므로 전체 용량을 다 쓰지는 못합니다. 위 수치는 실제 사용 가능분 기준입니다. ' : ''}${gpu.laptop ? '노트북 GPU 는 같은 이름이어도 전력 제한이 제조사·모델마다 달라 <strong>속도가 갈립니다.</strong> 판정은 VRAM 기준이라 그대로 쓰실 수 있습니다. ' : ''}
     <strong>근사치입니다.</strong> 실제로 쓸 모델의 파일 크기는 배포판마다 다릅니다.
     경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
   </p>
