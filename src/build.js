@@ -377,6 +377,51 @@ function checkLinkTargets(body, titleOf, warn) {
   }
 }
 
+// ---- 「정리」가 본문이 더 이상 쓰지 않는 비교 대상을 들고 있는지 검사 ----
+//
+// 실제로 겪은 일입니다 (2026-08-20 발견) — rtx3060 글의 「정리」 2번이
+// "신품 4060 8GB보다 VRAM·대역폭 둘 다 앞섭니다" 로 남아 있었습니다.
+// 본문은 비교 대상을 4060 → 5060 으로 갱신했는데, 5060 은 대역폭이 448 이라
+// 3060(360)보다 높습니다. **그 문장이 정반대가 된 채로 배포돼 있었습니다.**
+//
+// 이 종류는 앞의 두 검사에 안 걸립니다.
+//   표 대조      필요 메모리와 판정만 봅니다. 산문은 범위 밖입니다
+//   링크 목적지  링크만 봅니다. 이건 링크가 아닙니다
+// "본문에 없는 카드" 로도 안 잡힙니다 — 4060 은 단종 언급으로 본문에 남아 있었습니다.
+//
+// 그래서 **본문의 표에 등장하는 카드**를 그 글이 실제로 견주는 대상으로 보고,
+// 「정리」가 그 밖의 카드를 들고 있으면 경고합니다.
+// 글을 다시 쓸 때 표는 고치고 정리를 안 고치는 것이 반복되는 실수입니다.
+//
+// ⚠️ 오탐 0 이 이 검사의 조건입니다 (앞의 두 검사와 같은 기준).
+//    현재 콘텐츠 50편에서 경고 0건이고, 위 버그를 되돌리면 잡히는 것을 확인했습니다.
+//    표가 없는 글은 건너뜁니다 — 비교 대상을 알 수 없어 찍으면 오탐이 됩니다.
+const CONCLUSION_RE = /^##\s*정리\s*$/m;
+
+function checkConclusionCards(body, warn) {
+  const at = body.search(CONCLUSION_RE);
+  if (at === -1) return;
+  const conclusion = body.slice(at);
+  const main = body.slice(0, at);
+
+  const inTables = new Set();
+  for (const line of main.split('\n')) {
+    if (!/^\s*\|/.test(line)) continue;
+    for (const n of line.match(/\b\d{4}\b/g) || []) if (GPU_MODELS.has(n)) inTables.add(n);
+  }
+  if (!inTables.size) return;
+
+  const stale = [...new Set(conclusion.match(/\b\d{4}\b/g) || [])].filter(
+    (n) => GPU_MODELS.has(n) && !inTables.has(n)
+  );
+  if (stale.length)
+    warn(
+      `「정리」가 본문 표에 없는 카드를 들고 있습니다 — ${stale.join('·')} ` +
+        `(본문이 견주는 대상: ${[...inTables].join('·')}). ` +
+        `표를 고치고 정리를 안 고쳤을 수 있습니다`
+    );
+}
+
 async function build() {
   const written = [];
   const warnings = [];
@@ -390,6 +435,8 @@ async function build() {
       const faq = extractFaq(p.body);
       // 글의 표가 계산기와 어긋나면 여기서 잡습니다.
       checkToolTables(p.body, (msg) => warnings.push(`${p.slug}: ${msg}`));
+      // 「정리」가 본문이 더 이상 안 쓰는 비교 대상을 들고 있으면 여기서 잡습니다.
+      checkConclusionCards(p.body, (msg) => warnings.push(`${p.slug}: ${msg}`));
       const usesTool = p.body.includes(TOOL_MARK);
       // 위젯을 쓰면 그 자체가 제휴 링크이므로 공정위 고지가 붙어야 합니다.
       const usesWidget = WIDGET_RE.test(p.body);
