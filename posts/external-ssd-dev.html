@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>램 값이 올랐습니다 — 2026년에 지금 사야 하나 | 스펙핏</title>
-<meta name="description" content="AI 서버 수요로 D램 값이 2026년 들어 크게 올랐습니다. 왜 올랐고 언제 내려가는지, 그래서 지금 사야 하는지 상황별로 갈랐습니다.">
-<link rel="canonical" href="https://specfit.kr/posts/ram-price-2026.html">
+<title>개발용 외장 SSD — USB 규격이 상한을 정합니다 | 스펙핏</title>
+<meta name="description" content="외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/external-ssd-dev.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="스펙핏">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="램 값이 올랐습니다 — 2026년에 지금 사야 하나 | 스펙핏">
-<meta property="og:description" content="AI 서버 수요로 D램 값이 2026년 들어 크게 올랐습니다. 왜 올랐고 언제 내려가는지, 그래서 지금 사야 하는지 상황별로 갈랐습니다.">
-<meta property="og:url" content="https://specfit.kr/posts/ram-price-2026.html">
+<meta property="og:title" content="개발용 외장 SSD — USB 규격이 상한을 정합니다 | 스펙핏">
+<meta property="og:description" content="외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/external-ssd-dev.html">
 <meta property="og:image" content="https://specfit.kr/assets/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -24,9 +24,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"램 값이 올랐습니다 — 2026년에 지금 사야 하나","description":"AI 서버 수요로 D램 값이 2026년 들어 크게 올랐습니다. 왜 올랐고 언제 내려가는지, 그래서 지금 사야 하는지 상황별로 갈랐습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ram-price-2026.html","image":"https://specfit.kr/assets/og-default.png"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"램 값이 올랐습니다 — 2026년에 지금 사야 하나","item":"https://specfit.kr/posts/ram-price-2026.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"지금 컴퓨터를 새로 맞춰야 하는데요","acceptedAnswer":{"@type":"Answer","text":"램만 시세를 타는 상황이라, 다른 부품 구성은 그대로 가고 램만 최소로 시작하는 방법이 있습니다. 메인보드에 슬롯이 2개 이상 있는지만 확인하시면 나중에 늘릴 수 있습니다."}},{"@type":"Question","name":"램이 부족한지 어떻게 아나요","acceptedAnswer":{"@type":"Answer","text":"Ctrl + Shift + Esc → 성능 → 메모리에서 평소 작업을 다 띄운 채로 \"사용 중\"을 보세요. 8GB 이하면 16GB로 충분하고, 14GB 이상이면 이미 부족합니다. 기준표는 램 16GB vs 32GB에 있습니다."}},{"@type":"Question","name":"그래픽카드도 같이 오르나요","acceptedAnswer":{"@type":"Answer","text":"그래픽카드에도 메모리가 들어가므로 영향이 있을 수 있습니다. 다만 그래픽카드 값은 GPU 칩 수급이 더 크게 좌우해서 램과 똑같이 움직이지는 않습니다. 사려는 시점에 직접 확인하시는 게 정확합니다."}},{"@type":"Question","name":"램 값이 내려갈 때까지 로컬 LLM을 미뤄야 하나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 로컬 LLM에 필요한 건 VRAM이고, 시스템 램은 모델이 VRAM에 들어가면 16GB로도 됩니다. 램 시세와 로컬 LLM 시작 시점은 관계가 거의 없습니다."}},{"@type":"Question","name":"노트북을 지금 사면 손해인가요","acceptedAnswer":{"@type":"Answer","text":"램이 오르면 노트북 값에도 반영됩니다. 다만 노트북은 램 말고도 값을 정하는 요소가 많습니다. 필요하면 사시고, 대신 슬롯이 있는 모델을 고르시는 편이 지금은 유리합니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 외장 SSD — USB 규격이 상한을 정합니다","description":"외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.","datePublished":"2026-08-20","dateModified":"2026-08-20","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/external-ssd-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"개발용 외장 SSD — USB 규격이 상한을 정합니다","item":"https://specfit.kr/posts/external-ssd-dev.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"외장 SSD 에 모델을 두면 답변이 느려지나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 모델이 VRAM 에 올라간 뒤에는 SSD 가 관여하지 않습니다. 느려지는 건 처음 읽어 올릴 때 한 번뿐이고, 위 3번 표의 몇 초입니다."}},{"@type":"Question","name":"USB 메모리에 둬도 되나요","acceptedAnswer":{"@type":"Answer","text":"권하지 않습니다. 일반 USB 메모리는 순차 속도가 훨씬 낮고 큰 파일에서 속도가 크게 떨어지는 경우가 많습니다. 외장 SSD 와 다른 물건입니다."}},{"@type":"Question","name":"썬더볼트 케이스를 사면 내장만큼 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"가까워지지만 같지는 않습니다. 40Gbps 라도 프로토콜 몫이 빠져 내장 Gen4(7,000MB/s)에는 못 미칩니다. 그리고 개발 작업에서는 그 차이가 거의 안 보입니다 — 위 2번이 그 이유입니다."}},{"@type":"Question","name":"빼낸 노트북 SSD 를 외장으로 쓸 수 있나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 케이스만 사면 됩니다. 규격(NVMe / SATA)과 길이(2280 / 2242 / 2230)를 맞추셔야 합니다 — 확인법은 노트북 SSD 교체에 있습니다."}},{"@type":"Question","name":"외장에 도커 이미지를 둬도 되나요","acceptedAnswer":{"@type":"Answer","text":"가능하지만 권하지 않습니다. 컨테이너는 작은 파일을 많이 건드려 연결 지연이 누적됩니다. 안 쓰는 이미지를 옮겨두는 용도가 맞습니다. 정리 명령은 도커 노트북 사양에 있습니다."}},{"@type":"Question","name":"수명은 내장보다 짧나요","acceptedAnswer":{"@type":"Answer","text":"같습니다. 외장이라서 더 닳지는 않습니다. TBW 기준은 SSD 수명 TBW에 계산해 뒀습니다."}},{"@type":"Question","name":"케이스는 어떤 걸 사야 하나요","acceptedAnswer":{"@type":"Answer","text":"NVMe / SATA 를 먼저 맞추고, 그다음 Gbps 를 봅니다. 10Gbps 면 개발용으로 충분하고, 그 위는 큰 파일을 자주 옮길 때만 값어치가 있습니다. 금속 케이스가 발열에 낫습니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -60,9 +60,9 @@
   </nav>
 
   <header class="post-head">
-    <h1>램 값이 올랐습니다 — 2026년에 지금 사야 하나</h1>
+    <h1>개발용 외장 SSD — USB 규격이 상한을 정합니다</h1>
     <p class="post-meta">
-      <time datetime="2026-08-16">2026년 8월 16일</time>
+      <time datetime="2026-08-20">2026년 8월 20일</time>
       
     </p>
   </header>
@@ -73,84 +73,79 @@
 </aside>
 
   <div class="post-body">
-<p>램을 사려고 검색해 보셨다면 이미 느끼셨을 겁니다. <strong>값이 예전 같지 않습니다.</strong></p>
-<p>작년에 본 가격을 기억하고 계셨다면 더 그렇습니다. 같은 32GB인데 숫자가 완전히 다릅니다.</p>
-<p>이게 일시적인 건지, 기다리면 되는 건지, 아니면 지금이라도 사야 하는지 정리했습니다.</p>
+<p>노트북을 <a href="/posts/laptop-ssd-upgrade.html">교체하면서 빼낸 SSD</a>가 남았거나,
+<a href="/posts/dev-ssd-choose.html">모델 파일이 내장을 다 먹어서</a> 외장을 알아보고 계실 겁니다.</p>
+<p><strong>외장 SSD는 내장만큼 빠르지 않습니다.</strong> 그건 케이스나 SSD 문제가 아니라
+<strong>USB 규격이 상한을 정하기 때문</strong>이고, 그 상한은 계산으로 나옵니다.</p>
+<p>그런데 <strong>그게 개발 작업에서는 대부분 문제가 안 됩니다.</strong> 왜 그런지가 이 글입니다.</p>
 <h2 id="결론부터">결론부터</h2>
 <div class="table-wrap"><table>
-<thead><tr><th>상황</th><th>판단</th></tr></thead>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
 <tbody>
-<tr><td>지금 램이 부족하지 않다</td><td><strong>사지 마세요.</strong> 미리 사둘 시기가 아닙니다</td></tr>
-<tr><td>슬롯이 있는 데스크톱·노트북</td><td><strong>16GB로 버티고</strong> 필요해지면 그때 증설</td></tr>
-<tr><td><strong>온보드 노트북을 사려 한다</strong></td><td>⚠️ <strong>여기가 제일 아픕니다.</strong> 아래를 보세요</td></tr>
-<tr><td>로컬 LLM이 목적이다</td><td>램보다 <strong>VRAM</strong>이 먼저입니다. 순서가 바뀌면 돈만 씁니다</td></tr>
-<tr><td>이미 32GB다</td><td>아무것도 안 하셔도 됩니다</td></tr>
+<tr><td>외장이 내장보다 얼마나 느린가</td><td><strong>규격상 1/7 ~ 1/2</strong></td></tr>
+<tr><td>개발 작업에서 체감되나</td><td><strong>거의 안 됩니다</strong> — 병목이 순차 속도가 아닙니다</td></tr>
+<tr><td>로컬 LLM 모델을 둬도 되나</td><td>✅ <strong>됩니다.</strong> 생성 속도는 그대로입니다</td></tr>
+<tr><td>그럼 뭐가 느려지나</td><td><strong>모델을 처음 읽어 올릴 때</strong>뿐입니다</td></tr>
+<tr><td>실제로 조심할 것</td><td><strong>케이스 규격</strong>과 <strong>발열</strong></td></tr>
 </tbody>
 </table></div>
-<p><strong>&quot;쌀 때 넉넉히&quot;가 통하던 부품이었는데, 지금은 아닙니다.</strong></p>
-<h2 id="무슨-일이-있었나">무슨 일이 있었나</h2>
-<p><strong>램 공장이 AI 서버 쪽으로 옮겨갔습니다.</strong></p>
-<p>AI 서버에 들어가는 메모리(HBM)가 훨씬 비싸게 팔립니다. 만드는 회사 입장에서는 같은 라인으로 비싼 걸 만드는 게 이득이니, 일반 PC용 D램 생산을 줄였습니다.</p>
-<pre><code>AI 서버 수요 폭증
-  → 제조사가 고부가 메모리로 라인 전환
-  → 일반 PC용 D램 공급 급감
-  → 값 상승</code></pre>
-<p><strong>수요가 늘어서가 아니라 공급이 줄어서 오른 것</strong>이라는 게 중요합니다. 내가 안 사도 값이 안 내려갑니다.</p>
-<h3 id="얼마나-올랐나">얼마나 올랐나</h3>
-<p>2026년 분기별 상승 폭입니다 (2026-08-16 확인).</p>
+<h2 id="1-usb-규격이-상한을-정합니다">1. USB 규격이 상한을 정합니다</h2>
+<p><strong>SSD가 아무리 빨라도 통로보다 빠를 수는 없습니다.</strong></p>
 <div class="table-wrap"><table>
-<thead><tr><th>시점</th><th>변화</th></tr></thead>
+<thead><tr><th>규격</th><th>표기</th><th>이론 상한</th></tr></thead>
 <tbody>
-<tr><td>2026 1분기</td><td><strong>+55~60%</strong></td></tr>
-<tr><td>2026 2분기</td><td>+20%</td></tr>
-<tr><td>2026 3분기~</td><td>하락 전환 전망</td></tr>
+<tr><td>USB 3.2 Gen1</td><td>5 Gbps</td><td>약 500 MB/s</td></tr>
+<tr><td><strong>USB 3.2 Gen2</strong></td><td><strong>10 Gbps</strong></td><td><strong>약 1,000 MB/s</strong></td></tr>
+<tr><td>USB 3.2 Gen2×2</td><td>20 Gbps</td><td>약 2,000 MB/s</td></tr>
+<tr><td>USB4 · 썬더볼트</td><td>40 Gbps</td><td>약 3,000 MB/s 대</td></tr>
+<tr><td><strong>내장 NVMe (Gen4)</strong></td><td>—</td><td><strong>약 7,000 MB/s</strong></td></tr>
 </tbody>
 </table></div>
-<p><strong>이 글에는 일부러 금액을 적지 않았습니다.</strong> 시세가 주 단위로 움직여서, 숫자를 박아두면 이 글이 금방 거짓말이 됩니다.</p>
-<p>지금 값은 <strong>다나와에서 직접 보시는 게 정확합니다.</strong> <code>DDR5 32GB</code>로 검색하면 됩니다.</p>
-<h2 id="언제-내려가나">언제 내려가나</h2>
-<p><strong>기다리면 예전 값으로 돌아온다는 보장이 없습니다.</strong></p>
-<p>전망을 모아보면 이렇습니다.</p>
-<ul>
-<li>2026년 하반기부터 상승세는 꺾일 것으로 봅니다</li>
-<li>다만 <strong>예전 수준으로 돌아가는 건 2027~2028년</strong> 이야기입니다</li>
-<li>새 공장이 돌아가야 공급이 풀리는데, 공장은 몇 달 만에 안 생깁니다</li>
-</ul>
-<p><strong>즉 &quot;몇 주 기다렸다 사자&quot;는 통하지 않고, &quot;1~2년 기다리자&quot;는 현실적이지 않습니다.</strong></p>
-<blockquote><p>⚠️ 위는 <strong>전망</strong>입니다. 반도체 시황은 자주 빗나갑니다.
-이 글도 시황이 바뀌면 고쳐야 합니다.</p></blockquote>
-<h2 id="그래서-어떻게-판단하나">그래서 어떻게 판단하나</h2>
-<h3 id="1-슬롯이-있다면-16gb로-시작하세요">1. 슬롯이 있다면 — 16GB로 시작하세요</h3>
-<p><strong>이게 가장 중요한 갈림길입니다.</strong></p>
-<p>데스크톱이나 슬롯이 있는 노트북이면 <strong>나중에 늘릴 수 있습니다.</strong> 그러면 지금 비싼 값에 미리 살 이유가 없습니다.</p>
-<pre><code>지금        16GB 로 시작
-부족해지면   그때 한 장 더    ← 그때 값이 어떻든, 필요한 시점에 삽니다</code></pre>
-<p><strong>&quot;필요하지도 않은데 미리 사두는 것&quot;이 지금 가장 손해입니다.</strong>
-쓰지도 않는 램을 역사상 비싼 값에 사두는 셈이니까요.</p>
-<p>내 램이 실제로 부족한지 확인하는 법은
-<a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 적어뒀습니다.
-작업 관리자에서 <strong>&quot;사용 중&quot;</strong> 수치만 보면 됩니다.</p>
-<h3 id="2-온보드-노트북이라면-여기가-제일-아픕니다">2. ⚠️ 온보드 노트북이라면 — 여기가 제일 아픕니다</h3>
-<p><strong>최근 얇은 노트북은 램이 납땜되어 나중에 못 늘립니다.</strong></p>
-<p>평소에도 &quot;온보드면 처음부터 32GB&quot;가 정답이었는데, <strong>지금은 그 32GB 구성의 웃돈이 예전보다 큽니다.</strong> 제조사도 오른 값을 제품 가격에 얹기 때문입니다.</p>
-<p>그렇다고 16GB를 사면 되돌릴 방법이 없습니다. <strong>되돌릴 수 없는 쪽의 실수가 더 비쌉니다.</strong></p>
+<p><strong>가장 흔한 게 10Gbps 이고, 그러면 내장의 1/7 입니다.</strong></p>
+<p>⚠️ 위는 <strong>상한</strong>입니다. 실제로는 이보다 낮게 나오고,
+<strong>케이스 · SSD · 케이블 · 노트북 포트 중 가장 낮은 것에 맞춰집니다.</strong>
+넷 중 하나만 5Gbps 여도 전체가 5Gbps 입니다.</p>
+<p>이건 <a href="/posts/monitor-usb-c-one-cable.html">모니터 케이블에서와 같은 구조</a>입니다 —
+겉모습이 같은데 안이 다르고, 제일 약한 고리가 결과를 정합니다.</p>
+<h2 id="2-그런데-개발-작업에서는-병목이-아닙니다">2. 그런데 개발 작업에서는 병목이 아닙니다</h2>
+<p><strong>이 사이트가 반복해 온 이야기가 여기서도 그대로 성립합니다.</strong></p>
+<p>개발 작업은 <strong>큰 파일을 통째로 읽는 일이 드뭅니다.</strong></p>
 <div class="table-wrap"><table>
-<thead><tr><th>상황</th><th>판단</th></tr></thead>
+<thead><tr><th>작업</th><th>실제 병목</th></tr></thead>
 <tbody>
-<tr><td>온보드 + 도커·에뮬레이터·VM 쓴다</td><td><strong>32GB.</strong> 웃돈을 내더라도 이쪽입니다</td></tr>
-<tr><td>온보드 + 일반 웹 개발만</td><td>16GB로 충분합니다</td></tr>
-<tr><td><strong>슬롯이 있다</strong></td><td>16GB 사고 나중에 판단 ← 지금 가장 유리한 선택</td></tr>
+<tr><td><code>npm install</code></td><td>작은 파일 수만 개 — 순차 속도 아님</td></tr>
+<tr><td>빌드·컴파일</td><td><strong>CPU</strong></td></tr>
+<tr><td>Git 작업</td><td>작은 파일 다수</td></tr>
+<tr><td>IDE 인덱싱</td><td>작은 파일 다수</td></tr>
+<tr><td><strong>큰 파일 복사·모델 로딩</strong></td><td>순차 속도 ← <strong>여기서만 갈립니다</strong></td></tr>
 </tbody>
 </table></div>
-<p><strong>지금 같은 시기에는 &quot;슬롯 있는 모델&quot;의 값어치가 평소보다 큽니다.</strong>
-확인법은 <a href="/posts/laptop-ram-onboard-lpcamm2.html">노트북 램 나중에 못 늘립니다</a>에 있습니다.</p>
-<h3 id="3-로컬-llm이-목적이라면-순서를-헷갈리지-마세요">3. 로컬 LLM이 목적이라면 — 순서를 헷갈리지 마세요</h3>
-<p><strong>램을 늘려도 큰 모델이 빨라지지 않습니다.</strong></p>
-<p>이 사이트에서 반복해 온 이야기인데, 값이 오른 지금은 더 중요해졌습니다. 램에 쓴 돈이 로컬 LLM 성능으로 돌아오지 않습니다.</p>
-<pre><code>모델이 VRAM 에 다 들어감   →  시스템 램 16GB 로 충분
-VRAM 을 넘김               →  그제서야 32GB 가 필요</code></pre>
-<p><strong>먼저 <a href="/posts/ollama-minimum-spec.html">내 GPU로 뭐가 되는지</a> 확인하시고,
-VRAM 안에 들어가면 램은 그대로 두세요.</strong></p>
+<p><strong>&quot;순차 1,000MB/s&quot;는 큰 파일 하나를 쭉 읽을 때의 숫자</strong>입니다.
+작은 파일 수만 개를 다루면 그 속도가 안 나오고, 그건 내장도 마찬가지입니다.</p>
+<p>→ 그래서 <a href="/posts/nvme-vs-sata.html">내장에서 Gen5가 체감이 안 되는 것</a>과
+<strong>같은 이유로 외장의 손해도 작습니다.</strong> 병목이 애초에 다른 데 있습니다.</p>
+<blockquote><p>⚠️ <strong>소스 폴더를 외장에 두는 건 다릅니다.</strong> <code>node_modules</code> 처럼
+작은 파일이 수만 개인 폴더는 연결 지연이 누적돼 티가 납니다.
+<strong>소스는 내장, 큰 파일은 외장</strong>이 무난합니다.</p></blockquote>
+<h2 id="3-로컬-llm-모델을-외장에-둬도-되나">3. 로컬 LLM 모델을 외장에 둬도 되나</h2>
+<p><strong>됩니다. 생성 속도는 그대로입니다.</strong></p>
+<p><a href="/posts/local-llm-ram-vs-vram.html">모델은 한 번 VRAM 에 올라가면</a> 그 뒤 연산은
+전부 그래픽카드 안에서 일어납니다. SSD 는 관여하지 않습니다.</p>
+<pre><code>SSD → (한 번) → VRAM → 이후 연산은 전부 여기서</code></pre>
+<p><strong>느려지는 건 처음 읽어 올릴 때 한 번뿐</strong>입니다. 그리고 그건 나눗셈으로 나옵니다.</p>
+<pre><code>로딩 시간 ≈ 모델 파일 크기 ÷ 초당 전송량</code></pre>
+<div class="table-wrap"><table>
+<thead><tr><th>모델 (Q4)</th><th>파일</th><th>내장 7,000</th><th>외장 10Gbps</th><th>외장 5Gbps</th></tr></thead>
+<tbody>
+<tr><td>7~8B</td><td>4.7GB</td><td>약 0.7초</td><td>약 5초</td><td>약 9초</td></tr>
+<tr><td>12~14B</td><td>9GB</td><td>약 1.3초</td><td>약 9초</td><td>약 18초</td></tr>
+<tr><td>32B</td><td>20GB</td><td>약 2.9초</td><td>약 20초</td><td>약 40초</td></tr>
+<tr><td>70B</td><td>43GB</td><td>약 6초</td><td>약 43초</td><td>약 86초</td></tr>
+</tbody>
+</table></div>
+<p>⚠️ 실제로는 파일 시스템 오버헤드가 붙어 이보다 조금 더 걸립니다.</p>
+<p><strong>한 번 올려두고 계속 쓰는 방식이라면 이 몇 초가 전부입니다.</strong>
+모델을 자주 갈아 끼우신다면 그때는 체감됩니다.</p>
 <div data-vram-tool>
 <div class="vr">
   <div class="vr-controls">
@@ -249,73 +244,105 @@ VRAM 안에 들어가면 램은 그대로 두세요.</strong></p>
     경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
   </p>
 </div></div>
-<p>&quot;전부 VRAM&quot;으로 나오면 램을 늘릴 이유가 없습니다.</p>
-<h3 id="4-이미-충분하다면-아무것도-하지-마세요">4. 이미 충분하다면 — 아무것도 하지 마세요</h3>
-<p>가장 흔한 실수가 <strong>&quot;오르기 전에 사두자&quot;</strong>입니다.</p>
-<p>이미 올랐습니다. 지금 사두는 건 고점에 사는 것일 수 있고, 무엇보다 <strong>안 쓰는 램은 성능을 1도 올려주지 않습니다.</strong></p>
-<h2 id="중고-램은-어떤가">중고 램은 어떤가</h2>
-<p>값이 오르면 중고 쪽으로 눈이 가는데, <strong>중고 시세도 같이 올랐습니다.</strong> 신품이 오르면 중고가 따라 오릅니다.</p>
-<p>그래도 보신다면 확인할 것들입니다.</p>
+<p><strong>어느 모델을 쓸지부터 정하시면</strong> 위 표에서 그 줄만 보시면 됩니다.</p>
+<h2 id="4-케이스가-규격을-깎습니다">4. 케이스가 규격을 깎습니다</h2>
+<p><strong>여기서 가장 많이 어긋납니다.</strong> 케이스(인클로저)는 SSD 와 별개 제품입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>확인</th><th>왜</th></tr></thead>
+<tbody>
+<tr><td><strong>케이스가 NVMe 용인가 SATA 용인가</strong></td><td><a href="/posts/nvme-vs-sata.html">M.2 는 모양 이름입니다</a>. 안 맞으면 안 들어갑니다</td></tr>
+<tr><td><strong>케이스가 몇 Gbps 인가</strong></td><td>10Gbps 케이스에 빠른 SSD 를 넣어도 10Gbps 입니다</td></tr>
+<tr><td><strong>케이블이 그 속도를 내는가</strong></td><td>충전용 케이블은 데이터가 느립니다</td></tr>
+<tr><td><strong>노트북 포트가 그 속도인가</strong></td><td>같은 USB-C 라도 포트마다 다릅니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>넷 중 가장 낮은 것이 결과입니다.</strong> 비싼 SSD 를 싼 케이스에 넣으면 케이스 속도로 납니다.</p>
+<blockquote><p>빼낸 SSD 를 재활용하실 거라면 <strong>그 SSD 가 NVMe 인지 SATA 인지 먼저 확인</strong>하세요.
+확인법은 <a href="/posts/nvme-vs-sata.html">NVMe와 SATA</a>에 있습니다 —
+<strong>550MB/s 라고 적혀 있으면 SATA</strong> 입니다.</p></blockquote>
+<h2 id="5-발열-큰-파일에서-티가-납니다">5. 발열 — 큰 파일에서 티가 납니다</h2>
+<p><strong>외장 케이스는 좁고 팬이 없습니다.</strong></p>
+<p>큰 파일을 오래 옮기면 열이 쌓이고, 그러면 SSD 가 스스로 속도를 낮춥니다.
+<a href="/posts/dev-ssd-choose.html">내장 Gen5 에서 생기는 일</a>과 같은 구조인데,
+외장은 공간이 더 좁아서 <strong>더 빨리 옵니다.</strong></p>
 <ul>
-<li><strong>규격</strong> — DDR4와 DDR5는 슬롯이 아예 다릅니다. 안 꽂힙니다</li>
-<li><strong>같은 제품 두 장</strong> — 섞으면 낮은 쪽에 맞춰지고 드물게 불안정합니다</li>
-<li><strong>동작 확인</strong> — 램은 불량이면 부팅이 안 되거나 간헐적으로 죽습니다</li>
+<li>처음엔 빠르다가 <strong>중간부터 뚝 떨어지면</strong> 대개 이겁니다</li>
+<li>금속 케이스가 플라스틱보다 낫습니다</li>
+<li><strong>모델 파일 몇십 GB 를 한 번에 옮길 때</strong> 가장 잘 걸립니다</li>
 </ul>
-<p>규격 차이는 <a href="/posts/ddr4-vs-ddr5.html">DDR4와 DDR5</a>에 정리했습니다.</p>
+<p>용량이 목적이라면 <a href="/posts/laptop-ssd-upgrade.html">내장을 키우는 편</a>이 이 문제에서 자유롭습니다.</p>
+<h2 id="6-모니터-허브에-꽂으면-화면-몫이-줄어듭니다">6. 모니터 허브에 꽂으면 화면 몫이 줄어듭니다</h2>
+<p><strong>의외로 여기서 걸립니다.</strong></p>
+<p>모니터 뒤 USB 허브에 외장 SSD 를 꽂으면, <strong>화면 신호와 USB 데이터가
+같은 케이블을 나눠 씁니다.</strong> 그래서 주사율 선택지가 줄어드는 일이 생깁니다.</p>
+<p>고장이 아니라 구조입니다 —
+<a href="/posts/monitor-usb-c-one-cable.html">USB-C 원케이블 연결</a>에 그림으로 정리했습니다.</p>
+<p><strong>코딩용으로는 대개 문제가 안 됩니다.</strong> 코드는 움직이지 않아 60Hz 면 충분하고,
+그러면 대역폭에 여유가 많이 남습니다.</p>
+<h2 id="7-그래서-어떻게-쓰나">7. 그래서 어떻게 쓰나</h2>
+<p><strong>역할을 나누는 게 답입니다.</strong></p>
+<pre><code>내장   운영체제 · 소스 폴더 · 자주 쓰는 모델
+외장   보관용 모델 · 백업 · 안 쓰는 도커 이미지</code></pre>
+<p><strong>자주 쓰는 것은 내장에 두세요.</strong> 로딩이 몇 초씩 붙는 걸 매번 겪을 이유가 없습니다.
+<a href="/posts/dev-ssd-choose.html">내장 용량이 부족한 게 문제라면</a> 그건 외장으로 푸는 게
+아니라 내장을 키워서 푸는 문제입니다.</p>
 <aside class="buy-box">
-  <a class="buy-btn" href="https://link.coupang.com/a/gdsop7IrsG" target="_blank" rel="sponsored nofollow noopener">DDR5 32GB 보기</a>
-  <span class="buy-note">같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다</span>
+  <a class="buy-btn" href="https://link.coupang.com/a/gdspuKuC8O" target="_blank" rel="sponsored nofollow noopener">NVMe SSD 1TB 보기</a>
+  <span class="buy-note">모델 파일이 하나에 5~20GB 라 금방 찹니다</span>
 </aside>
-<h2 id="이-글이-이-사이트의-이전-글과-다른-점">이 글이 이 사이트의 이전 글과 다른 점</h2>
-<p><strong>이 사이트는 예전에 &quot;32GB와 16GB의 가격 차이가 크지 않다&quot;고 적었습니다.</strong></p>
-<p>그때는 맞는 말이었습니다. 지금은 아닙니다. 해당 문장은 정정했습니다.</p>
-<p>스펙은 안 변했는데 <strong>값이 변해서 결론이 바뀐 경우</strong>입니다. 하드웨어 글에서 자주 생기는 일이라, 이 사이트는 이런 걸 숨기지 않고 날짜와 함께 적습니다.</p>
+<p><strong>외장이 맞는 경우는 이렇습니다.</strong></p>
+<ul>
+<li>노트북이라 <a href="/posts/laptop-ssd-upgrade.html">내장을 못 바꾸는</a> 모델이다</li>
+<li>안 쓰는 모델을 쌓아둘 곳이 필요하다</li>
+<li>교체하고 남은 SSD 가 있다 — 케이스만 사면 됩니다</li>
+<li>여러 기기에서 같은 파일을 쓴다</li>
+</ul>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="지금-컴퓨터를-새로-맞춰야-하는데요">지금 컴퓨터를 새로 맞춰야 하는데요</h3>
-<p>램만 시세를 타는 상황이라, <strong>다른 부품 구성은 그대로 가고 램만 최소로 시작하는</strong> 방법이 있습니다.
-메인보드에 슬롯이 2개 이상 있는지만 확인하시면 나중에 늘릴 수 있습니다.</p>
-<h3 id="램이-부족한지-어떻게-아나요">램이 부족한지 어떻게 아나요</h3>
-<p><code>Ctrl</code> + <code>Shift</code> + <code>Esc</code> → 성능 → 메모리에서 평소 작업을 다 띄운 채로 <strong>&quot;사용 중&quot;</strong>을 보세요.
-8GB 이하면 16GB로 충분하고, 14GB 이상이면 이미 부족합니다.
-기준표는 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 있습니다.</p>
-<h3 id="그래픽카드도-같이-오르나요">그래픽카드도 같이 오르나요</h3>
-<p>그래픽카드에도 메모리가 들어가므로 영향이 있을 수 있습니다.
-다만 그래픽카드 값은 GPU 칩 수급이 더 크게 좌우해서 램과 똑같이 움직이지는 않습니다.
-<strong>사려는 시점에 직접 확인하시는 게 정확합니다.</strong></p>
-<h3 id="램-값이-내려갈-때까지-로컬-llm을-미뤄야-하나요">램 값이 내려갈 때까지 로컬 LLM을 미뤄야 하나요</h3>
-<p>아닙니다. 로컬 LLM에 필요한 건 <strong>VRAM</strong>이고, 시스템 램은 모델이 VRAM에 들어가면 16GB로도 됩니다.
-램 시세와 로컬 LLM 시작 시점은 관계가 거의 없습니다.</p>
-<h3 id="노트북을-지금-사면-손해인가요">노트북을 지금 사면 손해인가요</h3>
-<p>램이 오르면 노트북 값에도 반영됩니다. 다만 노트북은 램 말고도 값을 정하는 요소가 많습니다.
-<strong>필요하면 사시고, 대신 슬롯이 있는 모델을 고르시는 편</strong>이 지금은 유리합니다.</p>
+<h3 id="외장-ssd-에-모델을-두면-답변이-느려지나요">외장 SSD 에 모델을 두면 답변이 느려지나요</h3>
+<p><strong>아닙니다.</strong> 모델이 VRAM 에 올라간 뒤에는 SSD 가 관여하지 않습니다.
+느려지는 건 처음 읽어 올릴 때 한 번뿐이고, 위 3번 표의 몇 초입니다.</p>
+<h3 id="usb-메모리에-둬도-되나요">USB 메모리에 둬도 되나요</h3>
+<p>권하지 않습니다. 일반 USB 메모리는 순차 속도가 훨씬 낮고
+큰 파일에서 속도가 크게 떨어지는 경우가 많습니다. <strong>외장 SSD 와 다른 물건입니다.</strong></p>
+<h3 id="썬더볼트-케이스를-사면-내장만큼-빨라지나요">썬더볼트 케이스를 사면 내장만큼 빨라지나요</h3>
+<p>가까워지지만 같지는 않습니다. 40Gbps 라도 프로토콜 몫이 빠져
+내장 Gen4(7,000MB/s)에는 못 미칩니다.
+<strong>그리고 개발 작업에서는 그 차이가 거의 안 보입니다</strong> — 위 2번이 그 이유입니다.</p>
+<h3 id="빼낸-노트북-ssd-를-외장으로-쓸-수-있나요">빼낸 노트북 SSD 를 외장으로 쓸 수 있나요</h3>
+<p>됩니다. 케이스만 사면 됩니다.
+<strong>규격(NVMe / SATA)과 길이(2280 / 2242 / 2230)를 맞추셔야</strong> 합니다 —
+확인법은 <a href="/posts/laptop-ssd-upgrade.html">노트북 SSD 교체</a>에 있습니다.</p>
+<h3 id="외장에-도커-이미지를-둬도-되나요">외장에 도커 이미지를 둬도 되나요</h3>
+<p>가능하지만 권하지 않습니다. 컨테이너는 작은 파일을 많이 건드려
+연결 지연이 누적됩니다. <strong>안 쓰는 이미지를 옮겨두는 용도</strong>가 맞습니다.
+정리 명령은 <a href="/posts/docker-laptop-spec.html">도커 노트북 사양</a>에 있습니다.</p>
+<h3 id="수명은-내장보다-짧나요">수명은 내장보다 짧나요</h3>
+<p><strong>같습니다.</strong> 외장이라서 더 닳지는 않습니다.
+TBW 기준은 <a href="/posts/ssd-tbw-lifespan.html">SSD 수명 TBW</a>에 계산해 뒀습니다.</p>
+<h3 id="케이스는-어떤-걸-사야-하나요">케이스는 어떤 걸 사야 하나요</h3>
+<p><strong>NVMe / SATA 를 먼저 맞추고</strong>, 그다음 Gbps 를 봅니다.
+10Gbps 면 개발용으로 충분하고, 그 위는 큰 파일을 자주 옮길 때만 값어치가 있습니다.
+<strong>금속 케이스가 발열에 낫습니다.</strong></p>
 <h2 id="정리">정리</h2>
 <ol>
-<li><strong>공급이 줄어서 오른 것</strong>입니다. 수요가 빠져도 금방 안 내려갑니다</li>
-<li><strong>예전 값 복귀는 2027~2028년</strong> 전망입니다. 기다리는 전략은 현실적이지 않습니다</li>
-<li><strong>슬롯이 있으면 16GB로 시작하세요.</strong> 필요해질 때 사는 게 지금은 이득입니다</li>
-<li><strong>온보드 노트북만 예외입니다.</strong> 되돌릴 수 없으니 필요하면 32GB로 가세요</li>
-<li>로컬 LLM이 목적이면 <strong>램이 아니라 VRAM</strong>입니다</li>
-<li><strong>안 쓰는 램을 미리 사두지 마세요.</strong> 성능을 올려주지 않습니다</li>
+<li><strong>USB 규격이 상한을 정합니다.</strong> 10Gbps 면 내장의 1/7 입니다</li>
+<li><strong>케이스 · SSD · 케이블 · 포트 중 가장 낮은 것</strong>이 결과입니다</li>
+<li>그래도 <strong>개발 작업에서는 병목이 아닙니다.</strong> 순차 속도가 문제였던 적이 없습니다</li>
+<li><strong>로컬 LLM 모델을 둬도 생성 속도는 그대로</strong>입니다. 로딩만 몇 초 붙습니다</li>
+<li>실제로 조심할 것은 <strong>케이스 규격</strong>과 <strong>발열</strong>입니다</li>
+<li><strong>자주 쓰는 건 내장, 보관용은 외장</strong>으로 나누세요</li>
 </ol>
-<p>시세는 계속 바뀝니다. 이 글의 판단이 지금 시장과 다르다면 <a href="/contact.html">알려주세요</a>.
-확인 후 본문을 고치고 갱신일을 표시합니다.</p>
+<p>수치나 판단이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
   
 
-  <p class="tags"><span class="tag">램</span> <span class="tag">DDR5</span> <span class="tag">램가격</span> <span class="tag">D램</span> <span class="tag">개발용PC</span></p>
+  <p class="tags"><span class="tag">외장SSD</span> <span class="tag">USB</span> <span class="tag">NVMe</span> <span class="tag">로컬LLM</span> <span class="tag">개발용PC</span></p>
 </article>
 
 <section class="related" aria-labelledby="related-h">
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
-    <li class="card">
-      <a href="/posts/external-ssd-dev.html">
-        <span class="card-cat">메모리·스토리지</span>
-        <span class="card-title">개발용 외장 SSD — USB 규격이 상한을 정합니다</span>
-        <span class="card-desc">외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.</span>
-      </a>
-    </li>
     <li class="card">
       <a href="/posts/laptop-ram-upgrade.html">
         <span class="card-cat">메모리·스토리지</span>
@@ -328,6 +355,13 @@ VRAM 안에 들어가면 램은 그대로 두세요.</strong></p>
         <span class="card-cat">메모리·스토리지</span>
         <span class="card-title">SSD 수명 TBW — 개발용으로 정말 걱정할 일인가</span>
         <span class="card-desc">TBW를 하루 쓰기량으로 나눠보면 수십 년이 나옵니다. 개발에서 먼저 오는 건 수명이 아니라 보증 기간과 용량입니다. 계산식과 내 SSD 확인법을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ddr4-vs-ddr5.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">DDR4와 DDR5 차이 — 고를 수 있는 게 아닙니다</span>
+        <span class="card-desc">DDR4와 DDR5는 슬롯이 달라 물리적으로 안 바뀝니다. 메인보드가 정하는 것이라 고민할 일이 아닙니다. 성능 차이와 DDR4 단종 상황을 정리했습니다.</span>
       </a>
     </li>
   </ul>
