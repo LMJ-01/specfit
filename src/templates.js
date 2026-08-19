@@ -398,6 +398,28 @@ export function listPage({
       ? `<p class="see-more" data-search-hide>전체 ${totalPosts}편은 위 카테고리에서 볼 수 있습니다. 찾는 것이 있으면 검색을 쓰세요.</p>`
       : '';
 
+  // 쿠팡 검색 위젯 — 홈 맨 아래에만.
+  //
+  // 맨 아래인 이유: 이 사이트에 온 사람은 "내 카드로 뭐가 되나" 를 알러 온 것이지
+  // 쿠팡에서 뭘 검색하러 온 게 아닙니다. 위로 올리면 광고판으로 보입니다.
+  // 읽을 것을 다 보여준 다음에 두는 자리가 맞습니다.
+  //
+  // 검색 중에는 접힙니다(data-search-hide). 사이트 안 검색을 쓰는 사람에게
+  // 쿠팡 검색창을 같이 보여주면 어느 쪽에 입력해야 하는지 헷갈립니다.
+  const searchWidget =
+    hero && config.coupangSearch
+      ? (() => {
+          // iframe 은 늦게 로드되며 아래를 밀어냅니다. 높이를 미리 잡아둡니다(CLS).
+          const h = /height="?(\d+)/.exec(config.coupangSearch);
+          const reserve = h ? ` style="min-height:${h[1]}px"` : '';
+          return `<section class="home-sec" data-search-hide>
+  <h2>쿠팡에서 바로 찾기</h2>
+  <p class="lead">여기서 검색하면 쿠팡으로 넘어갑니다. 이 사이트가 고른 제품이 아니라 쿠팡 검색 결과입니다.</p>
+  <div class="coupang-widget"${reserve}>${config.coupangSearch}</div>
+</section>`;
+        })()
+      : '';
+
   const body = `
 <section class="list-head">
   <h1>${escapeHtml(heading)}</h1>
@@ -432,7 +454,7 @@ ${featuredBox}
   }
   ${more}
   ${posts.length === 0 ? '<p class="empty">아직 글이 없습니다.</p>' : ''}
-</section>`;
+</section>${searchWidget ? `\n${searchWidget}` : ''}`;
 
   return layout({
     title,

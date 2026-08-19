@@ -517,7 +517,11 @@ async function build() {
         // 홈에 계산기를 그대로 싣습니다. 링크로 보내면 처음 온 사람은 안 누릅니다.
         toolData,
         // 계산기에 제휴 링크가 있으면 공정위 고지가 홈 상단에 자동으로 붙습니다.
-        affiliate: toolHasAffiliate,
+        //
+        // ⚠️ 쿠팡 검색 위젯도 제휴 요소입니다. 지금은 계산기 때문에 어차피 붙지만,
+        //    나중에 홈에서 계산기를 빼면 고지가 사라지고 검색 위젯만 남습니다.
+        //    그러면 누락이고 수익 전액 몰수 사유입니다. 둘 중 하나만 있어도 붙게 둡니다.
+        affiliate: toolHasAffiliate || Boolean(config.coupangSearch),
       })
     )
   );
