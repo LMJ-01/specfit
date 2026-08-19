@@ -2,6 +2,7 @@
 title: 로컬 LLM 램 몇 GB 필요한가 — VRAM과 뭐가 다른가
 description: 로컬 LLM에서 시스템 램과 VRAM은 역할이 다릅니다. 어느 쪽이 부족할 때 무슨 일이 생기는지, 얼마나 필요한지 정리했습니다.
 date: 2026-08-14
+updated: 2026-08-20
 category: memory
 tags: [로컬LLM, RAM, VRAM, 메모리, Ollama]
 affiliate: true
