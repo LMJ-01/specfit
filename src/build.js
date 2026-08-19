@@ -342,6 +342,41 @@ function checkToolTables(body, warn) {
   }
 }
 
+// ---- 링크 글자와 목적지가 어긋나는지 검사 ----
+//
+// 실제로 겪은 일입니다 (2026-08-19 발견) — 맥 글의 "RTX 5090은 575W" 링크가
+// rtx4060ti-16gb-vs-4070.html 로 가고 있었습니다. 5090 글이 나중에 생겼는데
+// 링크를 안 옮긴 것입니다.
+//
+// **이 종류는 어떤 검사에도 안 걸렸습니다.** 목적지가 200 이라 깨진 링크가 아니고,
+// 사이트맵·고아 글 검사에도 안 잡힙니다. 글자와 목적지가 다를 뿐이라
+// 사람이 눌러봐야 압니다. 실제로 저장소를 전수로 읽다가 눈으로 찾았습니다.
+//
+// 그래서 **링크 글자에 든 GPU 모델 번호가 목적지 글에 있는지** 봅니다.
+// gpu-data.js 에 실제로 있는 번호만 씁니다 — 대역폭 `1792` 같은 네 자리 숫자를
+// 모델로 오인하면 오탐이 쏟아집니다.
+//
+// ⚠️ 오탐 0 이 이 검사의 조건입니다 (표 대조 검사와 같은 기준).
+//    현재 콘텐츠에서 모델 번호가 든 링크 25개 중 경고 0건이고,
+//    위 버그를 일부러 되돌리면 잡히는 것을 확인했습니다.
+//    범위를 넓히려면 오탐이 안 생기는지 먼저 재세요.
+const GPU_MODELS = new Set(gpus.flatMap((g) => g.name.match(/\b\d{4}\b/g) || []));
+const POST_LINK_RE = /\[([^\]]+)\]\(\/posts\/([a-z0-9-]+)\.html\)/g;
+
+function checkLinkTargets(body, titleOf, warn) {
+  for (const [, text, slug] of body.matchAll(POST_LINK_RE)) {
+    const nums = [...new Set((text.match(/\b\d{4}\b/g) || []).filter((n) => GPU_MODELS.has(n)))];
+    if (!nums.length) continue;
+    // 슬러그가 낡은 경우가 있어(4060ti 글이 50 시리즈로 다시 쓰임) 제목도 함께 봅니다.
+    const target = `${slug} ${titleOf(slug) || ''}`;
+    if (nums.some((n) => target.includes(n))) continue;
+    warn(
+      `링크 글자와 목적지가 어긋납니다 — "${text}" → ${slug}.html ` +
+        `(${nums.join('·')} 이 대상 글에 없습니다)`
+    );
+  }
+}
+
 async function build() {
   const written = [];
   const warnings = [];
@@ -426,6 +461,13 @@ async function build() {
     // 제휴 링크가 있는데 affiliate 플래그가 없으면 고지가 안 붙습니다 → 수익 몰수 위험
     if (!p.affiliate && /coupang\.|coupa\.ng/.test(p.html))
       warnings.push(`${p.slug}: 제휴 링크가 있는데 affiliate: true 가 없습니다 ⚠️`);
+  }
+
+  // 링크 글자와 목적지 대조. 제목이 다 모인 뒤라야 하므로 여기서 합니다.
+  const titleOf = (slug) => (posts.find((p) => p.slug === slug) || {}).title;
+  for (const raw of rawPosts) {
+    if (raw.data.draft === true) continue;
+    checkLinkTargets(raw.body, titleOf, (msg) => warnings.push(`${raw.slug}: ${msg}`));
   }
 
   for (const post of posts) {
