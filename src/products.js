@@ -84,11 +84,20 @@ export const products = {
     widget: '',
   },
   ssd: {
-    // 검색어: NVMe 1TB TLC DRAM
+    // 2026-08-20 — 검색 결과 링크에서 **특정 제품**으로 바꿨습니다.
+    //   SK하이닉스 GOLD P31 NVMe SSD 1TB (HFS001TDE9X0733)
+    //
+    // 이 글의 기준(dev-ssd-choose)에 맞춰 고른 제품입니다.
+    //   DRAM 캐시 ✅  ·  TLC ✅  ·  1TB ✅
+    //   ⚠️ PCIe 3.0(Gen3) 입니다. 글은 Gen4 를 적어뒀지만, 같은 글이
+    //      "Gen5 는 체감이 거의 없다 · DRAM 유무가 순차 속도보다 중요하다" 고
+    //      말하고 있으므로 논지와는 맞습니다. 세대를 올리고 싶으면
+    //      Gen4 + DRAM + TLC 제품으로 바꾸고 이 주석도 고치세요.
     label: 'NVMe SSD 1TB 보기',
     note: '모델 파일이 하나에 5~20GB 라 금방 찹니다',
-    buy: 'https://link.coupang.com/a/glGYgmd0Ca',
-    widget: '',
+    buy: 'https://link.coupang.com/a/glIkoDX5zg',
+    widget:
+      '<iframe src="https://coupa.ng/coSWlG" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
 };
 
