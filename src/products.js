@@ -38,29 +38,56 @@
 //   ram     → ram-16gb-vs-32gb '1. 듀얼 채널' · laptop-ram-upgrade '3. 장수'
 //   ssd     → dev-ssd-choose '용량' · laptop-ssd-upgrade '3. 슬롯 2개'
 
+// ⚠️ 2026-08-20 — 링크를 전부 재발급했습니다.
+//
+//    이전 링크는 네 개를 "순서대로 매핑" 한 것이라 어느 링크가 어느 상품인지
+//    확인이 안 된 상태였습니다(next-steps.md 3-A 에 미해결로 적혀 있던 항목).
+//    이번에는 **검색어별로 따로 만들어서** 그 불확실성이 없습니다.
+//
+//    발급에 쓴 검색어를 각 항목에 적어둡니다. 나중에 링크가 죽으면
+//    같은 검색어로 다시 만들면 됩니다.
+//
+// ⚠️ 링크가 맞는 상품으로 가는지는 **파트너스 → 링크 관리에서 대조**하세요.
+//    눌러서 확인하면 자가 클릭으로 쌓입니다 — 계정 정지 사유입니다.
+
 export const products = {
   laptop: {
+    // 검색어: 개발용 노트북 32GB
     label: '개발용 노트북 보기',
     note: '램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요',
-    buy: 'https://link.coupang.com/a/gdsmkd62Ls',
+    buy: 'https://link.coupang.com/a/glGOuJuTa8',
+    widget: '',
+  },
+  // 램 32GB + SSD 1TB 구성. 안드로이드·도커 글이 SSD 1TB 를 명시적으로 권하는데
+  // 512GB 짜리를 걸면 글과 어긋나서 자리를 나눴습니다.
+  'laptop-1tb': {
+    // 검색어: 노트북 램32GB 1TB
+    label: '램 32GB + SSD 1TB 노트북 보기',
+    note: 'SDK·에뮬레이터·도커 이미지가 쌓이면 512GB 는 금방 찹니다',
+    buy: 'https://link.coupang.com/a/glGSRMkCS4',
     widget: '',
   },
   monitor: {
+    // 검색어: 27인치 QHD 모니터 피벗
     label: '27인치 QHD 모니터 보기',
     note: '배율을 안 건드리고 쓸 수 있는 조합입니다',
-    buy: 'https://link.coupang.com/a/gdsnkTpck0',
+    buy: 'https://link.coupang.com/a/glGUJQSybd',
     widget: '',
   },
   ram: {
+    // 검색어: DDR5 32GB 16Gx2 — 데스크톱 DIMM 입니다
+    // ⚠️ 노트북은 SO-DIMM 이라 안 들어갑니다. laptop-ram-upgrade 글에
+    //    램 박스를 안 붙인 이유가 이것입니다.
     label: 'DDR5 32GB 보기',
     note: '같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다',
-    buy: 'https://link.coupang.com/a/gdsop7IrsG',
+    buy: 'https://link.coupang.com/a/glGW0q87ki',
     widget: '',
   },
   ssd: {
+    // 검색어: NVMe 1TB TLC DRAM
     label: 'NVMe SSD 1TB 보기',
     note: '모델 파일이 하나에 5~20GB 라 금방 찹니다',
-    buy: 'https://link.coupang.com/a/gdspuKuC8O',
+    buy: 'https://link.coupang.com/a/glGYgmd0Ca',
     widget: '',
   },
 };
