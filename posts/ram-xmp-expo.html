@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>램 XMP·EXPO — 안 켜면 산 속도가 안 나옵니다 | 스펙핏</title>
+<meta name="description" content="DDR5-6000을 사도 기본 설정으로는 4800으로 돕니다. 대역폭으로 20% 손해입니다. 어디서 체감되고 어디서는 상관없는지, 노트북은 왜 해당이 없는지 계산해서 갈랐습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/ram-xmp-expo.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="램 XMP·EXPO — 안 켜면 산 속도가 안 나옵니다 | 스펙핏">
+<meta property="og:description" content="DDR5-6000을 사도 기본 설정으로는 4800으로 돕니다. 대역폭으로 20% 손해입니다. 어디서 체감되고 어디서는 상관없는지, 노트북은 왜 해당이 없는지 계산해서 갈랐습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/ram-xmp-expo.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"램 XMP·EXPO — 안 켜면 산 속도가 안 나옵니다","description":"DDR5-6000을 사도 기본 설정으로는 4800으로 돕니다. 대역폭으로 20% 손해입니다. 어디서 체감되고 어디서는 상관없는지, 노트북은 왜 해당이 없는지 계산해서 갈랐습니다.","datePublished":"2026-08-20","dateModified":"2026-08-20","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ram-xmp-expo.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"램 XMP·EXPO — 안 켜면 산 속도가 안 나옵니다","item":"https://specfit.kr/posts/ram-xmp-expo.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"안 켜면 램이 고장 난 건가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 표준 속도로 정상 동작하고 있는 것입니다. 상자에 적힌 값은 표준을 넘는 프로필이라 기본으로 켜지지 않습니다. DDR5 는 대개 4800, DDR4 는 2133 으로 잡힙니다."}},{"@type":"Question","name":"켜면 얼마나 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"대역폭 기준으로 DDR5 는 17~25%, DDR4 는 50% 정도 올라갑니다. 다만 그게 체감으로 오는 작업은 제한적입니다. 빌드·에디터·도커에서는 거의 안 느껴지고, CPU 로 AI 모델을 돌리거나 내장 그래픽을 쓸 때만 그대로 반영됩니다."}},{"@type":"Question","name":"위험한가요","acceptedAnswer":{"@type":"Answer","text":"규격상 오버클럭이지만 제조사가 검증해 넣어둔 프로필이라 대개 안정적입니다. 다만 메인보드·CPU 조합에 따라 안 잡힐 수 있고, 그때는 부팅이 몇 번 실패한 뒤 기본값으로 되돌아옵니다. 되돌릴 수 있는 설정입니다."}},{"@type":"Question","name":"노트북에서도 켤 수 있나요","acceptedAnswer":{"@type":"Answer","text":"대개 없습니다. 제조사가 BIOS 메모리 항목을 막아두는 경우가 대부분이고, 노트북용 SO-DIMM 은 표준 속도로 파는 물건입니다. 노트북에서 대역폭을 올리려면 두 장으로 꽂는 것이 유일한 방법입니다 — 노트북 램 교체에 있습니다."}},{"@type":"Question","name":"로컬 LLM 이 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"모델이 VRAM 에 다 올라간다면 아닙니다. 그때는 시스템 램이 거의 안 쓰입니다. VRAM 을 넘겨 CPU 로 넘어가는 상황이거나 GPU 없이 돌리는 경우에만 의미가 있습니다. 위 계산기에서 \"여유\" 로 나오면 켜도 그대로입니다."}},{"@type":"Question","name":"램을 더 사는 것과 XMP 중 뭐가 먼저인가요","acceptedAnswer":{"@type":"Answer","text":"용량이 부족하다면 용량이 먼저입니다. XMP 는 속도를 올리는 것이지 용량을 늘리지 않습니다. 부족한지 확인하는 법은 램 16GB vs 32GB에 있습니다. 용량이 충분한데 한 장으로 꽂혀 있다면, XMP 보다 한 장 더 꽂는 쪽이 큽니다."}},{"@type":"Question","name":"두 장의 속도가 다르면요","acceptedAnswer":{"@type":"Answer","text":"낮은 쪽으로 맞춰집니다. 프로필도 낮은 쪽 기준으로 잡히거나 아예 안 잡힐 수 있습니다. 가능하면 같은 제품 두 장이 안전합니다 — DDR4와 DDR5에 규격 이야기를 정리했습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>램 XMP·EXPO — 안 켜면 산 속도가 안 나옵니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-20">2026년 8월 20일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>이 사이트는 램 이야기를 할 때마다 <strong>&quot;우선순위는 용량 → 듀얼 채널 → 클럭&quot;</strong> 이라고 적었습니다.
+클럭은 마지막이니 신경 쓰지 말라는 뜻이었습니다.</p>
+<p><strong>그런데 그 마지막 항목조차 기본 설정으로는 안 나옵니다.</strong></p>
+<p><code>DDR5-6000</code> 이라고 적힌 램을 사서 꽂아도, 아무것도 안 하면 <strong>4800 으로 돕니다.</strong>
+고장이 아니라 설계대로입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><td>왜 안 나오나</td><td>표기 속도는 <strong>규격 밖</strong>이라 기본으로 안 켜집니다</td></tr>
+<tr><td>기본값은 얼마</td><td>DDR5 <strong>4800</strong> · DDR4 <strong>2133</strong> (대개)</td></tr>
+<tr><td>켜면 얼마나 오르나</td><td><strong>DDR5 +17~25% · DDR4 +50%</strong> — 아래 계산</td></tr>
+<tr><td>어디서 체감되나</td><td><strong>CPU 로 넘어가는 작업</strong> 하나입니다</td></tr>
+<tr><td>어디서는 상관없나</td><td>모델이 VRAM 에 다 올라가면 <strong>차이 없음</strong></td></tr>
+<tr><td>노트북은</td><td><strong>대개 설정 자체가 없습니다.</strong> 해당 없음</td></tr>
+</tbody>
+</table></div>
+<p><strong>켜는 건 5분이고 돈이 안 듭니다.</strong> 다만 켜서 얻는 게 있는 사람과 없는 사람이 갈립니다.</p>
+<h2 id="1-왜-산-속도가-안-나오나">1. 왜 산 속도가 안 나오나</h2>
+<p>램에는 <strong>두 벌의 속도 표가</strong> 들어 있습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>무엇</th><th>기본 동작</th></tr></thead>
+<tbody>
+<tr><td><strong>JEDEC</strong></td><td>업계 표준 규격</td><td>✅ <strong>이걸로 돕니다</strong></td></tr>
+<tr><td><strong>XMP · EXPO</strong></td><td>제조사가 따로 넣어둔 프로필</td><td>❌ 켜야 동작합니다</td></tr>
+</tbody>
+</table></div>
+<p>상자에 적힌 <code>6000</code> 은 두 번째입니다. <strong>표준을 넘는 값이라 기본으로 켜면 안 되는 것</strong>입니다 —
+메인보드와 CPU 조합에 따라 그 속도가 안 나올 수도 있으니까요.</p>
+<p>그래서 제조사는 프로필만 넣어두고, <strong>켜는 것은 사용자에게 맡깁니다.</strong></p>
+<pre><code>상자에 적힌 값   DDR5-6000   ← XMP·EXPO 프로필
+아무것도 안 하면  DDR5-4800   ← JEDEC 표준</code></pre>
+<p><strong>이름만 다릅니다.</strong> 인텔 쪽이 <code>XMP</code>, AMD 쪽이 <code>EXPO</code> 이고 하는 일은 같습니다.
+메인보드에 따라 <code>D.O.C.P</code> 처럼 또 다른 이름으로 적혀 있기도 합니다.</p>
+<h2 id="2-얼마나-손해인가-계산됩니다">2. 얼마나 손해인가 — 계산됩니다</h2>
+<p>이 사이트가 계속 쓰는 식 그대로입니다.</p>
+<pre><code>대역폭 = 클럭 × 8바이트 × 장수</code></pre>
+<p>두 장(듀얼 채널) 기준으로 넣어 보면 이렇습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>산 것</th><th>안 켰을 때</th><th>켰을 때</th><th>차이</th></tr></thead>
+<tbody>
+<tr><td>DDR5-5600</td><td>76.8 GB/s</td><td>89.6 GB/s</td><td><strong>+17%</strong></td></tr>
+<tr><td><strong>DDR5-6000</strong></td><td><strong>76.8 GB/s</strong></td><td><strong>96.0 GB/s</strong></td><td><strong>+25%</strong></td></tr>
+<tr><td><strong>DDR4-3200</strong></td><td><strong>34.1 GB/s</strong></td><td><strong>51.2 GB/s</strong></td><td><strong>+50%</strong></td></tr>
+</tbody>
+</table></div>
+<p><strong>DDR4 쪽이 손해가 더 큽니다.</strong> 기본값(2133)과 표기값(3200)의 간격이 넓기 때문입니다.</p>
+<p>바꿔 말하면 이렇습니다.</p>
+<pre><code>DDR5-6000 을 사놓고 안 켜면  →  4800 짜리를 산 것과 같습니다
+DDR4-3200 을 사놓고 안 켜면  →  2133 짜리를 산 것과 같습니다</code></pre>
+<p><strong>웃돈을 내고 산 부분이 통째로 안 쓰이는 상태</strong>입니다.</p>
+<h2 id="3-그런데-대부분의-작업에서는-체감이-없습니다">3. ⚠️ 그런데 대부분의 작업에서는 체감이 없습니다</h2>
+<p>여기가 이 글에서 가장 중요한 부분입니다. <strong>켜라고만 하는 글이 안 적는 것</strong>이기도 합니다.</p>
+<p>램 대역폭이 병목인 작업이 별로 없습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>작업</th><th>체감</th></tr></thead>
+<tbody>
+<tr><td>빌드·컴파일</td><td>거의 없음 — 병목이 <strong>CPU 코어 수</strong></td></tr>
+<tr><td>에디터·브라우저</td><td>없음</td></tr>
+<tr><td>도커 컨테이너</td><td>없음 — 병목이 <strong>용량</strong></td></tr>
+<tr><td><code>npm install</code></td><td>없음 — 병목이 디스크의 작은 파일 처리</td></tr>
+<tr><td><strong>내장 그래픽으로 화면 출력</strong></td><td><strong>큽니다</strong> — 전용 메모리가 없어 시스템 램을 씁니다</td></tr>
+<tr><td><strong>CPU 로 AI 모델 돌리기</strong></td><td><strong>큽니다</strong> — 대역폭이 곧 속도입니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>아래 두 줄만 갈립니다.</strong> 그리고 둘 다 이유가 같습니다 — <strong>메모리를 쉬지 않고 읽는 작업</strong>입니다.</p>
+<p><a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a> 에서 <em>&quot;부족하면 문제가 되는 건 용량이지 속도가 아니다&quot;</em> 라고
+적은 것이 여기서도 그대로 성립합니다. <strong>XMP 는 속도를 올리는 것이지 용량을 늘리는 게 아닙니다.</strong></p>
+<h2 id="4-로컬-llm-에서는-한-경우만-의미-있습니다">4. 로컬 LLM 에서는 — 한 경우만 의미 있습니다</h2>
+<p><strong>모델이 VRAM 에 다 올라가면 시스템 램은 거의 놀고 있습니다.</strong>
+이때는 XMP 를 켜든 말든 생성 속도가 같습니다.</p>
+<p>의미가 생기는 건 <strong>VRAM 을 넘겨서 CPU 가 일을 떠맡을 때</strong>입니다.</p>
+<pre><code>전부 VRAM 에 올라감    →  XMP 켜도 그대로
+CPU 로 일부 넘어감     →  넘어간 몫이 그만큼 빨라짐
+GPU 없이 CPU 로만      →  대역폭이 곧 속도. 여기가 가장 큽니다</code></pre>
+<p><strong>내 조합이 어느 쪽인지부터 확인하세요.</strong></p>
+<div data-vram-tool>
+<div class="vr">
+  <div class="vr-controls">
+    <label>쓰려는 모델
+      <select data-k="model"><option value="3b">3B · 번역·맞춤법</option><option value="8b">7~8B · 간단한 질문·짧은 글</option><option value="14b" selected>12~14B · 코딩 도우미·문서 요약</option><option value="22b">20~22B · 좀 더 정확한 작업</option><option value="32b">32B · 복잡한 추론</option><option value="70b">70B · 개인 장비로는 어려움</option><option value="120b">120B+ · 서버급</option></select>
+      <span class="vr-hint">Qwen 14B, Gemma 12B · 가중치 8.8GB</span>
+    </label>
+    <label>한 번에 다루는 양
+      <select data-k="len"><option value="short">짧은 질문 · 2K</option><option value="medium" selected>파일 한 개 정도 · 4K</option><option value="long">파일 여러 개 · 16K</option><option value="huge">코드베이스 일부 · 32K</option></select>
+      <span class="vr-hint">A4 두세 장 · 대화 몇 번이면 여기</span>
+    </label>
+    <label>쓰고 계신 그래픽카드
+      <select data-k="gpu"><option value="rtx5090">RTX 5090 (메모리 32GB)</option><option value="rtx5080">RTX 5080 (메모리 16GB)</option><option value="rtx5070ti">RTX 5070 Ti (메모리 16GB)</option><option value="rtx5070">RTX 5070 (메모리 12GB)</option><option value="rtx5060ti16" selected>RTX 5060 Ti 16GB (메모리 16GB)</option><option value="rtx5060ti8">RTX 5060 Ti 8GB (메모리 8GB)</option><option value="rtx5060">RTX 5060 (메모리 8GB)</option><option value="rtx5050">RTX 5050 (메모리 8GB)</option><option value="rtx4090">RTX 4090 (단종) (메모리 24GB)</option><option value="rtx4080s">RTX 4080 Super (단종) (메모리 16GB)</option><option value="rtx4070tis">RTX 4070 Ti Super (단종) (메모리 16GB)</option><option value="rtx4070s">RTX 4070 Super (단종) (메모리 12GB)</option><option value="rtx4070">RTX 4070 (단종) (메모리 12GB)</option><option value="rtx4060ti16">RTX 4060 Ti 16GB (단종) (메모리 16GB)</option><option value="rtx4060ti8">RTX 4060 Ti 8GB (단종) (메모리 8GB)</option><option value="rtx4060">RTX 4060 (단종) (메모리 8GB)</option><option value="rtx3090">RTX 3090 (중고) (메모리 24GB)</option><option value="rtx3080">RTX 3080 10GB (메모리 10GB)</option><option value="rtx3070">RTX 3070 (메모리 8GB)</option><option value="rtx3060">RTX 3060 12GB (메모리 12GB)</option><option value="nb5090">노트북 RTX 5090 (메모리 24GB)</option><option value="nb5080">노트북 RTX 5080 (메모리 16GB)</option><option value="nb5070ti">노트북 RTX 5070 Ti (메모리 12GB)</option><option value="nb5070-12">노트북 RTX 5070 12GB 구성 (메모리 12GB)</option><option value="nb5070-8">노트북 RTX 5070 8GB 구성 (메모리 8GB)</option><option value="nb5060">노트북 RTX 5060 (메모리 8GB)</option><option value="nb5050">노트북 RTX 5050 (메모리 8GB)</option><option value="m5-16">Mac M5 · 16GB (메모리 10GB)</option><option value="m5-24">Mac M5 · 24GB (메모리 16GB)</option><option value="m5-32">Mac M5 · 32GB (메모리 22GB)</option><option value="m5pro-24">Mac M5 Pro · 24GB (메모리 16GB)</option><option value="m5pro-48">Mac M5 Pro · 48GB (메모리 34GB)</option><option value="m5pro-64">Mac M5 Pro · 64GB (메모리 46GB)</option><option value="m5max-64">Mac M5 Max · 64GB (메모리 46GB)</option><option value="m5max-128">Mac M5 Max · 128GB (메모리 96GB)</option></select>
+      <span class="vr-hint"><a href="/tools/vram.html#내-그래픽카드-확인하는-법">내 그래픽카드 확인하는 법</a></span>
+    </label>
+  </div>
+
+  <div class="vr-result vr-result-ok">
+    <p class="vr-headline"><span class="vr-badge vr-badge-ok">여유</span> 쓸 수 있습니다</p>
+    <p class="vr-advice"><strong>RTX 5060 Ti 16GB</strong>로 <strong>12~14B</strong> 모델은 무리 없습니다.
+        지금 카드를 그대로 쓰시면 됩니다.<span class="vr-next">지금 카드로는 <strong>12~14B</strong>까지입니다.
+            더 큰 <strong>20~22B</strong> 모델까지 돌리려면
+            <strong class="vr-hl">RTX 5090</strong>(메모리 32GB) 이상이 필요합니다.</span><a class="vr-buy" href="https://link.coupang.com/a/gbIXLiOL36" target="_blank"
+             rel="sponsored nofollow noopener">RTX 5090 가격 보기</a></p>
+    <p class="vr-why">이 길이에서는 대부분이 모델 가중치입니다. <strong>짧게 써도 크게 안 줄어듭니다.</strong></p>
+    <p class="vr-parts">
+      필요 <strong>10.6GB</strong>
+      <span class="vr-parts-eq">= 가중치 8.8 + 컨텍스트 0.8 + 여유 1.0</span>
+      <span class="vr-parts-vs">내 카드 16GB</span>
+    </p>
+    <p class="vr-share">
+      <button type="button" class="vr-share-btn" data-share>이 결과 링크 복사</button>
+      <span class="vr-share-msg" role="status" data-share-msg></span>
+    </p>
+  </div>
+
+  <details class="vr-details" data-adv>
+    <summary>다른 크기도 함께 보기</summary>
+    <div class="table-wrap">
+      <table class="vr-table">
+        <thead><tr><th>모델 크기</th><th>필요 메모리</th><th>내 카드에서</th></tr></thead>
+        <tbody><tr>
+          <td><strong>3B</strong><br><span class="vr-ex">Llama 3.2 3B, Qwen 3B</span></td>
+          <td class="vr-num">3.3GB<br>
+              <span class="vr-ex">가중치 1.9 · 컨텍스트 0.4</span></td>
+          <td><span class="vr-badge vr-badge-ok">여유</span><br>
+              <span class="vr-ex">전부 그래픽카드 메모리에 올라감</span></td>
+        </tr><tr>
+          <td><strong>7~8B</strong><br><span class="vr-ex">Llama 3.1 8B, Qwen 7B</span></td>
+          <td class="vr-num">6.5GB<br>
+              <span class="vr-ex">가중치 5.0 · 컨텍스트 0.5</span></td>
+          <td><span class="vr-badge vr-badge-ok">여유</span><br>
+              <span class="vr-ex">전부 그래픽카드 메모리에 올라감</span></td>
+        </tr><tr>
+          <td><strong>12~14B</strong><br><span class="vr-ex">Qwen 14B, Gemma 12B</span></td>
+          <td class="vr-num">10.6GB<br>
+              <span class="vr-ex">가중치 8.8 · 컨텍스트 0.8</span></td>
+          <td><span class="vr-badge vr-badge-ok">여유</span><br>
+              <span class="vr-ex">전부 그래픽카드 메모리에 올라감</span></td>
+        </tr><tr>
+          <td><strong>20~22B</strong><br><span class="vr-ex">Mistral Small</span></td>
+          <td class="vr-num">15.7GB<br>
+              <span class="vr-ex">가중치 13.9 · 컨텍스트 0.9</span></td>
+          <td><span class="vr-badge vr-badge-tight">빠듯</span><br>
+              <span class="vr-ex">짧은 내용만 다루면 가능</span></td>
+        </tr><tr>
+          <td><strong>32B</strong><br><span class="vr-ex">Qwen 32B, QwQ 32B</span></td>
+          <td class="vr-num">22.2GB<br>
+              <span class="vr-ex">가중치 20.2 · 컨텍스트 1.0</span></td>
+          <td><span class="vr-badge vr-badge-slow">느림</span><br>
+              <span class="vr-ex">일부가 CPU로 넘어가 답답해짐</span></td>
+        </tr><tr>
+          <td><strong>70B</strong><br><span class="vr-ex">Llama 3.3 70B</span></td>
+          <td class="vr-num">46.4GB<br>
+              <span class="vr-ex">가중치 44.1 · 컨텍스트 1.3</span></td>
+          <td><span class="vr-badge vr-badge-no">불가</span><br>
+              <span class="vr-ex">실사용이 어려움</span></td>
+        </tr><tr>
+          <td><strong>120B+</strong><br><span class="vr-ex">Mixtral 8x22B급</span></td>
+          <td class="vr-num">77.6GB<br>
+              <span class="vr-ex">가중치 75.6 · 컨텍스트 1.0</span></td>
+          <td><span class="vr-badge vr-badge-no">불가</span><br>
+              <span class="vr-ex">실사용이 어려움</span></td>
+        </tr></tbody>
+      </table>
+    </div>
+    <label class="vr-quant">품질 설정
+      <select data-k="quant"><option value="q4" selected>Q4 (표준)</option><option value="q5">Q5 (품질↑)</option><option value="q8">Q8 (고품질)</option></select>
+      <span class="vr-hint">기본값(Q4)이 대부분의 경우 가장 무난합니다.</span>
+    </label>
+  </details>
+
+  <p class="vr-note">
+    
+    <strong>근사치입니다.</strong> 실제로 쓸 모델의 파일 크기는 배포판마다 다릅니다.
+    경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
+  </p>
+</div></div>
+<p><strong>&quot;여유&quot; 로 나오면 XMP 를 켜도 생성 속도는 안 바뀝니다.</strong>
+&quot;느림&quot; 이나 &quot;불가&quot; 로 나온다면 그때부터 이 글이 의미가 있습니다.</p>
+<blockquote><p>⚠️ <strong><a href="/posts/local-llm-without-gpu.html">CPU 로 돌릴 때의 계산</a>에 쓴 <code>DDR5-5600 = 89.6GB/s</code> 는
+XMP 를 켠 값입니다.</strong> 안 켜면 76.8GB/s 이고, 그 글의 표에서 한 칸 아래로 내려갑니다.
+그래도 결론은 안 바뀝니다 — 가장 저렴한 신품 그래픽카드와도 여전히 몇 배 차이입니다.</p></blockquote>
+<h2 id="5-노트북은-대개-해당이-없습니다">5. ⚠️ 노트북은 대개 해당이 없습니다</h2>
+<p><strong>노트북에는 이 설정이 거의 없습니다.</strong></p>
+<p>제조사가 BIOS 에서 메모리 항목을 아예 막아두는 경우가 대부분이고,
+노트북용 <code>SO-DIMM</code> 은 애초에 JEDEC 표준 속도로 파는 물건입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>데스크톱</th><th>노트북</th></tr></thead>
+<tbody>
+<tr><td>설정 항목</td><td>대개 있습니다</td><td><strong>대개 없습니다</strong></td></tr>
+<tr><td>파는 속도</td><td>표기 속도 = 프로필</td><td><strong>표준 속도 그대로</strong></td></tr>
+<tr><td>할 수 있는 것</td><td>켜기</td><td><strong>장수를 맞추기</strong></td></tr>
+</tbody>
+</table></div>
+<p>그래서 노트북에서 대역폭을 올리는 방법은 하나뿐입니다 — <strong>두 장으로 꽂는 것.</strong>
+<a href="/posts/laptop-ram-upgrade.html">노트북 램 교체</a>에서 <em>&quot;32GB 한 장은 16GB 두 장보다 대역폭이 절반&quot;</em>
+이라고 적은 그 항목이고, <strong>노트북에서는 그게 XMP 자리를 대신합니다.</strong></p>
+<h2 id="6-새로-살-거라면-속도-등급에-웃돈을-내지-마세요">6. 새로 살 거라면 — 속도 등급에 웃돈을 내지 마세요</h2>
+<p><strong>순서가 바뀌지 않습니다.</strong></p>
+<pre><code>용량  →  장수(듀얼 채널)  →  규격  →  속도 등급</code></pre>
+<p>속도 등급은 여전히 마지막입니다. 이 글은 <strong>&quot;클럭을 먼저 보라&quot;</strong> 는 글이 아니라
+<strong>&quot;이미 산 것을 안 쓰고 있을 수 있다&quot;</strong> 는 글입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>같은 값이면</th><th>어느 쪽</th></tr></thead>
+<tbody>
+<tr><td>DDR5-6000 <strong>한 장</strong> vs DDR5-4800 <strong>두 장</strong></td><td><strong>두 장</strong> — 76.8 vs 96.0 이 아니라 48.0 vs 76.8 입니다</td></tr>
+<tr><td>고클럭 32GB vs 표준 클럭 <strong>64GB</strong></td><td>용량이 부족하다면 <strong>용량</strong></td></tr>
+<tr><td>고클럭 램 vs <strong>같은 값의 SSD·모니터</strong></td><td>대개 그쪽</td></tr>
+</tbody>
+</table></div>
+<p><strong>한 장짜리 고클럭은 가장 나쁜 조합입니다.</strong> 켜도 두 장의 표준 클럭을 못 이깁니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/glI1o1vUiW" target="_blank" rel="sponsored nofollow noopener">DDR5 32GB 보기</a>
+  <span class="buy-note">같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다</span>
+</aside>
+<blockquote><p>⚠️ <strong>2026년에는 값을 먼저 보세요.</strong> 램 값이 크게 올라서 속도 등급 웃돈이
+예전보다 부담입니다 — <a href="/posts/ram-price-2026.html">램 값이 올랐습니다</a>에 판단 기준이 있습니다.</p></blockquote>
+<h2 id="7-지금-내-램이-몇으로-돌고-있는지">7. 지금 내 램이 몇으로 돌고 있는지</h2>
+<p><strong>켜기 전에 확인부터 하세요.</strong> 이미 켜져 있는 경우가 있습니다.</p>
+<p><code>Ctrl</code> + <code>Shift</code> + <code>Esc</code> → <strong>성능</strong> → <strong>메모리</strong>. 오른쪽에 나옵니다.</p>
+<pre><code>속도    4800 MT/s    ← 상자에 6000 이라고 적혀 있었다면 안 켜진 것
+속도    6000 MT/s    ← 이미 켜져 있습니다. 할 일 없습니다</code></pre>
+<p><strong>상자·주문 내역의 숫자와 이 숫자를 비교하는 게 전부입니다.</strong>
+같으면 아무것도 안 하셔도 됩니다.</p>
+<h3 id="켜는-법">켜는 법</h3>
+<p>메인보드 제조사마다 메뉴 이름이 다릅니다. <strong>찾을 단어는 셋 중 하나입니다.</strong></p>
+<ol>
+<li>재부팅하면서 <code>Del</code> 또는 <code>F2</code> 를 눌러 BIOS 진입</li>
+<li>메모리·오버클럭 메뉴에서 <strong><code>XMP</code></strong> · <strong><code>EXPO</code></strong> · <strong><code>D.O.C.P</code></strong> 를 찾습니다</li>
+<li><code>Disabled</code> → <strong><code>Profile 1</code></strong> 로</li>
+<li>저장하고 재부팅 (대개 <code>F10</code>)</li>
+<li>작업 관리자에서 속도가 바뀌었는지 확인</li>
+</ol>
+<p><strong>프로필이 여러 개면 1번이 무난합니다.</strong> 2번은 더 높은 값인 경우가 많고,
+그만큼 안 잡힐 확률도 올라갑니다.</p>
+<blockquote><p>⚠️ <strong>규격상 이건 오버클럭입니다.</strong> 제조사가 검증한 프로필이라 대개 안정적이지만
+<strong>보장된 동작은 아닙니다.</strong> 메인보드·CPU 조합에 따라 안 잡힐 수 있습니다.</p>
+<p>부팅이 안 되면 <strong>당황하지 마세요.</strong> 몇 번 실패하면 메인보드가 스스로 기본값으로
+되돌립니다. 안 되면 BIOS 초기화(케이스를 열어 점퍼나 배터리)로 돌아옵니다.
+<strong>되돌릴 수 있는 설정</strong>이라 SSD·램 교체보다 위험이 작습니다.</p></blockquote>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="안-켜면-램이-고장-난-건가요">안 켜면 램이 고장 난 건가요</h3>
+<p>아닙니다. <strong>표준 속도로 정상 동작하고 있는 것</strong>입니다.
+상자에 적힌 값은 표준을 넘는 프로필이라 기본으로 켜지지 않습니다.
+DDR5 는 대개 4800, DDR4 는 2133 으로 잡힙니다.</p>
+<h3 id="켜면-얼마나-빨라지나요">켜면 얼마나 빨라지나요</h3>
+<p><strong>대역폭 기준으로 DDR5 는 17~25%, DDR4 는 50% 정도 올라갑니다.</strong>
+다만 그게 체감으로 오는 작업은 제한적입니다.
+빌드·에디터·도커에서는 거의 안 느껴지고, <strong>CPU 로 AI 모델을 돌리거나
+내장 그래픽을 쓸 때만</strong> 그대로 반영됩니다.</p>
+<h3 id="위험한가요">위험한가요</h3>
+<p>규격상 오버클럭이지만 <strong>제조사가 검증해 넣어둔 프로필</strong>이라 대개 안정적입니다.
+다만 메인보드·CPU 조합에 따라 안 잡힐 수 있고, 그때는 부팅이 몇 번 실패한 뒤
+기본값으로 되돌아옵니다. <strong>되돌릴 수 있는 설정</strong>입니다.</p>
+<h3 id="노트북에서도-켤-수-있나요">노트북에서도 켤 수 있나요</h3>
+<p><strong>대개 없습니다.</strong> 제조사가 BIOS 메모리 항목을 막아두는 경우가 대부분이고,
+노트북용 SO-DIMM 은 표준 속도로 파는 물건입니다.
+노트북에서 대역폭을 올리려면 <strong>두 장으로 꽂는 것</strong>이 유일한 방법입니다 —
+<a href="/posts/laptop-ram-upgrade.html">노트북 램 교체</a>에 있습니다.</p>
+<h3 id="로컬-llm-이-빨라지나요">로컬 LLM 이 빨라지나요</h3>
+<p><strong>모델이 VRAM 에 다 올라간다면 아닙니다.</strong> 그때는 시스템 램이 거의 안 쓰입니다.
+VRAM 을 넘겨 CPU 로 넘어가는 상황이거나 <a href="/posts/local-llm-without-gpu.html">GPU 없이 돌리는 경우</a>에만
+의미가 있습니다. 위 계산기에서 &quot;여유&quot; 로 나오면 켜도 그대로입니다.</p>
+<h3 id="램을-더-사는-것과-xmp-중-뭐가-먼저인가요">램을 더 사는 것과 XMP 중 뭐가 먼저인가요</h3>
+<p><strong>용량이 부족하다면 용량이 먼저입니다.</strong> XMP 는 속도를 올리는 것이지 용량을 늘리지 않습니다.
+부족한지 확인하는 법은 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 있습니다.
+용량이 충분한데 한 장으로 꽂혀 있다면, <strong>XMP 보다 한 장 더 꽂는 쪽이 큽니다.</strong></p>
+<h3 id="두-장의-속도가-다르면요">두 장의 속도가 다르면요</h3>
+<p><strong>낮은 쪽으로 맞춰집니다.</strong> 프로필도 낮은 쪽 기준으로 잡히거나 아예 안 잡힐 수 있습니다.
+가능하면 같은 제품 두 장이 안전합니다 —
+<a href="/posts/ddr4-vs-ddr5.html">DDR4와 DDR5</a>에 규격 이야기를 정리했습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>상자에 적힌 속도는 <strong>프로필</strong>입니다. 켜야 나옵니다</li>
+<li>기본값은 <strong>DDR5 4800 · DDR4 2133</strong> 입니다. 안 켜면 그 속도로 돕니다</li>
+<li>켜면 대역폭이 <strong>DDR5 17~25% · DDR4 50%</strong> 오릅니다. DDR4 쪽이 더 큽니다</li>
+<li><strong>대부분의 개발 작업에서는 체감이 없습니다.</strong> 빌드는 CPU, 도커는 용량이 병목입니다</li>
+<li>갈리는 건 둘뿐 — <strong>CPU 추론</strong>과 <strong>내장 그래픽</strong>입니다</li>
+<li><strong>노트북은 대개 해당이 없습니다.</strong> 거기서는 장수를 맞추는 게 답입니다</li>
+<li>순서는 그대로입니다 — <strong>용량 → 장수 → 규격 → 속도 등급</strong></li>
+</ol>
+<p>지금 몇으로 돌고 있는지는 작업 관리자 → 성능 → 메모리에서 5초면 확인됩니다.</p>
+<p>수치가 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">XMP</span> <span class="tag">EXPO</span> <span class="tag">램클럭</span> <span class="tag">메모리대역폭</span> <span class="tag">JEDEC</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/external-ssd-dev.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">개발용 외장 SSD — USB 규격이 상한을 정합니다</span>
+        <span class="card-desc">외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-ram-upgrade.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개</span>
+        <span class="card-desc">슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ssd-tbw-lifespan.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">SSD 수명 TBW — 개발용으로 정말 걱정할 일인가</span>
+        <span class="card-desc">TBW를 하루 쓰기량으로 나눠보면 수십 년이 나옵니다. 개발에서 먼저 오는 건 수명이 아니라 보증 기간과 용량입니다. 계산식과 내 SSD 확인법을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+<script>window.SPECFIT_DATA={"gpus":[{"id":"rtx5090","name":"RTX 5090","vram":32,"bw":1792,"tdp":575,"tier":"flagship","new":true,"buy":"https://link.coupang.com/a/gbIXLiOL36","widget":""},{"id":"rtx5080","name":"RTX 5080","vram":16,"bw":960,"tdp":360,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070ti","name":"RTX 5070 Ti","vram":16,"bw":896,"tdp":300,"tier":"high","new":true,"buy":"","widget":""},{"id":"rtx5070","name":"RTX 5070","vram":12,"bw":672,"tdp":250,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoNP0RuHQ","widget":""},{"id":"rtx5060ti16","name":"RTX 5060 Ti 16GB","vram":16,"bw":448,"tdp":180,"tier":"mid","new":true,"buy":"https://link.coupang.com/a/gdoQpS5jIi","widget":""},{"id":"rtx5060ti8","name":"RTX 5060 Ti 8GB","vram":8,"bw":448,"tdp":180,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx5060","name":"RTX 5060","vram":8,"bw":448,"tdp":145,"tier":"entry","new":true,"buy":"https://link.coupang.com/a/gdoLFZl6Xc","widget":""},{"id":"rtx5050","name":"RTX 5050","vram":8,"bw":320,"tdp":130,"tier":"entry","new":true,"buy":"","widget":""},{"id":"rtx4090","name":"RTX 4090 (단종)","vram":24,"bw":1008,"tdp":450,"tier":"flagship","new":false,"buy":"https://link.coupang.com/a/gbIVZFcbWC","widget":""},{"id":"rtx4080s","name":"RTX 4080 Super (단종)","vram":16,"bw":736,"tdp":320,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070tis","name":"RTX 4070 Ti Super (단종)","vram":16,"bw":672,"tdp":285,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx4070s","name":"RTX 4070 Super (단종)","vram":12,"bw":504,"tdp":220,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4070","name":"RTX 4070 (단종)","vram":12,"bw":504,"tdp":200,"tier":"mid","new":false,"buy":"https://link.coupang.com/a/gbIQDWmjn2","widget":""},{"id":"rtx4060ti16","name":"RTX 4060 Ti 16GB (단종)","vram":16,"bw":288,"tdp":165,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx4060ti8","name":"RTX 4060 Ti 8GB (단종)","vram":8,"bw":288,"tdp":160,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx4060","name":"RTX 4060 (단종)","vram":8,"bw":272,"tdp":115,"tier":"entry","new":false,"buy":"https://link.coupang.com/a/gbITRwz3ts","widget":""},{"id":"rtx3090","name":"RTX 3090 (중고)","vram":24,"bw":936,"tdp":350,"tier":"high","new":false,"buy":"","widget":""},{"id":"rtx3080","name":"RTX 3080 10GB","vram":10,"bw":760,"tdp":320,"tier":"mid","new":false,"buy":"","widget":""},{"id":"rtx3070","name":"RTX 3070","vram":8,"bw":448,"tdp":220,"tier":"entry","new":false,"buy":"","widget":""},{"id":"rtx3060","name":"RTX 3060 12GB","vram":12,"bw":360,"tdp":170,"tier":"entry","new":false,"buy":"","widget":""},{"id":"nb5090","name":"노트북 RTX 5090","vram":24,"bw":null,"tdp":null,"laptop":true,"tier":"laptop"},{"id":"nb5080","name":"노트북 RTX 5080","vram":16,"bw":null,"tdp":null,"laptop":true,"tier":"laptop"},{"id":"nb5070ti","name":"노트북 RTX 5070 Ti","vram":12,"bw":null,"tdp":null,"laptop":true,"tier":"laptop"},{"id":"nb5070-12","name":"노트북 RTX 5070 12GB 구성","vram":12,"bw":null,"tdp":null,"laptop":true,"tier":"laptop"},{"id":"nb5070-8","name":"노트북 RTX 5070 8GB 구성","vram":8,"bw":null,"tdp":null,"laptop":true,"tier":"laptop"},{"id":"nb5060","name":"노트북 RTX 5060","vram":8,"bw":null,"tdp":null,"laptop":true,"tier":"laptop"},{"id":"nb5050","name":"노트북 RTX 5050","vram":8,"bw":null,"tdp":null,"laptop":true,"tier":"laptop"},{"id":"m5-16","name":"Mac M5 · 16GB","vram":10,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-24","name":"Mac M5 · 24GB","vram":16,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5-32","name":"Mac M5 · 32GB","vram":22,"bw":153,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-24","name":"Mac M5 Pro · 24GB","vram":16,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-48","name":"Mac M5 Pro · 48GB","vram":34,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5pro-64","name":"Mac M5 Pro · 64GB","vram":46,"bw":307,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-64","name":"Mac M5 Max · 64GB","vram":46,"bw":460,"tdp":0,"mac":true,"tier":"mac"},{"id":"m5max-128","name":"Mac M5 Max · 128GB","vram":96,"bw":614,"tdp":0,"mac":true,"tier":"mac"}],"models":[{"id":"3b","params":3,"kvPerK":0.109,"label":"3B","purpose":"번역·맞춤법","examples":"Llama 3.2 3B, Qwen 3B"},{"id":"8b","params":8,"kvPerK":0.125,"label":"7~8B","purpose":"간단한 질문·짧은 글","examples":"Llama 3.1 8B, Qwen 7B"},{"id":"14b","params":14,"kvPerK":0.188,"label":"12~14B","purpose":"코딩 도우미·문서 요약","examples":"Qwen 14B, Gemma 12B"},{"id":"22b","params":22,"kvPerK":0.219,"label":"20~22B","purpose":"좀 더 정확한 작업","examples":"Mistral Small"},{"id":"32b","params":32,"kvPerK":0.25,"label":"32B","purpose":"복잡한 추론","examples":"Qwen 32B, QwQ 32B"},{"id":"70b","params":70,"kvPerK":0.313,"label":"70B","purpose":"개인 장비로는 어려움","examples":"Llama 3.3 70B"},{"id":"120b","params":120,"kvPerK":0.25,"label":"120B+","purpose":"서버급","examples":"Mixtral 8x22B급"}],"quants":[{"id":"q4","label":"Q4 (표준)","perB":0.63},{"id":"q5","label":"Q5 (품질↑)","perB":0.74},{"id":"q8","label":"Q8 (고품질)","perB":1.09}],"lengths":[{"id":"short","label":"짧은 질문","desc":"몇 마디 주고받는 정도","tokens":2048},{"id":"medium","label":"파일 한 개 정도","desc":"A4 두세 장 · 대화 몇 번이면 여기","tokens":4096},{"id":"long","label":"파일 여러 개","desc":"긴 문서 한 편 · 대화가 길어지면 여기까지 옵니다","tokens":16384},{"id":"huge","label":"코드베이스 일부","desc":"아주 긴 내용을 한 번에 넣을 때","tokens":32768}]}</script>
+<script type="module" src="/assets/vram.js"></script>
+</body>
+</html>
