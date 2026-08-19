@@ -15,7 +15,7 @@ import { markdownToHtml, parseFrontmatter, inlineToText } from './markdown.js';
 import { postPage, listPage, staticPage, toolPage, fmtShort } from './templates.js';
 import { gpus, models, quants, lengths } from './gpu-data.js';
 import { figures } from './figures.js';
-import { buyBox } from './products.js';
+import { buyBox, products } from './products.js';
 import { toolMountHtml, parts, verdict } from '../assets/vram-render.js';
 
 const toolData = { gpus, models, quants, lengths };
@@ -73,21 +73,33 @@ function renderBuyLinks(html, warn) {
  *
  * iframe 은 늦게 로드되면서 아래 콘텐츠를 밀어냅니다(CLS).
  * 쿠팡 위젯 코드에 width/height 가 박혀 있으므로 그 값으로 자리를 미리 잡아둡니다.
+ *
+ * ⚠️ 두 곳을 다 찾습니다 — GPU 는 gpu-data.js, 나머지 품목은 products.js 입니다.
+ *    전에는 gpus 만 뒤졌습니다. 그런데 goals.md 가 2026-08-15 에 전환 품목을
+ *    GPU → 노트북·주변기기로 옮기기로 했으므로, 정작 전환이 걸린 품목에
+ *    위젯을 못 붙이는 상태였습니다. {{COUPANG:laptop}} 이 경고만 내고 사라졌습니다.
  */
 function renderWidgets(html, warn) {
-  return html.replace(WIDGET_RE, (full, id) => {
-    const gpu = gpus.find((g) => g.id === id.toLowerCase());
-    if (!gpu) {
-      warn(`알 수 없는 위젯 id: ${id} — gpu-data.js 에 없는 항목입니다`);
+  return html.replace(WIDGET_RE, (full, raw) => {
+    const id = raw.trim().toLowerCase();
+    const gpu = gpus.find((g) => g.id === id);
+    const item = gpu || products[id];
+    if (!item) {
+      warn(`알 수 없는 위젯 id: ${raw} — gpu-data.js 에도 products.js 에도 없습니다`);
       return '';
     }
-    if (!gpu.widget) {
-      warn(`${gpu.name}: widget 코드가 비어 있어 ${full} 이 무시됨`);
+    // GPU 는 name, 나머지 품목은 label 로 부릅니다. 경고에 무엇이 비었는지 보여야 합니다.
+    const name = gpu ? gpu.name : item.label || id;
+    if (!item.widget) {
+      warn(
+        `${name}: widget 코드가 비어 있어 ${full} 이 무시됨 ` +
+          `— 파트너스 → 배너/위젯 → 상품 위젯 에서 받아 넣으세요`
+      );
       return '';
     }
-    const h = /height="?(\d+)/.exec(gpu.widget);
+    const h = /height="?(\d+)/.exec(item.widget);
     const reserve = h ? ` style="min-height:${h[1]}px"` : '';
-    return `<div class="coupang-widget"${reserve}>${gpu.widget}</div>`;
+    return `<div class="coupang-widget"${reserve}>${item.widget}</div>`;
   });
 }
 

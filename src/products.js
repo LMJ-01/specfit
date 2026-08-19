@@ -14,27 +14,54 @@
 //
 // 링크 만드는 법:
 //   partners.coupang.com → 상품 링크 → 상품명 검색 → 링크 생성 → 짧은 링크 복사
+//
+// ── widget: 상품 위젯 (2026-08-20 추가) ─────────────────────────
+//
+// 파트너스 '상품 위젯' iframe 코드 전체를 그대로 붙여넣습니다.
+// 글 본문에서 {{COUPANG:laptop}} 처럼 불러 씁니다.
+// 상품 이미지와 실시간 가격이 나와 텍스트 링크보다 클릭률이 높습니다.
+//
+// **API 키가 필요 없습니다.** 파트너스 UI 에서 코드를 받아 붙이면 끝입니다.
+//   partners.coupang.com → 배너/위젯 → 상품 위젯 → 상품 검색 → 크기 선택 → 코드 복사
+//
+// ⚠️ 왜 여기에 생겼나 — 위젯 지원이 gpu-data.js 에만 있었습니다.
+//    그런데 goals.md 가 2026-08-15 에 **전환 품목을 GPU → 노트북·주변기기로**
+//    옮기기로 결정했습니다. 결정은 바뀌었는데 코드가 안 따라가서,
+//    정작 전환이 걸린 품목에는 위젯을 못 붙이는 상태였습니다.
+//
+// ⚠️ 가로 500px 이하를 권합니다. iframe 은 내용이 축소되지 않아 모바일에서 잘립니다.
+// ⚠️ 비어 있으면 그 자리표시자는 경고 후 제거됩니다. 페이지에는 안 나옵니다.
+//
+// 붙일 자리 (코드를 받으면 해당 글 그 절에 한 줄 넣으면 됩니다)
+//   laptop  → dev-laptop-spec '1. 램' · gaming-laptop-for-dev '6. 판단'
+//   monitor → coding-monitor-resolution '27" QHD' · dual-monitor-vs-single '4. 같은 모델'
+//   ram     → ram-16gb-vs-32gb '1. 듀얼 채널' · laptop-ram-upgrade '3. 장수'
+//   ssd     → dev-ssd-choose '용량' · laptop-ssd-upgrade '3. 슬롯 2개'
 
 export const products = {
   laptop: {
     label: '개발용 노트북 보기',
     note: '램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요',
     buy: 'https://link.coupang.com/a/gdsmkd62Ls',
+    widget: '',
   },
   monitor: {
     label: '27인치 QHD 모니터 보기',
     note: '배율을 안 건드리고 쓸 수 있는 조합입니다',
     buy: 'https://link.coupang.com/a/gdsnkTpck0',
+    widget: '',
   },
   ram: {
     label: 'DDR5 32GB 보기',
     note: '같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다',
     buy: 'https://link.coupang.com/a/gdsop7IrsG',
+    widget: '',
   },
   ssd: {
     label: 'NVMe SSD 1TB 보기',
     note: '모델 파일이 하나에 5~20GB 라 금방 찹니다',
     buy: 'https://link.coupang.com/a/gdspuKuC8O',
+    widget: '',
   },
 };
 
