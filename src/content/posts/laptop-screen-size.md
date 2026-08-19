@@ -171,6 +171,8 @@ affiliate: true
 
 {{BUY:laptop}}
 
+{{COUPANG:laptop}}
+
 **화면만 보고 고르지는 마세요.** 노트북은 바꿀 수 없는 것부터 정하는 게 원칙이고,
 그 순서는 [개발용 노트북 사양](/posts/dev-laptop-spec.html)에 있습니다 —
 **램 슬롯이 화면보다 먼저입니다.**

@@ -182,6 +182,8 @@ docker system prune   # 안 쓰는 것 정리
 
 {{BUY:laptop-1tb}}
 
+{{COUPANG:laptop-1tb}}
+
 > ⚠️ 2026년 들어 램 값이 크게 올라서, 32GB 구성의 웃돈이 예전보다 큽니다.
 > **슬롯이 있는 모델의 값어치가 지금 특히 큽니다** —
 > [램 값이 올랐습니다](/posts/ram-price-2026.html)를 함께 보세요.

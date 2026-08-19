@@ -55,8 +55,9 @@ export const products = {
     // 검색어: 개발용 노트북 32GB
     label: '개발용 노트북 보기',
     note: '램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요',
-    buy: 'https://link.coupang.com/a/glGOuJuTa8',
-    widget: '',
+    buy: 'https://link.coupang.com/a/glIS3zCz48',
+    widget:
+      '<iframe src="https://coupa.ng/coSWrB" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
   // 램 32GB + SSD 1TB 구성. 안드로이드·도커 글이 SSD 1TB 를 명시적으로 권하는데
   // 512GB 짜리를 걸면 글과 어긋나서 자리를 나눴습니다.
@@ -64,15 +65,17 @@ export const products = {
     // 검색어: 노트북 램32GB 1TB
     label: '램 32GB + SSD 1TB 노트북 보기',
     note: 'SDK·에뮬레이터·도커 이미지가 쌓이면 512GB 는 금방 찹니다',
-    buy: 'https://link.coupang.com/a/glGSRMkCS4',
-    widget: '',
+    buy: 'https://link.coupang.com/a/glIWpwe4xU',
+    widget:
+      '<iframe src="https://coupa.ng/coSWr6" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
   monitor: {
     // 검색어: 27인치 QHD 모니터 피벗
     label: '27인치 QHD 모니터 보기',
     note: '배율을 안 건드리고 쓸 수 있는 조합입니다',
-    buy: 'https://link.coupang.com/a/glGUJQSybd',
-    widget: '',
+    buy: 'https://link.coupang.com/a/glIYW4EKjY',
+    widget:
+      '<iframe src="https://coupa.ng/coSWsD" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
   ram: {
     // 검색어: DDR5 32GB 16Gx2 — 데스크톱 DIMM 입니다
@@ -80,8 +83,9 @@ export const products = {
     //    램 박스를 안 붙인 이유가 이것입니다.
     label: 'DDR5 32GB 보기',
     note: '같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다',
-    buy: 'https://link.coupang.com/a/glGW0q87ki',
-    widget: '',
+    buy: 'https://link.coupang.com/a/glI1o1vUiW',
+    widget:
+      '<iframe src="https://coupa.ng/coSWs1" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
   ssd: {
     // 2026-08-20 — 검색 결과 링크에서 **특정 제품**으로 바꿨습니다.
