@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>노트북 발열과 성능 저하 — 얇으면 왜 느려지나 | 스펙핏</title>
-<meta name="description" content="짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.">
-<link rel="canonical" href="https://specfit.kr/posts/laptop-thermal-throttling.html">
+<title>중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다 | 스펙핏</title>
+<meta name="description" content="중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/used-laptop-dev.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="스펙핏">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="노트북 발열과 성능 저하 — 얇으면 왜 느려지나 | 스펙핏">
-<meta property="og:description" content="짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.">
-<meta property="og:url" content="https://specfit.kr/posts/laptop-thermal-throttling.html">
+<meta property="og:title" content="중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다 | 스펙핏">
+<meta property="og:description" content="중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/used-laptop-dev.html">
 <meta property="og:image" content="https://specfit.kr/assets/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -24,9 +24,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 발열과 성능 저하 — 얇으면 왜 느려지나","description":"짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-thermal-throttling.html","image":"https://specfit.kr/assets/og-default.png"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"노트북 발열과 성능 저하 — 얇으면 왜 느려지나","item":"https://specfit.kr/posts/laptop-thermal-throttling.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"온도가 90℃를 넘는데 고장인가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 노트북은 그 근처에서 동작하도록 설계됩니다. 온도가 높은 것 자체보다 그때 속도가 얼마나 떨어지는지가 중요합니다."}},{"@type":"Question","name":"팬 소리가 커지는 게 나쁜 건가요","acceptedAnswer":{"@type":"Answer","text":"오히려 반대입니다. 팬이 돌아야 열을 버립니다. 소리가 안 나면서 느려지고 있다면 그게 더 나쁜 상태입니다."}},{"@type":"Question","name":"쿨링 패드가 효과 있나요","acceptedAnswer":{"@type":"Answer","text":"바닥을 띄워 공기 길을 확보하는 것만으로도 도움이 됩니다. 다만 설계상의 지속 전력을 넘기게 해주지는 않습니다. 기대치를 조정하세요."}},{"@type":"Question","name":"벤치마크 점수를 보면 알 수 있나요","acceptedAnswer":{"@type":"Answer","text":"짧게 재는 점수로는 알기 어렵습니다. 같은 작업을 오래 돌렸을 때의 결과를 보여주는 리뷰를 찾으시는 편이 낫습니다."}},{"@type":"Question","name":"데스크톱은 이 문제가 없나요","acceptedAnswer":{"@type":"Answer","text":"훨씬 덜합니다. 공간과 냉각 여유가 비교가 안 됩니다. 이동이 필요 없다면 데스크톱이 같은 예산에서 유리한 이유 중 하나입니다."}},{"@type":"Question","name":"로컬 LLM에서 얼마나 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"VRAM에 다 올라간다면 발열은 속도 문제이지 가능 여부를 바꾸지는 않습니다. 돌아가느냐 아니냐는 여전히 VRAM이 정합니다 — Ollama 최소 사양에 기준이 있습니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다","description":"중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.","datePublished":"2026-08-20","dateModified":"2026-08-20","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/used-laptop-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다","item":"https://specfit.kr/posts/used-laptop-dev.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"CPU 세대는 얼마나 봐야 하나요","acceptedAnswer":{"@type":"Answer","text":"개발 작업만 놓고 보면 몇 세대 전도 대체로 충분합니다. 그보다 램이 늘어나는지, SSD 를 바꿀 수 있는지가 실질적입니다. 등급과 접미사 읽는 법은 개발용 노트북 CPU에 있습니다."}},{"@type":"Question","name":"중고 게이밍 노트북은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"램·SSD 슬롯이 있는 경우가 많아 그 점은 유리합니다. 다만 오래 부하를 받은 물건이라 팬과 서멀 노후가 더 걱정됩니다. 판단표는 게이밍 노트북 개발용으로 괜찮나에 있습니다."}},{"@type":"Question","name":"맥북 중고는요","acceptedAnswer":{"@type":"Answer","text":"메모리를 어떤 방법으로도 못 늘립니다. 그래서 용량이 곧 수명입니다. 배터리 상태는 시스템 정보 → 전원에서 충전 사이클 수로 봅니다. 구성 기준은 맥북 에어 vs 프로에 있습니다."}},{"@type":"Question","name":"직거래와 택배 중 어느 쪽이 나은가요","acceptedAnswer":{"@type":"Answer","text":"직거래면 위 명령 네 개를 그 자리에서 돌릴 수 있습니다. 그게 가장 큽니다. 택배라면 받자마자 돌려보고, 표기와 다르면 바로 연락하세요."}},{"@type":"Question","name":"초기화는 어떻게 하나요","acceptedAnswer":{"@type":"Answer","text":"판매자가 초기화해서 보내는 것이 원칙입니다. 안 되어 있으면 본인 계정으로 넘어오기 전에 정리를 요청하세요. 윈도우는 설정에서 \"PC 초기화\" 로 됩니다."}},{"@type":"Question","name":"중고로 사서 램·SSD 를 바로 늘리면 되지 않나요","acceptedAnswer":{"@type":"Answer","text":"SSD 는 됩니다. 교체 방법이 어렵지 않습니다. 램은 슬롯이 있어야만 됩니다. 그래서 위 2번의 사용된 슬롯 확인이 먼저입니다."}},{"@type":"Question","name":"보증이 승계되나요","acceptedAnswer":{"@type":"Answer","text":"제조사·모델마다 다릅니다. 시리얼로 조회해 보는 것이 가장 확실합니다. 남아 있으면 중고 리스크가 크게 줄어듭니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -60,9 +60,9 @@
   </nav>
 
   <header class="post-head">
-    <h1>노트북 발열과 성능 저하 — 얇으면 왜 느려지나</h1>
+    <h1>중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다</h1>
     <p class="post-meta">
-      <time datetime="2026-08-17">2026년 8월 17일</time>
+      <time datetime="2026-08-20">2026년 8월 20일</time>
       
     </p>
   </header>
@@ -73,52 +73,80 @@
 </aside>
 
   <div class="post-body">
-<p>노트북 리뷰에서 좋다던 성능이 <strong>내 작업에서는 안 나오는 경우</strong>가 있습니다.</p>
-<p>특히 이런 상황입니다.</p>
-<ul>
-<li>빌드를 걸면 처음엔 빠르다가 <strong>뒤로 갈수록 느려집니다</strong></li>
-<li>로컬 LLM이 <strong>처음 몇 분만 쓸 만합니다</strong></li>
-<li>에뮬레이터를 오래 켜두면 <strong>전체가 굼떠집니다</strong></li>
-</ul>
-<p><strong>고장이 아닙니다.</strong> 설계대로 동작하는 것이고, 사양에서 어느 정도 미리 알 수 있습니다.</p>
+<p>이 사이트의 노트북 글 세 편이 <strong>&quot;중고도 괜찮나요&quot;</strong> 를 한두 줄로만 답하고 넘어갔습니다.
+제대로 답합니다.</p>
+<p><strong>중고에서 갈리는 건 &quot;상태가 좋으냐&quot; 가 아닙니다.</strong> 그건 사보기 전엔 모릅니다.
+갈리는 건 <strong>살 때 확인할 수 있느냐</strong>이고, 그건 항목마다 정해져 있습니다.</p>
 <h2 id="결론부터">결론부터</h2>
 <div class="table-wrap"><table>
-<thead><tr><th></th><th></th></tr></thead>
+<thead><tr><th>항목</th><th>확인되나</th><th>어떻게</th></tr></thead>
 <tbody>
-<tr><td>왜 느려지나</td><td>열이 쌓이면 <strong>스스로 속도를 낮춥니다</strong></td></tr>
-<tr><td>왜 처음엔 빠른가</td><td>짧은 시간은 <strong>높은 전력을 허용</strong>하기 때문입니다</td></tr>
-<tr><td>언제 문제가 되나</td><td><strong>몇 분 이상 이어지는 작업</strong></td></tr>
-<tr><td>사양에서 볼 것</td><td><strong>최대 전력 표기 · 두께와 무게 · 팬 유무</strong></td></tr>
-<tr><td>해결되나</td><td>근본적으로는 아닙니다. <strong>덜 나빠지게만</strong> 할 수 있습니다</td></tr>
+<tr><td><strong>배터리 잔여 용량</strong></td><td>✅</td><td><code>powercfg /batteryreport</code></td></tr>
+<tr><td><strong>SSD 닳은 정도</strong></td><td>✅</td><td><code>Wear</code> 값</td></tr>
+<tr><td><strong>램 용량·슬롯</strong></td><td>✅</td><td>작업 관리자</td></tr>
+<tr><td><strong>VRAM</strong></td><td>✅</td><td>작업 관리자</td></tr>
+<tr><td>CPU·화면 사양</td><td>✅</td><td>모델명으로 검색</td></tr>
+<tr><td><strong>냉각 상태(먼지·서멀)</strong></td><td>❌</td><td><strong>못 봅니다</strong></td></tr>
+<tr><td><strong>침수·수리 이력</strong></td><td>❌</td><td><strong>못 봅니다</strong></td></tr>
+<tr><td>힌지·키보드 마모</td><td>⚠️</td><td>직접 만져봐야</td></tr>
 </tbody>
 </table></div>
-<p><strong>리뷰의 벤치마크 점수로는 이걸 알 수 없습니다.</strong> 짧게 재기 때문입니다.</p>
-<h2 id="1-구조-열을-못-버리면-속도를-낮춥니다">1. 구조 — 열을 못 버리면 속도를 낮춥니다</h2>
-<p>칩은 전력을 쓴 만큼 열을 냅니다. 그 열을 밖으로 못 내보내면 온도가 올라가고,
-<strong>대략 90~100℃ 근처의 상한</strong>에 닿으면 칩이 스스로 속도를 낮춥니다.</p>
-<pre><code>전력을 많이 씀  →  열이 많이 남  →  못 버리면 온도 상승
-                                  →  상한 도달  →  속도를 낮춤</code></pre>
-<p><strong>타지 않으려고 스스로 늦추는 것</strong>입니다. 보호 동작이라 끌 수 없습니다.</p>
-<p><strong>얇은 노트북은 열을 버릴 공간이 적습니다.</strong> 히트파이프도 팬도 작습니다.
-그래서 같은 칩이라도 <strong>얇을수록 빨리 상한에 닿습니다.</strong></p>
-<h2 id="2-왜-처음에는-빠른가-부스트-구간">2. 왜 처음에는 빠른가 — 부스트 구간</h2>
-<p>여기가 벤치마크와 실사용이 갈리는 지점입니다.</p>
-<p><strong>칩은 짧은 시간 동안 평소보다 높은 전력을 쓰도록 허용됩니다.</strong>
-아직 열이 안 쌓였으니 잠깐은 괜찮기 때문입니다.</p>
-<pre><code>처음 짧은 구간   높은 전력   ← 빠릅니다. 벤치마크가 재는 구간
-그다음           낮은 전력   ← 여기가 실제 지속 성능</code></pre>
-<p><strong>개발 작업 대부분은 뒤쪽 구간에 있습니다.</strong></p>
+<p><strong>위 다섯은 5분이면 다 재집니다.</strong> 아래 셋이 중고의 진짜 리스크입니다.</p>
+<h2 id="1-노트북은-중고가-특히-애매합니다">1. 노트북은 중고가 특히 애매합니다</h2>
+<p><strong>바꿀 수 있는 게 거의 없기 때문</strong>입니다.</p>
+<p><a href="/posts/dev-laptop-spec.html">개발용 노트북 사양</a>에서 정리한 순서를 그대로 가져오면 이렇습니다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>작업</th><th>어느 구간인가</th></tr></thead>
+<thead><tr><th></th><th>새로 살 때</th><th><strong>중고에서</strong></th></tr></thead>
 <tbody>
-<tr><td>파일 저장 후 다시 빌드</td><td>앞쪽 — 문제없습니다</td></tr>
-<tr><td>코드 편집·자동완성</td><td>앞쪽</td></tr>
-<tr><td><strong>전체 빌드</strong></td><td><strong>뒤쪽</strong></td></tr>
-<tr><td><strong>에뮬레이터 상시 실행</strong></td><td><strong>뒤쪽</strong></td></tr>
-<tr><td><strong>로컬 LLM</strong></td><td><strong>뒤쪽 — 가장 잘 걸립니다</strong></td></tr>
+<tr><td>램</td><td>슬롯 있으면 나중에</td><td><strong>슬롯이 없으면 그걸로 끝</strong></td></tr>
+<tr><td>화면</td><td>고를 수 있음</td><td><strong>고정</strong></td></tr>
+<tr><td>그래픽카드</td><td>고를 수 있음</td><td><strong>고정</strong></td></tr>
+<tr><td>SSD</td><td>대개 교체 가능</td><td>교체 가능 · 다만 <strong>이미 닳았을 수 있음</strong></td></tr>
+<tr><td><strong>배터리</strong></td><td>새것</td><td><strong>가장 많이 닳아 있는 부품</strong></td></tr>
 </tbody>
 </table></div>
-<p><strong>로컬 LLM은 몇 분씩 연속으로 계산합니다.</strong> 부스트 구간이 아예 의미가 없습니다.</p>
+<p><strong>데스크톱 중고와 성격이 다릅니다.</strong> 데스크톱은 부품을 갈면 되는데 노트북은 안 됩니다.
+그래서 <a href="/posts/rtx3060-12gb-local-llm.html">중고 3060</a>이나
+<a href="/posts/rtx3090-vs-4070-local-llm.html">중고 3090</a>을 판단하는 기준을
+노트북에 그대로 쓰면 안 됩니다.</p>
+<h2 id="2-받자마자-5분-명령-네-개">2. 받자마자 5분 — 명령 네 개</h2>
+<p><strong>직거래라면 그 자리에서, 택배면 받자마자</strong> 돌려보세요.
+이 사이트가 다른 글에서 쓰던 것들입니다.</p>
+<h3 id="배터리-여기가-제일-많이-닳아-있습니다">배터리 — 여기가 제일 많이 닳아 있습니다</h3>
+<p>윈도우에서 명령 프롬프트나 PowerShell:</p>
+<pre><code>powercfg /batteryreport</code></pre>
+<p>HTML 파일이 하나 생깁니다. <strong>설계 용량(Design Capacity)</strong> 과
+<strong>현재 완충 용량(Full Charge Capacity)</strong> 을 비교하세요.</p>
+<pre><code>잔여 비율 = 현재 완충 용량 ÷ 설계 용량</code></pre>
+<p>이게 그대로 사용 시간에 반영됩니다.
+<a href="/posts/laptop-battery-dev.html">Wh ÷ 소비 W 계산</a>에 이 비율을 곱하면 됩니다.</p>
+<pre><code>설계 60Wh · 현재 45Wh  →  75%
+브라우저+개발서버(15~25W)로 2.5~4시간이던 것이  →  약 1.9~3시간</code></pre>
+<p><strong>80% 아래면 체감이 확실히 옵니다.</strong> 교체는 <a href="/posts/laptop-ssd-upgrade.html">SSD처럼 쉽지 않습니다</a> —
+최근 모델은 접착식이 많아 제조사 서비스를 거쳐야 합니다.</p>
+<h3 id="ssd-얼마나-썼는지-숫자로-나옵니다">SSD — 얼마나 썼는지 숫자로 나옵니다</h3>
+<p>PowerShell 에서:</p>
+<pre><code class="language-powershell">Get-PhysicalDisk | Get-StorageReliabilityCounter |
+  Select-Object DeviceId, Wear, ReadErrorsTotal, WriteErrorsTotal</code></pre>
+<p><code>Wear</code> 가 닳은 정도(%)입니다. 계산법과 읽는 법은
+<a href="/posts/ssd-tbw-lifespan.html">SSD 수명 TBW</a>에 정리했습니다.</p>
+<blockquote><p>⚠️ 값이 안 나오는 제품·드라이버가 있습니다. 그때는 제조사 도구나
+SMART 정보를 읽는 프로그램을 쓰면 총 쓰기량까지 나옵니다.</p></blockquote>
+<p><strong>SSD 는 그나마 다행입니다.</strong> 닳았어도 <a href="/posts/laptop-ssd-upgrade.html">바꿀 수 있는 부품</a>이니까요.</p>
+<h3 id="램-슬롯-이게-그-노트북의-수명입니다">램 슬롯 — 이게 그 노트북의 수명입니다</h3>
+<p><code>Ctrl</code> + <code>Shift</code> + <code>Esc</code> → <strong>성능</strong> → <strong>메모리</strong>. 오른쪽 아래를 보세요.</p>
+<pre><code>사용된 슬롯    1/2      ← 늘릴 수 있습니다
+사용된 슬롯    표시 없음  ← 온보드일 가능성이 큽니다</code></pre>
+<p><strong><code>1/2</code> 면 좋은 매물입니다.</strong> 16GB 짜리를 사서 나중에 32GB 로 갈 수 있습니다.
+<a href="/posts/laptop-ram-upgrade.html">늘리는 방법</a>과
+<a href="/posts/laptop-ram-onboard-lpcamm2.html">온보드 확인법</a>은 따로 정리했습니다.</p>
+<p>⚠️ <strong>2026년에는 이게 평소보다 중요합니다.</strong> 램 값이 크게 올라서
+<a href="/posts/ram-price-2026.html">슬롯이 있는 모델의 값어치가 커졌습니다</a>.</p>
+<h3 id="vram-이름만-보면-틀립니다">VRAM — 이름만 보면 틀립니다</h3>
+<p>같은 작업 관리자에서 <strong>성능 → GPU → 전용 GPU 메모리</strong>.</p>
+<p><strong>노트북 GPU 는 이름이 같아도 VRAM 이 다릅니다.</strong>
+노트북 RTX 5070 은 8GB, 데스크톱은 12GB 입니다 —
+<a href="/posts/local-llm-laptop-choose.html">표는 여기</a>에 있습니다.</p>
 <div data-vram-tool>
 <div class="vr">
   <div class="vr-controls">
@@ -217,110 +245,94 @@
     경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
   </p>
 </div></div>
-<h2 id="3-같은-이름인데-성능이-다른-이유">3. 같은 이름인데 성능이 다른 이유</h2>
-<p><a href="/posts/dev-laptop-cpu.html">개발용 노트북 CPU</a>에서 <strong>&quot;접미사에 속지 마세요&quot;</strong>라고 적었는데,
-그 이야기의 뿌리가 이것입니다.</p>
-<p><strong>노트북 제조사가 칩에 허용할 전력을 직접 정합니다.</strong>
-얇은 모델은 낮게 잡고, 두꺼운 모델은 높게 잡습니다.</p>
-<pre><code>같은 &quot;코어 울트라 7&quot;
-  얇은 노트북에 들어가면   →  낮은 전력  →  느림
-  게이밍 노트북에 들어가면 →  높은 전력  →  빠름</code></pre>
-<p><strong>같은 이름을 달고 다른 성능을 냅니다.</strong> 그리고 그 차이는 오래 돌릴수록 벌어집니다.</p>
-<h2 id="4-사양에서-미리-아는-법">4. 사양에서 미리 아는 법</h2>
-<p><strong>정확히는 못 알지만 방향은 보입니다.</strong></p>
+<h2 id="3-확인이-안-되는-것-여기가-진짜-리스크">3. 확인이 안 되는 것 — 여기가 진짜 리스크</h2>
+<p><strong>위 넷은 숫자가 나옵니다. 아래는 안 나옵니다.</strong></p>
+<p><strong>① 냉각 상태</strong></p>
+<p>몇 년 쓴 노트북은 팬과 방열판에 먼지가 낍니다. 서멀도 굳습니다.
+그러면 <a href="/posts/laptop-thermal-throttling.html">열이 안 빠져서 스스로 속도를 낮춥니다</a>.</p>
+<p><strong>짧게 써봐서는 안 나옵니다.</strong> 부스트 구간에서는 멀쩡하기 때문입니다.
+긴 빌드나 로컬 LLM 처럼 <strong>몇 분 이상 돌려야</strong> 드러납니다.</p>
+<p><strong>② 침수·수리 이력</strong></p>
+<p>판매자가 말 안 하면 알 방법이 없습니다. 제조사 서비스에서 조회되는 경우가 있으니
+<strong>시리얼로 보증 상태를 확인</strong>해 보는 편이 낫습니다.</p>
+<p><strong>③ 배터리 팽창</strong></p>
+<p>바닥이 평평한지, 터치패드가 뜨지 않았는지 보세요. <strong>팽창은 위험합니다.</strong></p>
+<h2 id="4-그래서-얼마나-싸야-하나">4. 그래서 얼마나 싸야 하나</h2>
+<p><strong>금액은 적지 않겠습니다.</strong> 모델마다 다르고 시세가 계속 변합니다.
+대신 <strong>깎을 근거</strong>는 위 숫자에서 나옵니다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>확인할 것</th><th>어떻게 읽나</th></tr></thead>
+<thead><tr><th>확인 결과</th><th>뜻</th></tr></thead>
 <tbody>
-<tr><td><strong>CPU 최대 전력 표기</strong></td><td>있으면 가장 정확합니다. 높을수록 여유</td></tr>
-<tr><td><strong>최대 그래픽 전력</strong></td><td>전용 GPU가 있으면 함께 표기됩니다</td></tr>
-<tr><td><strong>두께와 무게</strong></td><td>얇고 가벼울수록 열에 불리합니다</td></tr>
-<tr><td><strong>팬 개수</strong></td><td>두 개면 여유가 있는 설계입니다</td></tr>
-<tr><td>팬이 없음</td><td>확실히 낮은 전력 설계입니다</td></tr>
+<tr><td>배터리 80% 아래</td><td>사용 시간이 그만큼 짧습니다. 교체는 쉽지 않습니다</td></tr>
+<tr><td>램 슬롯 없음</td><td><strong>그 용량이 수명</strong>입니다</td></tr>
+<tr><td>SSD <code>Wear</code> 가 높음</td><td>교체 비용을 얹어 생각하세요</td></tr>
+<tr><td>보증 잔여 없음</td><td>고장 나면 전액 본인 부담입니다</td></tr>
 </tbody>
 </table></div>
-<p><strong>무게가 의외로 좋은 지표입니다.</strong> 냉각 부품이 무겁기 때문입니다.
-1kg 대 노트북과 2kg 대 노트북은 같은 칩이라도 지속 성능이 다릅니다.</p>
-<p>이 항목들이 <a href="/posts/gaming-laptop-for-dev.html">게이밍 노트북이 개발에 유리한</a> 이유이기도 합니다.</p>
-<h2 id="5-맥은-어떤가">5. 맥은 어떤가</h2>
-<p><strong>맥북 에어에는 팬이 없습니다.</strong> 열을 몸체로만 버립니다.</p>
-<p>조용하고 가볍다는 장점의 반대편입니다. <strong>오래 돌리면 속도를 낮춥니다.</strong></p>
-<div class="table-wrap"><table>
-<thead><tr><th>작업</th><th>에어에서</th></tr></thead>
-<tbody>
-<tr><td>편집·짧은 빌드</td><td>문제없습니다</td></tr>
-<tr><td>긴 컴파일</td><td>뒤로 갈수록 느려질 수 있습니다</td></tr>
-<tr><td><strong>로컬 LLM 장시간</strong></td><td><strong>영향을 받습니다</strong></td></tr>
-</tbody>
-</table></div>
-<p><strong>가끔 쓸 거면 상관없고, 상시로 쓸 거면 프로 쪽</strong>입니다.
-칩·냉각 차이는 <a href="/posts/macbook-air-vs-pro-dev.html">맥북 에어 vs 프로</a>에 정리했습니다.</p>
-<h2 id="6-할-수-있는-것-근본-해결은-아닙니다">6. 할 수 있는 것 — 근본 해결은 아닙니다</h2>
-<p><strong>설계를 바꿀 수는 없습니다.</strong> 덜 나빠지게만 할 수 있습니다.</p>
-<p><strong>① 받침대로 바닥을 띄우세요</strong>
-대부분의 노트북은 <strong>바닥으로 공기를 빨아들입니다.</strong> 책상에 딱 붙어 있으면 그 길이 막힙니다.
-침대나 이불 위에서 쓰면 최악입니다. <strong>가장 값싸고 효과가 확실한 방법</strong>입니다.</p>
-<p><strong>② 실내 온도를 보세요</strong>
-들어오는 공기가 뜨거우면 열을 못 버립니다. 여름에 유난히 느려지는 이유입니다.</p>
-<p><strong>③ 전원 프로파일을 확인하세요</strong>
-제조사 유틸리티에 성능·균형·조용함 모드가 있는 경우가 많습니다.
-<strong>조용함 모드로 두면 일부러 성능을 낮춥니다.</strong></p>
-<p><strong>④ 배기구를 막지 마세요</strong>
-옆이나 뒤에 열이 나가는 구멍이 있습니다. 가방이나 벽에 붙여두면 막힙니다.</p>
-<p><strong>⑤ 먼지가 쌓이면 나빠집니다</strong>
-몇 년 쓰면 팬과 방열판에 먼지가 낍니다. ⚠️ <strong>분해 청소나 서멀 재도포는 보증 문제</strong>가
-생길 수 있으니 제조사 서비스를 먼저 알아보세요.</p>
-<h2 id="7-살-때-어떻게-반영하나">7. 살 때 어떻게 반영하나</h2>
-<p><strong>&quot;오래 돌리는 작업을 하는가&quot;</strong> 하나로 갈립니다.</p>
-<div class="table-wrap"><table>
-<thead><tr><th>하는 일</th><th>판단</th></tr></thead>
-<tbody>
-<tr><td>웹 개발·편집 위주</td><td>얇은 노트북으로 충분합니다</td></tr>
-<tr><td>큰 프로젝트를 자주 빌드</td><td>두께에 여유가 있는 쪽</td></tr>
-<tr><td><strong>에뮬레이터 상시</strong></td><td>두꺼운 쪽</td></tr>
-<tr><td><strong>로컬 LLM</strong></td><td><strong>냉각이 가장 중요한 용도입니다</strong></td></tr>
-</tbody>
-</table></div>
-<p><strong>웹 개발만 하신다면 이 글의 내용은 거의 해당하지 않습니다</strong> —
-<a href="/posts/web-dev-laptop-spec.html">웹 개발용 노트북 사양</a>에 기준을 따로 적었습니다.</p>
+<p><strong>보증 잔여가 실질적인 기준선입니다.</strong> 남아 있으면 위 리스크 대부분이 덮이고,
+없으면 위 셋(냉각·침수·팽창)을 그대로 떠안습니다.</p>
+<h2 id="5-이럴-땐-신품이-낫습니다">5. 이럴 땐 신품이 낫습니다</h2>
+<p><strong>중고가 맞는 경우</strong></p>
+<ul>
+<li>램 슬롯이 있고 <code>1/2</code> 다</li>
+<li>배터리가 아직 넉넉하다</li>
+<li>주로 전원 꽂고 책상에서 쓴다</li>
+<li>보증이 남아 있다</li>
+</ul>
+<p><strong>신품이 나은 경우</strong></p>
+<ul>
+<li><strong>온보드 16GB</strong> — 늘릴 수 없는데 <a href="/posts/ram-16gb-vs-32gb.html">도커·에뮬레이터를 쓰면 부족합니다</a></li>
+<li><strong>매일 들고 다닌다</strong> — 배터리가 닳은 상태로 시작합니다</li>
+<li><strong>로컬 LLM 을 할 것이다</strong> — 오래 돌리는 작업이라 <a href="/posts/laptop-thermal-throttling.html">냉각 상태가 그대로 성능</a>입니다</li>
+<li>화면이 아쉽다 — <a href="/posts/laptop-screen-size.html">못 바꿉니다</a></li>
+</ul>
+<p><strong>로컬 LLM 이 목적이면 중고를 권하지 않습니다.</strong> 확인이 안 되는 항목(냉각)이
+정확히 그 용도에서 가장 크게 걸립니다.</p>
 <aside class="buy-box">
   <a class="buy-btn" href="https://link.coupang.com/a/glIS3zCz48" target="_blank" rel="sponsored nofollow noopener">개발용 노트북 보기</a>
   <span class="buy-note">램 32GB · 슬롯 유무 · 세로 해상도를 먼저 확인하세요</span>
 </aside>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="온도가-90를-넘는데-고장인가요">온도가 90℃를 넘는데 고장인가요</h3>
-<p>아닙니다. 노트북은 그 근처에서 동작하도록 설계됩니다.
-<strong>온도가 높은 것 자체보다 그때 속도가 얼마나 떨어지는지</strong>가 중요합니다.</p>
-<h3 id="팬-소리가-커지는-게-나쁜-건가요">팬 소리가 커지는 게 나쁜 건가요</h3>
-<p>오히려 반대입니다. <strong>팬이 돌아야 열을 버립니다.</strong>
-소리가 안 나면서 느려지고 있다면 그게 더 나쁜 상태입니다.</p>
-<h3 id="쿨링-패드가-효과-있나요">쿨링 패드가 효과 있나요</h3>
-<p>바닥을 띄워 공기 길을 확보하는 것만으로도 도움이 됩니다.
-다만 <strong>설계상의 지속 전력을 넘기게 해주지는 않습니다.</strong> 기대치를 조정하세요.</p>
-<h3 id="벤치마크-점수를-보면-알-수-있나요">벤치마크 점수를 보면 알 수 있나요</h3>
-<p>짧게 재는 점수로는 알기 어렵습니다.
-<strong>같은 작업을 오래 돌렸을 때의 결과</strong>를 보여주는 리뷰를 찾으시는 편이 낫습니다.</p>
-<h3 id="데스크톱은-이-문제가-없나요">데스크톱은 이 문제가 없나요</h3>
-<p>훨씬 덜합니다. 공간과 냉각 여유가 비교가 안 됩니다.
-<strong>이동이 필요 없다면 데스크톱이 같은 예산에서 유리한 이유</strong> 중 하나입니다.</p>
-<h3 id="로컬-llm에서-얼마나-영향이-있나요">로컬 LLM에서 얼마나 영향이 있나요</h3>
-<p>VRAM에 다 올라간다면 발열은 <strong>속도 문제</strong>이지 가능 여부를 바꾸지는 않습니다.
-<strong>돌아가느냐 아니냐는 여전히 VRAM이 정합니다</strong> —
-<a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양</a>에 기준이 있습니다.</p>
+<h3 id="cpu-세대는-얼마나-봐야-하나요">CPU 세대는 얼마나 봐야 하나요</h3>
+<p><strong>개발 작업만 놓고 보면 몇 세대 전도 대체로 충분합니다.</strong>
+그보다 <strong>램이 늘어나는지, SSD 를 바꿀 수 있는지</strong>가 실질적입니다.
+등급과 접미사 읽는 법은 <a href="/posts/dev-laptop-cpu.html">개발용 노트북 CPU</a>에 있습니다.</p>
+<h3 id="중고-게이밍-노트북은-어떤가요">중고 게이밍 노트북은 어떤가요</h3>
+<p>램·SSD 슬롯이 있는 경우가 많아 그 점은 유리합니다.
+다만 <strong>오래 부하를 받은 물건</strong>이라 팬과 서멀 노후가 더 걱정됩니다.
+판단표는 <a href="/posts/gaming-laptop-for-dev.html">게이밍 노트북 개발용으로 괜찮나</a>에 있습니다.</p>
+<h3 id="맥북-중고는요">맥북 중고는요</h3>
+<p><strong>메모리를 어떤 방법으로도 못 늘립니다.</strong> 그래서 용량이 곧 수명입니다.
+배터리 상태는 시스템 정보 → 전원에서 <strong>충전 사이클 수</strong>로 봅니다.
+구성 기준은 <a href="/posts/macbook-air-vs-pro-dev.html">맥북 에어 vs 프로</a>에 있습니다.</p>
+<h3 id="직거래와-택배-중-어느-쪽이-나은가요">직거래와 택배 중 어느 쪽이 나은가요</h3>
+<p><strong>직거래면 위 명령 네 개를 그 자리에서 돌릴 수 있습니다.</strong> 그게 가장 큽니다.
+택배라면 받자마자 돌려보고, 표기와 다르면 바로 연락하세요.</p>
+<h3 id="초기화는-어떻게-하나요">초기화는 어떻게 하나요</h3>
+<p>판매자가 초기화해서 보내는 것이 원칙입니다.
+안 되어 있으면 <strong>본인 계정으로 넘어오기 전에 정리</strong>를 요청하세요.
+윈도우는 설정에서 &quot;PC 초기화&quot; 로 됩니다.</p>
+<h3 id="중고로-사서-램ssd-를-바로-늘리면-되지-않나요">중고로 사서 램·SSD 를 바로 늘리면 되지 않나요</h3>
+<p><strong>SSD 는 됩니다.</strong> <a href="/posts/laptop-ssd-upgrade.html">교체 방법</a>이 어렵지 않습니다.
+<strong>램은 슬롯이 있어야만</strong> 됩니다. 그래서 위 2번의 <code>사용된 슬롯</code> 확인이 먼저입니다.</p>
+<h3 id="보증이-승계되나요">보증이 승계되나요</h3>
+<p>제조사·모델마다 다릅니다. <strong>시리얼로 조회</strong>해 보는 것이 가장 확실합니다.
+남아 있으면 중고 리스크가 크게 줄어듭니다.</p>
 <h2 id="정리">정리</h2>
 <ol>
-<li>열을 못 버리면 칩이 <strong>스스로 속도를 낮춥니다.</strong> 보호 동작입니다</li>
-<li><strong>처음이 빠른 건 부스트 구간</strong>입니다. 개발 작업 대부분은 그 뒤에 있습니다</li>
-<li><strong>같은 CPU 이름이라도 노트북마다 허용 전력이 다릅니다</strong></li>
-<li>사양에서는 <strong>최대 전력 표기 · 두께와 무게 · 팬 개수</strong>를 보세요</li>
-<li><strong>받침대로 바닥을 띄우는 것</strong>이 가장 값싸고 확실합니다</li>
-<li><strong>로컬 LLM이 가장 잘 걸리는 작업</strong>입니다. 냉각을 우선순위에 넣으세요</li>
+<li>중고에서 갈리는 건 상태가 아니라 <strong>확인 가능 여부</strong>입니다</li>
+<li><strong>배터리·SSD·램 슬롯·VRAM 은 5분이면 재집니다.</strong> 명령 네 개입니다</li>
+<li>못 재는 건 <strong>냉각·침수·팽창</strong> 셋이고, 여기가 진짜 리스크입니다</li>
+<li><strong>램 슬롯이 없으면 그 용량이 수명</strong>입니다</li>
+<li><strong>보증 잔여가 실질적인 기준선</strong>입니다</li>
+<li><strong>로컬 LLM 이 목적이면 중고를 권하지 않습니다</strong> — 냉각이 그 용도에서 가장 크게 걸립니다</li>
 </ol>
-<p>실제 사용 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+<p>확인 절차가 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
   
 
-  <p class="tags"><span class="tag">노트북발열</span> <span class="tag">스로틀링</span> <span class="tag">지속성능</span> <span class="tag">개발용노트북</span> <span class="tag">냉각</span></p>
+  <p class="tags"><span class="tag">중고노트북</span> <span class="tag">배터리</span> <span class="tag">SSD수명</span> <span class="tag">램슬롯</span> <span class="tag">개발용노트북</span></p>
 </article>
 
 <section class="related" aria-labelledby="related-h">
@@ -334,17 +346,17 @@
       </a>
     </li>
     <li class="card">
-      <a href="/posts/used-laptop-dev.html">
-        <span class="card-cat">노트북</span>
-        <span class="card-title">중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다</span>
-        <span class="card-desc">중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
       <a href="/posts/gaming-laptop-for-dev.html">
         <span class="card-cat">노트북</span>
         <span class="card-title">게이밍 노트북 개발용으로 괜찮나 — 무게로 갈립니다</span>
         <span class="card-desc">확장성과 냉각은 게이밍 노트북이 확실히 낫습니다. 대신 무게, 배터리, 충전 방식에서 대가를 냅니다. 스펙으로 확인되는 것만 갈라 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-battery-dev.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">개발용 노트북 배터리 — 표기 시간이 안 맞는 이유</span>
+        <span class="card-desc">제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.</span>
       </a>
     </li>
   </ul>
