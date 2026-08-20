@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드 | 스펙핏</title>
-<meta name="description" content="VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.">
-<link rel="canonical" href="https://specfit.kr/posts/local-llm-start-guide.html">
+<title>중고 그래픽카드 살 때 — 채굴 이력은 못 밝힙니다 | 스펙핏</title>
+<meta name="description" content="채굴 이력은 GPU-Z로도 확인이 안 됩니다. 밝힐 수 없는 것을 추리하는 대신, 그 자리에서 잴 수 있는 것 네 가지를 정리했습니다. VRAM, 부하 온도, 아티팩트, 보증.">
+<link rel="canonical" href="https://specfit.kr/posts/used-gpu-check.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="스펙핏">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드 | 스펙핏">
-<meta property="og:description" content="VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.">
-<meta property="og:url" content="https://specfit.kr/posts/local-llm-start-guide.html">
+<meta property="og:title" content="중고 그래픽카드 살 때 — 채굴 이력은 못 밝힙니다 | 스펙핏">
+<meta property="og:description" content="채굴 이력은 GPU-Z로도 확인이 안 됩니다. 밝힐 수 없는 것을 추리하는 대신, 그 자리에서 잴 수 있는 것 네 가지를 정리했습니다. VRAM, 부하 온도, 아티팩트, 보증.">
+<meta property="og:url" content="https://specfit.kr/posts/used-gpu-check.html">
 <meta property="og:image" content="https://specfit.kr/assets/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -24,9 +24,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드","description":"VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-start-guide.html","image":"https://specfit.kr/assets/og-default.png"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드","item":"https://specfit.kr/posts/local-llm-start-guide.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"그래픽카드가 없어도 되나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다. 체험은 되지만 실제로 쓰기는 어렵습니다. 왜 그런지는 CPU로 돌리면 얼마나 느린가에 계산해 뒀습니다."}},{"@type":"Question","name":"노트북으로도 되나요","acceptedAnswer":{"@type":"Answer","text":"노트북 그래픽카드의 메모리를 확인하세요. 같은 이름이라도 데스크톱보다 메모리가 적은 경우가 많습니다. 확인 방법은 위 2번과 같습니다. 노트북 RTX 5070 은 8GB, 데스크톱 5070 은 12GB입니다. 이름만 보고 사면 어긋납니다 — 로컬 LLM 되는 노트북 고르기에 표를 넣어뒀습니다."}},{"@type":"Question","name":"인터넷 서비스보다 성능이 떨어지나요","acceptedAnswer":{"@type":"Answer","text":"떨어집니다. 개인 장비에서 돌릴 수 있는 크기에 한계가 있기 때문입니다. 다만 번역·요약·간단한 코딩 보조 같은 일상적인 작업은 충분히 됩니다."}},{"@type":"Question","name":"무료인가요","acceptedAnswer":{"@type":"Answer","text":"모델과 프로그램 모두 무료입니다. 전기요금만 듭니다. 다만 장비가 부족하면 그걸 사는 비용이 듭니다. 전기요금이 얼마인지는 계산해 두었습니다 — 하루 한두 시간이면 신경 쓸 금액이 아니고, 24시간 켜두면 이야기가 달라집니다. 로컬 LLM 전기요금에 계산식과 확인처를 적었습니다."}},{"@type":"Question","name":"얼마나 어렵나요","acceptedAnswer":{"@type":"Answer","text":"Ollama 기준으로 설치 후 명령어 한 줄입니다. 어려운 건 설치가 아니라 내 장비로 뭐가 되는지 판단하는 것이고, 그게 이 사이트가 하는 일입니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"중고 그래픽카드 살 때 — 채굴 이력은 못 밝힙니다","description":"채굴 이력은 GPU-Z로도 확인이 안 됩니다. 밝힐 수 없는 것을 추리하는 대신, 그 자리에서 잴 수 있는 것 네 가지를 정리했습니다. VRAM, 부하 온도, 아티팩트, 보증.","datePublished":"2026-08-20","dateModified":"2026-08-20","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/used-gpu-check.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"중고 그래픽카드 살 때 — 채굴 이력은 못 밝힙니다","item":"https://specfit.kr/posts/used-gpu-check.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"채굴 카드는 거르는 게 맞나요","acceptedAnswer":{"@type":"Answer","text":"이력 자체는 못 밝히므로 \"거른다\"가 성립하지 않습니다. 잴 수 있는 것(온도 평형·아티팩트·보증)으로 판단하는 편이 현실적입니다. 정황이 겹치는 매물(동일 카드 다수 판매 등)을 피하는 정도가 할 수 있는 전부입니다."}},{"@type":"Question","name":"부하 테스트는 몇 분이면 되나요","acceptedAnswer":{"@type":"Answer","text":"온도가 평형에 도달하는 것을 볼 때까지입니다. 대개 몇 분 안에 옵니다. 계속 오르기만 하다가 클럭이 떨어지기 시작하면 그게 신호입니다."}},{"@type":"Question","name":"GPU-Z 에서 뭘 봐야 하나요","acceptedAnswer":{"@type":"Answer","text":"첫 화면에서 모델명·메모리 용량·대역폭이 매물 설명과 맞는지, 센서 탭에서 부하 중 온도·클럭의 모양을 봅니다. 채굴 이력 항목은 없습니다 — 그런 항목이 있다고 하는 글을 걸러내는 용도로도 쓰입니다."}},{"@type":"Question","name":"팬에서 소리가 나는데 감점인가요","acceptedAnswer":{"@type":"Answer","text":"팬은 교체 가능한 소모품이라 카드 자체의 결함과는 다릅니다. 다만 교체 비용과 수고가 있으므로 값에 반영할 근거는 됩니다. 아티팩트와는 무게가 다릅니다 — 그쪽은 거르세요."}},{"@type":"Question","name":"중고 대신 신품으로 간다면","acceptedAnswer":{"@type":"Answer","text":"16GB 가 필요하면 5060 Ti 16GB가 현실적인 대안입니다. 보증·저전력에 대역폭도 3060 보다 높습니다. 24GB 급은 신품 선택지가 5090(32GB)으로 건너뜁니다 — 가격대가 다른 이야기가 됩니다."}},{"@type":"Question","name":"파워는 그대로 써도 되나요","acceptedAnswer":{"@type":"Answer","text":"카드가 커지면 대개 파워도 걸립니다. 특히 중고 상급 카드(3090 등)는 커넥터와 용량을 함께 봐야 합니다 — 그래픽카드 파워 용량에 계산식이 있습니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -38,7 +38,7 @@
       <span class="brand-tag">내 조건에 맞는 스펙</span>
     </a>
     <nav class="site-nav" aria-label="주요 메뉴">
-      <a href="/posts/local-llm-start-guide.html" aria-current="page">처음이신가요</a>
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
       <a href="/tools/vram.html">VRAM 계산기</a>
       <a href="/gpu.html">GPU</a>
       <a href="/laptop.html">노트북</a>
@@ -60,10 +60,10 @@
   </nav>
 
   <header class="post-head">
-    <h1>로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드</h1>
+    <h1>중고 그래픽카드 살 때 — 채굴 이력은 못 밝힙니다</h1>
     <p class="post-meta">
-      <time datetime="2026-08-15">2026년 8월 15일</time>
-      <span class="updated">· 2026년 8월 18일 갱신</span>
+      <time datetime="2026-08-20">2026년 8월 20일</time>
+      
     </p>
   </header>
 
@@ -73,37 +73,29 @@
 </aside>
 
   <div class="post-body">
-<p>&quot;내 컴퓨터에서 AI를 돌린다&quot;는 이야기를 보고 오셨다면, 아마 이런 상태일 겁니다.</p>
-<ul>
-<li>되는지 안 되는지부터 모르겠다</li>
-<li>VRAM, 양자화, 7B 같은 말이 무슨 뜻인지 모르겠다</li>
-<li>뭘 사야 하는지는 더 모르겠다</li>
-</ul>
-<p><strong>셋 다 몰라도 됩니다.</strong> 순서대로만 확인하면 됩니다.</p>
-<h2 id="1-로컬-llm이-뭔가요">1. 로컬 LLM이 뭔가요</h2>
-<p>ChatGPT 같은 걸 <strong>인터넷 없이 내 컴퓨터 안에서</strong> 돌리는 것입니다.</p>
+<p><a href="/posts/rtx3060-12gb-local-llm.html">중고 3060</a>과 <a href="/posts/rtx3090-vs-4070-local-llm.html">중고 3090</a> 글이
+둘 다 <strong>&quot;채굴 이력의 확실한 판별법은 없습니다&quot;</strong> 라고 적고 한 문단으로 넘어갔습니다.
+제대로 답합니다.</p>
+<p>먼저 인정할 것부터 — <strong>그 판별법은 이 글에도 없습니다.</strong> 없는 걸 있다고 하는 글을
+많이 보셨을 텐데, 채굴 이력은 GPU-Z 같은 확인 도구로도 안 나옵니다.</p>
+<p><strong>그래서 질문을 바꿔야 합니다.</strong> &quot;이 카드가 채굴을 했는가&quot;는 못 밝히지만,
+<strong>&quot;이 카드가 지금 멀쩡한가&quot;는 그 자리에서 재집니다.</strong> 그리고 실제로 중요한 건 뒤쪽입니다.</p>
+<h2 id="결론부터">결론부터</h2>
 <div class="table-wrap"><table>
-<thead><tr><th></th><th>인터넷 서비스</th><th>로컬 LLM</th></tr></thead>
+<thead><tr><th>항목</th><th>확인되나</th><th>어떻게</th></tr></thead>
 <tbody>
-<tr><td>비용</td><td>매달 구독료</td><td>전기요금만</td></tr>
-<tr><td>개인정보</td><td>서버로 전송됨</td><td><strong>내 컴퓨터 밖으로 안 나감</strong></td></tr>
-<tr><td>인터넷</td><td>필요</td><td>필요 없음</td></tr>
-<tr><td>성능</td><td>최상급</td><td>내 장비 수준까지</td></tr>
+<tr><td><strong>모델·VRAM 이 진짜인지</strong></td><td>✅</td><td>작업 관리자 · GPU-Z</td></tr>
+<tr><td><strong>부하에서 온도가 버티는지</strong></td><td>✅</td><td>몇 분 돌려보기 — 서멀·팬 노후가 여기서 드러납니다</td></tr>
+<tr><td><strong>화면 아티팩트</strong></td><td>✅</td><td>부하 중 화면 관찰</td></tr>
+<tr><td><strong>보증 잔여</strong></td><td>✅</td><td>시리얼로 제조사·유통사 조회</td></tr>
+<tr><td><strong>채굴 이력</strong></td><td>❌</td><td><strong>도구로도 안 나옵니다</strong> — 정황뿐</td></tr>
+<tr><td>총 사용 시간</td><td>❌</td><td>SSD 와 달리 기록 자체가 없습니다</td></tr>
 </tbody>
 </table></div>
-<p><strong>공짜이고 내 자료가 밖으로 안 나간다</strong>는 게 핵심입니다.
-대신 아무 컴퓨터에서나 잘 돌지는 않습니다.</p>
-<h2 id="2-되는지부터-확인하세요">2. 되는지부터 확인하세요</h2>
-<p><strong>필요한 건 그래픽카드의 메모리입니다.</strong> 컴퓨터 전체 사양이 아닙니다.</p>
-<p><strong>윈도우에서 확인하는 법</strong></p>
-<ol>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>Esc</code> 를 눌러 작업 관리자를 엽니다</li>
-<li><strong>성능</strong> 탭 → 왼쪽에서 <strong>GPU</strong> 클릭</li>
-<li>오른쪽 아래 <strong>전용 GPU 메모리</strong> 숫자를 봅니다</li>
-</ol>
-<p><strong>맥에서 확인하는 법</strong></p>
-<p>화면 왼쪽 위 사과 아이콘 → <strong>이 Mac에 관하여</strong> → 메모리 숫자를 봅니다.</p>
-<p>이 숫자만 알면 됩니다. 아래 계산기에 넣어보세요.</p>
+<p><strong>위 네 개가 5분이면 재집니다.</strong> 아래 두 개를 추리하는 데 쓰는 시간을
+위 네 개를 재는 데 쓰는 편이 남는 장사입니다.</p>
+<h2 id="0-사기-전에-이-카드가-내-용도에-맞긴-한가">0. 사기 전에 — 이 카드가 내 용도에 맞긴 한가</h2>
+<p>확인 절차보다 먼저입니다. <strong>멀쩡한 카드를 사도 용도에 안 맞으면 헛돈</strong>입니다.</p>
 <div data-vram-tool>
 <div class="vr">
   <div class="vr-controls">
@@ -202,162 +194,132 @@
     경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
   </p>
 </div></div>
-<h2 id="3-결과를-어떻게-읽나요">3. 결과를 어떻게 읽나요</h2>
-<p>계산기가 네 가지 중 하나로 답합니다.</p>
+<p>로컬 LLM 이 목적이라면 <a href="/posts/ollama-minimum-spec.html">VRAM 이 돌아가는 모델을 정합니다</a>.
+중고 시장에서 자주 마주치는 두 카드는 따로 정리돼 있습니다 —
+<a href="/posts/rtx3060-12gb-local-llm.html">3060 12GB</a>(14B 가 여유롭게 도는 최저선),
+<a href="/posts/rtx3090-vs-4070-local-llm.html">3090 24GB</a>(큰 모델용, 대신 350W·3슬롯).</p>
+<h2 id="1-모델과-vram-이름표-말고-값을-보세요">1. 모델과 VRAM — 이름표 말고 값을 보세요</h2>
+<p><strong>같은 이름에 VRAM 이 다른 카드가 여럿 있습니다.</strong> 3060 은 12GB/8GB,
+3080 은 10GB/12GB, 5060 Ti 는 16GB/8GB 가 갈립니다.
+매물 제목만 보고 사면 여기서 어긋납니다.</p>
+<p>꽂아볼 수 있는 상황이라면:</p>
+<pre><code>Ctrl + Shift + Esc  →  성능  →  GPU
+  카드 이름              ← 매물 제목과 같은지
+  전용 GPU 메모리        ← 12GB 라고 했으면 12GB 인지</code></pre>
+<p>더 자세히 보려면 <strong>GPU-Z</strong> 를 씁니다. 무료이고 설치 없이 실행됩니다.
+메모리 종류·대역폭까지 나오므로 <a href="/posts/rtx3090-vs-4070-local-llm.html">스펙표</a>와 대조할 수 있습니다.</p>
+<p><strong>직거래에서 판매자 PC 로 확인해도 됩니다.</strong> 작업 관리자는 어디에나 있습니다.</p>
+<h2 id="2-부하-테스트-여기서-노후가-드러납니다">2. 부하 테스트 — 여기서 노후가 드러납니다</h2>
+<p><strong>켜지는 것과 버티는 것은 다릅니다.</strong> 몇 년 된 카드의 실제 리스크는
+채굴 여부가 아니라 <strong>서멀(열 전달 물질)과 팬의 노후</strong>이고,
+그건 부하를 몇 분 걸어야 드러납니다. <a href="/posts/laptop-thermal-throttling.html">노트북 발열에서 본 것</a>과
+같은 구조입니다 — 짧은 확인으로는 안 보입니다.</p>
+<p>이 사이트 독자라면 부하 도구가 이미 있습니다. <strong>Ollama 로 모델을 돌리면 됩니다.</strong>
+<a href="/posts/ollama-install-guide.html">설치했다면</a> 긴 답변을 시키는 것만으로 GPU 가 계속 일합니다.
+게임이나 벤치마크 프로그램도 같은 역할을 합니다.</p>
+<p>지켜볼 것은 터미널에서:</p>
+<pre><code>nvidia-smi -l 1</code></pre>
+<p>1초마다 온도·전력·사용률이 갱신됩니다. NVIDIA 드라이버에 포함된 표준 도구라
+따로 깔 것이 없습니다. GPU-Z 의 센서 탭도 같은 값을 보여줍니다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>표시</th><th>뜻</th></tr></thead>
+<thead><tr><th>보는 것</th><th>정상</th><th>의심</th></tr></thead>
 <tbody>
-<tr><td><strong>여유</strong></td><td>쾌적하게 씁니다</td></tr>
-<tr><td><strong>빠듯</strong></td><td>되긴 하는데 짧은 내용만</td></tr>
-<tr><td><strong>느림</strong></td><td>답답할 정도로 느립니다</td></tr>
-<tr><td><strong>불가</strong></td><td>사실상 못 씁니다</td></tr>
+<tr><td>온도</td><td>오르다가 <strong>어느 선에서 멈춤</strong></td><td><strong>계속 오르기만 함</strong> — 서멀 노후</td></tr>
+<tr><td>팬</td><td>부하에서 돌고, 힘차게</td><td>갈리는 소리 · 한쪽만 돎 · 안 돎</td></tr>
+<tr><td>사용률·클럭</td><td>부하 중 높게 유지</td><td>온도와 함께 뚝뚝 떨어짐</td></tr>
 </tbody>
 </table></div>
-<p><strong>&quot;느림&quot;이 가장 헷갈리는 지점입니다.</strong> 에러가 나면 안 되는 줄 알 텐데,
-로컬 LLM은 <strong>에러 없이 그냥 느려집니다.</strong></p>
-<figure class="fig">
-<svg viewBox="0 0 640 168" width="640" height="168" role="img" aria-label="8GB 카드에 14B 모델을 올리면 2GB가 CPU로 넘어가 느려진다">
-<title>8GB 카드에 14B 모델을 올리면 2GB가 CPU로 넘어가 느려진다</title>
-
-<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">8GB 카드에 14B 모델을 올리면</text>
-
-<rect x="16" y="38" width="368" height="40" fill="var(--fig-fit)" rx="4"/>
-<rect x="384" y="38" width="92" height="40" fill="var(--fig-over)" rx="4"/>
-<text x="200" y="63" fill="#fff" font-size="13" font-weight="600" text-anchor="middle">VRAM 안 · 8GB</text>
-<text x="430" y="63" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">+2GB</text>
-
-<text x="200" y="98" fill="var(--fg-muted)" font-size="12" text-anchor="middle">그래픽카드가 처리 — 빠름</text>
-<text x="430" y="98" fill="var(--fg-muted)" font-size="12" text-anchor="middle">CPU 로</text>
-
-<line x1="384" y1="30" x2="384" y2="108" stroke="var(--border)" stroke-dasharray="4 3"/>
-
-<text x="16" y="134" fill="var(--fg)" font-size="13" font-weight="600">이 2GB 때문에 전체가 느려집니다.</text>
-<text x="16" y="154" fill="var(--fg-muted)" font-size="12">에러가 나는 게 아니라 속도만 떨어져서 원인을 알기 어렵습니다.</text>
-</svg>
-<figcaption>넘친 몫은 시스템 램과 CPU 가 떠맡습니다. 대역폭이 VRAM 의 10 분의 1 수준이라 그만큼 느려집니다.</figcaption>
-</figure>
-<p>그래서 &quot;돌아간다&quot;와 &quot;쓸 만하다&quot;는 다릅니다.</p>
-<h2 id="4-대충-이-정도입니다">4. 대충 이 정도입니다</h2>
-<p>숫자를 외울 필요는 없습니다. 감만 잡으시면 됩니다.</p>
+<p><strong>&quot;몇 ℃면 정상&quot;은 카드·쿨러마다 달라서 여기 못 적습니다.</strong>
+보는 건 숫자 하나가 아니라 <strong>모양</strong>입니다 — 평형에 도달하는지, 계속 오르는지.</p>
+<h2 id="3-화면-아티팩트-부하-중에-보세요">3. 화면 아티팩트 — 부하 중에 보세요</h2>
+<p><strong>아티팩트</strong>는 화면에 나타나는 이상 무늬입니다 — 깨진 픽셀, 줄무늬, 엉뚱한 색 덩어리.
+VRAM 이나 GPU 자체의 손상 신호이고, <strong>이건 서멀과 달리 고쳐지지 않습니다.</strong></p>
+<ul>
+<li>켜자마자가 아니라 <strong>부하 중에</strong> 나오는 경우가 많습니다. 2번과 같이 보세요</li>
+<li>화면이 갑자기 꺼지거나 드라이버가 리셋되는 것도 같은 계열입니다</li>
+<li>이게 보이면 <strong>그 자리에서 거르세요.</strong> 값을 깎을 문제가 아닙니다</li>
+</ul>
+<h2 id="4-보증-유일하게-문서로-남는-것">4. 보증 — 유일하게 문서로 남는 것</h2>
+<p><a href="/posts/used-laptop-dev.html">중고 노트북</a>에서 적은 그대로입니다 —
+<strong>보증 잔여가 실질적인 기준선입니다.</strong> 남아 있으면 위에서 못 잰 리스크 대부분이 덮입니다.</p>
+<ul>
+<li>카드 뒷면 스티커의 <strong>시리얼 번호</strong>로 제조사·수입사 홈페이지에서 조회합니다</li>
+<li>국내 정식 유통품은 유통사 보증이 따로 있는 경우가 많습니다 — <strong>스티커가 훼손됐으면 조회도 승계도 어려워집니다</strong></li>
+<li>판매자에게 <strong>구매 영수증이나 시기</strong>를 물어보세요. 답이 명확한 매물이 좋은 매물입니다</li>
+</ul>
+<h2 id="5-채굴-이력-그래서-어떻게-대하나">5. 채굴 이력 — 그래서 어떻게 대하나</h2>
+<p><strong>못 밝힙니다.</strong> 사용 시간을 기록하는 장치가 카드에 없고,
+GPU-Z 를 포함한 어떤 확인 도구도 이력을 보여주지 않습니다.
+&quot;판별법&quot;이라고 도는 것들은 전부 <strong>정황</strong>입니다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>그래픽카드 메모리</th><th>할 수 있는 것</th></tr></thead>
+<thead><tr><th>정황</th><th>뜻</th></tr></thead>
 <tbody>
-<tr><td><strong>8GB</strong></td><td>번역, 간단한 질문, 짧은 글 다듬기</td></tr>
-<tr><td><strong>12GB</strong></td><td>코딩 도우미, 문서 요약</td></tr>
-<tr><td><strong>16GB</strong></td><td>위 전부 + 조금 더 큰 모델</td></tr>
-<tr><td><strong>24GB 이상</strong></td><td>전문적인 작업</td></tr>
+<tr><td>같은 판매자가 같은 카드를 여러 장</td><td>채굴장 정리 매물일 가능성</td></tr>
+<tr><td>박스·구성품 없음</td><td>업자 매물에서 흔함 — 다만 개인도 박스는 버립니다</td></tr>
+<tr><td>방열판에 먼지·서멀 흘러내림</td><td>오래 돌았다는 신호 — 채굴이든 게임이든</td></tr>
 </tbody>
 </table></div>
-<p><strong>8GB가 사실상 하한선입니다.</strong> 그 아래는 답답합니다.</p>
-<h2 id="5-그래서-뭘-사야-하나요">5. 그래서 뭘 사야 하나요</h2>
-<p><strong>아직 사지 마세요.</strong> 순서가 있습니다.</p>
-<ol>
-<li><strong>지금 컴퓨터로 먼저 해보세요.</strong> 8GB만 있어도 시작은 됩니다</li>
-<li>써보고 <strong>답답한 지점이 생기면</strong> 그때 뭐가 부족한지 압니다</li>
-<li>그다음에 사면 됩니다</li>
-</ol>
-<p>로컬 LLM은 안 써보고는 뭐가 필요한지 알 수 없습니다.
-<strong>&quot;코딩 보조로 쓰고 싶다&quot;는 걸 알아야 12GB가 필요한 줄 압니다.</strong></p>
-<h2 id="6-용어-여기까지-왔으면-이제-봐도-됩니다">6. 용어 — 여기까지 왔으면 이제 봐도 됩니다</h2>
-<p>앞에서 일부러 안 썼던 말들입니다.</p>
-<p><strong>VRAM (브이램)</strong>
-그래픽카드에 붙어 있는 메모리입니다. 위에서 확인한 &quot;전용 GPU 메모리&quot;가 이겁니다.
-컴퓨터 램과는 다른 것입니다.</p>
-<p><strong>7B, 14B, 32B</strong>
-AI 모델의 크기입니다. B는 10억(billion)이고, 숫자가 클수록 똑똑하고 무겁습니다.
-사람으로 치면 &quot;얼마나 많이 배웠나&quot;에 가깝습니다.</p>
-<p><strong>양자화 (Q4, Q8)</strong>
-모델을 압축해서 용량을 줄이는 기술입니다.
-<strong>Q4가 사실상 표준</strong>이고, 그보다 낮추면 품질이 떨어지기 시작합니다.
-몰라도 됩니다 — 기본값이 Q4입니다.
-올렸을 때 용량이 얼마나 늘어나는지는 <a href="/posts/quantization-q4-q5-q8.html">양자화 Q4 Q5 Q8</a>에 있습니다.</p>
-<p><strong>컨텍스트</strong>
-AI가 한 번에 기억하는 내용의 길이입니다.
-<strong>길수록 메모리를 더 씁니다.</strong> &quot;처음엔 빨랐는데 대화가 길어지니 느려진다&quot;가 이것 때문입니다.</p>
-<p><strong>Ollama (올라마)</strong>
-로컬 LLM을 돌리는 프로그램 중 가장 많이 쓰는 것입니다.
-설치하고 명령어 한 줄이면 시작됩니다.</p>
-<h2 id="7-다음은-여기부터">7. 다음은 여기부터</h2>
-<p>이제 궁금한 게 생겼을 겁니다. 상황에 맞는 곳으로 가세요.</p>
-<p><strong>&quot;일단 깔아보고 싶다&quot;</strong>
-→ <a href="/posts/ollama-install-guide.html">Ollama 설치부터 첫 대화까지</a></p>
-<p><strong>&quot;그래픽카드가 없는데요&quot;</strong>
-→ <a href="/posts/local-llm-without-gpu.html">CPU로 돌리면 얼마나 느린가</a></p>
-<p><strong>&quot;내 카드로 뭐가 되는지 더 자세히&quot;</strong>
-→ <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 — VRAM별 정리</a></p>
-<p><strong>&quot;8GB인데 아쉽다&quot;</strong>
-→ <a href="/posts/rtx4060-local-llm.html">8GB 카드의 한계선</a> — 어디까지 되나
-→ <a href="/posts/vram-8gb-tips.html">8GB에서 최대한 뽑아쓰기</a> — 카드를 바꾸기 전에</p>
-<p><strong>&quot;Q4니 Q8이니 하는 건 뭔가요&quot;</strong>
-→ <a href="/posts/quantization-q4-q5-q8.html">양자화 Q4 Q5 Q8 — 올리면 뭐가 좋아지나</a></p>
-<p><strong>&quot;노트북으로 하려는데요&quot;</strong>
-→ <a href="/posts/local-llm-laptop-choose.html">로컬 LLM 되는 노트북 고르기</a> — 이름이 같아도 VRAM이 다릅니다</p>
-<p><strong>&quot;램을 늘리면 되나요&quot;</strong>
-→ <a href="/posts/local-llm-ram-vs-vram.html">램과 VRAM은 뭐가 다른가</a>
-→ <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a></p>
-<p><strong>&quot;살 카드를 고르고 있다&quot;</strong>
-→ <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB vs 5070</a> — 신품 중급
-→ <a href="/posts/rtx3060-12gb-local-llm.html">중고 3060 12GB</a> — 최대한 싸게
-→ <a href="/posts/rtx3090-vs-4070-local-llm.html">중고 3090 vs 신품</a> — 큰 모델을 노릴 때
-→ <a href="/posts/rtx5070ti-vs-5080.html">5070 Ti vs 5080</a> — 상급에서 갈리는 지점
-→ <a href="/posts/rtx5090-local-llm.html">RTX 5090 32GB</a> — 개인용 상한선</p>
-<p><strong>&quot;제 카드가 라데온인데요&quot;</strong>
-→ <a href="/posts/amd-radeon-local-llm.html">AMD 라데온으로 로컬 LLM</a></p>
-<p><strong>&quot;카드를 두 장 꽂으면 되지 않나요&quot;</strong>
-→ <a href="/posts/multi-gpu-local-llm.html">그래픽카드 두 장 — VRAM이 합쳐지나요</a></p>
-<p><strong>&quot;전기요금이 걱정됩니다&quot;</strong>
-→ <a href="/posts/local-llm-power-cost.html">로컬 LLM 전기요금 — 정말 공짜인가</a></p>
-<p><strong>&quot;맥인데요&quot;</strong>
-→ <a href="/posts/mac-unified-memory-local-llm.html">맥 통합메모리 몇 GB를 사야 하나</a></p>
+<p><strong>정황은 정황으로만 쓰세요.</strong> 그리고 커뮤니티에는
+&quot;채굴 카드는 24시간 돌아서 망가졌다&quot;와 &quot;일정 부하로 곱게 돌아 오히려 멀쩡하다&quot;가
+둘 다 돕니다 — <strong>어느 쪽도 검증된 통계가 없습니다.</strong> 이 사이트도 재본 것이 없어서
+어느 편도 들지 않습니다.</p>
+<p><strong>실용적인 결론은 이겁니다.</strong> 채굴 여부를 맞히려 하지 말고,
+위 1~4번을 재세요. 채굴을 했든 안 했든 <strong>온도가 평형에 오고 아티팩트가 없고
+보증이 남은 카드</strong>면 사도 되는 카드이고, 그 반대면 이력과 무관하게 거를 카드입니다.</p>
+<h3 id="lhr-표기는-신경-쓰지-마세요">LHR 표기는 신경 쓰지 마세요</h3>
+<p>30 시리즈 매물에 자주 붙는 <strong>LHR</strong> 은 채굴 성능만 제한하는 장치입니다.
+<a href="/posts/rtx3060-12gb-local-llm.html">로컬 LLM 추론과는 무관합니다</a> — 판정에 넣지 마세요.</p>
+<h2 id="6-택배-거래라면">6. 택배 거래라면</h2>
+<p>위 확인의 절반이 <strong>직거래 전제</strong>입니다. 택배면 이렇게 바뀝니다.</p>
+<ul>
+<li><strong>받자마자</strong> 1~3번을 돌리고, 이상이 있으면 바로 연락 — 시간이 지날수록 다툼이 됩니다</li>
+<li>거래 화면·매물 설명을 <strong>캡처로 남겨두세요.</strong> &quot;12GB&quot; 라고 적혀 있었는지가 나중에 갈립니다</li>
+<li>확인할 자신이 없으면 <strong>보증 남은 매물로 좁히는 것</strong>이 가장 단순한 방어입니다</li>
+</ul>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="그래픽카드가-없어도-되나요">그래픽카드가 없어도 되나요</h3>
-<p>돌아가긴 합니다. 다만 CPU만으로는 매우 느려서, 한 글자씩 나오는 수준입니다.
-체험은 되지만 실제로 쓰기는 어렵습니다.
-왜 그런지는 <a href="/posts/local-llm-without-gpu.html">CPU로 돌리면 얼마나 느린가</a>에 계산해 뒀습니다.</p>
-<h3 id="노트북으로도-되나요">노트북으로도 되나요</h3>
-<p>노트북 그래픽카드의 메모리를 확인하세요. 같은 이름이라도
-데스크톱보다 메모리가 적은 경우가 많습니다. 확인 방법은 위 2번과 같습니다.</p>
-<p><strong>노트북 RTX 5070 은 8GB, 데스크톱 5070 은 12GB입니다.</strong> 이름만 보고 사면 어긋납니다 —
-<a href="/posts/local-llm-laptop-choose.html">로컬 LLM 되는 노트북 고르기</a>에 표를 넣어뒀습니다.</p>
-<h3 id="인터넷-서비스보다-성능이-떨어지나요">인터넷 서비스보다 성능이 떨어지나요</h3>
-<p>떨어집니다. 개인 장비에서 돌릴 수 있는 크기에 한계가 있기 때문입니다.
-다만 번역·요약·간단한 코딩 보조 같은 일상적인 작업은 충분히 됩니다.</p>
-<h3 id="무료인가요">무료인가요</h3>
-<p>모델과 프로그램 모두 무료입니다. 전기요금만 듭니다.
-다만 장비가 부족하면 그걸 사는 비용이 듭니다.</p>
-<p>전기요금이 얼마인지는 계산해 두었습니다 — 하루 한두 시간이면 신경 쓸 금액이 아니고,
-<strong>24시간 켜두면 이야기가 달라집니다.</strong>
-<a href="/posts/local-llm-power-cost.html">로컬 LLM 전기요금</a>에 계산식과 확인처를 적었습니다.</p>
-<h3 id="얼마나-어렵나요">얼마나 어렵나요</h3>
-<p>Ollama 기준으로 설치 후 명령어 한 줄입니다.
-어려운 건 설치가 아니라 <strong>내 장비로 뭐가 되는지 판단하는 것</strong>이고,
-그게 이 사이트가 하는 일입니다.</p>
+<h3 id="채굴-카드는-거르는-게-맞나요">채굴 카드는 거르는 게 맞나요</h3>
+<p>이력 자체는 못 밝히므로 &quot;거른다&quot;가 성립하지 않습니다.
+<strong>잴 수 있는 것(온도 평형·아티팩트·보증)으로 판단</strong>하는 편이 현실적입니다.
+정황이 겹치는 매물(동일 카드 다수 판매 등)을 피하는 정도가 할 수 있는 전부입니다.</p>
+<h3 id="부하-테스트는-몇-분이면-되나요">부하 테스트는 몇 분이면 되나요</h3>
+<p>온도가 <strong>평형에 도달하는 것을 볼 때까지</strong>입니다. 대개 몇 분 안에 옵니다.
+계속 오르기만 하다가 클럭이 떨어지기 시작하면 그게 신호입니다.</p>
+<h3 id="gpu-z-에서-뭘-봐야-하나요">GPU-Z 에서 뭘 봐야 하나요</h3>
+<p>첫 화면에서 <strong>모델명·메모리 용량·대역폭</strong>이 매물 설명과 맞는지,
+센서 탭에서 <strong>부하 중 온도·클럭의 모양</strong>을 봅니다.
+채굴 이력 항목은 없습니다 — 그런 항목이 있다고 하는 글을 걸러내는 용도로도 쓰입니다.</p>
+<h3 id="팬에서-소리가-나는데-감점인가요">팬에서 소리가 나는데 감점인가요</h3>
+<p>팬은 <strong>교체 가능한 소모품</strong>이라 카드 자체의 결함과는 다릅니다.
+다만 교체 비용과 수고가 있으므로 값에 반영할 근거는 됩니다.
+<a href="#3-화면-아티팩트--부하-중에-보세요">아티팩트</a>와는 무게가 다릅니다 — 그쪽은 거르세요.</p>
+<h3 id="중고-대신-신품으로-간다면">중고 대신 신품으로 간다면</h3>
+<p>16GB 가 필요하면 <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB</a>가 현실적인 대안입니다.
+보증·저전력에 대역폭도 3060 보다 높습니다. 24GB 급은 신품 선택지가
+<a href="/posts/rtx5090-local-llm.html">5090(32GB)으로 건너뜁니다</a> — 가격대가 다른 이야기가 됩니다.</p>
+<h3 id="파워는-그대로-써도-되나요">파워는 그대로 써도 되나요</h3>
+<p>카드가 커지면 대개 파워도 걸립니다. 특히 중고 상급 카드(3090 등)는
+<strong>커넥터와 용량을 함께</strong> 봐야 합니다 —
+<a href="/posts/gpu-psu-wattage.html">그래픽카드 파워 용량</a>에 계산식이 있습니다.</p>
 <h2 id="정리">정리</h2>
 <ol>
-<li>필요한 건 <strong>그래픽카드 메모리</strong> 하나입니다</li>
-<li><strong>8GB가 하한선</strong>, 12GB면 코딩 보조까지 됩니다</li>
-<li>메모리가 모자라면 <strong>에러가 아니라 느려집니다</strong></li>
-<li><strong>사기 전에 지금 장비로 먼저 해보세요</strong></li>
-<li>용어는 나중에 알아도 됩니다</li>
+<li><strong>채굴 이력은 못 밝힙니다.</strong> GPU-Z 로도 안 나옵니다 — 판별법을 판다는 글을 거르세요</li>
+<li>대신 <strong>잴 수 있는 네 가지</strong>를 재세요 — 모델·VRAM, 부하 온도, 아티팩트, 보증</li>
+<li><strong>이름표 말고 값</strong>을 보세요. 같은 이름에 VRAM 다른 카드가 여럿입니다</li>
+<li>부하 온도는 숫자가 아니라 <strong>모양</strong>입니다 — 평형에 오는지, 계속 오르는지</li>
+<li><strong>아티팩트는 거르고, 팬 소음은 값에 반영</strong>하세요. 무게가 다릅니다</li>
+<li><strong>보증 잔여가 기준선입니다.</strong> 시리얼 조회 한 번이 추리 열 번보다 낫습니다</li>
 </ol>
-<p>궁금한 게 풀리지 않으면 <a href="/contact.html">알려주세요</a>. 같은 질문이 반복되면 글로 정리합니다.</p>
+<p>확인 절차가 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
   
 
-  <p class="tags"><span class="tag">로컬LLM</span> <span class="tag">입문</span> <span class="tag">Ollama</span> <span class="tag">VRAM</span> <span class="tag">초보</span></p>
+  <p class="tags"><span class="tag">중고그래픽카드</span> <span class="tag">채굴</span> <span class="tag">GPU-Z</span> <span class="tag">RTX3090</span> <span class="tag">RTX3060</span></p>
 </article>
 
 <section class="related" aria-labelledby="related-h">
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
-    <li class="card">
-      <a href="/posts/used-gpu-check.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">중고 그래픽카드 살 때 — 채굴 이력은 못 밝힙니다</span>
-        <span class="card-desc">채굴 이력은 GPU-Z로도 확인이 안 됩니다. 밝힐 수 없는 것을 추리하는 대신, 그 자리에서 잴 수 있는 것 네 가지를 정리했습니다. VRAM, 부하 온도, 아티팩트, 보증.</span>
-      </a>
-    </li>
     <li class="card">
       <a href="/posts/amd-radeon-local-llm.html">
         <span class="card-cat">GPU</span>
@@ -370,6 +332,13 @@ AI가 한 번에 기억하는 내용의 길이입니다.
         <span class="card-cat">GPU</span>
         <span class="card-title">그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</span>
         <span class="card-desc">카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/local-llm-power-cost.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">로컬 LLM 전기요금 — 정말 공짜인가</span>
+        <span class="card-desc">전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.</span>
       </a>
     </li>
   </ul>
