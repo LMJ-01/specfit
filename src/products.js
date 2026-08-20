@@ -87,15 +87,43 @@ export const products = {
     widget:
       '<iframe src="https://coupa.ng/coTABC" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
+  // 노트북용 램. 위 ram(데스크톱 DIMM)과 물리적으로 호환되지 않아 자리를 나눕니다 —
+  // 잘못 걸면 반품 사유라 laptop-ram-upgrade 글이 일부러 램 박스 없이 나갔던 자리입니다.
+  'ram-sodimm': {
+    // 검색어: 삼성전자 노트북 DDR5 5600 16GB — SO-DIMM, 모델명 M425 계열 (2026-08-20 발급)
+    label: '노트북용 DDR5 16GB 보기 (SO-DIMM)',
+    note: '기존 램이 DDR5 인지 먼저 확인하세요 — DDR4 슬롯에는 안 들어갑니다',
+    buy: 'https://link.coupang.com/a/gmz6VbGkSa',
+    widget:
+      '<iframe src="https://coupa.ng/coTAZ2" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
+  },
   ram: {
     // 검색어: DDR5 32GB 16Gx2 — 데스크톱 DIMM 입니다
-    // ⚠️ 노트북은 SO-DIMM 이라 안 들어갑니다. laptop-ram-upgrade 글에
-    //    램 박스를 안 붙인 이유가 이것입니다.
+    // ⚠️ 노트북은 SO-DIMM 이라 안 들어갑니다 → 노트북용은 위 ram-sodimm 으로.
     label: 'DDR5 32GB 보기',
     note: '같은 32GB 라면 16GB 두 장(듀얼 채널)이 빠릅니다',
     buy: 'https://link.coupang.com/a/glI1o1vUiW',
     widget:
       '<iframe src="https://coupa.ng/coSWs1" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
+  },
+  // 모니터암 글에 구매 박스가 아예 없던 자리 (next-steps.md 3-A 미해결 항목).
+  // 암은 하중·고정 방식으로 갈려서 아무 제품이나 걸면 안 맞습니다 — 그 글의 주제.
+  'monitor-arm': {
+    // 검색어: NB F80 모니터암 — 노스바유 F80, 가스 스프링 클램프형 (2026-08-20 발급)
+    label: '모니터암 보기',
+    note: '가스 스프링식은 하중에 하한도 있습니다 — 내 모니터 무게(스탠드 제외)가 범위 안인지 확인하세요',
+    buy: 'https://link.coupang.com/a/gmzWIW15sO',
+    widget:
+      '<iframe src="https://coupa.ng/coTALq" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
+  },
+  // 맥북 글 2편에 제품 링크가 없던 자리. 윈도우 노트북 링크(laptop)를 걸 수 없는 곳입니다.
+  mac: {
+    // 검색어: 맥북 프로 14 M5 (2026-08-20 발급)
+    label: '맥북 프로 14 보기',
+    note: '같은 프로 14 안에서 칩(M5·M5 Pro·M5 Max)과 메모리가 갈립니다 — 구성을 확인하고 고르세요',
+    buy: 'https://link.coupang.com/a/gmzZZYg2QS',
+    widget:
+      '<iframe src="https://coupa.ng/coTAP6" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
   ssd: {
     // 2026-08-20 — 검색 결과 링크에서 **특정 제품**으로 바꿨습니다.

@@ -24,7 +24,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"맥으로 로컬 LLM — 통합메모리 몇 GB를 사야 하나","description":"맥은 램이 VRAM 역할까지 합니다. 그런데 전체를 다 쓰지는 못하고, 속도는 용량이 아니라 칩이 정합니다. 살 때 정해지고 나중에 못 바꿉니다.","datePublished":"2026-08-15","dateModified":"2026-08-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mac-unified-memory-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"맥으로 로컬 LLM — 통합메모리 몇 GB를 사야 하나","description":"맥은 램이 VRAM 역할까지 합니다. 그런데 전체를 다 쓰지는 못하고, 속도는 용량이 아니라 칩이 정합니다. 살 때 정해지고 나중에 못 바꿉니다.","datePublished":"2026-08-15","dateModified":"2026-08-20","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mac-unified-memory-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"맥으로 로컬 LLM — 통합메모리 몇 GB를 사야 하나","item":"https://specfit.kr/posts/mac-unified-memory-local-llm.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥북에어로도 로컬 LLM이 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 다만 에어는 M5 기본 칩이라 대역폭 153 GB/s이고 팬이 없습니다. 7~8B 모델은 무리 없지만, 길게 돌리면 발열로 속도가 떨어질 수 있습니다. 14B 이상을 상시로 쓸 계획이면 프로 쪽이 맞습니다."}},{"@type":"Question","name":"나중에 메모리를 늘릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"없습니다. 애플 실리콘은 메모리가 칩 패키지에 붙어 있어 교체가 불가능합니다. 살 때 정해야 하고, 부족하면 기기를 바꾸는 수밖에 없습니다. 이것 때문에 한 단계 위를 고르는 편이 안전합니다."}},{"@type":"Question","name":"같은 64GB면 M5 Pro와 M5 Max가 같나요","acceptedAnswer":{"@type":"Answer","text":"올라가는 모델 크기는 같고, 속도가 다릅니다. 쓸 수 있는 몫은 둘 다 약 46GB지만 대역폭이 307 vs 460 GB/s입니다. 같은 모델이 Max에서 더 빠릅니다."}},{"@type":"Question","name":"맥 vs 그래픽카드, 로컬 LLM에는 뭐가 낫나요","acceptedAnswer":{"@type":"Answer","text":"32B 이하만 쓸 거면 그래픽카드가 낫습니다. 같은 값에 더 빠릅니다. 70B를 쓰고 싶으면 맥 말고는 현실적인 선택지가 없습니다. 그래픽카드로는 32GB(RTX 5090)가 개인용 상한입니다."}},{"@type":"Question","name":"인텔 맥은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"통합 메모리 구조가 아니라서 이 글의 내용이 적용되지 않습니다. 전용 GPU가 없는 모델이라면 CPU로만 돌아가 매우 느립니다."}}]}</script>
 </head>
@@ -63,7 +63,7 @@
     <h1>맥으로 로컬 LLM — 통합메모리 몇 GB를 사야 하나</h1>
     <p class="post-meta">
       <time datetime="2026-08-15">2026년 8월 15일</time>
-      
+      <span class="updated">· 2026년 8월 20일 갱신</span>
     </p>
   </header>
 
@@ -268,6 +268,10 @@ M5 Pro · 24GB    16GB 까지 올라감,  307 GB/s   ← 더 작은데 훨씬 �
 <p><strong>64GB 이상 — 70B를 노릴 때만</strong></p>
 <p>70B는 128GB에서야 여유롭습니다. 64GB에서는 빠듯합니다.
 70B를 쓸 계획이 없다면 이 돈은 <strong>다른 데 쓰는 편이 낫습니다.</strong></p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gmzZZYg2QS" target="_blank" rel="sponsored nofollow noopener">맥북 프로 14 보기</a>
+  <span class="buy-note">같은 프로 14 안에서 칩(M5·M5 Pro·M5 Max)과 메모리가 갈립니다 — 구성을 확인하고 고르세요</span>
+</aside>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
 <h3 id="맥북에어로도-로컬-llm이-되나요">맥북에어로도 로컬 LLM이 되나요</h3>
 <p>됩니다. 다만 에어는 M5 기본 칩이라 <strong>대역폭 153 GB/s</strong>이고 팬이 없습니다.
