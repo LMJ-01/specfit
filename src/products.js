@@ -77,6 +77,16 @@ export const products = {
     widget:
       '<iframe src="https://coupa.ng/coSWsD" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
+  // 세로(피벗) 전용 자리. 세로 모니터 글의 결론이 "27은 높다, 24를 사라" 인데
+  // 링크는 27인치뿐이었습니다 (next-steps.md 3-A 에 미해결로 있던 항목).
+  'monitor-24': {
+    // 검색어: 델 P2423D — 24인치 QHD IPS 피벗·높낮이 (2026-08-20 발급)
+    label: '24인치 QHD 피벗 모니터 보기',
+    note: '스탠드가 피벗을 지원해 모니터암 없이 세로로 세울 수 있습니다',
+    buy: 'https://link.coupang.com/a/gmzPp1spzw',
+    widget:
+      '<iframe src="https://coupa.ng/coTABC" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
+  },
   ram: {
     // 검색어: DDR5 32GB 16Gx2 — 데스크톱 DIMM 입니다
     // ⚠️ 노트북은 SO-DIMM 이라 안 들어갑니다. laptop-ram-upgrade 글에
