@@ -84,6 +84,25 @@
 <p>4096 토큰이 어느 정도냐면, 이 사이트 계산기의 라벨로 <strong>&quot;파일 한 개 정도 —
 A4 두세 장&quot;</strong>입니다. 그 이상을 넣으면 Ollama는 오류를 내지 않고
 <strong>넘치는 앞부분을 잘라낸 뒤 그냥 실행합니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 640 182" width="640" height="182" role="img" aria-label="기본 컨텍스트를 넘긴 입력은 앞부분이 잘린 채 모델에 전달된다">
+<title>기본 컨텍스트를 넘긴 입력은 앞부분이 잘린 채 모델에 전달된다</title>
+
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">긴 문서를 넣으면 (기본 컨텍스트보다 큰 입력)</text>
+
+<rect x="16" y="38" width="364" height="40" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/>
+<rect x="380" y="38" width="196" height="40" fill="var(--fig-fit)" rx="4"/>
+<text x="198" y="63" fill="var(--fg-muted)" font-size="13" font-weight="600" text-anchor="middle">앞부분 — 버려짐</text>
+<text x="478" y="63" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">모델이 보는 범위</text>
+
+<line x1="380" y1="30" x2="380" y2="100" stroke="var(--border)" stroke-dasharray="4 3"/>
+<text x="380" y="116" fill="var(--fg-muted)" font-size="12" text-anchor="middle">← 여기 앞은 모델에게 전달되지 않습니다</text>
+
+<text x="16" y="148" fill="var(--fg)" font-size="13" font-weight="600">오류도, 화면 표시도 없습니다. 서버 로그에만 남습니다.</text>
+<text x="16" y="168" fill="var(--fg-muted)" font-size="12">그래서 "모델이 앞부분을 까먹는" 증상으로 보입니다.</text>
+</svg>
+<figcaption>뒤쪽(질문에 가까운 쪽)이 남고 앞쪽이 버려집니다. num_ctx 를 늘리면 창이 넓어지는 대신 VRAM 이 듭니다.</figcaption>
+</figure>
 <p>화면에는 아무 표시가 없습니다. 잘렸다는 사실은 서버 로그에만 남습니다.</p>
 <pre><code>truncating input prompt          ← 서버 로그에 이 문구가 있으면 잘린 겁니다</code></pre>
 <p>그래서 증상이 이상하게 나타납니다. 문서 뒷부분 질문에는 답을 잘 하는데

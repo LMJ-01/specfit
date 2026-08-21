@@ -490,6 +490,97 @@ ${t(16, top + size + 104, '글자 테두리가 미세하게 뭉개지는 이유�
   );
 }
 
+/**
+ * 듀얼 채널 — 어느 슬롯에 꽂느냐로 갈린다.
+ * "두 장 = 듀얼" 이 아니라는 것을 슬롯 그림으로 보여줍니다.
+ * ⚠️ 슬롯-채널 배치는 통상 관례(A1 A2 B1 B2)입니다. 캡션에서 설명서 기준을 밝힙니다.
+ */
+function dualChannelSlots() {
+  const W = 640;
+  const slotW = 26;
+  const slotH = 64;
+  const gap = 14;
+  const x0 = 150;
+
+  // 한 줄: 슬롯 4개 중 filled 배열이 참인 자리에 램을 칠합니다.
+  const row = (y, label, filled, color, verdict, verdictColor) => {
+    let s = t(16, y + slotH / 2 + 5, label, { weight: 600 });
+    for (let i = 0; i < 4; i++) {
+      const x = x0 + i * (slotW + gap);
+      s += rect(x, y, slotW, slotH, filled[i] ? color : COLOR.soft, {
+        r: 3,
+        stroke: COLOR.line,
+      });
+      s += t(x + slotW / 2, y + slotH + 16, String(i + 1), {
+        anchor: 'middle',
+        fill: COLOR.mute,
+        size: 11,
+      });
+    }
+    s += t(x0 + 4 * (slotW + gap) + 12, y + slotH / 2 + 5, verdict, {
+      weight: 600,
+      fill: verdictColor,
+    });
+    return s;
+  };
+
+  const chY = 24;
+  const chW = 2 * slotW + gap;
+  const body = `
+${t(x0, chY - 8, '채널 A', { anchor: 'start', fill: COLOR.mute, size: 11 })}
+${t(x0 + 2 * (slotW + gap), chY - 8, '채널 B', { anchor: 'start', fill: COLOR.mute, size: 11 })}
+<line x1="${x0}" y1="${chY}" x2="${x0 + chW}" y2="${chY}" stroke="${COLOR.line}"/>
+<line x1="${x0 + 2 * (slotW + gap)}" y1="${chY}" x2="${x0 + 2 * (slotW + gap) + chW}" y2="${chY}" stroke="${COLOR.line}"/>
+
+${row(38, '1·2번에 두 장', [true, true, false, false], COLOR.over, '싱글로 돕니다', COLOR.over)}
+${row(140, '2·4번에 두 장', [false, true, false, true], COLOR.fit, '듀얼 채널', COLOR.fit)}
+
+${t(16, 248, '같은 두 장인데 꽂은 자리로 대역폭이 두 배 갈립니다.', { weight: 600 })}`;
+
+  return figure(
+    '같은 램 두 장이라도 한 채널에 몰아 꽂으면 싱글, 채널마다 하나씩이면 듀얼로 동작한다',
+    W,
+    262,
+    body,
+    '슬롯 번호는 통상 관례입니다. 내 보드의 지정 슬롯은 메인보드 설명서의 메모리 구성표가 기준입니다.'
+  );
+}
+
+/**
+ * Ollama 기본 컨텍스트를 넘긴 입력은 오류 없이 앞부분이 잘린다.
+ * "앞부분을 까먹는" 증상의 정체를 한 그림으로 보여줍니다.
+ */
+function ctxTruncate() {
+  const W = 640;
+  const x0 = 16;
+  const barW = 560;
+  const barH = 40;
+  const keep = 0.35; // 창에 남는 뒷부분 비율
+
+  const cutX = x0 + barW * (1 - keep);
+  const body = `
+${t(x0, 22, '긴 문서를 넣으면 (기본 컨텍스트보다 큰 입력)', { weight: 600, size: 14 })}
+
+${rect(x0, 38, barW * (1 - keep), barH, COLOR.soft, { stroke: COLOR.line })}
+${rect(cutX, 38, barW * keep, barH, COLOR.fit)}
+${t(x0 + (barW * (1 - keep)) / 2, 63, '앞부분 — 버려짐', { anchor: 'middle', fill: COLOR.mute, weight: 600 })}
+${t(cutX + (barW * keep) / 2, 63, '모델이 보는 범위', { anchor: 'middle', fill: '#fff', weight: 600, size: 12 })}
+
+<line x1="${cutX}" y1="30" x2="${cutX}" y2="100" stroke="${COLOR.line}" stroke-dasharray="4 3"/>
+${t(cutX, 116, '← 여기 앞은 모델에게 전달되지 않습니다', { anchor: 'middle', fill: COLOR.mute, size: 12 })}
+
+${t(x0, 148, '오류도, 화면 표시도 없습니다. 서버 로그에만 남습니다.', { weight: 600 })}
+${t(x0, 168, '그래서 "모델이 앞부분을 까먹는" 증상으로 보입니다.', { fill: COLOR.mute, size: 12 })}`;
+
+  return figure(
+    '기본 컨텍스트를 넘긴 입력은 앞부분이 잘린 채 모델에 전달된다',
+    W,
+    182,
+    body,
+    '뒤쪽(질문에 가까운 쪽)이 남고 앞쪽이 버려집니다. num_ctx 를 늘리면 창이 넓어지는 대신 VRAM 이 듭니다.'
+  );
+}
+
 export const figures = {
   'vram-overflow': vramOverflow,
   'memory-parts': memoryParts,
@@ -501,4 +592,6 @@ export const figures = {
   'pivot-lines': pivotLines,
   'usb-c-lanes': usbcLanes,
   'pixel-scaling': pixelScaling,
+  'dual-channel-slots': dualChannelSlots,
+  'ctx-truncate': ctxTruncate,
 };
