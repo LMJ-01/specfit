@@ -2,7 +2,7 @@
 title: 램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점
 description: 32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.
 date: 2026-08-15
-updated: 2026-08-18
+updated: 2026-08-21
 category: memory
 tags: [RAM, 메모리, 로컬LLM, 개발용PC, DDR5]
 affiliate: true
@@ -127,6 +127,8 @@ CPU 오프로딩이 일어나는 상황에서는 이 차이가 그대로 체감�
 넘어간 레이어를 시스템 램에서 읽어야 하는데, 그 속도가 두 배가 되는 셈입니다.
 
 메인보드 슬롯이 4개면 보통 **2번·4번**에 꽂습니다. 설명서를 확인하세요.
+지금 듀얼로 돌고 있는지 확인하는 법은
+[듀얼 채널 확인법](/posts/ram-dual-channel-check.html)에 있습니다.
 
 {{BUY:ram}}
 

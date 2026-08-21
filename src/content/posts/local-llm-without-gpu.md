@@ -2,6 +2,7 @@
 title: 그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가
 description: 그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.
 date: 2026-08-15
+updated: 2026-08-21
 category: memory
 tags: [로컬LLM, CPU, 내장그래픽, 메모리대역폭, Ollama]
 affiliate: true
@@ -125,7 +126,8 @@ VRAM에 안 올리므로 **모델이 통째로 시스템 램에 들어갑니다.
 자세한 기준은 [램 16GB vs 32GB](/posts/ram-16gb-vs-32gb.html)에 있습니다.
 
 CPU로 돌리실 거라면 **듀얼 채널로 꽂는 것이 그대로 속도**입니다. 같은 32GB라도
-16GB 두 장이 대역폭 두 배입니다.
+16GB 두 장이 대역폭 두 배입니다. 지금 듀얼로 돌고 있는지는
+[듀얼 채널 확인법](/posts/ram-dual-channel-check.html)에서 1분이면 확인됩니다.
 
 {{BUY:ram}}
 
