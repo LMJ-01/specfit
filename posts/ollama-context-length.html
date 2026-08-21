@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RTX 5070 Ti vs 5080 — 로컬 LLM에서는 같은 카드입니다 | 스펙핏</title>
-<meta name="description" content="VRAM이 둘 다 16GB이고 대역폭 차이는 7%입니다. 돌아가는 모델 크기가 완전히 같습니다. 로컬 LLM만 본다면 더 비싼 쪽을 살 이유가 없습니다.">
-<link rel="canonical" href="https://specfit.kr/posts/rtx5070ti-vs-5080.html">
+<title>Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용 | 스펙핏</title>
+<meta name="description" content="긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/ollama-context-length.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="스펙핏">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="RTX 5070 Ti vs 5080 — 로컬 LLM에서는 같은 카드입니다 | 스펙핏">
-<meta property="og:description" content="VRAM이 둘 다 16GB이고 대역폭 차이는 7%입니다. 돌아가는 모델 크기가 완전히 같습니다. 로컬 LLM만 본다면 더 비싼 쪽을 살 이유가 없습니다.">
-<meta property="og:url" content="https://specfit.kr/posts/rtx5070ti-vs-5080.html">
+<meta property="og:title" content="Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용 | 스펙핏">
+<meta property="og:description" content="긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/ollama-context-length.html">
 <meta property="og:image" content="https://specfit.kr/assets/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -24,9 +24,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RTX 5070 Ti vs 5080 — 로컬 LLM에서는 같은 카드입니다","description":"VRAM이 둘 다 16GB이고 대역폭 차이는 7%입니다. 돌아가는 모델 크기가 완전히 같습니다. 로컬 LLM만 본다면 더 비싼 쪽을 살 이유가 없습니다.","datePublished":"2026-08-15","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/rtx5070ti-vs-5080.html","image":"https://specfit.kr/assets/og-default.png"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"RTX 5070 Ti vs 5080 — 로컬 LLM에서는 같은 카드입니다","item":"https://specfit.kr/posts/rtx5070ti-vs-5080.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"5080이 5070 Ti보다 아예 안 나은가요","acceptedAnswer":{"@type":"Answer","text":"로컬 LLM에서는 대역폭 7%가 전부입니다. 게이밍이나 영상 작업에서는 차이가 더 납니다. 용도를 먼저 정하시면 답이 나옵니다."}},{"@type":"Question","name":"그럼 5070 Ti와 5060 Ti 16GB는요","acceptedAnswer":{"@type":"Answer","text":"대역폭이 896 vs 448로 두 배 차이입니다. 이건 체감됩니다. 7%와는 다른 이야기입니다. 다만 돌아가는 모델 크기는 역시 같습니다."}},{"@type":"Question","name":"32B를 쓰려면 5090밖에 없나요","acceptedAnswer":{"@type":"Answer","text":"신품 기준으로는 그렇습니다. 중고까지 보면 3090·4090(24GB)이 있습니다. 중고 3090 글을 참고하세요."}},{"@type":"Question","name":"5080 두 장은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"VRAM 총량은 32GB가 되지만 속도가 합쳐지지 않고 전력이 720W입니다. 5090 한 장이 낫습니다. 두 장 구성의 실제 제약은 그래픽카드 두 장에 적었습니다."}},{"@type":"Question","name":"5090 은 뭐가 그렇게 다른가요","acceptedAnswer":{"@type":"Answer","text":"VRAM 이 32GB 라 32B 가 \"느림\"에서 \"여유\"로 바뀝니다. 줄이 바뀌는 유일한 카드입니다. 대신 575W 라 파워 교체와 전기요금이 따라옵니다 — RTX 5090 32GB에 정리했습니다."}},{"@type":"Question","name":"게이밍도 하는데요","acceptedAnswer":{"@type":"Answer","text":"그러면 5080이 의미 있습니다. 이 글은 로컬 LLM만 놓고 본 결론입니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용","description":"긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.","datePublished":"2026-08-21","dateModified":"2026-08-21","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-context-length.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용","item":"https://specfit.kr/posts/ollama-context-length.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"기본값은 왜 이렇게 작은가요","acceptedAnswer":{"@type":"Answer","text":"위 표가 답입니다. 기본값을 32K로 잡으면 8GB 카드에서 8B 모델이 설치 직후부터 느려집니다. 낮은 기본값은 \"일단 어디서든 돌아가게\"를 고른 결과입니다. 대신 잘림이 조용히 일어나는 게 대가입니다."}},{"@type":"Question","name":"지금 설정이 얼마인지 어떻게 확인하나요","acceptedAnswer":{"@type":"Answer","text":"ollama show 모델명으로 모델의 컨텍스트 상한과 설정된 파라미터를 볼 수 있습니다. 실제로 잘렸는지는 서버 로그의 truncating 문구로 확인하는 게 확실합니다."}},{"@type":"Question","name":"KV 캐시도 양자화하면 줄지 않나요","acceptedAnswer":{"@type":"Answer","text":"실행기에 KV 캐시를 q8·q4로 줄이는 실험적 옵션이 있고, 켜면 위 표의 KV 몫이 절반~4분의 1로 줄어듭니다. 다만 기본값은 f16이고, KV를 줄이면 긴 컨텍스트에서 품질이 깎일 수 있어 표는 기본 기준으로 잡았습니다. 양자화가 가중치에 어떻게 작용하는지는 양자화 Q4·Q5·Q8 차이에 있습니다."}},{"@type":"Question","name":"VRAM이 모자라면 시스템 램으로라도 늘릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"돌아는 갑니다. KV 캐시가 램으로 밀려나면 그만큼 느려질 뿐입니다. 어디까지가 VRAM 문제이고 어디부터가 램 문제인지는 램과 VRAM의 차이에 정리해 뒀습니다."}},{"@type":"Question","name":"대화가 길어져도 잘리나요","acceptedAnswer":{"@type":"Answer","text":"같은 원리로 잘립니다. 문서를 안 넣어도 주고받은 대화 전체가 컨텍스트에 쌓이므로, 긴 대화 끝에 초반 내용을 잊는 것도 같은 증상입니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -60,10 +60,10 @@
   </nav>
 
   <header class="post-head">
-    <h1>RTX 5070 Ti vs 5080 — 로컬 LLM에서는 같은 카드입니다</h1>
+    <h1>Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용</h1>
     <p class="post-meta">
-      <time datetime="2026-08-15">2026년 8월 15일</time>
-      <span class="updated">· 2026년 8월 18일 갱신</span>
+      <time datetime="2026-08-21">2026년 8월 21일</time>
+      
     </p>
   </header>
 
@@ -73,31 +73,64 @@
 </aside>
 
   <div class="post-body">
-<p>상급으로 올라가면 <strong>5070 Ti와 5080</strong> 사이에서 고민하게 됩니다.
-가격 차이는 꽤 나는데, 로컬 LLM에서 뭐가 달라지는지는 잘 안 나옵니다.</p>
-<p><strong>결론부터 말하면 거의 안 달라집니다.</strong></p>
-<h2 id="결론부터">결론부터</h2>
+<p>Ollama에 긴 문서를 넣고 요약을 시켰더니 <strong>앞부분을 통째로 무시한 답</strong>이
+돌아온 적이 있다면, 모델이 멍청해서가 아닙니다.</p>
+<p><strong>입력이 잘려 나갔을 가능성이 큽니다.</strong> 그것도 조용히요.</p>
+<h2 id="무슨-일이-일어나는가">무슨 일이 일어나는가</h2>
+<p>Ollama는 모델이 한 번에 기억하는 분량(<strong>컨텍스트 길이</strong>)을 기본값으로
+제한해 둡니다. 이 기본값이 <strong>2048 또는 4096 토큰</strong>으로, 버전에 따라 다릅니다.
+공식 문서끼리도 표기가 어긋날 정도라, 본인 설치본의 값은 아래에서 직접
+확인하는 편이 확실합니다.</p>
+<p>4096 토큰이 어느 정도냐면, 이 사이트 계산기의 라벨로 <strong>&quot;파일 한 개 정도 —
+A4 두세 장&quot;</strong>입니다. 그 이상을 넣으면 Ollama는 오류를 내지 않고
+<strong>넘치는 앞부분을 잘라낸 뒤 그냥 실행합니다.</strong></p>
+<p>화면에는 아무 표시가 없습니다. 잘렸다는 사실은 서버 로그에만 남습니다.</p>
+<pre><code>truncating input prompt          ← 서버 로그에 이 문구가 있으면 잘린 겁니다</code></pre>
+<p>그래서 증상이 이상하게 나타납니다. 문서 뒷부분 질문에는 답을 잘 하는데
+앞부분을 물으면 딴소리를 하고, 대화가 길어지면 처음에 정한 규칙을 잊습니다.
+<strong>모델 품질 문제로 보이지만 실제로는 설정 문제입니다.</strong></p>
+<h2 id="늘리는-방법-네-가지">늘리는 방법 — 네 가지</h2>
+<p>어디서 쓰느냐에 따라 넣는 자리가 다를 뿐, 늘리는 값은 같은 <code>num_ctx</code>입니다.</p>
+<p><strong>① 대화 중 임시로</strong> — <code>ollama run</code> 안에서:</p>
+<pre><code>/set parameter num_ctx 16384</code></pre>
+<p>그 세션에서만 적용됩니다. 시험해 보기에 가장 간단합니다.</p>
+<p><strong>② API로 쓸 때</strong> — 요청에 옵션을 넣습니다:</p>
+<pre><code class="language-json">{ &quot;model&quot;: &quot;llama3.1:8b&quot;, &quot;options&quot;: { &quot;num_ctx&quot;: 16384 }, ... }</code></pre>
+<p><strong>③ 모델에 고정</strong> — Modelfile로 설정을 박은 변형을 만듭니다:</p>
+<pre><code>FROM llama3.1:8b
+PARAMETER num_ctx 16384</code></pre>
+<p><code>ollama create llama3.1-16k -f Modelfile</code> 로 만들어두면 매번 지정할 필요가
+없습니다.</p>
+<p><strong>④ 서버 전체 기본값</strong> — 환경 변수:</p>
+<pre><code>OLLAMA_CONTEXT_LENGTH=16384</code></pre>
+<p>서버가 띄우는 모든 모델의 기본값이 바뀝니다.</p>
+<h2 id="늘리는-건-공짜가-아닙니다">늘리는 건 공짜가 아닙니다</h2>
+<p>여기가 이 글의 본론입니다. <strong>컨텍스트는 VRAM을 먹습니다.</strong></p>
+<p>모델이 기억하는 내용은 <strong>KV 캐시</strong>라는 별도 메모리에 쌓이는데, 이건
+토큰 수에 정비례합니다. 가중치(모델 파일)와 달리 <strong>양자화(Q4)의 영향도
+받지 않습니다</strong> — 기본 설정에서는 f16 그대로 쌓입니다.</p>
+<p>Q4 기준, 가중치 + KV 캐시 + 오버헤드를 합친 필요량입니다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th></th><th>RTX 5070 Ti</th><th>RTX 5080</th></tr></thead>
+<thead><tr><th>num_ctx</th><th>7~8B 모델</th><th>12~14B 모델</th><th>32B 모델</th></tr></thead>
 <tbody>
-<tr><td>VRAM</td><td><strong>16GB</strong></td><td><strong>16GB</strong> — 같습니다</td></tr>
-<tr><td>메모리 대역폭</td><td>896 GB/s</td><td>960 GB/s (<strong>+7%</strong>)</td></tr>
-<tr><td>TDP</td><td><strong>300W</strong></td><td>360W (+60W)</td></tr>
+<tr><td>4,096 (기본 부근)</td><td>6.5GB</td><td>10.6GB</td><td>22.2GB</td></tr>
+<tr><td>16,384</td><td>8.0GB</td><td>12.8GB</td><td>25.2GB</td></tr>
+<tr><td>32,768</td><td>10.0GB</td><td>15.8GB</td><td>29.2GB</td></tr>
+<tr><td>131,072 (128K)</td><td>22.0GB</td><td>33.9GB</td><td>53.2GB</td></tr>
 </tbody>
 </table></div>
-<p><strong>로컬 LLM에서 중요한 두 지표 중 하나가 완전히 같고, 나머지가 7% 차이입니다.</strong></p>
-<h2 id="돌아가는-모델이-완전히-같습니다">돌아가는 모델이 완전히 같습니다</h2>
-<p>VRAM이 같으니 당연한 결과입니다.</p>
-<div class="table-wrap"><table>
-<thead><tr><th>모델 크기</th><th>필요 메모리</th><th>5070 Ti</th><th>5080</th></tr></thead>
-<tbody>
-<tr><td>7~8B</td><td>약 6.5GB</td><td>여유</td><td>여유</td></tr>
-<tr><td>12~14B</td><td>약 10.6GB</td><td>여유</td><td>여유</td></tr>
-<tr><td>20~22B</td><td>약 15.7GB</td><td>빠듯</td><td>빠듯</td></tr>
-<tr><td>32B</td><td>약 22.2GB</td><td>느림</td><td>느림</td></tr>
-</tbody>
-</table></div>
-<p><strong>네 줄이 전부 같습니다.</strong> 판정이 갈리는 조합이 하나도 없습니다.</p>
+<p>읽는 법이 중요합니다.</p>
+<ul>
+<li><strong>8GB 카드에서 8B 모델</strong>: 기본 컨텍스트면 여유(6.5GB)지만, <strong>16K로 올리는
+순간 8GB에 닿고</strong>, 32K면 10GB — 일부가 CPU로 넘어가 눈에 띄게 느려집니다.</li>
+<li><strong>12GB 카드에서 8B 모델</strong>: 32K(10.0GB)까지 여유입니다. 컨텍스트를 크게
+쓰고 싶을 때 VRAM 여유분이 어디에 쓰이는지 보여주는 조합입니다.</li>
+<li><strong>128K는 급이 다릅니다.</strong> 8B 모델도 KV 캐시만 16GB가 붙어 총 22GB —
+24GB급 카드의 영역입니다. &quot;모델이 128K를 지원한다&quot;와 &quot;내 카드로 128K를
+쓸 수 있다&quot;는 전혀 다른 문제입니다.</li>
+</ul>
+<p>내 카드 기준으로는 아래에서 바로 확인됩니다. 모델과 길이를 바꿔보면
+판정이 어디서 뒤집히는지 보입니다.</p>
 <div data-vram-tool>
 <div class="vr">
   <div class="vr-controls">
@@ -196,130 +229,71 @@
     경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
   </p>
 </div></div>
-<p>두 카드를 번갈아 골라보셔도 결과가 바뀌지 않습니다.</p>
-<h2 id="7-차이가-어느-정도인가">7% 차이가 어느 정도인가</h2>
-<p>대역폭 896에서 960이면 <strong>7% 높습니다.</strong></p>
-<p>지금까지 이 사이트에서 다룬 차이들과 나란히 놓으면 이렇습니다.</p>
-<figure class="fig">
-<svg viewBox="0 0 640 246" width="640" height="246" role="img" aria-label="카드별 메모리 대역폭 비교">
-<title>카드별 메모리 대역폭 비교</title>
-
-<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">메모리 대역폭 — 모델이 다 올라간 뒤 속도를 정하는 값</text>
-<text x="16" y="55" fill="var(--fg)" font-size="12">RTX 5090</text>
-<rect x="150" y="43" width="400" height="16" fill="var(--accent)" rx="3"/>
-<text x="558" y="55" fill="var(--fg-muted)" font-size="11">1792 GB/s</text>
-<text x="16" y="85" fill="var(--fg)" font-size="12">RTX 5070</text>
-<rect x="150" y="73" width="150" height="16" fill="var(--accent)" rx="3"/>
-<text x="308" y="85" fill="var(--fg-muted)" font-size="11">672 GB/s</text>
-<text x="16" y="115" fill="var(--fg)" font-size="12">M5 Max (상위)</text>
-<rect x="150" y="103" width="137.05357142857142" height="16" fill="var(--accent)" rx="3"/>
-<text x="295.05357142857144" y="115" fill="var(--fg-muted)" font-size="11">614 GB/s</text>
-<text x="16" y="145" fill="var(--fg)" font-size="12">RTX 5060 Ti</text>
-<rect x="150" y="133" width="100" height="16" fill="var(--accent)" rx="3"/>
-<text x="258" y="145" fill="var(--fg-muted)" font-size="11">448 GB/s</text>
-<text x="16" y="175" fill="var(--fg)" font-size="12">M5 Pro</text>
-<rect x="150" y="163" width="68.52678571428571" height="16" fill="var(--accent)" rx="3"/>
-<text x="226.52678571428572" y="175" fill="var(--fg-muted)" font-size="11">307 GB/s</text>
-<text x="16" y="205" fill="var(--fg)" font-size="12">M5</text>
-<rect x="150" y="193" width="34.151785714285715" height="16" fill="var(--accent)" rx="3"/>
-<text x="192.15178571428572" y="205" fill="var(--fg-muted)" font-size="11">153 GB/s</text>
-
-<text x="16" y="232" fill="var(--fg)" font-size="13" font-weight="600">용량이 "되느냐" 를 정하고, 대역폭이 "얼마나 빠르냐" 를 정합니다.</text>
-</svg>
-<figcaption>같은 모델이 둘 다 VRAM 에 올라간다면, 그다음은 이 값이 체감을 가릅니다.</figcaption>
-</figure>
-<div class="table-wrap"><table>
-<thead><tr><th>비교</th><th>대역폭 차이</th></tr></thead>
-<tbody>
-<tr><td>5060 → 5070</td><td>+50%</td></tr>
-<tr><td>4060 Ti 16GB → 5060 Ti 16GB</td><td>+56%</td></tr>
-<tr><td>시스템 램 → 5060</td><td>+400%</td></tr>
-<tr><td><strong>5070 Ti → 5080</strong></td><td><strong>+7%</strong></td></tr>
-</tbody>
-</table></div>
-<p><strong>7%는 체감하기 어려운 폭입니다.</strong> 답변이 10초 걸리던 게 9.3초가 되는 정도입니다.</p>
-<p>그마저도 대역폭 차이가 그대로 속도 차이로 나오지는 않습니다.
-실행 프로그램과 모델 구조가 함께 작용하기 때문입니다.</p>
-<h2 id="그럼-5080은-왜-있나">그럼 5080은 왜 있나</h2>
-<p><strong>게이밍과 영상 작업에서는 의미가 있습니다.</strong> 연산 성능이 더 높습니다.</p>
-<p>로컬 LLM이 연산보다 <strong>메모리에 묶여 있어서</strong> 그 차이가 안 드러날 뿐입니다.
-<a href="/posts/rtx3090-vs-4070-local-llm.html">3090 vs 4070</a>에서 세대가 낮은 카드가
-이겼던 것과 같은 이유입니다.</p>
-<p><strong>용도가 로컬 LLM 하나라면 5080의 값어치는 거의 없습니다.</strong>
-게이밍을 겸한다면 이야기가 달라집니다.</p>
-<h2 id="16gb라는-천장이-같습니다">16GB라는 천장이 같습니다</h2>
-<p>더 중요한 건 이쪽입니다.</p>
-<p><strong>둘 다 32B에서 막힙니다.</strong> 32B는 약 22.2GB가 필요한데 16GB로는 안 됩니다.
-&quot;느림&quot; 판정이라 돌아가긴 하지만 일부가 CPU로 넘어갑니다.</p>
-<pre><code>32B 를 여유 있게 쓰려면  →  24GB 이상
-개인용 신품 상한          →  RTX 5090 (32GB)</code></pre>
-<p><strong>5080에 돈을 더 쓰는 대신, 32GB로 한 번에 올라가는 편</strong>이 로컬 LLM에서는 낫습니다.
-그 사이에는 아무것도 없습니다.</p>
-<h2 id="그럼-무엇을-사야-하나">그럼 무엇을 사야 하나</h2>
-<p><strong>16GB면 충분하다면 → 5070 Ti</strong>
-같은 결과에 60W 덜 먹고 더 쌉니다.</p>
-<p><strong>16GB로 모자란다면 → 5090 (32GB)</strong>
-5080은 그 중간을 메워주지 못합니다. VRAM이 5070 Ti와 같기 때문입니다.</p>
-<p><strong>예산이 애매하다면 → <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB</a></strong>
-같은 16GB에 대역폭만 낮습니다(448). 그래도 돌아가는 모델은 같습니다.</p>
-<div class="table-wrap"><table>
-<thead><tr><th>카드</th><th>VRAM</th><th>대역폭</th><th>돌아가는 모델</th></tr></thead>
-<tbody>
-<tr><td>RTX 5060 Ti 16GB</td><td>16GB</td><td>448 GB/s</td><td>14B 여유</td></tr>
-<tr><td>RTX 5070 Ti</td><td>16GB</td><td>896 GB/s</td><td>14B 여유</td></tr>
-<tr><td>RTX 5080</td><td>16GB</td><td>960 GB/s</td><td>14B 여유</td></tr>
-<tr><td><strong>RTX 5090</strong></td><td><strong>32GB</strong></td><td>1792 GB/s</td><td><strong>32B 여유</strong></td></tr>
-</tbody>
-</table></div>
-<p><strong>16GB 칸 세 줄은 돌아가는 모델이 전부 같습니다.</strong> 속도만 다릅니다.
-줄이 바뀌는 건 5090 하나뿐입니다.</p>
+<h2 id="num_ctx를-올렸는데-갑자기-느려졌다면">num_ctx를 올렸는데 갑자기 느려졌다면</h2>
+<p>십중팔구 <strong>KV 캐시가 VRAM을 넘긴 것</strong>입니다.</p>
+<p>num_ctx를 올리면 잘림은 사라지지만, 필요 메모리가 위 표만큼 늘어납니다.
+VRAM을 넘긴 몫은 시스템 램으로 밀려나고, 속도가 뚝 떨어집니다.
+잘리는 것과 느려지는 것 사이의 <strong>트레이드오프</strong>인 셈입니다.</p>
+<p>경계선에 걸렸다면 선택지는 셋입니다.</p>
+<ol>
+<li><strong>num_ctx를 필요한 만큼만</strong> — 32K가 필요 없는데 습관으로 크게 잡지 않기</li>
+<li><strong>모델을 한 단계 내리기</strong> — 가중치가 줄어든 만큼 컨텍스트에 쓸 자리가
+생깁니다. <a href="/posts/vram-8gb-tips.html">8GB에서 버티는 법</a>에서 이 방향을
+자세히 다뤘습니다</li>
+<li><strong>VRAM이 큰 카드로</strong> — 표에서 보듯 컨텍스트를 크게 쓰는 용도일수록
+VRAM 용량이 대역폭보다 먼저입니다</li>
+</ol>
+<h2 id="알아둘-한계-두-가지">알아둘 한계 두 가지</h2>
+<p><strong>num_ctx는 모델의 최대치를 넘지 못합니다.</strong> 모델마다 학습된 컨텍스트
+상한이 있습니다(예: Llama 3.1 계열은 128K). 그 이상으로 설정해도 의미가
+없고, 상한이 4K·8K인 구형 모델은 num_ctx를 올려도 그 벽에서 멈춥니다.</p>
+<p><strong>컨텍스트를 늘린다고 긴 문서를 &quot;잘&quot; 읽게 되는 건 아닙니다.</strong> 잘리지
+않게 될 뿐입니다. 아주 긴 입력의 중간 부분을 소홀히 다루는 경향은
+컨텍스트가 충분해도 남습니다. 잘림 문제와 품질 문제는 별개입니다.</p>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="5080이-5070-ti보다-아예-안-나은가요">5080이 5070 Ti보다 아예 안 나은가요</h3>
-<p>로컬 LLM에서는 대역폭 7%가 전부입니다. 게이밍이나 영상 작업에서는 차이가 더 납니다.
-<strong>용도를 먼저 정하시면 답이 나옵니다.</strong></p>
-<h3 id="그럼-5070-ti와-5060-ti-16gb는요">그럼 5070 Ti와 5060 Ti 16GB는요</h3>
-<p>대역폭이 896 vs 448로 <strong>두 배</strong> 차이입니다. 이건 체감됩니다.
-7%와는 다른 이야기입니다. 다만 돌아가는 모델 크기는 역시 같습니다.</p>
-<h3 id="32b를-쓰려면-5090밖에-없나요">32B를 쓰려면 5090밖에 없나요</h3>
-<p>신품 기준으로는 그렇습니다. 중고까지 보면 3090·4090(24GB)이 있습니다.
-<a href="/posts/rtx3090-vs-4070-local-llm.html">중고 3090 글</a>을 참고하세요.</p>
-<h3 id="5080-두-장은-어떤가요">5080 두 장은 어떤가요</h3>
-<p>VRAM 총량은 32GB가 되지만 속도가 합쳐지지 않고 전력이 720W입니다.
-<strong>5090 한 장이 낫습니다.</strong> 두 장 구성의 실제 제약은
-<a href="/posts/multi-gpu-local-llm.html">그래픽카드 두 장</a>에 적었습니다.</p>
-<h3 id="5090-은-뭐가-그렇게-다른가요">5090 은 뭐가 그렇게 다른가요</h3>
-<p>VRAM 이 32GB 라 32B 가 &quot;느림&quot;에서 &quot;여유&quot;로 바뀝니다. <strong>줄이 바뀌는 유일한 카드</strong>입니다.
-대신 575W 라 파워 교체와 전기요금이 따라옵니다 —
-<a href="/posts/rtx5090-local-llm.html">RTX 5090 32GB</a>에 정리했습니다.</p>
-<h3 id="게이밍도-하는데요">게이밍도 하는데요</h3>
-<p>그러면 5080이 의미 있습니다. 이 글은 <strong>로컬 LLM만 놓고</strong> 본 결론입니다.</p>
+<h3 id="기본값은-왜-이렇게-작은가요">기본값은 왜 이렇게 작은가요</h3>
+<p>위 표가 답입니다. 기본값을 32K로 잡으면 8GB 카드에서 8B 모델이
+설치 직후부터 느려집니다. <strong>낮은 기본값은 &quot;일단 어디서든 돌아가게&quot;를
+고른 결과</strong>입니다. 대신 잘림이 조용히 일어나는 게 대가입니다.</p>
+<h3 id="지금-설정이-얼마인지-어떻게-확인하나요">지금 설정이 얼마인지 어떻게 확인하나요</h3>
+<p><code>ollama show 모델명</code>으로 모델의 컨텍스트 상한과 설정된 파라미터를 볼 수
+있습니다. 실제로 잘렸는지는 서버 로그의 <code>truncating</code> 문구로 확인하는 게
+확실합니다.</p>
+<h3 id="kv-캐시도-양자화하면-줄지-않나요">KV 캐시도 양자화하면 줄지 않나요</h3>
+<p>실행기에 KV 캐시를 q8·q4로 줄이는 실험적 옵션이 있고, 켜면 위 표의
+KV 몫이 절반~4분의 1로 줄어듭니다. 다만 <strong>기본값은 f16</strong>이고, KV를
+줄이면 긴 컨텍스트에서 품질이 깎일 수 있어 표는 기본 기준으로
+잡았습니다. 양자화가 가중치에 어떻게 작용하는지는
+<a href="/posts/quantization-q4-q5-q8.html">양자화 Q4·Q5·Q8 차이</a>에 있습니다.</p>
+<h3 id="vram이-모자라면-시스템-램으로라도-늘릴-수-있나요">VRAM이 모자라면 시스템 램으로라도 늘릴 수 있나요</h3>
+<p>돌아는 갑니다. KV 캐시가 램으로 밀려나면 그만큼 느려질 뿐입니다.
+어디까지가 VRAM 문제이고 어디부터가 램 문제인지는
+<a href="/posts/local-llm-ram-vs-vram.html">램과 VRAM의 차이</a>에 정리해 뒀습니다.</p>
+<h3 id="대화가-길어져도-잘리나요">대화가 길어져도 잘리나요</h3>
+<p>같은 원리로 잘립니다. 문서를 안 넣어도 주고받은 대화 전체가 컨텍스트에
+쌓이므로, 긴 대화 끝에 초반 내용을 잊는 것도 같은 증상입니다.</p>
 <h2 id="정리">정리</h2>
 <ol>
-<li><strong>VRAM이 둘 다 16GB</strong>입니다. 돌아가는 모델이 완전히 같습니다</li>
-<li>대역폭 차이는 <strong>7%</strong>입니다. 체감하기 어려운 폭입니다</li>
-<li>5080은 <strong>60W를 더 먹습니다</strong></li>
-<li><strong>16GB로 모자라면 32GB로 가야 합니다.</strong> 5080은 그 중간을 못 메웁니다</li>
-<li>로컬 LLM만 쓴다면 <strong>5070 Ti</strong>, 겸용이면 5080입니다</li>
+<li>Ollama 기본 컨텍스트는 <strong>2048~4096 토큰</strong> — A4 두세 장이면 찹니다</li>
+<li>넘치면 <strong>오류 없이 조용히 잘립니다.</strong> &quot;앞부분을 까먹는&quot; 증상의 정체입니다</li>
+<li><code>num_ctx</code>로 늘립니다 — 대화 중 <code>/set parameter</code>, API 옵션, Modelfile, 환경 변수</li>
+<li><strong>늘리면 VRAM이 듭니다.</strong> 8B 모델도 32K면 10GB, 128K면 22GB</li>
+<li>올린 뒤 느려졌다면 KV 캐시가 VRAM을 넘긴 겁니다 — 길이·모델·카드 중
+하나를 조정해야 합니다</li>
 </ol>
-<p>VRAM 용량별 전체 표는 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>에 있습니다.</p>
-<p>스펙이나 판정이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+<p>처음 설치부터라면 <a href="/posts/ollama-install-guide.html">Ollama 설치 가이드</a>,
+카드별 한계는 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>에 있습니다.</p>
+<p>수치나 명령이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
   
 
-  <p class="tags"><span class="tag">RTX5070Ti</span> <span class="tag">RTX5080</span> <span class="tag">로컬LLM</span> <span class="tag">VRAM</span> <span class="tag">메모리대역폭</span></p>
+  <p class="tags"><span class="tag">Ollama</span> <span class="tag">컨텍스트</span> <span class="tag">num_ctx</span> <span class="tag">KV캐시</span> <span class="tag">VRAM</span> <span class="tag">로컬LLM</span></p>
 </article>
 
 <section class="related" aria-labelledby="related-h">
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
-    <li class="card">
-      <a href="/posts/ollama-context-length.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용</span>
-        <span class="card-desc">긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.</span>
-      </a>
-    </li>
     <li class="card">
       <a href="/posts/used-gpu-check.html">
         <span class="card-cat">GPU</span>
@@ -332,6 +306,13 @@
         <span class="card-cat">GPU</span>
         <span class="card-title">AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다</span>
         <span class="card-desc">VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨어가 아니라 소프트웨어입니다. 어디서 막히는지, 이미 갖고 계신 경우와 새로 사는 경우를 갈랐습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/gpu-psu-wattage.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</span>
+        <span class="card-desc">카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.</span>
       </a>
     </li>
   </ul>

@@ -24,7 +24,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에","description":"8GB는 좁지만 쓸 수 없는 건 아닙니다. 컨텍스트를 늘려도 되는 이유, 양자화를 올리면 안 되는 이유를 계산으로 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/vram-8gb-tips.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에","description":"8GB는 좁지만 쓸 수 없는 건 아닙니다. 컨텍스트를 늘려도 되는 이유, 양자화를 올리면 안 되는 이유를 계산으로 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-21","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/vram-8gb-tips.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에","item":"https://specfit.kr/posts/vram-8gb-tips.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"8GB에서 14B를 억지로 돌리면 어떻게 되나요","acceptedAnswer":{"@type":"Answer","text":"돌아갑니다. 다만 일부가 CPU로 넘어가 몇 배에서 수십 배 느려집니다. 에러 없이 그냥 느려져서 처음에는 원인을 알기 어렵습니다."}},{"@type":"Question","name":"컨텍스트를 최대로 해도 정말 괜찮나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 이전 판에서 괜찮다고 적었는데 계산이 틀렸습니다. 8B 기준으로 가장 긴 설정이면 컨텍스트만 4GB 라 총 10GB 가 되고, 8GB 를 넘깁니다. A4 두세 장까지가 공짜 구간입니다."}},{"@type":"Question","name":"Q3나 Q2로 내리면 14B가 들어가나요","acceptedAnswer":{"@type":"Answer","text":"용량은 줄어듭니다. 다만 Q4 아래로 가면 품질 저하가 체감되기 시작합니다. \"14B를 강하게 양자화\"보다 \"8B를 Q4로\"가 대체로 낫습니다."}},{"@type":"Question","name":"램을 늘리면 도움이 되나요","acceptedAnswer":{"@type":"Answer","text":"VRAM을 넘긴 부분을 램이 떠맡으므로 최소한의 도움은 됩니다. 다만 속도 문제는 해결되지 않습니다. 자세한 기준은 램 16GB vs 32GB에 있습니다."}},{"@type":"Question","name":"8GB 카드 두 장을 꽂으면요","acceptedAnswer":{"@type":"Answer","text":"총량은 16GB 가 되지만 속도는 합쳐지지 않고, 전력과 발열은 두 배입니다. 8GB 두 장보다 16GB 한 장이 낫습니다. 왜 그런지는 그래픽카드 두 장에 정리했습니다."}}]}</script>
 </head>
@@ -63,7 +63,7 @@
     <h1>VRAM 8GB에서 최대한 뽑아쓰기 — 카드를 바꾸기 전에</h1>
     <p class="post-meta">
       <time datetime="2026-08-15">2026년 8월 15일</time>
-      <span class="updated">· 2026년 8월 18일 갱신</span>
+      <span class="updated">· 2026년 8월 21일 갱신</span>
     </p>
   </header>
 
@@ -112,6 +112,9 @@
 긴 문서 요약 · 코드베이스 전체  →  8GB 로는 빠듯합니다</code></pre>
 <p><strong>긴 문서를 자주 다루신다면 컨텍스트를 줄이는 것보다 모델을 3B 로 내리는 편</strong>이
 낫습니다. 3B 는 가중치가 1.9GB 라 컨텍스트를 4GB 써도 총 7GB 안쪽입니다.</p>
+<p>Ollama 에서 이 길이를 실제로 정하는 설정(<code>num_ctx</code>)과, 기본값이 작아
+긴 입력이 조용히 잘리는 문제는
+<a href="/posts/ollama-context-length.html">컨텍스트 길이 설정</a>에 따로 정리했습니다.</p>
 <h2 id="2-양자화를-올리면-안-됩니다">2. 양자화를 올리면 안 됩니다</h2>
 <p>&quot;Q4 대신 Q8을 쓰면 더 똑똑해지지 않나&quot; — 8GB에서는 안 됩니다.</p>
 <div class="table-wrap"><table>
@@ -321,6 +324,13 @@
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/ollama-context-length.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용</span>
+        <span class="card-desc">긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/used-gpu-check.html">
         <span class="card-cat">GPU</span>
         <span class="card-title">중고 그래픽카드 살 때 — 채굴 이력은 못 밝힙니다</span>
@@ -332,13 +342,6 @@
         <span class="card-cat">GPU</span>
         <span class="card-title">AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다</span>
         <span class="card-desc">VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨어가 아니라 소프트웨어입니다. 어디서 막히는지, 이미 갖고 계신 경우와 새로 사는 경우를 갈랐습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/gpu-psu-wattage.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</span>
-        <span class="card-desc">카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.</span>
       </a>
     </li>
   </ul>
