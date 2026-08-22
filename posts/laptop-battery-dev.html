@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 노트북 배터리 — 표기 시간이 안 맞는 이유","description":"제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-battery-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 노트북 배터리 — 표기 시간이 안 맞는 이유","description":"제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-08-22","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-battery-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"개발용 노트북 배터리 — 표기 시간이 안 맞는 이유","item":"https://specfit.kr/posts/laptop-battery-dev.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"배터리는 나중에 교체할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"제조사 서비스로는 대개 가능합니다. 다만 최근 얇은 모델은 접착식이 많아 사용자가 직접 하기는 어렵습니다. SSD처럼 쉽게 바꾸는 부품이 아닙니다."}},{"@type":"Question","name":"항상 꽂아두면 배터리가 상하나요","acceptedAnswer":{"@type":"Answer","text":"완충 상태로 오래 두는 것이 좋지는 않습니다. 그래서 요즘 노트북에는 충전을 80% 선에서 멈추는 기능이 들어 있는 경우가 많습니다. 주로 책상에서 쓰신다면 켜두시는 편이 낫습니다."}},{"@type":"Question","name":"배터리가 몇 % 남았는지가 실제와 다릅니다","acceptedAnswer":{"@type":"Answer","text":"배터리가 닳으면 실제 용량과 표시가 어긋납니다. powercfg /batteryreport 로 설계 용량과 현재 용량을 비교해 보세요. 차이가 크면 노후입니다."}},{"@type":"Question","name":"화면 밝기가 그렇게 영향이 큰가요","acceptedAnswer":{"@type":"Answer","text":"큽니다. 화면은 상시 켜져 있는 부품이라 누적이 큽니다. 밝기를 낮추는 것이 가장 손쉬운 절약입니다."}},{"@type":"Question","name":"맥북이 배터리가 더 오래 가나요","acceptedAnswer":{"@type":"Answer","text":"일반적으로 유리한 편입니다. 다만 로컬 LLM처럼 오래 부하가 걸리는 작업에서는 맥도 빨리 닳습니다. 칩별 차이는 맥북 에어 vs 프로에 있습니다."}},{"@type":"Question","name":"로컬 LLM을 배터리로 돌려도 되나요","acceptedAnswer":{"@type":"Answer","text":"동작은 합니다. 다만 소비 전력이 커서 시간이 매우 짧고, 배터리 모드에서 성능도 제한됩니다. 전원을 꽂고 쓰는 작업이라고 보시는 편이 맞습니다. 사양 기준은 Ollama 최소 사양에 있습니다."}}]}</script>
 </head>
@@ -64,7 +64,7 @@
     <h1>개발용 노트북 배터리 — 표기 시간이 안 맞는 이유</h1>
     <p class="post-meta">
       <time datetime="2026-08-17">2026년 8월 17일</time>
-      
+      <span class="updated">· 2026년 8월 22일 갱신</span>
     </p>
   </header>
 
@@ -170,6 +170,8 @@
 <p>가벼운 작업에서는 충전되다가 <strong>빌드를 걸면 모자라지는</strong> 상황이 생깁니다.
 모니터에서 전력을 받는 구성이라면 같은 문제가 그대로 적용됩니다 —
 <a href="/posts/monitor-usb-c-one-cable.html">노트북 모니터 원케이블 연결</a>에 정리했습니다.</p>
+<p>몇 W짜리를 사야 하는지, 낮은 와트를 꽂으면 정확히 무슨 일이 생기는지는
+<a href="/posts/laptop-charger-watt-pd.html">충전기 와트수 읽는 법</a>에 따로 정리했습니다.</p>
 <p>⚠️ <strong>전용 그래픽카드가 있는 노트북은 USB-C 충전이 제한적이거나 안 되는 경우가 많습니다.</strong>
 사양에서 확인하세요.</p>
 <h2 id="7-사기-전에-확인할-것">7. 사기 전에 확인할 것</h2>
@@ -239,17 +241,17 @@
       </a>
     </li>
     <li class="card">
+      <a href="/posts/laptop-charger-watt-pd.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">노트북 충전기, 와트 낮은 걸로 돼요? — PD 규격으로 답이 나옵니다</span>
+        <span class="card-desc">65W 노트북에 30W 충전기를 꽂으면 무슨 일이 생기는지, 내 노트북이 몇 와트를 요구하는지 어댑터 라벨 읽는 법부터 케이블 규격까지 정리했습니다. 반대로 큰 충전기는 안전합니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/laptop-screen-size.html">
         <span class="card-cat">노트북</span>
         <span class="card-title">개발용 노트북 몇 인치 — 해상도가 높다고 넓지 않습니다</span>
         <span class="card-desc">13.6인치 고해상도가 15.6인치 FHD보다 코드가 적게 보입니다. 배율 때문입니다. 크기·해상도·배율을 함께 계산해 실제 작업 영역과 코드 줄 수를 뽑았습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/used-laptop-dev.html">
-        <span class="card-cat">노트북</span>
-        <span class="card-title">중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다</span>
-        <span class="card-desc">중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.</span>
       </a>
     </li>
   </ul>

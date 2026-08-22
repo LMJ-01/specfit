@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>노트북 충전기, 와트 낮은 걸로 돼요? — PD 규격으로 답이 나옵니다 | 스펙핏</title>
+<meta name="description" content="65W 노트북에 30W 충전기를 꽂으면 무슨 일이 생기는지, 내 노트북이 몇 와트를 요구하는지 어댑터 라벨 읽는 법부터 케이블 규격까지 정리했습니다. 반대로 큰 충전기는 안전합니다.">
+<link rel="canonical" href="https://specfit.kr/posts/laptop-charger-watt-pd.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="노트북 충전기, 와트 낮은 걸로 돼요? — PD 규격으로 답이 나옵니다 | 스펙핏">
+<meta property="og:description" content="65W 노트북에 30W 충전기를 꽂으면 무슨 일이 생기는지, 내 노트북이 몇 와트를 요구하는지 어댑터 라벨 읽는 법부터 케이블 규격까지 정리했습니다. 반대로 큰 충전기는 안전합니다.">
+<meta property="og:url" content="https://specfit.kr/posts/laptop-charger-watt-pd.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 충전기, 와트 낮은 걸로 돼요? — PD 규격으로 답이 나옵니다","description":"65W 노트북에 30W 충전기를 꽂으면 무슨 일이 생기는지, 내 노트북이 몇 와트를 요구하는지 어댑터 라벨 읽는 법부터 케이블 규격까지 정리했습니다. 반대로 큰 충전기는 안전합니다.","datePublished":"2026-08-22","dateModified":"2026-08-22","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-charger-watt-pd.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"노트북 충전기, 와트 낮은 걸로 돼요? — PD 규격으로 답이 나옵니다","item":"https://specfit.kr/posts/laptop-charger-watt-pd.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"폰 충전기(25W)로 노트북을 충전할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"노트북이 20V 없이도 받도록 만들어졌다면 꺼진 상태에서 아주 느리게 차오를 수 있지만, 거부하는 모델이 많고 어느 쪽이든 비상용입니다. 출장 가방에 하나만 넣는다면 폰 충전기가 아니라 65W쪽을 넣고 폰을 거기에 꽂는 방향이 맞습니다 — 큰 쪽은 안전하기 때문입니다."}},{"@type":"Question","name":"보조배터리로도 되나요","acceptedAnswer":{"@type":"Answer","text":"같은 계산입니다. 보조배터리의 출력 와트(20V 단계 지원 여부)가 노트북 요구를 넘는지 보면 됩니다. 노트북 대응이라 적힌 제품은 대개 45~100W 출력을 지원합니다."}},{"@type":"Question","name":"모니터의 USB-C로 충전하고 있는데, 와트가 애매합니다","acceptedAnswer":{"@type":"Answer","text":"모니터 PD 출력은 대개 65~90W라 개발용 노트북 정격과 비슷하거나 조금 작습니다. 빌드 중 배터리 잔량이 조금씩 주는지 한 번 보세요 — 줄고 있다면 ③번 상황입니다. 확인할 스펙은 원케이블 연결 조건에 정리해 뒀습니다."}},{"@type":"Question","name":"정품이 아닌 충전기를 써도 되나요","acceptedAnswer":{"@type":"Answer","text":"PD 규격을 제대로 지키는 제품이면 규격상 문제는 없습니다. 다만 전력이 큰 물건이므로 KC 인증이 있는 제품인지 확인하세요. 와트 표기만 크고 인증이 없는 제품이 문제를 일으킵니다."}},{"@type":"Question","name":"어댑터 라벨의 ⎓ 기호는 뭔가요","acceptedAnswer":{"@type":"Answer","text":"직류(DC)라는 뜻입니다. 20V ⎓ 3.25A는 \"직류 20V, 최대 3.25A\"로 읽으면 됩니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>노트북 충전기, 와트 낮은 걸로 돼요? — PD 규격으로 답이 나옵니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-22">2026년 8월 22일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>충전기를 안 가져왔는데 책상에 폰 충전기가 있습니다. 꽂으면 될까요?
+동생 노트북 충전기는요? 65W 노트북에 100W 충전기는 위험한가요?</p>
+<p>전부 같은 질문입니다 — <strong>&quot;와트가 다른 충전기를 꽂으면 무슨 일이 생기나.&quot;</strong>
+USB-C(PD) 충전이면 규격이 정해둔 답이 있습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>조합</th><th>결과</th></tr></thead>
+<tbody>
+<tr><td>정격보다 <strong>큰</strong> 충전기 (65W 노트북 + 100W)</td><td><strong>안전합니다.</strong> 필요한 만큼만 씁니다</td></tr>
+<tr><td>정격보다 <strong>조금 낮은</strong> 충전기 (65W 노트북 + 45W)</td><td>대개 됩니다. 느리고, 고부하에서는 쓰는 중 방전될 수 있습니다</td></tr>
+<tr><td><strong>많이 낮은</strong> 충전기 (65W 노트북 + 20W 폰 충전기)</td><td><strong>거부하는 노트북이 많습니다.</strong> 되더라도 비상용입니다</td></tr>
+<tr><td>게이밍 노트북 + PD 충전기</td><td><strong>본 충전기 대체 불가.</strong> 전용 DC 어댑터가 기준입니다</td></tr>
+</tbody>
+</table></div>
+<p>아래는 이 표의 이유와, 내 노트북이 몇 W를 요구하는지 읽는 법입니다.</p>
+<h2 id="와트는-전압-전류입니다">와트는 전압 × 전류입니다</h2>
+<p>충전기에 적힌 W는 하나의 숫자가 아니라 <strong>전압(V)과 전류(A)의 곱</strong>입니다.</p>
+<pre><code>W = V × A
+
+65W 충전기  =  20V × 3.25A
+45W 충전기  =  20V × 2.25A
+25W 폰 충전기 =  9V × 2.77A 정도</code></pre>
+<p>USB-C 충전 규격(PD)은 충전기가 <strong>여러 전압 단계</strong>(5V·9V·15V·20V …)를
+갖고 있다가, 기기와 &quot;너 몇 볼트 줄 수 있어?&quot;를 협상해서 정하는 방식입니다.</p>
+<p>여기서 첫 번째 갈림길이 나옵니다. <strong>노트북은 대개 20V 단계를 요구합니다.</strong>
+낮은 와트 충전기가 문제인 것은 와트 숫자 자체보다,
+<strong>작은 충전기에는 20V 단계가 아예 없는 경우가 많기 때문</strong>입니다.
+20V가 없는 폰 충전기를 꽂으면 협상이 결렬되고, 충전이 시작조차 안 됩니다.</p>
+<h2 id="낮은-와트를-꽂으면-세-가지-중-하나">낮은 와트를 꽂으면 — 세 가지 중 하나</h2>
+<p><strong>① 거부</strong> — 위에서 말한 협상 결렬입니다. 반응이 없거나
+&quot;저전력 충전기&quot; 경고만 뜹니다. 제조사가 하한을 걸어둔 경우도 있습니다
+(하한값은 모델마다 다릅니다).</p>
+<p><strong>② 느린 충전</strong> — 협상은 됐는데 공급이 정격보다 작은 경우입니다.
+꺼두거나 가볍게 쓸 때는 문제없이 차오릅니다. 시간이 더 걸릴 뿐입니다.</p>
+<p><strong>③ 쓰는 중 방전</strong> — 가장 헷갈리는 경우입니다. 개발 작업이나 빌드처럼
+부하가 걸리면 <strong>소비 전력이 공급 전력을 넘어서</strong>, 꽂혀 있는데도
+배터리가 천천히 닳습니다. 고장이 아니라 산수입니다:</p>
+<pre><code>공급 45W − 소비 60W = 배터리에서 15W 를 꺼내 쓰는 중</code></pre>
+<p>그래서 &quot;낮은 와트로 돼요?&quot;의 실용적인 답은 이렇습니다 —
+<strong>문서 작업까지는 되고, 부하 작업의 본 충전기로는 안 됩니다.</strong></p>
+<h2 id="내-노트북이-몇-w인지-읽는-법">내 노트북이 몇 W인지 읽는 법</h2>
+<p><strong>기존 어댑터의 라벨이 답입니다.</strong> 작게 적힌 <code>Output</code> 줄을 보세요.</p>
+<pre><code>Output: 20.0V ⎓ 3.25A        →  20 × 3.25 = 65W
+Output: 5V⎓3A / 9V⎓3A /
+        15V⎓3A / 20V⎓3.25A   →  마지막(최대) 단계 기준 65W</code></pre>
+<p>여러 단계가 적혀 있으면 <strong>가장 큰 조합이 그 충전기의 정격</strong>입니다.
+어댑터가 없으면 제조사 사양표의 &quot;어댑터&quot; 항목에 같은 값이 있습니다.</p>
+<p>같은 값 이상을 사면 되고, 그보다 큰 것은 낭비일지언정 위험이 아닙니다.</p>
+<h2 id="반대는-안전합니다-큰-충전기-걱정">반대는 안전합니다 — 큰 충전기 걱정</h2>
+<p>&quot;65W 노트북에 100W 충전기를 꽂아도 되나요&quot;는 걱정할 필요가 없습니다.</p>
+<p>PD는 <strong>기기가 필요한 만큼만 꺼내 쓰는 구조</strong>입니다. 100W 충전기는
+&quot;최대 100W까지 줄 수 있다&quot;는 뜻이지 100W를 밀어 넣는다는 뜻이 아닙니다.
+폰을 꽂으면 폰 만큼만, 노트북을 꽂으면 노트북 만큼만 나갑니다.</p>
+<p>그래서 <strong>충전기 하나로 통일한다면 큰 쪽으로 사는 것</strong>이 맞습니다.</p>
+<h2 id="케이블도-규격이-있습니다">케이블도 규격이 있습니다</h2>
+<p>충전기만 바꾸고 케이블을 아무거나 쓰면 거기서 막힐 수 있습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>전력</th><th>케이블 조건</th></tr></thead>
+<tbody>
+<tr><td><strong>60W까지</strong></td><td>아무 USB-C 케이블이면 됩니다 (기본 3A)</td></tr>
+<tr><td><strong>60W 초과 ~ 100W</strong></td><td><strong>5A 지원 케이블</strong>이어야 합니다 (칩이 든 E-marker 케이블)</td></tr>
+<tr><td>100W 초과 (~240W)</td><td>최신 확장 규격(EPR) — 충전기·케이블·노트북 셋 다 지원해야 합니다</td></tr>
+</tbody>
+</table></div>
+<p>100W 충전기에 3A 케이블을 꽂으면 60W로 깎여서 나옵니다.
+고장이 아니라 케이블이 병목인 것입니다.</p>
+<h2 id="게이밍-노트북은-예외입니다">게이밍 노트북은 예외입니다</h2>
+<p>전용 GPU가 든 노트북은 정격이 180~330W대라 <strong>PD 충전기로 대체가 안 됩니다</strong>
+(현행 PD 상한이 240W이고, 이를 받는 노트북도 아직 드뭅니다).</p>
+<p>USB-C 단자가 있어도 대개 <strong>보조 충전용</strong>입니다 — 꺼두었을 때나
+가벼운 작업에서 차오르는 정도이고, 게임·학습 부하에서는 ③번(쓰는 중 방전)이
+그대로 일어납니다. 본 충전기는 전용 DC 어댑터입니다.
+<a href="/posts/gaming-laptop-for-dev.html">게이밍 노트북을 개발용으로</a> 볼 때
+같이 확인할 항목입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="폰-충전기25w로-노트북을-충전할-수-있나요">폰 충전기(25W)로 노트북을 충전할 수 있나요</h3>
+<p>노트북이 20V 없이도 받도록 만들어졌다면 꺼진 상태에서 아주 느리게 차오를 수
+있지만, <strong>거부하는 모델이 많고 어느 쪽이든 비상용</strong>입니다.
+출장 가방에 하나만 넣는다면 폰 충전기가 아니라 65W쪽을 넣고
+폰을 거기에 꽂는 방향이 맞습니다 — 큰 쪽은 안전하기 때문입니다.</p>
+<h3 id="보조배터리로도-되나요">보조배터리로도 되나요</h3>
+<p>같은 계산입니다. 보조배터리의 <strong>출력 와트</strong>(20V 단계 지원 여부)가
+노트북 요구를 넘는지 보면 됩니다. 노트북 대응이라 적힌 제품은
+대개 45~100W 출력을 지원합니다.</p>
+<h3 id="모니터의-usb-c로-충전하고-있는데-와트가-애매합니다">모니터의 USB-C로 충전하고 있는데, 와트가 애매합니다</h3>
+<p>모니터 PD 출력은 대개 65~90W라 개발용 노트북 정격과 비슷하거나 조금 작습니다.
+빌드 중 배터리 잔량이 조금씩 주는지 한 번 보세요 — 줄고 있다면 ③번 상황입니다.
+확인할 스펙은 <a href="/posts/monitor-usb-c-one-cable.html">원케이블 연결 조건</a>에
+정리해 뒀습니다.</p>
+<h3 id="정품이-아닌-충전기를-써도-되나요">정품이 아닌 충전기를 써도 되나요</h3>
+<p>PD 규격을 제대로 지키는 제품이면 규격상 문제는 없습니다.
+다만 전력이 큰 물건이므로 <strong>KC 인증이 있는 제품</strong>인지 확인하세요.
+와트 표기만 크고 인증이 없는 제품이 문제를 일으킵니다.</p>
+<h3 id="어댑터-라벨의-기호는-뭔가요">어댑터 라벨의 ⎓ 기호는 뭔가요</h3>
+<p>직류(DC)라는 뜻입니다. <code>20V ⎓ 3.25A</code>는 &quot;직류 20V, 최대 3.25A&quot;로 읽으면 됩니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>큰 충전기는 안전합니다.</strong> 필요한 만큼만 나갑니다. 통일한다면 큰 쪽으로</li>
+<li>낮은 와트는 셋 중 하나입니다 — <strong>거부 · 느린 충전 · 쓰는 중 방전.</strong>
+문서 작업까지는 되고 부하 작업의 본 충전기로는 안 됩니다</li>
+<li>폰 충전기가 안 되는 진짜 이유는 와트가 아니라 <strong>20V 단계가 없어서</strong>입니다</li>
+<li>내 정격은 <strong>기존 어댑터 라벨의 Output 줄</strong>에 있습니다 (V × A)</li>
+<li><strong>60W 넘게 쓰려면 케이블도 5A 지원</strong>이어야 합니다</li>
+<li>게이밍 노트북은 PD로 대체가 안 됩니다. 전용 어댑터가 기준입니다</li>
+</ol>
+<p>배터리 수명과 표기 시간 읽는 법은
+<a href="/posts/laptop-battery-dev.html">개발용 노트북 배터리</a>에 있습니다.</p>
+<p>수치나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">노트북충전기</span> <span class="tag">USB-PD</span> <span class="tag">와트</span> <span class="tag">USB-C</span> <span class="tag">어댑터</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ai-coding-tool-pc-spec.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">클로드 코드·커서 쓰려면 컴퓨터가 좋아야 하나 — 공식 요구 사양은 램 4GB입니다</span>
+        <span class="card-desc">AI 코딩 도구 때문에 컴퓨터를 바꿀 필요는 거의 없습니다. 연산이 서버에서 되기 때문입니다. 공식 요구 사양, 그런데도 사양이 모자라게 느껴지는 진짜 이유, 그래픽카드가 필요해지는 유일한 경우를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-screen-size.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">개발용 노트북 몇 인치 — 해상도가 높다고 넓지 않습니다</span>
+        <span class="card-desc">13.6인치 고해상도가 15.6인치 FHD보다 코드가 적게 보입니다. 배율 때문입니다. 크기·해상도·배율을 함께 계산해 실제 작업 영역과 코드 줄 수를 뽑았습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/used-laptop-dev.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다</span>
+        <span class="card-desc">중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
