@@ -45,7 +45,7 @@ assets/
   style.css, search.js
 ```
 
-루트의 `.html`, `sitemap.xml`, `robots.txt` 는 **생성물**입니다. 직접 고치지 마세요.
+루트의 `.html`, `sitemap.xml`, `robots.txt`, `feed.xml`, `404.html` 은 **생성물**입니다. 직접 고치지 마세요.
 
 ## 글 쓰는 법
 
@@ -221,6 +221,8 @@ affiliate: false       # 쿠팡 링크를 본문에 넣으면 true
 | **FAQ 답변 평문화** | 마크다운 기호를 떼고 내보냄 — 검색 결과에 `**` 가 보이지 않음 |
 | **작성용 메모 제외** | `<!-- -->` 주석은 HTML·검색 인덱스 **양쪽에서** 빠짐 |
 | sitemap.xml | 글 추가 시 자동 갱신 |
+| feed.xml | RSS — 최신 20편. pubDate 는 `date` 기준 (`updated` 로 잡으면 글을 고칠 때마다 구독자에게 새 글로 감) |
+| 404.html | GitHub Pages 가 없는 주소에 자동 사용. sitemap 미포함 |
 | 관련 글 | 같은 카테고리에서 자동 연결 |
 | 계산기 JS | **계산기를 쓰는 페이지에만** 로드 (INP 보호) |
 

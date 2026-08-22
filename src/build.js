@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 import { config } from './config.js';
 import { markdownToHtml, parseFrontmatter, inlineToText } from './markdown.js';
-import { postPage, listPage, staticPage, toolPage, fmtShort } from './templates.js';
+import { postPage, listPage, staticPage, toolPage, notFoundPage, fmtShort } from './templates.js';
 import { gpus, models, quants, lengths } from './gpu-data.js';
 import { figures } from './figures.js';
 import { buyBox, products } from './products.js';
@@ -748,6 +748,49 @@ ${urls
 </urlset>`
     )
   );
+
+  // ---- 404 ----
+  // GitHub Pages 는 루트의 404.html 을 없는 주소에 자동으로 내보냅니다.
+  // sitemap 에는 넣지 않습니다 — 404 상태로 응답되므로 색인 대상이 아닙니다.
+  written.push(await write('404.html', notFoundPage()));
+
+  // ---- RSS ----
+  // 개발자 독자층은 RSS 를 실제로 씁니다. 최신 20편이면 충분합니다 —
+  // 전체를 넣으면 구독 시점에 옛 글이 한꺼번에 '새 글'로 쏟아집니다.
+  // pubDate 는 RFC 822 형식이어야 합니다. updated 가 아니라 date 를 씁니다 —
+  // updated 로 잡으면 옛 글을 고칠 때마다 구독자에게 새 글로 다시 갑니다.
+  {
+    const escXml = (s) =>
+      String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const latest = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 20);
+    const items = latest
+      .map(
+        (p) => `  <item>
+    <title>${escXml(p.title)}</title>
+    <link>${base}${p.url}</link>
+    <guid isPermaLink="true">${base}${p.url}</guid>
+    <pubDate>${new Date(`${p.date}T00:00:00+09:00`).toUTCString()}</pubDate>
+    <description>${escXml(p.description)}</description>
+  </item>`
+      )
+      .join('\n');
+    written.push(
+      await write(
+        'feed.xml',
+        `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>${escXml(config.siteName)}</title>
+  <link>${base}/</link>
+  <description>${escXml(config.tagline)}</description>
+  <language>${config.lang}</language>
+${items}
+</channel>
+</rss>
+`
+      )
+    );
+  }
 
   // ---- robots.txt ----
   // robots.txt 는 '크롤링' 제어입니다. 색인을 막으려면 noindex 를 써야 합니다.

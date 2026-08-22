@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>스펙핏</title>
+  <link>https://specfit.kr/</link>
+  <description>내 조건에 맞는 스펙</description>
+  <language>ko</language>
+  <item>
+    <title>내 컴퓨터가 듀얼 채널인지 확인하는 법 — CPU-Z 표기 읽기</title>
+    <link>https://specfit.kr/posts/ram-dual-channel-check.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ram-dual-channel-check.html</guid>
+    <pubDate>Thu, 20 Aug 2026 15:00:00 GMT</pubDate>
+    <description>램을 두 장 꽂았다고 듀얼 채널이 되는 게 아닙니다. 지금 듀얼로 도는지 확인하는 세 가지 방법과, DDR5에서 CPU-Z 표기가 헷갈리는 이유, 아니었을 때 고치는 법을 정리했습니다.</description>
+  </item>
+  <item>
+    <title>Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용</title>
+    <link>https://specfit.kr/posts/ollama-context-length.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ollama-context-length.html</guid>
+    <pubDate>Thu, 20 Aug 2026 15:00:00 GMT</pubDate>
+    <description>긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.</description>
+  </item>
+  <item>
+    <title>중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다</title>
+    <link>https://specfit.kr/posts/used-laptop-dev.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/used-laptop-dev.html</guid>
+    <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
+    <description>중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.</description>
+  </item>
+  <item>
+    <title>중고 그래픽카드 살 때 — 채굴 이력은 못 밝힙니다</title>
+    <link>https://specfit.kr/posts/used-gpu-check.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/used-gpu-check.html</guid>
+    <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
+    <description>채굴 이력은 GPU-Z로도 확인이 안 됩니다. 밝힐 수 없는 것을 추리하는 대신, 그 자리에서 잴 수 있는 것 네 가지를 정리했습니다. VRAM, 부하 온도, 아티팩트, 보증.</description>
+  </item>
+  <item>
+    <title>램 XMP·EXPO — 안 켜면 산 속도가 안 나옵니다</title>
+    <link>https://specfit.kr/posts/ram-xmp-expo.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ram-xmp-expo.html</guid>
+    <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
+    <description>DDR5-6000을 사도 기본 설정으로는 4800으로 돕니다. 대역폭으로 20% 손해입니다. 어디서 체감되고 어디서는 상관없는지, 노트북은 왜 해당이 없는지 계산해서 갈랐습니다.</description>
+  </item>
+  <item>
+    <title>개발용 노트북 몇 인치 — 해상도가 높다고 넓지 않습니다</title>
+    <link>https://specfit.kr/posts/laptop-screen-size.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-screen-size.html</guid>
+    <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
+    <description>13.6인치 고해상도가 15.6인치 FHD보다 코드가 적게 보입니다. 배율 때문입니다. 크기·해상도·배율을 함께 계산해 실제 작업 영역과 코드 줄 수를 뽑았습니다.</description>
+  </item>
+  <item>
+    <title>개발용 외장 SSD — USB 규격이 상한을 정합니다</title>
+    <link>https://specfit.kr/posts/external-ssd-dev.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/external-ssd-dev.html</guid>
+    <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
+    <description>외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.</description>
+  </item>
+  <item>
+    <title>SSD 수명 TBW — 개발용으로 정말 걱정할 일인가</title>
+    <link>https://specfit.kr/posts/ssd-tbw-lifespan.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ssd-tbw-lifespan.html</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
+    <description>TBW를 하루 쓰기량으로 나눠보면 수십 년이 나옵니다. 개발에서 먼저 오는 건 수명이 아니라 보증 기간과 용량입니다. 계산식과 내 SSD 확인법을 정리했습니다.</description>
+  </item>
+  <item>
+    <title>RTX 5090 32GB — 개인용 상한선입니다</title>
+    <link>https://specfit.kr/posts/rtx5090-local-llm.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/rtx5090-local-llm.html</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
+    <description>32GB는 개인용 신품 그래픽카드의 천장입니다. 32B를 여유롭게 쓰는 유일한 선택지이고 70B는 여전히 안 됩니다. 575W라는 대가와 함께 정리했습니다.</description>
+  </item>
+  <item>
+    <title>그래픽카드 두 장 — VRAM이 합쳐지나요</title>
+    <link>https://specfit.kr/posts/multi-gpu-local-llm.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/multi-gpu-local-llm.html</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
+    <description>합쳐지지 않습니다. 나눠 올릴 수는 있지만 속도는 더해지지 않습니다. 8GB 두 장과 16GB 한 장이 왜 다른지, 두 장이 의미 있는 경우는 언제인지 정리했습니다.</description>
+  </item>
+  <item>
+    <title>모니터 암 — VESA만 맞으면 되는 게 아닙니다</title>
+    <link>https://specfit.kr/posts/monitor-arm-vesa.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-arm-vesa.html</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
+    <description>나사 구멍 간격이 맞아도 안 되는 경우가 세 가지 있습니다. 하중 하한, 책상 두께, 나사 길이입니다. 사기 전에 재야 하는 숫자를 정리했습니다.</description>
+  </item>
+  <item>
+    <title>로컬 LLM 전기요금 — 정말 공짜인가</title>
+    <link>https://specfit.kr/posts/local-llm-power-cost.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/local-llm-power-cost.html</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
+    <description>전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.</description>
+  </item>
+  <item>
+    <title>노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개</title>
+    <link>https://specfit.kr/posts/laptop-ram-upgrade.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-ram-upgrade.html</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
+    <description>슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.</description>
+  </item>
+  <item>
+    <title>노트북에 모니터 두 대 — 왜 한 대만 나오나</title>
+    <link>https://specfit.kr/posts/laptop-dual-monitor-output.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-dual-monitor-output.html</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
+    <description>포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.</description>
+  </item>
+  <item>
+    <title>그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</title>
+    <link>https://specfit.kr/posts/gpu-psu-wattage.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/gpu-psu-wattage.html</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
+    <description>카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.</description>
+  </item>
+  <item>
+    <title>AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다</title>
+    <link>https://specfit.kr/posts/amd-radeon-local-llm.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/amd-radeon-local-llm.html</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
+    <description>VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨어가 아니라 소프트웨어입니다. 어디서 막히는지, 이미 갖고 계신 경우와 새로 사는 경우를 갈랐습니다.</description>
+  </item>
+  <item>
+    <title>웹 개발용 노트북 사양 — 램 16GB로 되나</title>
+    <link>https://specfit.kr/posts/web-dev-laptop-spec.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/web-dev-laptop-spec.html</guid>
+    <pubDate>Sun, 16 Aug 2026 15:00:00 GMT</pubDate>
+    <description>웹 개발은 생각보다 요구가 낮습니다. 램을 먹는 건 프레임워크가 아니라 브라우저와 도커입니다. 어디서 16GB가 부족해지는지 갈라서 정리했습니다.</description>
+  </item>
+  <item>
+    <title>OLED 모니터 코딩 — 번인이 실제로 문제가 되는 조건</title>
+    <link>https://specfit.kr/posts/oled-monitor-coding.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/oled-monitor-coding.html</guid>
+    <pubDate>Sun, 16 Aug 2026 15:00:00 GMT</pubDate>
+    <description>코딩은 번인에 가장 불리한 사용 방식입니다. 같은 자리에 같은 화면이 하루 종일 켜져 있기 때문입니다. 구조를 설명하고 스펙으로 확인되는 것만 갈랐습니다.</description>
+  </item>
+  <item>
+    <title>노트북 모니터 원케이블 연결 — USB-C 하나로 되는 조건</title>
+    <link>https://specfit.kr/posts/monitor-usb-c-one-cable.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-usb-c-one-cable.html</guid>
+    <pubDate>Sun, 16 Aug 2026 15:00:00 GMT</pubDate>
+    <description>케이블 하나로 화면·충전·허브를 다 하려면 세 가지가 맞아야 합니다. 노트북 포트, 모니터가 주는 전력, 케이블. 어디서 막히는지 순서대로 정리했습니다.</description>
+  </item>
+  <item>
+    <title>27인치 5K vs 4K — 배율이 정수로 떨어진다는 것</title>
+    <link>https://specfit.kr/posts/monitor-5k-vs-4k-coding.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-5k-vs-4k-coding.html</guid>
+    <pubDate>Sun, 16 Aug 2026 15:00:00 GMT</pubDate>
+    <description>27인치 5K는 200% 배율에서 작업 영역이 정확히 QHD가 됩니다. 4K를 150%로 쓴 것과 넓이가 같고 선명도만 다릅니다. PPI와 배율을 계산해 갈랐습니다.</description>
+  </item>
+</channel>
+</rss>

@@ -69,6 +69,7 @@ export function layout({
 ${config.verification.naver ? `<meta name="naver-site-verification" content="${config.verification.naver}">` : ''}
 ${config.verification.google ? `<meta name="google-site-verification" content="${config.verification.google}">` : ''}
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="${escapeHtml(config.siteName)}" href="/feed.xml">
 <link rel="stylesheet" href="/assets/style.css">
 <script>${themeBoot}</script>
 ${
@@ -524,6 +525,34 @@ ${body}
 </article>`,
     scripts: `<script>window.SPECFIT_DATA=${JSON.stringify(data)}</script>
 <script type="module" src="/assets/vram.js"></script>`,
+  });
+}
+
+/**
+ * 404. GitHub Pages 가 없는 주소에 자동으로 내보내는 파일입니다.
+ *
+ * 이 사이트는 URL 을 바꾸지 않으므로(색인 보호), 여기 도착한 사람은
+ * 오타이거나 바깥의 잘못된 링크를 타고 온 것입니다. 사과문을 길게 쓰는 대신
+ * 갈 만한 곳을 바로 보여줍니다. 검색은 홈에 있으므로 홈으로 보냅니다.
+ */
+export function notFoundPage() {
+  return layout({
+    title: '페이지를 찾을 수 없습니다',
+    description: '주소에 해당하는 페이지가 없습니다.',
+    path: '/404.html',
+    body: `<article class="post page">
+  <h1>이 주소에는 페이지가 없습니다</h1>
+  <div class="post-body">
+    <p>주소를 다시 확인해 보세요. 이 사이트는 글 주소를 바꾸지 않으므로,
+    예전에 있던 글이 사라진 것은 아닙니다.</p>
+    <ul>
+      <li><a href="/">홈으로 — 전체 글 검색이 있습니다</a></li>
+      <li><a href="/tools/vram.html">VRAM 계산기</a></li>
+      <li><a href="/posts/local-llm-start-guide.html">로컬 LLM 시작 가이드</a></li>
+    </ul>
+  </div>
+</article>`,
+    bodyClass: 'is-page',
   });
 }
 
