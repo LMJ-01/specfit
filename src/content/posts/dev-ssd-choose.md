@@ -2,6 +2,7 @@
 title: 개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다
 description: PCIe 5.0은 Gen4의 두 배 속도지만 개발 작업에서는 체감이 거의 없습니다. 대신 DRAM 유무와 TLC/QLC가 실제로 갈리는 지점입니다.
 date: 2026-08-15
+updated: 2026-08-22
 category: memory
 tags: [SSD, NVMe, PCIe5, 개발용PC, 로컬LLM]
 affiliate: true
@@ -60,6 +61,8 @@ Gen5는 Gen4보다 열이 많이 납니다. **방열판이 사실상 필수**이
 노트북이라면 더 문제입니다. 공간이 좁아 방열판을 못 넣는 경우가 많습니다.
 
 **"Gen5인데 왜 안 빠르지"의 상당수가 발열 때문**입니다.
+방열판이 정말 필요한지, 내 SSD 온도를 직접 재서 판단하는 법은
+[NVMe 방열판 필요한가](/posts/nvme-heatsink.html)에 정리했습니다.
 
 ## 실제로 갈리는 것 — DRAM 유무
 

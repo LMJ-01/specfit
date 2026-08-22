@@ -2,6 +2,7 @@
 title: NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배
 description: M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생김새가 같은데 속도가 6배 차이나고, 슬롯이 안 받는 경우도 있습니다. 사기 전에 확인할 것을 정리했습니다.
 date: 2026-08-16
+updated: 2026-08-22
 category: memory
 tags: [NVMe, SATA, SSD, M.2, 개발용PC]
 affiliate: true
@@ -187,6 +188,8 @@ NVMe냐 SATA냐를 고민하기 전에, 아직 하드디스크를 쓰고 계시�
 
 Gen3·Gen4는 대개 문제없습니다. **Gen5는 방열판을 챙기세요.**
 메인보드에 기본 방열판이 붙어 있는 경우가 많으니 확인해 보세요.
+내 SSD가 실제로 스로틀링을 겪는지 재보는 법은
+[NVMe 방열판 필요한가](/posts/nvme-heatsink.html)에 있습니다.
 
 ## 정리
 
