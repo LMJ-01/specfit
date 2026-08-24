@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로</title>
+    <link>https://specfit.kr/posts/monitor-kvm.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-kvm.html</guid>
+    <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
+    <description>재택하면 책상에 컴퓨터가 두 대가 됩니다. 모니터에 KVM 기능이 있으면 키보드·마우스 한 세트로 전환하며 씁니다. 어떤 스펙을 확인해야 하는지, 별도 KVM 스위치와는 언제 갈리는지 정리했습니다.</description>
+  </item>
+  <item>
     <title>그래픽카드 처짐(새그) — 지지대가 필요한 경우와 아닌 경우</title>
     <link>https://specfit.kr/posts/gpu-sag-support.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-sag-support.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/local-llm-power-cost.html</guid>
     <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
     <description>전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개</title>
-    <link>https://specfit.kr/posts/laptop-ram-upgrade.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/laptop-ram-upgrade.html</guid>
-    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
-    <description>슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.</description>
   </item>
 </channel>
 </rss>
