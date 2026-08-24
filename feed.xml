@@ -13,6 +13,13 @@
     <description>요즘 상급 카드는 무거워서 끝이 처집니다. 어느 정도면 정상이고 언제 지지대가 필요한지, 수직 장착이 왜 완전한 해법이 아닌지 정리했습니다. 성능은 떨어지지 않습니다 — 문제는 다른 곳에 있습니다.</description>
   </item>
   <item>
+    <title>노트북에 eGPU — 게임엔 아쉽지만 로컬 LLM엔 잘 맞는 이유</title>
+    <link>https://specfit.kr/posts/egpu-local-llm.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/egpu-local-llm.html</guid>
+    <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
+    <description>외장 그래픽 박스는 대역폭 병목 때문에 게임에서 손해를 봅니다. 그런데 로컬 LLM 추론은 구조가 달라 그 병목을 거의 안 탑니다. 왜 그런지, 무엇을 확인해야 하는지 정리했습니다.</description>
+  </item>
+  <item>
     <title>파워 80PLUS 등급 — 골드에 웃돈 낼 가치가 있는 경우</title>
     <link>https://specfit.kr/posts/psu-80plus.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/psu-80plus.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-ram-upgrade.html</guid>
     <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
     <description>슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.</description>
-  </item>
-  <item>
-    <title>노트북에 모니터 두 대 — 왜 한 대만 나오나</title>
-    <link>https://specfit.kr/posts/laptop-dual-monitor-output.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/laptop-dual-monitor-output.html</guid>
-    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
-    <description>포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
