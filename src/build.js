@@ -792,6 +792,13 @@ ${items}
     );
   }
 
+  // ---- IndexNow 키 파일 ----
+  // 빙·네이버가 ping 을 받은 뒤 이 파일을 읽어 사이트 주인임을 확인합니다.
+  // 파일 내용 = 키 그 자체. ping 은 배포 후 `npm run ping` 으로 보냅니다.
+  if (config.indexNowKey) {
+    written.push(await write(`${config.indexNowKey}.txt`, config.indexNowKey + '\n'));
+  }
+
   // ---- robots.txt ----
   // robots.txt 는 '크롤링' 제어입니다. 색인을 막으려면 noindex 를 써야 합니다.
   written.push(

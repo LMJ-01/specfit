@@ -72,6 +72,11 @@ export const config = {
     slotInArticle: '',
   },
 
+  // IndexNow 인증 키. 빌드가 루트에 `<key>.txt` 를 만들고,
+  // scripts 의 ping-indexnow 가 이 키로 빙·네이버(둘 다 IndexNow 참여사)에
+  // 새·수정 URL 을 알립니다. ⚠️ 키를 바꾸면 옛 키 파일을 지우고 재배포하세요.
+  indexNowKey: 'd805803cc14525c2c7661902c9ddd822',
+
   // 쿠팡 파트너스 '검색 위젯'. **홈 맨 아래에만** 들어갑니다.
   //
   // 상품 위젯(products.js·gpu-data.js)과 다른 물건입니다.

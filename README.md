@@ -45,7 +45,7 @@ assets/
   style.css, search.js
 ```
 
-루트의 `.html`, `sitemap.xml`, `robots.txt`, `feed.xml`, `404.html` 은 **생성물**입니다. 직접 고치지 마세요.
+루트의 `.html`, `sitemap.xml`, `robots.txt`, `feed.xml`, `404.html`, `<키>.txt`(IndexNow) 는 **생성물**입니다. 직접 고치지 마세요.
 
 ## 글 쓰는 법
 
@@ -223,6 +223,7 @@ affiliate: false       # 쿠팡 링크를 본문에 넣으면 true
 | sitemap.xml | 글 추가 시 자동 갱신 |
 | feed.xml | RSS — 최신 20편. pubDate 는 `date` 기준 (`updated` 로 잡으면 글을 고칠 때마다 구독자에게 새 글로 감) |
 | 404.html | GitHub Pages 가 없는 주소에 자동 사용. sitemap 미포함 |
+| IndexNow | 키 파일 자동 생성 + `npm run ping` 으로 빙·네이버에 새·수정 URL 알림. **배포(main 푸시) 후에** 실행 — 마지막 커밋의 바뀐 HTML 을 자동 감지. 구글은 미참여라 기존대로 Search Console |
 | 관련 글 | 같은 카테고리에서 자동 연결 |
 | 계산기 JS | **계산기를 쓰는 페이지에만** 로드 (INP 보호) |
 
