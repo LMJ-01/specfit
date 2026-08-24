@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>그래픽카드 처짐(새그) — 지지대가 필요한 경우와 아닌 경우</title>
+    <link>https://specfit.kr/posts/gpu-sag-support.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/gpu-sag-support.html</guid>
+    <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
+    <description>요즘 상급 카드는 무거워서 끝이 처집니다. 어느 정도면 정상이고 언제 지지대가 필요한지, 수직 장착이 왜 완전한 해법이 아닌지 정리했습니다. 성능은 떨어지지 않습니다 — 문제는 다른 곳에 있습니다.</description>
+  </item>
+  <item>
     <title>파워 80PLUS 등급 — 골드에 웃돈 낼 가치가 있는 경우</title>
     <link>https://specfit.kr/posts/psu-80plus.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/psu-80plus.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-dual-monitor-output.html</guid>
     <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
     <description>포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</title>
-    <link>https://specfit.kr/posts/gpu-psu-wattage.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/gpu-psu-wattage.html</guid>
-    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
-    <description>카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.</description>
   </item>
 </channel>
 </rss>
