@@ -2,6 +2,7 @@
 title: 노트북에 모니터 두 대 — 왜 한 대만 나오나
 description: 포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.
 date: 2026-08-18
+updated: 2026-08-24
 category: monitor
 tags: [듀얼모니터, 도킹스테이션, MST, DisplayLink, 노트북]
 affiliate: true
@@ -156,7 +157,8 @@ DisplayPort 에만 있고 조건이 몇 개 붙습니다:
 ### 두 번째 화면을 새로 살 거면
 
 **해상도와 배율을 첫 대와 맞추는 편이 낫습니다.** 다르면 창을 옮길 때마다 크기가 튑니다 —
-[듀얼 모니터 vs 큰 모니터 한 대](/posts/dual-monitor-vs-single.html)에 적었습니다.
+왜 그런지, 이미 섞였을 때 어떻게 하는지는
+[해상도 다른 모니터 두 대](/posts/monitor-mixed-resolution.html)에 정리했습니다.
 
 {{BUY:monitor}}
 

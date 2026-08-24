@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>해상도 다른 모니터 두 대 — 커서가 걸리고 창이 튀는 이유 | 스펙핏</title>
+<meta name="description" content="섞어 쓰면 세 가지가 생깁니다. 경계에서 커서가 걸리고, 창을 옮기면 크기가 튀거나 흐려지고, 글자 크기가 안 맞습니다. 각각의 원리와 대처, 무난한 조합을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/monitor-mixed-resolution.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="해상도 다른 모니터 두 대 — 커서가 걸리고 창이 튀는 이유 | 스펙핏">
+<meta property="og:description" content="섞어 쓰면 세 가지가 생깁니다. 경계에서 커서가 걸리고, 창을 옮기면 크기가 튀거나 흐려지고, 글자 크기가 안 맞습니다. 각각의 원리와 대처, 무난한 조합을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/monitor-mixed-resolution.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"해상도 다른 모니터 두 대 — 커서가 걸리고 창이 튀는 이유","description":"섞어 쓰면 세 가지가 생깁니다. 경계에서 커서가 걸리고, 창을 옮기면 크기가 튀거나 흐려지고, 글자 크기가 안 맞습니다. 각각의 원리와 대처, 무난한 조합을 정리했습니다.","datePublished":"2026-08-24","dateModified":"2026-08-24","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/monitor-mixed-resolution.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"해상도 다른 모니터 두 대 — 커서가 걸리고 창이 튀는 이유","item":"https://specfit.kr/posts/monitor-mixed-resolution.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"노트북 화면과 외부 모니터, 배율을 어떻게 두는 게 낫나요","acceptedAnswer":{"@type":"Answer","text":"외부 모니터를 주 화면으로 쓰고 각자 편한 배율로 두는 것이 현실적입니다. 혼용 증상(튐·흐림)은 창을 두 화면 사이로 옮길 때만 생기므로, 역할을 나눠 창을 고정해 두면(코드는 외부, 메신저는 노트북) 체감이 거의 없습니다."}},{"@type":"Question","name":"커서 걸림을 프로그램으로 풀 수 있다던데요","acceptedAnswer":{"@type":"Answer","text":"경계를 보정해 주는 서드파티 도구들이 있습니다. 동작하지만, 배치 정렬로 충분한 경우가 대부분이라 먼저 정렬부터 해보시길 권합니다. 도구는 OS 업데이트에 따라 동작이 바뀌기도 합니다."}},{"@type":"Question","name":"맥은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"배치·정렬 개념은 같아서 커서 경계 문제도 같습니다. 배율 처리 방식은 윈도우와 달라서(정수 배율로 그린 뒤 축소) 혼용 시 흐림의 양상이 다릅니다 — 어느 쪽이 낫다고 단정하기는 어렵고, 조합을 맞추는 게 답인 것은 같습니다."}},{"@type":"Question","name":"게임할 때도 문제가 되나요","acceptedAnswer":{"@type":"Answer","text":"전체 화면 게임은 한 화면에서만 돌므로 혼용 문제가 없습니다. 다만 게임 중 커서가 옆 화면으로 새는 건 별개 문제이고, 게임 쪽 설정(커서 가두기)으로 잡는 영역입니다."}},{"@type":"Question","name":"해상도가 다르면 성능(GPU)에도 부담인가요","acceptedAnswer":{"@type":"Answer","text":"두 화면을 그리는 부담 자체는 해상도 합에 비례하지만, 코딩·문서 작업 수준에서는 체감할 정도가 아닙니다. 로컬 LLM 의 VRAM 과도 무관합니다 — 화면 출력은 VRAM 을 거의 쓰지 않습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>해상도 다른 모니터 두 대 — 커서가 걸리고 창이 튀는 이유</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-24">2026년 8월 24일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>노트북에 모니터를 물리거나, 쓰던 모니터에 한 대를 더하면
+대부분 <strong>해상도가 다른 두 화면</strong>을 쓰게 됩니다.</p>
+<p>그러면 세 가지 증상이 생깁니다. 고장이 아니라 전부 이유가 있는
+동작이라, 원리를 알면 절반은 해결됩니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>증상</th><th>원인</th><th>대처</th></tr></thead>
+<tbody>
+<tr><td>경계에서 <strong>커서가 걸립니다</strong></td><td>두 화면을 픽셀 좌표로 이어 붙여서</td><td>디스플레이 설정에서 <strong>배치 정렬</strong></td></tr>
+<tr><td>창을 옮기면 <strong>크기가 튀거나 흐려집니다</strong></td><td>배율(스케일)이 서로 달라서</td><td>배율을 맞출 수 있는 조합인지 확인</td></tr>
+<tr><td>같은 창인데 <strong>글자 크기가 다릅니다</strong></td><td>픽셀 밀도(PPI)가 달라서</td><td>완전 해결은 안 됩니다 — 무난한 조합 참조</td></tr>
+</tbody>
+</table></div>
+<h2 id="1-커서가-경계에서-걸리는-이유">1. 커서가 경계에서 걸리는 이유</h2>
+<p>윈도우는 두 화면을 <strong>픽셀 좌표로 한 장처럼 이어 붙입니다.</strong>
+물리적 크기가 아니라 픽셀 수 기준입니다.</p>
+<pre><code>QHD(세로 1440)  옆에  FHD(세로 1080) 를 상단 기준으로 붙이면:
+
+  ┌────────────┬────────┐
+  │            │  FHD   │   ← 위쪽 1080px 구간은 서로 통함
+  │    QHD     ├────────┘
+  │            │ ✕          ← 아래 360px 구간은 옆이 '없는 공간' = 벽
+  └────────────┘</code></pre>
+<p>아래쪽 360픽셀 구간에서 커서를 오른쪽으로 밀면 <strong>벽에 막힙니다.</strong>
+모니터가 실제로는 높이가 비슷하게 놓여 있어도, 윈도우가 아는 건
+픽셀뿐이라서 생기는 일입니다.</p>
+<p><strong>대처</strong> — 디스플레이 설정(바탕화면 우클릭)에서 모니터 그림을 끌어
+배치를 조정합니다. <strong>가운데 정렬로 두면 걸리는 구간이 위아래로 나뉘어
+체감이 줄고</strong>, 자주 오가는 높이(대개 화면 중앙)가 뚫립니다.
+실제 책상 위 배치와 그림을 맞추는 것도 같은 화면에서 합니다 —
+커서가 반대쪽으로 나간다면 그림의 좌우가 실물과 뒤집혀 있는 것입니다.</p>
+<h2 id="2-창이-튀거나-흐려지는-이유-배율-혼용">2. 창이 튀거나 흐려지는 이유 — 배율 혼용</h2>
+<p>두 화면의 <strong>배율(스케일)이 다르면</strong> 창을 옮길 때마다 창이 다시
+그려집니다. 이때 두 가지가 생깁니다.</p>
+<ul>
+<li><strong>크기 튐</strong> — 100% 화면에서 150% 화면으로 넘어가는 순간 창이
+훌쩍 커 보이거나 작아 보입니다. 정상 동작입니다</li>
+<li><strong>흐림</strong> — 배율 인식을 못 하는 오래된 프로그램은 OS 가 그림을
+통째로 확대해서 보여줍니다. 글자 테두리가 뭉개지는 게 이것입니다
+(대개 최신 프로그램은 괜찮습니다)</li>
+</ul>
+<p><strong>이 문제의 답은 조합 단계에 있습니다.</strong> 배율을 통일할 수 있는
+조합이면 증상 자체가 없습니다:</p>
+<pre><code>QHD 100%  +  FHD 100%   →  배율 같음. 튐·흐림 없음 (커서 벽만 남음)
+4K 150%   +  FHD 100%   →  배율 혼용. 튐·흐림이 상시 발생</code></pre>
+<p><strong>노트북 + 외부 모니터가 바로 두 번째 경우입니다.</strong> 노트북 내장
+화면은 대개 125~150% 배율이라, 외부 모니터(100%)와 거의 항상
+혼용이 됩니다. 노트북을 덮고 외부 모니터만 쓰면 이 문제가 사라지는
+이유이기도 합니다.</p>
+<h2 id="3-글자-크기가-안-맞는-이유-ppi">3. 글자 크기가 안 맞는 이유 — PPI</h2>
+<p>배율이 같아도 <strong>픽셀 밀도(PPI)가 다르면 같은 글자가 다른 크기로
+보입니다.</strong> 27&quot; QHD(109 PPI) 옆의 24&quot; FHD(92 PPI)는 같은 100%라도
+FHD 쪽 글자가 눈에 띄게 큽니다.</p>
+<p>이건 설정으로 완전히는 안 잡힙니다 — 배율은 25% 단위라 딱 맞출 수
+없기 때문입니다. <strong>밀도가 비슷한 조합을 고르는 게 유일한 해법</strong>이고,
+PPI 는 계산으로 나옵니다:
+<a href="/posts/coding-monitor-resolution.html">코딩용 모니터 조합 고르기</a>에
+조합별 표가 있습니다.</p>
+<h2 id="무난한-조합-좋은-순서대로">무난한 조합 — 좋은 순서대로</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>조합</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td><strong>같은 모델 두 대</strong></td><td>모든 문제 없음. 가능하면 이쪽</td></tr>
+<tr><td>같은 해상도, 다른 크기 (27+24 QHD)</td><td>배율 통일 가능. 글자 크기만 조금 다름</td></tr>
+<tr><td><strong>가로 + 세로(피벗) 같은 해상도</strong></td><td>코딩 특화 — 세로 코드 + 가로 자료. 경계는 좁아지지만 배율은 통일됨</td></tr>
+<tr><td>다른 해상도, 배율은 100% 통일 (QHD+FHD)</td><td>커서 벽만 남음 — 정렬로 완화</td></tr>
+<tr><td><strong>고배율 + 100% 혼용 (4K 150%+FHD)</strong></td><td>튐·흐림 상시. 피할 수 있으면 피하세요</td></tr>
+</tbody>
+</table></div>
+<h3 id="짝을-맞춘다면">짝을 맞춘다면</h3>
+<p>기존 모니터에 한 대를 더하는 상황이면 <strong>해상도부터 맞추는 게</strong>
+증상 대부분을 없앱니다. 세로로 세울 수 있는 24&quot; QHD 는 위 표의
+피벗 조합까지 열어줍니다 — 세로 활용법은
+<a href="/posts/vertical-monitor-coding.html">세로 모니터 코딩</a>에 있습니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gmzPp1spzw" target="_blank" rel="sponsored nofollow noopener">24인치 QHD 피벗 모니터 보기</a>
+  <span class="buy-note">스탠드가 피벗을 지원해 모니터암 없이 세로로 세울 수 있습니다</span>
+</aside>
+<div class="coupang-widget" style="min-height:240px"><iframe src="https://coupa.ng/coTABC" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe></div>
+<p>애초에 <strong>듀얼이 맞는지부터</strong> 갈리는 문제라면
+<a href="/posts/dual-monitor-vs-single.html">듀얼 vs 큰 모니터 한 대</a>가 먼저입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="노트북-화면과-외부-모니터-배율을-어떻게-두는-게-낫나요">노트북 화면과 외부 모니터, 배율을 어떻게 두는 게 낫나요</h3>
+<p>외부 모니터를 주 화면으로 쓰고 <strong>각자 편한 배율로 두는 것</strong>이
+현실적입니다. 혼용 증상(튐·흐림)은 창을 두 화면 사이로 옮길 때만
+생기므로, <strong>역할을 나눠 창을 고정해 두면</strong>(코드는 외부, 메신저는
+노트북) 체감이 거의 없습니다.</p>
+<h3 id="커서-걸림을-프로그램으로-풀-수-있다던데요">커서 걸림을 프로그램으로 풀 수 있다던데요</h3>
+<p>경계를 보정해 주는 서드파티 도구들이 있습니다. 동작하지만,
+<strong>배치 정렬로 충분한 경우가 대부분</strong>이라 먼저 정렬부터 해보시길
+권합니다. 도구는 OS 업데이트에 따라 동작이 바뀌기도 합니다.</p>
+<h3 id="맥은-어떤가요">맥은 어떤가요</h3>
+<p>배치·정렬 개념은 같아서 커서 경계 문제도 같습니다.
+배율 처리 방식은 윈도우와 달라서(정수 배율로 그린 뒤 축소)
+혼용 시 흐림의 양상이 다릅니다 — 어느 쪽이 낫다고 단정하기는
+어렵고, 조합을 맞추는 게 답인 것은 같습니다.</p>
+<h3 id="게임할-때도-문제가-되나요">게임할 때도 문제가 되나요</h3>
+<p>전체 화면 게임은 한 화면에서만 돌므로 혼용 문제가 없습니다.
+다만 게임 중 커서가 옆 화면으로 새는 건 별개 문제이고,
+게임 쪽 설정(커서 가두기)으로 잡는 영역입니다.</p>
+<h3 id="해상도가-다르면-성능gpu에도-부담인가요">해상도가 다르면 성능(GPU)에도 부담인가요</h3>
+<p>두 화면을 그리는 부담 자체는 해상도 합에 비례하지만, 코딩·문서
+작업 수준에서는 체감할 정도가 아닙니다. 로컬 LLM 의 VRAM 과도
+무관합니다 — 화면 출력은 VRAM 을 거의 쓰지 않습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>커서가 걸리는 건 <strong>픽셀 좌표로 이어 붙이기 때문</strong>입니다 —
+배치를 가운데 정렬로 조정하세요</li>
+<li>창이 튀고 흐려지는 건 <strong>배율 혼용</strong> 때문입니다 — 배율을 통일할
+수 있는 조합(같은 해상도)이면 증상이 없습니다</li>
+<li><strong>노트북 + 외부 모니터는 거의 항상 배율 혼용</strong>입니다 —
+역할을 나눠 창을 고정하면 체감이 줄어듭니다</li>
+<li>글자 크기 차이는 <strong>PPI 차이</strong>라 설정으로 완전히 안 잡힙니다 —
+밀도가 비슷한 조합을 고르세요</li>
+<li>한 대를 더한다면 <strong>해상도부터 맞추는 것</strong>이 증상 대부분을 없앱니다</li>
+</ol>
+<p>연결 쪽이 문제라면(화면이 아예 안 나옴·충전 안 됨)
+<a href="/posts/monitor-usb-c-one-cable.html">원케이블 연결 조건</a>과
+<a href="/posts/laptop-dual-monitor-output.html">노트북에 모니터 두 대</a>를 보세요.</p>
+<p>동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">듀얼모니터</span> <span class="tag">해상도</span> <span class="tag">배율</span> <span class="tag">DPI</span> <span class="tag">멀티모니터</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/laptop-dual-monitor-output.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">노트북에 모니터 두 대 — 왜 한 대만 나오나</span>
+        <span class="card-desc">포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-arm-vesa.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">모니터 암 — VESA만 맞으면 되는 게 아닙니다</span>
+        <span class="card-desc">나사 구멍 간격이 맞아도 안 되는 경우가 세 가지 있습니다. 하중 하한, 책상 두께, 나사 길이입니다. 사기 전에 재야 하는 숫자를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dp-vs-hdmi-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">DP와 HDMI — 코딩용 모니터에 뭘 꽂아야 하나</span>
+        <span class="card-desc">코딩은 60Hz면 되기 때문에 대부분 아무 단자나 됩니다. 막히는 건 4K부터입니다. 필요한 대역폭을 직접 계산해서 어디서 걸리는지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
