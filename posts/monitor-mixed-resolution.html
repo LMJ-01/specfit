@@ -90,14 +90,33 @@
 <h2 id="1-커서가-경계에서-걸리는-이유">1. 커서가 경계에서 걸리는 이유</h2>
 <p>윈도우는 두 화면을 <strong>픽셀 좌표로 한 장처럼 이어 붙입니다.</strong>
 물리적 크기가 아니라 픽셀 수 기준입니다.</p>
-<pre><code>QHD(세로 1440)  옆에  FHD(세로 1080) 를 상단 기준으로 붙이면:
+<figure class="fig">
+<svg viewBox="0 0 640 267.6" width="640" height="267.6" role="img" aria-label="세로 픽셀이 다른 두 화면을 상단 정렬로 붙이면 아래쪽 차이 구간에서 커서가 막힌다">
+<title>세로 픽셀이 다른 두 화면을 상단 정렬로 붙이면 아래쪽 차이 구간에서 커서가 막힌다</title>
 
-  ┌────────────┬────────┐
-  │            │  FHD   │   ← 위쪽 1080px 구간은 서로 통함
-  │    QHD     ├────────┘
-  │            │ ✕          ← 아래 360px 구간은 옆이 '없는 공간' = 벽
-  └────────────┘</code></pre>
-<p>아래쪽 360픽셀 구간에서 커서를 오른쪽으로 밀면 <strong>벽에 막힙니다.</strong>
+<text x="60" y="24" fill="var(--fg)" font-size="14" font-weight="600">윈도우가 보는 두 화면 (픽셀 기준, 상단 정렬)</text>
+
+<rect x="60" y="40" width="200" height="165.6" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/>
+<rect x="264" y="40" width="150" height="124.2" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/>
+<text x="160" y="122.8" fill="var(--fg)" font-size="13" font-weight="600" text-anchor="middle">QHD</text>
+<text x="160" y="140.8" fill="var(--fg-muted)" font-size="11" text-anchor="middle">세로 1440</text>
+<text x="339" y="102.1" fill="var(--fg)" font-size="13" font-weight="600" text-anchor="middle">FHD</text>
+<text x="339" y="120.1" fill="var(--fg-muted)" font-size="11" text-anchor="middle">세로 1080</text>
+
+<line x1="230" y1="80" x2="290" y2="80" stroke="var(--fig-fit)" stroke-width="2"/>
+<text x="296" y="84" fill="var(--fig-fit)" font-size="12" font-weight="600">← 여기는 통과</text>
+
+<rect x="260" y="164.2" width="4" height="41.39999999999999" fill="var(--fig-over)" rx="0"/>
+<line x1="230" y1="184.89999999999998" x2="254" y2="184.89999999999998" stroke="var(--fig-over)" stroke-width="2"/>
+<text x="272" y="188.89999999999998" fill="var(--fig-over)" font-size="12" font-weight="600">← 이 구간은 벽 — 옆이 "없는 공간"입니다</text>
+
+<text x="60" y="233.6" fill="var(--fg)" font-size="13" font-weight="600">아래쪽 360픽셀 구간에서는 커서가 오른쪽으로 못 넘어갑니다.</text>
+<text x="60" y="253.6" fill="var(--fg-muted)" font-size="12">배치를 가운데 정렬로 바꾸면 벽이 위아래로 나뉘어 체감이 줄어듭니다.</text>
+</svg>
+<figcaption>윈도우는 물리 크기가 아니라 픽셀 수로 화면을 이어 붙입니다. 겹치지 않는 구간이 곧 벽입니다.</figcaption>
+</figure>
+<p>QHD(세로 1440) 옆에 FHD(세로 1080)를 상단 기준으로 붙이면,
+아래쪽 360픽셀 구간에서 커서를 오른쪽으로 밀 때 <strong>벽에 막힙니다.</strong>
 모니터가 실제로는 높이가 비슷하게 놓여 있어도, 윈도우가 아는 건
 픽셀뿐이라서 생기는 일입니다.</p>
 <p><strong>대처</strong> — 디스플레이 설정(바탕화면 우클릭)에서 모니터 그림을 끌어

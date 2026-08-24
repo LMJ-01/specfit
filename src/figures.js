@@ -581,6 +581,51 @@ ${t(x0, 168, '그래서 "모델이 앞부분을 까먹는" 증상으로 보입�
   );
 }
 
+/**
+ * 해상도 다른 두 모니터 — 픽셀 좌표로 이어 붙여서 커서가 걸리는 구간이 생긴다.
+ * monitor-mixed-resolution 의 핵심 개념. 물리 배치가 아니라 픽셀 기준이라는
+ * 것을 두 사각형의 높이 차로 보여줍니다.
+ */
+function mixedResCursor() {
+  const W = 640;
+  const scale = 0.115; // 픽셀 → 화면 좌표
+  const qhdH = 1440 * scale; // 165.6
+  const fhdH = 1080 * scale; // 124.2
+  const qhdW = 200;
+  const fhdW = 150;
+  const x0 = 60;
+  const top = 40;
+  const gapY = top + fhdH; // FHD 아래 = 벽 시작
+
+  const body = `
+${t(x0, 24, '윈도우가 보는 두 화면 (픽셀 기준, 상단 정렬)', { weight: 600, size: 14 })}
+
+${rect(x0, top, qhdW, qhdH, COLOR.soft, { stroke: COLOR.line })}
+${rect(x0 + qhdW + 4, top, fhdW, fhdH, COLOR.soft, { stroke: COLOR.line })}
+${t(x0 + qhdW / 2, top + qhdH / 2, 'QHD', { anchor: 'middle', weight: 600 })}
+${t(x0 + qhdW / 2, top + qhdH / 2 + 18, '세로 1440', { anchor: 'middle', fill: COLOR.mute, size: 11 })}
+${t(x0 + qhdW + 4 + fhdW / 2, top + fhdH / 2, 'FHD', { anchor: 'middle', weight: 600 })}
+${t(x0 + qhdW + 4 + fhdW / 2, top + fhdH / 2 + 18, '세로 1080', { anchor: 'middle', fill: COLOR.mute, size: 11 })}
+
+<line x1="${x0 + qhdW - 30}" y1="${top + 40}" x2="${x0 + qhdW + 30}" y2="${top + 40}" stroke="${COLOR.fit}" stroke-width="2"/>
+${t(x0 + qhdW + 36, top + 44, '← 여기는 통과', { fill: COLOR.fit, size: 12, weight: 600 })}
+
+${rect(x0 + qhdW, gapY, 4, qhdH - fhdH, COLOR.over, { r: 0 })}
+<line x1="${x0 + qhdW - 30}" y1="${gapY + (qhdH - fhdH) / 2}" x2="${x0 + qhdW - 6}" y2="${gapY + (qhdH - fhdH) / 2}" stroke="${COLOR.over}" stroke-width="2"/>
+${t(x0 + qhdW + 12, gapY + (qhdH - fhdH) / 2 + 4, '← 이 구간은 벽 — 옆이 "없는 공간"입니다', { fill: COLOR.over, size: 12, weight: 600 })}
+
+${t(x0, top + qhdH + 28, '아래쪽 360픽셀 구간에서는 커서가 오른쪽으로 못 넘어갑니다.', { weight: 600 })}
+${t(x0, top + qhdH + 48, '배치를 가운데 정렬로 바꾸면 벽이 위아래로 나뉘어 체감이 줄어듭니다.', { fill: COLOR.mute, size: 12 })}`;
+
+  return figure(
+    '세로 픽셀이 다른 두 화면을 상단 정렬로 붙이면 아래쪽 차이 구간에서 커서가 막힌다',
+    W,
+    top + qhdH + 62,
+    body,
+    '윈도우는 물리 크기가 아니라 픽셀 수로 화면을 이어 붙입니다. 겹치지 않는 구간이 곧 벽입니다.'
+  );
+}
+
 export const figures = {
   'vram-overflow': vramOverflow,
   'memory-parts': memoryParts,
@@ -594,4 +639,5 @@ export const figures = {
   'pixel-scaling': pixelScaling,
   'dual-channel-slots': dualChannelSlots,
   'ctx-truncate': ctxTruncate,
+  'mixed-res-cursor': mixedResCursor,
 };
