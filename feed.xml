@@ -27,6 +27,13 @@
     <description>외장 그래픽 박스는 대역폭 병목 때문에 게임에서 손해를 봅니다. 그런데 로컬 LLM 추론은 구조가 달라 그 병목을 거의 안 탑니다. 왜 그런지, 무엇을 확인해야 하는지 정리했습니다.</description>
   </item>
   <item>
+    <title>개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다</title>
+    <link>https://specfit.kr/posts/desktop-ups.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/desktop-ups.html</guid>
+    <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
+    <description>정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>파워 80PLUS 등급 — 골드에 웃돈 낼 가치가 있는 경우</title>
     <link>https://specfit.kr/posts/psu-80plus.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/psu-80plus.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-arm-vesa.html</guid>
     <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
     <description>나사 구멍 간격이 맞아도 안 되는 경우가 세 가지 있습니다. 하중 하한, 책상 두께, 나사 길이입니다. 사기 전에 재야 하는 숫자를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>로컬 LLM 전기요금 — 정말 공짜인가</title>
-    <link>https://specfit.kr/posts/local-llm-power-cost.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/local-llm-power-cost.html</guid>
-    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
-    <description>전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

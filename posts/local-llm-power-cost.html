@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 전기요금 — 정말 공짜인가","description":"전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-power-cost.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"로컬 LLM 전기요금 — 정말 공짜인가","description":"전기요금만 든다고들 합니다. 얼마인지 계산했습니다. 누진 구간에 걸리면 이야기가 달라지고, 24시간 켜두면 특히 그렇습니다. 계산식과 확인처를 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-08-25","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-power-cost.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"로컬 LLM 전기요금 — 정말 공짜인가","item":"https://specfit.kr/posts/local-llm-power-cost.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"대기 중에도 전기를 먹나요","acceptedAnswer":{"@type":"Answer","text":"모델이 메모리에 올라가 있으면 완전히 쉬지 못합니다. 다만 계산 중일 때와는 차이가 큽니다. 오래 안 쓰실 거면 내려두세요."}},{"@type":"Question","name":"CPU 로 돌리면 전기를 덜 쓰나요","acceptedAnswer":{"@type":"Answer","text":"소비 전력은 낮습니다. 다만 훨씬 오래 걸립니다. 같은 답을 얻는 데 드는 총 전력은 오히려 비슷하거나 더 많을 수 있습니다. CPU 추론이 왜 느린지는 따로 정리했습니다."}},{"@type":"Question","name":"노트북은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"소비 전력이 훨씬 낮아 전기요금은 문제가 안 됩니다. 대신 배터리로는 오래 못 갑니다 — 개발용 노트북 배터리에 계산해 뒀습니다."}},{"@type":"Question","name":"맥은요","acceptedAnswer":{"@type":"Answer","text":"애플 실리콘은 전력 대비 효율이 좋은 편이라 이 항목에서 유리합니다. 용량과 속도의 성격은 다르므로 맥 통합메모리 글을 함께 보세요."}},{"@type":"Question","name":"전기요금이 얼마인지 정확히 알고 싶습니다","acceptedAnswer":{"@type":"Answer","text":"한전 사이버지점에서 우리 집의 최근 사용량과 요금을 볼 수 있습니다. 거기에 위 계산으로 나온 kWh 를 더해 보시면 구간이 바뀌는지 알 수 있습니다."}},{"@type":"Question","name":"파워서플라이 용량은요","acceptedAnswer":{"@type":"Answer","text":"TDP 에 나머지 부품과 여유를 더해 잡습니다. 카드를 두 장 꽂으면 계산이 또 달라집니다 — 그래픽카드 두 장에 적었습니다."}}]}</script>
 </head>
@@ -64,7 +64,7 @@
     <h1>로컬 LLM 전기요금 — 정말 공짜인가</h1>
     <p class="post-meta">
       <time datetime="2026-08-18">2026년 8월 18일</time>
-      
+      <span class="updated">· 2026년 8월 25일 갱신</span>
     </p>
   </header>
 
@@ -154,6 +154,9 @@
 <p>⚠️ 실제로는 24시간 내내 계산하는 게 아니라 <strong>요청이 있을 때만</strong> 돌아갑니다.
 대기 중에는 훨씬 적게 씁니다. 그래도 <strong>켜두는 것만으로 드는 몫이 있고</strong>,
 위 숫자는 그 상한을 보여줍니다.</p>
+<p>상시 구성이라면 전기요금 말고 확인할 것이 둘 더 있습니다 —
+효율 등급(<a href="/posts/psu-80plus.html">80PLUS</a> — 상시 가동에서 웃돈이 회수됩니다)과
+정전 대비(<a href="/posts/desktop-ups.html">UPS</a> — 자리 비운 컴퓨터의 보험입니다).</p>
 <p><strong>24시간 구성을 생각하신다면 소비 전력이 낮은 카드가 유리합니다.</strong>
 같은 VRAM 이면 TDP 를 보세요 — 예를 들어 16GB 구간에서
 <a href="/posts/rtx5070ti-vs-5080.html">5060 Ti(180W)와 5080(360W)은 돌아가는 모델이 같습니다</a>.</p>
@@ -325,6 +328,13 @@
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/desktop-ups.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다</span>
+        <span class="card-desc">정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/egpu-local-llm.html">
         <span class="card-cat">GPU</span>
         <span class="card-title">노트북에 eGPU — 게임엔 아쉽지만 로컬 LLM엔 잘 맞는 이유</span>
@@ -336,13 +346,6 @@
         <span class="card-cat">GPU</span>
         <span class="card-title">그래픽카드 처짐(새그) — 지지대가 필요한 경우와 아닌 경우</span>
         <span class="card-desc">요즘 상급 카드는 무거워서 끝이 처집니다. 어느 정도면 정상이고 언제 지지대가 필요한지, 수직 장착이 왜 완전한 해법이 아닌지 정리했습니다. 성능은 떨어지지 않습니다 — 문제는 다른 곳에 있습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/psu-80plus.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">파워 80PLUS 등급 — 골드에 웃돈 낼 가치가 있는 경우</span>
-        <span class="card-desc">브론즈냐 골드냐는 취향이 아니라 나눗셈입니다. 등급이 실제로 뜻하는 것, 절감량을 kWh로 계산하는 법, 웃돈이 회수되는 조건을 정리했습니다. 로컬 LLM을 상시 돌리면 계산이 달라집니다.</span>
       </a>
     </li>
   </ul>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다 | 스펙핏</title>
+<meta name="description" content="정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/desktop-ups.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다 | 스펙핏">
+<meta property="og:description" content="정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/desktop-ups.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다","description":"정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.","datePublished":"2026-08-25","dateModified":"2026-08-25","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/desktop-ups.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다","item":"https://specfit.kr/posts/desktop-ups.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"노트북에도 필요한가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 배터리가 내장 UPS 역할을 합니다. 정전이 나면 자동으로 배터리로 넘어가고, 그게 UPS 가 하는 일 그대로입니다. 전원 관련해서 노트북이 확인할 것은 충전기 와트수 쪽입니다."}},{"@type":"Question","name":"서지 보호 멀티탭으로는 부족한가요","acceptedAnswer":{"@type":"Answer","text":"역할이 다릅니다. 멀티탭의 서지 보호는 급등을 걸러주는 것이고, UPS 는 끊김을 배터리로 메우는 것입니다. 정전 대비가 목적이면 멀티탭으로는 안 되고, 서지만 걱정이면 UPS 까지는 필요 없습니다."}},{"@type":"Question","name":"게이밍 데스크톱인데 정전으로 부품이 상하지 않나요","acceptedAnswer":{"@type":"Answer","text":"갑작스러운 꺼짐 자체로 부품이 상하는 일은 드뭅니다. 그보다는 복전(전기가 돌아오는 순간)의 출렁임이 위험 요소인데, 이건 서지 보호 영역입니다. 게임 중 정전은 데이터 위험도 작습니다 — 게임 진행은 대부분 서버나 자동 저장에 있으니까요."}},{"@type":"Question","name":"UPS 배터리는 얼마나 가나요","acceptedAnswer":{"@type":"Answer","text":"소모품입니다. 몇 년 주기로 배터리 교체가 필요하고, 제품에 따라 자가 교체 가능 여부가 갈립니다. \"사놓고 잊는 물건\"이 아니라는 점이 불필요한 사람에게 권하지 않는 이유이기도 합니다."}},{"@type":"Question","name":"정전 잦은 계절에만 쓸 수는 없나요","acceptedAnswer":{"@type":"Answer","text":"가능하지만 UPS 배터리는 꽂아두고 충전 상태를 유지하는 물건이라 넣었다 뺐다 하는 운용이 오히려 번거롭습니다. 잦은 정전이 걱정이면 상시 연결이 맞습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-25">2026년 8월 25일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>정전은 드뭅니다. 그래서 UPS(무정전 전원장치)는 서버실 물건이라는
+인상이 있죠. 그런데 요즘 개인 책상에도 놓는 사람이 늘었습니다 —
+<strong>컴퓨터를 서버처럼 쓰는 사람</strong>들입니다.</p>
+<p>결론부터: <strong>대부분의 개인 데스크톱에는 필요 없습니다.</strong>
+필요한 경우가 명확히 셋 있고, 거기 해당하면 이야기가 달라집니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>UPS</th></tr></thead>
+<tbody>
+<tr><td>평범한 데스크톱 — 켜서 쓰고 끄는 패턴</td><td><strong>불필요합니다</strong></td></tr>
+<tr><td><strong>밤새·상시 돌리는 작업</strong> (로컬 LLM 배치, 홈서버)</td><td>✅ 값어치 있음</td></tr>
+<tr><td><strong>쓰기 중인 데이터가 소중</strong> (NAS, 대용량 작업 상시)</td><td>✅ 값어치 있음</td></tr>
+<tr><td><strong>정전·전압 불안이 잦은 환경</strong></td><td>✅ 값어치 있음</td></tr>
+<tr><td>노트북</td><td>불필요 — <strong>배터리가 이미 UPS 입니다</strong></td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-대부분은-불필요한가">왜 대부분은 불필요한가</h2>
+<p>정전이 나면 컴퓨터는 그냥 꺼집니다. 이때 실제로 잃는 것을 따져보면:</p>
+<ul>
+<li><strong>저장 안 한 작업</strong> — 요즘 도구 대부분이 자동 저장·복구를 갖고
+있어 손실 폭이 예전 같지 않습니다</li>
+<li><strong>하드웨어 손상</strong> — 갑자기 꺼진다고 부품이 망가지는 일은 드뭅니다.
+SSD·파일시스템이 갑작스러운 전원 차단을 전제로 설계돼 있습니다</li>
+<li>위험한 것은 정전 자체보다 <strong>서지(순간 급등)</strong> 쪽인데, 이건 UPS 가
+아니라 서지 보호 멀티탭 수준에서도 상당 부분 걸러집니다</li>
+</ul>
+<p><strong>앉아서 쓰다가 꺼지는 것</strong>은 짜증이지 재해가 아닙니다.
+UPS 는 그 짜증을 막는 물건치고는 비싸고, 배터리라 수명도 있습니다.</p>
+<h2 id="필요한-경우-셋-공통점은-자리를-비운다입니다">필요한 경우 셋 — 공통점은 &quot;자리를 비운다&quot;입니다</h2>
+<p><strong>① 밤새·상시 돌리는 작업.</strong> 문서 수백 개 배치 처리를 걸어두고 잔다면,
+새벽 정전으로 여덟 시간짜리 작업이 두 시간 지점에서 끊깁니다.
+<a href="/posts/local-llm-power-cost.html">로컬 LLM 을 서버처럼 돌리는 구성</a>이
+정확히 이 경우입니다 — 전기요금 글에서 &quot;24시간이면 이야기가 달라진다&quot;고
+했던 그 사용 패턴은 UPS 계산도 달라집니다.</p>
+<p><strong>② 쓰기 중인 데이터.</strong> 대용량 복사·데이터베이스·NAS 처럼 <strong>디스크에
+쓰는 도중</strong> 전원이 끊기는 것은 앉아서 쓰다 꺼지는 것과 위험이 다릅니다.
+드물지만 걸리면 복구 비용이 UPS 값을 넘습니다.</p>
+<p><strong>③ 환경.</strong> 여름철 정전이 잦은 건물, 전압이 출렁이는 오래된 배선.
+이 경우는 컴퓨터 종류와 무관하게 UPS 가 보험입니다.</p>
+<p><strong>공통점은 &quot;그 순간 내가 옆에 없다&quot;입니다.</strong> 옆에 있으면 저장하고
+끄면 되니까요. UPS 는 자리 비운 컴퓨터의 보험입니다.</p>
+<h2 id="고른다면-확인할-것-셋">고른다면 — 확인할 것 셋</h2>
+<p><strong>① 용량은 W 로 봅니다.</strong> UPS 는 <code>1000VA / 600W</code> 처럼 두 숫자로
+표기되는데, <strong>작은 쪽(W)이 실제 감당 용량</strong>입니다. 내 컴퓨터의
+실소비(고부하 기준)가 그 안에 들어야 합니다 —
+계산은 <a href="/posts/gpu-psu-wattage.html">파워 용량 글</a>과 같고,
+<strong>파워 정격이 아니라 실제 소비 기준</strong>인 것만 다릅니다.
+1000W 파워를 달았어도 실소비 400W 면 600W UPS 로 됩니다.</p>
+<p><strong>② 버틸 시간은 몇 분이면 됩니다.</strong> UPS 는 정전 내내 버티는 물건이
+아니라 <strong>안전하게 저장하고 끄는 시간</strong>(또는 자동 종료 신호를 보낼
+시간)을 버는 물건입니다. 표기 시간이 짧아 보여도 그 용도로는 충분합니다.
+상시 서버라면 USB 연결로 <strong>자동 종료를 지원하는지</strong>를 같이 보세요 —
+자리에 없을 때 스스로 저장하고 꺼지는 게 핵심입니다.</p>
+<p><strong>③ 사인파 — 요즘 파워에는 이게 걸립니다.</strong> 저가 UPS 는 배터리
+모드에서 <strong>유사(계단형) 사인파</strong>를 내는데, 요즘 컴퓨터 파워는 대부분
+액티브 PFC 방식이라 <strong>유사 사인파와 궁합 문제가 보고됩니다</strong>(전환 순간
+꺼지거나 소음). 컴퓨터용이라면 <strong>순수 사인파</strong> 표기를 확인하는 것이
+안전합니다. 제품·파워 조합에 따라 다르므로 제조사 권고도 함께 보세요.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="노트북에도-필요한가요">노트북에도 필요한가요</h3>
+<p>아닙니다. <strong>배터리가 내장 UPS 역할</strong>을 합니다. 정전이 나면 자동으로
+배터리로 넘어가고, 그게 UPS 가 하는 일 그대로입니다.
+전원 관련해서 노트북이 확인할 것은 <a href="/posts/laptop-charger-watt-pd.html">충전기 와트수</a> 쪽입니다.</p>
+<h3 id="서지-보호-멀티탭으로는-부족한가요">서지 보호 멀티탭으로는 부족한가요</h3>
+<p>역할이 다릅니다. 멀티탭의 서지 보호는 <strong>급등을 걸러주는 것</strong>이고,
+UPS 는 <strong>끊김을 배터리로 메우는 것</strong>입니다. 정전 대비가 목적이면
+멀티탭으로는 안 되고, 서지만 걱정이면 UPS 까지는 필요 없습니다.</p>
+<h3 id="게이밍-데스크톱인데-정전으로-부품이-상하지-않나요">게이밍 데스크톱인데 정전으로 부품이 상하지 않나요</h3>
+<p>갑작스러운 꺼짐 자체로 부품이 상하는 일은 드뭅니다. 그보다는
+복전(전기가 돌아오는 순간)의 출렁임이 위험 요소인데, 이건 서지 보호
+영역입니다. 게임 중 정전은 데이터 위험도 작습니다 — 게임 진행은
+대부분 서버나 자동 저장에 있으니까요.</p>
+<h3 id="ups-배터리는-얼마나-가나요">UPS 배터리는 얼마나 가나요</h3>
+<p>소모품입니다. 몇 년 주기로 배터리 교체가 필요하고, 제품에 따라
+자가 교체 가능 여부가 갈립니다. &quot;사놓고 잊는 물건&quot;이 아니라는 점이
+불필요한 사람에게 권하지 않는 이유이기도 합니다.</p>
+<h3 id="정전-잦은-계절에만-쓸-수는-없나요">정전 잦은 계절에만 쓸 수는 없나요</h3>
+<p>가능하지만 UPS 배터리는 꽂아두고 충전 상태를 유지하는 물건이라
+넣었다 뺐다 하는 운용이 오히려 번거롭습니다. 잦은 정전이 걱정이면
+상시 연결이 맞습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>켜서 쓰고 끄는 데스크톱에는 불필요합니다.</strong> 정전은 짜증이지
+재해가 아닙니다</li>
+<li>필요한 경우는 셋 — <strong>밤새 돌리는 작업 · 쓰기 중인 소중한 데이터 ·
+정전 잦은 환경.</strong> 공통점은 &quot;그 순간 옆에 없다&quot;입니다</li>
+<li>용량은 <strong>VA 가 아니라 W</strong> 로, 파워 정격이 아니라 <strong>실소비</strong> 기준으로</li>
+<li>버틸 시간은 <strong>저장하고 끌 몇 분</strong>이면 됩니다 — 상시 서버라면
+자동 종료 지원을 보세요</li>
+<li><strong>순수 사인파</strong>를 확인하세요. 요즘 파워(액티브 PFC)와 유사 사인파
+UPS 는 궁합 문제가 보고됩니다</li>
+<li><strong>노트북은 배터리가 UPS 입니다</strong></li>
+</ol>
+<p>전력 쪽 다른 계산들 — <a href="/posts/gpu-psu-wattage.html">파워 용량</a> ·
+<a href="/posts/psu-80plus.html">80PLUS 등급</a> ·
+<a href="/posts/local-llm-power-cost.html">전기요금</a>과 이 글이 한 묶음입니다.</p>
+<p>동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">UPS</span> <span class="tag">무정전전원장치</span> <span class="tag">정전</span> <span class="tag">데스크톱</span> <span class="tag">홈서버</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/egpu-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">노트북에 eGPU — 게임엔 아쉽지만 로컬 LLM엔 잘 맞는 이유</span>
+        <span class="card-desc">외장 그래픽 박스는 대역폭 병목 때문에 게임에서 손해를 봅니다. 그런데 로컬 LLM 추론은 구조가 달라 그 병목을 거의 안 탑니다. 왜 그런지, 무엇을 확인해야 하는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/gpu-sag-support.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 처짐(새그) — 지지대가 필요한 경우와 아닌 경우</span>
+        <span class="card-desc">요즘 상급 카드는 무거워서 끝이 처집니다. 어느 정도면 정상이고 언제 지지대가 필요한지, 수직 장착이 왜 완전한 해법이 아닌지 정리했습니다. 성능은 떨어지지 않습니다 — 문제는 다른 곳에 있습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/psu-80plus.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">파워 80PLUS 등급 — 골드에 웃돈 낼 가치가 있는 경우</span>
+        <span class="card-desc">브론즈냐 골드냐는 취향이 아니라 나눗셈입니다. 등급이 실제로 뜻하는 것, 절감량을 kWh로 계산하는 법, 웃돈이 회수되는 조건을 정리했습니다. 로컬 LLM을 상시 돌리면 계산이 달라집니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
