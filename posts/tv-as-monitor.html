@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TV를 모니터로 — 글자가 번지는 진짜 이유와 쓸 만한 조건 | 스펙핏</title>
+<meta name="description" content="안 쓰는 TV를 책상에 올려도 될까요. 밀도(PPI)는 의외로 문제가 아닙니다. 갈리는 건 크로마 서브샘플링, 크기와 거리, 화면 처리입니다. 계산과 확인 절차로 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/tv-as-monitor.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="TV를 모니터로 — 글자가 번지는 진짜 이유와 쓸 만한 조건 | 스펙핏">
+<meta property="og:description" content="안 쓰는 TV를 책상에 올려도 될까요. 밀도(PPI)는 의외로 문제가 아닙니다. 갈리는 건 크로마 서브샘플링, 크기와 거리, 화면 처리입니다. 계산과 확인 절차로 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/tv-as-monitor.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"TV를 모니터로 — 글자가 번지는 진짜 이유와 쓸 만한 조건","description":"안 쓰는 TV를 책상에 올려도 될까요. 밀도(PPI)는 의외로 문제가 아닙니다. 갈리는 건 크로마 서브샘플링, 크기와 거리, 화면 처리입니다. 계산과 확인 절차로 정리했습니다.","datePublished":"2026-08-26","dateModified":"2026-08-26","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/tv-as-monitor.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"TV를 모니터로 — 글자가 번지는 진짜 이유와 쓸 만한 조건","item":"https://specfit.kr/posts/tv-as-monitor.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"게임 모드로 두면 되나요","acceptedAnswer":{"@type":"Answer","text":"게임 모드는 입력 지연을 줄이는 설정이라 마우스 반응이 즉각적이 됩니다. 모델에 따라 게임 모드에서 4:4:4 처리가 같이 켜지기도 하고 아니기도 합니다 — 지연과 번짐은 별개 문제라 둘 다 확인하세요."}},{"@type":"Question","name":"화면 가장자리가 잘립니다","acceptedAnswer":{"@type":"Answer","text":"TV 의 오버스캔(화면을 살짝 확대해서 보여주는 영상용 처리) 때문입니다. 화면 설정에서 \"원본 크기\", \"Just Scan\", \"1:1\" 같은 항목을 찾아 끄면 됩니다. PC 모드로 바꾸면 같이 꺼지는 모델도 많습니다."}},{"@type":"Question","name":"60Hz 인 게 걸립니다","acceptedAnswer":{"@type":"Answer","text":"코딩·문서에서는 문제가 아닙니다 — 코드는 움직이지 않아서 60Hz 로 충분합니다."}},{"@type":"Question","name":"서브 화면으로는 왜 무난한가요","acceptedAnswer":{"@type":"Answer","text":"로그·대시보드·영상은 작은 글자를 오래 읽는 작업이 아니라서 번짐과 거리의 영향이 작습니다. 책상 옆이나 뒤쪽에 두고 상태 화면을 띄워두는 용도면 TV 의 약점이 거의 안 드러납니다."}},{"@type":"Question","name":"모니터 대신 TV 를 새로 사는 건요","acceptedAnswer":{"@type":"Answer","text":"권하지 않습니다. 같은 값이면 모니터가 텍스트 처리·눈높이·무광 처리 전부에서 맞는 물건입니다. 이 글은 이미 있는 TV 를 살릴지 판단하는 글이지, TV 를 사라는 글이 아닙니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>TV를 모니터로 — 글자가 번지는 진짜 이유와 쓸 만한 조건</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-26">2026년 8월 26일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>이사하고 남은 TV, 안방에서 밀려난 TV. 책상에 올리면 큰 모니터가
+공짜로 생기는 셈이니 누구나 한 번은 생각합니다.</p>
+<p>그리고 해본 사람들의 후기는 갈립니다 — &quot;잘 쓴다&quot;와 <strong>&quot;글자가 번져서
+못 쓰겠다&quot;</strong>. 둘 다 사실입니다. 갈리는 조건이 있을 뿐입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>용도</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td><strong>코딩·문서 주력 화면</strong></td><td>⚠️ 조건부 — <strong>4:4:4 가 되는 모델만</strong>, 그리고 43&quot; 이하</td></tr>
+<tr><td>서브 화면 (로그·대시보드·영상)</td><td>✅ 무난합니다. 텍스트 요구가 낮습니다</td></tr>
+<tr><td>미디어 겸용 (영상 위주 + 가끔 작업)</td><td>✅ TV 의 본업입니다</td></tr>
+<tr><td>이것 때문에 TV 를 새로 산다</td><td>❌ 같은 값이면 모니터를 사세요</td></tr>
+</tbody>
+</table></div>
+<h2 id="밀도는-의외로-문제가-아닙니다">밀도는 의외로 문제가 아닙니다</h2>
+<p>먼저 흔한 오해부터. &quot;TV 는 픽셀이 성겨서 안 된다&quot; — 계산해 보면
+꼭 그렇지 않습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>화면</th><th>PPI</th><th>가로 폭</th></tr></thead>
+<tbody>
+<tr><td>27&quot; QHD 모니터</td><td>109</td><td>60cm</td></tr>
+<tr><td><strong>43&quot; 4K TV</strong></td><td><strong>102</strong></td><td><strong>95cm</strong></td></tr>
+<tr><td>50&quot; 4K TV</td><td>88</td><td>111cm</td></tr>
+<tr><td>55&quot; 4K TV</td><td>80</td><td>122cm</td></tr>
+<tr><td>(참고) 24&quot; FHD 모니터</td><td>92</td><td>53cm</td></tr>
+</tbody>
+</table></div>
+<p><strong>43인치 4K 의 픽셀 밀도는 27인치 QHD 와 비슷합니다.</strong> 글자 알갱이가
+성겨서 못 쓰는 게 아니라는 뜻입니다. 55인치쯤 가면 24&quot; FHD 보다도
+성겨져서 밀도가 문제가 되지만, 43인치까지는 아닙니다.</p>
+<p><strong>그런데도 글자가 번진다면, 원인은 밀도가 아니라 다음 절입니다.</strong></p>
+<h2 id="진짜-범인-크로마-서브샘플링">진짜 범인 — 크로마 서브샘플링</h2>
+<p>TV 는 영상을 보여주는 물건이라, <strong>색 정보를 줄여서 받는 것이 기본</strong>입니다
+(4:2:0 이라고 표기하는 방식). 영상에서는 눈치채기 어렵지만,
+<strong>텍스트에서는 색 경계가 뭉개집니다</strong> — 특히 색 배경 위의 글자,
+빨강·파랑 글자의 가장자리가 번져 보입니다.</p>
+<p>코딩 화면이 정확히 그 최악의 조건입니다. 구문 강조로 색 글자가
+가득하니까요.</p>
+<p>해결은 <strong>4:4:4(색 정보를 줄이지 않는 방식)로 받게 만드는 것</strong>인데,
+여기서 모델마다 갈립니다.</p>
+<ul>
+<li>TV 쪽: <strong>PC 모드</strong> 또는 입력 이름을 &quot;PC&quot;로 바꾸면 4:4:4 처리가
+켜지는 모델이 많습니다. <strong>아예 지원하지 않는 모델도 있습니다</strong> —
+특히 저가형에서요. 이게 &quot;중소기업 TV 로는 안 되더라&quot;는 후기의 정체입니다</li>
+<li>컴퓨터 쪽: 그래픽 설정에서 출력을 RGB 또는 4:4:4 로</li>
+<li>케이블·포트: 4K 60Hz 4:4:4 는 대역폭이 <strong>HDMI 2.0(18Gbps) 이상</strong>을
+요구합니다. TV 의 HDMI 포트 중 일부만 풀 대역폭인 모델도 있으니
+포트를 바꿔 꽂아보는 것도 확인 절차입니다 —
+대역폭 계산은 <a href="/posts/dp-vs-hdmi-coding.html">DP와 HDMI</a>에 있습니다</li>
+</ul>
+<h3 id="확인하는-법-사기-전-판단이-아니라-지금-재보기">확인하는 법 — 사기 전 판단이 아니라 지금 재보기</h3>
+<p>이미 있는 TV 니까 실험이 공짜입니다.</p>
+<ol>
+<li>TV 입력을 PC 모드(또는 입력 이름 PC)로 바꾸고</li>
+<li>컴퓨터 출력을 RGB/4:4:4 로 설정한 뒤</li>
+<li><strong>색 배경 위 글자</strong>(에디터의 구문 강조, 빨간 글자)를 가까이서 봅니다</li>
+</ol>
+<p>번짐이 사라지면 그 TV 는 4:4:4 가 되는 것이고, 뭘 해도 번지면
+그 모델의 한계입니다 — 코딩 주력으로는 접는 게 맞습니다.</p>
+<h2 id="다음-관문-크기와-거리">다음 관문 — 크기와 거리</h2>
+<p>4:4:4 가 돼도 물리적인 문제가 남습니다.</p>
+<ul>
+<li><strong>43인치 = 가로 95cm.</strong> 책상 거리(눈에서 60~70cm)에서는 시야를
+벗어나, 구석을 보려면 고개가 움직입니다. 모니터를 고를 때
+<a href="/posts/coding-monitor-resolution.html">32인치도 &quot;거리를 둘 수 있을 때&quot;라고 했는데</a>,
+43인치는 그보다 한참 큽니다</li>
+<li><strong>눈높이.</strong> TV 는 받침대가 낮게 설계돼 화면 중심이 모니터보다
+아래로 옵니다. 화면 상단이 눈높이 근처에 오도록 올려야 하는데,
+TV 무게는 <a href="/posts/monitor-arm-vesa.html">모니터 암의 하중 상한</a>을
+넘는 경우가 많아 확인이 필요합니다</li>
+<li><strong>광택(글레어).</strong> TV 는 광택 화면이 많아 밝은 방에서 반사가
+모니터보다 심한 편입니다</li>
+</ul>
+<p>그래서 표의 결론이 &quot;책상 위 주력은 43인치까지, 그것도 조건부&quot;입니다.
+<strong>책상보다 뒤로 물러날 수 있는 배치</strong>(깊은 책상, 벽걸이)면 이야기가
+좀 나아집니다.</p>
+<h2 id="oled-tv-라면-하나-더">OLED TV 라면 하나 더</h2>
+<p>거실에서 밀려난 TV 가 OLED 라면, 코딩 화면 특유의 <strong>고정 요소</strong>
+(작업표시줄, 에디터 레이아웃)가 오래 머무는 사용 방식이라
+<a href="/posts/oled-monitor-coding.html">OLED 모니터 글에서 정리한 그 문제</a>가
+그대로 적용됩니다. 화면이 거의 안 바뀌는 작업은 OLED 에 가장 불리한
+사용 방식입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="게임-모드로-두면-되나요">게임 모드로 두면 되나요</h3>
+<p>게임 모드는 <strong>입력 지연을 줄이는 설정</strong>이라 마우스 반응이 즉각적이
+됩니다. 모델에 따라 게임 모드에서 4:4:4 처리가 같이 켜지기도 하고
+아니기도 합니다 — 지연과 번짐은 별개 문제라 둘 다 확인하세요.</p>
+<h3 id="화면-가장자리가-잘립니다">화면 가장자리가 잘립니다</h3>
+<p>TV 의 <strong>오버스캔</strong>(화면을 살짝 확대해서 보여주는 영상용 처리) 때문입니다.
+화면 설정에서 &quot;원본 크기&quot;, &quot;Just Scan&quot;, &quot;1:1&quot; 같은 항목을 찾아 끄면
+됩니다. PC 모드로 바꾸면 같이 꺼지는 모델도 많습니다.</p>
+<h3 id="60hz-인-게-걸립니다">60Hz 인 게 걸립니다</h3>
+<p>코딩·문서에서는 문제가 아닙니다 —
+<a href="/posts/coding-monitor-resolution.html">코드는 움직이지 않아서 60Hz 로 충분</a>합니다.</p>
+<h3 id="서브-화면으로는-왜-무난한가요">서브 화면으로는 왜 무난한가요</h3>
+<p>로그·대시보드·영상은 <strong>작은 글자를 오래 읽는 작업이 아니라서</strong>
+번짐과 거리의 영향이 작습니다. 책상 옆이나 뒤쪽에 두고 상태 화면을
+띄워두는 용도면 TV 의 약점이 거의 안 드러납니다.</p>
+<h3 id="모니터-대신-tv-를-새로-사는-건요">모니터 대신 TV 를 새로 사는 건요</h3>
+<p>권하지 않습니다. 같은 값이면 모니터가 텍스트 처리·눈높이·무광 처리
+전부에서 맞는 물건입니다. 이 글은 <strong>이미 있는 TV 를 살릴지 판단</strong>하는
+글이지, TV 를 사라는 글이 아닙니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>밀도는 죄가 없습니다.</strong> 43&quot; 4K 는 27&quot; QHD 와 비슷한 102 PPI 입니다</li>
+<li>글자가 번지는 범인은 <strong>크로마 서브샘플링</strong>입니다 — PC 모드 +
+RGB/4:4:4 출력 + HDMI 2.0 이상, 셋을 맞추고 색 글자로 확인하세요</li>
+<li><strong>4:4:4 가 안 되는 모델이면 코딩 주력으로는 접으세요.</strong> 설정으로
+해결이 안 됩니다</li>
+<li>돼도 <strong>크기·눈높이·광택</strong>이 남습니다 — 책상 주력은 43인치까지가
+현실적입니다</li>
+<li><strong>서브 화면·미디어 겸용으로는 무난합니다.</strong> 그게 TV 재활용의
+제일 좋은 자리입니다</li>
+</ol>
+<p>주력 화면을 제대로 고르려면
+<a href="/posts/coding-monitor-resolution.html">코딩용 모니터 조합</a>부터 보세요.</p>
+<p>설정 항목 이름이 실제 제품과 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">TV모니터</span> <span class="tag">크로마서브샘플링</span> <span class="tag">4K</span> <span class="tag">PPI</span> <span class="tag">HDMI</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/monitor-kvm.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로</span>
+        <span class="card-desc">재택하면 책상에 컴퓨터가 두 대가 됩니다. 모니터에 KVM 기능이 있으면 키보드·마우스 한 세트로 전환하며 씁니다. 어떤 스펙을 확인해야 하는지, 별도 KVM 스위치와는 언제 갈리는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-mixed-resolution.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">해상도 다른 모니터 두 대 — 커서가 걸리고 창이 튀는 이유</span>
+        <span class="card-desc">섞어 쓰면 세 가지가 생깁니다. 경계에서 커서가 걸리고, 창을 옮기면 크기가 튀거나 흐려지고, 글자 크기가 안 맞습니다. 각각의 원리와 대처, 무난한 조합을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-dual-monitor-output.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">노트북에 모니터 두 대 — 왜 한 대만 나오나</span>
+        <span class="card-desc">포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

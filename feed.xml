@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>TV를 모니터로 — 글자가 번지는 진짜 이유와 쓸 만한 조건</title>
+    <link>https://specfit.kr/posts/tv-as-monitor.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/tv-as-monitor.html</guid>
+    <pubDate>Tue, 25 Aug 2026 15:00:00 GMT</pubDate>
+    <description>안 쓰는 TV를 책상에 올려도 될까요. 밀도(PPI)는 의외로 문제가 아닙니다. 갈리는 건 크로마 서브샘플링, 크기와 거리, 화면 처리입니다. 계산과 확인 절차로 정리했습니다.</description>
+  </item>
+  <item>
     <title>모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로</title>
     <link>https://specfit.kr/posts/monitor-kvm.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-kvm.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/multi-gpu-local-llm.html</guid>
     <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
     <description>합쳐지지 않습니다. 나눠 올릴 수는 있지만 속도는 더해지지 않습니다. 8GB 두 장과 16GB 한 장이 왜 다른지, 두 장이 의미 있는 경우는 언제인지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>모니터 암 — VESA만 맞으면 되는 게 아닙니다</title>
-    <link>https://specfit.kr/posts/monitor-arm-vesa.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-arm-vesa.html</guid>
-    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
-    <description>나사 구멍 간격이 맞아도 안 되는 경우가 세 가지 있습니다. 하중 하한, 책상 두께, 나사 길이입니다. 사기 전에 재야 하는 숫자를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
