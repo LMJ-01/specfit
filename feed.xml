@@ -6,6 +6,20 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>미니PC vs 노트북 — 갈림길은 성능이 아니라 이동입니다</title>
+    <link>https://specfit.kr/posts/mini-pc-vs-laptop.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-vs-laptop.html</guid>
+    <pubDate>Tue, 25 Aug 2026 15:00:00 GMT</pubDate>
+    <description>어차피 책상에서만 쓰는데 노트북이 맞을까요. 속이 같은 두 물건이라 성능으로는 안 갈립니다. 밖에서 화면을 열 일이 있는지, 이미 갖고 있는 물건이 무엇인지로 갈립니다.</description>
+  </item>
+  <item>
+    <title>미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다</title>
+    <link>https://specfit.kr/posts/mini-pc-for-dev.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-for-dev.html</guid>
+    <pubDate>Tue, 25 Aug 2026 15:00:00 GMT</pubDate>
+    <description>손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.</description>
+  </item>
+  <item>
     <title>TV를 모니터로 — 글자가 번지는 진짜 이유와 쓸 만한 조건</title>
     <link>https://specfit.kr/posts/tv-as-monitor.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/tv-as-monitor.html</guid>
@@ -130,20 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ssd-tbw-lifespan.html</guid>
     <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
     <description>TBW를 하루 쓰기량으로 나눠보면 수십 년이 나옵니다. 개발에서 먼저 오는 건 수명이 아니라 보증 기간과 용량입니다. 계산식과 내 SSD 확인법을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>RTX 5090 32GB — 개인용 상한선입니다</title>
-    <link>https://specfit.kr/posts/rtx5090-local-llm.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/rtx5090-local-llm.html</guid>
-    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
-    <description>32GB는 개인용 신품 그래픽카드의 천장입니다. 32B를 여유롭게 쓰는 유일한 선택지이고 70B는 여전히 안 됩니다. 575W라는 대가와 함께 정리했습니다.</description>
-  </item>
-  <item>
-    <title>그래픽카드 두 장 — VRAM이 합쳐지나요</title>
-    <link>https://specfit.kr/posts/multi-gpu-local-llm.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/multi-gpu-local-llm.html</guid>
-    <pubDate>Mon, 17 Aug 2026 15:00:00 GMT</pubDate>
-    <description>합쳐지지 않습니다. 나눠 올릴 수는 있지만 속도는 더해지지 않습니다. 8GB 두 장과 16GB 한 장이 왜 다른지, 두 장이 의미 있는 경우는 언제인지 정리했습니다.</description>
   </item>
 </channel>
 </rss>

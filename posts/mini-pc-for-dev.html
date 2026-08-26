@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽 | 스펙핏</title>
-<meta name="description" content="로컬 LLM에서는 세대가 낮아도 VRAM이 큰 쪽이 유리합니다. 3090 24GB와 4070 12GB를 실제 기준으로 비교했습니다.">
-<link rel="canonical" href="https://specfit.kr/posts/rtx3090-vs-4070-local-llm.html">
+<title>미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다 | 스펙핏</title>
+<meta name="description" content="손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/mini-pc-for-dev.html">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="스펙핏">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽 | 스펙핏">
-<meta property="og:description" content="로컬 LLM에서는 세대가 낮아도 VRAM이 큰 쪽이 유리합니다. 3090 24GB와 4070 12GB를 실제 기준으로 비교했습니다.">
-<meta property="og:url" content="https://specfit.kr/posts/rtx3090-vs-4070-local-llm.html">
+<meta property="og:title" content="미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다 | 스펙핏">
+<meta property="og:description" content="손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/mini-pc-for-dev.html">
 <meta property="og:image" content="https://specfit.kr/assets/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -25,9 +25,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽","description":"로컬 LLM에서는 세대가 낮아도 VRAM이 큰 쪽이 유리합니다. 3090 24GB와 4070 12GB를 실제 기준으로 비교했습니다.","datePublished":"2026-08-14","dateModified":"2026-08-25","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/rtx3090-vs-4070-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽","item":"https://specfit.kr/posts/rtx3090-vs-4070-local-llm.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"3090 두 장이 4090 한 장보다 나은가요","acceptedAnswer":{"@type":"Answer","text":"VRAM 총량은 48GB로 4090(24GB)의 두 배라 더 큰 모델을 올릴 수 있습니다. 다만 카드 간 통신 오버헤드가 있어 같은 용량 단일 카드보다 느리고, 파워 700W 이상과 메인보드 슬롯 간격을 감당해야 합니다."}},{"@type":"Question","name":"채굴 카드인지 어떻게 아나요","acceptedAnswer":{"@type":"Answer","text":"확실한 판별법은 없습니다. 다만 참고할 수 있는 것들이 있습니다. 같은 판매자가 여러 장을 동시에 파는 경우, 팬 소음이 유난히 큰 경우, 서멀 재도포 이력이 있는 경우는 주의합니다. 가격이 시세보다 크게 낮으면 이유를 물어보는 편이 좋습니다."}},{"@type":"Question","name":"로컬 LLM만 쓸 건데 게이밍 성능은 안 봐도 되나요","acceptedAnswer":{"@type":"Answer","text":"네. LLM 추론 성능은 VRAM 용량 → 메모리 대역폭 → 연산 성능 순으로 중요합니다. 게이밍 벤치마크 순위와 LLM 성능 순위는 일치하지 않습니다."}},{"@type":"Question","name":"맥은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"메모리 64GB 이상 맥에서는 통합 메모리를 VRAM처럼 써서 70B 모델도 올라갑니다. 다만 대역폭이 전용 GPU보다 낮아 생성 속도는 느립니다. 용량이 필요하면 맥, 속도가 필요하면 전용 GPU입니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다","description":"손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.","datePublished":"2026-08-26","dateModified":"2026-08-26","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mini-pc-for-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다","item":"https://specfit.kr/posts/mini-pc-for-dev.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"노트북이 이미 있는데 미니PC를 또 살 이유가 있나요","acceptedAnswer":{"@type":"Answer","text":"책상에서만 쓸 두 번째 컴퓨터(서버·작업 분리)가 필요할 때입니다. 주력 컴퓨터를 고르는 문제라면 미니PC와 노트북 중 무엇을 살지부터 정리하는 것이 순서입니다."}},{"@type":"Question","name":"미니PC로 로컬 LLM을 돌리는 영상을 봤습니다","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다 — 그래픽카드 없이도 돌아는 갑니다. 쓸 만한 속도인지가 문제이고, 그건 메모리 대역폭이 정합니다. 일부 상급 미니PC는 메모리를 크게 싣고 내장 그래픽과 공유하는 구조로 이 한계를 좁히는데, 제품군이 갈리고 값도 급이 달라 \"미니PC면 된다/안 된다\"로 뭉뚱그릴 수 없습니다. 사양표의 메모리 대역폭을 봐야 하는 영역입니다."}},{"@type":"Question","name":"라즈베리파이 같은 것과는 다른가요","acceptedAnswer":{"@type":"Answer","text":"다릅니다. 라즈베리파이는 다른 칩 계열(ARM)의 학습·공작용 보드라 일반 프로그램 호환부터 다른 세계입니다. 이 글의 미니PC는 윈도우·리눅스가 그대로 도는 일반 컴퓨터입니다."}},{"@type":"Question","name":"사무실 PC로 회사에서 쓰는 건요","acceptedAnswer":{"@type":"Answer","text":"문서·웹 중심 업무에는 잘 맞습니다. 이 글은 개발 관점이라 램과 GPU를 따졌지만, 사무용은 그 두 걱정이 없는 자리입니다."}},{"@type":"Question","name":"중고 미니PC는요","acceptedAnswer":{"@type":"Answer","text":"노트북 중고와 같은 눈으로 보면 됩니다 — 중고 노트북에서 확인할 것 중 화면·배터리·키보드 항목이 빠지니 오히려 점검이 단순합니다. CPU 세대와 램 규격(DDR4냐 5냐)을 먼저 보세요."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -58,14 +58,14 @@
 <article class="post">
   <nav class="breadcrumb" aria-label="현재 위치">
     <a href="/">홈</a>
-    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+    <span aria-hidden="true">›</span><a href="/minipc.html">미니PC</a>
   </nav>
 
   <header class="post-head">
-    <h1>중고 RTX 3090 vs 신품 4070 — 로컬 LLM은 어느 쪽</h1>
+    <h1>미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다</h1>
     <p class="post-meta">
-      <time datetime="2026-08-14">2026년 8월 14일</time>
-      <span class="updated">· 2026년 8월 25일 갱신</span>
+      <time datetime="2026-08-26">2026년 8월 26일</time>
+      
     </p>
   </header>
 
@@ -75,32 +75,68 @@
 </aside>
 
   <div class="post-body">
-<p>로컬 LLM을 시작하려는 사람이 자주 부딪히는 선택입니다.
-비슷한 가격대에서 <strong>구형 상위 카드</strong>와 <strong>신형 중급 카드</strong> 중 무엇을 살 것인가.</p>
-<p>게이밍이라면 신형이 낫습니다. 하지만 <strong>로컬 LLM에서는 답이 다릅니다.</strong></p>
-<blockquote><p><strong>⚠️ RTX 4070은 단종됐습니다.</strong> 지금 신품으로 사는 자리는 <strong>RTX 5070</strong>입니다.
-VRAM은 같은 12GB이고 대역폭이 504 → <strong>672 GB/s</strong>로 올랐습니다.</p>
-<p><strong>이 글의 결론은 바뀌지 않습니다.</strong> VRAM 12GB라는 한계선이 같기 때문입니다.
-다만 대역폭 격차는 줄었습니다 — 3090의 936 GB/s 대비 4070은 1.86배 차이였는데
-5070은 1.39배입니다. 아래 본문은 4070 기준으로 읽으시고,
-신품 구매라면 5070으로 바꿔 생각하시면 됩니다.</p></blockquote>
+<p>손바닥만 한 컴퓨터가 데스크톱을 대신한다고 합니다. 책상은 넓어지고
+전기는 덜 먹는다는데, <strong>이걸로 개발이 될까요?</strong></p>
+<p>됩니다 — <strong>노트북으로 되는 만큼요.</strong> 그리고 이 한 줄이 이 글의
+전부입니다. 미니PC의 속은 노트북이라, 판단하는 법도 노트북과 같습니다.</p>
 <h2 id="결론부터">결론부터</h2>
-<p><strong>로컬 LLM 용도라면 3090입니다.</strong> VRAM이 두 배이고 대역폭도 높습니다.</p>
 <div class="table-wrap"><table>
-<thead><tr><th></th><th>RTX 3090</th><th>RTX 4070</th></tr></thead>
+<thead><tr><th>작업</th><th>판정</th></tr></thead>
 <tbody>
-<tr><td>VRAM</td><td><strong>24GB</strong></td><td>12GB</td></tr>
-<tr><td>메모리 대역폭</td><td><strong>936 GB/s</strong></td><td>504 GB/s</td></tr>
-<tr><td>TDP</td><td>350W</td><td><strong>200W</strong></td></tr>
-<tr><td>출시</td><td>2020년</td><td>2023년</td></tr>
-<tr><td>상태</td><td>중고만</td><td>신품</td></tr>
-<tr><td>돌릴 수 있는 모델</td><td><strong>20~22B (여유), 32B (빠듯)</strong></td><td>14B (여유), 20~22B (느림)</td></tr>
+<tr><td>웹·백엔드 개발, 파이썬</td><td>✅ 됩니다 — 램만 챙기면 노트북과 같은 기준입니다</td></tr>
+<tr><td>도커·가상머신, 안드로이드 개발</td><td>✅ 되는데 <strong>램 32GB</strong> 조건이 붙습니다</td></tr>
+<tr><td>개발 서버·홈서버 (상시 가동)</td><td>✅ <strong>미니PC가 오히려 유리한 자리</strong>입니다</td></tr>
+<tr><td>로컬 LLM</td><td>⚠️ <strong>외장 그래픽카드가 없다는 한계</strong> 그대로입니다</td></tr>
+<tr><td>게임·영상 편집 겸용</td><td>❌ 외장 GPU 자리가 없습니다</td></tr>
 </tbody>
 </table></div>
-<p>LLM 추론에서 중요한 두 지표가 <strong>VRAM 용량</strong>과 <strong>메모리 대역폭</strong>인데,
-3090이 둘 다 앞섭니다. 세대 차이가 이걸 뒤집지 못합니다.</p>
-<p>두 카드를 번갈아 골라보시면 어디서 갈리는지 보입니다.
-신품으로 살 수 있는 대안도 함께 나옵니다.</p>
+<h2 id="정체부터-이름은-데스크톱-속은-노트북">정체부터 — 이름은 데스크톱, 속은 노트북</h2>
+<p>미니PC 대부분은 <strong>노트북용(모바일) CPU</strong>를 씁니다. 작은 통에 넣으려면
+발열이 적어야 하고, 발열이 적은 칩은 노트북 칩이니까요. 화면과
+배터리를 떼고 눕혀 놓은 노트북이라고 보면 구조가 정확합니다.</p>
+<p>그래서 이 사이트의 <a href="/laptop.html">노트북 글들</a>이 그대로 적용됩니다.
+성능을 가를 때 데스크톱과 비교하면 헷갈리고, <strong>노트북과 비교하면
+바로 정리됩니다.</strong></p>
+<p>사양표에서 확인하는 법 — <strong>CPU 모델명 끝 글자</strong>를 보세요.</p>
+<pre><code>끝에 H·HS·U 가 붙음   →  노트북용입니다 (미니PC 대부분)
+끝에 아무것도 없거나 F  →  데스크톱용입니다 (베어본 계열 일부)</code></pre>
+<p>대개는 이 규칙으로 갈리고, 헷갈리면 그 CPU 모델명을 검색해 제조사
+사양표의 &quot;세그먼트&quot; 항목을 보면 됩니다.</p>
+<h2 id="개발이-되는-이유-개발은-cpu램-작업입니다">개발이 되는 이유 — 개발은 CPU·램 작업입니다</h2>
+<p>코딩·빌드·서버 구동은 그래픽카드가 아니라 <strong>CPU와 램</strong>을 씁니다.
+요즘 모바일 CPU는 코어가 충분해서, <a href="/posts/dev-laptop-cpu.html">개발용 노트북에서 CPU가
+갈림길이 아니게 된 것</a>과 같은 이유로
+미니PC에서도 갈림길이 아닙니다.</p>
+<p>갈림길은 노트북과 똑같이 <strong>램</strong>입니다.</p>
+<ul>
+<li>브라우저 + 에디터 + 서버 하나 — 16GB로 됩니다</li>
+<li><a href="/posts/docker-laptop-spec.html">도커</a>·<a href="/posts/android-studio-laptop-spec.html">안드로이드 스튜디오</a>
+— <strong>32GB</strong>가 그 글들의 결론이고, 미니PC에도 그대로 적용됩니다</li>
+</ul>
+<p>한 가지는 미니PC 쪽이 노트북보다 나은 경우가 많습니다 —
+<strong>램을 나중에 늘릴 수 있는 모델의 비율</strong>입니다. 노트북은
+<a href="/posts/laptop-ram-onboard-lpcamm2.html">온보드(납땜) 추세</a>가 뚜렷한데,
+미니PC는 뚜껑을 열면 램 슬롯(SO-DIMM)이 나오는 모델이 아직 많습니다.
+다만 이것도 모델마다 달라서, 사양표에서 <strong>&quot;SO-DIMM 슬롯 2&quot;</strong> 같은
+표기를 확인하고 사는 것이 안전합니다. 얇은 모델과 일부 저가형은
+노트북처럼 납땜이라 못 늘립니다.</p>
+<h2 id="안-되는-것도-노트북과-같습니다-gpu">안 되는 것도 노트북과 같습니다 — GPU</h2>
+<p>미니PC에는 <strong>외장 그래픽카드 자리가 없습니다.</strong> CPU에 붙은 내장
+그래픽으로 화면을 그리는 구조라, 외장 GPU가 필요한 작업은 그대로
+막힙니다.</p>
+<ul>
+<li><strong>로컬 LLM</strong> — <a href="/posts/local-llm-without-gpu.html">그래픽카드 없이 돌리면 왜 느린지</a>
+그대로입니다. 램에 올려 CPU로 돌릴 수는 있는데 속도가 급이 다릅니다</li>
+<li>특히 <strong>저가형(N 계열 CPU) 미니PC는 메모리 채널이 하나</strong>라,
+<a href="/posts/ram-dual-channel-check.html">듀얼 채널이 두 배로 만들어 주는 그 대역폭</a>의
+절반으로 돌게 됩니다 — CPU 추론이 한층 더 느려집니다</li>
+<li>게임도 같은 이유로 가벼운 것까지입니다</li>
+</ul>
+<p>빠져나갈 길이 하나 있긴 합니다 — <strong>USB4·썬더볼트 단자가 있는
+모델이라면 eGPU</strong>를 붙일 수 있고, <a href="/posts/egpu-local-llm.html">eGPU가 로컬 LLM에는 의외로 잘
+맞는 이유</a>도 정리돼 있습니다. 다만
+배보다 배꼽이 커지는 구성이라, 로컬 LLM이 주 목적이면 처음부터
+<a href="/gpu.html">그래픽카드가 들어가는 컴퓨터</a>를 보는 편이 맞습니다.</p>
 <div data-vram-tool>
 <div class="vr">
   <div class="vr-controls">
@@ -199,135 +235,92 @@ VRAM은 같은 12GB이고 대역폭이 504 → <strong>672 GB/s</strong>로 올�
     경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
   </p>
 </div></div>
-<h2 id="왜-세대가-낮은데-유리한가">왜 세대가 낮은데 유리한가</h2>
-<h3 id="vram이-부족하면-성능이-아니라-가능-여부가-갈립니다">VRAM이 부족하면 성능이 아니라 가능 여부가 갈립니다</h3>
-<p>게이밍에서 VRAM이 부족하면 텍스처 품질을 낮추면 됩니다.
-LLM에서는 그런 타협이 없습니다. <strong>모델이 VRAM에 안 들어가면 시스템 램으로 넘어가고,
-그 순간 속도가 몇 배에서 수십 배 떨어집니다.</strong></p>
-<pre><code>32B 모델 (Q4, 약 22.2GB)
-  3090 24GB  →  빠듯하게 들어감  →  짧은 내용이면 쓸 만함
-  4070 12GB  →  절반 이상 CPU    →  사실상 불가</code></pre>
-<p>4070으로는 32B 모델을 &quot;느리게 돌리는&quot; 게 아니라 <strong>실질적으로 못 돌립니다.</strong></p>
-<blockquote><p>🔴 <strong>2026-08-18 정정.</strong> 원래 이 자리에 &quot;3090 은 32B 를 전부 VRAM 에 올린다&quot;고
-적혀 있었습니다. 계산기의 KV 캐시 계산을 고치면서 32B 가 22.2GB 가 되어
-<strong>24GB 에서는 &quot;여유&quot;가 아니라 &quot;빠듯&quot;</strong>이 됐습니다. 긴 내용을 다루면 밀립니다.
-3090 의 값어치는 여전히 크지만, 32B 를 여유롭게 쓰려면 32GB 급이 필요합니다.</p></blockquote>
-<h3 id="대역폭이-생성-속도를-정합니다">대역폭이 생성 속도를 정합니다</h3>
-<p>VRAM에 다 올라간 뒤에는 <strong>메모리 대역폭</strong>이 초당 토큰 수를 좌우합니다.
-3090의 936 GB/s는 4070의 504 GB/s보다 <strong>약 1.9배</strong> 높습니다.</p>
-<p>같은 14B 모델을 둘 다 VRAM에 올려도 3090이 더 빠릅니다.
-연산 성능(TFLOPS)은 4070이 앞서지만, LLM 추론은 연산보다 <strong>메모리 대역폭에 묶입니다.</strong></p>
-<h2 id="3090의-실제-단점">3090의 실제 단점</h2>
-<p>가격만 보고 사면 후회할 수 있는 부분입니다.</p>
-<h3 id="1-전력과-발열">1. 전력과 발열</h3>
-<p><strong>350W입니다.</strong> 4070의 1.75배입니다.</p>
+<h2 id="미니pc가-오히려-유리한-자리-상시-가동">미니PC가 오히려 유리한 자리 — 상시 가동</h2>
+<p><strong>개발 서버·홈서버로는 미니PC가 이 사이트에서 다룬 어떤 물건보다
+잘 맞습니다.</strong></p>
 <ul>
-<li>파워서플라이 <strong>최소 750W</strong> 권장 (850W면 안심)</li>
-<li>케이스 통풍이 나쁘면 온도가 쉽게 올라갑니다</li>
-<li>24시간 돌리면 전기요금이 체감됩니다 — 누진 구간에 걸리면 더 큽니다</li>
+<li><strong>전기를 적게 먹습니다.</strong> 모바일 칩이라 소비 전력이 낮고,
+<a href="/posts/local-llm-power-cost.html">24시간 켜두면 이야기가 달라지는 전기요금 계산</a>에서
+가장 부담 없는 축입니다</li>
+<li><strong>소리가 작고 자리를 안 차지합니다.</strong> 책상 아래·선반 위에 두고
+잊어버리는 물건입니다</li>
+<li>켜두는 물건이 하나 생기는 것이므로, <a href="/posts/desktop-ups.html">자리 비운 컴퓨터의
+보험(UPS)</a> 판단도 같이 보면 됩니다</li>
 </ul>
-<h3 id="2-크기">2. 크기</h3>
-<p>3090은 대부분 3슬롯이고 길이가 깁니다.
-<strong>케이스에 들어가는지 먼저 재보세요.</strong> 미들타워라도 안 들어가는 경우가 있습니다.
-무겁기도 해서 끝이 처지는 카드입니다 — 5년 된 중고라면 이미 처져 있을 수
-있으니 <a href="/posts/gpu-sag-support.html">지지대 판단 기준</a>을 같이 보세요.</p>
-<h3 id="3-중고-리스크">3. 중고 리스크</h3>
-<ul>
-<li><strong>채굴 이력</strong> — 2021~2022년 채굴 붐 시기 카드가 상당수 시장에 있습니다</li>
-<li><strong>보증 없음</strong> — 제조사 보증이 끝났거나 승계가 안 됩니다</li>
-<li><strong>팬·서멀 노후</strong> — 5년 넘은 카드입니다</li>
-</ul>
-<p>구매 전 확인할 것:</p>
-<ul>
-<li>판매자에게 사용 이력과 구매 시기 확인</li>
-<li>가능하면 직거래로 <strong>현장 테스트</strong> (부하 시 온도, 아티팩트)</li>
-<li>보증 잔여 기간 확인</li>
-</ul>
-<p>무엇을 어떤 명령으로 재는지는
-<a href="/posts/used-gpu-check.html">중고 그래픽카드 확인법</a>에 절차로 정리했습니다 —
-채굴 이력은 못 밝히지만, 위 셋은 그 자리에서 재집니다.</p>
-<h2 id="4070이-나은-경우">4070이 나은 경우</h2>
-<p>3090이 항상 정답은 아닙니다.</p>
-<p><strong>14B 이하만 쓸 계획이라면</strong> 4070으로 충분합니다.
-Qwen 14B, Gemma 12B 정도로 코딩 보조나 문서 요약을 한다면 12GB로 됩니다.</p>
-<p>그리고 이런 조건이면 4070이 낫습니다.</p>
-<ul>
-<li>게이밍을 겸한다 → DLSS 3, 프레임 생성 지원</li>
-<li>소형 케이스다 → 3090이 안 들어감</li>
-<li>파워가 650W 이하다 → 교체 비용이 추가됨</li>
-<li>중고 거래가 부담스럽다 → 보증이 있는 신품</li>
-<li>전기요금이 신경 쓰인다 → 200W</li>
-</ul>
-<h2 id="다른-선택지도-있습니다">다른 선택지도 있습니다</h2>
-<p>이 둘만 놓고 고민할 필요는 없습니다.</p>
-<div class="table-wrap"><table>
-<thead><tr><th>카드</th><th>VRAM</th><th>특징</th></tr></thead>
-<tbody>
-<tr><td>RTX 5060 Ti 16GB</td><td>16GB</td><td>신품 + 저전력(180W). <strong>14B 여유, 32B 느림</strong></td></tr>
-<tr><td>RTX 5070 Ti</td><td>16GB</td><td>5070보다 VRAM 4GB 많고 대역폭 896 GB/s</td></tr>
-<tr><td>RTX 3090 Ti</td><td>24GB</td><td>3090과 VRAM 동일, 대역폭 약간 높음, 더 뜨거움</td></tr>
-</tbody>
-</table></div>
-<p><strong>5060 Ti 16GB</strong>는 특히 눈여겨볼 만합니다.
-대역폭은 3090보다 낮지만 VRAM 16GB에 신품·보증·저전력이라,
-중고가 부담스러운 경우의 현실적인 대안입니다.
-자세한 비교는 <a href="/posts/rtx4060ti-16gb-vs-4070.html">5060 Ti 16GB vs 5070</a>에 있습니다.</p>
+<p>빌드 머신, 테스트 서버, 개인 NAS 겸용 — &quot;본체는 따로 있고 상시로
+돌 작은 컴퓨터가 하나 필요하다&quot;면 그게 정확히 미니PC 자리입니다.</p>
+<h2 id="발열-통이-작으면-노트북의-문제도-따라옵니다">발열 — 통이 작으면 노트북의 문제도 따라옵니다</h2>
+<p>노트북 속이니 노트북의 약점도 옵니다. 작은 통에서 지속 부하가
+걸리면 열이 차고, <a href="/posts/laptop-thermal-throttling.html">온도가 차면 스스로 느려지는 동작(스로틀링)</a>도
+같은 방식으로 일어납니다.</p>
+<p>짧은 빌드·일반 코딩에서는 체감이 드뭅니다. <strong>장시간 풀부하</strong>
+(긴 컴파일, 영상 인코딩, CPU 추론)를 계속 걸 계획이면, 같은 CPU라도
+통이 큰 쪽(데스크톱)이 유지력에서 유리하다는 정도로 알아두면 됩니다.</p>
+<h2 id="사기-전-확인-절차-사양표-네-줄">사기 전 확인 절차 — 사양표 네 줄</h2>
+<ol>
+<li><strong>CPU 모델명</strong> — 끝 글자로 노트북용인지 보고, 세대가 너무 오래된
+재고가 아닌지 확인합니다</li>
+<li><strong>램</strong> — 용량과 함께 <strong>SO-DIMM 슬롯인지 온보드인지</strong>. 슬롯이면
+나중에 <a href="/posts/laptop-ram-upgrade.html">노트북용 램</a>으로 늘릴 수 있습니다</li>
+<li><strong>SSD 슬롯</strong> — M.2 슬롯 수와 규격. 하나뿐이면 교체 시 이사가
+필요하고, <a href="/posts/laptop-ssd-upgrade.html">노트북 SSD 교체</a>와 같은 절차입니다</li>
+<li><strong>단자</strong> — 모니터 출력 수(듀얼 모니터 계획이면 2개 이상),
+랜 포트, USB4 여부(eGPU·고속 외장 저장 장치 여지)</li>
+</ol>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="3090-두-장이-4090-한-장보다-나은가요">3090 두 장이 4090 한 장보다 나은가요</h3>
-<p>VRAM 총량은 48GB로 4090(24GB)의 두 배라 더 큰 모델을 올릴 수 있습니다.
-다만 카드 간 통신 오버헤드가 있어 같은 용량 단일 카드보다 느리고,
-파워 700W 이상과 메인보드 슬롯 간격을 감당해야 합니다.</p>
-<h3 id="채굴-카드인지-어떻게-아나요">채굴 카드인지 어떻게 아나요</h3>
-<p>확실한 판별법은 없습니다. 다만 참고할 수 있는 것들이 있습니다.
-같은 판매자가 여러 장을 동시에 파는 경우, 팬 소음이 유난히 큰 경우,
-서멀 재도포 이력이 있는 경우는 주의합니다.
-가격이 시세보다 크게 낮으면 이유를 물어보는 편이 좋습니다.</p>
-<h3 id="로컬-llm만-쓸-건데-게이밍-성능은-안-봐도-되나요">로컬 LLM만 쓸 건데 게이밍 성능은 안 봐도 되나요</h3>
-<p>네. LLM 추론 성능은 <strong>VRAM 용량 → 메모리 대역폭 → 연산 성능</strong> 순으로 중요합니다.
-게이밍 벤치마크 순위와 LLM 성능 순위는 일치하지 않습니다.</p>
-<h3 id="맥은-어떤가요">맥은 어떤가요</h3>
-<p>메모리 64GB 이상 맥에서는 통합 메모리를 VRAM처럼 써서 70B 모델도 올라갑니다.
-다만 대역폭이 전용 GPU보다 낮아 생성 속도는 느립니다.
-<strong>용량이 필요하면 맥, 속도가 필요하면 전용 GPU</strong>입니다.</p>
+<h3 id="노트북이-이미-있는데-미니pc를-또-살-이유가-있나요">노트북이 이미 있는데 미니PC를 또 살 이유가 있나요</h3>
+<p>책상에서만 쓸 두 번째 컴퓨터(서버·작업 분리)가 필요할 때입니다.
+주력 컴퓨터를 고르는 문제라면 <a href="/posts/mini-pc-vs-laptop.html">미니PC와 노트북 중 무엇을
+살지</a>부터 정리하는 것이 순서입니다.</p>
+<h3 id="미니pc로-로컬-llm을-돌리는-영상을-봤습니다">미니PC로 로컬 LLM을 돌리는 영상을 봤습니다</h3>
+<p>돌아가긴 합니다 — <a href="/posts/local-llm-without-gpu.html">그래픽카드 없이도 돌아는 갑니다</a>.
+쓸 만한 속도인지가 문제이고, 그건 메모리 대역폭이 정합니다.
+일부 상급 미니PC는 메모리를 크게 싣고 내장 그래픽과 공유하는
+구조로 이 한계를 좁히는데, 제품군이 갈리고 값도 급이 달라
+&quot;미니PC면 된다/안 된다&quot;로 뭉뚱그릴 수 없습니다. 사양표의 메모리
+대역폭을 봐야 하는 영역입니다.</p>
+<h3 id="라즈베리파이-같은-것과는-다른가요">라즈베리파이 같은 것과는 다른가요</h3>
+<p>다릅니다. 라즈베리파이는 다른 칩 계열(ARM)의 학습·공작용 보드라
+일반 프로그램 호환부터 다른 세계입니다. 이 글의 미니PC는
+윈도우·리눅스가 그대로 도는 일반 컴퓨터입니다.</p>
+<h3 id="사무실-pc로-회사에서-쓰는-건요">사무실 PC로 회사에서 쓰는 건요</h3>
+<p>문서·웹 중심 업무에는 잘 맞습니다. 이 글은 개발 관점이라 램과
+GPU를 따졌지만, 사무용은 그 두 걱정이 없는 자리입니다.</p>
+<h3 id="중고-미니pc는요">중고 미니PC는요</h3>
+<p>노트북 중고와 같은 눈으로 보면 됩니다 — <a href="/posts/used-laptop-dev.html">중고 노트북에서 확인할
+것</a> 중 화면·배터리·키보드 항목이 빠지니
+오히려 점검이 단순합니다. CPU 세대와 램 규격(DDR4냐 5냐)을 먼저
+보세요.</p>
 <h2 id="정리">정리</h2>
 <ol>
-<li><strong>로컬 LLM은 VRAM이 먼저</strong>입니다 — 세대나 연산 성능이 아니라</li>
-<li>3090은 VRAM 24GB, 대역폭 936GB/s로 <strong>4070을 두 지표에서 앞섭니다</strong></li>
-<li>대신 <strong>350W·3슬롯·중고 리스크</strong>를 받아들여야 합니다</li>
-<li><strong>14B 이하만 쓴다면</strong> 5070이나 5060 Ti 16GB로 충분합니다 (4070은 단종)</li>
+<li><strong>미니PC = 화면·배터리 뗀 노트북</strong>입니다. 판단 기준을 노트북
+글에서 그대로 가져오면 됩니다</li>
+<li>개발은 CPU·램 작업이라 <strong>됩니다</strong> — 도커·안드로이드면 32GB,
+램 슬롯(SO-DIMM) 여부를 사양표에서 확인하세요</li>
+<li><strong>외장 GPU가 없습니다.</strong> 로컬 LLM·게임의 한계가 노트북과 같고,
+저가형(N 계열)은 메모리 채널이 하나라 더 좁습니다</li>
+<li><strong>상시 가동(개발 서버·홈서버)이 미니PC의 제일 좋은 자리</strong>입니다 —
+전기·소음·자리 전부에서요</li>
+<li>사양표 확인 네 줄 — <strong>CPU 끝 글자 · 램 슬롯 · M.2 슬롯 · 단자</strong></li>
 </ol>
-<p>VRAM 용량별로 어떤 모델이 돌아가는지는
-<a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>에 표로 정리했습니다.</p>
-<p>스펙이나 시세가 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+<p>노트북과 저울질 중이라면 <a href="/posts/mini-pc-vs-laptop.html">미니PC vs 노트북</a>이
+그 갈림길을 다룹니다.</p>
+<p>실제와 다르게 동작하면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
   
 
-  <p class="tags"><span class="tag">RTX3090</span> <span class="tag">RTX4070</span> <span class="tag">로컬LLM</span> <span class="tag">VRAM</span> <span class="tag">중고그래픽카드</span></p>
+  <p class="tags"><span class="tag">미니PC</span> <span class="tag">개발용</span> <span class="tag">모바일CPU</span> <span class="tag">홈서버</span> <span class="tag">사양</span></p>
 </article>
 
 <section class="related" aria-labelledby="related-h">
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/desktop-ups.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다</span>
-        <span class="card-desc">정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/egpu-local-llm.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">노트북에 eGPU — 게임엔 아쉽지만 로컬 LLM엔 잘 맞는 이유</span>
-        <span class="card-desc">외장 그래픽 박스는 대역폭 병목 때문에 게임에서 손해를 봅니다. 그런데 로컬 LLM 추론은 구조가 달라 그 병목을 거의 안 탑니다. 왜 그런지, 무엇을 확인해야 하는지 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/gpu-sag-support.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">그래픽카드 처짐(새그) — 지지대가 필요한 경우와 아닌 경우</span>
-        <span class="card-desc">요즘 상급 카드는 무거워서 끝이 처집니다. 어느 정도면 정상이고 언제 지지대가 필요한지, 수직 장착이 왜 완전한 해법이 아닌지 정리했습니다. 성능은 떨어지지 않습니다 — 문제는 다른 곳에 있습니다.</span>
+      <a href="/posts/mini-pc-vs-laptop.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC vs 노트북 — 갈림길은 성능이 아니라 이동입니다</span>
+        <span class="card-desc">어차피 책상에서만 쓰는데 노트북이 맞을까요. 속이 같은 두 물건이라 성능으로는 안 갈립니다. 밖에서 화면을 열 일이 있는지, 이미 갖고 있는 물건이 무엇인지로 갈립니다.</span>
       </a>
     </li>
   </ul>
