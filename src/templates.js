@@ -336,6 +336,11 @@ export function listPage({
   totalPosts = 0,
   toolData = null,
   affiliate = false,
+  // 카테고리의 "처음이면 이 글부터" 한 줄. GA 실측(2026-08-26 기록)에서
+  // 홈에 온 사람 절반이 카테고리를 둘러보는데, 목록은 날짜순이라
+  // 처음 읽을 글이 아래로 밀려 있었습니다. 홈의 featured 와 같은 역할을
+  // 카테고리 단위로 하는 것입니다. 스타일은 hero-link 재사용 — 새 CSS 없음.
+  start = null,
 }) {
   // 계산기에 제휴 링크가 있으면 고지가 '첫 부분'에 있어야 합니다.
   // 하단 표기나 누락은 수익 전액 몰수 사유입니다. 사람이 기억할 일이 아니라
@@ -426,6 +431,7 @@ export function listPage({
   <h1>${escapeHtml(heading)}</h1>
   ${noticeBox}
   ${intro ? `<p class="lead">${escapeHtml(intro)}</p>` : ''}
+  ${start ? `<p class="hero-actions"><a class="hero-link" href="${start.href}">처음이면 — ${escapeHtml(start.label)}</a></p>` : ''}
   ${heroBox}
   ${catBox}
   ${

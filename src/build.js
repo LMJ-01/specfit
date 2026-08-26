@@ -576,6 +576,10 @@ async function build() {
   // ---- 카테고리 ----
   for (const cat of config.categories) {
     const inCat = posts.filter((p) => p.category === cat.slug);
+    // start 링크가 죽은 글을 가리키면 카테고리 첫 줄부터 404 입니다.
+    // 글 slug 를 바꾸는 일은 없지만(원칙), config 오타는 사람이 냅니다.
+    if (cat.start && !posts.some((p) => p.url === cat.start.href))
+      warnings.push(`카테고리 '${cat.slug}': start 링크 대상이 없습니다 — ${cat.start.href}`);
     written.push(
       await write(
         `${cat.slug}.html`,
@@ -587,6 +591,7 @@ async function build() {
           heading: cat.label,
           intro: cat.description,
           searchable: false,
+          start: cat.start || null,
         })
       )
     );

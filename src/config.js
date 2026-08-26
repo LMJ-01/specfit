@@ -157,29 +157,36 @@ export const config = {
   //    "코딩용 모니터" 처럼 짧으면 검색 결과에 그 여섯 글자만 나갑니다.
   //    빌드가 30자 미만이면 경고합니다.
   categories: [
+    // start: 카테고리 상단의 "처음이면 이 글부터" 한 줄 (2026-08-26 추가).
+    //   목록이 날짜순이라 입문 글이 아래로 밀리는 문제를 잡습니다.
+    //   href 대상이 없으면 빌드가 경고합니다 — slug 를 바꾸면 여기도 고치세요.
     {
       slug: 'gpu',
       label: 'GPU',
       description:
         '로컬 LLM·딥러닝용 그래픽카드를 VRAM 기준으로 고릅니다. 어떤 카드로 몇 B 모델이 돌아가는지 계산기로 바로 확인할 수 있습니다.',
+      start: { href: '/posts/local-llm-start-guide.html', label: '용어 없이 읽는 로컬 LLM 시작 가이드' },
     },
     {
       slug: 'laptop',
       label: '노트북',
       description:
         '개발·AI 작업용 노트북. 나중에 못 바꾸는 램·화면·그래픽카드부터 정하는 순서로 정리했습니다.',
+      start: { href: '/posts/dev-laptop-spec.html', label: '나중에 못 바꾸는 것부터 고르는 순서' },
     },
     {
       slug: 'monitor',
       label: '모니터',
       description:
         '코딩용 모니터. 주사율이나 색재현율이 아니라 해상도와 크기의 조합이 갈림길입니다. PPI와 배율을 계산해 정리했습니다.',
+      start: { href: '/posts/coding-monitor-resolution.html', label: '크기와 해상도 조합부터 정하기' },
     },
     {
       slug: 'memory',
       label: '메모리·스토리지',
       description:
         '램과 SSD. 얼마나 필요한지는 VRAM을 얼마나 넘기느냐가 정합니다. 값이 오른 2026년 기준으로 갈랐습니다.',
+      start: { href: '/posts/ram-16gb-vs-32gb.html', label: '16GB로 되나, 32GB가 필요한가' },
     },
     // 2026-08-26 신설 — 8/24 검증에서 "카테고리가 없어 보류"였던 자리.
     // 2차 심사 거절 후 공백기에 열었습니다 (심사 중 구조 변경 금지 제약 없음).
@@ -188,6 +195,7 @@ export const config = {
       label: '미니PC',
       description:
         '책상에 두는 작은 컴퓨터. 이름은 데스크톱인데 속은 노트북에 가까워서, 사양표에서 CPU·램·포트의 정체를 확인하는 기준을 정리했습니다.',
+      start: { href: '/posts/mini-pc-vs-laptop.html', label: '노트북과의 갈림길부터' },
     },
   ],
 };
