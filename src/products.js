@@ -125,6 +125,45 @@ export const products = {
     widget:
       '<iframe src="https://coupa.ng/coTAP6" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
+  // 충전기 글(laptop-charger-watt-pd)용. 글의 기준(20V 프로필 + KC 인증)에
+  // 맞는 65W GaN 충전기입니다.
+  'charger-65w': {
+    // 검색어: 앤커 나노 II 65W — 65W PD, GaN (2026-08-26 발급)
+    label: '65W PD 충전기 보기',
+    note: '출력표에 20V 단계(20V×3.25A)와 KC 인증이 있는지 확인하세요',
+    buy: 'https://link.coupang.com/a/gxeF524WHc',
+    widget:
+      '<iframe src="https://coupa.ng/co2KpA" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
+  },
+  // 방열판 글(nvme-heatsink)용. 2280 규격 방열판입니다.
+  'm2-heatsink': {
+    // 검색어: 써멀라이트 HR-09 2280 (2026-08-26 발급)
+    label: 'M.2 방열판 보기 (2280)',
+    note: '보드 기본 방열판이 있으면 그걸 먼저 쓰세요 — 이중 장착은 안 됩니다',
+    buy: 'https://link.coupang.com/a/gxeJBKC2wu',
+    widget:
+      '<iframe src="https://coupa.ng/co2Krr" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
+  },
+  // 지지대 글(gpu-sag-support)용. 기둥(잭)형입니다.
+  'gpu-support': {
+    // 검색어: 그래픽카드 지지대 (2026-08-26 발급)
+    label: '그래픽카드 지지대 보기',
+    note: '높이 조절 범위가 케이스 바닥과 카드 사이 간격에 맞는지 확인하세요',
+    buy: 'https://link.coupang.com/a/gxeNBCU3b2',
+    widget:
+      '<iframe src="https://coupa.ng/co2Kti" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
+  },
+  // KVM 글(monitor-kvm)용. 보유한 다른 모니터 링크(monitor·monitor-24)는
+  // KVM 지원이 확인되지 않아 이 자리를 따로 만들었습니다.
+  'monitor-kvm': {
+    // 검색어: 델 U2723QE — 27" 4K, KVM·업스트림 USB-C+USB-B·PD 90W
+    // 사양표에서 셋 다 확인하고 골랐습니다 (2026-08-26 발급)
+    label: 'KVM 지원 모니터 보기',
+    note: '글의 스펙 셋(KVM 표기 · 업스트림 2개 · USB-C PD)을 사양표에서 확인하세요',
+    buy: 'https://link.coupang.com/a/gxeUTipMwS',
+    widget:
+      '<iframe src="https://coupa.ng/co2Kwb" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
+  },
   ssd: {
     // 2026-08-20 — 검색 결과 링크에서 **특정 제품**으로 바꿨습니다.
     //   SK하이닉스 GOLD P31 NVMe SSD 1TB (HFS001TDE9X0733)
