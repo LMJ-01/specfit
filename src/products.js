@@ -153,6 +153,17 @@ export const products = {
     widget:
       '<iframe src="https://coupa.ng/co2Kti" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
   },
+  // UPS 글(desktop-ups)용. 첫 발급분(APC BX950MI-GR)은 유사 사인파라
+  // 배치를 보류했고, 이 제품은 ABB 공식 문서에서 순수 사인파(pure
+  // sinewave)·라인인터랙티브를 확인하고 걸었습니다 (2026-08-26).
+  ups: {
+    // 검색어: ABB PowerValue 11LI Up 600VA KC (2026-08-26 발급)
+    label: 'UPS 보기 (순수 사인파)',
+    note: '표기 두 숫자 중 작은 쪽(W)이 감당 용량입니다 — 내 실소비가 그 안인지 확인하세요',
+    buy: 'https://link.coupang.com/a/gxf0GxXvIi',
+    widget:
+      '<iframe src="https://coupa.ng/co2K46" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>',
+  },
   // KVM 글(monitor-kvm)용. 보유한 다른 모니터 링크(monitor·monitor-24)는
   // KVM 지원이 확인되지 않아 이 자리를 따로 만들었습니다.
   'monitor-kvm': {
