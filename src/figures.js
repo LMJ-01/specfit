@@ -626,6 +626,52 @@ ${t(x0, top + qhdH + 48, '배치를 가운데 정렬로 바꾸면 벽이 위아�
   );
 }
 
+/**
+ * 미니PC 세 급의 메모리 대역폭.
+ * 같은 "미니PC" 이름 아래 급이 얼마나 벌어지는지 막대 길이로 보여줍니다.
+ * 수치는 mini-pc-local-llm 본문의 계산값과 동일해야 합니다.
+ */
+function minipcBandwidth() {
+  const W = 640;
+  const rows = [
+    // [이름, GB/s, 미니PC 급인가(참고 축이면 false)]
+    ['RTX 5060 (VRAM · 참고)', 448, false],
+    ['통합메모리 급 미니PC', 256, true],
+    ['맥 M5 (참고)', 153, false],
+    ['일반 미니PC (듀얼 채널)', 89.6, true],
+    ['저가형 미니PC (싱글 채널)', 38.4, true],
+  ];
+  const max = 448;
+  const barX = 216;
+  const barW = 340;
+
+  const body = `
+${t(16, 22, '같은 "미니PC" 인데 대역폭은 급마다 이렇게 다릅니다', { weight: 600, size: 14 })}
+${rows
+  .map(([name, bw, isMinipc], i) => {
+    const y = 40 + i * 30;
+    const w = Math.max(3, (bw / max) * barW);
+    return `${t(16, y + 15, name, { size: 12, fill: isMinipc ? COLOR.text : COLOR.mute })}
+${
+  isMinipc
+    ? rect(barX, y + 3, w, 16, COLOR.accent, { r: 3 })
+    : rect(barX, y + 3, w, 16, COLOR.soft, { r: 3, stroke: COLOR.line })
+}
+${t(barX + w + 8, y + 15, bw + ' GB/s', { size: 11, fill: COLOR.mute })}`;
+  })
+  .join('\n')}
+
+${t(16, 202, '색칠된 막대가 미니PC 세 급 — 사양표의 램 규격에서 계산되는 값입니다.', { weight: 600 })}`;
+
+  return figure(
+    '미니PC 세 급의 메모리 대역폭 비교',
+    W,
+    216,
+    body,
+    '로컬 LLM 생성 속도는 이 막대 길이에 비례합니다. 급을 확인하고 사는 이유입니다.'
+  );
+}
+
 export const figures = {
   'vram-overflow': vramOverflow,
   'memory-parts': memoryParts,
@@ -640,4 +686,5 @@ export const figures = {
   'dual-channel-slots': dualChannelSlots,
   'ctx-truncate': ctxTruncate,
   'mixed-res-cursor': mixedResCursor,
+  'minipc-bandwidth': minipcBandwidth,
 };

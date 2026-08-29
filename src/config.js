@@ -31,13 +31,16 @@ export const config = {
   //
   // 고르는 기준: 카테고리를 대표하면서, 그 글 하나만 읽어도 판단이 서는 것.
   // 새 글이 쌓이면 여기를 갱신하세요. 없는 slug 를 적으면 빌드가 경고합니다.
+  // 2026-08-29: 미니PC 카테고리 신설(4편)을 반영해 ram-price-2026 을
+  // mini-pc-vs-laptop 으로 교체 — 5개 카테고리가 전부 한 자리씩 갖게 됨
+  // (GPU 만 계산기 연결 글로 두 자리). 시세 글은 카테고리 페이지에서 찾아짐.
   featured: [
     'ollama-minimum-spec',
     'rtx4060ti-16gb-vs-4070',
     'dev-laptop-spec',
     'coding-monitor-resolution',
     'ram-16gb-vs-32gb',
-    'ram-price-2026',
+    'mini-pc-vs-laptop',
   ],
 
   // 공정거래위원회 대가성 고지 문구.
