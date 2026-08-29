@@ -2,7 +2,7 @@
 title: Ollama 설치부터 첫 대화까지 — 명령어 두 줄
 description: 로컬 LLM을 처음 돌려보는 가장 빠른 길입니다. 설치, 모델 받기, 대화까지 순서대로. 어떤 모델을 골라야 하는지도 함께 정리했습니다.
 date: 2026-08-15
-updated: 2026-08-21
+updated: 2026-08-30
 category: gpu
 tags: [Ollama, 로컬LLM, 설치, 입문]
 affiliate: true
@@ -57,7 +57,8 @@ ollama --version
 | 8GB | 7~8B | `ollama pull qwen2.5:7b` |
 | 12GB | 12~14B | `ollama pull qwen2.5:14b` |
 | 16GB | 12~14B | `ollama pull qwen2.5:14b` |
-| 24GB 이상 | 32B | `ollama pull qwen2.5:32b` |
+| 24GB | 20~22B | `ollama pull mistral-small:22b` |
+| 32GB 이상 | 32B | `ollama pull qwen2.5:32b` |
 
 **태그를 붙이지 않으면 기본 크기가 받아집니다.** 크기를 직접 정하는 편이 안전합니다.
 

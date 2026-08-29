@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RTX 4060으로 로컬 LLM — 8GB로 어디까지 되나","description":"가장 흔한 입문 카드인 RTX 4060의 VRAM은 8GB입니다. 어떤 크기 모델이 쾌적하게 돌고 어디서 막히는지, 8GB의 한계선을 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-20","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/rtx4060-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RTX 4060으로 로컬 LLM — 8GB로 어디까지 되나","description":"가장 흔한 입문 카드인 RTX 4060의 VRAM은 8GB입니다. 어떤 크기 모델이 쾌적하게 돌고 어디서 막히는지, 8GB의 한계선을 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-30","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/rtx4060-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"RTX 4060으로 로컬 LLM — 8GB로 어디까지 되나","item":"https://specfit.kr/posts/rtx4060-local-llm.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"RTX 4060 8GB로 Ollama가 돌아가나요","acceptedAnswer":{"@type":"Answer","text":"돌아갑니다. 7~8B 모델까지는 전부 VRAM에 올라가 쾌적합니다. 14B부터는 일부가 CPU로 넘어가면서 느려집니다."}},{"@type":"Question","name":"4060에서 14B 모델을 돌리면 얼마나 느려지나요","acceptedAnswer":{"@type":"Answer","text":"전부 VRAM에 올라갈 때와 비교해 몇 배 수준으로 떨어집니다. 에러가 나는 게 아니라 그냥 느려지기 때문에 처음에는 원인을 알기 어렵습니다. 작업 관리자에서 GPU 전용 메모리가 꽉 찼는지 보면 확인됩니다."}},{"@type":"Question","name":"4060을 두 장 꽂으면 16GB가 되나요","acceptedAnswer":{"@type":"Answer","text":"총량은 늘어나지만 속도는 합쳐지지 않습니다. 카드들이 순서대로 일하기 때문입니다. 전력과 발열은 두 배이고 슬롯 간격도 문제가 됩니다. 8GB 두 장보다 16GB 한 장이 낫습니다 — 그래픽카드 두 장에 자세히 적었습니다."}},{"@type":"Question","name":"노트북용 RTX 4060도 같은가요","acceptedAnswer":{"@type":"Answer","text":"다릅니다. 노트북 4060은 VRAM이 8GB로 같지만 전력 제한이 낮아 성능이 떨어지고, 제조사마다 설정이 달라 편차가 큽니다. VRAM 8GB라는 한계선은 동일하므로 돌아가는 모델 크기는 같다고 보시면 됩니다."}},{"@type":"Question","name":"4060 Ti 8GB를 사면 로컬 LLM에서 나은가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. VRAM이 8GB로 같아서 올라가는 모델도 같습니다. 로컬 LLM 때문에 4060 Ti 8GB로 올리는 것은 의미가 없고, 올릴 거면 16GB 쪽입니다."}}]}</script>
 </head>
@@ -65,7 +65,7 @@
     <h1>RTX 4060으로 로컬 LLM — 8GB로 어디까지 되나</h1>
     <p class="post-meta">
       <time datetime="2026-08-15">2026년 8월 15일</time>
-      <span class="updated">· 2026년 8월 20일 갱신</span>
+      <span class="updated">· 2026년 8월 30일 갱신</span>
     </p>
   </header>
 
@@ -254,7 +254,7 @@
 <pre><code>8GB   →  7~8B 까지     (입문)
 12GB  →  12~14B 까지   (실용)
 16GB  →  14B 까지      (여유)
-24GB  →  32B 까지      (상급)</code></pre>
+24GB  →  20~22B 여유 · 32B 빠듯  (상급)</code></pre>
 <p>8GB는 <strong>가장 아래 칸</strong>입니다. 7~8B 모델은 번역, 간단한 질문, 짧은 글 다듬기에는 충분하지만
 코드를 이해시키려 하면 아쉬움이 나오기 시작합니다.</p>
 <p>그 아쉬움을 풀려면 12~14B로 올라가야 하는데, <strong>그게 정확히 8GB가 막히는 지점</strong>입니다.</p>

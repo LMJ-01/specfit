@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"웹 개발용 노트북 사양 — 램 16GB로 되나","description":"웹 개발은 생각보다 요구가 낮습니다. 램을 먹는 건 프레임워크가 아니라 브라우저와 도커입니다. 어디서 16GB가 부족해지는지 갈라서 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/web-dev-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"웹 개발용 노트북 사양 — 램 16GB로 되나","description":"웹 개발은 생각보다 요구가 낮습니다. 램을 먹는 건 프레임워크가 아니라 브라우저와 도커입니다. 어디서 16GB가 부족해지는지 갈라서 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-08-30","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/web-dev-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"웹 개발용 노트북 사양 — 램 16GB로 되나","item":"https://specfit.kr/posts/web-dev-laptop-spec.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥북으로 웹 개발해도 되나요","acceptedAnswer":{"@type":"Answer","text":"잘 됩니다. 개발 도구 대부분이 맥을 우선 지원합니다. 다만 맥은 램을 나중에 못 늘립니다. 도커를 쓰실 거면 24GB 이상을 권합니다. 기준은 맥북 에어 vs 프로에 있습니다."}},{"@type":"Question","name":"개발 서버가 느린데 노트북 탓인가요","acceptedAnswer":{"@type":"Answer","text":"프로젝트 크기와 설정 문제인 경우가 많습니다. 작업 관리자에서 램 \"사용 중\" 수치부터 보세요. 14GB 이상이면 이미 부족한 상태이고, 그때는 하드웨어 문제가 맞습니다. 판단 기준은 램 16GB vs 32GB에 있습니다."}},{"@type":"Question","name":"브라우저 탭을 줄이면 정말 나아지나요","acceptedAnswer":{"@type":"Answer","text":"나아집니다. 탭 하나가 작아도 수십 개면 몇 GB가 됩니다. 16GB에서 도커까지 쓰신다면 여기서 나오는 몫이 의외로 큽니다."}},{"@type":"Question","name":"중고 노트북도 괜찮나요","acceptedAnswer":{"@type":"Answer","text":"웹 개발만 하신다면 몇 세대 전 CPU로도 충분합니다. 램을 늘릴 수 있는지, SSD를 바꿀 수 있는지를 먼저 보세요. 그게 CPU 세대보다 중요합니다. 받자마자 5분이면 배터리·SSD·램 슬롯이 다 재집니다 — 중고 노트북 개발용으로 괜찮나에 명령을 적어뒀습니다."}},{"@type":"Question","name":"모니터를 사는 게 나을까요 노트북을 올리는 게 나을까요","acceptedAnswer":{"@type":"Answer","text":"웹 개발이라면 모니터 쪽이 대개 체감이 큽니다. 화면을 나눠 쓰는 일이 많아서입니다. 같은 값이면 노트북 등급을 올리는 것보다 외부 모니터를 붙이는 편을 권합니다."}},{"@type":"Question","name":"로컬 LLM도 같이 하려면요","acceptedAnswer":{"@type":"Answer","text":"램이 아니라 VRAM을 봐야 합니다. 전용 그래픽카드가 필요하고, 노트북은 이름이 같아도 VRAM이 다릅니다 — 로컬 LLM 되는 노트북 고르기에 표를 넣어뒀습니다."}}]}</script>
 </head>
@@ -65,7 +65,7 @@
     <h1>웹 개발용 노트북 사양 — 램 16GB로 되나</h1>
     <p class="post-meta">
       <time datetime="2026-08-17">2026년 8월 17일</time>
-      
+      <span class="updated">· 2026년 8월 30일 갱신</span>
     </p>
   </header>
 
@@ -125,10 +125,11 @@
 <p><strong>16GB면 여유가 남습니다.</strong> 여기까지가 &quot;웹 개발은 16GB로 된다&quot;의 근거입니다.</p>
 <h2 id="2-그럼-언제-32gb가-되나-도커가-들어올-때">2. 그럼 언제 32GB가 되나 — 도커가 들어올 때</h2>
 <p><strong>로컬에 DB나 캐시를 띄우기 시작하면 계산이 바뀝니다.</strong></p>
-<p>윈도우에서는 도커가 리눅스 환경 위에서 돌고, 그 환경이 램을 <strong>미리 예약</strong>합니다.
-기본값이 전체 램의 절반 또는 8GB 중 작은 값이라, 16GB에서는 절반이 통째로 넘어갑니다.</p>
+<p>윈도우에서는 도커가 리눅스 환경 위에서 돌고, 그 환경이 <strong>램을 가져갈 수
+있는 상한</strong>이 기본값으로 전체의 절반(최대 8GB)입니다. 항상 그만큼 쓰는
+건 아니지만, 리눅스가 캐시로 채워 가면 실제로 그 언저리까지 갑니다.</p>
 <pre><code>16GB
- └ WSL2 + 도커가 최대 8GB 예약
+ └ WSL2 + 도커가 최대 8GB 까지 차오름
  └ 남은 8GB 로 윈도우 · 에디터 · 브라우저를 전부</code></pre>
 <p><strong>여기서 터집니다.</strong> 컨테이너를 띄우는 순간 브라우저가 버벅이기 시작합니다.</p>
 <p>이 예약량은 조절할 수 있습니다 —
