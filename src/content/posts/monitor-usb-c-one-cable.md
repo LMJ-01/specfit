@@ -2,7 +2,7 @@
 title: 노트북 모니터 원케이블 연결 — USB-C 하나로 되는 조건
 description: 케이블 하나로 화면·충전·허브를 다 하려면 세 가지가 맞아야 합니다. 노트북 포트, 모니터가 주는 전력, 케이블. 어디서 막히는지 순서대로 정리했습니다.
 date: 2026-08-17
-updated: 2026-08-25
+updated: 2026-08-30
 category: monitor
 tags: [USB-C, 원케이블, 모니터, PD충전, 개발용노트북]
 affiliate: true
@@ -74,7 +74,7 @@ affiliate: true
 
 다만 **연결할 수 있는 외부 모니터 대수에 제한**이 있고, 그건 칩 등급이 정합니다.
 기본 칩과 프로·맥스가 다르니 제품 사양에서 "지원하는 디스플레이" 항목을 보세요.
-칩별 차이는 [맥북 에어 vs 프로](/posts/macbook-air-vs-pro-dev.html)에 정리했습니다.
+대수 상한이 어떻게 동작하는지는 [노트북에 모니터 두 대](/posts/laptop-dual-monitor-output.html)에 정리했습니다.
 
 ## 2. 모니터가 몇 W를 주는가 — 여기가 두 번째 함정
 
