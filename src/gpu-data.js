@@ -122,6 +122,22 @@ export const gpus = [
   { id: 'm5pro-64', name: 'Mac M5 Pro · 64GB', vram: 46, bw: 307, tdp: 0, mac: true, tier: 'mac' },
   { id: 'm5max-64', name: 'Mac M5 Max · 64GB', vram: 46, bw: 460, tdp: 0, mac: true, tier: 'mac' },
   { id: 'm5max-128', name: 'Mac M5 Max · 128GB', vram: 96, bw: 614, tdp: 0, mac: true, tier: 'mac' },
+
+  // ── 통합메모리 미니PC (2026-08-29 추가) ─────────────────────────
+  // mini-pc-local-llm 글이 이 계산기를 싣는데, 정작 그 글의 주인공인
+  // 통합메모리 급을 계산기에서 고를 수 없었습니다. 맥과 같은 취급입니다
+  // (minipc: true → 추천 제외, 진단용으로만 목록에 남음).
+  //
+  // "라이젠 AI 맥스 계열"로 급만 지칭하고 개별 제품을 못 박지 않습니다 —
+  // 같은 칩을 쓰는 완제품이 여러 회사에서 나오고 사양이 같기 때문입니다.
+  //
+  // bw 256 은 계산값입니다: LPDDR5X-8000 × 256bit(32바이트) = 256GB/s.
+  // vram(쓸 수 있는 몫)은 맥과 같은 보수 기준을 썼습니다 — 그래픽 쪽에
+  // 내줄 수 있는 상한이 대개 전체의 75% 선이고(128GB 구성에서 96GB),
+  // 같은 총량의 맥 항목과 숫자를 맞춰 계산기 안에서 일관되게 했습니다.
+  { id: 'minipc-umem-32', name: '미니PC 통합메모리 32GB (라이젠 AI 맥스 계열)', vram: 22, bw: 256, tdp: 0, minipc: true, tier: 'minipc' },
+  { id: 'minipc-umem-64', name: '미니PC 통합메모리 64GB (라이젠 AI 맥스 계열)', vram: 46, bw: 256, tdp: 0, minipc: true, tier: 'minipc' },
+  { id: 'minipc-umem-128', name: '미니PC 통합메모리 128GB (라이젠 AI 맥스 계열)', vram: 96, bw: 256, tdp: 0, minipc: true, tier: 'minipc' },
 ];
 
 // params: 파라미터 수(B). 대표 모델명은 예시입니다.
