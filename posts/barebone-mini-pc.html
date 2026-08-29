@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나 | 스펙핏</title>
+<meta name="description" content="베어본은 미완성 컴퓨터입니다. 뭐가 빠져 있고 뭘 골라 넣어야 하는지, 완제품과는 언제 갈리는지 정리했습니다. 갖고 있는 램과 SSD를 살릴 수 있는 게 이 방식의 핵심입니다.">
+<link rel="canonical" href="https://specfit.kr/posts/barebone-mini-pc.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나 | 스펙핏">
+<meta property="og:description" content="베어본은 미완성 컴퓨터입니다. 뭐가 빠져 있고 뭘 골라 넣어야 하는지, 완제품과는 언제 갈리는지 정리했습니다. 갖고 있는 램과 SSD를 살릴 수 있는 게 이 방식의 핵심입니다.">
+<meta property="og:url" content="https://specfit.kr/posts/barebone-mini-pc.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나","description":"베어본은 미완성 컴퓨터입니다. 뭐가 빠져 있고 뭘 골라 넣어야 하는지, 완제품과는 언제 갈리는지 정리했습니다. 갖고 있는 램과 SSD를 살릴 수 있는 게 이 방식의 핵심입니다.","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/barebone-mini-pc.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나","item":"https://specfit.kr/posts/barebone-mini-pc.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"램은 노트북용을 사면 되나요","acceptedAnswer":{"@type":"Answer","text":"네, 같은 물건입니다. SO-DIMM 이라고 적힌 것을 사면 되고, 규격(DDR4/DDR5)만 내 베어본 사양표와 맞추면 됩니다."}},{"@type":"Question","name":"완제품을 사서 나중에 램만 늘리는 건요","acceptedAnswer":{"@type":"Answer","text":"그것도 좋은 절충입니다. 다만 완제품 중에는 램이 납땜(온보드)이라 못 늘리는 모델이 있으니, 노트북에서 확인하던 그 방법대로 슬롯 여부를 먼저 확인하세요. 베어본은 정의상 슬롯이 열려 있는 물건이라 이 걱정이 없습니다."}},{"@type":"Question","name":"개발용으로는 뭘 얼마나 넣어야 하나요","acceptedAnswer":{"@type":"Answer","text":"개발용 미니PC의 기준 그대로입니다 — 도커·안드로이드면 램 32GB(16GB 두 장), SSD 는 1TB 권장."}},{"@type":"Question","name":"로컬 LLM 용으로 베어본을 맞추면요","acceptedAnswer":{"@type":"Answer","text":"베어본이냐 완제품이냐보다 어느 급이냐가 먼저입니다 — 미니PC 로컬 LLM 판정법의 대역폭 기준으로 급을 확인하고, 일반형 베어본이라면 램 두 장(듀얼 채널)이 그 급에서 할 수 있는 최선입니다."}},{"@type":"Question","name":"AS 는 어떻게 되나요","acceptedAnswer":{"@type":"Answer","text":"본체와 내가 넣은 부품의 보증이 따로 갑니다. 문제가 생기면 어느 쪽인지 갈라 봐야 하는 번거로움이 완제품 대비 단점입니다 — 램·SSD 는 각자 제조사 보증이 있으니 보증서와 영수증을 남겨두세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/minipc.html">미니PC</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-29">2026년 8월 29일</time>
+      
+    </p>
+  </header>
+
+  <aside class="notice notice-affiliate" role="note">
+  <strong>이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</strong>
+  <span>직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.</span>
+</aside>
+
+  <div class="post-body">
+<p>미니PC를 알아보다 보면 같은 제품이 두 가지 값으로 팔립니다.
+싼 쪽에는 <strong>&quot;베어본&quot;</strong>이라고 적혀 있죠. 싸다고 담으면 안 됩니다 —
+<strong>그건 미완성 컴퓨터라서, 그대로는 전원을 눌러도 아무 일도 안 일어납니다.</strong></p>
+<p>뭐가 빠져 있고, 뭘 골라 넣어야 하고, 언제 완제품보다 나은 선택인지
+정리합니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>램·SSD 를 고를 줄 알거나 <strong>남는 부품이 있다</strong></td><td>✅ 베어본이 낫습니다</td></tr>
+<tr><td>뜯고 꽂는 게 부담스럽다</td><td>완제품 — 값 차이는 그 수고의 값입니다</td></tr>
+<tr><td>윈도우 라이선스가 없다</td><td>어느 쪽이든 <strong>그 값을 총액에 넣고</strong> 비교하세요</td></tr>
+</tbody>
+</table></div>
+<h2 id="베어본에-빠져-있는-것">베어본에 빠져 있는 것</h2>
+<p>베어본은 <strong>케이스·메인보드·전원</strong>까지만 조립된 반제품입니다.
+채워 넣을 것은 대개 셋입니다.</p>
+<p><strong>① 램</strong> — 미니PC는 노트북과 같은 <strong>SO-DIMM</strong>(짧은 램)을 씁니다.
+데스크톱용 긴 램은 물리적으로 안 들어갑니다. 확인할 것은
+<a href="/posts/laptop-ram-upgrade.html">노트북 램 업그레이드</a>와 같습니다:
+지원 규격(DDR4냐 DDR5냐 — 섞어 못 씁니다)과 슬롯 수.
+<strong>슬롯이 두 개면 같은 용량 두 장</strong>으로 꽂는 것이
+<a href="/posts/ram-dual-channel-check.html">듀얼 채널</a>이 되는 길입니다 —
+큰 것 한 장보다 중간 것 두 장이 빠릅니다.</p>
+<p><strong>② SSD</strong> — 대개 <strong>M.2 2280</strong> 슬롯입니다. 고르는 기준은
+<a href="/posts/dev-ssd-choose.html">개발용 SSD 고르기</a> 그대로이고,
+슬롯이 몇 개인지(하나면 나중에 교체 시 이사가 필요합니다)와
+지원 규격(NVMe 세대)을 제품 페이지에서 확인하면 됩니다.</p>
+<p><strong>③ 운영체제</strong> — 완제품 일부에 들어 있는 윈도우가 베어본에는
+없습니다. 정품 라이선스 비용을 총액에 넣어 비교해야 공정하고,
+리눅스를 쓸 계획이면 이 항목이 통째로 빠지니 베어본의 값 이점이
+더 커집니다.</p>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/gmz6VbGkSa" target="_blank" rel="sponsored nofollow noopener">노트북용 DDR5 16GB 보기 (SO-DIMM)</a>
+  <span class="buy-note">기존 램이 DDR5 인지 먼저 확인하세요 — DDR4 슬롯에는 안 들어갑니다</span>
+</aside>
+<aside class="buy-box">
+  <a class="buy-btn" href="https://link.coupang.com/a/glIkoDX5zg" target="_blank" rel="sponsored nofollow noopener">NVMe SSD 1TB 보기</a>
+  <span class="buy-note">모델 파일이 하나에 5~20GB 라 금방 찹니다</span>
+</aside>
+<div class="coupang-widget" style="min-height:240px"><iframe src="https://coupa.ng/coTAZ2" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe></div>
+<h2 id="사기-전에-갈림길-하나-cpu-가-들어-있는가">사기 전에 갈림길 하나 — CPU 가 들어 있는가</h2>
+<p>베어본이라는 같은 이름 아래 두 갈래가 있습니다.</p>
+<pre><code>CPU 온보드형   →  CPU 가 이미 붙어 있음. 램·SSD 만 꽂으면 끝
+                  (미니PC 베어본 대부분이 이쪽)
+CPU 소켓형    →  CPU 도 따로 사서 꽂아야 함. 데스크톱용 CPU 를 받는
+                  베어본 계열이 이쪽</code></pre>
+<p>제품 페이지의 사양표에 CPU 가 적혀 있으면 온보드형, &quot;CPU 미포함&quot;이나
+지원 CPU 목록이 적혀 있으면 소켓형입니다. <strong>소켓형은 지원 CPU
+목록과 쿨러 높이 제한까지 확인</strong>해야 해서 난이도가 한 단계 올라갑니다 —
+처음이면 온보드형이 무난합니다.</p>
+<p>빠진 게 하나 더 있을 수 있습니다 — <strong>무선(WiFi) 모듈</strong>입니다.
+포함된 모델이 많지만 아닌 것도 있으니, 유선 랜만 쓸 게 아니라면
+사양표에서 확인하세요.</p>
+<h2 id="베어본이-이기는-경우-남는-부품">베어본이 이기는 경우 — 남는 부품</h2>
+<p>이 방식의 제일 좋은 그림은 <strong>서랍에 있는 부품을 살리는 것</strong>입니다.</p>
+<ul>
+<li>노트북 램을 늘리면서 빼둔 SO-DIMM</li>
+<li><a href="/posts/laptop-ssd-upgrade.html">노트북 SSD 를 교체</a>하며 나온 옛 NVMe</li>
+</ul>
+<p>규격만 맞으면 그대로 들어가고, 그만큼이 완제품 대비 순수한 절약입니다.
+완제품은 이 부품들이 있어도 중복으로 사는 셈이 되니까요.</p>
+<p>반대로 부품을 전부 새로 사야 하고 고르는 것도 부담이면, 완제품과의
+값 차이가 줄어듭니다. 그때는 <strong>꽂는 수고와 부품 고르는 시간의 값</strong>으로
+판단하면 됩니다.</p>
+<h2 id="조립이라기엔-민망한-수준입니다">조립이라기엔 민망한 수준입니다</h2>
+<p>&quot;조립&quot;이라는 말에 겁먹을 필요는 없습니다 — 나사 몇 개 풀고,
+램을 슬롯에 딸깍, SSD 를 슬롯에 꽂고 나사 하나. 그래픽카드도
+전원 케이블도 없어서 데스크톱 조립과는 난이도가 다른 세계입니다.
+<a href="/posts/laptop-ram-upgrade.html">노트북 램 업그레이드</a>를 해봤다면
+그것과 같은 작업이고, 처음이어도 제품 설명서 그림대로 하면 됩니다.</p>
+<p>주의할 것은 하나 — <strong>정전기</strong>입니다. 금속(케이스 등)을 먼저 만져
+손의 정전기를 빼고 램·SSD 의 금색 단자 부분은 만지지 않는 것,
+그 정도면 충분합니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="램은-노트북용을-사면-되나요">램은 노트북용을 사면 되나요</h3>
+<p>네, 같은 물건입니다. SO-DIMM 이라고 적힌 것을 사면 되고,
+규격(DDR4/DDR5)만 내 베어본 사양표와 맞추면 됩니다.</p>
+<h3 id="완제품을-사서-나중에-램만-늘리는-건요">완제품을 사서 나중에 램만 늘리는 건요</h3>
+<p>그것도 좋은 절충입니다. 다만 완제품 중에는 램이 납땜(온보드)이라
+못 늘리는 모델이 있으니, <a href="/posts/laptop-ram-onboard-lpcamm2.html">노트북에서 확인하던 그
+방법</a>대로 슬롯 여부를 먼저
+확인하세요. 베어본은 정의상 슬롯이 열려 있는 물건이라 이 걱정이 없습니다.</p>
+<h3 id="개발용으로는-뭘-얼마나-넣어야-하나요">개발용으로는 뭘 얼마나 넣어야 하나요</h3>
+<p><a href="/posts/mini-pc-for-dev.html">개발용 미니PC</a>의 기준 그대로입니다 —
+도커·안드로이드면 램 32GB(16GB 두 장), SSD 는 1TB 권장.</p>
+<h3 id="로컬-llm-용으로-베어본을-맞추면요">로컬 LLM 용으로 베어본을 맞추면요</h3>
+<p>베어본이냐 완제품이냐보다 <strong>어느 급이냐</strong>가 먼저입니다 —
+<a href="/posts/mini-pc-local-llm.html">미니PC 로컬 LLM 판정법</a>의 대역폭
+기준으로 급을 확인하고, 일반형 베어본이라면 램 두 장(듀얼 채널)이
+그 급에서 할 수 있는 최선입니다.</p>
+<h3 id="as-는-어떻게-되나요">AS 는 어떻게 되나요</h3>
+<p>본체와 내가 넣은 부품의 보증이 따로 갑니다. 문제가 생기면 어느
+쪽인지 갈라 봐야 하는 번거로움이 완제품 대비 단점입니다 —
+램·SSD 는 각자 제조사 보증이 있으니 보증서와 영수증을 남겨두세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>베어본 = <strong>케이스·보드·전원까지만.</strong> 램(SO-DIMM)·SSD(M.2)·OS 를
+채워야 컴퓨터가 됩니다</li>
+<li>사기 전에 <strong>CPU 온보드형인지 소켓형인지</strong>부터 — 처음이면 온보드형</li>
+<li>램은 <strong>같은 용량 두 장</strong>(듀얼 채널), 규격(DDR4/5)은 사양표와 맞추기</li>
+<li><strong>남는 부품을 살릴 수 있을 때</strong> 베어본이 가장 크게 이깁니다</li>
+<li>조립 난이도는 노트북 램 교체 수준 — 정전기만 조심하면 됩니다</li>
+</ol>
+<p>미니PC 자체의 판단은 <a href="/posts/mini-pc-for-dev.html">개발용 기준</a>과
+<a href="/posts/mini-pc-vs-laptop.html">노트북과의 갈림길</a>에 있습니다.</p>
+<p>빠진 부품이나 실제와 다른 내용이 있으면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">베어본</span> <span class="tag">미니PC</span> <span class="tag">SO-DIMM</span> <span class="tag">M.2</span> <span class="tag">조립</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mini-pc-local-llm.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC로 로컬 LLM — 사양표의 대역폭 한 줄로 판정됩니다</span>
+        <span class="card-desc">미니PC로 AI 서버를 만들었다는 글은 많은데, 내 미니PC도 되는지는 알려주지 않습니다. 같은 미니PC라는 이름 아래 세 급이 섞여 있고, 메모리 대역폭 하나로 갈립니다. 계산법을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mini-pc-for-dev.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다</span>
+        <span class="card-desc">손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mini-pc-vs-laptop.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC vs 노트북 — 갈림길은 성능이 아니라 이동입니다</span>
+        <span class="card-desc">어차피 책상에서만 쓰는데 노트북이 맞을까요. 속이 같은 두 물건이라 성능으로는 안 갈립니다. 밖에서 화면을 열 일이 있는지, 이미 갖고 있는 물건이 무엇인지로 갈립니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
