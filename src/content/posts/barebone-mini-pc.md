@@ -2,6 +2,7 @@
 title: 베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나
 description: 베어본은 미완성 컴퓨터입니다. 뭐가 빠져 있고 뭘 골라 넣어야 하는지, 완제품과는 언제 갈리는지 정리했습니다. 갖고 있는 램과 SSD를 살릴 수 있는 게 이 방식의 핵심입니다.
 date: 2026-08-29
+updated: 2026-08-30
 category: minipc
 tags: [베어본, 미니PC, SO-DIMM, M.2, 조립]
 affiliate: true
@@ -130,8 +131,9 @@ CPU 소켓형    →  CPU 도 따로 사서 꽂아야 함. 데스크톱용 CPU �
 
 ### 개발용으로는 뭘 얼마나 넣어야 하나요
 
-[개발용 미니PC](/posts/mini-pc-for-dev.html)의 기준 그대로입니다 —
-도커·안드로이드면 램 32GB(16GB 두 장), SSD 는 1TB 권장.
+램은 [개발용 미니PC](/posts/mini-pc-for-dev.html)의 기준 그대로 —
+도커·안드로이드면 32GB(16GB 두 장)입니다. SSD 용량은
+[개발용 SSD 고르기](/posts/dev-ssd-choose.html)의 기준대로 1TB 를 권합니다.
 
 ### 로컬 LLM 용으로 베어본을 맞추면요
 
