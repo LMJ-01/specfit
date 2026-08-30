@@ -672,6 +672,134 @@ ${t(16, 202, '색칠된 막대가 미니PC 세 급 — 사양표의 램 규격�
   );
 }
 
+/**
+ * 순수 사인파 vs 유사(계단형) 사인파.
+ * UPS 글의 ③ "요즘 파워에는 이게 걸립니다"를 그림 하나로 보여줍니다.
+ * 파형은 개형(모양)만 정확하면 됩니다 — 축·수치를 넣지 않습니다.
+ */
+function upsSinewave() {
+  const W = 640;
+  const H = 190;
+  const panelW = 280;
+  const midY = 108;
+  const amp = 40;
+
+  // 사인 곡선을 점으로 찍어 폴리라인으로 그립니다.
+  const sinePts = [];
+  for (let i = 0; i <= 48; i++) {
+    const x = 24 + (i / 48) * (panelW - 48);
+    const y = midY - amp * Math.sin((i / 48) * Math.PI * 2);
+    sinePts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+  }
+
+  // 계단형: 같은 한 주기를 수평 구간 + 수직 점프로 흉내 냅니다.
+  const sx = 336;
+  const stepLevels = [0, -1, -1, 0, 1, 1, 0]; // -1 = 위(마이너스 y), 1 = 아래
+  const stepW = (panelW - 48) / stepLevels.length;
+  let stepPath = `M ${sx + 24} ${midY}`;
+  stepLevels.forEach((lv, i) => {
+    const y = midY + lv * amp;
+    const x0 = sx + 24 + i * stepW;
+    stepPath += ` L ${x0.toFixed(1)} ${y} L ${(x0 + stepW).toFixed(1)} ${y}`;
+  });
+  stepPath += ` L ${(sx + 24 + stepLevels.length * stepW).toFixed(1)} ${midY}`;
+
+  const body = `
+${t(16, 22, '배터리 모드에서 UPS 가 내보내는 전기의 모양', { weight: 600, size: 14 })}
+${rect(16, 34, panelW, 128, COLOR.soft, { r: 6, stroke: COLOR.line })}
+${rect(sx, 34, panelW, 128, COLOR.soft, { r: 6, stroke: COLOR.line })}
+<line x1="24" y1="${midY}" x2="${16 + panelW - 8}" y2="${midY}" stroke="${COLOR.line}" stroke-dasharray="3 3"/>
+<line x1="${sx + 8}" y1="${midY}" x2="${sx + panelW - 8}" y2="${midY}" stroke="${COLOR.line}" stroke-dasharray="3 3"/>
+<polyline points="${sinePts.join(' ')}" fill="none" stroke="${COLOR.fit}" stroke-width="2.5"/>
+<path d="${stepPath}" fill="none" stroke="${COLOR.over}" stroke-width="2.5"/>
+${t(16 + panelW / 2, 52, '순수 사인파', { weight: 600, anchor: 'middle' })}
+${t(sx + panelW / 2, 52, '유사(계단형) 사인파', { weight: 600, anchor: 'middle' })}
+${t(16 + panelW / 2, 180, '가정용 전기와 같은 모양', { size: 11, fill: COLOR.mute, anchor: 'middle' })}
+${t(sx + panelW / 2, 180, '저가형 — 액티브 PFC 파워와 궁합 문제 보고', { size: 11, fill: COLOR.mute, anchor: 'middle' })}`;
+
+  return figure(
+    '순수 사인파와 유사 사인파 비교',
+    W,
+    H,
+    body,
+    '컴퓨터용이라면 "순수 사인파" 표기를 확인하세요. 요즘 파워(액티브 PFC)는 계단형 전기에서 꺼지거나 소음이 나는 사례가 보고됩니다.'
+  );
+}
+
+/**
+ * 모니터 KVM — 허브의 주인이 화면 입력과 함께 바뀌는 구조.
+ * 실선 = 지금 연결된 쪽, 점선 = 대기 쪽.
+ */
+function kvmSwitch() {
+  const W = 640;
+  const H = 210;
+
+  const box = (x, y, w, h, label, sub, active) => `
+${rect(x, y, w, h, active ? COLOR.soft : 'none', { r: 6, stroke: active ? COLOR.accent : COLOR.line })}
+${t(x + w / 2, y + 22, label, { weight: 600, anchor: 'middle', fill: active ? COLOR.text : COLOR.mute })}
+${sub ? t(x + w / 2, y + 40, sub, { size: 11, fill: COLOR.mute, anchor: 'middle' }) : ''}`;
+
+  const body = `
+${t(16, 22, 'KVM — 허브의 주인을 화면 입력과 함께 바꿉니다', { weight: 600, size: 14 })}
+${box(16, 76, 150, 52, '키보드 · 마우스', '한 세트뿐', true)}
+${box(236, 64, 168, 76, '모니터', '화면 + USB 허브', true)}
+${box(470, 44, 154, 52, '① 데스크톱', 'DP + USB-B', true)}
+${box(470, 128, 154, 52, '② 회사 노트북', 'USB-C 하나', false)}
+<path d="M166 102 L236 102" stroke="${COLOR.accent}" stroke-width="2.5"/>
+<path d="M404 88 L470 74" stroke="${COLOR.accent}" stroke-width="2.5"/>
+<path d="M404 118 L470 150" stroke="${COLOR.line}" stroke-width="2" stroke-dasharray="5 4"/>
+${t(320, 168, '입력을 ②로 바꾸면 키보드·마우스도 ②로 따라갑니다', { size: 12, fill: COLOR.mute, anchor: 'middle' })}
+${t(320, 196, '실선 = 지금 연결 · 점선 = 대기', { size: 11, fill: COLOR.mute, anchor: 'middle' })}`;
+
+  return figure(
+    'KVM 전환 구조',
+    W,
+    H,
+    body,
+    '컴퓨터에는 아무것도 설치하지 않습니다 — 모니터가 장치를 바꿔 꽂아주는 것과 같습니다.'
+  );
+}
+
+/**
+ * 크로마 서브샘플링 — 4:4:4 는 픽셀마다 색 정보, 4:2:0 은 2×2 가 나눠 씀.
+ * 체커 무늬(선명)와 2×2 덩어리(뭉개짐)의 대비가 그림의 전부입니다.
+ */
+function chromaSubsampling() {
+  const W = 640;
+  const H = 236;
+  const cell = 30;
+  const n = 4; // 4×4 픽셀
+  const grid = (gx, gy, blockSize) => {
+    const out = [];
+    for (let r = 0; r < n; r++)
+      for (let c = 0; c < n; c++) {
+        // blockSize=1 이면 픽셀마다, 2면 2×2 덩어리로 색을 정합니다
+        const br = Math.floor(r / blockSize);
+        const bc = Math.floor(c / blockSize);
+        const fill = (br + bc) % 2 ? COLOR.accent : COLOR.soft;
+        out.push(rect(gx + c * cell, gy + r * cell, cell - 2, cell - 2, fill, { r: 2, stroke: COLOR.line }));
+      }
+    return out.join('\n');
+  };
+
+  const body = `
+${t(16, 22, '색 정보를 픽셀마다 갖느냐, 2×2 가 나눠 쓰느냐', { weight: 600, size: 14 })}
+${t(90, 52, '4:4:4 — 모니터 방식', { weight: 600 })}
+${grid(60, 64, 1)}
+${t(90, 212, '색 경계가 픽셀 단위로 섭니다', { size: 11, fill: COLOR.mute })}
+${t(390, 52, '4:2:0 — TV 기본값', { weight: 600 })}
+${grid(380, 64, 2)}
+${t(390, 212, '경계가 2×2 로 뭉개집니다 — 색 글자가 번지는 이유', { size: 11, fill: COLOR.mute })}`;
+
+  return figure(
+    '크로마 서브샘플링 4:4:4 와 4:2:0 비교',
+    W,
+    H,
+    body,
+    '영상에서는 눈치채기 어렵지만, 구문 강조로 색 글자가 가득한 코딩 화면에서는 그대로 보입니다.'
+  );
+}
+
 export const figures = {
   'vram-overflow': vramOverflow,
   'memory-parts': memoryParts,
@@ -687,4 +815,7 @@ export const figures = {
   'ctx-truncate': ctxTruncate,
   'mixed-res-cursor': mixedResCursor,
   'minipc-bandwidth': minipcBandwidth,
+  'ups-sinewave': upsSinewave,
+  'kvm-switch': kvmSwitch,
+  'chroma-subsampling': chromaSubsampling,
 };

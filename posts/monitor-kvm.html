@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로","description":"재택하면 책상에 컴퓨터가 두 대가 됩니다. 모니터에 KVM 기능이 있으면 키보드·마우스 한 세트로 전환하며 씁니다. 어떤 스펙을 확인해야 하는지, 별도 KVM 스위치와는 언제 갈리는지 정리했습니다.","datePublished":"2026-08-25","dateModified":"2026-08-26","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/monitor-kvm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로","description":"재택하면 책상에 컴퓨터가 두 대가 됩니다. 모니터에 KVM 기능이 있으면 키보드·마우스 한 세트로 전환하며 씁니다. 어떤 스펙을 확인해야 하는지, 별도 KVM 스위치와는 언제 갈리는지 정리했습니다.","datePublished":"2026-08-25","dateModified":"2026-08-30","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/monitor-kvm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로","item":"https://specfit.kr/posts/monitor-kvm.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"지금 쓰는 모니터에 KVM 이 있는지 어떻게 아나요","acceptedAnswer":{"@type":"Answer","text":"모델명으로 사양표를 검색해 \"KVM\" 표기와 업스트림 포트 구성을 보세요. USB-C 입력과 USB-B 업스트림이 둘 다 있는 모니터면 지원 가능성이 높지만, 표기가 없으면 없는 것으로 보는 편이 맞습니다."}},{"@type":"Question","name":"회사 노트북에 뭘 설치해야 하나요","acceptedAnswer":{"@type":"Answer","text":"아무것도요. 하드웨어 KVM 의 장점이 이것입니다 — 모니터가 장치를 바꿔 꽂아주는 것과 같아서 소프트웨어 설치가 필요 없고, 보안 정책과 충돌하지 않습니다."}},{"@type":"Question","name":"전환 단축키 같은 게 있나요","acceptedAnswer":{"@type":"Answer","text":"제품에 따라 모니터 버튼, 전용 유틸리티, 연결 감지 자동 전환으로 갈립니다. 사양표와 설명서에서 전환 방식을 확인하세요."}},{"@type":"Question","name":"게임용 키보드·마우스도 잘 넘어가나요","acceptedAnswer":{"@type":"Answer","text":"대개 됩니다. 다만 전용 소프트웨어로 매크로를 쓰는 장비는 전환된 컴퓨터에도 그 소프트웨어가 있어야 설정이 살아 있습니다."}},{"@type":"Question","name":"모니터를 새로 살 때 KVM 때문에 웃돈을 낼 가치가 있나요","acceptedAnswer":{"@type":"Answer","text":"컴퓨터 두 대를 매일 오간다면 책상에서 키보드·마우스 한 세트가 사라지는 값어치가 분명합니다. 한 대만 쓴다면 없는 기능이나 마찬가지이니 해상도·크기 같은 기본기에 예산을 쓰는 게 먼저입니다."}}]}</script>
 </head>
@@ -65,7 +65,7 @@
     <h1>모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로</h1>
     <p class="post-meta">
       <time datetime="2026-08-25">2026년 8월 25일</time>
-      <span class="updated">· 2026년 8월 26일 갱신</span>
+      <span class="updated">· 2026년 8월 30일 갱신</span>
     </p>
   </header>
 
@@ -94,9 +94,35 @@
 <p>원리는 단순합니다. 모니터에 USB 허브가 있고, 키보드·마우스를 거기
 꽂습니다. 그 허브가 <strong>어느 컴퓨터에 붙을지</strong>를 화면 입력과 함께
 전환하는 것이 KVM 입니다.</p>
-<pre><code>키보드·마우스 → 모니터 허브 ─┬→ 입력 1: 데스크톱 (DP + USB-B)
-                              └→ 입력 2: 노트북   (USB-C 하나)
-화면 입력을 바꾸면 허브도 따라 넘어갑니다</code></pre>
+<figure class="fig">
+<svg viewBox="0 0 640 210" width="640" height="210" role="img" aria-label="KVM 전환 구조">
+<title>KVM 전환 구조</title>
+
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">KVM — 허브의 주인을 화면 입력과 함께 바꿉니다</text>
+
+<rect x="16" y="76" width="150" height="52" fill="var(--bg-soft)" rx="6" stroke="var(--accent)"/>
+<text x="91" y="98" fill="var(--fg)" font-size="13" font-weight="600" text-anchor="middle">키보드 · 마우스</text>
+<text x="91" y="116" fill="var(--fg-muted)" font-size="11" text-anchor="middle">한 세트뿐</text>
+
+<rect x="236" y="64" width="168" height="76" fill="var(--bg-soft)" rx="6" stroke="var(--accent)"/>
+<text x="320" y="86" fill="var(--fg)" font-size="13" font-weight="600" text-anchor="middle">모니터</text>
+<text x="320" y="104" fill="var(--fg-muted)" font-size="11" text-anchor="middle">화면 + USB 허브</text>
+
+<rect x="470" y="44" width="154" height="52" fill="var(--bg-soft)" rx="6" stroke="var(--accent)"/>
+<text x="547" y="66" fill="var(--fg)" font-size="13" font-weight="600" text-anchor="middle">① 데스크톱</text>
+<text x="547" y="84" fill="var(--fg-muted)" font-size="11" text-anchor="middle">DP + USB-B</text>
+
+<rect x="470" y="128" width="154" height="52" fill="none" rx="6" stroke="var(--border)"/>
+<text x="547" y="150" fill="var(--fg-muted)" font-size="13" font-weight="600" text-anchor="middle">② 회사 노트북</text>
+<text x="547" y="168" fill="var(--fg-muted)" font-size="11" text-anchor="middle">USB-C 하나</text>
+<path d="M166 102 L236 102" stroke="var(--accent)" stroke-width="2.5"/>
+<path d="M404 88 L470 74" stroke="var(--accent)" stroke-width="2.5"/>
+<path d="M404 118 L470 150" stroke="var(--border)" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="320" y="168" fill="var(--fg-muted)" font-size="12" text-anchor="middle">입력을 ②로 바꾸면 키보드·마우스도 ②로 따라갑니다</text>
+<text x="320" y="196" fill="var(--fg-muted)" font-size="11" text-anchor="middle">실선 = 지금 연결 · 점선 = 대기</text>
+</svg>
+<figcaption>컴퓨터에는 아무것도 설치하지 않습니다 — 모니터가 장치를 바꿔 꽂아주는 것과 같습니다.</figcaption>
+</figure>
 <p>노트북 쪽은 <a href="/posts/monitor-usb-c-one-cable.html">원케이블 조건</a>이 그대로
 적용됩니다 — USB-C 하나로 화면·충전·허브가 다 넘어오므로, 퇴근한
 회사 노트북을 케이블 하나 꽂는 것으로 책상에 합류시킬 수 있습니다.</p>

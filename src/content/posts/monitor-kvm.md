@@ -2,7 +2,7 @@
 title: 모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로
 description: 재택하면 책상에 컴퓨터가 두 대가 됩니다. 모니터에 KVM 기능이 있으면 키보드·마우스 한 세트로 전환하며 씁니다. 어떤 스펙을 확인해야 하는지, 별도 KVM 스위치와는 언제 갈리는지 정리했습니다.
 date: 2026-08-25
-updated: 2026-08-26
+updated: 2026-08-30
 category: monitor
 tags: [KVM, 모니터, 재택근무, USB허브, 듀얼PC]
 affiliate: true
@@ -47,11 +47,7 @@ affiliate: true
 꽂습니다. 그 허브가 **어느 컴퓨터에 붙을지**를 화면 입력과 함께
 전환하는 것이 KVM 입니다.
 
-```
-키보드·마우스 → 모니터 허브 ─┬→ 입력 1: 데스크톱 (DP + USB-B)
-                              └→ 입력 2: 노트북   (USB-C 하나)
-화면 입력을 바꾸면 허브도 따라 넘어갑니다
-```
+{{FIG:kvm-switch}}
 
 노트북 쪽은 [원케이블 조건](/posts/monitor-usb-c-one-cable.html)이 그대로
 적용됩니다 — USB-C 하나로 화면·충전·허브가 다 넘어오므로, 퇴근한
