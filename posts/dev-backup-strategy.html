@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다 | 스펙핏</title>
+<meta name="description" content="백업 이야기는 늘 &quot;다 복사하라&quot;로 끝나는데, 개발자는 사정이 다릅니다. 코드는 이미 원격에 있으니 진짜 대상은 따로 있고, 잠자는 백업 매체로 SSD를 고르면 안 되는 이유가 있습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/dev-backup-strategy.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다 | 스펙핏">
+<meta property="og:description" content="백업 이야기는 늘 &quot;다 복사하라&quot;로 끝나는데, 개발자는 사정이 다릅니다. 코드는 이미 원격에 있으니 진짜 대상은 따로 있고, 잠자는 백업 매체로 SSD를 고르면 안 되는 이유가 있습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/dev-backup-strategy.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다","description":"백업 이야기는 늘 \"다 복사하라\"로 끝나는데, 개발자는 사정이 다릅니다. 코드는 이미 원격에 있으니 진짜 대상은 따로 있고, 잠자는 백업 매체로 SSD를 고르면 안 되는 이유가 있습니다.","datePublished":"2026-08-30","dateModified":"2026-08-30","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dev-backup-strategy.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다","item":"https://specfit.kr/posts/dev-backup-strategy.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"클라우드만으로 하면 안 되나요","acceptedAnswer":{"@type":"Answer","text":"동기화형 클라우드는 실수 삭제도 그대로 동기화됩니다(휴지통 복구 기간이 지나면 끝). 백업의 반쪽은 되지만, 내 손에 있는 사본 하나(외장 HDD)와 짝을 이룰 때 3-2-1 이 완성됩니다."}},{"@type":"Question","name":"외장 SSD 를 이미 백업용으로 샀는데요","acceptedAnswer":{"@type":"Answer","text":"버릴 필요는 없습니다 — 자주 연결해서 쓰는 방식이면 괜찮습니다. 문제는 \"넣어두고 잊는\" 운용이니, 그 역할만 HDD 나 클라우드에 넘기세요. 외장 SSD 는 이동·작업용으로는 좋은 물건입니다."}},{"@type":"Question","name":"NAS 는요","acceptedAnswer":{"@type":"Answer","text":"집 안의 \"항상 켜진 사본\"으로 좋은 자리입니다. 다만 같은 집·같은 전기 안에 있으니 \"다른 장소 1\"을 대신하지는 못합니다 — 3-2-1 의 클라우드 자리는 남습니다. 상시로 도는 물건이라 UPS 판단이 같이 붙는 자리이기도 합니다."}},{"@type":"Question","name":"노트북에서 교체하고 남은 SSD 를 백업용으로 쓰면요","acceptedAnswer":{"@type":"Answer","text":"서랍 보관용이면 위와 같은 이유로 권하지 않습니다. 남은 SSD 의 좋은 자리는 베어본 미니PC 에 살리는 것이나 외장 케이스에 넣어 자주 쓰는 이동용입니다."}},{"@type":"Question","name":"백업 프로그램이 필요한가요","acceptedAnswer":{"@type":"Answer","text":"대상을 1번처럼 걸러 놓으면 폴더 복사로도 됩니다. 도구는 취향의 영역이라 이 사이트가 특정하지 않습니다 — 구조(3-2-1과 분리 보관)가 도구보다 중요합니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-08-30">2026년 8월 30일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>백업 글은 대개 &quot;전부 복사해 두라&quot;로 끝납니다. 그런데 개발자의
+디스크는 사정이 다릅니다 — <strong>제일 큰 폴더들이 사실은 백업이 필요
+없는 것들</strong>이거든요.</p>
+<p>뭘 백업해야 하는지부터 가르고, 어디에 담을지(여기서 SSD 함정이
+나옵니다), 어떻게 둘지 순서로 정리합니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>코드도 백업하나</td><td><strong>이미 돼 있습니다</strong> — 원격 저장소가 그 역할입니다</td></tr>
+<tr><td>진짜 백업 대상은</td><td><strong>다시 못 만드는 것</strong> — 아래 목록</td></tr>
+<tr><td>잠자는 백업 매체는</td><td><strong>외장 HDD 가 무난</strong> — SSD 는 서랍 보관용이 아닙니다</td></tr>
+<tr><td>구조는</td><td><strong>3-2-1</strong> — 사본 셋, 매체 두 종류, 하나는 다른 곳에</td></tr>
+<tr><td>꽂아둬도 되나</td><td>❌ <strong>백업할 때만 연결</strong>이 안전합니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="1-백업-대상부터-가르기-개발자는-절반이-공짜입니다">1. 백업 대상부터 가르기 — 개발자는 절반이 공짜입니다</h2>
+<p>디스크에서 자리를 차지하는 것들을 &quot;다시 만들 수 있는가&quot;로 갈라 보세요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>무엇</th><th>백업</th></tr></thead>
+<tbody>
+<tr><td><strong>코드</strong></td><td>필요 없음 — 원격 저장소(git push)가 이미 사본입니다</td></tr>
+<tr><td>node_modules·빌드 산출물·도커 이미지</td><td>필요 없음 — 명령 한 줄로 다시 생깁니다</td></tr>
+<tr><td>프로그램·운영체제</td><td>필요 없음 — 다시 설치하면 됩니다</td></tr>
+<tr><td><a href="/posts/dev-ssd-choose.html">로컬 LLM 모델 파일</a></td><td>필요 없음 — 다시 받으면 됩니다</td></tr>
+<tr><td><strong>사진·문서·개인 자료</strong></td><td>✅ <strong>여기가 진짜 대상입니다</strong></td></tr>
+<tr><td><strong>키·인증서·환경 설정, .env</strong></td><td>✅ 원격에 없는 경우가 많습니다</td></tr>
+<tr><td><strong>로컬 DB 데이터, 원격에 없는 브랜치</strong></td><td>✅ 잃으면 못 되돌립니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>&quot;내 컴퓨터가 오늘 밤 사라지면 되돌릴 수 없는 것&quot;</strong> — 그것만이
+백업 대상입니다. 개발자는 작업의 큰 덩어리(코드)가 이미 원격에
+있어서, 가를 줄만 알면 백업할 양이 생각보다 작습니다.</p>
+<blockquote><p>⚠️ 단, <strong>git 은 push 한 것까지만 백업입니다.</strong> 로컬에만 있는
+브랜치·스태시·커밋 안 한 변경은 원격에 없습니다. &quot;코드는 백업돼
+있다&quot;는 말은 <strong>push 습관이 있을 때</strong> 성립합니다.</p></blockquote>
+<h2 id="2-매체-고르기-ssd-는-서랍-보관용이-아닙니다">2. 매체 고르기 — SSD 는 서랍 보관용이 아닙니다</h2>
+<p>여기가 이 글에서 제일 중요한 부분입니다. 빠르다고 백업용으로
+외장 SSD 를 고르기 쉬운데, <strong>용도가 어긋납니다.</strong></p>
+<p>SSD 가 데이터를 지키는 방식은 셀에 전하를 가둬 두는 것이라,
+<strong>전원이 끊긴 채 오래 두면 전하가 조금씩 새어 나갑니다.</strong> 자주
+켜는 컴퓨터에서는 문제가 안 되지만, <strong>서랍에 넣어두고 잊는 백업</strong>은
+정확히 그 약점을 찌르는 사용 방식입니다. 얼마 만에 문제가 되는지는
+온도와 셀 상태에 따라 달라 못 박을 수 없지만, <strong>애초에 그 용도로
+설계된 물건이 아니라는 것</strong>이 판단 기준으로는 충분합니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>매체</th><th>잠자는 백업으로</th></tr></thead>
+<tbody>
+<tr><td><strong>외장 HDD</strong></td><td>✅ 무난합니다 — 전원 없이 두는 보관에 상대적으로 강합니다</td></tr>
+<tr><td>외장 SSD</td><td>⚠️ <strong>자주 쓰는 이동용</strong>이 맞는 자리입니다</td></tr>
+<tr><td>클라우드</td><td>✅ &quot;다른 곳 사본&quot; 역할로 — 아래 3-2-1 참조</td></tr>
+</tbody>
+</table></div>
+<p>이 축은 <a href="/posts/ssd-tbw-lifespan.html">SSD 수명(TBW)</a>과 <strong>다른
+이야기</strong>입니다 — TBW 는 &quot;얼마나 쓸 수 있나&quot;(쓰기 총량)이고, 여기는
+&quot;안 쓰고 두면 어떻게 되나&quot;(보존)입니다. 수명이 많이 남은 SSD 도
+서랍 보관에는 맞지 않습니다.</p>
+<p>HDD 라고 만능은 아닙니다 — 기계 부품이라 떨어뜨리면 약하고,
+언젠가는 고장 납니다. 그래서 매체를 고르는 것보다 <strong>사본 수로
+안전을 만드는 것</strong>이 다음 절입니다.</p>
+<h2 id="3-구조-3-2-1-하나면-됩니다">3. 구조 — 3-2-1 하나면 됩니다</h2>
+<p>백업 설계는 이 한 줄로 끝납니다.</p>
+<pre><code>사본 3개  ·  매체 2종류  ·  1개는 다른 장소에
+
+예: 컴퓨터(원본) + 외장 HDD + 클라우드</code></pre>
+<ul>
+<li><strong>사본 3</strong> — 원본 포함 셋. 하나가 죽어도 둘이 남습니다</li>
+<li><strong>매체 2종</strong> — 같은 종류 둘은 같은 이유로 같이 죽을 수 있습니다</li>
+<li><strong>다른 장소 1</strong> — 도난·화재·정전 서지는 한 방에서 일어납니다.
+클라우드가 이 자리를 값싸게 채워 줍니다</li>
+</ul>
+<p>거창해 보이지만 1번 절에서 대상을 걸렀다면 지킬 양이 작아서,
+외장 HDD 하나 + 클라우드 동기화 폴더 하나로 이미 완성입니다.</p>
+<h2 id="4-운용-꽂아둔-백업은-백업이-아닙니다">4. 운용 — 꽂아둔 백업은 백업이 아닙니다</h2>
+<p><strong>외장 디스크를 항상 꽂아두면 안 됩니다.</strong> 두 가지 이유입니다.</p>
+<ul>
+<li><strong>랜섬웨어</strong> — 컴퓨터가 감염되면 그 순간 연결돼 있는 드라이브도
+같이 암호화될 수 있습니다. 백업이 원본과 같이 죽는 경우입니다</li>
+<li><strong>같은 사고</strong> — 서지·정전·실수의 영향권이 원본과 같아집니다.
+<a href="/posts/desktop-ups.html">정전 때 쓰기 중이던 디스크가 위험하다는 것</a>은
+UPS 글의 그 이야기입니다</li>
+</ul>
+<p><strong>백업할 때만 연결하고, 끝나면 뽑아 두세요.</strong> 주기는 &quot;잃어도 되는
+기간&quot;으로 정하면 됩니다 — 일주일치 사진은 아깝지만 견딜 수 있다면
+주 1회, 매일이 아까우면 클라우드 동기화가 그 틈을 메웁니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="클라우드만으로-하면-안-되나요">클라우드만으로 하면 안 되나요</h3>
+<p>동기화형 클라우드는 <strong>실수 삭제도 그대로 동기화</strong>됩니다(휴지통
+복구 기간이 지나면 끝). 백업의 반쪽은 되지만, 내 손에 있는 사본
+하나(외장 HDD)와 짝을 이룰 때 3-2-1 이 완성됩니다.</p>
+<h3 id="외장-ssd-를-이미-백업용으로-샀는데요">외장 SSD 를 이미 백업용으로 샀는데요</h3>
+<p>버릴 필요는 없습니다 — <strong>자주 연결해서 쓰는 방식</strong>이면 괜찮습니다.
+문제는 &quot;넣어두고 잊는&quot; 운용이니, 그 역할만 HDD 나 클라우드에
+넘기세요. 외장 SSD 는 <a href="/posts/external-ssd-dev.html">이동·작업용으로는 좋은 물건</a>입니다.</p>
+<h3 id="nas-는요">NAS 는요</h3>
+<p>집 안의 &quot;항상 켜진 사본&quot;으로 좋은 자리입니다. 다만 같은 집·같은
+전기 안에 있으니 <strong>&quot;다른 장소 1&quot;을 대신하지는 못합니다</strong> — 3-2-1 의
+클라우드 자리는 남습니다. 상시로 도는 물건이라
+<a href="/posts/desktop-ups.html">UPS 판단</a>이 같이 붙는 자리이기도 합니다.</p>
+<h3 id="노트북에서-교체하고-남은-ssd-를-백업용으로-쓰면요">노트북에서 교체하고 남은 SSD 를 백업용으로 쓰면요</h3>
+<p>서랍 보관용이면 위와 같은 이유로 권하지 않습니다. 남은 SSD 의
+좋은 자리는 <a href="/posts/barebone-mini-pc.html">베어본 미니PC 에 살리는 것</a>이나
+외장 케이스에 넣어 자주 쓰는 이동용입니다.</p>
+<h3 id="백업-프로그램이-필요한가요">백업 프로그램이 필요한가요</h3>
+<p>대상을 1번처럼 걸러 놓으면 폴더 복사로도 됩니다. 도구는 취향의
+영역이라 이 사이트가 특정하지 않습니다 — 구조(3-2-1과 분리 보관)가
+도구보다 중요합니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>백업 대상은 <strong>&quot;다시 못 만드는 것&quot;뿐</strong>입니다 — 코드는 push 돼
+있는 한 이미 백업입니다</li>
+<li><strong>잠자는 백업 매체로 SSD 를 고르지 마세요.</strong> 전원 없이 두는
+보관은 SSD 가 설계된 용도가 아닙니다 — 외장 HDD 가 무난합니다</li>
+<li>구조는 <strong>3-2-1</strong> — 사본 셋, 매체 두 종류, 하나는 다른 곳에</li>
+<li><strong>백업할 때만 연결하세요.</strong> 꽂아둔 백업은 원본과 같이 죽습니다</li>
+<li>push 안 한 로컬 작업은 git 도 못 지켜줍니다 — <strong>push 가 백업
+습관의 절반</strong>입니다</li>
+</ol>
+<p>SSD 의 다른 축(쓰기 수명)은 <a href="/posts/ssd-tbw-lifespan.html">TBW 읽는 법</a>에,
+외장 저장 장치의 속도는 <a href="/posts/external-ssd-dev.html">외장 SSD 글</a>에 있습니다.</p>
+<p>실제와 다른 내용이 있으면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">백업</span> <span class="tag">외장하드</span> <span class="tag">SSD</span> <span class="tag">데이터보관</span> <span class="tag">3-2-1</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/nvme-heatsink.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다</span>
+        <span class="card-desc">모두에게 필요한 건 아닙니다. Gen3면 대개 불필요하고 Gen5면 사실상 필수입니다. 내 SSD가 실제로 스로틀링을 겪는지 확인하는 법과, 달 때 조심할 것을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ram-dual-channel-check.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">내 컴퓨터가 듀얼 채널인지 확인하는 법 — CPU-Z 표기 읽기</span>
+        <span class="card-desc">램을 두 장 꽂았다고 듀얼 채널이 되는 게 아닙니다. 지금 듀얼로 도는지 확인하는 세 가지 방법과, DDR5에서 CPU-Z 표기가 헷갈리는 이유, 아니었을 때 고치는 법을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/external-ssd-dev.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">개발용 외장 SSD — USB 규격이 상한을 정합니다</span>
+        <span class="card-desc">외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

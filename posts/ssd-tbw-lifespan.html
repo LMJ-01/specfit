@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSD 수명 TBW — 개발용으로 정말 걱정할 일인가","description":"TBW를 하루 쓰기량으로 나눠보면 수십 년이 나옵니다. 개발에서 먼저 오는 건 수명이 아니라 보증 기간과 용량입니다. 계산식과 내 SSD 확인법을 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ssd-tbw-lifespan.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSD 수명 TBW — 개발용으로 정말 걱정할 일인가","description":"TBW를 하루 쓰기량으로 나눠보면 수십 년이 나옵니다. 개발에서 먼저 오는 건 수명이 아니라 보증 기간과 용량입니다. 계산식과 내 SSD 확인법을 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-08-30","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ssd-tbw-lifespan.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"SSD 수명 TBW — 개발용으로 정말 걱정할 일인가","item":"https://specfit.kr/posts/ssd-tbw-lifespan.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"TBW를 넘기면 SSD가 바로 죽나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 보증이 끝나는 지점이고, 고장 나는 시점이 아닙니다. 실제로는 그보다 오래 쓰는 경우가 많습니다. 다만 넘긴 뒤로는 제조사가 책임지지 않습니다."}},{"@type":"Question","name":"QLC는 개발용으로 피해야 하나요","acceptedAnswer":{"@type":"Answer","text":"용량이 크면 괜찮습니다. 2TB QLC의 TBW가 1TB TLC와 비슷한 수준까지 올라갑니다. 피해야 하는 조합은 작은 용량 QLC입니다. 쓰기 성질의 차이는 개발용 SSD 고르기에 있습니다."}},{"@type":"Question","name":"로컬 LLM 모델을 자주 받으면 수명이 줄어드나요","acceptedAnswer":{"@type":"Answer","text":"줄어듭니다. 모델 하나가 5~20GB라 쓰기량 중 가장 큰 항목입니다. 그래도 위 계산대로 하루 100GB를 써도 1TB TLC 기준 16년입니다. 수명보다 용량이 먼저 문제가 됩니다."}},{"@type":"Question","name":"스왑 파일이나 도커 때문에 빨리 닳나요","acceptedAnswer":{"@type":"Answer","text":"스왑은 램이 부족할 때 디스크를 쓰는 것이라 쓰기가 늘어납니다. 다만 그건 램을 늘려서 풀 문제입니다 — 램 16GB vs 32GB에 기준이 있습니다. 도커는 이미지를 받을 때만 크게 쓰고, 컨테이너 실행 중에는 많지 않습니다."}},{"@type":"Question","name":"노트북 SSD도 같나요","acceptedAnswer":{"@type":"Answer","text":"같습니다. 규격만 다릅니다. 교체가 가능한지와 규격 확인은 노트북 SSD 교체에 있습니다."}},{"@type":"Question","name":"중고 SSD를 살 때 뭘 보나요","acceptedAnswer":{"@type":"Answer","text":"Wear 와 총 쓰기량입니다. 위 4번 방법으로 확인할 수 있고, 파는 쪽에 그 수치를 물어보는 게 가장 빠릅니다. 용량과 세대만 보고 사면 이미 많이 닳은 물건일 수 있습니다."}}]}</script>
 </head>
@@ -65,7 +65,7 @@
     <h1>SSD 수명 TBW — 개발용으로 정말 걱정할 일인가</h1>
     <p class="post-meta">
       <time datetime="2026-08-18">2026년 8월 18일</time>
-      
+      <span class="updated">· 2026년 8월 30일 갱신</span>
     </p>
   </header>
 
@@ -191,6 +191,9 @@ TBW도 대략 두 배이고, 빈 공간도 넉넉해져 쓰기 증폭까지 줄�
   <a class="buy-btn" href="https://link.coupang.com/a/glIkoDX5zg" target="_blank" rel="sponsored nofollow noopener">NVMe SSD 1TB 보기</a>
   <span class="buy-note">모델 파일이 하나에 5~20GB 라 금방 찹니다</span>
 </aside>
+<blockquote><p>⚠️ 수명(쓰기 총량)과 <strong>보존(안 쓰고 둘 때)은 다른 축</strong>입니다.
+TBW 가 많이 남은 SSD 도 전원 없이 서랍에 두는 백업용으로는 맞지
+않습니다 — <a href="/posts/dev-backup-strategy.html">개발자 백업 글</a>에서 갈랐습니다.</p></blockquote>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
 <h3 id="tbw를-넘기면-ssd가-바로-죽나요">TBW를 넘기면 SSD가 바로 죽나요</h3>
 <p><strong>아닙니다.</strong> 보증이 끝나는 지점이고, 고장 나는 시점이 아닙니다.
@@ -237,6 +240,13 @@ TBW도 대략 두 배이고, 빈 공간도 넉넉해져 쓰기 증폭까지 줄�
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/dev-backup-strategy.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다</span>
+        <span class="card-desc">백업 이야기는 늘 &quot;다 복사하라&quot;로 끝나는데, 개발자는 사정이 다릅니다. 코드는 이미 원격에 있으니 진짜 대상은 따로 있고, 잠자는 백업 매체로 SSD를 고르면 안 되는 이유가 있습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/nvme-heatsink.html">
         <span class="card-cat">메모리·스토리지</span>
         <span class="card-title">NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다</span>
@@ -248,13 +258,6 @@ TBW도 대략 두 배이고, 빈 공간도 넉넉해져 쓰기 증폭까지 줄�
         <span class="card-cat">메모리·스토리지</span>
         <span class="card-title">내 컴퓨터가 듀얼 채널인지 확인하는 법 — CPU-Z 표기 읽기</span>
         <span class="card-desc">램을 두 장 꽂았다고 듀얼 채널이 되는 게 아닙니다. 지금 듀얼로 도는지 확인하는 세 가지 방법과, DDR5에서 CPU-Z 표기가 헷갈리는 이유, 아니었을 때 고치는 법을 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/external-ssd-dev.html">
-        <span class="card-cat">메모리·스토리지</span>
-        <span class="card-title">개발용 외장 SSD — USB 규격이 상한을 정합니다</span>
-        <span class="card-desc">외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.</span>
       </a>
     </li>
   </ul>
