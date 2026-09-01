@@ -34,6 +34,13 @@
     <description>방마다 안 터져서 메시를 알아보면 위성 개수부터 세게 됩니다. 순서가 반대입니다. 위성들이 서로 어떻게 연결되는가(백홀)가 성능을 정하고, 집에 벽 랜포트가 있느냐로 답이 갈립니다.</description>
   </item>
   <item>
+    <title>노트북 덮개 닫고 모니터만 쓰기 — 되는 조건과 발열의 진실</title>
+    <link>https://specfit.kr/posts/laptop-clamshell-mode.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-clamshell-mode.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>노트북을 데스크톱처럼, 덮개를 닫은 채 외부 모니터로만 쓰는 구성이 됩니다. 필요한 설정, 발열이 문제가 되는 경우와 아닌 경우, 이 구성이 안 맞는 작업을 정리했습니다.</description>
+  </item>
+  <item>
     <title>랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다</title>
     <link>https://specfit.kr/posts/lan-cable-cat.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/lan-cable-cat.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/desktop-ups.html</guid>
     <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
     <description>정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>파워 80PLUS 등급 — 골드에 웃돈 낼 가치가 있는 경우</title>
-    <link>https://specfit.kr/posts/psu-80plus.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/psu-80plus.html</guid>
-    <pubDate>Sun, 23 Aug 2026 15:00:00 GMT</pubDate>
-    <description>브론즈냐 골드냐는 취향이 아니라 나눗셈입니다. 등급이 실제로 뜻하는 것, 절감량을 kWh로 계산하는 법, 웃돈이 회수되는 조건을 정리했습니다. 로컬 LLM을 상시 돌리면 계산이 달라집니다.</description>
   </item>
 </channel>
 </rss>

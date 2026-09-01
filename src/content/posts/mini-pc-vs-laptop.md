@@ -2,6 +2,7 @@
 title: 미니PC vs 노트북 — 갈림길은 성능이 아니라 이동입니다
 description: 어차피 책상에서만 쓰는데 노트북이 맞을까요. 속이 같은 두 물건이라 성능으로는 안 갈립니다. 밖에서 화면을 열 일이 있는지, 이미 갖고 있는 물건이 무엇인지로 갈립니다.
 date: 2026-08-26
+updated: 2026-09-01
 category: minipc
 tags: [미니PC, 노트북, 거치용, 비교, 구매판단]
 ---
@@ -105,7 +106,8 @@ tags: [미니PC, 노트북, 거치용, 비교, 구매판단]
 - [USB-C 케이블 하나로 화면·충전·주변기기](/posts/monitor-usb-c-one-cable.html)가
   넘어가는 조합이면 책상 도킹이 케이블 한 줄입니다
 - 뚜껑을 닫고 쓸지 열어 [보조 화면으로 쓸지](/posts/dual-monitor-vs-single.html)도
-  고를 수 있습니다
+  고를 수 있습니다 — [닫고 쓰는 조건과 발열](/posts/laptop-clamshell-mode.html)은
+  따로 정리했습니다
 - 외부 모니터를 몇 대까지 걸 수 있는지는
   [노트북 쪽 출력 사양](/posts/laptop-dual-monitor-output.html)이 정합니다
 
