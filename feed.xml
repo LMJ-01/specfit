@@ -76,6 +76,13 @@
     <description>그래픽카드 없이 내장그래픽만으로 모니터 두 대를 쓸 수 있는지 자주 묻습니다. 답은 됩니다이고, 성능도 문제가 아닙니다. 진짜 확인할 곳은 메인보드 뒷면의 출력 단자 수입니다.</description>
   </item>
   <item>
+    <title>코딩·사무에 144Hz 모니터 — 생산성이 아니라 쾌적함의 지갑입니다</title>
+    <link>https://specfit.kr/posts/high-refresh-rate-coding.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/high-refresh-rate-coding.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>고주사율 모니터가 코딩이나 문서작업에도 의미가 있는지, 4K 60Hz와 FHD 144Hz 중 뭘 골라야 하는지 헷갈립니다. 주사율이 일하는 곳과 안 하는 곳을 구분해서 정리했습니다.</description>
+  </item>
+  <item>
     <title>그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다</title>
     <link>https://specfit.kr/posts/gpu-coil-whine.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-coil-whine.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-vs-laptop.html</guid>
     <pubDate>Tue, 25 Aug 2026 15:00:00 GMT</pubDate>
     <description>어차피 책상에서만 쓰는데 노트북이 맞을까요. 속이 같은 두 물건이라 성능으로는 안 갈립니다. 밖에서 화면을 열 일이 있는지, 이미 갖고 있는 물건이 무엇인지로 갈립니다.</description>
-  </item>
-  <item>
-    <title>미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다</title>
-    <link>https://specfit.kr/posts/mini-pc-for-dev.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-for-dev.html</guid>
-    <pubDate>Tue, 25 Aug 2026 15:00:00 GMT</pubDate>
-    <description>손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
