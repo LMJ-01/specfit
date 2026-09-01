@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다 | 스펙핏</title>
+<meta name="description" content="서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/lan-cable-cat.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다 | 스펙핏">
+<meta property="og:description" content="서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/lan-cable-cat.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다","description":"서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/lan-cable-cat.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다","item":"https://specfit.kr/posts/lan-cable-cat.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"CAT.6 를 사면 더 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"지금 1Gbps 로 잘 잡혀 있다면 아닙니다. 요금제와 장비가 1G 인 이상 케이블을 올려도 1G 입니다. CAT.6 가 의미 있는 건 2.5G 이상 장비·요금제로 갈 때이고, 그때도 아래 답처럼 5E 로 되는 경우가 많습니다."}},{"@type":"Question","name":"2.5G 인터넷에는 CAT.6 가 필수인가요","acceptedAnswer":{"@type":"Answer","text":"의외로 아닙니다. 2.5G/5G 규격(802.3bz)은 기존 CAT.5E 배선에서 동작하도록 설계됐습니다 — 벽 배선을 못 바꾸는 현실을 규격이 반영한 것입니다. 길이가 길거나 배선 상태가 나쁘면 안 잡힐 수 있으니, 그때 CAT.6 이상을 검토하는 순서가 맞습니다."}},{"@type":"Question","name":"CAT.7, CAT.8 케이블이 더 좋은 것 아닌가요","acceptedAnswer":{"@type":"Answer","text":"가정용으로는 대개 돈만 더 내는 선택입니다. 10G 까지는 CAT.6A 로 충분하고, 가정에서 10G 를 쓰는 경우 자체가 아직 드뭅니다. 케이블 등급보다 위의 \"약한 고리\" 확인이 먼저입니다."}},{"@type":"Question","name":"납작한(플랫) 랜선은 성능이 떨어지나요","acceptedAnswer":{"@type":"Answer","text":"규격 표기가 같다면 짧은 거리에선 대개 문제없습니다. 문틈을 지나야 하는 자리처럼 이유가 있을 때 쓰고, 길게 끌 거면 일반형이 무난합니다."}},{"@type":"Question","name":"와이파이가 느린 것도 랜선 때문인가요","acceptedAnswer":{"@type":"Answer","text":"공유기까지 오는 회선이 막혀 있으면 그렇습니다 — 모뎀과 공유기 사이 케이블도 위 표의 적용 대상입니다. 공유기 뒤 케이블부터 확인하세요. 방까지 와이파이가 약한 문제라면 케이블이 아니라 메시 와이파이 쪽 이야기입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-01">2026년 9월 1일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>이사하면 서랍에서 랜선이 몇 개씩 나옵니다. 통신사 기사님이 두고 간 것,
+공유기 상자에 들어 있던 것. <strong>아무거나 꽂아도 될까요?</strong></p>
+<p>됩니다 — 다만 <strong>어느 것을 꽂느냐에 따라 속도 상한이 달라질 수 있고</strong>,
+그게 케이블 피복에 인쇄돼 있습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>피복에 인쇄된 표기</th><th>속도 상한 (규격)</th></tr></thead>
+<tbody>
+<tr><td>CAT.5 (E 없이)</td><td>100Mbps — <strong>기가 인터넷이 막힙니다</strong></td></tr>
+<tr><td><strong>CAT.5E</strong></td><td><strong>1Gbps</strong> — 기가 인터넷까지 됩니다</td></tr>
+<tr><td><strong>CAT.6</strong></td><td>1Gbps는 여유, <strong>10G는 55m까지</strong></td></tr>
+<tr><td>CAT.6A 이상</td><td>10Gbps (100m) — 가정에선 대개 과투자입니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>집에서 쓰는 대부분의 경우 CAT.5E 면 충분합니다.</strong> 기가 인터넷도,
+공유기-컴퓨터 연결도 1Gbps 까지는 5E 가 규격대로 다 냅니다.</p>
+<h2 id="확인은-10초-피복을-읽으세요">확인은 10초 — 피복을 읽으세요</h2>
+<p>케이블 옆면에 작은 글씨로 인쇄돼 있습니다.</p>
+<pre><code>UTP CAT.5E 24AWG 4PRS ...   ← 이 케이블은 CAT5e</code></pre>
+<p>표기가 닳아서 안 보이면 아래의 &quot;몇으로 잡혔나 확인&quot;으로 결과를 보면
+됩니다. 어차피 중요한 건 표기가 아니라 실제로 잡힌 속도니까요.</p>
+<h2 id="속도는-제일-약한-고리가-정합니다">속도는 제일 약한 고리가 정합니다</h2>
+<p>이 사이트가 <a href="/posts/external-ssd-dev.html">외장 SSD 에서 정리한 그 구조</a>
+그대로입니다 — 경로의 부품 중 <strong>가장 낮은 것이 전체 속도</strong>가 됩니다.</p>
+<pre><code>인터넷 요금제 → 벽 속 배선 → 랜선 → 공유기 포트 → 컴퓨터 랜 포트
+                     ↑ 이 중 제일 낮은 것으로 맞춰집니다</code></pre>
+<ul>
+<li>기가 요금제 + CAT.5 케이블 → <strong>100Mbps</strong> (케이블이 고리)</li>
+<li>CAT.6A 케이블 + 100Mbps 공유기 포트 → 100Mbps (포트가 고리)</li>
+<li>전부 기가급 + <strong>벽 속 배선이 구형</strong> → 배선이 고리 (아래 참고)</li>
+</ul>
+<p><strong>케이블만 좋은 걸로 바꿔서는 안 빨라지는 이유</strong>가 이 구조입니다.</p>
+<h2 id="몇으로-잡혔는지-확인-여기가-진짜-판정입니다">몇으로 잡혔는지 확인 — 여기가 진짜 판정입니다</h2>
+<p>윈도우에서:</p>
+<ol>
+<li>설정 → 네트워크 및 인터넷 → <strong>이더넷</strong> (또는 제어판 → 네트워크 연결
+→ 이더넷 더블클릭)</li>
+<li><strong>&quot;링크 속도&quot;</strong> 항목을 봅니다</li>
+</ol>
+<pre><code>1.0 Gbps    ← 기가로 잡혔습니다. 케이블 문제 없음
+100 Mbps    ← 어딘가에서 막혔습니다. 아래 원인 목록으로</code></pre>
+<p>공유기 관리 화면의 포트 상태에서도 같은 정보가 보입니다.</p>
+<h3 id="100mbps-로-잡히는-흔한-원인">100Mbps 로 잡히는 흔한 원인</h3>
+<ul>
+<li><strong>CAT.5(E 없는) 케이블이나 오래돼 상한 케이블</strong> — 다른 케이블로
+바꿔 꽂아보는 게 가장 빠른 판별입니다</li>
+<li><strong>8가닥 중 4가닥만 연결된 케이블·배선</strong> — 기가(1000BASE-T)는
+8가닥을 전부 쓰는데, 옛날 방식은 4가닥만 결선한 경우가 있습니다.
+전화선과 배선을 나눠 쓰던 건물에서 나옵니다</li>
+<li><strong>커넥터 접촉 불량</strong> — 딸깍 소리가 나게 다시 꽂고, 커넥터 걸쇠가
+부러진 케이블은 버리세요</li>
+<li>장비 중 하나가 100Mbps 까지만 지원 — 오래된 스위칭허브·노트북에서
+가끔 있습니다</li>
+</ul>
+<h2 id="아파트-벽-배선-내-마음대로-안-되는-유일한-구간">아파트 벽 배선 — 내 마음대로 안 되는 유일한 구간</h2>
+<p>방 벽의 랜 포트는 <strong>단자함(대개 현관·신발장 근처)까지 벽 속으로
+이어진 배선</strong>입니다. 이 구간은 케이블을 바꿀 수 없으니, 여기가
+구형이면 방법이 갈립니다.</p>
+<ul>
+<li>배선이 CAT.5E 이상이면 — 기가까지 문제없습니다. 최근 지어진
+건물은 대개 이쪽입니다</li>
+<li>구형 배선(4가닥 결선 등)이면 — 벽 포트 경유는 100Mbps 에 막힙니다.
+공유기에서 <strong>직접 케이블을 끌거나</strong>, 벽을 포기하고
+<a href="/posts/mesh-wifi-backhaul.html">메시 와이파이</a> 쪽을 보는 판단이 됩니다</li>
+</ul>
+<p>건물마다 달라서 단정할 수 없고, <strong>단자함을 열어 배선 표기를 보거나
+벽 포트에 기가 장비를 물려 링크 속도를 확인</strong>하는 것이 정확합니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="cat6-를-사면-더-빨라지나요">CAT.6 를 사면 더 빨라지나요</h3>
+<p><strong>지금 1Gbps 로 잘 잡혀 있다면 아닙니다.</strong> 요금제와 장비가 1G 인
+이상 케이블을 올려도 1G 입니다. CAT.6 가 의미 있는 건 2.5G 이상
+장비·요금제로 갈 때이고, 그때도 아래 답처럼 5E 로 되는 경우가 많습니다.</p>
+<h3 id="25g-인터넷에는-cat6-가-필수인가요">2.5G 인터넷에는 CAT.6 가 필수인가요</h3>
+<p>의외로 아닙니다. <strong>2.5G/5G 규격(802.3bz)은 기존 CAT.5E 배선에서
+동작하도록 설계됐습니다</strong> — 벽 배선을 못 바꾸는 현실을 규격이 반영한
+것입니다. 길이가 길거나 배선 상태가 나쁘면 안 잡힐 수 있으니,
+그때 CAT.6 이상을 검토하는 순서가 맞습니다.</p>
+<h3 id="cat7-cat8-케이블이-더-좋은-것-아닌가요">CAT.7, CAT.8 케이블이 더 좋은 것 아닌가요</h3>
+<p>가정용으로는 대개 <strong>돈만 더 내는 선택</strong>입니다. 10G 까지는 CAT.6A 로
+충분하고, 가정에서 10G 를 쓰는 경우 자체가 아직 드뭅니다.
+케이블 등급보다 위의 &quot;약한 고리&quot; 확인이 먼저입니다.</p>
+<h3 id="납작한플랫-랜선은-성능이-떨어지나요">납작한(플랫) 랜선은 성능이 떨어지나요</h3>
+<p>규격 표기가 같다면 짧은 거리에선 대개 문제없습니다. 문틈을 지나야
+하는 자리처럼 이유가 있을 때 쓰고, 길게 끌 거면 일반형이 무난합니다.</p>
+<h3 id="와이파이가-느린-것도-랜선-때문인가요">와이파이가 느린 것도 랜선 때문인가요</h3>
+<p>공유기까지 오는 회선이 막혀 있으면 그렇습니다 — 모뎀과 공유기 사이
+케이블도 위 표의 적용 대상입니다. 공유기 뒤 케이블부터 확인하세요.
+방까지 와이파이가 약한 문제라면 케이블이 아니라
+<a href="/posts/mesh-wifi-backhaul.html">메시 와이파이</a> 쪽 이야기입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>피복의 CAT 숫자를 읽으세요</strong> — 5E 면 기가까지, E 없는 5 는
+100Mbps 에 막힙니다</li>
+<li>속도는 <strong>제일 약한 고리</strong>가 정합니다 — 케이블만 바꿔서는 안
+빨라지는 이유입니다</li>
+<li>진짜 판정은 <strong>링크 속도 확인</strong>입니다 — 1.0Gbps 로 잡혀 있으면
+케이블 걱정은 끝입니다</li>
+<li>100Mbps 로 잡히면 — 케이블 교체 테스트 → 4가닥 배선 의심 →
+장비 확인 순서로</li>
+<li><strong>벽 속 배선만은 못 바꿉니다</strong> — 단자함 확인이 그 구간의 유일한
+진단입니다</li>
+</ol>
+<p>집 안 연결의 다음 갈림길은
+<a href="/posts/mesh-wifi-backhaul.html">메시 와이파이의 백홀</a>입니다.</p>
+<p>표기나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">랜선</span> <span class="tag">CAT6</span> <span class="tag">기가인터넷</span> <span class="tag">이더넷</span> <span class="tag">홈네트워크</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mesh-wifi-backhaul.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다</span>
+        <span class="card-desc">방마다 안 터져서 메시를 알아보면 위성 개수부터 세게 됩니다. 순서가 반대입니다. 위성들이 서로 어떻게 연결되는가(백홀)가 성능을 정하고, 집에 벽 랜포트가 있느냐로 답이 갈립니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

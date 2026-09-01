@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다 | 스펙핏</title>
+<meta name="description" content="방마다 안 터져서 메시를 알아보면 위성 개수부터 세게 됩니다. 순서가 반대입니다. 위성들이 서로 어떻게 연결되는가(백홀)가 성능을 정하고, 집에 벽 랜포트가 있느냐로 답이 갈립니다.">
+<link rel="canonical" href="https://specfit.kr/posts/mesh-wifi-backhaul.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다 | 스펙핏">
+<meta property="og:description" content="방마다 안 터져서 메시를 알아보면 위성 개수부터 세게 됩니다. 순서가 반대입니다. 위성들이 서로 어떻게 연결되는가(백홀)가 성능을 정하고, 집에 벽 랜포트가 있느냐로 답이 갈립니다.">
+<meta property="og:url" content="https://specfit.kr/posts/mesh-wifi-backhaul.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다","description":"방마다 안 터져서 메시를 알아보면 위성 개수부터 세게 됩니다. 순서가 반대입니다. 위성들이 서로 어떻게 연결되는가(백홀)가 성능을 정하고, 집에 벽 랜포트가 있느냐로 답이 갈립니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mesh-wifi-backhaul.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다","item":"https://specfit.kr/posts/mesh-wifi-backhaul.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"공유기 두 대를 랜선으로 이으면 메시가 되나요","acceptedAnswer":{"@type":"Answer","text":"한 대를 브리지(AP) 모드로 두면 \"유선 백홀과 같은 구조\"는 됩니다 — 실제로 오래 쓰인 방법입니다. 다만 이동 시 갈아타기와 통합 관리는 메시 제품 쪽이 매끄럽고, 제품·설정에 따라 체감이 갈립니다. 남는 공유기가 있다면 먼저 시도해 볼 값어치는 있습니다."}},{"@type":"Question","name":"위성은 몇 개나 필요한가요","acceptedAnswer":{"@type":"Answer","text":"백홀이 유선이면 필요한 방에 하나씩이 답이라 고민이 단순해집니다. 무선 백홀이면 본체-위성 간 전파가 좋아야 하니 개수보다 배치가 문제가 됩니다 — 위성을 안 터지는 방이 아니라 그 중간에 두는 것이 요령입니다."}},{"@type":"Question","name":"벽 포트가 100Mbps 로만 잡히는데 유선 백홀 의미가 있나요","acceptedAnswer":{"@type":"Answer","text":"애매한 구간입니다. 백홀이 100Mbps 에 막히면 인터넷도 그 상한을 넘지 못합니다. 그 속도로도 쓰는 용도(영상 시청 등)면 굴러가지만, 기가 요금제 값을 하려면 배선 쪽을 먼저 진단하는 게 순서입니다."}},{"@type":"Question","name":"통신사 임대 공유기로도 되나요","acceptedAnswer":{"@type":"Answer","text":"임대 공유기는 메시 위성 추가가 안 되는 모델이 대부분입니다. 메시로 가려면 대개 별도 구매가 전제라, 회선(모뎀)만 통신사 것을 쓰고 공유기는 내 것을 붙이는 구성이 일반적입니다."}},{"@type":"Question","name":"미니PC·NAS 같은 상시 장비는 어디에 물리나요","acceptedAnswer":{"@type":"Answer","text":"무선이 아니라 본체나 위성의 랜 포트에 직결이 정석입니다 — 상시 돌리는 장비일수록 무선 변수를 빼는 것이 관리가 편합니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-01">2026년 9월 1일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>거실은 잘 터지는데 안방은 한 칸, 화장실은 먹통. 그래서 메시
+와이파이를 알아보면 <strong>&quot;위성 몇 개짜리를 사지?&quot;</strong>부터 고민하게 됩니다.</p>
+<p>순서가 반대입니다. <strong>위성 개수보다 위성들이 서로 어떻게 연결되느냐
+(백홀)가 성능을 정하고</strong>, 그 답은 제품이 아니라 <strong>우리 집 벽</strong>에
+달려 있습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>우리 집 상태</th><th>답</th></tr></thead>
+<tbody>
+<tr><td><strong>방마다 벽 랜포트가 있고 살아 있다</strong></td><td>✅ <strong>유선 백홀 메시</strong> — 가장 확실합니다</td></tr>
+<tr><td>벽 포트가 없거나 죽어 있다</td><td>무선 백홀 — <strong>전용 백홀 대역이 있는 급</strong>을 보세요</td></tr>
+<tr><td>안 터지는 곳이 한 곳뿐이다</td><td>메시까지 갈 것 없이 공유기 위치·배치부터</td></tr>
+</tbody>
+</table></div>
+<h2 id="백홀이-뭔가-위성들의-뒷길입니다">백홀이 뭔가 — 위성들의 뒷길입니다</h2>
+<p>메시는 공유기(본체)와 위성 여러 대가 <strong>한 네트워크처럼</strong> 움직이는
+구성입니다. 그런데 위성이 받은 데이터는 결국 본체까지 와야 인터넷으로
+나갑니다. <strong>그 뒷길이 백홀입니다.</strong></p>
+<pre><code>[본체] ←──백홀──→ [위성] ←·····→ 안방의 폰</code></pre>
+<ul>
+<li><strong>무선 백홀</strong>: 뒷길도 와이파이로. 설치는 쉽지만, <strong>위성을 오가는
+몫만큼 대역이 깎입니다.</strong> 그래서 위성에 붙었는데 더 느린 역설이
+생깁니다. 백홀 전용 대역을 따로 둔 급(트라이밴드 이상)은 이 손해가
+덜합니다 — 무선 백홀로 갈 거면 이게 확인 포인트입니다</li>
+<li><strong>유선 백홀</strong>: 뒷길을 랜선으로. <strong>무선 손해가 통째로 사라지고</strong>,
+위성 자리도 전파가 아니라 필요한 곳에 자유롭게 둡니다.
+메시를 검색하면 나오는 &quot;유선 백홀 되나요&quot; 질문들이 전부 이걸
+노리는 것입니다</li>
+</ul>
+<h2 id="유선-백홀의-조건-제품이-아니라-집입니다">유선 백홀의 조건 — 제품이 아니라 집입니다</h2>
+<p>위성까지 랜선이 닿아야 하니, 조건은 하나입니다 — <strong>본체에서 위성
+자리까지 선을 끌 수 있는가.</strong></p>
+<p>가장 흔한 경로가 <strong>벽 랜포트</strong>입니다. 방 벽의 랜 포트는 단자함을
+거쳐 서로 이어져 있어서, 이 배선이 살아 있으면 새 선을 끌 것 없이
+그대로 백홀이 됩니다.</p>
+<pre><code>[본체(거실)] ─ 벽포트 ─ (단자함) ─ 벽포트 ─ [위성(안방)]</code></pre>
+<p>그래서 확인 순서는 이렇습니다.</p>
+<ol>
+<li><strong>벽 포트가 살아 있는지</strong> — 기가 장비를 물려 링크 속도를 봅니다.
+막히거나 100Mbps 로 잡히면 <a href="/posts/lan-cable-cat.html">배선 규격 문제</a>일
+수 있습니다 — 백홀이 그 속도에 맞춰 깎입니다</li>
+<li><strong>단자함에서 방끼리 이어 주기</strong> — 단자함 안에서 각 방 배선이
+허브(또는 통신사 장비)에 꽂혀 있어야 방↔방이 통합니다.
+비어 있으면 단자함용 스위칭허브 하나로 해결되는 경우가 많습니다</li>
+<li><strong>제품 설명서에서 유선 백홀 지원 확인</strong> — 요즘 메시 제품 대부분이
+랜선을 꽂으면 자동으로 유선 백홀로 전환되지만, 방식과 조건은
+제품마다 다릅니다</li>
+</ol>
+<h2 id="확장기리피터와는-뭐가-다른가">확장기(리피터)와는 뭐가 다른가</h2>
+<p>값싼 와이파이 확장기도 전파를 넓혀 줍니다. 차이는 <strong>관리</strong>입니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th></th><th>확장기</th><th>메시</th></tr></thead>
+<tbody>
+<tr><td>네트워크</td><td>별도 이름이 생기는 제품이 많음</td><td><strong>하나로 유지</strong></td></tr>
+<tr><td>이동 시</td><td>수동으로 갈아타야 하는 경우</td><td>알아서 넘어감</td></tr>
+<tr><td>구조</td><td>그 자리 전파를 되쏘기</td><td>본체-위성이 한 시스템</td></tr>
+</tbody>
+</table></div>
+<p>한 곳만 살짝 보강하면 확장기로도 되지만, 집 전체를 고르게 덮는
+목적이면 메시가 맞는 물건입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="공유기-두-대를-랜선으로-이으면-메시가-되나요">공유기 두 대를 랜선으로 이으면 메시가 되나요</h3>
+<p>한 대를 브리지(AP) 모드로 두면 <strong>&quot;유선 백홀과 같은 구조&quot;</strong>는
+됩니다 — 실제로 오래 쓰인 방법입니다. 다만 이동 시 갈아타기와
+통합 관리는 메시 제품 쪽이 매끄럽고, 제품·설정에 따라 체감이
+갈립니다. 남는 공유기가 있다면 먼저 시도해 볼 값어치는 있습니다.</p>
+<h3 id="위성은-몇-개나-필요한가요">위성은 몇 개나 필요한가요</h3>
+<p>백홀이 유선이면 <strong>필요한 방에 하나씩</strong>이 답이라 고민이 단순해집니다.
+무선 백홀이면 본체-위성 간 전파가 좋아야 하니 개수보다 <strong>배치</strong>가
+문제가 됩니다 — 위성을 안 터지는 방이 아니라 <strong>그 중간</strong>에 두는
+것이 요령입니다.</p>
+<h3 id="벽-포트가-100mbps-로만-잡히는데-유선-백홀-의미가-있나요">벽 포트가 100Mbps 로만 잡히는데 유선 백홀 의미가 있나요</h3>
+<p>애매한 구간입니다. 백홀이 100Mbps 에 막히면 인터넷도 그 상한을
+넘지 못합니다. 그 속도로도 쓰는 용도(영상 시청 등)면 굴러가지만,
+기가 요금제 값을 하려면 <a href="/posts/lan-cable-cat.html">배선 쪽을 먼저 진단</a>하는
+게 순서입니다.</p>
+<h3 id="통신사-임대-공유기로도-되나요">통신사 임대 공유기로도 되나요</h3>
+<p>임대 공유기는 메시 위성 추가가 안 되는 모델이 대부분입니다.
+메시로 가려면 대개 별도 구매가 전제라, <strong>회선(모뎀)만 통신사 것을
+쓰고 공유기는 내 것</strong>을 붙이는 구성이 일반적입니다.</p>
+<h3 id="미니pcnas-같은-상시-장비는-어디에-물리나요">미니PC·NAS 같은 상시 장비는 어디에 물리나요</h3>
+<p>무선이 아니라 <strong>본체나 위성의 랜 포트에 직결</strong>이 정석입니다 —
+<a href="/posts/mini-pc-for-dev.html">상시 돌리는 장비</a>일수록 무선 변수를
+빼는 것이 관리가 편합니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>메시의 성능은 위성 개수가 아니라 <strong>백홀</strong>이 정합니다</li>
+<li><strong>무선 백홀은 오가는 몫만큼 깎입니다</strong> — 무선으로 갈 거면 전용
+백홀 대역(트라이밴드급) 여부를 확인하세요</li>
+<li><strong>벽 랜포트가 살아 있으면 유선 백홀</strong>이 가장 확실합니다 —
+제품보다 집을 먼저 확인하는 이유입니다</li>
+<li>확인 순서: <strong>벽 포트 링크 속도 → 단자함 연결 → 제품의 유선 백홀
+지원</strong></li>
+<li>한 곳만 문제면 메시 전에 <strong>배치</strong>부터 — 위성은 안 터지는 방이
+아니라 중간에 둡니다</li>
+</ol>
+<p>백홀 속도의 바닥을 이루는 배선·케이블 이야기는
+<a href="/posts/lan-cable-cat.html">랜선 규격 읽는 법</a>에 있습니다.</p>
+<p>구성이 실제와 다르게 동작하면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">메시와이파이</span> <span class="tag">유선백홀</span> <span class="tag">공유기</span> <span class="tag">와이파이확장</span> <span class="tag">홈네트워크</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/lan-cable-cat.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다</span>
+        <span class="card-desc">서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

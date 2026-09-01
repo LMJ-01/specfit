@@ -6,6 +6,20 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다</title>
+    <link>https://specfit.kr/posts/mesh-wifi-backhaul.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mesh-wifi-backhaul.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>방마다 안 터져서 메시를 알아보면 위성 개수부터 세게 됩니다. 순서가 반대입니다. 위성들이 서로 어떻게 연결되는가(백홀)가 성능을 정하고, 집에 벽 랜포트가 있느냐로 답이 갈립니다.</description>
+  </item>
+  <item>
+    <title>랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다</title>
+    <link>https://specfit.kr/posts/lan-cable-cat.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/lan-cable-cat.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.</description>
+  </item>
+  <item>
     <title>개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다</title>
     <link>https://specfit.kr/posts/dev-backup-strategy.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/dev-backup-strategy.html</guid>
@@ -130,20 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/used-laptop-dev.html</guid>
     <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
     <description>중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>중고 그래픽카드 살 때 — 채굴 이력은 못 밝힙니다</title>
-    <link>https://specfit.kr/posts/used-gpu-check.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/used-gpu-check.html</guid>
-    <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
-    <description>채굴 이력은 GPU-Z로도 확인이 안 됩니다. 밝힐 수 없는 것을 추리하는 대신, 그 자리에서 잴 수 있는 것 네 가지를 정리했습니다. VRAM, 부하 온도, 아티팩트, 보증.</description>
-  </item>
-  <item>
-    <title>램 XMP·EXPO — 안 켜면 산 속도가 안 나옵니다</title>
-    <link>https://specfit.kr/posts/ram-xmp-expo.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ram-xmp-expo.html</guid>
-    <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
-    <description>DDR5-6000을 사도 기본 설정으로는 4800으로 돕니다. 대역폭으로 20% 손해입니다. 어디서 체감되고 어디서는 상관없는지, 노트북은 왜 해당이 없는지 계산해서 갈랐습니다.</description>
   </item>
 </channel>
 </rss>

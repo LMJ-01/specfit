@@ -7,10 +7,13 @@
   <url><loc>https://specfit.kr/monitor.html</loc><priority>0.7</priority></url>
   <url><loc>https://specfit.kr/memory.html</loc><priority>0.7</priority></url>
   <url><loc>https://specfit.kr/minipc.html</loc><priority>0.7</priority></url>
+  <url><loc>https://specfit.kr/network.html</loc><priority>0.7</priority></url>
   <url><loc>https://specfit.kr/about.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/contact.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/lan-cable-cat.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/mesh-wifi-backhaul.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dev-backup-strategy.html</loc><lastmod>2026-08-30</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/barebone-mini-pc.html</loc><lastmod>2026-08-30</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mini-pc-local-llm.html</loc><lastmod>2026-08-29</lastmod><priority>0.8</priority></url>

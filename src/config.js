@@ -216,5 +216,14 @@ export const config = {
         '책상에 두는 작은 컴퓨터. 이름은 데스크톱인데 속은 노트북에 가까워서, 사양표에서 CPU·램·포트의 정체를 확인하는 기준을 정리했습니다.',
       start: { href: '/posts/mini-pc-vs-laptop.html', label: '노트북과의 갈림길부터' },
     },
+    // 2026-09-01 신설 — 2호 사이트 검증(site2-topic.md)에서 통과한
+    // 홈네트워크를 확장 카테고리로 흡수. 3차 거절 후 공백기.
+    {
+      slug: 'network',
+      label: '네트워크',
+      description:
+        '공유기, 랜선, 와이파이. 집 안의 연결이 왜 느린지를 후기 없이 규격과 배선 구조로 판단합니다. 제일 약한 고리가 속도를 정합니다.',
+      start: { href: '/posts/lan-cable-cat.html', label: '랜선 규격 읽는 법부터' },
+    },
   ],
 };
