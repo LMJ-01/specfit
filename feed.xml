@@ -27,6 +27,13 @@
     <description>SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느려지는지 커뮤니티 질문이 많습니다. 구조적인 이유(빈 블록과 SLC 캐시)와 함께, 용도별로 어느 정도 여유가 현실적인지 정리했습니다.</description>
   </item>
   <item>
+    <title>램 방열판이 필요한가 — 효과는 있지만, 필요한 사람이 따로 있습니다</title>
+    <link>https://specfit.kr/posts/ram-heatsink-needed.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ram-heatsink-needed.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>튜닝램에는 다 달려 있고, 순정램에 따로 붙이자니 효과가 있는지 애매한 게 램 방열판입니다. 램 발열의 실제 크기와, 방열판이 의미 있는 경우·오히려 손해인 경우를 정리했습니다.</description>
+  </item>
+  <item>
     <title>램 64GB가 필요한 사람은 따로 있습니다 — 32GB에서 올릴지 판정</title>
     <link>https://specfit.kr/posts/ram-64gb-worth-it.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/ram-64gb-worth-it.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/apartment-lan-panel.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>방 랜포트가 죽어 있거나 속도가 100Mbps에 막힐 때, 원인은 대개 신발장 위 단자함 안에 있습니다. 뭐가 들어 있고, 공유기가 어디 있어야 하며, 뭘 확인하면 되는지 진단 순서로 정리했습니다.</description>
-  </item>
-  <item>
-    <title>개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다</title>
-    <link>https://specfit.kr/posts/dev-backup-strategy.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/dev-backup-strategy.html</guid>
-    <pubDate>Sat, 29 Aug 2026 15:00:00 GMT</pubDate>
-    <description>백업 이야기는 늘 "다 복사하라"로 끝나는데, 개발자는 사정이 다릅니다. 코드는 이미 원격에 있으니 진짜 대상은 따로 있고, 잠자는 백업 매체로 SSD를 고르면 안 되는 이유가 있습니다.</description>
   </item>
 </channel>
 </rss>
