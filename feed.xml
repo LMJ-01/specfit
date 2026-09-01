@@ -20,6 +20,13 @@
     <description>서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.</description>
   </item>
   <item>
+    <title>아파트 단자함 — 기가가 안 나올 때 열어보는 곳</title>
+    <link>https://specfit.kr/posts/apartment-lan-panel.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/apartment-lan-panel.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>방 랜포트가 죽어 있거나 속도가 100Mbps에 막힐 때, 원인은 대개 신발장 위 단자함 안에 있습니다. 뭐가 들어 있고, 공유기가 어디 있어야 하며, 뭘 확인하면 되는지 진단 순서로 정리했습니다.</description>
+  </item>
+  <item>
     <title>개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다</title>
     <link>https://specfit.kr/posts/dev-backup-strategy.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/dev-backup-strategy.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ollama-context-length.html</guid>
     <pubDate>Thu, 20 Aug 2026 15:00:00 GMT</pubDate>
     <description>긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.</description>
-  </item>
-  <item>
-    <title>중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다</title>
-    <link>https://specfit.kr/posts/used-laptop-dev.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/used-laptop-dev.html</guid>
-    <pubDate>Wed, 19 Aug 2026 15:00:00 GMT</pubDate>
-    <description>중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.</description>
   </item>
 </channel>
 </rss>

@@ -99,6 +99,35 @@
 그대로입니다 — 경로의 부품 중 <strong>가장 낮은 것이 전체 속도</strong>가 됩니다.</p>
 <pre><code>인터넷 요금제 → 벽 속 배선 → 랜선 → 공유기 포트 → 컴퓨터 랜 포트
                      ↑ 이 중 제일 낮은 것으로 맞춰집니다</code></pre>
+<figure class="fig">
+<svg viewBox="0 0 640 124" width="640" height="124" role="img" aria-label="랜 연결 경로의 약한 고리">
+<title>랜 연결 경로의 약한 고리</title>
+
+<text x="16" y="24" fill="var(--fg)" font-size="14" font-weight="600">속도는 경로에서 제일 낮은 것에 맞춰집니다</text>
+<rect x="16" y="44" width="100" height="44" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/>
+<text x="66" y="63" fill="var(--fg)" font-size="12" text-anchor="middle">요금제</text>
+<text x="66" y="80" fill="var(--fg-muted)" font-size="11" font-weight="400" text-anchor="middle">1G</text>
+<line x1="116" y1="66" x2="140" y2="66" stroke="var(--border)" stroke-width="2"/>
+<rect x="140" y="44" width="100" height="44" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/>
+<text x="190" y="63" fill="var(--fg)" font-size="12" text-anchor="middle">벽 배선</text>
+<text x="190" y="80" fill="var(--fg-muted)" font-size="11" font-weight="400" text-anchor="middle">1G</text>
+<line x1="240" y1="66" x2="264" y2="66" stroke="var(--border)" stroke-width="2"/>
+<rect x="264" y="44" width="100" height="44" fill="var(--fig-over)" rx="6"/>
+<text x="314" y="63" fill="var(--fg)" font-size="12" text-anchor="middle">랜선</text>
+<text x="314" y="80" fill="var(--fg)" font-size="11" font-weight="700" text-anchor="middle">CAT.5</text>
+<line x1="364" y1="66" x2="388" y2="66" stroke="var(--border)" stroke-width="2"/>
+<rect x="388" y="44" width="100" height="44" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/>
+<text x="438" y="63" fill="var(--fg)" font-size="12" text-anchor="middle">공유기 포트</text>
+<text x="438" y="80" fill="var(--fg-muted)" font-size="11" font-weight="400" text-anchor="middle">1G</text>
+<line x1="488" y1="66" x2="512" y2="66" stroke="var(--border)" stroke-width="2"/>
+<rect x="512" y="44" width="100" height="44" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/>
+<text x="562" y="63" fill="var(--fg)" font-size="12" text-anchor="middle">컴퓨터</text>
+<text x="562" y="80" fill="var(--fg-muted)" font-size="11" font-weight="400" text-anchor="middle">1G</text>
+
+<text x="314" y="110" fill="var(--fg)" font-size="12" font-weight="600" text-anchor="middle">↑ 전체가 100Mbps 로 떨어집니다</text>
+</svg>
+<figcaption>넷이 기가급이어도 하나가 CAT.5 면 전체가 100Mbps 입니다. 케이블만 바꿔서 안 빨라지는 이유이기도 합니다.</figcaption>
+</figure>
 <ul>
 <li>기가 요금제 + CAT.5 케이블 → <strong>100Mbps</strong> (케이블이 고리)</li>
 <li>CAT.6A 케이블 + 100Mbps 공유기 포트 → 100Mbps (포트가 고리)</li>
@@ -139,7 +168,8 @@
 <a href="/posts/mesh-wifi-backhaul.html">메시 와이파이</a> 쪽을 보는 판단이 됩니다</li>
 </ul>
 <p>건물마다 달라서 단정할 수 없고, <strong>단자함을 열어 배선 표기를 보거나
-벽 포트에 기가 장비를 물려 링크 속도를 확인</strong>하는 것이 정확합니다.</p>
+벽 포트에 기가 장비를 물려 링크 속도를 확인</strong>하는 것이 정확합니다 —
+<a href="/posts/apartment-lan-panel.html">단자함 진단 순서</a>에 따로 정리했습니다.</p>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
 <h3 id="cat6-를-사면-더-빨라지나요">CAT.6 를 사면 더 빨라지나요</h3>
 <p><strong>지금 1Gbps 로 잘 잡혀 있다면 아닙니다.</strong> 요금제와 장비가 1G 인
@@ -188,6 +218,13 @@
 <section class="related" aria-labelledby="related-h">
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
+    <li class="card">
+      <a href="/posts/apartment-lan-panel.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">아파트 단자함 — 기가가 안 나올 때 열어보는 곳</span>
+        <span class="card-desc">방 랜포트가 죽어 있거나 속도가 100Mbps에 막힐 때, 원인은 대개 신발장 위 단자함 안에 있습니다. 뭐가 들어 있고, 공유기가 어디 있어야 하며, 뭘 확인하면 되는지 진단 순서로 정리했습니다.</span>
+      </a>
+    </li>
     <li class="card">
       <a href="/posts/mesh-wifi-backhaul.html">
         <span class="card-cat">네트워크</span>

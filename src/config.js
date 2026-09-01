@@ -34,13 +34,15 @@ export const config = {
   // 2026-08-29: 미니PC 카테고리 신설(4편)을 반영해 ram-price-2026 을
   // mini-pc-vs-laptop 으로 교체 — 5개 카테고리가 전부 한 자리씩 갖게 됨
   // (GPU 만 계산기 연결 글로 두 자리). 시세 글은 카테고리 페이지에서 찾아짐.
+  // 2026-09-01: 네트워크 카테고리 신설로 6카테고리 × 한 자리씩 재조정
+  // (GPU 두 자리 중 rtx4060ti → mesh-wifi-backhaul).
   featured: [
     'ollama-minimum-spec',
-    'rtx4060ti-16gb-vs-4070',
     'dev-laptop-spec',
     'coding-monitor-resolution',
     'ram-16gb-vs-32gb',
     'mini-pc-vs-laptop',
+    'mesh-wifi-backhaul',
   ],
 
   // 공정거래위원회 대가성 고지 문구.

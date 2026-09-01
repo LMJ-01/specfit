@@ -818,4 +818,88 @@ export const figures = {
   'ups-sinewave': upsSinewave,
   'kvm-switch': kvmSwitch,
   'chroma-subsampling': chromaSubsampling,
+  'weak-link-chain': weakLinkChain,
+  'mesh-backhaul': meshBackhaul,
 };
+
+/**
+ * 속도는 제일 약한 고리가 정한다 — 랜 연결 경로의 사슬.
+ * lan-cable-cat 본문의 구조 서술과 같은 예시(CAT.5 케이블이 고리)입니다.
+ */
+function weakLinkChain() {
+  const W = 640;
+  const boxes = [
+    ['요금제', '1G', false],
+    ['벽 배선', '1G', false],
+    ['랜선', 'CAT.5', true], // 여기가 고리
+    ['공유기 포트', '1G', false],
+    ['컴퓨터', '1G', false],
+  ];
+  const bw = 100;
+  const gap = 24;
+  const x0 = 16;
+  const y0 = 44;
+
+  const body = `
+${t(16, 24, '속도는 경로에서 제일 낮은 것에 맞춰집니다', { weight: 600, size: 14 })}
+${boxes
+  .map(([name, spec, isWeak], i) => {
+    const x = x0 + i * (bw + gap);
+    return `${rect(x, y0, bw, 44, isWeak ? 'var(--fig-over)' : COLOR.soft, { r: 6, stroke: isWeak ? '' : COLOR.line })}
+${t(x + bw / 2, y0 + 19, name, { size: 12, anchor: 'middle', fill: isWeak ? COLOR.text : COLOR.text })}
+${t(x + bw / 2, y0 + 36, spec, { size: 11, anchor: 'middle', weight: isWeak ? 700 : 400, fill: isWeak ? COLOR.text : COLOR.mute })}
+${i < boxes.length - 1 ? `<line x1="${x + bw}" y1="${y0 + 22}" x2="${x + bw + gap}" y2="${y0 + 22}" stroke="${COLOR.line}" stroke-width="2"/>` : ''}`;
+  })
+  .join('\n')}
+${t(x0 + 2 * (bw + gap) + bw / 2, y0 + 66, '↑ 전체가 100Mbps 로 떨어집니다', { size: 12, anchor: 'middle', weight: 600 })}`;
+
+  return figure(
+    '랜 연결 경로의 약한 고리',
+    W,
+    124,
+    body,
+    '넷이 기가급이어도 하나가 CAT.5 면 전체가 100Mbps 입니다. 케이블만 바꿔서 안 빨라지는 이유이기도 합니다.'
+  );
+}
+
+/**
+ * 메시의 두 가지 백홀 — 무선(대역을 나눠 씀) vs 유선(손실 없음).
+ * mesh-wifi-backhaul 본문의 구조 서술을 그림으로.
+ */
+function meshBackhaul() {
+  const W = 640;
+  const box = (x, y, w, label, sub) =>
+    `${rect(x, y, w, 40, COLOR.soft, { r: 6, stroke: COLOR.line })}
+${t(x + w / 2, y + 17, label, { size: 12, anchor: 'middle' })}
+${sub ? t(x + w / 2, y + 32, sub, { size: 10, anchor: 'middle', fill: COLOR.mute }) : ''}`;
+
+  const body = `
+${t(16, 22, '같은 메시라도 백홀이 다르면 성능이 다릅니다', { weight: 600, size: 14 })}
+
+${t(16, 52, '무선 백홀', { size: 12, weight: 600, fill: COLOR.mute })}
+${box(90, 36, 110, '본체')}
+${box(330, 36, 110, '위성', '오가는 몫만큼 깎임')}
+<line x1="200" y1="56" x2="330" y2="56" stroke="${COLOR.line}" stroke-width="2" stroke-dasharray="6 5"/>
+${t(265, 48, '전파', { size: 10, anchor: 'middle', fill: COLOR.mute })}
+<line x1="440" y1="56" x2="500" y2="56" stroke="${COLOR.line}" stroke-dasharray="2 3"/>
+${t(535, 60, '안방의 폰', { size: 11, fill: COLOR.mute })}
+
+${t(16, 122, '유선 백홀', { size: 12, weight: 600 })}
+${box(90, 106, 110, '본체')}
+${box(240, 106, 90, '단자함', '벽 속 배선')}
+${box(330 + 40, 106, 110, '위성', '깎임 없음')}
+<line x1="200" y1="126" x2="240" y2="126" stroke="${COLOR.accent}" stroke-width="3"/>
+<line x1="330" y1="126" x2="370" y2="126" stroke="${COLOR.accent}" stroke-width="3"/>
+<line x1="480" y1="126" x2="520" y2="126" stroke="${COLOR.line}" stroke-dasharray="2 3"/>
+${t(555, 130, '안방의 폰', { size: 11, fill: COLOR.mute })}
+
+${t(16, 178, '유선(색선)은 위성까지의 뒷길에서 무선 손실이 통째로 사라집니다.', { weight: 600, size: 12 })}`;
+
+  return figure(
+    '메시 무선 백홀과 유선 백홀 비교',
+    W,
+    192,
+    body,
+    '점선 = 전파, 색선 = 랜선. 위성 성능의 바닥은 뒷길(백홀)이 정합니다.'
+  );
+}
