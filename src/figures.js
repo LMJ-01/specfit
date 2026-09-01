@@ -820,6 +820,8 @@ export const figures = {
   'chroma-subsampling': chromaSubsampling,
   'weak-link-chain': weakLinkChain,
   'mesh-backhaul': meshBackhaul,
+  'lan-panel-layout': lanPanelLayout,
+  'wifi-gates': wifiGates,
 };
 
 /**
@@ -901,5 +903,90 @@ ${t(16, 178, '유선(색선)은 위성까지의 뒷길에서 무선 손실이 �
     192,
     body,
     '점선 = 전파, 색선 = 랜선. 위성 성능의 바닥은 뒷길(백홀)이 정합니다.'
+  );
+}
+
+/**
+ * 단자함 배치 두 가지 — 공유기가 배선의 위에 있느냐가 갈림길.
+ * apartment-lan-panel 본문의 ❌/✅ 구조 서술을 그림으로.
+ */
+function lanPanelLayout() {
+  const W = 640;
+  const box = (x, y, w, label, sub, warn) =>
+    `${rect(x, y, w, 40, warn ? 'var(--fig-over)' : COLOR.soft, { r: 6, stroke: warn ? '' : COLOR.line })}
+${t(x + w / 2, y + 17, label, { size: 12, anchor: 'middle' })}
+${sub ? t(x + w / 2, y + 32, sub, { size: 10, anchor: 'middle', fill: warn ? COLOR.text : COLOR.mute }) : ''}`;
+  const wire = (x1, y1, x2, y2, good) =>
+    `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${good ? COLOR.accent : COLOR.line}" stroke-width="${good ? 3 : 2}"/>`;
+
+  const body = `
+${t(16, 22, '공유기가 배선의 위(인입 쪽)에 있느냐가 절반입니다', { weight: 600, size: 14 })}
+
+${t(16, 52, '❌ 흔한 문제 구조', { size: 12, weight: 600, fill: COLOR.mute })}
+${box(30, 62, 70, '인입')}
+${box(160, 62, 110, '단자함 허브')}
+${box(340, 62, 120, '거실 + 공유기')}
+${box(340, 112, 120, '다른 방들', '공유기를 안 거침', true)}
+${wire(100, 82, 160, 82)}
+${wire(270, 82, 340, 82)}
+${wire(270, 82, 305, 82)}<line x1="305" y1="82" x2="305" y2="132" stroke="${COLOR.line}" stroke-width="2"/>${wire(305, 132, 340, 132)}
+${t(475, 128, '← 서로 다른 식구', { size: 11, fill: COLOR.mute })}
+
+${t(16, 192, '✅ 정석 구조', { size: 12, weight: 600 })}
+${box(30, 202, 70, '인입')}
+${box(140, 202, 90, '공유기')}
+${box(270, 202, 110, '단자함 허브')}
+${box(420, 202, 120, '모든 방', '한 네트워크')}
+${wire(100, 222, 140, 222, true)}
+${wire(230, 222, 270, 222, true)}
+${wire(380, 222, 420, 222, true)}
+
+${t(16, 272, '공유기를 단자함 안에 넣거나, 거실에서 되돌림 배선으로 같은 순서를 만듭니다.', { weight: 600, size: 12 })}`;
+
+  return figure(
+    '단자함 배치 비교 — 공유기 위치에 따른 구조 차이',
+    W,
+    288,
+    body,
+    '허브가 공유기보다 앞(인입 쪽)에 있으면 방 포트들이 공유기 밖에 놓입니다. 색선 = 공유기 아래로 정리된 경로.'
+  );
+}
+
+/**
+ * 무선 속도의 세 관문 — 요금제·공유기·기기 중 최저를 따라감.
+ * wifi7-router-upgrade 본문의 관문 구조를 그림으로.
+ */
+function wifiGates() {
+  const W = 640;
+  const gates = [
+    ['① 인터넷 요금제', '500M', false],
+    ['② 공유기', 'WiFi 7', false],
+    ['③ 내 기기', 'WiFi 5', true],
+  ];
+  const bw = 170;
+  const gap = 40;
+  const x0 = 30;
+  const y0 = 46;
+
+  const body = `
+${t(16, 24, '무선 속도는 세 관문 중 제일 낮은 것을 따라갑니다', { weight: 600, size: 14 })}
+${gates
+  .map(([name, spec, isLow], i) => {
+    const x = x0 + i * (bw + gap);
+    return `${rect(x, y0, bw, 52, isLow ? 'var(--fig-over)' : COLOR.soft, { r: 6, stroke: isLow ? '' : COLOR.line })}
+${t(x + bw / 2, y0 + 21, name, { size: 12, anchor: 'middle' })}
+${t(x + bw / 2, y0 + 40, spec, { size: 12, anchor: 'middle', weight: isLow ? 700 : 400, fill: isLow ? COLOR.text : COLOR.mute })}
+${i < gates.length - 1 ? `<line x1="${x + bw}" y1="${y0 + 26}" x2="${x + bw + gap}" y2="${y0 + 26}" stroke="${COLOR.line}" stroke-width="2"/>` : ''}`;
+  })
+  .join('\n')}
+${t(x0 + 2 * (bw + gap) + bw / 2, y0 + 76, '↑ 이 연결은 WiFi 5 로 성립합니다', { size: 12, anchor: 'middle', weight: 600 })}
+${t(16, y0 + 104, '공유기만 7로 올려도, 옛 기기는 옛 세대로 붙습니다 — 기기 세대부터 세어보는 이유입니다.', { size: 12, fill: COLOR.mute })}`;
+
+  return figure(
+    '무선 속도의 세 관문 — 요금제·공유기·기기',
+    W,
+    172,
+    body,
+    '접속은 양쪽이 공통으로 지원하는 세대로 이루어집니다. 제일 낮은 관문이 전체를 정합니다.'
   );
 }

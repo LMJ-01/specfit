@@ -78,8 +78,28 @@
 <p>그런데 무선 속도는 공유기 혼자 정하지 않습니다. <strong>세 관문 중 제일
 낮은 것</strong>을 따라갑니다 — <a href="/posts/lan-cable-cat.html">랜선에서 본 그 구조</a>가
 무선에서도 그대로입니다.</p>
-<pre><code>① 인터넷 요금제  →  ② 공유기 세대  →  ③ 내 기기의 와이파이 세대
-        셋 중 제일 낮은 관문이 속도를 정합니다</code></pre>
+<figure class="fig">
+<svg viewBox="0 0 640 172" width="640" height="172" role="img" aria-label="무선 속도의 세 관문 — 요금제·공유기·기기">
+<title>무선 속도의 세 관문 — 요금제·공유기·기기</title>
+
+<text x="16" y="24" fill="var(--fg)" font-size="14" font-weight="600">무선 속도는 세 관문 중 제일 낮은 것을 따라갑니다</text>
+<rect x="30" y="46" width="170" height="52" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/>
+<text x="115" y="67" fill="var(--fg)" font-size="12" text-anchor="middle">① 인터넷 요금제</text>
+<text x="115" y="86" fill="var(--fg-muted)" font-size="12" font-weight="400" text-anchor="middle">500M</text>
+<line x1="200" y1="72" x2="240" y2="72" stroke="var(--border)" stroke-width="2"/>
+<rect x="240" y="46" width="170" height="52" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/>
+<text x="325" y="67" fill="var(--fg)" font-size="12" text-anchor="middle">② 공유기</text>
+<text x="325" y="86" fill="var(--fg-muted)" font-size="12" font-weight="400" text-anchor="middle">WiFi 7</text>
+<line x1="410" y1="72" x2="450" y2="72" stroke="var(--border)" stroke-width="2"/>
+<rect x="450" y="46" width="170" height="52" fill="var(--fig-over)" rx="6"/>
+<text x="535" y="67" fill="var(--fg)" font-size="12" text-anchor="middle">③ 내 기기</text>
+<text x="535" y="86" fill="var(--fg)" font-size="12" font-weight="700" text-anchor="middle">WiFi 5</text>
+
+<text x="535" y="122" fill="var(--fg)" font-size="12" font-weight="600" text-anchor="middle">↑ 이 연결은 WiFi 5 로 성립합니다</text>
+<text x="16" y="150" fill="var(--fg-muted)" font-size="12">공유기만 7로 올려도, 옛 기기는 옛 세대로 붙습니다 — 기기 세대부터 세어보는 이유입니다.</text>
+</svg>
+<figcaption>접속은 양쪽이 공통으로 지원하는 세대로 이루어집니다. 제일 낮은 관문이 전체를 정합니다.</figcaption>
+</figure>
 <h2 id="결론부터">결론부터</h2>
 <div class="table-wrap"><table>
 <thead><tr><th>상황</th><th>공유기를 7로 바꾸면</th></tr></thead>
