@@ -2,7 +2,7 @@
 title: SSD 수명 TBW — 개발용으로 정말 걱정할 일인가
 description: TBW를 하루 쓰기량으로 나눠보면 수십 년이 나옵니다. 개발에서 먼저 오는 건 수명이 아니라 보증 기간과 용량입니다. 계산식과 내 SSD 확인법을 정리했습니다.
 date: 2026-08-18
-updated: 2026-08-30
+updated: 2026-09-01
 category: memory
 tags: [SSD, TBW, 수명, QLC, 개발용PC]
 affiliate: true
@@ -144,7 +144,8 @@ SSD는 내부적으로 자리를 정리하면서 씁니다. **빈 공간이 부�
 같은 파일을 저장해도 실제 쓰기량이 더 늘어납니다.**
 
 그래서 **꽉 채워 쓰는 것이 수명에도 불리합니다.**
-[개발용 SSD 고르기](/posts/dev-ssd-choose.html)의 "몇 % 채워도 되나요" 와 같은 이야기입니다.
+[개발용 SSD 고르기](/posts/dev-ssd-choose.html)의 "몇 % 채워도 되나요" 와 같은 이야기이고,
+성능까지 포함한 전체 그림은 [꽉 채우면 느려지나](/posts/ssd-full-slowdown.html)에 있습니다.
 
 ### 그리고 대개 용량이 먼저 찹니다
 

@@ -20,6 +20,13 @@
     <description>유선으로 물릴 기기는 늘었는데 공유기 뒤 포트는 네 개뿐. 이때 스위칭허브와 공유기 중 뭘 사야 하는지 헷갈립니다. 두 장비의 역할 차이와, 상황별로 답이 갈리는 기준을 정리했습니다.</description>
   </item>
   <item>
+    <title>SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다</title>
+    <link>https://specfit.kr/posts/ssd-full-slowdown.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ssd-full-slowdown.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느려지는지 커뮤니티 질문이 많습니다. 구조적인 이유(빈 블록과 SLC 캐시)와 함께, 용도별로 어느 정도 여유가 현실적인지 정리했습니다.</description>
+  </item>
+  <item>
     <title>램 64GB가 필요한 사람은 따로 있습니다 — 32GB에서 올릴지 판정</title>
     <link>https://specfit.kr/posts/ram-64gb-worth-it.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/ram-64gb-worth-it.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/tv-as-monitor.html</guid>
     <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
     <description>안 쓰는 TV를 책상에 올려도 될까요. 밀도(PPI)는 의외로 문제가 아닙니다. 갈리는 건 크로마 서브샘플링, 크기와 거리, 화면 처리입니다. 계산과 확인 절차로 정리했습니다.</description>
-  </item>
-  <item>
-    <title>모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로</title>
-    <link>https://specfit.kr/posts/monitor-kvm.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-kvm.html</guid>
-    <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
-    <description>재택하면 책상에 컴퓨터가 두 대가 됩니다. 모니터에 KVM 기능이 있으면 키보드·마우스 한 세트로 전환하며 씁니다. 어떤 스펙을 확인해야 하는지, 별도 KVM 스위치와는 언제 갈리는지 정리했습니다.</description>
   </item>
 </channel>
 </rss>

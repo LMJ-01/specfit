@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다 | 스펙핏</title>
+<meta name="description" content="SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느려지는지 커뮤니티 질문이 많습니다. 구조적인 이유(빈 블록과 SLC 캐시)와 함께, 용도별로 어느 정도 여유가 현실적인지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/ssd-full-slowdown.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다 | 스펙핏">
+<meta property="og:description" content="SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느려지는지 커뮤니티 질문이 많습니다. 구조적인 이유(빈 블록과 SLC 캐시)와 함께, 용도별로 어느 정도 여유가 현실적인지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/ssd-full-slowdown.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다","description":"SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느려지는지 커뮤니티 질문이 많습니다. 구조적인 이유(빈 블록과 SLC 캐시)와 함께, 용도별로 어느 정도 여유가 현실적인지 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ssd-full-slowdown.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다","item":"https://specfit.kr/posts/ssd-full-slowdown.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"트림(TRIM)을 돌려야 하나요","acceptedAnswer":{"@type":"Answer","text":"요즘 윈도우·맥은 자동으로 합니다 — 따로 챙길 일은 없습니다. \"최적화\" 명목의 별도 프로그램을 깔 필요도 없습니다."}},{"@type":"Question","name":"HDD도 꽉 차면 느려지는 건 같은 이유인가요","acceptedAnswer":{"@type":"Answer","text":"느려지는 건 같은데 이유가 다릅니다 — HDD 는 빈 공간이 줄면 조각난 자리에 나눠 쓰게 되는 물리적 이유입니다. SSD 의 블록·캐시 구조와는 별개 메커니즘이고, 어느 쪽이든 \"꽉 채우면 손해\"라는 결론만 같습니다."}},{"@type":"Question","name":"꽉 찼다고 데이터가 날아가지는 않나요","acceptedAnswer":{"@type":"Answer","text":"날아가지 않습니다. 다만 공간 0 에 가까워지면 프로그램들이 임시 파일을 못 만들어 오작동하는 건 별개 문제라, 그 지경 전에 정리가 필요합니다."}},{"@type":"Question","name":"용량 경고 기준을 바꿀 수 있나요","acceptedAnswer":{"@type":"Answer","text":"윈도우의 빨간 표시 기준 자체는 조정 대상이 아니라고 보는 게 편합니다 — 표시보다 위의 \"용도별 여유\"로 스스로 기준을 잡는 쪽이 실용적입니다."}},{"@type":"Question","name":"오버프로비저닝이라는 걸 설정해야 하나요","acceptedAnswer":{"@type":"Answer","text":"제조사 도구에 있는 그 항목은 여유 공간을 강제로 떼어 두는 기능인데, 여유를 습관으로 유지할 수 있다면 같은 효과입니다. 관리를 못 믿겠을 때 거는 안전벨트 정도로 생각하면 됩니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-01">2026년 9월 1일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>SSD 용량이 빨간 줄에 가까워지면 다들 같은 걸 검색합니다 —
+<strong>&quot;SSD 꽉 채우면 느려지나요? 몇 % 남겨야 하나요?&quot;</strong></p>
+<p>답부터: <strong>느려지는 것은 사실입니다.</strong> 다만 왜 느려지는지를 알면
+&quot;몇 %&quot;에 매달릴 필요 없이 내 용도에 맞는 여유가 계산됩니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>꽉 채우면 느려지나</td><td><strong>네 — 주로 쓰기가</strong> 느려집니다. 읽기는 영향이 작습니다</td></tr>
+<tr><td>데이터가 손상되나</td><td>아닙니다 — 성능과 <a href="/posts/ssd-tbw-lifespan.html">수명</a>의 문제입니다</td></tr>
+<tr><td>얼마나 남겨야 하나</td><td><strong>1~2할 여유가 통설</strong>입니다 — 용도별 조정은 아래</td></tr>
+<tr><td>게임만 잔뜩 깔린 드라이브</td><td>더 채워도 체감이 덜합니다 — 쓰기가 적은 용도라서요</td></tr>
+<tr><td>근본 해결</td><td>지우기 경쟁이 아니라 <a href="/posts/dev-ssd-choose.html">용량 큰 쪽으로</a> 가는 것입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-느려지나-두-가지-구조-때문입니다">왜 느려지나 — 두 가지 구조 때문입니다</h2>
+<h3 id="ssd는-덮어쓰기를-못-합니다">① SSD는 &quot;덮어쓰기&quot;를 못 합니다</h3>
+<p>SSD는 데이터를 <strong>블록을 지운 뒤에만</strong> 새로 쓸 수 있습니다. 빈
+블록이 넉넉할 때는 그냥 빈 곳에 쓰면 되지만, 꽉 차 있으면 <strong>쓸
+자리를 만들기 위해 지우기 작업이 끼어듭니다</strong> — 같은 쓰기 요청에
+일이 더 붙는 구조라서, 차 있을수록 쓰기가 무거워집니다.</p>
+<h3 id="빈-공간이-곧-캐시입니다">② 빈 공간이 곧 캐시입니다</h3>
+<p>요즘 SSD 대부분은 <strong>빈 공간의 일부를 빠른 쓰기 캐시(SLC 방식)로</strong>
+씁니다. 큰 파일을 복사할 때 처음엔 빠르다가 뚝 떨어지는 그
+현상의 주인공입니다. 드라이브가 차 있을수록 <strong>이 캐시로 쓸 빈
+공간 자체가 줄어들어서</strong>, 지속 쓰기 성능이 먼저 무너집니다.
+정도는 제품마다 다르지만 방향은 같습니다.</p>
+<p><strong>읽기는 이 두 구조와 무관해서 영향이 작습니다</strong> — 그래서 &quot;꽉
+찼는데 게임 로딩은 그대로던데?&quot;라는 경험담과 &quot;복사가 너무
+느려졌다&quot;는 경험담이 공존합니다. 둘 다 맞는 말입니다.</p>
+<h2 id="수명에도-같은-방향입니다">수명에도 같은 방향입니다</h2>
+<p>여유 공간이 적으면 지우기·재배치 작업이 늘어나 <strong>같은 셀을 더
+자주 갈아 끼우게</strong> 됩니다. <a href="/posts/ssd-tbw-lifespan.html">TBW 로 본 수명 이야기</a>에서의
+그 쓰기량이 실제 데이터보다 부풀려지는(쓰기 증폭) 구조라, 꽉 채운
+드라이브는 성능과 수명을 같이 냅니다. 극단적으로 아껴야 할 문제는
+아니지만, 방향은 알아둘 값어치가 있습니다.</p>
+<h2 id="그래서-얼마나-남기나-용도로-정합니다">그래서 얼마나 남기나 — 용도로 정합니다</h2>
+<p>&quot;10%&quot;, &quot;20%&quot; 같은 숫자가 돌아다니는데, 구조를 알면 기준이 더
+명확해집니다 — <strong>쓰기가 많은 드라이브일수록 여유가 필요합니다.</strong></p>
+<ul>
+<li><strong>OS·작업 드라이브(C:)</strong> — 업데이트, 임시 파일, 가상 메모리가
+수시로 쓰는 자리라 <strong>1~2할 여유</strong>의 통설이 이쪽에 적용됩니다.
+<a href="/posts/dev-ssd-choose.html">개발 작업</a>처럼 빌드·캐시 쓰기가 많으면
+넉넉한 쪽이 편합니다</li>
+<li><strong>게임·설치 위주 드라이브</strong> — 한 번 깔면 읽기가 대부분이라 더
+채워도 체감이 덜합니다. 업데이트 받을 공간만 있으면 됩니다</li>
+<li><strong>보관용</strong> — 쓰고 나면 잠드는 자리라 여유 기준이 느슨하지만,
+애초에 <a href="/posts/dev-backup-strategy.html">보관은 SSD 의 자리가 아니라는 것</a>이
+먼저입니다</li>
+</ul>
+<h2 id="차올랐을-때의-순서">차올랐을 때의 순서</h2>
+<ol>
+<li><strong>범인부터 확인</strong> — 윈도우 설정 → 시스템 → 저장소에서 뭐가
+먹는지 봅니다. 임시 파일과 오래된 다운로드가 흔한 1순위입니다</li>
+<li><strong>큰 덩어리 이동</strong> — 영상·사진 같은 &quot;읽기만 하는 큰 것&quot;을
+<a href="/posts/external-ssd-dev.html">외장·보조 드라이브</a>로 옮기는 게
+효율이 좋습니다</li>
+<li><strong>그래도 늘 90%+ 라면</strong> — 관리로 버틸 단계가 지난 것입니다.
+<a href="/posts/laptop-ssd-upgrade.html">증설·교체</a>가 근본 해결이고, 지우기
+경쟁으로 아끼는 시간이 더 비쌉니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="트림trim을-돌려야-하나요">트림(TRIM)을 돌려야 하나요</h3>
+<p>요즘 윈도우·맥은 <strong>자동으로 합니다</strong> — 따로 챙길 일은 없습니다.
+&quot;최적화&quot; 명목의 별도 프로그램을 깔 필요도 없습니다.</p>
+<h3 id="hdd도-꽉-차면-느려지는-건-같은-이유인가요">HDD도 꽉 차면 느려지는 건 같은 이유인가요</h3>
+<p>느려지는 건 같은데 이유가 다릅니다 — HDD 는 빈 공간이 줄면 조각난
+자리에 나눠 쓰게 되는 물리적 이유입니다. SSD 의 블록·캐시 구조와는
+별개 메커니즘이고, 어느 쪽이든 &quot;꽉 채우면 손해&quot;라는 결론만 같습니다.</p>
+<h3 id="꽉-찼다고-데이터가-날아가지는-않나요">꽉 찼다고 데이터가 날아가지는 않나요</h3>
+<p>날아가지 않습니다. 다만 공간 0 에 가까워지면 <strong>프로그램들이 임시
+파일을 못 만들어 오작동</strong>하는 건 별개 문제라, 그 지경 전에 정리가
+필요합니다.</p>
+<h3 id="용량-경고-기준을-바꿀-수-있나요">용량 경고 기준을 바꿀 수 있나요</h3>
+<p>윈도우의 빨간 표시 기준 자체는 조정 대상이 아니라고 보는 게
+편합니다 — 표시보다 위의 &quot;용도별 여유&quot;로 스스로 기준을 잡는 쪽이
+실용적입니다.</p>
+<h3 id="오버프로비저닝이라는-걸-설정해야-하나요">오버프로비저닝이라는 걸 설정해야 하나요</h3>
+<p>제조사 도구에 있는 그 항목은 여유 공간을 강제로 떼어 두는
+기능인데, <strong>여유를 습관으로 유지할 수 있다면 같은 효과</strong>입니다.
+관리를 못 믿겠을 때 거는 안전벨트 정도로 생각하면 됩니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>꽉 채우면 쓰기가 느려집니다</strong> — 지우고-쓰기 구조와 빈 공간
+캐시, 두 이유 때문입니다</li>
+<li>읽기는 영향이 작습니다 — 경험담이 갈리는 이유입니다</li>
+<li>여유는 <strong>쓰기가 많은 드라이브일수록</strong> 필요합니다 — OS 드라이브
+1~2할 통설, 게임 드라이브는 느슨하게</li>
+<li>수명도 같은 방향입니다 — <a href="/posts/ssd-tbw-lifespan.html">TBW 이야기</a>와
+이어집니다</li>
+<li>늘 90% 위라면 관리가 아니라 <strong>용량의 문제</strong>입니다</li>
+</ol>
+<p>SSD 고르기의 다른 축들은 <a href="/posts/nvme-vs-sata.html">NVMe vs SATA</a> ·
+<a href="/posts/dev-ssd-choose.html">개발용 SSD 용량</a>에 있습니다.</p>
+<p>구조나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">SSD</span> <span class="tag">용량관리</span> <span class="tag">SLC캐시</span> <span class="tag">저장장치</span> <span class="tag">쓰기속도</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ram-64gb-worth-it.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램 64GB가 필요한 사람은 따로 있습니다 — 32GB에서 올릴지 판정</span>
+        <span class="card-desc">램 32GB 다음 칸인 64GB가 필요한지 커뮤니티마다 답이 갈립니다. 갈리는 이유는 용도가 달라서입니다. 지금 32GB가 모자란지 확인하는 절차와, 64GB가 값을 하는 작업 목록을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dev-backup-strategy.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">개발자 백업 — 코드는 이미 백업돼 있고, SSD는 서랍용이 아닙니다</span>
+        <span class="card-desc">백업 이야기는 늘 &quot;다 복사하라&quot;로 끝나는데, 개발자는 사정이 다릅니다. 코드는 이미 원격에 있으니 진짜 대상은 따로 있고, 잠자는 백업 매체로 SSD를 고르면 안 되는 이유가 있습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/nvme-heatsink.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다</span>
+        <span class="card-desc">모두에게 필요한 건 아닙니다. Gen3면 대개 불필요하고 Gen5면 사실상 필수입니다. 내 SSD가 실제로 스로틀링을 겪는지 확인하는 법과, 달 때 조심할 것을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
