@@ -83,6 +83,13 @@
     <description>커브드 모니터가 코딩이나 문서작업에 괜찮은지 헷갈립니다. 판단 기준은 커브드냐 평면이냐가 아니라 화면 폭입니다. 곡률 숫자 읽는 법과, 평면을 골라야 하는 경우를 정리했습니다.</description>
   </item>
   <item>
+    <title>CPU 기본 쿨러로 충분한가 — 부하와 소음, 두 기준으로 갈립니다</title>
+    <link>https://specfit.kr/posts/cpu-stock-cooler.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/cpu-stock-cooler.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 살지 헷갈립니다. 성능이 모자라서가 아니라 소음 때문에 바꾸는 경우가 많다는 것까지 포함해서, 판정 기준을 정리했습니다.</description>
+  </item>
+  <item>
     <title>아파트 단자함 — 기가가 안 나올 때 열어보는 곳</title>
     <link>https://specfit.kr/posts/apartment-lan-panel.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/apartment-lan-panel.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-kvm.html</guid>
     <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
     <description>재택하면 책상에 컴퓨터가 두 대가 됩니다. 모니터에 KVM 기능이 있으면 키보드·마우스 한 세트로 전환하며 씁니다. 어떤 스펙을 확인해야 하는지, 별도 KVM 스위치와는 언제 갈리는지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>그래픽카드 처짐(새그) — 지지대가 필요한 경우와 아닌 경우</title>
-    <link>https://specfit.kr/posts/gpu-sag-support.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/gpu-sag-support.html</guid>
-    <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
-    <description>요즘 상급 카드는 무거워서 끝이 처집니다. 어느 정도면 정상이고 언제 지지대가 필요한지, 수직 장착이 왜 완전한 해법이 아닌지 정리했습니다. 성능은 떨어지지 않습니다 — 문제는 다른 곳에 있습니다.</description>
   </item>
 </channel>
 </rss>

@@ -2,7 +2,7 @@
 title: 그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다
 description: 카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.
 date: 2026-08-18
-updated: 2026-08-24
+updated: 2026-09-01
 category: gpu
 tags: [파워서플라이, TDP, RTX5090, ATX3.1, 로컬LLM]
 affiliate: true
@@ -128,7 +128,8 @@ affiliate: true
 > [TDP 를 상한으로만 썼습니다](/posts/local-llm-power-cost.html).
 
 **그래서 파워 기준은 게임용과 같게 잡으면 됩니다.** 여유가 남을 뿐입니다.
-다만 **오래 켜두는 쪽**이라 효율과 소음이 더 중요해집니다.
+다만 **오래 켜두는 쪽**이라 효율과 소음이 더 중요해집니다 —
+소음 쪽은 [CPU 쿨러 판정](/posts/cpu-stock-cooler.html)도 같은 결의 문제입니다.
 
 ### 어떤 카드가 필요한지부터 정하세요
 
