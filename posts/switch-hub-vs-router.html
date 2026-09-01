@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스위칭허브 vs 공유기 — 포트가 모자랄 때 뭘 사야 하나 | 스펙핏</title>
+<meta name="description" content="유선으로 물릴 기기는 늘었는데 공유기 뒤 포트는 네 개뿐. 이때 스위칭허브와 공유기 중 뭘 사야 하는지 헷갈립니다. 두 장비의 역할 차이와, 상황별로 답이 갈리는 기준을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/switch-hub-vs-router.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="스위칭허브 vs 공유기 — 포트가 모자랄 때 뭘 사야 하나 | 스펙핏">
+<meta property="og:description" content="유선으로 물릴 기기는 늘었는데 공유기 뒤 포트는 네 개뿐. 이때 스위칭허브와 공유기 중 뭘 사야 하는지 헷갈립니다. 두 장비의 역할 차이와, 상황별로 답이 갈리는 기준을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/switch-hub-vs-router.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"스위칭허브 vs 공유기 — 포트가 모자랄 때 뭘 사야 하나","description":"유선으로 물릴 기기는 늘었는데 공유기 뒤 포트는 네 개뿐. 이때 스위칭허브와 공유기 중 뭘 사야 하는지 헷갈립니다. 두 장비의 역할 차이와, 상황별로 답이 갈리는 기준을 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/switch-hub-vs-router.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"스위칭허브 vs 공유기 — 포트가 모자랄 때 뭘 사야 하나","item":"https://specfit.kr/posts/switch-hub-vs-router.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"허브를 거치면 속도가 느려지나요","acceptedAnswer":{"@type":"Answer","text":"등급만 맞으면 체감할 손해는 없습니다. 기가 허브에 기가 장비를 물리면 기가로 갑니다 — 느려졌다면 대개 등급이나 케이블 쪽 약한 고리가 원인입니다."}},{"@type":"Question","name":"허브에 허브를 또 붙여도 되나요","acceptedAnswer":{"@type":"Answer","text":"가정 규모에서는 대개 됩니다 — 단자함 허브 아래 방 안 허브를 또 두는 식의 구성도 흔합니다. 다만 층이 늘수록 어디가 문제인지 찾기 어려워지니, 포트 수를 넉넉히 잡아 층을 줄이는 편이 관리가 편합니다."}},{"@type":"Question","name":"\"유선 공유기\"라는 물건은 뭔가요","acceptedAnswer":{"@type":"Answer","text":"와이파이 없이 유선 포트만 있는 공유기입니다. 역할은 공유기(관리자) 쪽이라, 허브 대신 살 물건이 아닙니다 — 단자함 안에 공유기를 넣는 구성처럼 \"관리자는 필요한데 와이파이는 다른 데서 푸는\" 자리에 쓰입니다."}},{"@type":"Question","name":"스위치와 허브는 다른 건가요","acceptedAnswer":{"@type":"Answer","text":"요즘 파는 물건은 사실상 같은 것을 가리킵니다. 옛날에는 받은 신호를 모든 포트에 그대로 뿌리는 단순한 \"허브\"가 따로 있었고, 목적지 포트에만 보내는 것이 \"스위치\"였습니다. 지금 시판되는 건 다 후자이고, 이름만 \"스위칭허브\"로 합쳐져 남았습니다."}},{"@type":"Question","name":"게임용으로 좋은 허브가 따로 있나요","acceptedAnswer":{"@type":"Answer","text":"집 규모에서는 등급(기가·2.5G)이 전부라고 봐도 됩니다. 핑을 줄여 준다는 식의 수식이 붙은 제품도 결국 같은 스위칭을 합니다 — 게임 핑은 유선 직결이라는 기본이 먼저입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>스위칭허브 vs 공유기 — 포트가 모자랄 때 뭘 사야 하나</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-01">2026년 9월 1일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>컴퓨터, <a href="/posts/mini-pc-for-dev.html">미니PC</a>, <a href="/posts/nas-vs-external-hdd.html">NAS</a>,
+TV까지 유선으로 물리다 보면 <strong>공유기 뒤 랜 포트 네 개가 다 찹니다.</strong>
+검색하면 스위칭허브와 유선 공유기가 같이 나오는데, 이 갈림길은
+역할 하나만 알면 끝납니다.</p>
+<ul>
+<li><strong>공유기</strong> — 인터넷 회선 하나를 여러 기기가 나눠 쓰게 <strong>네트워크를
+만드는</strong> 장비입니다. 기기마다 내부 주소를 나눠주는 관리자
+노릇(DHCP·NAT)이 본업입니다</li>
+<li><strong>스위칭허브</strong> — 이미 있는 네트워크에 <strong>포트를 늘려 주는</strong>
+장비입니다. 관리자 없이, 들어온 선을 여러 갈래로 나누는
+멀티탭 같은 물건입니다</li>
+</ul>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>공유기는 있는데 <strong>포트가 모자란다</strong></td><td>✅ <strong>스위칭허브</strong> — 공유기 아래에 붙입니다</td></tr>
+<tr><td>공유기가 아예 없다 (첫 구성)</td><td><strong>공유기</strong>부터 — 허브는 그다음 문제입니다</td></tr>
+<tr><td><a href="/posts/apartment-lan-panel.html">단자함에서 방마다 나눠줄 것</a></td><td>스위칭허브 — 단, 공유기가 배선의 위에 있어야 합니다</td></tr>
+<tr><td>포트도 늘리고 와이파이도 넓히고 싶다</td><td>그건 허브가 아니라 <a href="/posts/mesh-wifi-backhaul.html">메시·AP 쪽</a> 이야기입니다</td></tr>
+</tbody>
+</table></div>
+<p><strong>집에 인터넷 회선이 하나인 이상 공유기는 하나면 됩니다.</strong> 그 아래
+확장은 전부 허브의 일입니다.</p>
+<h2 id="왜-공유기를-하나-더-사면-안-되나">왜 공유기를 하나 더 사면 안 되나</h2>
+<p>포트가 모자랄 때 공유기를 하나 더 사서 줄줄이 잇는 답이 먼저
+떠오르는데, 권하지 않습니다. 공유기는 저마다 자기 네트워크를
+만들려는 장비라서, 공유기 아래 공유기가 붙으면 <strong>관리자가 둘인
+집</strong>(이중 NAT)이 됩니다 — 기기끼리 서로를 못 보거나, 일부 기능이
+꼬이는 문제가 생길 수 있습니다.</p>
+<p>남는 공유기를 활용하고 싶다면 <a href="/posts/mesh-wifi-backhaul.html">메시 글에서 본 것처럼</a>
+<strong>AP(브리지) 모드로 바꿔</strong> 관리자 자리를 내려놓게 하는 방법이
+있습니다 — 그 순간 그 공유기는 &quot;와이파이 나오는 허브&quot;가 됩니다.</p>
+<h2 id="허브를-고를-때-볼-것은-두-가지뿐입니다">허브를 고를 때 볼 것은 두 가지뿐입니다</h2>
+<p>허브는 단순한 장비라 고르는 것도 단순합니다.</p>
+<ol>
+<li><strong>포트 수</strong> — 지금 물릴 기기 수 + 여유 한둘. 허브에서 공유기로
+가는 선도 포트 하나를 먹는 것을 잊기 쉽습니다</li>
+<li><strong>등급(속도)</strong> — 기가(1G)가 기본값입니다. <code>10/100</code> 만 적힌 구형은
+<a href="/posts/lan-cable-cat.html">그 허브를 지나는 모든 기기를 100Mbps 에 가둡니다</a>.
+<a href="/posts/internet-2-5g-upgrade.html">2.5G 경로를 만들 계획</a>이면
+허브도 2.5G 급이어야 그 구간이 병목이 안 됩니다</li>
+</ol>
+<p>관리 기능이 붙은 급(매니지드)도 있지만, 집에서는 설정 없이 꽂으면
+끝나는 일반(언매니지드) 허브가 맞는 물건입니다.</p>
+<h2 id="연결-순서-허브는-언제나-공유기-아래입니다">연결 순서 — 허브는 언제나 공유기 아래입니다</h2>
+<pre><code>인터넷 → 공유기 → 스위칭허브 → 기기들
+                └→ 다른 기기들 (공유기 직결도 그대로 유지)</code></pre>
+<p>허브에 물린 기기도 공유기가 주소를 나눠주므로, 전부 <strong>같은
+네트워크의 한 식구</strong>가 됩니다. 반대로 허브가 공유기보다 위(인입 쪽)에
+있으면 <a href="/posts/apartment-lan-panel.html">단자함 글에서 본 문제 구조</a>가
+됩니다 — 순서가 전부입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="허브를-거치면-속도가-느려지나요">허브를 거치면 속도가 느려지나요</h3>
+<p>등급만 맞으면 체감할 손해는 없습니다. 기가 허브에 기가 장비를
+물리면 기가로 갑니다 — 느려졌다면 대개
+<a href="/posts/lan-cable-cat.html">등급이나 케이블 쪽 약한 고리</a>가 원인입니다.</p>
+<h3 id="허브에-허브를-또-붙여도-되나요">허브에 허브를 또 붙여도 되나요</h3>
+<p>가정 규모에서는 대개 됩니다 — 단자함 허브 아래 방 안 허브를 또
+두는 식의 구성도 흔합니다. 다만 층이 늘수록 어디가 문제인지 찾기
+어려워지니, 포트 수를 넉넉히 잡아 층을 줄이는 편이 관리가 편합니다.</p>
+<h3 id="유선-공유기라는-물건은-뭔가요">&quot;유선 공유기&quot;라는 물건은 뭔가요</h3>
+<p>와이파이 없이 유선 포트만 있는 공유기입니다. 역할은 공유기(관리자)
+쪽이라, 허브 대신 살 물건이 아닙니다 —
+<a href="/posts/apartment-lan-panel.html">단자함 안에 공유기를 넣는 구성</a>처럼
+&quot;관리자는 필요한데 와이파이는 다른 데서 푸는&quot; 자리에 쓰입니다.</p>
+<h3 id="스위치와-허브는-다른-건가요">스위치와 허브는 다른 건가요</h3>
+<p>요즘 파는 물건은 사실상 같은 것을 가리킵니다. 옛날에는 받은 신호를
+모든 포트에 그대로 뿌리는 단순한 &quot;허브&quot;가 따로 있었고, 목적지
+포트에만 보내는 것이 &quot;스위치&quot;였습니다. 지금 시판되는 건 다
+후자이고, 이름만 &quot;스위칭허브&quot;로 합쳐져 남았습니다.</p>
+<h3 id="게임용으로-좋은-허브가-따로-있나요">게임용으로 좋은 허브가 따로 있나요</h3>
+<p>집 규모에서는 등급(기가·2.5G)이 전부라고 봐도 됩니다. 핑을 줄여
+준다는 식의 수식이 붙은 제품도 결국 같은 스위칭을 합니다 —
+<a href="/posts/wifi7-router-upgrade.html">게임 핑은 유선 직결이라는 기본</a>이
+먼저입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>공유기는 네트워크를 만들고, 허브는 포트를 늘립니다</strong> — 회선이
+하나면 공유기도 하나, 나머지 확장은 허브입니다</li>
+<li>포트 부족의 답은 공유기 추가가 아니라 <strong>허브</strong>입니다 — 공유기를
+더 붙이면 관리자가 둘이 되는 문제가 생길 수 있습니다</li>
+<li>허브 고르기는 <strong>포트 수 + 등급</strong> 둘뿐입니다 — <code>10/100</code> 구형만
+피하면 됩니다</li>
+<li>연결 순서는 언제나 <strong>인터넷 → 공유기 → 허브 → 기기</strong>입니다</li>
+<li>남는 공유기는 <strong>AP 모드</strong>로 허브 겸 무선 확장이 됩니다</li>
+</ol>
+<p>이 판단의 앞뒤 조각들 — <a href="/posts/apartment-lan-panel.html">단자함 배선</a> ·
+<a href="/posts/lan-cable-cat.html">랜선 등급</a> ·
+<a href="/posts/internet-2-5g-upgrade.html">2.5G 경로</a>와 이어집니다.</p>
+<p>역할이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">스위칭허브</span> <span class="tag">공유기</span> <span class="tag">유선랜</span> <span class="tag">포트부족</span> <span class="tag">홈네트워크</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/apartment-lan-panel.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">아파트 단자함 — 기가가 안 나올 때 열어보는 곳</span>
+        <span class="card-desc">방 랜포트가 죽어 있거나 속도가 100Mbps에 막힐 때, 원인은 대개 신발장 위 단자함 안에 있습니다. 뭐가 들어 있고, 공유기가 어디 있어야 하며, 뭘 확인하면 되는지 진단 순서로 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/diy-nas-vs-prebuilt.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">기성 NAS vs 자작 NAS — 사는 것은 하드웨어가 아닙니다</span>
+        <span class="card-desc">미니PC나 남는 컴퓨터로 NAS를 직접 만들 수 있다는 걸 알게 되면 기성 NAS 값이 아까워 보입니다. 그런데 기성 NAS에서 사는 건 하드웨어가 아니라 소프트웨어와 책임입니다. 어느 쪽이 맞는 사람인지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/internet-2-5g-upgrade.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다</span>
+        <span class="card-desc">요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

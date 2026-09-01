@@ -13,6 +13,13 @@
     <description>최신 공유기를 사면 집 와이파이가 빨라질 것 같지만, 속도는 요금제·공유기·기기 세 관문 중 제일 낮은 것을 따라갑니다. 내 기기가 어느 세대인지 확인하는 법부터, 바꿀 가치가 있는 경우를 정리했습니다.</description>
   </item>
   <item>
+    <title>스위칭허브 vs 공유기 — 포트가 모자랄 때 뭘 사야 하나</title>
+    <link>https://specfit.kr/posts/switch-hub-vs-router.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/switch-hub-vs-router.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>유선으로 물릴 기기는 늘었는데 공유기 뒤 포트는 네 개뿐. 이때 스위칭허브와 공유기 중 뭘 사야 하는지 헷갈립니다. 두 장비의 역할 차이와, 상황별로 답이 갈리는 기준을 정리했습니다.</description>
+  </item>
+  <item>
     <title>NAS가 필요한가 — 외장하드와는 다른 물건입니다</title>
     <link>https://specfit.kr/posts/nas-vs-external-hdd.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/nas-vs-external-hdd.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-mixed-resolution.html</guid>
     <pubDate>Sun, 23 Aug 2026 15:00:00 GMT</pubDate>
     <description>섞어 쓰면 세 가지가 생깁니다. 경계에서 커서가 걸리고, 창을 옮기면 크기가 튀거나 흐려지고, 글자 크기가 안 맞습니다. 각각의 원리와 대처, 무난한 조합을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다</title>
-    <link>https://specfit.kr/posts/nvme-heatsink.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/nvme-heatsink.html</guid>
-    <pubDate>Fri, 21 Aug 2026 15:00:00 GMT</pubDate>
-    <description>모두에게 필요한 건 아닙니다. Gen3면 대개 불필요하고 Gen5면 사실상 필수입니다. 내 SSD가 실제로 스로틀링을 겪는지 확인하는 법과, 달 때 조심할 것을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
