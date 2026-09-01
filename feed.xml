@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>와이파이 7 공유기로 바꾸면 빨라지나 — 관문 셋이 다 맞아야 합니다</title>
+    <link>https://specfit.kr/posts/wifi7-router-upgrade.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/wifi7-router-upgrade.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>최신 공유기를 사면 집 와이파이가 빨라질 것 같지만, 속도는 요금제·공유기·기기 세 관문 중 제일 낮은 것을 따라갑니다. 내 기기가 어느 세대인지 확인하는 법부터, 바꿀 가치가 있는 경우를 정리했습니다.</description>
+  </item>
+  <item>
     <title>메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다</title>
     <link>https://specfit.kr/posts/mesh-wifi-backhaul.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/mesh-wifi-backhaul.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ram-dual-channel-check.html</guid>
     <pubDate>Thu, 20 Aug 2026 15:00:00 GMT</pubDate>
     <description>램을 두 장 꽂았다고 듀얼 채널이 되는 게 아닙니다. 지금 듀얼로 도는지 확인하는 세 가지 방법과, DDR5에서 CPU-Z 표기가 헷갈리는 이유, 아니었을 때 고치는 법을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용</title>
-    <link>https://specfit.kr/posts/ollama-context-length.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ollama-context-length.html</guid>
-    <pubDate>Thu, 20 Aug 2026 15:00:00 GMT</pubDate>
-    <description>긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.</description>
   </item>
 </channel>
 </rss>

@@ -162,6 +162,7 @@ UTP CAT.5E 24AWG 4PRS ...   ← 이 케이블은 CAT5e
    진단입니다
 
 집 안 연결의 다음 갈림길은
-[메시 와이파이의 백홀](/posts/mesh-wifi-backhaul.html)입니다.
+[메시 와이파이의 백홀](/posts/mesh-wifi-backhaul.html)이고, 무선 쪽의
+같은 구조는 [공유기 세대 판정](/posts/wifi7-router-upgrade.html)에 있습니다.
 
 표기나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
