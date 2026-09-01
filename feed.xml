@@ -41,6 +41,13 @@
     <description>요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.</description>
   </item>
   <item>
+    <title>기성 NAS vs 자작 NAS — 사는 것은 하드웨어가 아닙니다</title>
+    <link>https://specfit.kr/posts/diy-nas-vs-prebuilt.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/diy-nas-vs-prebuilt.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>미니PC나 남는 컴퓨터로 NAS를 직접 만들 수 있다는 걸 알게 되면 기성 NAS 값이 아까워 보입니다. 그런데 기성 NAS에서 사는 건 하드웨어가 아니라 소프트웨어와 책임입니다. 어느 쪽이 맞는 사람인지 정리했습니다.</description>
+  </item>
+  <item>
     <title>아파트 단자함 — 기가가 안 나올 때 열어보는 곳</title>
     <link>https://specfit.kr/posts/apartment-lan-panel.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/apartment-lan-panel.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/nvme-heatsink.html</guid>
     <pubDate>Fri, 21 Aug 2026 15:00:00 GMT</pubDate>
     <description>모두에게 필요한 건 아닙니다. Gen3면 대개 불필요하고 Gen5면 사실상 필수입니다. 내 SSD가 실제로 스로틀링을 겪는지 확인하는 법과, 달 때 조심할 것을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>노트북 충전기, 와트 낮은 걸로 돼요? — PD 규격으로 답이 나옵니다</title>
-    <link>https://specfit.kr/posts/laptop-charger-watt-pd.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/laptop-charger-watt-pd.html</guid>
-    <pubDate>Fri, 21 Aug 2026 15:00:00 GMT</pubDate>
-    <description>65W 노트북에 30W 충전기를 꽂으면 무슨 일이 생기는지, 내 노트북이 몇 와트를 요구하는지 어댑터 라벨 읽는 법부터 케이블 규격까지 정리했습니다. 반대로 큰 충전기는 안전합니다.</description>
   </item>
 </channel>
 </rss>
