@@ -2,7 +2,7 @@
 title: 램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점
 description: 32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.
 date: 2026-08-15
-updated: 2026-08-21
+updated: 2026-09-01
 category: memory
 tags: [RAM, 메모리, 로컬LLM, 개발용PC, DDR5]
 affiliate: true
@@ -186,6 +186,8 @@ LPDDR 계열을 쓰는 모델이 특히 그렇습니다.
 
 지금 32B 이상을 오프로딩으로 쓸 계획이 없다면 **32GB로 충분합니다.**
 그 돈을 VRAM이 더 큰 그래픽카드에 쓰는 편이 로컬 LLM에서는 훨씬 낫습니다.
+LLM 밖의 작업(가상머신·해석·영상)까지 포함한 판정은
+[64GB 글](/posts/ram-64gb-worth-it.html)에 따로 정리했습니다.
 
 ### DDR4와 DDR5 중 어느 쪽이 유리한가요
 

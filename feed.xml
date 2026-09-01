@@ -20,6 +20,13 @@
     <description>유선으로 물릴 기기는 늘었는데 공유기 뒤 포트는 네 개뿐. 이때 스위칭허브와 공유기 중 뭘 사야 하는지 헷갈립니다. 두 장비의 역할 차이와, 상황별로 답이 갈리는 기준을 정리했습니다.</description>
   </item>
   <item>
+    <title>램 64GB가 필요한 사람은 따로 있습니다 — 32GB에서 올릴지 판정</title>
+    <link>https://specfit.kr/posts/ram-64gb-worth-it.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ram-64gb-worth-it.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>램 32GB 다음 칸인 64GB가 필요한지 커뮤니티마다 답이 갈립니다. 갈리는 이유는 용도가 달라서입니다. 지금 32GB가 모자란지 확인하는 절차와, 64GB가 값을 하는 작업 목록을 정리했습니다.</description>
+  </item>
+  <item>
     <title>NAS가 필요한가 — 외장하드와는 다른 물건입니다</title>
     <link>https://specfit.kr/posts/nas-vs-external-hdd.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/nas-vs-external-hdd.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/egpu-local-llm.html</guid>
     <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
     <description>외장 그래픽 박스는 대역폭 병목 때문에 게임에서 손해를 봅니다. 그런데 로컬 LLM 추론은 구조가 달라 그 병목을 거의 안 탑니다. 왜 그런지, 무엇을 확인해야 하는지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다</title>
-    <link>https://specfit.kr/posts/desktop-ups.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/desktop-ups.html</guid>
-    <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
-    <description>정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
