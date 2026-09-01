@@ -823,6 +823,8 @@ export const figures = {
   'lan-panel-layout': lanPanelLayout,
   'wifi-gates': wifiGates,
   'nas-share': nasShare,
+  'cooler-fan-noise': coolerFanNoise,
+  'ssd-cache-shrink': ssdCacheShrink,
 };
 
 /**
@@ -1033,5 +1035,73 @@ ${t(16, 262, '그래서 판정 기준은 용량이 아니라 "몇 대가 같이 
     276,
     body,
     '외장하드는 꽂은 컴퓨터에서만 보입니다. NAS 는 네트워크에 붙어 모든 기기에서 동시에 보이고, 그게 값의 이유입니다.'
+  );
+}
+
+/**
+ * 기본 쿨러와 타워형 쿨러의 소음 구조 — 작은 팬 고회전 vs 큰 팬 저회전.
+ * cpu-stock-cooler 의 소음 기준 서술을 그림으로.
+ */
+function coolerFanNoise() {
+  const W = 640;
+  const body = `
+${t(16, 22, '같은 열을 빼는 두 가지 방법', { weight: 600, size: 14 })}
+
+${t(16, 52, '기본 쿨러', { size: 12, weight: 600, fill: COLOR.mute })}
+<circle cx="90" cy="100" r="28" fill="${COLOR.soft}" stroke="${COLOR.line}"/>
+${t(90, 104, '작은 팬', { size: 10, anchor: 'middle', fill: COLOR.mute })}
+${t(150, 92, '빠르게 돌아야 합니다', { size: 12 })}
+${t(150, 110, '→ 부하 때 소음이 가파르게 올라감', { size: 11, fill: 'var(--fig-over)', weight: 600 })}
+
+${t(16, 162, '타워형 사제 쿨러', { size: 12, weight: 600 })}
+${rect(60, 176, 24, 56, COLOR.soft, { r: 3, stroke: COLOR.line })}
+<circle cx="130" cy="204" r="42" fill="${COLOR.soft}" stroke="${COLOR.accent}"/>
+${t(130, 208, '큰 팬', { size: 11, anchor: 'middle' })}
+${t(196, 196, '천천히 돌아도 같은 열을 뺍니다', { size: 12 })}
+${t(196, 214, '→ 같은 부하에서 조용함', { size: 11, fill: COLOR.accent, weight: 600 })}
+${t(46, 246, '↑ 큰 방열판', { size: 10, fill: COLOR.mute })}
+
+${t(16, 276, '온도가 아니라 소음 때문에 바꾸는 경우가 많은 이유입니다.', { weight: 600, size: 12 })}`;
+
+  return figure(
+    '기본 쿨러와 타워형 쿨러의 소음 구조 차이',
+    W,
+    292,
+    body,
+    '팬 소음은 회전수를 따라 가파르게 올라갑니다. 큰 방열판 + 큰 팬은 같은 열을 낮은 회전수로 빼서 조용합니다.'
+  );
+}
+
+/**
+ * SSD 빈 공간 = 쓰기 캐시 — 차 있을수록 캐시가 줄어드는 구조.
+ * ssd-full-slowdown 의 ② 절을 그림으로.
+ */
+function ssdCacheShrink() {
+  const W = 640;
+  const scale = 5.6; // % 당 픽셀
+  const bar = (y, used, label) => {
+    const x0 = 130;
+    const cacheW = (100 - used) * scale * 0.5; // 빈 공간의 절반을 캐시로 표시
+    return `${t(16, y + 16, label, { size: 12 })}
+${rect(x0, y, used * scale, 24, COLOR.soft, { r: 3, stroke: COLOR.line })}
+${rect(x0 + used * scale, y, cacheW, 24, COLOR.accent, { r: 3 })}
+${rect(x0 + used * scale + cacheW, y, (100 - used) * scale - cacheW, 24, 'none', { r: 3, stroke: COLOR.line })}
+${t(x0 + used * scale / 2, y + 16, '데이터', { size: 10, anchor: 'middle', fill: COLOR.mute })}
+${t(x0 + used * scale + cacheW / 2, y + 16, cacheW > 40 ? '빠른 쓰기 캐시' : '캐시', { size: 10, anchor: 'middle', fill: '#fff' })}`;
+  };
+
+  const body = `
+${t(16, 22, '빈 공간의 일부가 빠른 쓰기 캐시로 쓰입니다', { weight: 600, size: 14 })}
+${bar(40, 30, '30% 사용')}
+${bar(84, 60, '60% 사용')}
+${bar(128, 90, '90% 사용')}
+${t(130, 176, '차 있을수록 캐시로 쓸 빈 공간 자체가 줄어듭니다 — 지속 쓰기가 먼저 무너지는 이유입니다.', { size: 12, fill: COLOR.mute })}`;
+
+  return figure(
+    'SSD 사용량에 따라 쓰기 캐시가 줄어드는 구조',
+    W,
+    192,
+    body,
+    '요즘 SSD 는 빈 공간 일부를 SLC 방식 캐시로 씁니다. 90% 사용 시점에는 캐시가 몇 % 몫만 남습니다. 정도는 제품마다 다릅니다.'
   );
 }

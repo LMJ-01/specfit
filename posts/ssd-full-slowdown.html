@@ -100,6 +100,33 @@
 현상의 주인공입니다. 드라이브가 차 있을수록 <strong>이 캐시로 쓸 빈
 공간 자체가 줄어들어서</strong>, 지속 쓰기 성능이 먼저 무너집니다.
 정도는 제품마다 다르지만 방향은 같습니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 192" width="640" height="192" role="img" aria-label="SSD 사용량에 따라 쓰기 캐시가 줄어드는 구조">
+<title>SSD 사용량에 따라 쓰기 캐시가 줄어드는 구조</title>
+
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">빈 공간의 일부가 빠른 쓰기 캐시로 쓰입니다</text>
+<text x="16" y="56" fill="var(--fg)" font-size="12">30% 사용</text>
+<rect x="130" y="40" width="168" height="24" fill="var(--bg-soft)" rx="3" stroke="var(--border)"/>
+<rect x="298" y="40" width="196" height="24" fill="var(--accent)" rx="3"/>
+<rect x="494" y="40" width="196" height="24" fill="none" rx="3" stroke="var(--border)"/>
+<text x="214" y="56" fill="var(--fg-muted)" font-size="10" text-anchor="middle">데이터</text>
+<text x="396" y="56" fill="#fff" font-size="10" text-anchor="middle">빠른 쓰기 캐시</text>
+<text x="16" y="100" fill="var(--fg)" font-size="12">60% 사용</text>
+<rect x="130" y="84" width="336" height="24" fill="var(--bg-soft)" rx="3" stroke="var(--border)"/>
+<rect x="466" y="84" width="112" height="24" fill="var(--accent)" rx="3"/>
+<rect x="578" y="84" width="112" height="24" fill="none" rx="3" stroke="var(--border)"/>
+<text x="298" y="100" fill="var(--fg-muted)" font-size="10" text-anchor="middle">데이터</text>
+<text x="522" y="100" fill="#fff" font-size="10" text-anchor="middle">빠른 쓰기 캐시</text>
+<text x="16" y="144" fill="var(--fg)" font-size="12">90% 사용</text>
+<rect x="130" y="128" width="503.99999999999994" height="24" fill="var(--bg-soft)" rx="3" stroke="var(--border)"/>
+<rect x="634" y="128" width="28" height="24" fill="var(--accent)" rx="3"/>
+<rect x="662" y="128" width="28" height="24" fill="none" rx="3" stroke="var(--border)"/>
+<text x="382" y="144" fill="var(--fg-muted)" font-size="10" text-anchor="middle">데이터</text>
+<text x="648" y="144" fill="#fff" font-size="10" text-anchor="middle">캐시</text>
+<text x="130" y="176" fill="var(--fg-muted)" font-size="12">차 있을수록 캐시로 쓸 빈 공간 자체가 줄어듭니다 — 지속 쓰기가 먼저 무너지는 이유입니다.</text>
+</svg>
+<figcaption>요즘 SSD 는 빈 공간 일부를 SLC 방식 캐시로 씁니다. 90% 사용 시점에는 캐시가 몇 % 몫만 남습니다. 정도는 제품마다 다릅니다.</figcaption>
+</figure>
 <p><strong>읽기는 이 두 구조와 무관해서 영향이 작습니다</strong> — 그래서 &quot;꽉
 찼는데 게임 로딩은 그대로던데?&quot;라는 경험담과 &quot;복사가 너무
 느려졌다&quot;는 경험담이 공존합니다. 둘 다 맞는 말입니다.</p>
