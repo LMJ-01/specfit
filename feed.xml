@@ -55,6 +55,13 @@
     <description>미니PC나 남는 컴퓨터로 NAS를 직접 만들 수 있다는 걸 알게 되면 기성 NAS 값이 아까워 보입니다. 그런데 기성 NAS에서 사는 건 하드웨어가 아니라 소프트웨어와 책임입니다. 어느 쪽이 맞는 사람인지 정리했습니다.</description>
   </item>
   <item>
+    <title>커브드 모니터로 코딩·문서작업 — 곡률은 취향이 아니라 폭의 문제입니다</title>
+    <link>https://specfit.kr/posts/curved-monitor-coding.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/curved-monitor-coding.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>커브드 모니터가 코딩이나 문서작업에 괜찮은지 헷갈립니다. 판단 기준은 커브드냐 평면이냐가 아니라 화면 폭입니다. 곡률 숫자 읽는 법과, 평면을 골라야 하는 경우를 정리했습니다.</description>
+  </item>
+  <item>
     <title>아파트 단자함 — 기가가 안 나올 때 열어보는 곳</title>
     <link>https://specfit.kr/posts/apartment-lan-panel.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/apartment-lan-panel.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/psu-80plus.html</guid>
     <pubDate>Sun, 23 Aug 2026 15:00:00 GMT</pubDate>
     <description>브론즈냐 골드냐는 취향이 아니라 나눗셈입니다. 등급이 실제로 뜻하는 것, 절감량을 kWh로 계산하는 법, 웃돈이 회수되는 조건을 정리했습니다. 로컬 LLM을 상시 돌리면 계산이 달라집니다.</description>
-  </item>
-  <item>
-    <title>해상도 다른 모니터 두 대 — 커서가 걸리고 창이 튀는 이유</title>
-    <link>https://specfit.kr/posts/monitor-mixed-resolution.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-mixed-resolution.html</guid>
-    <pubDate>Sun, 23 Aug 2026 15:00:00 GMT</pubDate>
-    <description>섞어 쓰면 세 가지가 생깁니다. 경계에서 커서가 걸리고, 창을 옮기면 크기가 튀거나 흐려지고, 글자 크기가 안 맞습니다. 각각의 원리와 대처, 무난한 조합을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
