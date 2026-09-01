@@ -13,6 +13,13 @@
     <description>최신 공유기를 사면 집 와이파이가 빨라질 것 같지만, 속도는 요금제·공유기·기기 세 관문 중 제일 낮은 것을 따라갑니다. 내 기기가 어느 세대인지 확인하는 법부터, 바꿀 가치가 있는 경우를 정리했습니다.</description>
   </item>
   <item>
+    <title>NAS가 필요한가 — 외장하드와는 다른 물건입니다</title>
+    <link>https://specfit.kr/posts/nas-vs-external-hdd.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/nas-vs-external-hdd.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>외장하드가 꽉 차면 NAS를 검색하게 되는데, NAS는 더 큰 외장하드가 아니라 성격이 다른 장비입니다. 외장하드로 충분한 경우, NAS라야 되는 경우, 그 사이의 간이 NAS를 판정 기준으로 정리했습니다.</description>
+  </item>
+  <item>
     <title>메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다</title>
     <link>https://specfit.kr/posts/mesh-wifi-backhaul.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/mesh-wifi-backhaul.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-charger-watt-pd.html</guid>
     <pubDate>Fri, 21 Aug 2026 15:00:00 GMT</pubDate>
     <description>65W 노트북에 30W 충전기를 꽂으면 무슨 일이 생기는지, 내 노트북이 몇 와트를 요구하는지 어댑터 라벨 읽는 법부터 케이블 규격까지 정리했습니다. 반대로 큰 충전기는 안전합니다.</description>
-  </item>
-  <item>
-    <title>클로드 코드·커서 쓰려면 컴퓨터가 좋아야 하나 — 공식 요구 사양은 램 4GB입니다</title>
-    <link>https://specfit.kr/posts/ai-coding-tool-pc-spec.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ai-coding-tool-pc-spec.html</guid>
-    <pubDate>Fri, 21 Aug 2026 15:00:00 GMT</pubDate>
-    <description>AI 코딩 도구 때문에 컴퓨터를 바꿀 필요는 거의 없습니다. 연산이 서버에서 되기 때문입니다. 공식 요구 사양, 그런데도 사양이 모자라게 느껴지는 진짜 이유, 그래픽카드가 필요해지는 유일한 경우를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
