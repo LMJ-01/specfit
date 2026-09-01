@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다 | 스펙핏</title>
+<meta name="description" content="게임이나 고부하 작업 때 그래픽카드 쪽에서 찌르르 하는 고주파음이 나면 고장부터 의심하게 됩니다. 코일노이즈의 정체와 고장 소리와의 구분법, 줄이는 방법을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/gpu-coil-whine.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다 | 스펙핏">
+<meta property="og:description" content="게임이나 고부하 작업 때 그래픽카드 쪽에서 찌르르 하는 고주파음이 나면 고장부터 의심하게 됩니다. 코일노이즈의 정체와 고장 소리와의 구분법, 줄이는 방법을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/gpu-coil-whine.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다","description":"게임이나 고부하 작업 때 그래픽카드 쪽에서 찌르르 하는 고주파음이 나면 고장부터 의심하게 됩니다. 코일노이즈의 정체와 고장 소리와의 구분법, 줄이는 방법을 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/gpu-coil-whine.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다","item":"https://specfit.kr/posts/gpu-coil-whine.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"새 카드인데 소리가 나요. 교환해야 하나요","acceptedAnswer":{"@type":"Answer","text":"판매처 초기 교환 기간 안이라면 시도해 볼 수는 있습니다 — 개체 차이가 크니 다음 개체는 조용할 수 있습니다. 다만 제조사 AS 기준으로 코일노이즈 단독은 정상 판정이 흔하다는 것을 알고 문의하는 게 정신 건강에 좋습니다."}},{"@type":"Question","name":"중고로 산 카드가 우는데 속은 건가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다 — 위 표의 구분대로 코일노이즈면 성능·수명 문제가 아니라서, 중고 GPU 확인 절차의 불량 항목과는 별개입니다. 확인 절차에서 봐야 할 건 갈리는 소리·딸깍 소리 쪽입니다."}},{"@type":"Question","name":"로컬 LLM 돌릴 때만 소리가 나요","acceptedAnswer":{"@type":"Answer","text":"추론이 짧은 고부하를 반복하는 패턴이라, 그때만 우는 게 자연스러운 동작입니다. 전력 상한을 걸어 쓰는 방법이 전류 출렁임도 눌러 줘서, 소리에도 같은 방향으로 작용하는 경우가 있습니다."}},{"@type":"Question","name":"미니PC나 노트북에서도 나나요","acceptedAnswer":{"@type":"Answer","text":"전원부가 있는 모든 보드에서 날 수 있습니다 — 어댑터에서 나는 경우도 있습니다. 구분법은 같습니다: 부하를 따라 변하는 가는 소리인가."}},{"@type":"Question","name":"소리로 카드 상태를 점검할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"반대로 쓰는 게 유용합니다 — 평소와 다른 종류의 소리(갈림·딸깍)가 새로 생겼을 때가 점검 신호입니다. 늘 나던 코일노이즈는 신호가 아닙니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-01">2026년 9월 1일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>게임을 켜거나 <a href="/posts/ollama-minimum-spec.html">로컬 LLM 이 답을 뽑는 동안</a>
+본체에서 <strong>찌르르-, 지이잉-</strong> 하는 가는 소리가 나면 고장부터
+의심하게 됩니다. 검색하면 &quot;코일노이즈&quot;라는 답이 나오는데, 그래서
+괜찮다는 건지 AS를 보내야 한다는 건지가 애매합니다.</p>
+<p>정리하면 이렇습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>고장인가</td><td><strong>아닙니다</strong> — 전원부 부품의 진동음이고, 성능·수명과 무관합니다</td></tr>
+<tr><td>그냥 둬도 되나</td><td>됩니다 — 문제는 <strong>귀</strong>이지 카드가 아닙니다</td></tr>
+<tr><td>줄일 수 있나</td><td><strong>프레임 제한</strong>이 가장 효과적인 경우가 많습니다</td></tr>
+<tr><td>AS가 되나</td><td>소음만으로는 <strong>정상 판정이 흔합니다</strong> — 기대치를 낮추고 문의</td></tr>
+<tr><td>다른 소리와 구분</td><td><strong>부하를 따라 변하는 가는 소리</strong>가 코일노이즈입니다 — 아래 구분표</td></tr>
+</tbody>
+</table></div>
+<h2 id="정체-전기가-코일을-떨게-하는-소리입니다">정체 — 전기가 코일을 떨게 하는 소리입니다</h2>
+<p>그래픽카드 전원부에는 전류를 고르게 만드는 <strong>코일(인덕터)</strong>들이
+있습니다. 부하가 걸려 큰 전류가 빠르게 출렁이면 이 부품이 미세하게
+진동하고, 그 진동이 사람 귀에 들리는 높은 소리로 새어 나오는 것이
+코일노이즈입니다.</p>
+<ul>
+<li><strong>전기적 고장이 아닙니다</strong> — 부품이 제 일을 하면서 나는
+부수적인 소리입니다</li>
+<li><strong>성능도 수명도 깎지 않습니다</strong> — 신경 쓰이는 것 외의 실해가
+없습니다</li>
+<li><strong>개체 차이가 큽니다</strong> — 같은 모델도 조용한 개체와 우는 개체가
+갈립니다. &quot;복불복&quot;이라는 커뮤니티 표현이 정확한 편입니다</li>
+</ul>
+<h2 id="고장-소리와-구분하는-법">고장 소리와 구분하는 법</h2>
+<p>&quot;소리가 난다&quot;로 뭉뚱그리면 오판합니다. <strong>소리의 성격</strong>으로 갈립니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>소리</th><th>정체</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td>부하 때만 나는 <strong>가늘고 높은</strong> 소리, 장면 따라 톤 변화</td><td>코일노이즈</td><td>고장 아님</td></tr>
+<tr><td><strong>드르륵·갈리는</strong> 소리, 부하 무관</td><td>팬 베어링·케이블 간섭</td><td>점검 대상입니다</td></tr>
+<tr><td><strong>딸깍/찰칵</strong> 반복</td><td>팬 걸림·이물</td><td>점검 대상입니다</td></tr>
+<tr><td>스피커·헤드폰에서 나는 지지직</td><td>사운드 쪽 노이즈</td><td>카드가 아니라 <strong>오디오 경로</strong> 문제입니다</td></tr>
+</tbody>
+</table></div>
+<p>가장 쉬운 판별: <strong>화면 프레임이 치솟는 순간</strong>(게임 메뉴, 로딩 직후)
+소리가 심해지고, 부하가 빠지면 잦아드는가. 그 패턴이면
+코일노이즈입니다.</p>
+<h2 id="줄이는-방법-효과-순서대로">줄이는 방법 — 효과 순서대로</h2>
+<ol>
+<li><strong>프레임 제한</strong> — 메뉴 화면에서 수백 프레임씩 나올 때 우는
+경우가 많아서, 게임·드라이버에서 프레임 상한(예: 모니터 주사율
+근처)을 걸면 <strong>대개 눈에 띄게 줄어듭니다.</strong> 전기 출렁임 자체를
+줄이는 방법이라 구조적으로도 맞는 처방입니다</li>
+<li><strong>케이스와 거리</strong> — 소리 자체를 없애진 못해도, 밀폐형 케이스와
+책상 아래 배치로 귀에 오는 양은 확실히 줄어듭니다</li>
+<li><strong>전원 쪽 변수</strong> — <a href="/posts/gpu-psu-wattage.html">파워</a>를 바꾸니
+달라졌다는 보고가 흔합니다. 다만 보장은 없는 영역이라, 코일노이즈
+때문에 파워를 새로 사는 건 권하지 않습니다 — 다른 이유로 바꿀
+때의 덤 정도로 생각하세요</li>
+<li><strong>길들기</strong> — 시간이 지나며 줄었다는 경험담도 있지만 보장이
+없습니다. 기대 항목이라기보다 &quot;그럴 수도&quot; 항목입니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="새-카드인데-소리가-나요-교환해야-하나요">새 카드인데 소리가 나요. 교환해야 하나요</h3>
+<p>판매처 초기 교환 기간 안이라면 시도해 볼 수는 있습니다 — 개체
+차이가 크니 다음 개체는 조용할 수 있습니다. 다만 제조사 AS 기준으로
+<strong>코일노이즈 단독은 정상 판정이 흔하다</strong>는 것을 알고 문의하는 게
+정신 건강에 좋습니다.</p>
+<h3 id="중고로-산-카드가-우는데-속은-건가요">중고로 산 카드가 우는데 속은 건가요</h3>
+<p>아닙니다 — 위 표의 구분대로 코일노이즈면 성능·수명 문제가 아니라서,
+<a href="/posts/used-gpu-check.html">중고 GPU 확인 절차</a>의 불량 항목과는
+별개입니다. 확인 절차에서 봐야 할 건 갈리는 소리·딸깍 소리
+쪽입니다.</p>
+<h3 id="로컬-llm-돌릴-때만-소리가-나요">로컬 LLM 돌릴 때만 소리가 나요</h3>
+<p>추론이 짧은 고부하를 반복하는 패턴이라, 그때만 우는 게 자연스러운
+동작입니다. <a href="/posts/local-llm-power-cost.html">전력 상한을 걸어 쓰는 방법</a>이
+전류 출렁임도 눌러 줘서, 소리에도 같은 방향으로 작용하는 경우가
+있습니다.</p>
+<h3 id="미니pc나-노트북에서도-나나요">미니PC나 노트북에서도 나나요</h3>
+<p>전원부가 있는 모든 보드에서 날 수 있습니다 — 어댑터에서 나는
+경우도 있습니다. 구분법은 같습니다: 부하를 따라 변하는 가는
+소리인가.</p>
+<h3 id="소리로-카드-상태를-점검할-수-있나요">소리로 카드 상태를 점검할 수 있나요</h3>
+<p>반대로 쓰는 게 유용합니다 — <strong>평소와 다른 종류의 소리</strong>(갈림·딸깍)가
+새로 생겼을 때가 점검 신호입니다. 늘 나던 코일노이즈는 신호가
+아닙니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>코일노이즈는 <strong>전원부 코일의 진동음</strong>입니다 — 고장도, 성능
+저하도 아닙니다</li>
+<li>판별은 패턴입니다 — <strong>부하를 따라 변하는 가늘고 높은 소리</strong>면
+코일노이즈, 갈리고 딸깍대면 점검 대상입니다</li>
+<li><strong>프레임 제한</strong>이 가장 값싸고 효과적인 처방입니다</li>
+<li>개체 차이가 커서 AS는 <strong>정상 판정이 흔합니다</strong> — 초기 교환
+기간이 실질적인 기회입니다</li>
+<li>소리 때문에 파워를 새로 살 필요까지는 없습니다</li>
+</ol>
+<p>소음의 다른 축은 <a href="/posts/cpu-stock-cooler.html">CPU 쿨러 판정</a>,
+중고 카드 점검은 <a href="/posts/used-gpu-check.html">중고 GPU 확인</a>에 있습니다.</p>
+<p>소리 구분이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">코일노이즈</span> <span class="tag">그래픽카드소음</span> <span class="tag">고주파</span> <span class="tag">GPU</span> <span class="tag">코일떨림</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/cpu-stock-cooler.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">CPU 기본 쿨러로 충분한가 — 부하와 소음, 두 기준으로 갈립니다</span>
+        <span class="card-desc">CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 살지 헷갈립니다. 성능이 모자라서가 아니라 소음 때문에 바꾸는 경우가 많다는 것까지 포함해서, 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/desktop-ups.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다</span>
+        <span class="card-desc">정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/egpu-local-llm.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">노트북에 eGPU — 게임엔 아쉽지만 로컬 LLM엔 잘 맞는 이유</span>
+        <span class="card-desc">외장 그래픽 박스는 대역폭 병목 때문에 게임에서 손해를 봅니다. 그런데 로컬 LLM 추론은 구조가 달라 그 병목을 거의 안 탑니다. 왜 그런지, 무엇을 확인해야 하는지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

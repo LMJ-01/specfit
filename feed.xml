@@ -76,6 +76,13 @@
     <description>그래픽카드 없이 내장그래픽만으로 모니터 두 대를 쓸 수 있는지 자주 묻습니다. 답은 됩니다이고, 성능도 문제가 아닙니다. 진짜 확인할 곳은 메인보드 뒷면의 출력 단자 수입니다.</description>
   </item>
   <item>
+    <title>그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다</title>
+    <link>https://specfit.kr/posts/gpu-coil-whine.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/gpu-coil-whine.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>게임이나 고부하 작업 때 그래픽카드 쪽에서 찌르르 하는 고주파음이 나면 고장부터 의심하게 됩니다. 코일노이즈의 정체와 고장 소리와의 구분법, 줄이는 방법을 정리했습니다.</description>
+  </item>
+  <item>
     <title>기성 NAS vs 자작 NAS — 사는 것은 하드웨어가 아닙니다</title>
     <link>https://specfit.kr/posts/diy-nas-vs-prebuilt.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/diy-nas-vs-prebuilt.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-for-dev.html</guid>
     <pubDate>Tue, 25 Aug 2026 15:00:00 GMT</pubDate>
     <description>손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>TV를 모니터로 — 글자가 번지는 진짜 이유와 쓸 만한 조건</title>
-    <link>https://specfit.kr/posts/tv-as-monitor.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/tv-as-monitor.html</guid>
-    <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
-    <description>안 쓰는 TV를 책상에 올려도 될까요. 밀도(PPI)는 의외로 문제가 아닙니다. 갈리는 건 크로마 서브샘플링, 크기와 거리, 화면 처리입니다. 계산과 확인 절차로 정리했습니다.</description>
   </item>
 </channel>
 </rss>
