@@ -41,6 +41,13 @@
     <description>램 32GB 다음 칸인 64GB가 필요한지 커뮤니티마다 답이 갈립니다. 갈리는 이유는 용도가 달라서입니다. 지금 32GB가 모자란지 확인하는 절차와, 64GB가 값을 하는 작업 목록을 정리했습니다.</description>
   </item>
   <item>
+    <title>파워는 몇 년 쓰나 — 연식이 아니라 신호로 교체합니다</title>
+    <link>https://specfit.kr/posts/psu-lifespan.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/psu-lifespan.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>파워서플라이 수명을 물으면 5년부터 15년까지 답이 갈립니다. 등급마다 다르고, 연식보다 이상 신호가 기준이기 때문입니다. 보증 기간을 수명 지표로 읽는 법과 진짜 교체 신호를 정리했습니다.</description>
+  </item>
+  <item>
     <title>NAS가 필요한가 — 외장하드와는 다른 물건입니다</title>
     <link>https://specfit.kr/posts/nas-vs-external-hdd.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/nas-vs-external-hdd.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/cpu-stock-cooler.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 살지 헷갈립니다. 성능이 모자라서가 아니라 소음 때문에 바꾸는 경우가 많다는 것까지 포함해서, 판정 기준을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>케이스 팬은 몇 개나 — 개수보다 방향과 균형이 먼저입니다</title>
-    <link>https://specfit.kr/posts/case-fan-setup.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/case-fan-setup.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>케이스 팬을 더 달아야 하는지, 흡기·배기는 어떻게 나눠야 하는지 헷갈립니다. 팬 쇼핑 전에 확인할 것과, 몇 개부터는 효과가 급감하는 구조를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
