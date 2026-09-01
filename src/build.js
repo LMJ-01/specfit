@@ -18,7 +18,15 @@ import { figures } from './figures.js';
 import { buyBox, products } from './products.js';
 import { toolMountHtml, parts, verdict } from '../assets/vram-render.js';
 
-const toolData = { gpus, models, quants, lengths };
+// 애드센스 심사 모드 — 제휴 요소를 렌더링 전에 원천에서 뺍니다.
+// (플래그의 배경은 config.js 의 adsenseReview 주석 참고)
+// 여기 한 곳에서 데이터가 비면 아래 모든 경로(계산기 버튼·고지·경고)가
+// 자동으로 따라갑니다 — 흩어진 if 를 두면 하나를 놓칩니다.
+const REVIEW = Boolean(config.adsenseReview);
+if (REVIEW) config.coupangSearch = '';
+const toolGpus = REVIEW ? gpus.map((g) => ({ ...g, buy: '', widget: '' })) : gpus;
+
+const toolData = { gpus: toolGpus, models, quants, lengths };
 
 // 계산기를 기본 상태로 미리 그려둡니다. 브라우저와 같은 함수를 쓰므로
 // JS 가 켜졌을 때 다시 그려도 결과가 같습니다 — 화면이 튀지 않습니다.
@@ -27,7 +35,8 @@ const toolMount = toolMountHtml(toolData);
 
 // 계산기에 쿠팡 링크가 하나라도 있으면, 계산기를 실은 페이지는 '제휴 페이지'입니다.
 // 공정위 고지가 자동으로 붙어야 합니다 — 하단 표기나 누락은 수익 전액 몰수 사유입니다.
-const toolHasAffiliate = gpus.some((g) => g.buy);
+// (심사 모드에서는 toolGpus 의 buy 가 전부 비므로 자동으로 false 가 됩니다)
+const toolHasAffiliate = toolGpus.some((g) => g.buy);
 
 // 글 본문에 {{VRAM_TOOL}} 을 쓰면 그 자리에 계산기가 들어갑니다.
 const TOOL_MARK = '{{VRAM_TOOL}}';
@@ -64,6 +73,8 @@ function renderBuyLinks(html, warn) {
       warn(`알 수 없는 제품 id: ${id} — products.js 에 없는 항목입니다`);
       return '';
     }
+    // 심사 모드: id 검증(오타 경고)은 위에서 그대로 하고, 출력만 뺍니다.
+    if (REVIEW) return '';
     return box;
   });
 }
@@ -88,6 +99,9 @@ function renderWidgets(html, warn) {
       warn(`알 수 없는 위젯 id: ${raw} — gpu-data.js 에도 products.js 에도 없습니다`);
       return '';
     }
+    // 심사 모드: id 검증만 통과시키고 출력은 뺍니다 (빈 위젯 경고도 침묵 —
+    // 데이터는 멀쩡한데 모드 때문에 안 싣는 것이라 오탐이 됩니다).
+    if (REVIEW) return '';
     // GPU 는 name, 나머지 품목은 label 로 부릅니다. 경고에 무엇이 비었는지 보여야 합니다.
     const name = gpu ? gpu.name : item.label || id;
     if (!item.widget) {
@@ -453,8 +467,11 @@ async function build() {
         category: p.data.category || '',
         tags: Array.isArray(p.data.tags) ? p.data.tags : [],
         // 계산기나 위젯을 실으면 그 안에 제휴 링크가 있으므로 자동으로 제휴 페이지가 됩니다.
+        // 심사 모드에서는 제휴 요소가 전부 빠지므로 고지도 빠져야 합니다 —
+        // 요소 없이 고지만 붙으면 거짓 고지가 됩니다.
         affiliate:
-          p.data.affiliate === true || (usesTool && toolHasAffiliate) || usesWidget,
+          !REVIEW &&
+          (p.data.affiliate === true || (usesTool && toolHasAffiliate) || usesWidget),
         image: p.data.image || '',
         faq,
         html: renderShortcodes(p.body, (msg) => warnings.push(`${p.slug}: ${msg}`)),
