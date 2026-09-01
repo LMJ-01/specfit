@@ -139,11 +139,11 @@
     <description>CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 살지 헷갈립니다. 성능이 모자라서가 아니라 소음 때문에 바꾸는 경우가 많다는 것까지 포함해서, 판정 기준을 정리했습니다.</description>
   </item>
   <item>
-    <title>아파트 단자함 — 기가가 안 나올 때 열어보는 곳</title>
-    <link>https://specfit.kr/posts/apartment-lan-panel.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/apartment-lan-panel.html</guid>
+    <title>케이스 팬은 몇 개나 — 개수보다 방향과 균형이 먼저입니다</title>
+    <link>https://specfit.kr/posts/case-fan-setup.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/case-fan-setup.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>방 랜포트가 죽어 있거나 속도가 100Mbps에 막힐 때, 원인은 대개 신발장 위 단자함 안에 있습니다. 뭐가 들어 있고, 공유기가 어디 있어야 하며, 뭘 확인하면 되는지 진단 순서로 정리했습니다.</description>
+    <description>케이스 팬을 더 달아야 하는지, 흡기·배기는 어떻게 나눠야 하는지 헷갈립니다. 팬 쇼핑 전에 확인할 것과, 몇 개부터는 효과가 급감하는 구조를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
