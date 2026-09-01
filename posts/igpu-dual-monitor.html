@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>내장그래픽으로 듀얼 모니터 — 관건은 CPU가 아니라 메인보드 뒷면입니다 | 스펙핏</title>
+<meta name="description" content="그래픽카드 없이 내장그래픽만으로 모니터 두 대를 쓸 수 있는지 자주 묻습니다. 답은 됩니다이고, 성능도 문제가 아닙니다. 진짜 확인할 곳은 메인보드 뒷면의 출력 단자 수입니다.">
+<link rel="canonical" href="https://specfit.kr/posts/igpu-dual-monitor.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="내장그래픽으로 듀얼 모니터 — 관건은 CPU가 아니라 메인보드 뒷면입니다 | 스펙핏">
+<meta property="og:description" content="그래픽카드 없이 내장그래픽만으로 모니터 두 대를 쓸 수 있는지 자주 묻습니다. 답은 됩니다이고, 성능도 문제가 아닙니다. 진짜 확인할 곳은 메인보드 뒷면의 출력 단자 수입니다.">
+<meta property="og:url" content="https://specfit.kr/posts/igpu-dual-monitor.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"내장그래픽으로 듀얼 모니터 — 관건은 CPU가 아니라 메인보드 뒷면입니다","description":"그래픽카드 없이 내장그래픽만으로 모니터 두 대를 쓸 수 있는지 자주 묻습니다. 답은 됩니다이고, 성능도 문제가 아닙니다. 진짜 확인할 곳은 메인보드 뒷면의 출력 단자 수입니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/igpu-dual-monitor.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"내장그래픽으로 듀얼 모니터 — 관건은 CPU가 아니라 메인보드 뒷면입니다","item":"https://specfit.kr/posts/igpu-dual-monitor.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"그래픽카드가 있는데 내장 쪽에 모니터를 하나 더 꽂아도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다 — 카드 단자가 모자랄 때 실제로 쓰이는 방법입니다. 요즘 윈도우는 두 GPU에 걸친 화면을 알아서 다뤄서, 일반 용도에서는 문제를 못 느끼는 경우가 대부분입니다. 다만 바이오스에서 내장그래픽이 꺼져 있으면(외장 장착 시 자동으로 끄는 보드가 있습니다) 켜 줘야 합니다."}},{"@type":"Question","name":"보드 단자가 하나뿐인데 방법이 없나요","acceptedAnswer":{"@type":"Answer","text":"USB 디스플레이 어댑터가 우회로입니다 — USB 포트를 영상 출력으로 바꿔 주는 물건으로, 문서·웹 화면 용도로는 충분합니다. 영상 재생까지는 대개 되지만 게임처럼 빠른 화면에는 맞지 않는 물건이라, 보조 화면 용도라고 생각하는 게 정확합니다. 모니터 쪽이 지원한다면 DP 데이지체인이라는 길도 있습니다."}},{"@type":"Question","name":"4K 모니터 두 대도 되나요","acceptedAnswer":{"@type":"Answer","text":"요즘 세대의 내장그래픽은 규격상 대부분 가능합니다. 다만 세대와 보드 구현에 따라 단자별 상한이 달라서, CPU 스펙 페이지의 최대 해상도·출력 수 항목과 보드 단자 규격을 함께 보는 게 정확합니다. 고해상도 계획이면 특히 그렇습니다."}},{"@type":"Question","name":"나중에 그래픽카드를 달면 모니터는 어디에 꽂나요","acceptedAnswer":{"@type":"Answer","text":"카드 쪽으로 옮겨 꽂는 게 기본입니다 — 연산과 출력이 같은 GPU 에 있는 게 단순하고, 게임·LLM 이 목적이라면 특히 그렇습니다. 내장 쪽은 위 질문처럼 단자가 모자랄 때의 예비로 남습니다."}},{"@type":"Question","name":"미니PC도 같은 이야기인가요","acceptedAnswer":{"@type":"Answer","text":"같습니다 — 미니PC는 전부 내장그래픽 구성이고, 뒷면 단자가 대개 2~3개라 듀얼·트리플까지 무리가 없습니다. 확인 지점도 같습니다: 단자 수와 규격."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>내장그래픽으로 듀얼 모니터 — 관건은 CPU가 아니라 메인보드 뒷면입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-01">2026년 9월 1일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>사무·개발용으로 그래픽카드 없이 컴퓨터를 맞추려다 보면 이 질문에서
+멈칫합니다 — <strong>&quot;내장그래픽으로 듀얼 모니터가 되나?&quot;</strong></p>
+<p>됩니다. 그리고 걱정하는 성능도 문제가 아닙니다. 확인해야 할 곳은
+따로 있습니다 — <strong>메인보드 뒷면의 출력 단자</strong>입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>확인할 것</th><th>기준</th></tr></thead>
+<tbody>
+<tr><td>내 CPU에 내장그래픽이 있나</td><td><strong>인텔 <code>F</code> 붙은 모델은 없습니다</strong> — 아래 확인법</td></tr>
+<tr><td>모니터 두 대가 되나</td><td>요즘 내장그래픽은 됩니다 — <strong>보드 뒷면 단자가 2개 이상</strong>이면</td></tr>
+<tr><td>성능이 모자라지 않나</td><td>코딩·사무·영상 시청은 <strong>충분합니다</strong></td></tr>
+<tr><td>게임·로컬 LLM은</td><td>그건 출력이 아니라 연산 문제 — <a href="/posts/local-llm-without-gpu.html">별개 이야기</a>입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="첫-확인-내-cpu에-내장그래픽이-있긴-한가">첫 확인 — 내 CPU에 내장그래픽이 있긴 한가</h2>
+<p>의외의 함정이 여기입니다. <strong>그래픽카드를 뺐는데 화면이 아예 안
+나오는</strong> 경우는 대개 CPU 자체에 내장그래픽이 없는 모델이라서입니다.</p>
+<ul>
+<li><strong>인텔</strong> — 모델명 끝의 접미사로 갈립니다. <code>F</code> 가 붙은 모델
+(예: i5-…F)은 <strong>내장그래픽이 없습니다.</strong> 그래픽카드를 뺄 계획이면
+F 없는 모델이어야 합니다</li>
+<li><strong>AMD 라이젠</strong> — 세대와 모델에 따라 있고 없고가 갈립니다. 내
+모델명으로 제조사 스펙 페이지의 &quot;그래픽&quot; 항목을 확인하는 게
+정확합니다</li>
+</ul>
+<h2 id="진짜-관건-메인보드-뒷면-단자-수">진짜 관건 — 메인보드 뒷면 단자 수</h2>
+<p>내장그래픽의 출력은 <strong>메인보드 뒷면 단자</strong>로 나옵니다. 그래서
+동시에 걸 수 있는 모니터 수의 실질 상한은 GPU 스펙이 아니라
+<strong>보드가 단자를 몇 개 냈느냐</strong>입니다.</p>
+<ul>
+<li>뒷면에 HDMI + DP 처럼 <strong>영상 단자가 2개 이상</strong>이면 듀얼이 됩니다</li>
+<li>단자가 1개뿐인 보드도 있습니다 — 이 경우 내장그래픽이 아무리
+멀쩡해도 두 대를 직결할 수 없습니다</li>
+<li>오래된 보드는 D-Sub(VGA) + HDMI 조합도 있는데, D-Sub 쪽은
+해상도 상한이 낮아 <a href="/posts/coding-monitor-resolution.html">모니터 해상도 계획</a>과
+맞는지 봐야 합니다</li>
+</ul>
+<p>새로 맞춘다면 <strong>보드 제품 페이지의 뒷면 사진</strong>을 보는 게 스펙표
+읽기보다 빠릅니다. 단자 종류별 규격 차이는
+<a href="/posts/dp-vs-hdmi-coding.html">DP vs HDMI</a>에 있습니다.</p>
+<h2 id="성능-걱정은-접어도-됩니다-출력은-가벼운-일입니다">성능 걱정은 접어도 됩니다 — 출력은 가벼운 일입니다</h2>
+<p><a href="/posts/dual-monitor-vs-single.html">듀얼 모니터 글에서 정리한 그대로</a>,
+<strong>화면 출력은 그래픽 하드웨어에 가벼운 일</strong>입니다. 코드, 문서,
+브라우저, 영상 시청 — 화면이 두 대라고 내장그래픽이 버거워하는
+용도가 아닙니다.</p>
+<p>내장그래픽이 모자라는 것은 <strong>연산</strong>이 필요할 때입니다 — 게임,
+3D, <a href="/posts/local-llm-without-gpu.html">로컬 LLM</a>. 그건 모니터 수와
+무관하게 그래픽카드의 일이고, 반대로 말하면 <strong>그 일을 안 하는
+컴퓨터에 그래픽카드는 출력 단자 값</strong>입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="그래픽카드가-있는데-내장-쪽에-모니터를-하나-더-꽂아도-되나요">그래픽카드가 있는데 내장 쪽에 모니터를 하나 더 꽂아도 되나요</h3>
+<p>됩니다 — 카드 단자가 모자랄 때 실제로 쓰이는 방법입니다. 요즘
+윈도우는 두 GPU에 걸친 화면을 알아서 다뤄서, 일반 용도에서는
+문제를 못 느끼는 경우가 대부분입니다. 다만 바이오스에서 내장그래픽이
+꺼져 있으면(외장 장착 시 자동으로 끄는 보드가 있습니다) 켜 줘야
+합니다.</p>
+<h3 id="보드-단자가-하나뿐인데-방법이-없나요">보드 단자가 하나뿐인데 방법이 없나요</h3>
+<p><strong>USB 디스플레이 어댑터</strong>가 우회로입니다 — USB 포트를 영상 출력으로
+바꿔 주는 물건으로, 문서·웹 화면 용도로는 충분합니다. 영상 재생까지는
+대개 되지만 게임처럼 빠른 화면에는 맞지 않는 물건이라, 보조 화면
+용도라고 생각하는 게 정확합니다. 모니터 쪽이 지원한다면
+<a href="/posts/dp-vs-hdmi-coding.html">DP 데이지체인</a>이라는 길도 있습니다.</p>
+<h3 id="4k-모니터-두-대도-되나요">4K 모니터 두 대도 되나요</h3>
+<p>요즘 세대의 내장그래픽은 규격상 대부분 가능합니다. 다만 세대와
+보드 구현에 따라 단자별 상한이 달라서, <strong>CPU 스펙 페이지의 최대
+해상도·출력 수</strong> 항목과 보드 단자 규격을 함께 보는 게 정확합니다.
+<a href="/posts/monitor-5k-vs-4k-coding.html">고해상도 계획</a>이면 특히 그렇습니다.</p>
+<h3 id="나중에-그래픽카드를-달면-모니터는-어디에-꽂나요">나중에 그래픽카드를 달면 모니터는 어디에 꽂나요</h3>
+<p>카드 쪽으로 옮겨 꽂는 게 기본입니다 — 연산과 출력이 같은 GPU 에
+있는 게 단순하고, 게임·LLM 이 목적이라면 특히 그렇습니다. 내장
+쪽은 위 질문처럼 단자가 모자랄 때의 예비로 남습니다.</p>
+<h3 id="미니pc도-같은-이야기인가요">미니PC도 같은 이야기인가요</h3>
+<p>같습니다 — <a href="/posts/mini-pc-for-dev.html">미니PC</a>는 전부 내장그래픽
+구성이고, 뒷면 단자가 대개 2~3개라 듀얼·트리플까지 무리가 없습니다.
+확인 지점도 같습니다: 단자 수와 규격.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>내장그래픽 듀얼 모니터는 됩니다</strong> — 성능도 코딩·사무·영상엔
+충분합니다</li>
+<li>첫 확인은 <strong>CPU에 내장그래픽이 있는가</strong> — 인텔 F 모델은
+없습니다</li>
+<li>실질 상한은 <strong>메인보드 뒷면 단자 수</strong>입니다 — 2개 이상인지
+보세요</li>
+<li>내장그래픽이 모자란 것은 출력이 아니라 <strong>연산</strong>(게임·LLM)
+입니다 — 그 계획이 없다면 그래픽카드 없는 구성은 합리적입니다</li>
+<li>단자가 모자라면 <strong>USB 디스플레이 어댑터</strong>라는 우회로가 있습니다</li>
+</ol>
+<p>듀얼 구성 자체의 판단은 <a href="/posts/dual-monitor-vs-single.html">듀얼 vs 한 대</a>,
+단자 규격은 <a href="/posts/dp-vs-hdmi-coding.html">DP vs HDMI</a>에 있습니다.</p>
+<p>규격이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">내장그래픽</span> <span class="tag">듀얼모니터</span> <span class="tag">메인보드</span> <span class="tag">모니터연결</span> <span class="tag">사무용PC</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/curved-monitor-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">커브드 모니터로 코딩·문서작업 — 곡률은 취향이 아니라 폭의 문제입니다</span>
+        <span class="card-desc">커브드 모니터가 코딩이나 문서작업에 괜찮은지 헷갈립니다. 판단 기준은 커브드냐 평면이냐가 아니라 화면 폭입니다. 곡률 숫자 읽는 법과, 평면을 골라야 하는 경우를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-kvm.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">모니터 KVM — 회사 노트북과 개인 PC를 키보드 하나로</span>
+        <span class="card-desc">재택하면 책상에 컴퓨터가 두 대가 됩니다. 모니터에 KVM 기능이 있으면 키보드·마우스 한 세트로 전환하며 씁니다. 어떤 스펙을 확인해야 하는지, 별도 KVM 스위치와는 언제 갈리는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/tv-as-monitor.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">TV를 모니터로 — 글자가 번지는 진짜 이유와 쓸 만한 조건</span>
+        <span class="card-desc">안 쓰는 TV를 책상에 올려도 될까요. 밀도(PPI)는 의외로 문제가 아닙니다. 갈리는 건 크로마 서브샘플링, 크기와 거리, 화면 처리입니다. 계산과 확인 절차로 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

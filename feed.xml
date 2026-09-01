@@ -62,6 +62,13 @@
     <description>요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.</description>
   </item>
   <item>
+    <title>내장그래픽으로 듀얼 모니터 — 관건은 CPU가 아니라 메인보드 뒷면입니다</title>
+    <link>https://specfit.kr/posts/igpu-dual-monitor.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/igpu-dual-monitor.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>그래픽카드 없이 내장그래픽만으로 모니터 두 대를 쓸 수 있는지 자주 묻습니다. 답은 됩니다이고, 성능도 문제가 아닙니다. 진짜 확인할 곳은 메인보드 뒷면의 출력 단자 수입니다.</description>
+  </item>
+  <item>
     <title>기성 NAS vs 자작 NAS — 사는 것은 하드웨어가 아닙니다</title>
     <link>https://specfit.kr/posts/diy-nas-vs-prebuilt.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/diy-nas-vs-prebuilt.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-sag-support.html</guid>
     <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
     <description>요즘 상급 카드는 무거워서 끝이 처집니다. 어느 정도면 정상이고 언제 지지대가 필요한지, 수직 장착이 왜 완전한 해법이 아닌지 정리했습니다. 성능은 떨어지지 않습니다 — 문제는 다른 곳에 있습니다.</description>
-  </item>
-  <item>
-    <title>노트북에 eGPU — 게임엔 아쉽지만 로컬 LLM엔 잘 맞는 이유</title>
-    <link>https://specfit.kr/posts/egpu-local-llm.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/egpu-local-llm.html</guid>
-    <pubDate>Mon, 24 Aug 2026 15:00:00 GMT</pubDate>
-    <description>외장 그래픽 박스는 대역폭 병목 때문에 게임에서 손해를 봅니다. 그런데 로컬 LLM 추론은 구조가 달라 그 병목을 거의 안 탑니다. 왜 그런지, 무엇을 확인해야 하는지 정리했습니다.</description>
   </item>
 </channel>
 </rss>

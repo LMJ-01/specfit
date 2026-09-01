@@ -202,6 +202,7 @@ affiliate: true
 ### 듀얼로 하면 그래픽카드에 부담이 되나요
 
 일반적인 코딩 작업에서는 거의 없습니다. 화면 출력은 그래픽카드에 가벼운 일입니다.
+[내장그래픽만으로도 듀얼이 되는](/posts/igpu-dual-monitor.html) 이유가 그것입니다.
 **로컬 LLM에 쓸 VRAM도 거의 안 줄어듭니다** — 자세한 기준은
 [Ollama 최소 사양](/posts/ollama-minimum-spec.html)에 있습니다.
 
