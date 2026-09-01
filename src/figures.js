@@ -822,6 +822,7 @@ export const figures = {
   'mesh-backhaul': meshBackhaul,
   'lan-panel-layout': lanPanelLayout,
   'wifi-gates': wifiGates,
+  'nas-share': nasShare,
 };
 
 /**
@@ -988,5 +989,49 @@ ${t(16, y0 + 104, '공유기만 7로 올려도, 옛 기기는 옛 세대로 붙�
     172,
     body,
     '접속은 양쪽이 공통으로 지원하는 세대로 이루어집니다. 제일 낮은 관문이 전체를 정합니다.'
+  );
+}
+
+/**
+ * 외장하드와 NAS 의 구조 차이 — 한 대의 것 vs 네트워크의 모두.
+ * nas-vs-external-hdd 의 판정 기준(공유 대수)을 그림으로.
+ */
+function nasShare() {
+  const W = 640;
+  const box = (x, y, w, label, sub, accent) =>
+    `${rect(x, y, w, 40, COLOR.soft, { r: 6, stroke: accent ? COLOR.accent : COLOR.line })}
+${t(x + w / 2, y + 17, label, { size: 12, anchor: 'middle' })}
+${sub ? t(x + w / 2, y + 32, sub, { size: 10, anchor: 'middle', fill: COLOR.mute }) : ''}`;
+
+  const body = `
+${t(16, 22, '외장하드는 꽂은 한 대의 것, NAS 는 네트워크의 모두의 것', { weight: 600, size: 14 })}
+
+${t(16, 52, '외장하드', { size: 12, weight: 600, fill: COLOR.mute })}
+${box(30, 62, 110, '컴퓨터 A', '지금 꽂힌 곳')}
+${box(180, 62, 100, '외장하드')}
+<line x1="140" y1="82" x2="180" y2="82" stroke="${COLOR.line}" stroke-width="3"/>
+${box(330, 62, 100, '노트북 B', '안 보임')}
+${box(460, 62, 100, '폰', '안 보임')}
+
+${t(16, 142, 'NAS', { size: 12, weight: 600 })}
+${box(30, 152, 110, '컴퓨터 A')}
+${box(180, 152, 100, '노트북 B')}
+${box(310, 152, 80, '폰')}
+${box(430, 152, 130, 'NAS', '공유기 아래 · 항상 켜짐', true)}
+<line x1="85" y1="192" x2="85" y2="212" stroke="${COLOR.accent}" stroke-width="2"/>
+<line x1="230" y1="192" x2="230" y2="212" stroke="${COLOR.accent}" stroke-width="2"/>
+<line x1="350" y1="192" x2="350" y2="212" stroke="${COLOR.accent}" stroke-width="2"/>
+<line x1="495" y1="192" x2="495" y2="212" stroke="${COLOR.accent}" stroke-width="2"/>
+<line x1="85" y1="212" x2="495" y2="212" stroke="${COLOR.accent}" stroke-width="2"/>
+${t(290, 232, '집 안 네트워크 — 전부 동시에 같은 저장소를 봅니다', { size: 11, anchor: 'middle', fill: COLOR.mute })}
+
+${t(16, 262, '그래서 판정 기준은 용량이 아니라 "몇 대가 같이 쓰느냐"입니다.', { weight: 600, size: 12 })}`;
+
+  return figure(
+    '외장하드와 NAS 의 구조 차이',
+    W,
+    276,
+    body,
+    '외장하드는 꽂은 컴퓨터에서만 보입니다. NAS 는 네트워크에 붙어 모든 기기에서 동시에 보이고, 그게 값의 이유입니다.'
   );
 }
