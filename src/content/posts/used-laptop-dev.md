@@ -2,6 +2,7 @@
 title: 중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다
 description: 중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.
 date: 2026-08-20
+updated: 2026-09-01
 category: laptop
 tags: [중고노트북, 배터리, SSD수명, 램슬롯, 개발용노트북]
 affiliate: true
@@ -119,6 +120,9 @@ Get-PhysicalDisk | Get-StorageReliabilityCounter |
 **SSD 는 그나마 다행입니다.** 닳았어도 [바꿀 수 있는 부품](/posts/laptop-ssd-upgrade.html)이니까요.
 
 ### 램 슬롯 — 이게 그 노트북의 수명입니다
+
+([노트북 수명이라는 것 자체가 부품 셋의 문제](/posts/laptop-lifespan.html)인데,
+그중 중고에서 제일 무거운 항목이 이것입니다.)
 
 `Ctrl` + `Shift` + `Esc` → **성능** → **메모리**. 오른쪽 아래를 보세요.
 
