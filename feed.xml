@@ -27,6 +27,13 @@
     <description>서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.</description>
   </item>
   <item>
+    <title>2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다</title>
+    <link>https://specfit.kr/posts/internet-2-5g-upgrade.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/internet-2-5g-upgrade.html</guid>
+    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
+    <description>요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.</description>
+  </item>
+  <item>
     <title>아파트 단자함 — 기가가 안 나올 때 열어보는 곳</title>
     <link>https://specfit.kr/posts/apartment-lan-panel.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/apartment-lan-panel.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ai-coding-tool-pc-spec.html</guid>
     <pubDate>Fri, 21 Aug 2026 15:00:00 GMT</pubDate>
     <description>AI 코딩 도구 때문에 컴퓨터를 바꿀 필요는 거의 없습니다. 연산이 서버에서 되기 때문입니다. 공식 요구 사양, 그런데도 사양이 모자라게 느껴지는 진짜 이유, 그래픽카드가 필요해지는 유일한 경우를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>내 컴퓨터가 듀얼 채널인지 확인하는 법 — CPU-Z 표기 읽기</title>
-    <link>https://specfit.kr/posts/ram-dual-channel-check.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ram-dual-channel-check.html</guid>
-    <pubDate>Thu, 20 Aug 2026 15:00:00 GMT</pubDate>
-    <description>램을 두 장 꽂았다고 듀얼 채널이 되는 게 아닙니다. 지금 듀얼로 도는지 확인하는 세 가지 방법과, DDR5에서 CPU-Z 표기가 헷갈리는 이유, 아니었을 때 고치는 법을 정리했습니다.</description>
   </item>
 </channel>
 </rss>

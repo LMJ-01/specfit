@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다 | 스펙핏</title>
+<meta name="description" content="요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/internet-2-5g-upgrade.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다 | 스펙핏">
+<meta property="og:description" content="요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/internet-2-5g-upgrade.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다","description":"요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/internet-2-5g-upgrade.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다","item":"https://specfit.kr/posts/internet-2-5g-upgrade.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"1기가 요금제인데 속도 측정이 940Mbps쯤 나옵니다. 문제인가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 회선 규격에는 통신 오버헤드가 있어 1G 요금제의 실측은 9백 몇십 Mbps대가 정상 범위입니다. 2.5G에서도 규격 숫자 그대로는 안 나옵니다 — 상한 근처면 경로는 성립한 것입니다."}},{"@type":"Question","name":"공유기 LAN 포트가 하나만 2.5G입니다","acceptedAnswer":{"@type":"Answer","text":"흔한 구성입니다 — WAN + LAN 하나만 2.5G이고 나머지는 1G인 제품이 많습니다. 그 2.5G LAN 포트에 가장 빠른 속도가 필요한 장비 하나 (주 컴퓨터나 NAS)를 직결하고, 나머지는 1G로 쓰는 배치가 일반적입니다. 여러 대가 2.5G를 원하면 그때 2.5G 스위칭허브를 붙입니다."}},{"@type":"Question","name":"케이블을 CAT.6로 바꿔야 하나요","acceptedAnswer":{"@type":"Answer","text":"먼저 바꾸지 마세요. CAT.5E로 2.5G가 잡히는 경우가 많습니다 — 꽂아보고 링크 속도가 2.5Gbps로 뜨면 그대로 쓰면 됩니다. 안 잡힐 때 케이블을 의심하는 순서입니다."}},{"@type":"Question","name":"와이파이로도 2.5G가 나오나요","acceptedAnswer":{"@type":"Answer","text":"무선은 공유기·기기 세대의 관문을 따로 탑니다. 2.5G 요금제의 값을 무선으로 받으려면 공유기와 기기가 최신 세대여야 하고, 그마저 거리·벽에 따라 깎입니다. 2.5G의 본전은 유선 직결에서 나온다고 보는 게 현실적입니다."}},{"@type":"Question","name":"5G·10G 인터넷도 있던데요","acceptedAnswer":{"@type":"Answer","text":"같은 구조가 그대로 적용됩니다 — 경로의 모든 장비가 그 급이어야 하고, 위로 갈수록 장비 값이 가파르게 올라갑니다. 10G까지 가면 케이블도 CAT.6A 급이 필요해집니다. 가정 용도에서는 2.5G 선에서 실익이 정리되는 경우가 대부분입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-01">2026년 9월 1일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>기가 인터넷 다음 단계로 <strong>2.5기가 요금제</strong>가 자리를 잡았습니다. 그런데
+요금제를 올리고 속도를 재보면 <strong>1기가 때와 똑같이 나오는</strong> 경우가
+많습니다.</p>
+<p>이유는 <a href="/posts/lan-cable-cat.html">랜선 글에서 본 그 구조</a>입니다 —
+속도는 경로에서 <strong>제일 약한 고리</strong>를 따라갑니다. 요금제는 경로의 출발점
+하나를 올렸을 뿐이고, 나머지 장비가 전부 2.5G를 받아줘야 끝까지 옵니다.</p>
+<pre><code>요금제 → 통신사 단말 → 공유기 → (허브) → 랜카드 → 케이블
+           이 중 하나라도 1G면, 거기서 1G로 깎입니다</code></pre>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>구간</th><th>점검할 것</th><th>안 되면</th></tr></thead>
+<tbody>
+<tr><td>통신사 단말</td><td>2.5G 상품용 장비인지 — <strong>통신사에 확인</strong></td><td>통신사가 교체해 줍니다</td></tr>
+<tr><td>공유기</td><td><strong>WAN 포트가 2.5G 이상</strong>인지 (스펙표의 &quot;2.5G WAN&quot;)</td><td>1G 공유기면 여기서 끝납니다</td></tr>
+<tr><td>스위칭허브·단자함</td><td>경유하는 허브가 기가(1G)면 그 구간이 상한</td><td>2.5G 허브로 교체</td></tr>
+<tr><td>컴퓨터 랜카드</td><td>어댑터가 2.5GbE 인지 (아래 확인법)</td><td>USB 2.5G 어댑터라는 우회로가 있습니다</td></tr>
+<tr><td>케이블</td><td><strong>CAT.5E 면 대개 됩니다</strong> — 교체 불필요한 경우가 많습니다</td><td>길거나 상태가 나쁠 때만 CAT.6 검토</td></tr>
+</tbody>
+</table></div>
+<p><strong>케이블이 아니라 장비가 관문입니다.</strong> 2.5G 규격(802.3bz)은 기존
+CAT.5E 배선에서 동작하도록 설계됐습니다 —
+<a href="/posts/lan-cable-cat.html">랜선 글의 그 사실</a>이 여기서 효자가 됩니다.</p>
+<h2 id="내-컴퓨터부터-랜카드-확인">내 컴퓨터부터 — 랜카드 확인</h2>
+<p>가장 자주 잊는 구간이 <strong>컴퓨터 쪽</strong>입니다. 확인은 윈도우에서:</p>
+<ol>
+<li>장치 관리자 → <strong>네트워크 어댑터</strong> — 어댑터 이름에 <code>2.5GbE</code>,
+<code>2.5G</code> 표기가 있으면 지원입니다</li>
+<li>또는 연결한 상태에서 설정 → 네트워크 및 인터넷 → 이더넷의
+<strong>링크 속도</strong>를 봅니다:</li>
+</ol>
+<pre><code>2.5 Gbps    ← 경로가 전부 2.5G로 성립했습니다
+1.0 Gbps    ← 어딘가 1G 고리가 있습니다</code></pre>
+<p>최근 몇 년 사이의 메인보드는 온보드 랜이 2.5G인 경우가 많아졌지만,
+그 전 세대는 대개 1G입니다. 데스크톱이면 확장이 자유롭고, 노트북이면
+<strong>USB 2.5G 랜 어댑터</strong>가 우회로입니다 —
+<a href="/posts/external-ssd-dev.html">외장 SSD에서 본 것처럼</a> USB 포트 쪽
+속도가 받쳐주는지만 보면 됩니다.</p>
+<h2 id="단자함을-지나면-단자함도-경로입니다">단자함을 지나면 단자함도 경로입니다</h2>
+<p>벽 랜포트를 거쳐 방으로 들어오는 구성이면,
+<a href="/posts/apartment-lan-panel.html">단자함 안의 허브</a>도 경로에 들어갑니다.
+단자함 허브가 기가 제품이면 <strong>벽을 지나는 순간 1G</strong>가 됩니다.</p>
+<ul>
+<li>공유기에서 컴퓨터까지 직결이면 — 단자함 구간은 상관없습니다</li>
+<li>벽 포트를 거친다면 — 단자함 허브도 2.5G 급이어야 하고, 이때
+벽 속 배선은 CAT.5E 이상이면 대개 통과합니다 (길이·상태에 따라
+안 잡힐 수 있어, 잡히는지 링크 속도로 확인하는 게 정확합니다)</li>
+</ul>
+<h2 id="그래서-올릴-값어치가-있나">그래서 올릴 값어치가 있나</h2>
+<p>속도가 두 배 반이 되는 건 <strong>경로 끝까지 2.5G가 성립했을 때</strong>의
+이야기이고, 그게 체감되는 용도는 생각보다 좁습니다.</p>
+<ul>
+<li><strong>값어치가 분명한 경우</strong> — 큰 파일을 자주 받는 작업
+(<a href="/posts/dev-backup-strategy.html">게임·개발 다운로드</a>), 집 안
+NAS·홈서버와의 전송이 잦은 경우. 특히 집 안 전송은
+<a href="/posts/wifi7-router-upgrade.html">와이파이 글에서 본 것처럼</a>
+요금제와 무관하게 유선 경로의 이득을 그대로 받습니다</li>
+<li><strong>체감이 약한 경우</strong> — 웹서핑·영상 시청·일반 게임 플레이.
+이 용도들은 1G 도 상한을 거의 안 칩니다</li>
+</ul>
+<p>요금제를 올리기 전에 위 표의 장비들을 세어보고, <strong>바꿔야 할 장비가
+몇 개인지</strong>부터 계산하는 순서가 맞습니다. 장비 교체가 여럿 필요하면
+그 비용까지가 업그레이드 값입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="1기가-요금제인데-속도-측정이-940mbps쯤-나옵니다-문제인가요">1기가 요금제인데 속도 측정이 940Mbps쯤 나옵니다. 문제인가요</h3>
+<p>아닙니다. 회선 규격에는 통신 오버헤드가 있어 <strong>1G 요금제의 실측은
+9백 몇십 Mbps대</strong>가 정상 범위입니다. 2.5G에서도 규격 숫자 그대로는
+안 나옵니다 — 상한 근처면 경로는 성립한 것입니다.</p>
+<h3 id="공유기-lan-포트가-하나만-25g입니다">공유기 LAN 포트가 하나만 2.5G입니다</h3>
+<p>흔한 구성입니다 — WAN + LAN 하나만 2.5G이고 나머지는 1G인 제품이
+많습니다. 그 2.5G LAN 포트에 <strong>가장 빠른 속도가 필요한 장비 하나</strong>
+(주 컴퓨터나 NAS)를 직결하고, 나머지는 1G로 쓰는 배치가 일반적입니다.
+여러 대가 2.5G를 원하면 그때 2.5G 스위칭허브를 붙입니다.</p>
+<h3 id="케이블을-cat6로-바꿔야-하나요">케이블을 CAT.6로 바꿔야 하나요</h3>
+<p>먼저 바꾸지 마세요. <strong>CAT.5E로 2.5G가 잡히는 경우가 많습니다</strong> —
+꽂아보고 링크 속도가 2.5Gbps로 뜨면 그대로 쓰면 됩니다. 안 잡힐 때
+케이블을 의심하는 순서입니다.</p>
+<h3 id="와이파이로도-25g가-나오나요">와이파이로도 2.5G가 나오나요</h3>
+<p>무선은 <a href="/posts/wifi7-router-upgrade.html">공유기·기기 세대의 관문</a>을
+따로 탑니다. 2.5G 요금제의 값을 무선으로 받으려면 공유기와 기기가
+최신 세대여야 하고, 그마저 거리·벽에 따라 깎입니다. <strong>2.5G의 본전은
+유선 직결에서 나온다</strong>고 보는 게 현실적입니다.</p>
+<h3 id="5g10g-인터넷도-있던데요">5G·10G 인터넷도 있던데요</h3>
+<p>같은 구조가 그대로 적용됩니다 — 경로의 모든 장비가 그 급이어야
+하고, 위로 갈수록 장비 값이 가파르게 올라갑니다. 10G까지 가면
+<a href="/posts/lan-cable-cat.html">케이블도 CAT.6A 급</a>이 필요해집니다.
+가정 용도에서는 2.5G 선에서 실익이 정리되는 경우가 대부분입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>요금제는 출발점 하나일 뿐입니다 — <strong>경로의 장비 전부가 2.5G를
+받아줘야</strong> 끝까지 옵니다</li>
+<li>점검 순서: <strong>통신사 단말 → 공유기 WAN → (단자함 허브) → 랜카드</strong> —
+케이블은 CAT.5E면 대개 통과입니다</li>
+<li>판정은 링크 속도입니다 — <strong>2.5 Gbps로 잡혔으면 성립, 1.0이면
+어딘가 1G 고리</strong>가 있습니다</li>
+<li>체감은 <strong>대용량 전송·집 안 NAS</strong>에서 나옵니다 — 웹·영상 용도면
+1G와 차이가 좁습니다</li>
+<li>바꿔야 할 장비 수부터 세어보세요 — 그 합이 업그레이드의 실제
+값입니다</li>
+</ol>
+<p>경로 점검의 각 구간은 <a href="/posts/lan-cable-cat.html">랜선 규격</a> ·
+<a href="/posts/apartment-lan-panel.html">단자함 진단</a> ·
+<a href="/posts/wifi7-router-upgrade.html">공유기 세대</a> 글에 하나씩 있습니다.</p>
+<p>규격이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">2.5기가인터넷</span> <span class="tag">스위칭허브</span> <span class="tag">공유기</span> <span class="tag">랜카드</span> <span class="tag">홈네트워크</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/apartment-lan-panel.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">아파트 단자함 — 기가가 안 나올 때 열어보는 곳</span>
+        <span class="card-desc">방 랜포트가 죽어 있거나 속도가 100Mbps에 막힐 때, 원인은 대개 신발장 위 단자함 안에 있습니다. 뭐가 들어 있고, 공유기가 어디 있어야 하며, 뭘 확인하면 되는지 진단 순서로 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/lan-cable-cat.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다</span>
+        <span class="card-desc">서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mesh-wifi-backhaul.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다</span>
+        <span class="card-desc">방마다 안 터져서 메시를 알아보면 위성 개수부터 세게 됩니다. 순서가 반대입니다. 위성들이 서로 어떻게 연결되는가(백홀)가 성능을 정하고, 집에 벽 랜포트가 있느냐로 답이 갈립니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
