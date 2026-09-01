@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다","description":"손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.","datePublished":"2026-08-26","dateModified":"2026-08-30","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mini-pc-for-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다","description":"손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.","datePublished":"2026-08-26","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mini-pc-for-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다","item":"https://specfit.kr/posts/mini-pc-for-dev.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"노트북이 이미 있는데 미니PC를 또 살 이유가 있나요","acceptedAnswer":{"@type":"Answer","text":"책상에서만 쓸 두 번째 컴퓨터(서버·작업 분리)가 필요할 때입니다. 주력 컴퓨터를 고르는 문제라면 미니PC와 노트북 중 무엇을 살지부터 정리하는 것이 순서입니다."}},{"@type":"Question","name":"미니PC로 로컬 LLM을 돌리는 영상을 봤습니다","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다 — 문제는 어느 급의 미니PC냐이고, 사양표의 메모리 대역폭 한 줄로 판정됩니다. 저가형·일반형·통합메모리 급이 어떻게 갈리는지 미니PC 로컬 LLM 판정법에 계산법과 함께 정리했습니다."}},{"@type":"Question","name":"라즈베리파이 같은 것과는 다른가요","acceptedAnswer":{"@type":"Answer","text":"다릅니다. 라즈베리파이는 다른 칩 계열(ARM)의 학습·공작용 보드라 일반 프로그램 호환부터 다른 세계입니다. 이 글의 미니PC는 윈도우·리눅스가 그대로 도는 일반 컴퓨터입니다."}},{"@type":"Question","name":"사무실 PC로 회사에서 쓰는 건요","acceptedAnswer":{"@type":"Answer","text":"문서·웹 중심 업무에는 잘 맞습니다. 이 글은 개발 관점이라 램과 GPU를 따졌지만, 사무용은 그 두 걱정이 없는 자리입니다."}},{"@type":"Question","name":"중고 미니PC는요","acceptedAnswer":{"@type":"Answer","text":"노트북 중고와 같은 눈으로 보면 됩니다 — 중고 노트북에서 확인할 것 중 화면·배터리·키보드 항목이 빠지니 오히려 점검이 단순합니다. CPU 세대와 램 규격(DDR4냐 5냐)을 먼저 보세요."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-26">2026년 8월 26일</time>
-      <span class="updated">· 2026년 8월 30일 갱신</span>
+      <span class="updated">· 2026년 9월 1일 갱신</span>
     </p>
   </header>
 
@@ -128,7 +128,8 @@ CPU 는 <a href="/posts/dev-laptop-cpu.html">개발용 노트북 CPU 글의 결�
 <li>특히 <strong>저가형(N 계열 CPU) 미니PC는 메모리 채널이 하나</strong>라,
 <a href="/posts/ram-dual-channel-check.html">듀얼 채널이 두 배로 만들어 주는 그 대역폭</a>의
 절반으로 돌게 됩니다 — CPU 추론이 한층 더 느려집니다</li>
-<li>게임도 같은 이유로 가벼운 것까지입니다</li>
+<li>게임도 같은 이유로 가벼운 것까지입니다 —
+<a href="/posts/mini-pc-gaming.html">어디까지가 &quot;가벼운 것&quot;인지는 따로 정리</a>했습니다</li>
 </ul>
 <p>빠져나갈 길이 하나 있긴 합니다 — <strong>USB4·썬더볼트 단자가 있는
 모델이라면 eGPU</strong>를 붙일 수 있고, <a href="/posts/egpu-local-llm.html">eGPU가 로컬 LLM에는 의외로 잘
@@ -314,6 +315,13 @@ GPU를 따졌지만, 사무용은 그 두 걱정이 없는 자리입니다.</p>
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/mini-pc-gaming.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC로 게임이 되나 — 갈림길은 게임의 무게입니다</span>
+        <span class="card-desc">롤 정도는 미니PC로 돌아가는지, 어디까지가 한계인지 질문이 많습니다. 미니PC의 게임 성능은 내장그래픽이 정하고, 되는 게임과 안 되는 게임의 경계가 비교적 뚜렷합니다. 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/barebone-mini-pc.html">
         <span class="card-cat">미니PC</span>
         <span class="card-title">베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나</span>
@@ -325,13 +333,6 @@ GPU를 따졌지만, 사무용은 그 두 걱정이 없는 자리입니다.</p>
         <span class="card-cat">미니PC</span>
         <span class="card-title">미니PC로 로컬 LLM — 사양표의 대역폭 한 줄로 판정됩니다</span>
         <span class="card-desc">미니PC로 AI 서버를 만들었다는 글은 많은데, 내 미니PC도 되는지는 알려주지 않습니다. 같은 미니PC라는 이름 아래 세 급이 섞여 있고, 메모리 대역폭 하나로 갈립니다. 계산법을 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/mini-pc-vs-laptop.html">
-        <span class="card-cat">미니PC</span>
-        <span class="card-title">미니PC vs 노트북 — 갈림길은 성능이 아니라 이동입니다</span>
-        <span class="card-desc">어차피 책상에서만 쓰는데 노트북이 맞을까요. 속이 같은 두 물건이라 성능으로는 안 갈립니다. 밖에서 화면을 열 일이 있는지, 이미 갖고 있는 물건이 무엇인지로 갈립니다.</span>
       </a>
     </li>
   </ul>
