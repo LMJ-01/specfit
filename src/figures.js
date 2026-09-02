@@ -825,6 +825,7 @@ export const figures = {
   'nas-share': nasShare,
   'cooler-fan-noise': coolerFanNoise,
   'ssd-cache-shrink': ssdCacheShrink,
+  'ram-flex-mode': ramFlexMode,
 };
 
 /**
@@ -1103,5 +1104,41 @@ ${t(130, 176, '차 있을수록 캐시로 쓸 빈 공간 자체가 줄어듭니�
     192,
     body,
     '요즘 SSD 는 빈 공간 일부를 SLC 방식 캐시로 씁니다. 90% 사용 시점에는 캐시가 몇 % 몫만 남습니다. 정도는 제품마다 다릅니다.'
+  );
+}
+
+/**
+ * 용량 다른 램의 유연(Flex) 모드 — 겹치는 구간만 듀얼.
+ * mixed-ram-capacity 의 ASCII 도식을 SVG 로.
+ */
+function ramFlexMode() {
+  const W = 640;
+  const scale = 22; // GB 당 픽셀
+  const x0 = 150;
+  const body = `
+${t(16, 22, '8GB + 16GB 를 꽂으면 — 겹치는 만큼만 듀얼', { weight: 600, size: 14 })}
+
+${t(16, 56, '슬롯 A · 8GB', { size: 12 })}
+${rect(x0, 42, 8 * scale, 22, COLOR.accent, { r: 3 })}
+
+${t(16, 92, '슬롯 B · 16GB', { size: 12 })}
+${rect(x0, 78, 8 * scale, 22, COLOR.accent, { r: 3 })}
+${rect(x0 + 8 * scale, 78, 8 * scale, 22, COLOR.soft, { r: 3, stroke: COLOR.line })}
+
+<line x1="${x0 + 8 * scale}" y1="34" x2="${x0 + 8 * scale}" y2="110" stroke="${COLOR.line}" stroke-dasharray="4 3"/>
+
+${t(x0 + 4 * scale, 130, '8+8 = 듀얼 채널', { size: 12, anchor: 'middle', weight: 600, fill: COLOR.accent })}
+${t(x0 + 4 * scale, 148, '대역폭 2배 구간', { size: 11, anchor: 'middle', fill: COLOR.mute })}
+${t(x0 + 12 * scale, 130, '나머지 8 = 싱글', { size: 12, anchor: 'middle', weight: 600 })}
+${t(x0 + 12 * scale, 148, '절반 대역폭 구간', { size: 11, anchor: 'middle', fill: COLOR.mute })}
+
+${t(16, 180, '전부 싱글이 되는 게 아니라, 손해가 생각보다 작은 이유입니다.', { weight: 600, size: 12 })}`;
+
+  return figure(
+    '용량 다른 램의 유연 모드 동작 — 겹치는 구간만 듀얼 채널',
+    W,
+    196,
+    body,
+    '지원 방식은 보드·컨트롤러에 따라 다르지만, 요즘 시스템 대부분이 이 유연한 방식으로 돕니다.'
   );
 }

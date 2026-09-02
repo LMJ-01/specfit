@@ -94,9 +94,30 @@
 <p><a href="/posts/ram-dual-channel-check.html">듀얼 채널 글</a>에서 본 대로, 같은
 용량 두 개가 나란히 돌 때 <strong>대역폭이 두 배</strong>가 됩니다. 용량이
 다르면 요즘 시스템은 대개 이렇게 처리합니다:</p>
-<pre><code>[ 8GB ] + [ 16GB ]
-   ├─ 8GB + 8GB   → 듀얼 채널로 동작 (빠른 구간)
-   └─      + 8GB   → 싱글 채널로 동작 (절반 대역폭 구간)</code></pre>
+<figure class="fig">
+<svg viewBox="0 0 640 196" width="640" height="196" role="img" aria-label="용량 다른 램의 유연 모드 동작 — 겹치는 구간만 듀얼 채널">
+<title>용량 다른 램의 유연 모드 동작 — 겹치는 구간만 듀얼 채널</title>
+
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">8GB + 16GB 를 꽂으면 — 겹치는 만큼만 듀얼</text>
+
+<text x="16" y="56" fill="var(--fg)" font-size="12">슬롯 A · 8GB</text>
+<rect x="150" y="42" width="176" height="22" fill="var(--accent)" rx="3"/>
+
+<text x="16" y="92" fill="var(--fg)" font-size="12">슬롯 B · 16GB</text>
+<rect x="150" y="78" width="176" height="22" fill="var(--accent)" rx="3"/>
+<rect x="326" y="78" width="176" height="22" fill="var(--bg-soft)" rx="3" stroke="var(--border)"/>
+
+<line x1="326" y1="34" x2="326" y2="110" stroke="var(--border)" stroke-dasharray="4 3"/>
+
+<text x="238" y="130" fill="var(--accent)" font-size="12" font-weight="600" text-anchor="middle">8+8 = 듀얼 채널</text>
+<text x="238" y="148" fill="var(--fg-muted)" font-size="11" text-anchor="middle">대역폭 2배 구간</text>
+<text x="414" y="130" fill="var(--fg)" font-size="12" font-weight="600" text-anchor="middle">나머지 8 = 싱글</text>
+<text x="414" y="148" fill="var(--fg-muted)" font-size="11" text-anchor="middle">절반 대역폭 구간</text>
+
+<text x="16" y="180" fill="var(--fg)" font-size="12" font-weight="600">전부 싱글이 되는 게 아니라, 손해가 생각보다 작은 이유입니다.</text>
+</svg>
+<figcaption>지원 방식은 보드·컨트롤러에 따라 다르지만, 요즘 시스템 대부분이 이 유연한 방식으로 돕니다.</figcaption>
+</figure>
 <p><strong>겹치는 용량까지는 듀얼, 넘치는 몫은 싱글</strong> — 유연(Flex) 방식이라
 부르는 동작입니다 (지원 방식은 보드·컨트롤러에 따라 다릅니다).
 전부 싱글이 되는 게 아니라서 생각보다 손해가 작고, 그래서
