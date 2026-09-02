@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공유기, 주기적으로 재부팅해야 하나 — 증상 기준 + 자동화가 답입니다 | 스펙핏</title>
+<meta name="description" content="공유기를 한 달에 한 번은 껐다 켜야 한다는 말이 있습니다. 반은 맞습니다. 왜 오래 켜두면 문제가 생기는지, 언제 재부팅이 필요한지, 손 안 대고 해결하는 자동 재부팅까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/router-reboot.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="공유기, 주기적으로 재부팅해야 하나 — 증상 기준 + 자동화가 답입니다 | 스펙핏">
+<meta property="og:description" content="공유기를 한 달에 한 번은 껐다 켜야 한다는 말이 있습니다. 반은 맞습니다. 왜 오래 켜두면 문제가 생기는지, 언제 재부팅이 필요한지, 손 안 대고 해결하는 자동 재부팅까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/router-reboot.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"공유기, 주기적으로 재부팅해야 하나 — 증상 기준 + 자동화가 답입니다","description":"공유기를 한 달에 한 번은 껐다 켜야 한다는 말이 있습니다. 반은 맞습니다. 왜 오래 켜두면 문제가 생기는지, 언제 재부팅이 필요한지, 손 안 대고 해결하는 자동 재부팅까지 정리했습니다.","datePublished":"2026-09-03","dateModified":"2026-09-03","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/router-reboot.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"공유기, 주기적으로 재부팅해야 하나 — 증상 기준 + 자동화가 답입니다","item":"https://specfit.kr/posts/router-reboot.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"재부팅과 초기화는 뭐가 다른가요","acceptedAnswer":{"@type":"Answer","text":"재부팅은 껐다 켜는 것 — 설정이 그대로입니다. 초기화(리셋)는 공장 상태로 되돌리는 것 — 와이파이 이름·비밀번호·설정이 전부 날아갑니다. 뒷면의 리셋 구멍을 길게 누르는 것이 초기화이니, 청소 목적이면 전원만 뽑았다 꽂으세요."}},{"@type":"Question","name":"전원을 뽑았다가 바로 꽂아도 되나요","acceptedAnswer":{"@type":"Answer","text":"몇 초 쉬었다 꽂는 게 무난합니다 — 내부가 완전히 꺼진 뒤 켜지게 하는 여유입니다. 몇 분씩 둘 필요까지는 없습니다."}},{"@type":"Question","name":"매일 자동 재부팅은 과한가요","acceptedAnswer":{"@type":"Answer","text":"해가 되지는 않지만, 매일이 필요하다는 것 자체가 위 \"재발 원인\" 절의 신호입니다 — 펌웨어·발열·부하부터 확인해 보세요. 보통은 주 1회 안쪽이면 넉넉합니다."}},{"@type":"Question","name":"통신사 모뎀(단말)도 같이 재부팅해야 하나요","acceptedAnswer":{"@type":"Answer","text":"증상이 공유기 재부팅으로 안 잡힐 때 모뎀까지 포함해 순서대로 (모뎀 먼저 → 공유기) 껐다 켜는 것이 통신사들이 안내하는 표준 절차입니다. 평소 예방 목적이라면 공유기만으로 충분합니다."}},{"@type":"Question","name":"메시 위성도 재부팅 대상인가요","acceptedAnswer":{"@type":"Answer","text":"본체를 재부팅하면 위성들도 다시 붙으며 대개 같이 정리됩니다. 위성 쪽만 이상한 패턴이면 그 위성만 껐다 켜보는 게 진단 겸 처방입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>공유기, 주기적으로 재부팅해야 하나 — 증상 기준 + 자동화가 답입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-03">2026년 9월 3일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>인터넷이 굼떠질 때마다 듣는 조언이 있습니다 — <strong>&quot;공유기 한번 껐다
+켜봐.&quot;</strong> 그리고 실제로 그러면 나아집니다. 그래서 다음 질문이
+따라옵니다: <strong>&quot;그럼 주기적으로 미리미리 재부팅해줘야 하나?&quot;</strong></p>
+<p>커뮤니티 답이 &quot;한 달에 한 번은 해라&quot;부터 &quot;몇 년째 안 하는데
+멀쩡하다&quot;까지 갈리는데, 둘 다 사실입니다 — <strong>제품 편차가 큰
+문제라서, 주기가 아니라 증상으로 판단하는 게 맞습니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>주기적으로 해야 하나</td><td><strong>증상 없으면 안 해도 됩니다</strong> — 달력이 아니라 증상 기준입니다</td></tr>
+<tr><td>&quot;며칠 지나면 느려짐·끊김&quot;이 있다</td><td>✅ 재부팅이 즉효약이 맞습니다 — 그리고 <strong>자동화</strong>하세요</td></tr>
+<tr><td>손 안 대고 하려면</td><td>공유기 관리 화면의 <strong>자동 재부팅(스케줄)</strong> 기능</td></tr>
+<tr><td>재부팅해도 금방 재발하면</td><td>펌웨어·발열·기기 수·노후 순으로 원인이 따로 있습니다 (아래)</td></tr>
+<tr><td>재부팅 = 초기화?</td><td><strong>아닙니다</strong> — 초기화는 설정이 날아갑니다. 버튼을 구분하세요</td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-오래-켜두면-문제가-생기나">왜 오래 켜두면 문제가 생기나</h2>
+<p>공유기는 작은 컴퓨터입니다 — 그것도 <strong>몇 달씩 끄지 않고 돌리는</strong>
+컴퓨터. 그동안 안에는 이런 것들이 쌓입니다:</p>
+<ul>
+<li>기기들이 붙었다 떨어진 <strong>연결 기록들</strong></li>
+<li>조금씩 어질러지는 <strong>메모리</strong></li>
+<li>오류가 났지만 티 안 내고 넘어간 <strong>잔여물들</strong></li>
+</ul>
+<p>작은 기기의 소프트웨어가 오래 돌며 서서히 지저분해지는 것은 흔한
+현상이고, 재부팅은 이걸 통째로 비우는 청소입니다. 다만 <strong>쌓이는
+속도는 제품·펌웨어에 따라 편차가 큽니다</strong> — 그래서 어떤 집은 몇
+년을 무사하고 어떤 집은 2주마다 앓는 것이고, &quot;모두가 매달
+재부팅해야 한다&quot;는 규칙이 성립하지 않는 이유입니다.</p>
+<h2 id="판정-달력이-아니라-증상입니다">판정 — 달력이 아니라 증상입니다</h2>
+<ul>
+<li><strong>증상이 없다</strong> → 재부팅 숙제도 없습니다. 멀쩡한 공유기를
+주기적으로 껐다 켜서 얻는 건 거의 없습니다</li>
+<li><strong>&quot;쓰다 보면 느려지고, 껐다 켜면 낫는다&quot;는 패턴이 있다</strong> →
+재부팅이 맞는 처방이고, 다음 단계는 그걸 <strong>손으로 하지 않는
+것</strong>입니다</li>
+</ul>
+<h2 id="자동-재부팅-앓는-집의-정답">자동 재부팅 — 앓는 집의 정답</h2>
+<p>요즘 공유기 대부분의 관리 화면에 <strong>정해진 시간에 스스로 재부팅하는
+기능</strong>이 있습니다 (이름은 제품마다 다르고, 없는 제품도 있습니다).
+설정 요령은 하나뿐입니다:</p>
+<ul>
+<li><strong>집이 인터넷을 안 쓰는 시간대</strong>로 잡으세요 — 새벽 시간대가
+단골입니다</li>
+<li>단, <a href="/posts/nas-vs-external-hdd.html">NAS·홈서버처럼 밤에도 일하는 장비</a>가
+있는 집이라면 그 작업 시간(백업 스케줄 등)과 겹치지 않게 — 재부팅
+중 몇십 초의 단절이 그 장비들에게도 갑니다</li>
+</ul>
+<p>이거 하나 걸어두면 &quot;주기적으로 해야 하나&quot;라는 고민 자체가
+사라집니다.</p>
+<h2 id="재부팅해도-금방-재발한다면-원인이-따로-있습니다">재부팅해도 금방 재발한다면 — 원인이 따로 있습니다</h2>
+<p>재부팅 약발이 점점 짧아지는 것은 다른 문제의 신호입니다. 순서대로
+보세요:</p>
+<ol>
+<li><strong>펌웨어 업데이트</strong> — 노화 증상의 상당수는 펌웨어 결함이고,
+제조사가 이미 고쳐 뒀는데 안 받은 경우가 흔합니다. 관리 화면의
+업데이트 항목부터</li>
+<li><strong>발열</strong> — 좁은 장식장 안, 다른 장비 위처럼 열이 갇히는 자리는
+<a href="/posts/case-fan-setup.html">다른 장비들과 같은 이유</a>로 오동작을
+부릅니다. 트인 자리로 옮기는 것만으로 달라지는 경우가 있습니다</li>
+<li><strong>기기 수</strong> — 스마트홈 기기까지 수십 대가 붙는 집이면 공유기
+급이 부하를 못 받는 것일 수 있습니다 —
+<a href="/posts/wifi7-router-upgrade.html">세대 판정 글</a>의 혼잡 처리
+이야기가 이 지점입니다</li>
+<li><strong>노후</strong> — 위를 다 해도 재발이 잦아지면, 공유기도
+<a href="/posts/psu-lifespan.html">파워와 같은 논리</a>로 &quot;연식이 아니라
+신호로&quot; 교체를 판단할 때입니다. 상시로 몇 년을 달린 소형
+기기니까요</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="재부팅과-초기화는-뭐가-다른가요">재부팅과 초기화는 뭐가 다른가요</h3>
+<p><strong>재부팅</strong>은 껐다 켜는 것 — 설정이 그대로입니다. <strong>초기화(리셋)</strong>는
+공장 상태로 되돌리는 것 — 와이파이 이름·비밀번호·설정이 전부
+날아갑니다. 뒷면의 리셋 구멍을 길게 누르는 것이 초기화이니, 청소
+목적이면 전원만 뽑았다 꽂으세요.</p>
+<h3 id="전원을-뽑았다가-바로-꽂아도-되나요">전원을 뽑았다가 바로 꽂아도 되나요</h3>
+<p>몇 초 쉬었다 꽂는 게 무난합니다 — 내부가 완전히 꺼진 뒤 켜지게
+하는 여유입니다. 몇 분씩 둘 필요까지는 없습니다.</p>
+<h3 id="매일-자동-재부팅은-과한가요">매일 자동 재부팅은 과한가요</h3>
+<p>해가 되지는 않지만, 매일이 필요하다는 것 자체가 위 &quot;재발 원인&quot;
+절의 신호입니다 — 펌웨어·발열·부하부터 확인해 보세요. 보통은
+주 1회 안쪽이면 넉넉합니다.</p>
+<h3 id="통신사-모뎀단말도-같이-재부팅해야-하나요">통신사 모뎀(단말)도 같이 재부팅해야 하나요</h3>
+<p>증상이 공유기 재부팅으로 안 잡힐 때 모뎀까지 포함해 순서대로
+(모뎀 먼저 → 공유기) 껐다 켜는 것이 통신사들이 안내하는 표준
+절차입니다. 평소 예방 목적이라면 공유기만으로 충분합니다.</p>
+<h3 id="메시-위성도-재부팅-대상인가요">메시 위성도 재부팅 대상인가요</h3>
+<p>본체를 재부팅하면 위성들도 다시 붙으며 대개 같이 정리됩니다.
+<a href="/posts/mesh-wifi-backhaul.html">위성 쪽만 이상한 패턴</a>이면 그
+위성만 껐다 켜보는 게 진단 겸 처방입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>주기 재부팅은 <strong>의무가 아닙니다</strong> — 증상 없으면 그냥 두세요</li>
+<li>&quot;쓰다 보면 느려지는&quot; 집은 재부팅이 맞는 처방 — <strong>자동 재부팅
+스케줄</strong>로 손을 떼세요</li>
+<li>약발이 짧아지면 원인은 따로 있습니다 — <strong>펌웨어 → 발열 → 부하 →
+노후</strong> 순서로</li>
+<li><strong>재부팅과 초기화를 구분하세요</strong> — 리셋 구멍은 설정을 날립니다</li>
+<li>편차가 큰 문제라 이웃의 경험이 내 답이 아닙니다 — <strong>내 증상</strong>이
+기준입니다</li>
+</ol>
+<p>집 네트워크의 다른 조각들 — <a href="/posts/wifi7-router-upgrade.html">공유기 세대</a> ·
+<a href="/posts/switch-hub-vs-router.html">스위칭허브</a> ·
+<a href="/posts/mesh-wifi-backhaul.html">메시 백홀</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">공유기재부팅</span> <span class="tag">인터넷끊김</span> <span class="tag">자동재부팅</span> <span class="tag">공유기관리</span> <span class="tag">홈네트워크</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/apartment-lan-panel.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">아파트 단자함 — 기가가 안 나올 때 열어보는 곳</span>
+        <span class="card-desc">방 랜포트가 죽어 있거나 속도가 100Mbps에 막힐 때, 원인은 대개 신발장 위 단자함 안에 있습니다. 뭐가 들어 있고, 공유기가 어디 있어야 하며, 뭘 확인하면 되는지 진단 순서로 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/diy-nas-vs-prebuilt.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">기성 NAS vs 자작 NAS — 사는 것은 하드웨어가 아닙니다</span>
+        <span class="card-desc">미니PC나 남는 컴퓨터로 NAS를 직접 만들 수 있다는 걸 알게 되면 기성 NAS 값이 아까워 보입니다. 그런데 기성 NAS에서 사는 건 하드웨어가 아니라 소프트웨어와 책임입니다. 어느 쪽이 맞는 사람인지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/internet-2-5g-upgrade.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다</span>
+        <span class="card-desc">요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
