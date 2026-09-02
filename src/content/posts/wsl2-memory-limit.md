@@ -2,6 +2,7 @@
 title: WSL2가 램을 다 먹을 때 — Vmmem 잡는 법
 description: 작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.
 date: 2026-08-16
+updated: 2026-09-03
 category: laptop
 tags: [WSL2, Vmmem, 윈도우, 개발환경, 램]
 affiliate: true
@@ -214,5 +215,8 @@ SSD 용량 기준은 [개발용 SSD 고르기](/posts/dev-ssd-choose.html)에 �
 4. 램 16GB면 **4~6GB**로 잡으세요. 너무 적으면 컨테이너가 죽습니다
 5. **나눠 쓰는 비율을 바꾸는 것**이지 램이 늘어나는 건 아닙니다
 6. 가상 디스크는 **커지기만 합니다.** 가끔 정리하세요
+
+WSL 자체를 계속 쓸지, 듀얼부팅으로 갈지의 갈림길은
+[따로 정리](/posts/dual-boot-vs-wsl.html)했습니다.
 
 설정이 실제와 다르게 동작하면 [알려주세요](/contact.html). 확인 후 갱신합니다.

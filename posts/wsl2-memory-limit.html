@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","description":"작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/wsl2-memory-limit.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","description":"작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-09-03","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/wsl2-memory-limit.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","item":"https://specfit.kr/posts/wsl2-memory-limit.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vmmem을 그냥 강제 종료하면 안 되나요","acceptedAnswer":{"@type":"Answer","text":"작업 관리자에서 끄면 WSL과 도커가 통째로 내려갑니다. 저장 안 한 작업은 날아갑니다. 정상적인 방법은 wsl --shutdown 입니다."}},{"@type":"Question","name":".wslconfig 를 만들었는데 적용이 안 됩니다","acceptedAnswer":{"@type":"Answer","text":"세 가지를 확인하세요. 위치가 C:\\Users\\사용자명\\.wslconfig 가 맞는지 (다른 폴더면 안 읽습니다) 파일 이름이 .wslconfig.txt 로 저장되지 않았는지 (메모장이 자주 그럽니다) wsl --shutdown 을 했는지"}},{"@type":"Question","name":"WSL 안에서 free -h 를 보면 이미 꽉 차 있는데요","acceptedAnswer":{"@type":"Answer","text":"리눅스는 남는 램을 캐시로 채워둡니다. available 값을 보세요. 그게 넉넉하면 실제로는 여유가 있는 것입니다."}},{"@type":"Question","name":"도커 데스크톱에도 메모리 설정이 있던데요","acceptedAnswer":{"@type":"Answer","text":"윈도우에서 도커가 WSL2 위에서 돌 때는 .wslconfig 쪽이 상위 설정입니다. 여기서 정한 상한을 도커가 넘을 수 없습니다."}},{"@type":"Question","name":"processors 는 얼마로 하나요","acceptedAnswer":{"@type":"Answer","text":"기본값(전체 코어)으로 두셔도 대개 문제없습니다. 빌드 중에 윈도우가 버벅이면 그때 한두 개 줄여보세요."}},{"@type":"Question","name":"로컬 LLM에 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"GPU로 돌린다면 없습니다. 로컬 LLM은 VRAM을 쓰고, WSL2는 시스템 램을 씁니다. 다만 CPU로 돌린다면 같은 램을 나눠 쓰게 되니 영향이 있습니다."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>WSL2가 램을 다 먹을 때 — Vmmem 잡는 법</h1>
     <p class="post-meta">
       <time datetime="2026-08-16">2026년 8월 16일</time>
-      
+      <span class="updated">· 2026년 9월 3일 갱신</span>
     </p>
   </header>
 
@@ -201,6 +201,8 @@ docker system prune   # 안 쓰는 것 정리</code></pre>
 <li><strong>나눠 쓰는 비율을 바꾸는 것</strong>이지 램이 늘어나는 건 아닙니다</li>
 <li>가상 디스크는 <strong>커지기만 합니다.</strong> 가끔 정리하세요</li>
 </ol>
+<p>WSL 자체를 계속 쓸지, 듀얼부팅으로 갈지의 갈림길은
+<a href="/posts/dual-boot-vs-wsl.html">따로 정리</a>했습니다.</p>
 <p>설정이 실제와 다르게 동작하면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
@@ -213,6 +215,13 @@ docker system prune   # 안 쓰는 것 정리</code></pre>
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/dual-boot-vs-wsl.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">리눅스 듀얼부팅이 필요한가 — WSL로 안 되는 것의 목록으로 판정합니다</span>
+        <span class="card-desc">개발 공부를 하다 보면 리눅스 듀얼부팅을 해야 하나 고민이 옵니다. 요즘 기본값은 WSL이고, 듀얼부팅이 값을 하는 경우는 목록이 짧습니다. 갈림길과 각 선택의 숨은 비용을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/old-laptop-uses.html">
         <span class="card-cat">노트북</span>
         <span class="card-title">은퇴한 노트북 활용 — 성능이 아니라 빈자리로 고릅니다</span>
@@ -224,13 +233,6 @@ docker system prune   # 안 쓰는 것 정리</code></pre>
         <span class="card-cat">노트북</span>
         <span class="card-title">노트북 덮개 닫고 모니터만 쓰기 — 되는 조건과 발열의 진실</span>
         <span class="card-desc">노트북을 데스크톱처럼, 덮개를 닫은 채 외부 모니터로만 쓰는 구성이 됩니다. 필요한 설정, 발열이 문제가 되는 경우와 아닌 경우, 이 구성이 안 맞는 작업을 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/laptop-lifespan.html">
-        <span class="card-cat">노트북</span>
-        <span class="card-title">노트북 수명은 몇 년인가 — 답이 갈리는 건 수명의 정의가 달라서입니다</span>
-        <span class="card-desc">노트북 수명을 물으면 2년부터 10년까지 답이 갈립니다. 고장 나는 수명과 쾌적하게 쓰는 수명이 다르고, 그 사이를 부품 셋(배터리·램·SSD)이 정하기 때문입니다. 교체 신호와 오래 쓰는 구조를 정리했습니다.</span>
       </a>
     </li>
   </ul>

@@ -13,6 +13,13 @@
     <description>공유기를 한 달에 한 번은 껐다 켜야 한다는 말이 있습니다. 반은 맞습니다. 왜 오래 켜두면 문제가 생기는지, 언제 재부팅이 필요한지, 손 안 대고 해결하는 자동 재부팅까지 정리했습니다.</description>
   </item>
   <item>
+    <title>리눅스 듀얼부팅이 필요한가 — WSL로 안 되는 것의 목록으로 판정합니다</title>
+    <link>https://specfit.kr/posts/dual-boot-vs-wsl.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/dual-boot-vs-wsl.html</guid>
+    <pubDate>Wed, 02 Sep 2026 15:00:00 GMT</pubDate>
+    <description>개발 공부를 하다 보면 리눅스 듀얼부팅을 해야 하나 고민이 옵니다. 요즘 기본값은 WSL이고, 듀얼부팅이 값을 하는 경우는 목록이 짧습니다. 갈림길과 각 선택의 숨은 비용을 정리했습니다.</description>
+  </item>
+  <item>
     <title>은퇴한 노트북 활용 — 성능이 아니라 빈자리로 고릅니다</title>
     <link>https://specfit.kr/posts/old-laptop-uses.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/old-laptop-uses.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-coil-whine.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>게임이나 고부하 작업 때 그래픽카드 쪽에서 찌르르 하는 고주파음이 나면 고장부터 의심하게 됩니다. 코일노이즈의 정체와 고장 소리와의 구분법, 줄이는 방법을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>글레어 vs 논글레어 — 화질의 문제가 아니라 방의 문제입니다</title>
-    <link>https://specfit.kr/posts/glare-vs-matte-display.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/glare-vs-matte-display.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>광택(글레어) 패널과 무광(논글레어) 패널 중 뭐가 나은지는 화질 비교로 답이 안 납니다. 내 방의 창과 조명이 답을 정합니다. 코딩처럼 텍스트를 오래 보는 작업 기준으로 판정을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
