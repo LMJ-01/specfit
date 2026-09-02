@@ -13,6 +13,13 @@
     <description>안 쓰는 노트북을 뭐라도 시키고 싶은데 마땅한 게 안 떠오릅니다. 노트북의 성능이 아니라 집에 비어 있는 역할부터 보면 답이 빨리 나옵니다. 역할 다섯 가지와 판정 절차, 처분 전 필수 절차를 정리했습니다.</description>
   </item>
   <item>
+    <title>용량 다른 램 섞어 꽂기 — 돌아는 갑니다, 잃는 것을 알고 쓰세요</title>
+    <link>https://specfit.kr/posts/mixed-ram-capacity.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mixed-ram-capacity.html</guid>
+    <pubDate>Tue, 01 Sep 2026 15:00:00 GMT</pubDate>
+    <description>8GB에 16GB를 더 꽂는 식의 혼용이 되는지, 성능은 어떻게 되는지 질문이 많습니다. 대개 돌아가지만 듀얼 채널이 부분 동작이 되고 속도는 낮은 쪽에 맞춰집니다. 구조와 판정 기준을 정리했습니다.</description>
+  </item>
+  <item>
     <title>와이파이 7 공유기로 바꾸면 빨라지나 — 관문 셋이 다 맞아야 합니다</title>
     <link>https://specfit.kr/posts/wifi7-router-upgrade.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/wifi7-router-upgrade.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/diy-nas-vs-prebuilt.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>미니PC나 남는 컴퓨터로 NAS를 직접 만들 수 있다는 걸 알게 되면 기성 NAS 값이 아까워 보입니다. 그런데 기성 NAS에서 사는 건 하드웨어가 아니라 소프트웨어와 책임입니다. 어느 쪽이 맞는 사람인지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>커브드 모니터로 코딩·문서작업 — 곡률은 취향이 아니라 폭의 문제입니다</title>
-    <link>https://specfit.kr/posts/curved-monitor-coding.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/curved-monitor-coding.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>커브드 모니터가 코딩이나 문서작업에 괜찮은지 헷갈립니다. 판단 기준은 커브드냐 평면이냐가 아니라 화면 폭입니다. 곡률 숫자 읽는 법과, 평면을 골라야 하는 경우를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
