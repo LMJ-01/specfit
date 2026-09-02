@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>은퇴한 노트북 활용 — 성능이 아니라 빈자리로 고릅니다</title>
+    <link>https://specfit.kr/posts/old-laptop-uses.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/old-laptop-uses.html</guid>
+    <pubDate>Tue, 01 Sep 2026 15:00:00 GMT</pubDate>
+    <description>안 쓰는 노트북을 뭐라도 시키고 싶은데 마땅한 게 안 떠오릅니다. 노트북의 성능이 아니라 집에 비어 있는 역할부터 보면 답이 빨리 나옵니다. 역할 다섯 가지와 판정 절차, 처분 전 필수 절차를 정리했습니다.</description>
+  </item>
+  <item>
     <title>와이파이 7 공유기로 바꾸면 빨라지나 — 관문 셋이 다 맞아야 합니다</title>
     <link>https://specfit.kr/posts/wifi7-router-upgrade.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/wifi7-router-upgrade.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/curved-monitor-coding.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>커브드 모니터가 코딩이나 문서작업에 괜찮은지 헷갈립니다. 판단 기준은 커브드냐 평면이냐가 아니라 화면 폭입니다. 곡률 숫자 읽는 법과, 평면을 골라야 하는 경우를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>CPU 기본 쿨러로 충분한가 — 부하와 소음, 두 기준으로 갈립니다</title>
-    <link>https://specfit.kr/posts/cpu-stock-cooler.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/cpu-stock-cooler.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 살지 헷갈립니다. 성능이 모자라서가 아니라 소음 때문에 바꾸는 경우가 많다는 것까지 포함해서, 판정 기준을 정리했습니다.</description>
   </item>
 </channel>
 </rss>

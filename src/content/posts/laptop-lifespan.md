@@ -106,8 +106,8 @@ tags: [노트북수명, 교체시기, 배터리, 업그레이드, 중고노트�
 
 [덮개 닫고 상시 장비](/posts/laptop-clamshell-mode.html)로 쓰는 실험,
 [자작 NAS 의 연습 상대](/posts/diy-nas-vs-prebuilt.html) 같은 자리가
-있습니다. 배터리가 간이 UPS 노릇을 하는 덤도 있고요. 남은 부품
-(SSD·램)을 [살리는 길](/posts/barebone-mini-pc.html)도 있습니다.
+있습니다. 배터리가 간이 UPS 노릇을 하는 덤도 있고요. 자리별 판정은
+[은퇴 노트북 활용](/posts/old-laptop-uses.html)에 통째로 정리했습니다.
 
 ### 중고로 판다면 언제가 좋나요
 
