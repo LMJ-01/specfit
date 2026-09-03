@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다 | 스펙핏</title>
+<meta name="description" content="컴퓨터 자리에 랜선이 안 닿으면 와이파이로 버티게 됩니다. 웹서핑엔 문제없고 게임에선 말리는 이유가 뭔지 — 평균 속도와 순간 변동을 갈라 보면 판정이 깔끔해집니다. 유선을 못 까는 집의 절충안까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/desktop-wifi-vs-lan.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다 | 스펙핏">
+<meta property="og:description" content="컴퓨터 자리에 랜선이 안 닿으면 와이파이로 버티게 됩니다. 웹서핑엔 문제없고 게임에선 말리는 이유가 뭔지 — 평균 속도와 순간 변동을 갈라 보면 판정이 깔끔해집니다. 유선을 못 까는 집의 절충안까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/desktop-wifi-vs-lan.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다","description":"컴퓨터 자리에 랜선이 안 닿으면 와이파이로 버티게 됩니다. 웹서핑엔 문제없고 게임에선 말리는 이유가 뭔지 — 평균 속도와 순간 변동을 갈라 보면 판정이 깔끔해집니다. 유선을 못 까는 집의 절충안까지 정리했습니다.","datePublished":"2026-09-04","dateModified":"2026-09-04","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/desktop-wifi-vs-lan.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다","item":"https://specfit.kr/posts/desktop-wifi-vs-lan.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"최신 와이파이 세대면 유선만큼 되지 않나요","acceptedAnswer":{"@type":"Answer","text":"평균 속도는 근접하거나 넘어서기도 합니다. 다만 공용 도로라는 구조가 바뀌는 게 아니라서 순간 변동은 남습니다 — 대개 훨씬 드물고 작아질 뿐입니다. 게임 기준의 답이 세대가 올라가도 \"유선 정석\"에서 안 바뀌는 이유입니다."}},{"@type":"Question","name":"핑이 튀는지 어떻게 확인하나요","acceptedAnswer":{"@type":"Answer","text":"게임 안의 핑(ms) 표시를 두고 보는 게 제일 정직합니다 — 평균값이 아니라 가끔 치솟는 순간이 있는지를요. 게임 밖에서는 명령 프롬프트의 ping -t 로 시간을 두고 관찰하면 같은 것이 보입니다."}},{"@type":"Question","name":"USB 무선랜카드는 싼 걸로 사도 되나요","acceptedAnswer":{"@type":"Answer","text":"지원 세대·안테나 구성이 제품에 따라 갈려서, 공유기 세대와 맞는지부터 보는 게 순서입니다. 관문은 낮은 쪽을 따라가니까요 — 공유기가 최신인데 랜카드가 옛 세대면 그 연결은 옛 세대입니다."}},{"@type":"Question","name":"와이파이가 자주 끊기는데 장비 문제인가요","acceptedAnswer":{"@type":"Answer","text":"끊김·튐이 시간이 갈수록 심해지다 공유기를 껐다 켜면 낫는 패턴이면 재부팅 쪽 문제부터 의심하세요. 특정 방에서만 심하면 거리·벽 문제라 배치·메시 쪽입니다."}},{"@type":"Question","name":"게임 다운로드가 느린 것도 와이파이 탓인가요","acceptedAnswer":{"@type":"Answer","text":"다운로드는 실시간이 아니라 속도의 세계라 이야기가 다릅니다. 유선으로 꽂아 재보고 그래도 느리면 요금제·장비 관문 쪽이고, 유선만 빠르면 무선 구간(세대·거리)이 관문인 겁니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-04">2026년 9월 4일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>이사한 집에서 컴퓨터 자리에 랜선이 안 닿을 때, 누구나 한 번은
+검색하게 됩니다 — <strong>&quot;데스크탑 그냥 와이파이로 써도 되나요?&quot;</strong>
+커뮤니티 답은 갈립니다. &quot;잘만 된다&quot;와 &quot;게임은 유선 아니면 안
+된다&quot;가 같은 글타래에 공존합니다.</p>
+<p>둘 다 맞습니다 — <strong>보는 숫자가 다를 뿐입니다.</strong> 무선의 약점은
+평균 속도가 아니라 <strong>순간의 변동(튐)</strong>이고, 그 변동을 견디는
+용도인지가 판정의 전부입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>용도</th><th>와이파이로 되나</th></tr></thead>
+<tbody>
+<tr><td>웹서핑 · 영상 · 업무</td><td><strong>됩니다</strong> — 버퍼가 변동을 흡수합니다</td></tr>
+<tr><td>실시간 온라인 게임</td><td><strong>유선이 정석입니다</strong> — 평균이 아니라 핑 튐이 문제입니다</td></tr>
+<tr><td>대용량 다운로드</td><td>되긴 하는데 <a href="/posts/wifi7-router-upgrade.html">세대·환경 관문</a>에 따라 유선보다 느릴 수 있습니다</td></tr>
+<tr><td>화상회의</td><td>대개 됩니다 — 끊김이 잦으면 유선 우선 후보입니다</td></tr>
+<tr><td>NAS·집 안 대용량 전송</td><td>유선 쪽이 압도적으로 유리한 자리입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="무선의-본질-나눠-쓰는-도로">무선의 본질 — 나눠 쓰는 도로</h2>
+<p>유선 랜은 공유기와 내 컴퓨터를 <strong>둘만 쓰는 전용 회선</strong>으로
+잇습니다. 무선은 다릅니다 — <strong>전파라는 공용 도로</strong>를 같은 집
+기기들, 이웃집 공유기, 전자레인지 같은 간섭원과 나눠 씁니다.
+거리와 벽만큼 신호도 깎입니다.</p>
+<p>그래서 무선의 성적표는 두 줄입니다:</p>
+<ul>
+<li><strong>평균 속도</strong> — 요즘 세대라면 대개 훌륭합니다. 요금제 상한을
+넘겨 받는 경우도 흔합니다</li>
+<li><strong>순간 변동</strong> — 공용 도로의 숙명입니다. 잘 나오다가 한순간
+지연이 튀는 것은 장비가 좋아도 완전히 사라지지 않습니다</li>
+</ul>
+<p><strong>웹·영상은 평균의 세계</strong>입니다 — 몇 초치 버퍼가 변동을 숨겨
+줍니다. <strong>실시간 게임은 변동의 세계</strong>입니다 — 지금 이 순간의
+입력이 오가야 해서 버퍼로 숨길 수가 없고, 핑이 튀는 그 순간이
+그대로 렉으로 보입니다. 같은 와이파이가 용도에 따라 다른 평가를
+받는 이유가 이것입니다.</p>
+<h2 id="판정-순서">판정 순서</h2>
+<ol>
+<li><strong>주 용도가 웹·영상·업무다</strong> — 와이파이로 쓰세요. 문제가
+생기면 그때 봐도 됩니다</li>
+<li><strong>실시간 게임을 진지하게 한다</strong> — 유선을 까는 쪽으로
+움직이세요. 아래 절충안 순서대로요</li>
+<li><strong>애매하다(가끔 게임)</strong> — 일단 무선으로 쓰면서 게임 중 핑
+표시를 봅니다. 평균이 아니라 <strong>튀는 순간이 있는지</strong>를요.
+견딜 만하면 그대로, 거슬리면 유선입니다</li>
+</ol>
+<p>내 컴퓨터가 무선을 지원하는지도 먼저 확인하세요 — 노트북과 달리
+<strong>데스크탑은 무선이 기본이 아닌 제품이 많습니다.</strong> 메인보드
+내장이 아니면 USB 무선랜카드나 내장형 카드를 따로 답니다
+(안테나 구성·지원 세대가 제품에 따라 갈립니다).</p>
+<h2 id="유선을-못-까는-집의-절충안-순서대로">유선을 못 까는 집의 절충안 — 순서대로</h2>
+<p>랜선이 안 닿는다고 바로 포기할 건 아닙니다. 시도 순서입니다.</p>
+<ol>
+<li><strong>벽 단자부터 확인</strong> — 컴퓨터 방 벽에 랜 단자가 있다면
+<a href="/posts/apartment-lan-panel.html">단자함 연결</a>만으로 유선이
+생기는 경우가 많습니다. 제일 먼저 볼 곳입니다</li>
+<li><strong>선을 미는 방법</strong> — 문틈용 납작 케이블, 몰딩 같은
+<a href="/posts/lan-cable-cat.html">배선 요령</a>으로 한 번만 고생하면
+끝나는 경우도 많습니다</li>
+<li><strong>메시 유선 백홀</strong> — 방까지는 무선으로 잇되 컴퓨터는 메시
+위성에 유선으로 꽂는 <a href="/posts/mesh-wifi-backhaul.html">절충 구성</a>.
+무선 구간이 남지만 안테나·위치가 좋은 장비가 대신 겪어줍니다</li>
+<li><strong>전력선(PLC) 어댑터</strong> — 콘센트 배선을 회선처럼 쓰는
+물건인데, 집 배선 품질에 따라 <strong>편차가 큰 선택지</strong>라 기대치를
+낮추고 시험해 볼 자리입니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="최신-와이파이-세대면-유선만큼-되지-않나요">최신 와이파이 세대면 유선만큼 되지 않나요</h3>
+<p>평균 속도는 근접하거나 넘어서기도 합니다. 다만 <strong>공용 도로라는
+구조가 바뀌는 게 아니라서</strong> 순간 변동은 남습니다 — 대개 훨씬
+드물고 작아질 뿐입니다. 게임 기준의 답이 세대가 올라가도
+&quot;유선 정석&quot;에서 안 바뀌는 이유입니다.</p>
+<h3 id="핑이-튀는지-어떻게-확인하나요">핑이 튀는지 어떻게 확인하나요</h3>
+<p>게임 안의 핑(ms) 표시를 두고 보는 게 제일 정직합니다 — 평균값이
+아니라 <strong>가끔 치솟는 순간</strong>이 있는지를요. 게임 밖에서는 명령
+프롬프트의 <code>ping -t</code> 로 시간을 두고 관찰하면 같은 것이 보입니다.</p>
+<h3 id="usb-무선랜카드는-싼-걸로-사도-되나요">USB 무선랜카드는 싼 걸로 사도 되나요</h3>
+<p>지원 세대·안테나 구성이 제품에 따라 갈려서, <strong>공유기 세대와
+맞는지</strong>부터 보는 게 순서입니다.
+<a href="/posts/wifi7-router-upgrade.html">관문은 낮은 쪽을 따라가니까요</a> —
+공유기가 최신인데 랜카드가 옛 세대면 그 연결은 옛 세대입니다.</p>
+<h3 id="와이파이가-자주-끊기는데-장비-문제인가요">와이파이가 자주 끊기는데 장비 문제인가요</h3>
+<p>끊김·튐이 <strong>시간이 갈수록 심해지다 공유기를 껐다 켜면 낫는
+패턴</strong>이면 <a href="/posts/router-reboot.html">재부팅 쪽 문제</a>부터
+의심하세요. 특정 방에서만 심하면 거리·벽 문제라
+<a href="/posts/mesh-wifi-backhaul.html">배치·메시</a> 쪽입니다.</p>
+<h3 id="게임-다운로드가-느린-것도-와이파이-탓인가요">게임 다운로드가 느린 것도 와이파이 탓인가요</h3>
+<p>다운로드는 실시간이 아니라 <strong>속도의 세계</strong>라 이야기가 다릅니다.
+유선으로 꽂아 재보고 그래도 느리면
+<a href="/posts/internet-2-5g-upgrade.html">요금제·장비 관문</a> 쪽이고,
+유선만 빠르면 무선 구간(세대·거리)이 관문인 겁니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>무선의 약점은 평균 속도가 아니라 <strong>순간 변동(튐)</strong>입니다 —
+전파는 나눠 쓰는 도로라서요</li>
+<li><strong>웹·영상은 버퍼가 변동을 숨겨줘서 무선으로 충분</strong>하고,
+<strong>실시간 게임은 못 숨겨서 유선이 정석</strong>입니다</li>
+<li>데스크탑은 <strong>무선이 기본이 아닌 제품이 많습니다</strong> — 랜카드
+지원 세대까지 확인하고요</li>
+<li>유선을 못 깔면 순서대로 — <strong>벽 단자 → 배선 요령 → 메시 유선
+백홀</strong>, 전력선은 편차 큰 마지막 카드입니다</li>
+<li>판정이 애매하면 게임 핑 표시를 두고 보세요 — <strong>평균이 아니라
+튐</strong>을요</li>
+</ol>
+<p>집 네트워크의 나머지 조각들 — <a href="/posts/lan-cable-cat.html">랜선 규격</a> ·
+<a href="/posts/apartment-lan-panel.html">단자함 진단</a> ·
+<a href="/posts/wifi7-router-upgrade.html">공유기 세대 판정</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">유선랜</span> <span class="tag">와이파이</span> <span class="tag">데스크탑</span> <span class="tag">게임핑</span> <span class="tag">무선랜카드</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/router-reboot.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">공유기, 주기적으로 재부팅해야 하나 — 증상 기준 + 자동화가 답입니다</span>
+        <span class="card-desc">공유기를 한 달에 한 번은 껐다 켜야 한다는 말이 있습니다. 반은 맞습니다. 왜 오래 켜두면 문제가 생기는지, 언제 재부팅이 필요한지, 손 안 대고 해결하는 자동 재부팅까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/apartment-lan-panel.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">아파트 단자함 — 기가가 안 나올 때 열어보는 곳</span>
+        <span class="card-desc">방 랜포트가 죽어 있거나 속도가 100Mbps에 막힐 때, 원인은 대개 신발장 위 단자함 안에 있습니다. 뭐가 들어 있고, 공유기가 어디 있어야 하며, 뭘 확인하면 되는지 진단 순서로 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/diy-nas-vs-prebuilt.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">기성 NAS vs 자작 NAS — 사는 것은 하드웨어가 아닙니다</span>
+        <span class="card-desc">미니PC나 남는 컴퓨터로 NAS를 직접 만들 수 있다는 걸 알게 되면 기성 NAS 값이 아까워 보입니다. 그런데 기성 NAS에서 사는 건 하드웨어가 아니라 소프트웨어와 책임입니다. 어느 쪽이 맞는 사람인지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
