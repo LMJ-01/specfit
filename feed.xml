@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>SSD 교체, 마이그레이션 vs 클린설치 — 지금 시스템의 상태가 정합니다</title>
+    <link>https://specfit.kr/posts/ssd-migration-vs-clean-install.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ssd-migration-vs-clean-install.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>SSD를 바꿀 때 윈도우를 통째로 옮길지 새로 깔지 갈립니다. 판정 기준은 취향이 아니라 지금 시스템의 상태입니다. 복사는 좋은 것과 나쁜 것을 같이 옮기니까요. 갈림길과 안전 수칙, 실패 대비까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>램 사용률 90%, 문제인가 — 숫자가 아니라 증상으로 판정합니다</title>
     <link>https://specfit.kr/posts/ram-usage-normal.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/ram-usage-normal.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-gaming.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>롤 정도는 미니PC로 돌아가는지, 어디까지가 한계인지 질문이 많습니다. 미니PC의 게임 성능은 내장그래픽이 정하고, 되는 게임과 안 되는 게임의 경계가 비교적 뚜렷합니다. 판정 기준을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>메시 와이파이 — 성능은 위성이 아니라 백홀이 정합니다</title>
-    <link>https://specfit.kr/posts/mesh-wifi-backhaul.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/mesh-wifi-backhaul.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>방마다 안 터져서 메시를 알아보면 위성 개수부터 세게 됩니다. 순서가 반대입니다. 위성들이 서로 어떻게 연결되는가(백홀)가 성능을 정하고, 집에 벽 랜포트가 있느냐로 답이 갈립니다.</description>
   </item>
 </channel>
 </rss>

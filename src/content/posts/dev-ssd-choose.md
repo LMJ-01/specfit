@@ -2,7 +2,7 @@
 title: 개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다
 description: PCIe 5.0은 Gen4의 두 배 속도지만 개발 작업에서는 체감이 거의 없습니다. 대신 DRAM 유무와 TLC/QLC가 실제로 갈리는 지점입니다.
 date: 2026-08-15
-updated: 2026-08-22
+updated: 2026-09-04
 category: memory
 tags: [SSD, NVMe, PCIe5, 개발용PC, 로컬LLM]
 affiliate: true
@@ -185,5 +185,9 @@ QLC는 **한 번 넣고 주로 읽기만 하는 저장용**에 맞습니다.
 3. **DRAM 유무가 순차 속도보다 중요**합니다. 오래 쓸 때 갈립니다
 4. 개발용은 **TLC**를 고르세요. 쓰기가 많은 환경입니다
 5. **로컬 LLM을 겸하면 1TB 이상**입니다. 모델 하나가 최대 43GB입니다
+
+골랐다면 다음 갈림길은 옮기는 방식입니다 —
+[마이그레이션 vs 클린설치 판정](/posts/ssd-migration-vs-clean-install.html)에
+정리했습니다.
 
 스펙이나 판단이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
