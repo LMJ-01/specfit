@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>램 사용률 90%, 문제인가 — 숫자가 아니라 증상으로 판정합니다</title>
+    <link>https://specfit.kr/posts/ram-usage-normal.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ram-usage-normal.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>작업 관리자의 램 사용률이 높으면 불안해집니다. 그런데 사용률은 기준선이 있는 숫자가 아니라, 증상과 주범을 같이 봐야 판정이 됩니다. 판정 순서, 주범 찾는 법, 램 정리 프로그램이 대개 헛수고인 이유까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>모니터 응답속도 1ms vs 5ms — 표기 숫자는 조건부라는 게 핵심입니다</title>
     <link>https://specfit.kr/posts/monitor-response-time.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-response-time.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/mesh-wifi-backhaul.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>방마다 안 터져서 메시를 알아보면 위성 개수부터 세게 됩니다. 순서가 반대입니다. 위성들이 서로 어떻게 연결되는가(백홀)가 성능을 정하고, 집에 벽 랜포트가 있느냐로 답이 갈립니다.</description>
-  </item>
-  <item>
-    <title>노트북 수명은 몇 년인가 — 답이 갈리는 건 수명의 정의가 달라서입니다</title>
-    <link>https://specfit.kr/posts/laptop-lifespan.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/laptop-lifespan.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>노트북 수명을 물으면 2년부터 10년까지 답이 갈립니다. 고장 나는 수명과 쾌적하게 쓰는 수명이 다르고, 그 사이를 부품 셋(배터리·램·SSD)이 정하기 때문입니다. 교체 신호와 오래 쓰는 구조를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
