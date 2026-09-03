@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>모니터 응답속도 1ms vs 5ms — 표기 숫자는 조건부라는 게 핵심입니다</title>
+    <link>https://specfit.kr/posts/monitor-response-time.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-response-time.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>모니터 스펙표의 1ms가 구매 기준이 되곤 하는데, 그 숫자는 측정 기준과 설정 조건이 붙은 값이라 제품 간 비교 자체가 어렵습니다. 응답속도가 실제로 좌우하는 것, 입력 지연과의 차이, 용도별로 신경 써야 하는 선을 정리했습니다.</description>
+  </item>
+  <item>
     <title>미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다</title>
     <link>https://specfit.kr/posts/mini-pc-noise.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-noise.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-lifespan.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>노트북 수명을 물으면 2년부터 10년까지 답이 갈립니다. 고장 나는 수명과 쾌적하게 쓰는 수명이 다르고, 그 사이를 부품 셋(배터리·램·SSD)이 정하기 때문입니다. 교체 신호와 오래 쓰는 구조를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>노트북 덮개 닫고 모니터만 쓰기 — 되는 조건과 발열의 진실</title>
-    <link>https://specfit.kr/posts/laptop-clamshell-mode.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/laptop-clamshell-mode.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>노트북을 데스크톱처럼, 덮개를 닫은 채 외부 모니터로만 쓰는 구성이 됩니다. 필요한 설정, 발열이 문제가 되는 경우와 아닌 경우, 이 구성이 안 맞는 작업을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
