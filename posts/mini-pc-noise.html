@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다 | 스펙핏</title>
+<meta name="description" content="미니PC를 알아보면 팬소음 이야기가 꼭 따라옵니다. 작은 몸집이 구조적으로 불리한 건 맞는데, 시끄러운지는 제품이 아니라 내 부하가 정합니다. 사무·웹은 대개 조용하고, 지속 고부하가 소음을 부릅니다. 판정 기준과 줄이는 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/mini-pc-noise.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다 | 스펙핏">
+<meta property="og:description" content="미니PC를 알아보면 팬소음 이야기가 꼭 따라옵니다. 작은 몸집이 구조적으로 불리한 건 맞는데, 시끄러운지는 제품이 아니라 내 부하가 정합니다. 사무·웹은 대개 조용하고, 지속 고부하가 소음을 부릅니다. 판정 기준과 줄이는 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/mini-pc-noise.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다","description":"미니PC를 알아보면 팬소음 이야기가 꼭 따라옵니다. 작은 몸집이 구조적으로 불리한 건 맞는데, 시끄러운지는 제품이 아니라 내 부하가 정합니다. 사무·웹은 대개 조용하고, 지속 고부하가 소음을 부릅니다. 판정 기준과 줄이는 순서를 정리했습니다.","datePublished":"2026-09-04","dateModified":"2026-09-04","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mini-pc-noise.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다","item":"https://specfit.kr/posts/mini-pc-noise.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"쓰다 보니 소음이 심해졌습니다. 고장인가요","acceptedAnswer":{"@type":"Answer","text":"같은 부하에서 소리가 커졌다면 대개 먼지(통풍 저하) 쪽이 먼저이고, 오래된 기기라면 서멀(열 전달 물질) 노후도 후보입니다 — 노트북 발열에서 본 것과 같은 구조입니다. 갈리는 소리·덜컹거림이면 팬 자체의 노후입니다."}},{"@type":"Question","name":"24시간 서버로 돌려도 괜찮을까요","acceptedAnswer":{"@type":"Answer","text":"서버 용도의 대부분(파일 공유·자동화·가벼운 서비스)은 저부하 상시 가동이라 팬이 천천히 도는 구간입니다 — 개발 서버 용도에서 미니PC가 좋은 평가를 받는 이유이기도 합니다. 다만 침실에 둔다면 낮에는 안 들리던 작은 소리도 밤에는 들린다는 점은 감안하세요."}},{"@type":"Question","name":"팬소음과 코일노이즈는 어떻게 구분하나요","acceptedAnswer":{"@type":"Answer","text":"팬 소음은 바람 소리·회전 소리라 부하가 내려가면 서서히 잦아들고, 코일노이즈는 전자 부품이 내는 가는 고주파음이라 성격이 다릅니다. 팬이 멈춘 순간에도 나는 소리라면 코일 쪽입니다."}},{"@type":"Question","name":"노트북이랑 비교하면 어느 쪽이 조용한가요","acceptedAnswer":{"@type":"Answer","text":"같은 부품 구조라 부하 시의 성격은 비슷합니다 — 얇은 게이밍 노트북이 부하에서 시끄러운 것과 같은 물리입니다. 미니PC는 배치의 자유(책상 아래·멀리)가 있다는 점이 실질적 이점입니다."}},{"@type":"Question","name":"케이스 팬을 달거나 쿨러를 바꿀 수는 없나요","acceptedAnswer":{"@type":"Answer","text":"미니PC는 노트북처럼 쿨링이 몸체와 일체라 데스크톱식 쿨러 교체가 대부분 불가능합니다. 손댈 수 있는 손잡이는 위의 배치·전원 모드·청소까지입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/minipc.html">미니PC</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-04">2026년 9월 4일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>미니PC를 알아보다 보면 사용기마다 갈립니다 — &quot;무소음 수준&quot;이라는
+말과 &quot;팬소음 때문에 못 쓰겠다&quot;는 말이 같은 제품군에서 나옵니다.
+그래서 질문도 커뮤니티 단골입니다. <strong>&quot;미니PC 소음, 각오해야
+하나요?&quot;</strong></p>
+<p>답은 제품 이전에 구조에 있습니다. <strong>작은 몸집은 소음에 구조적으로
+불리하지만, 그 불리함이 드러나는 건 부하가 걸릴 때</strong>입니다. 내
+용도가 어느 쪽인지부터 보면 사용기의 모순이 풀립니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>용도</th><th>소음 전망</th></tr></thead>
+<tbody>
+<tr><td>웹서핑 · 문서 · 영상 시청</td><td><strong>대개 조용합니다</strong> — 팬이 천천히 돌거나 멈춰 있는 구간입니다</td></tr>
+<tr><td><a href="/posts/mini-pc-for-dev.html">개발 · 가벼운 서버</a></td><td>평상시 조용, 빌드 순간에만 잠깐 올라오는 패턴이 흔합니다</td></tr>
+<tr><td><a href="/posts/mini-pc-gaming.html">게임 · 인코딩 · 지속 고부하</a></td><td><strong>소음을 각오할 자리입니다</strong> — 구조적 불리함이 여기서 드러납니다</td></tr>
+<tr><td>소음에 극도로 민감</td><td>팬리스(무팬) 제품군이 따로 있습니다 — 성능 절충이 대가입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-작은-컴퓨터는-소리가-큰가">왜 작은 컴퓨터는 소리가 큰가</h2>
+<p><a href="/posts/mini-pc-vs-laptop.html">미니PC는 구조적으로 노트북 부품의 컴퓨터</a>
+입니다. 좁은 몸집에 열을 빼야 하니 팬도 작고, 여기서
+<a href="/posts/cpu-stock-cooler.html">기본 쿨러에서 본 그 구조</a>가 그대로
+적용됩니다 — <strong>작은 팬은 같은 열을 빼려면 빠르게 돌아야 하고, 팬
+소음은 회전수를 따라 가파르게 올라갑니다.</strong></p>
+<p>덧붙는 성질이 하나 더 있습니다. 빠르게 도는 작은 팬의 소리는
+<strong>높은 음</strong>쪽이라, 같은 크기의 소리라도 더 거슬리는 편입니다.
+큰 케이스의 <a href="/posts/case-fan-setup.html">큰 팬이 천천히 도는</a>
+낮은 바람 소리와는 음색이 다릅니다.</p>
+<p>정리하면 — 미니PC의 소음은 결함이 아니라 <strong>몸집의 물리</strong>입니다.
+같은 성능을 더 작은 상자에서 내는 값을 소리로 치르는 구조입니다.</p>
+<h2 id="그런데-왜-무소음이라는-사용기도-많은가">그런데 왜 &quot;무소음&quot;이라는 사용기도 많은가</h2>
+<p>팬 소음은 회전수의 함수이고, <strong>회전수는 부하의 함수</strong>이기
+때문입니다.</p>
+<ul>
+<li><strong>가벼운 일</strong>(웹·문서·영상)에서는 열이 적어 팬이 천천히 돌거나,
+제품에 따라 아예 멈춰 있습니다 — &quot;무소음 수준&quot; 사용기는 이
+구간의 이야기입니다</li>
+<li><strong>지속 고부하</strong>(게임·인코딩·<a href="/posts/mini-pc-local-llm.html">로컬 LLM</a>)
+에서는 열이 계속 쌓여 팬이 최고 속도 근처에 머뭅니다 — &quot;못
+쓰겠다&quot; 사용기는 이 구간입니다</li>
+</ul>
+<p>같은 제품의 두 얼굴이라, <strong>사용기의 소음 평가는 그 사람의 부하
+프로필과 함께 읽어야</strong> 맞습니다. 리뷰를 볼 때도 &quot;어떤 작업 중의
+소음인지&quot;를 확인하는 게 핵심입니다.</p>
+<h2 id="줄이는-순서-사기-전과-산-후">줄이는 순서 — 사기 전과 산 후</h2>
+<p><strong>사기 전:</strong></p>
+<ol>
+<li><strong>내 부하부터 판정</strong> — 위 표에서 내 용도가 어느 줄인지.
+지속 고부하가 일상이면 미니PC 대신
+<a href="/posts/mini-pc-vs-laptop.html">보통 케이스 쪽</a>도 저울에 올리세요</li>
+<li><strong>소음에 민감하면 팬리스 제품군</strong> — 팬이 없어 구조적으로
+무음입니다. 대신 열 상한이 낮아 성능도 낮은 쪽으로 절충됩니다</li>
+<li><strong>후보 제품의 사용기에서 &quot;부하 중 소음&quot;을 찾기</strong> — 편차가 커서
+일반론보다 그 모델의 보고가 정확합니다</li>
+</ol>
+<p><strong>산 후:</strong></p>
+<ol>
+<li><strong>배치</strong> — 귀 높이의 책상 위보다 책상 아래·모니터 뒤가 체감을
+크게 줄입니다. 단, 통풍구를 막지 않는 자리여야 합니다</li>
+<li><strong>전원 모드</strong> — 운영체제나 제조사 설정의 절전·저소음 모드는
+성능 상한을 낮추는 대신 팬을 늦춥니다 (지원 여부는 제품에
+따라 다릅니다)</li>
+<li><strong>먼지 청소</strong> — 흡기구·방열핀에 먼지가 쌓이면 같은 부하에서
+팬이 더 빨리 돌게 됩니다. 시간이 지나며 소음이 커졌다면 첫
+용의자입니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="쓰다-보니-소음이-심해졌습니다-고장인가요">쓰다 보니 소음이 심해졌습니다. 고장인가요</h3>
+<p>같은 부하에서 소리가 커졌다면 대개 <strong>먼지(통풍 저하)</strong> 쪽이
+먼저이고, 오래된 기기라면 서멀(열 전달 물질) 노후도 후보입니다 —
+<a href="/posts/laptop-thermal-throttling.html">노트북 발열에서 본 것</a>과
+같은 구조입니다. 갈리는 소리·덜컹거림이면 팬 자체의 노후입니다.</p>
+<h3 id="24시간-서버로-돌려도-괜찮을까요">24시간 서버로 돌려도 괜찮을까요</h3>
+<p>서버 용도의 대부분(파일 공유·자동화·가벼운 서비스)은 <strong>저부하
+상시 가동</strong>이라 팬이 천천히 도는 구간입니다 —
+<a href="/posts/mini-pc-for-dev.html">개발 서버 용도</a>에서 미니PC가 좋은
+평가를 받는 이유이기도 합니다. 다만 침실에 둔다면 낮에는 안
+들리던 작은 소리도 밤에는 들린다는 점은 감안하세요.</p>
+<h3 id="팬소음과-코일노이즈는-어떻게-구분하나요">팬소음과 코일노이즈는 어떻게 구분하나요</h3>
+<p>팬 소음은 <strong>바람 소리·회전 소리</strong>라 부하가 내려가면 서서히
+잦아들고, <a href="/posts/gpu-coil-whine.html">코일노이즈</a>는 전자 부품이
+내는 <strong>가는 고주파음</strong>이라 성격이 다릅니다. 팬이 멈춘 순간에도
+나는 소리라면 코일 쪽입니다.</p>
+<h3 id="노트북이랑-비교하면-어느-쪽이-조용한가요">노트북이랑 비교하면 어느 쪽이 조용한가요</h3>
+<p>같은 부품 구조라 <strong>부하 시의 성격은 비슷합니다</strong> — 얇은
+게이밍 노트북이 부하에서 시끄러운 것과 같은 물리입니다. 미니PC는
+배치의 자유(책상 아래·멀리)가 있다는 점이 실질적 이점입니다.</p>
+<h3 id="케이스-팬을-달거나-쿨러를-바꿀-수는-없나요">케이스 팬을 달거나 쿨러를 바꿀 수는 없나요</h3>
+<p>미니PC는 <a href="/posts/mini-pc-vs-laptop.html">노트북처럼 쿨링이 몸체와 일체</a>라
+데스크톱식 쿨러 교체가 대부분 불가능합니다. 손댈 수 있는 손잡이는
+위의 배치·전원 모드·청소까지입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>미니PC 소음은 <strong>몸집의 물리</strong>입니다 — 작은 팬은 빠르게 돌아야
+하고, 소음은 회전수를 따라갑니다</li>
+<li>시끄러운지는 <strong>부하가 정합니다</strong> — 웹·문서는 대개 조용, 지속
+고부하가 소음을 부릅니다</li>
+<li>사용기의 소음 평가는 <strong>그 사람의 부하와 함께</strong> 읽으세요 —
+같은 제품의 두 얼굴입니다</li>
+<li>민감하면 <strong>팬리스</strong>라는 선택지가 있습니다 — 성능 절충이
+대가입니다</li>
+<li>산 후의 손잡이는 <strong>배치 → 전원 모드 → 먼지 청소</strong> 순입니다</li>
+</ol>
+<p>미니PC 판정의 다른 축들 — <a href="/posts/mini-pc-vs-laptop.html">노트북과의 구조 비교</a> ·
+<a href="/posts/mini-pc-gaming.html">게임 부하</a> ·
+<a href="/posts/mini-pc-for-dev.html">개발 서버 용도</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">미니PC</span> <span class="tag">팬소음</span> <span class="tag">소음</span> <span class="tag">팬리스</span> <span class="tag">쿨링</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mini-pc-gaming.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC로 게임이 되나 — 갈림길은 게임의 무게입니다</span>
+        <span class="card-desc">롤 정도는 미니PC로 돌아가는지, 어디까지가 한계인지 질문이 많습니다. 미니PC의 게임 성능은 내장그래픽이 정하고, 되는 게임과 안 되는 게임의 경계가 비교적 뚜렷합니다. 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/barebone-mini-pc.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나</span>
+        <span class="card-desc">베어본은 미완성 컴퓨터입니다. 뭐가 빠져 있고 뭘 골라 넣어야 하는지, 완제품과는 언제 갈리는지 정리했습니다. 갖고 있는 램과 SSD를 살릴 수 있는 게 이 방식의 핵심입니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mini-pc-local-llm.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC로 로컬 LLM — 사양표의 대역폭 한 줄로 판정됩니다</span>
+        <span class="card-desc">미니PC로 AI 서버를 만들었다는 글은 많은데, 내 미니PC도 되는지는 알려주지 않습니다. 같은 미니PC라는 이름 아래 세 급이 섞여 있고, 메모리 대역폭 하나로 갈립니다. 계산법을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다</title>
+    <link>https://specfit.kr/posts/mini-pc-noise.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-noise.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>미니PC를 알아보면 팬소음 이야기가 꼭 따라옵니다. 작은 몸집이 구조적으로 불리한 건 맞는데, 시끄러운지는 제품이 아니라 내 부하가 정합니다. 사무·웹은 대개 조용하고, 지속 고부하가 소음을 부릅니다. 판정 기준과 줄이는 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다</title>
     <link>https://specfit.kr/posts/desktop-wifi-vs-lan.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/desktop-wifi-vs-lan.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/lan-cable-cat.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다</title>
-    <link>https://specfit.kr/posts/internet-2-5g-upgrade.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/internet-2-5g-upgrade.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
