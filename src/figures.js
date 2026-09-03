@@ -829,6 +829,7 @@ export const figures = {
   'psu-modular-types': psuModularTypes,
   'wifi-jitter': wifiJitter,
   'cpu-gpu-relay': cpuGpuRelay,
+  'tablet-os-wall': tabletOsWall,
 };
 
 /**
@@ -1333,5 +1334,58 @@ function cpuGpuRelay() {
     170,
     body,
     '더 오래 걸리는 쪽(진한 칸)이 그 순간의 병목입니다 — 프레임마다 이 릴레이가 반복됩니다.'
+  );
+}
+
+/**
+ * 노트북 OS 는 한 마당, 모바일 OS 는 방마다 벽 — 개발 도구 체인이 막히는 이유.
+ * ipad-coding-study 의 "성능이 아니라 구조" 서술을 그림으로 고정합니다.
+ */
+function tabletOsWall() {
+  const W = 640;
+
+  let body = '';
+  // 왼쪽: 노트북 OS
+  body += t(16, 22, '노트북 OS — 한 마당', { weight: 600, size: 14 });
+  body += rect(16, 34, 290, 150, COLOR.soft, { stroke: COLOR.line });
+  const tools = [
+    ['에디터', 30, 52],
+    ['터미널', 120, 52],
+    ['로컬 서버', 205, 52],
+    ['도커', 30, 106],
+    ['런타임 설치', 120, 106],
+  ];
+  for (const [name, x, y] of tools) {
+    body += rect(x, y, name.length * 13 + 22, 30, COLOR.soft, { stroke: COLOR.fit });
+    body += t(x + 11, y + 20, name, { size: 12 });
+  }
+  body += t(30, 168, '서로 자유롭게 연결 — 개발 도구 체인이 성립', { fill: COLOR.mute, size: 12 });
+
+  // 오른쪽: 모바일 OS
+  body += t(334, 22, '모바일 OS — 방마다 벽(샌드박스)', { weight: 600, size: 14 });
+  body += rect(334, 34, 290, 150, COLOR.soft, { stroke: COLOR.line });
+  const cells = [
+    ['강의 앱', 348],
+    ['필기 앱', 441],
+    ['학습 앱', 534],
+  ];
+  for (const [name, x] of cells) {
+    body += rect(x, 52, 76, 54, COLOR.soft, { stroke: COLOR.line });
+    body += t(x + 38, 84, name, { anchor: 'middle', size: 12 });
+  }
+  // 막힌 도구 체인
+  body += `<line x1="348" y1="136" x2="610" y2="136" stroke="${COLOR.over}" stroke-width="2.5" stroke-dasharray="6 4"/>`;
+  body += t(479, 128, '시스템 전체를 쓰는 개발 도구 체인', { anchor: 'middle', size: 12, fill: COLOR.over });
+  body += t(479, 152, '✕ 벽을 넘지 못해 들어올 수 없음', { anchor: 'middle', size: 12, fill: COLOR.over, weight: 600 });
+  body += t(348, 174, '각 앱은 자기 방 안에서만 — 칩 성능과 무관', { fill: COLOR.mute, size: 12 });
+
+  body += t(16, 210, '그래서 상위 모델·키보드로도 이 경계는 움직이지 않습니다.', { weight: 600, size: 13 });
+
+  return figure(
+    '노트북 OS는 도구들이 자유롭게 연결되지만, 모바일 OS는 앱마다 벽이 있어 개발 도구 체인이 못 들어온다',
+    W,
+    222,
+    body,
+    '벽 안에서 되는 일(강의·필기·학습 앱)과 벽 때문에 안 되는 일(로컬 개발 환경)의 경계입니다.'
   );
 }
