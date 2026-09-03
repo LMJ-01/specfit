@@ -13,6 +13,13 @@
     <description>미니PC를 알아보면 팬소음 이야기가 꼭 따라옵니다. 작은 몸집이 구조적으로 불리한 건 맞는데, 시끄러운지는 제품이 아니라 내 부하가 정합니다. 사무·웹은 대개 조용하고, 지속 고부하가 소음을 부릅니다. 판정 기준과 줄이는 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>아이패드로 코딩 공부 되나 — 관문은 성능이 아니라 운영체제입니다</title>
+    <link>https://specfit.kr/posts/ipad-coding-study.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ipad-coding-study.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>아이패드가 이미 있으면 코딩 공부도 이걸로 되지 않을까 싶어집니다. 안 되는 이유는 사양이 아니라 소프트웨어 구조에 있고, 그래서 되는 범위와 안 되는 범위의 경계가 뚜렷합니다. 태블릿의 좋은 자리와 노트북이 필요한 순간을 정리했습니다.</description>
+  </item>
+  <item>
     <title>데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다</title>
     <link>https://specfit.kr/posts/desktop-wifi-vs-lan.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/desktop-wifi-vs-lan.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-clamshell-mode.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>노트북을 데스크톱처럼, 덮개를 닫은 채 외부 모니터로만 쓰는 구성이 됩니다. 필요한 설정, 발열이 문제가 되는 경우와 아닌 경우, 이 구성이 안 맞는 작업을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다</title>
-    <link>https://specfit.kr/posts/lan-cable-cat.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/lan-cable-cat.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
