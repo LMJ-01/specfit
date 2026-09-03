@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모듈러 파워, 값어치 있나 — 성능이 아니라 정리와 공간의 지갑입니다 | 스펙핏</title>
+<meta name="description" content="풀 모듈러, 세미 모듈러, 논 모듈러 중 뭘 사야 하는지 헷갈립니다. 성능 차이는 없고, 값어치는 케이블 정리·조립 편의·케이스 공간에서 나옵니다. 판정 기준과 케이블 혼용 금지 경고까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/modular-psu.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="모듈러 파워, 값어치 있나 — 성능이 아니라 정리와 공간의 지갑입니다 | 스펙핏">
+<meta property="og:description" content="풀 모듈러, 세미 모듈러, 논 모듈러 중 뭘 사야 하는지 헷갈립니다. 성능 차이는 없고, 값어치는 케이블 정리·조립 편의·케이스 공간에서 나옵니다. 판정 기준과 케이블 혼용 금지 경고까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/modular-psu.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"모듈러 파워, 값어치 있나 — 성능이 아니라 정리와 공간의 지갑입니다","description":"풀 모듈러, 세미 모듈러, 논 모듈러 중 뭘 사야 하는지 헷갈립니다. 성능 차이는 없고, 값어치는 케이블 정리·조립 편의·케이스 공간에서 나옵니다. 판정 기준과 케이블 혼용 금지 경고까지 정리했습니다.","datePublished":"2026-09-03","dateModified":"2026-09-03","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/modular-psu.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"모듈러 파워, 값어치 있나 — 성능이 아니라 정리와 공간의 지갑입니다","item":"https://specfit.kr/posts/modular-psu.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"논 모듈러의 남는 케이블은 어떻게 처리하나요","acceptedAnswer":{"@type":"Answer","text":"케이스의 뒷면 배선 공간이나 파워 가림막(슈라우드) 아래가 그 용도로 있는 자리입니다. 미관은 포기해도 기류만 안 막으면 기능상 문제는 없습니다."}},{"@type":"Question","name":"커스텀·연장 케이블로 꾸미는 건요","acceptedAnswer":{"@type":"Answer","text":"연장 케이블(기존 선 끝에 덧대는 방식)은 호환 문제가 없는 꾸밈 수단입니다. 파워에 직결하는 교체용 커스텀 케이블은 위 혼용 경고가 그대로 적용되는 영역이라, 그 파워 모델 전용으로 만들어진 것인지 확인이 필수입니다."}},{"@type":"Question","name":"세미 모듈러면 충분한가요","acceptedAnswer":{"@type":"Answer","text":"대부분의 조립에서 충분합니다 — 고정된 24핀·CPU 선은 어차피 모든 컴퓨터가 쓰는 선이라, 풀 모듈러와의 실질 차이는 \"그 두 선도 탈착되느냐\"뿐입니다. 값 차이가 애매하면 세미로 정리되는 경우가 많습니다."}},{"@type":"Question","name":"파워를 바꿀 때 정리해 둔 케이블을 재사용하면 안 되나요","acceptedAnswer":{"@type":"Answer","text":"안 됩니다 — 이 글에서 하나만 기억한다면 이것입니다. 같은 제조사여도 모델이 다르면 배열이 다를 수 있어, 새 파워의 동봉 케이블로 전부 다시 꽂는 것이 규칙입니다."}},{"@type":"Question","name":"케이블을 덜 꽂으면 파워에 무리가 없나요","acceptedAnswer":{"@type":"Answer","text":"없습니다 — 모듈러는 그렇게 쓰라고 만든 물건입니다. 필요한 출력 선만 꽂는 것이 정상 사용입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>모듈러 파워, 값어치 있나 — 성능이 아니라 정리와 공간의 지갑입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-03">2026년 9월 3일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>파워를 고르다 보면 <a href="/posts/gpu-psu-wattage.html">용량</a>과
+<a href="/posts/psu-80plus.html">등급</a> 다음에 세 번째 갈림길이 나옵니다 —
+<strong>풀 모듈러 / 세미 모듈러 / 논 모듈러.</strong> 케이블이 분리되느냐의
+차이인데, 이게 성능 차이인지 편의 차이인지부터 헷갈립니다.</p>
+<p>답부터: <strong>성능 차이가 아닙니다.</strong> 같은 등급·같은 플랫폼이면 전기적
+품질은 같고, 이 갈림길은 <strong>조립 편의와 케이스 안 풍경의 지갑</strong>입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>성능·안정성 차이 있나</td><td><strong>없습니다</strong> — 케이블 탈착 방식의 차이일 뿐입니다</td></tr>
+<tr><td>뭐가 좋아지나</td><td><strong>안 쓰는 케이블을 아예 안 꽂습니다</strong> — 정리·공간·조립 편의</td></tr>
+<tr><td>실용 절충은</td><td><strong>세미 모듈러</strong> — 어차피 쓰는 24핀·CPU 선은 고정, 나머지만 탈착</td></tr>
+<tr><td>예산이 갈리면</td><td><strong>등급·보증이 먼저</strong>입니다 — 모듈러는 그다음 지갑입니다</td></tr>
+<tr><td>⚠️ 반드시 알 것</td><td><strong>모듈러 케이블은 다른 파워와 혼용 금지</strong> — 아래 경고</td></tr>
+</tbody>
+</table></div>
+<h2 id="세-방식이-갈리는-지점">세 방식이 갈리는 지점</h2>
+<ul>
+<li><strong>논 모듈러</strong> — 모든 케이블이 본체에 박혀 나옵니다. 안 쓰는
+선도 케이스 어딘가에 밀어 넣어야 합니다</li>
+<li><strong>세미 모듈러</strong> — 반드시 쓰는 선(메인 24핀, CPU 보조)은 고정,
+나머지(그래픽카드·SATA 등)는 필요한 만큼만 꽂습니다</li>
+<li><strong>풀 모듈러</strong> — 전부 탈착식입니다. 필요한 선만 정확히 꽂는
+구성이라 조립과 정리가 가장 깔끔합니다</li>
+</ul>
+<p>성능 표에는 안 나오는 차이라, &quot;그래서 뭐가 좋아지는데?&quot;가 정당한
+질문입니다. 좋아지는 것은 셋입니다:</p>
+<ol>
+<li><strong>케이스 안 공간</strong> — 안 쓰는 케이블 뭉치가 사라집니다. 파워
+아래 공간이 좁은 케이스, 작은 케이스일수록 체감이 큽니다</li>
+<li><strong>기류와 청소</strong> — 선 뭉치가 <a href="/posts/case-fan-setup.html">공기의 길</a>을
+막거나 먼지를 모으는 일이 줄어듭니다. 극적인 온도 차이는
+아니지만 방향은 좋은 쪽입니다</li>
+<li><strong>조립·업그레이드 수고</strong> — 그래픽카드를 바꾸거나
+<a href="/posts/dev-ssd-choose.html">저장 장치를 늘릴 때</a> 선 하나만 더
+꽂으면 됩니다</li>
+</ol>
+<h2 id="하나만은-꼭-케이블-혼용-금지">⚠️ 하나만은 꼭 — 케이블 혼용 금지</h2>
+<p>모듈러의 함정이 하나 있습니다. <strong>파워 쪽 커넥터의 핀 배열이
+제조사·모델마다 다릅니다.</strong> 겉모양이 같아서 다른 파워의 모듈러
+케이블이 꽂히기는 하는데, 배열이 다르면 <strong>부품을 태울 수 있습니다.</strong></p>
+<ul>
+<li>파워를 교체하면 <strong>케이블도 그 파워에 딸려 온 것으로 전부
+교체</strong>합니다 — 예전 케이블이 케이스에 예쁘게 정리돼 있어도요</li>
+<li>서랍에 굴러다니는 출처 불명의 모듈러 케이블은 쓰지 않는 게
+원칙입니다</li>
+</ul>
+<p>이 경고 하나만 지키면, 모듈러의 단점은 사실상 값뿐입니다.</p>
+<h2 id="그래서-판정">그래서 판정</h2>
+<ul>
+<li><strong>작은 케이스, 선정리에 진심</strong> → 풀 모듈러가 제값을 합니다</li>
+<li><strong>보통 케이스, 실용주의</strong> → 세미 모듈러가 절충입니다 — 고정된
+선은 어차피 100% 쓰는 선이라 실질 손해가 없습니다</li>
+<li><strong>예산이 빠듯</strong> → 논 모듈러로 아끼고 그 차액을 <strong>등급·보증</strong>에
+쓰세요. <a href="/posts/psu-lifespan.html">파워의 본질</a>은 케이블 탈착이
+아니라 안정성과 수명입니다. 남는 선은 케이스 뒤 공간이나 파워
+아래 가림막 뒤로 보내면 됩니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="논-모듈러의-남는-케이블은-어떻게-처리하나요">논 모듈러의 남는 케이블은 어떻게 처리하나요</h3>
+<p>케이스의 <strong>뒷면 배선 공간이나 파워 가림막(슈라우드) 아래</strong>가 그
+용도로 있는 자리입니다. 미관은 포기해도 기류만 안 막으면 기능상
+문제는 없습니다.</p>
+<h3 id="커스텀연장-케이블로-꾸미는-건요">커스텀·연장 케이블로 꾸미는 건요</h3>
+<p>연장 케이블(기존 선 끝에 덧대는 방식)은 호환 문제가 없는 꾸밈
+수단입니다. 파워에 직결하는 <strong>교체용 커스텀 케이블</strong>은 위 혼용
+경고가 그대로 적용되는 영역이라, 그 파워 모델 전용으로 만들어진
+것인지 확인이 필수입니다.</p>
+<h3 id="세미-모듈러면-충분한가요">세미 모듈러면 충분한가요</h3>
+<p>대부분의 조립에서 충분합니다 — 고정된 24핀·CPU 선은 어차피 모든
+컴퓨터가 쓰는 선이라, 풀 모듈러와의 실질 차이는 &quot;그 두 선도
+탈착되느냐&quot;뿐입니다. 값 차이가 애매하면 세미로 정리되는 경우가
+많습니다.</p>
+<h3 id="파워를-바꿀-때-정리해-둔-케이블을-재사용하면-안-되나요">파워를 바꿀 때 정리해 둔 케이블을 재사용하면 안 되나요</h3>
+<p>안 됩니다 — 이 글에서 하나만 기억한다면 이것입니다. 같은
+제조사여도 모델이 다르면 배열이 다를 수 있어, <strong>새 파워의 동봉
+케이블로 전부 다시 꽂는 것</strong>이 규칙입니다.</p>
+<h3 id="케이블을-덜-꽂으면-파워에-무리가-없나요">케이블을 덜 꽂으면 파워에 무리가 없나요</h3>
+<p>없습니다 — 모듈러는 그렇게 쓰라고 만든 물건입니다. 필요한 출력
+선만 꽂는 것이 정상 사용입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>모듈러 여부는 <strong>성능이 아니라 편의</strong>입니다 — 같은 등급이면
+전기 품질은 같습니다</li>
+<li>값어치는 <strong>공간·기류·조립 수고</strong>에서 나옵니다 — 작은
+케이스일수록 큽니다</li>
+<li><strong>세미 모듈러가 실용 절충</strong>입니다 — 고정된 선은 어차피 쓰는
+선입니다</li>
+<li>예산이 갈리면 <strong>등급·보증 먼저</strong>, 모듈러는 그다음입니다</li>
+<li>⚠️ <strong>모듈러 케이블은 파워마다 다릅니다</strong> — 다른 파워의 케이블
+혼용은 부품을 태울 수 있습니다</li>
+</ol>
+<p>파워 선택의 앞 단계들 — <a href="/posts/gpu-psu-wattage.html">용량 계산</a> ·
+<a href="/posts/psu-80plus.html">80PLUS 등급</a> ·
+<a href="/posts/psu-lifespan.html">수명·교체 시기</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">모듈러파워</span> <span class="tag">파워서플라이</span> <span class="tag">케이블정리</span> <span class="tag">조립PC</span> <span class="tag">세미모듈러</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/case-fan-setup.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">케이스 팬은 몇 개나 — 개수보다 방향과 균형이 먼저입니다</span>
+        <span class="card-desc">케이스 팬을 더 달아야 하는지, 흡기·배기는 어떻게 나눠야 하는지 헷갈립니다. 팬 쇼핑 전에 확인할 것과, 몇 개부터는 효과가 급감하는 구조를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/cpu-stock-cooler.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">CPU 기본 쿨러로 충분한가 — 부하와 소음, 두 기준으로 갈립니다</span>
+        <span class="card-desc">CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 살지 헷갈립니다. 성능이 모자라서가 아니라 소음 때문에 바꾸는 경우가 많다는 것까지 포함해서, 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/gpu-coil-whine.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다</span>
+        <span class="card-desc">게임이나 고부하 작업 때 그래픽카드 쪽에서 찌르르 하는 고주파음이 나면 고장부터 의심하게 됩니다. 코일노이즈의 정체와 고장 소리와의 구분법, 줄이는 방법을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
