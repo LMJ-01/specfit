@@ -121,6 +121,13 @@ GPU에 넘깁니다</li>
 <p>같은 조합이 1080p 240Hz 에서는 CPU 병목, 4K 60Hz 에서는 GPU
 병목일 수 있다는 뜻입니다. <strong>조합만 보고 병목을 단정할 수 없는
 구조적 이유</strong>가 이것입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 170" width="640" height="170" role="img" aria-label="같은 조합이라도 1080p 고주사율에서는 CPU가, 4K에서는 GPU가 병목이 된다">
+<title>같은 조합이라도 1080p 고주사율에서는 CPU가, 4K에서는 GPU가 병목이 된다</title>
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">한 프레임 = CPU가 준비하고 GPU가 그리는 릴레이</text><text x="16" y="59" fill="var(--fg)" font-size="13" font-weight="600">1080p 고주사율</text><rect x="150" y="40" width="180" height="26" fill="var(--fig-over)" rx="4"/><text x="240" y="57" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">CPU 준비</text><rect x="334" y="40" width="90" height="26" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="379" y="57" fill="var(--fg-muted)" font-size="12" text-anchor="middle">GPU 그리기</text><text x="434" y="57" fill="var(--fg-muted)" font-size="12">← CPU가 병목</text><text x="16" y="101" fill="var(--fg)" font-size="13" font-weight="600">4K 고화질</text><rect x="150" y="82" width="120" height="26" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="210" y="99" fill="var(--fg-muted)" font-size="12" text-anchor="middle">CPU 준비</text><rect x="274" y="82" width="270" height="26" fill="var(--fig-over)" rx="4"/><text x="409" y="99" fill="#fff" font-size="12" font-weight="600" text-anchor="middle">GPU 그리기</text><text x="554" y="99" fill="var(--fg-muted)" font-size="12">← GPU가 병목</text><text x="16" y="138" fill="var(--fg)" font-size="13" font-weight="600">부품은 그대로인데 해상도·설정이 저울을 움직입니다.</text><text x="16" y="158" fill="var(--fg-muted)" font-size="12">그래서 조합만 보고 병목을 단정하는 계산기는 성립하지 않습니다.</text>
+</svg>
+<figcaption>더 오래 걸리는 쪽(진한 칸)이 그 순간의 병목입니다 — 프레임마다 이 릴레이가 반복됩니다.</figcaption>
+</figure>
 <h2 id="병목-계산기를-거르는-이유">병목 계산기를 거르는 이유</h2>
 <p>계산기 사이트는 CPU·GPU 이름을 넣으면 &quot;병목 몇 %&quot;를 돌려줍니다.
 문제는 방금 본 구조입니다 — 병목은 <strong>게임·해상도·설정의

@@ -828,6 +828,7 @@ export const figures = {
   'ram-flex-mode': ramFlexMode,
   'psu-modular-types': psuModularTypes,
   'wifi-jitter': wifiJitter,
+  'cpu-gpu-relay': cpuGpuRelay,
 };
 
 /**
@@ -1273,5 +1274,64 @@ function wifiJitter() {
     rowH * 2 + 66,
     body,
     '웹·영상은 버퍼가 저 튐을 숨겨 주지만, 실시간 게임은 튐이 그대로 렉으로 보입니다.'
+  );
+}
+
+/**
+ * 같은 조합이라도 해상도·설정에 따라 병목의 방향이 바뀐다.
+ * cpu-gpu-bottleneck 의 "해상도가 저울을 움직인다" 서술을 프레임당 릴레이로 고정합니다.
+ */
+function cpuGpuRelay() {
+  const W = 640;
+  const x0 = 150;
+  const scale = 30; // 임의 시간 단위당 픽셀
+
+  const row = (y, label, cpu, gpu, boundLabel, boundCpu) => {
+    let b = '';
+    b += t(16, y + 19, label, { weight: 600, size: 13 });
+    // CPU 구간 (준비)
+    b += rect(x0, y, cpu * scale, 26, boundCpu ? COLOR.over : COLOR.soft, {
+      stroke: boundCpu ? undefined : COLOR.line,
+    });
+    b += t(x0 + (cpu * scale) / 2, y + 17, 'CPU 준비', {
+      anchor: 'middle',
+      size: 12,
+      fill: boundCpu ? '#fff' : COLOR.mute,
+      weight: boundCpu ? 600 : undefined,
+    });
+    // GPU 구간 (그리기)
+    b += rect(x0 + cpu * scale + 4, y, gpu * scale, 26, boundCpu ? COLOR.soft : COLOR.over, {
+      stroke: boundCpu ? COLOR.line : undefined,
+    });
+    b += t(x0 + cpu * scale + 4 + (gpu * scale) / 2, y + 17, 'GPU 그리기', {
+      anchor: 'middle',
+      size: 12,
+      fill: boundCpu ? COLOR.mute : '#fff',
+      weight: boundCpu ? undefined : 600,
+    });
+    b += t(x0 + cpu * scale + 4 + gpu * scale + 10, y + 17, boundLabel, {
+      size: 12,
+      fill: COLOR.mute,
+    });
+    return b;
+  };
+
+  let body = '';
+  body += t(16, 22, '한 프레임 = CPU가 준비하고 GPU가 그리는 릴레이', { weight: 600, size: 14 });
+  body += row(40, '1080p 고주사율', 6, 3, '← CPU가 병목', true);
+  body += row(82, '4K 고화질', 4, 9, '← GPU가 병목', false);
+
+  body += t(16, 138, '부품은 그대로인데 해상도·설정이 저울을 움직입니다.', { weight: 600, size: 13 });
+  body += t(16, 158, '그래서 조합만 보고 병목을 단정하는 계산기는 성립하지 않습니다.', {
+    fill: COLOR.mute,
+    size: 12,
+  });
+
+  return figure(
+    '같은 조합이라도 1080p 고주사율에서는 CPU가, 4K에서는 GPU가 병목이 된다',
+    W,
+    170,
+    body,
+    '더 오래 걸리는 쪽(진한 칸)이 그 순간의 병목입니다 — 프레임마다 이 릴레이가 반복됩니다.'
   );
 }
