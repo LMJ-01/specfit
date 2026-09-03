@@ -826,6 +826,7 @@ export const figures = {
   'cooler-fan-noise': coolerFanNoise,
   'ssd-cache-shrink': ssdCacheShrink,
   'ram-flex-mode': ramFlexMode,
+  'psu-modular-types': psuModularTypes,
 };
 
 /**
@@ -1140,5 +1141,79 @@ ${t(16, 180, '전부 싱글이 되는 게 아니라, 손해가 생각보다 작�
     196,
     body,
     '지원 방식은 보드·컨트롤러에 따라 다르지만, 요즘 시스템 대부분이 이 유연한 방식으로 돕니다.'
+  );
+}
+
+/**
+ * 논/세미/풀 모듈러 — 케이블이 어디까지 탈착되는지의 차이.
+ * modular-psu 본문의 "성능이 아니라 구성의 차이" 서술을 그림으로 고정합니다.
+ */
+function psuModularTypes() {
+  const W = 640;
+  const cols = [
+    {
+      x: 16,
+      name: '논 모듈러',
+      note: '안 쓰는 선까지 전부 달려 나옵니다',
+      slots: ['fixed-used', 'fixed-used', 'fixed-used', 'fixed-idle', 'fixed-idle', 'fixed-idle'],
+    },
+    {
+      x: 226,
+      name: '세미 모듈러',
+      note: '24핀·CPU 선만 고정, 나머지는 탈착',
+      slots: ['fixed-used', 'fixed-used', 'plug-used', 'socket', 'socket', 'socket'],
+    },
+    {
+      x: 436,
+      name: '풀 모듈러',
+      note: '필요한 선만 골라 꽂습니다',
+      slots: ['plug-used', 'plug-used', 'plug-used', 'socket', 'socket', 'socket'],
+    },
+  ];
+  const colW = 188;
+  const boxY = 36;
+  const boxH = 42;
+  const cableTop = boxY + boxH;
+
+  let body = '';
+  for (const c of cols) {
+    body += t(c.x, 24, c.name, { weight: 600, size: 14 });
+    body += rect(c.x, boxY, colW, boxH, COLOR.soft, { stroke: COLOR.line });
+    body += t(c.x + colW / 2, boxY + 26, '파워', { anchor: 'middle', fill: COLOR.mute, size: 12 });
+
+    c.slots.forEach((kind, i) => {
+      const sx = c.x + 22 + i * 29;
+      if (kind === 'fixed-used' || kind === 'fixed-idle') {
+        // 본체에 박혀 나오는 선 — 쓰는 선은 진하게, 안 쓰는 선은 흐리고 짧게
+        const used = kind === 'fixed-used';
+        body += `<line x1="${sx}" y1="${cableTop}" x2="${sx}" y2="${used ? 152 : 138}" stroke="${
+          used ? COLOR.fit : COLOR.mute
+        }" stroke-width="${used ? 4 : 3}"${used ? '' : ' stroke-dasharray="5 4" opacity="0.65"'}/>`;
+        if (!used) body += t(sx, 132, '×', { anchor: 'middle', fill: COLOR.mute, size: 11 });
+      } else {
+        // 탈착 소켓 — 꽂은 자리만 선이 내려갑니다
+        body += `<rect x="${sx - 6}" y="${cableTop - 5}" width="12" height="10" rx="2" fill="${
+          COLOR.soft
+        }" stroke="${kind === 'plug-used' ? COLOR.fit : COLOR.line}" stroke-width="1.5"/>`;
+        if (kind === 'plug-used') {
+          body += `<line x1="${sx}" y1="${cableTop + 5}" x2="${sx}" y2="152" stroke="${COLOR.fit}" stroke-width="4"/>`;
+        }
+      }
+    });
+
+    body += t(c.x, 174, c.note, { fill: COLOR.mute, size: 12 });
+  }
+
+  body += t(16, 202, '전기 성능은 셋 다 같습니다 — 갈리는 것은 케이블 구성뿐입니다.', {
+    weight: 600,
+    size: 13,
+  });
+
+  return figure(
+    '논 모듈러는 모든 케이블이 고정, 세미 모듈러는 필수선만 고정, 풀 모듈러는 전부 탈착',
+    W,
+    212,
+    body,
+    '점선(×)이 논 모듈러의 숙제 — 안 쓰는 선도 케이스 어딘가에 넣어야 합니다. 빈 소켓은 그냥 비워 두는 게 정상 사용입니다.'
   );
 }
