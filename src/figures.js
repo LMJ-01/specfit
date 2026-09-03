@@ -827,6 +827,7 @@ export const figures = {
   'ssd-cache-shrink': ssdCacheShrink,
   'ram-flex-mode': ramFlexMode,
   'psu-modular-types': psuModularTypes,
+  'wifi-jitter': wifiJitter,
 };
 
 /**
@@ -1215,5 +1216,62 @@ function psuModularTypes() {
     212,
     body,
     '점선(×)이 논 모듈러의 숙제 — 안 쓰는 선도 케이스 어딘가에 넣어야 합니다. 빈 소켓은 그냥 비워 두는 게 정상 사용입니다.'
+  );
+}
+
+/**
+ * 유선 vs 무선 — 평균 지연은 비슷해도 순간 변동(튐)이 다르다.
+ * desktop-wifi-vs-lan 의 "평균의 세계 / 변동의 세계" 서술을 그림으로 고정합니다.
+ */
+function wifiJitter() {
+  const W = 640;
+  const rowH = 96;
+  const x0 = 90;
+  const plotW = 520;
+  const n = 40;
+  const step = plotW / (n - 1);
+
+  // 지연 시계열 (픽셀 오프셋). 유선: 잔잔. 무선: 대체로 잔잔 + 가끔 튐.
+  const wiredBase = 18;
+  const wired = Array.from({ length: n }, (_, i) => wiredBase + ((i * 7) % 3));
+  const wifi = Array.from({ length: n }, (_, i) => {
+    const base = 22 + ((i * 5) % 4);
+    if (i === 11) return base + 34;
+    if (i === 12) return base + 18;
+    if (i === 27) return base + 46;
+    if (i === 28) return base + 12;
+    return base;
+  });
+
+  const line = (data, yTop, color) => {
+    const pts = data.map((v, i) => `${(x0 + i * step).toFixed(1)},${yTop + 70 - v}`).join(' ');
+    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  };
+
+  let body = '';
+  // 유선 행
+  body += t(16, 46, '유선', { weight: 600, size: 14 });
+  body += `<line x1="${x0}" y1="${rowH - 26}" x2="${x0 + plotW}" y2="${rowH - 26}" stroke="${COLOR.line}"/>`;
+  body += line(wired, rowH - 96, COLOR.fit);
+  body += t(x0 + plotW, 40, '변동 거의 없음', { anchor: 'end', fill: COLOR.mute, size: 12 });
+
+  // 무선 행
+  const y2 = rowH + 30;
+  body += t(16, y2 + 46, '무선', { weight: 600, size: 14 });
+  body += `<line x1="${x0}" y1="${y2 + rowH - 26}" x2="${x0 + plotW}" y2="${y2 + rowH - 26}" stroke="${COLOR.line}"/>`;
+  body += line(wifi, y2 + rowH - 96, COLOR.over);
+  body += t(x0 + 11 * step, y2 + 18, '↑ 이 순간이 게임에서는 렉', { fill: COLOR.mute, size: 12 });
+
+  body += t(16, y2 + rowH + 22, '평균만 보면 둘은 비슷합니다 — 갈리는 것은 튀는 순간의 유무입니다.', {
+    weight: 600,
+    size: 13,
+  });
+
+  return figure(
+    '유선은 지연이 잔잔하고, 무선은 평균은 비슷해도 가끔 크게 튄다',
+    W,
+    rowH * 2 + 66,
+    body,
+    '웹·영상은 버퍼가 저 튐을 숨겨 주지만, 실시간 게임은 튐이 그대로 렉으로 보입니다.'
   );
 }
