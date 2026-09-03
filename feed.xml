@@ -27,6 +27,13 @@
     <description>개발 공부를 하다 보면 리눅스 듀얼부팅을 해야 하나 고민이 옵니다. 요즘 기본값은 WSL이고, 듀얼부팅이 값을 하는 경우는 목록이 짧습니다. 갈림길과 각 선택의 숨은 비용을 정리했습니다.</description>
   </item>
   <item>
+    <title>CPU 병목 걱정 — 계산기 말고 사용률 하나로 판정합니다</title>
+    <link>https://specfit.kr/posts/cpu-gpu-bottleneck.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/cpu-gpu-bottleneck.html</guid>
+    <pubDate>Wed, 02 Sep 2026 15:00:00 GMT</pubDate>
+    <description>조합을 정할 때마다 병목 걱정이 따라옵니다. 병목 계산기 사이트는 왜 믿을 게 못 되는지, 완벽한 균형이 왜 애초에 없는지, 내 컴퓨터의 병목을 사용률 하나로 판정하는 법을 정리했습니다.</description>
+  </item>
+  <item>
     <title>은퇴한 노트북 활용 — 성능이 아니라 빈자리로 고릅니다</title>
     <link>https://specfit.kr/posts/old-laptop-uses.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/old-laptop-uses.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/igpu-dual-monitor.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>그래픽카드 없이 내장그래픽만으로 모니터 두 대를 쓸 수 있는지 자주 묻습니다. 답은 됩니다이고, 성능도 문제가 아닙니다. 진짜 확인할 곳은 메인보드 뒷면의 출력 단자 수입니다.</description>
-  </item>
-  <item>
-    <title>코딩·사무에 144Hz 모니터 — 생산성이 아니라 쾌적함의 지갑입니다</title>
-    <link>https://specfit.kr/posts/high-refresh-rate-coding.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/high-refresh-rate-coding.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>고주사율 모니터가 코딩이나 문서작업에도 의미가 있는지, 4K 60Hz와 FHD 144Hz 중 뭘 골라야 하는지 헷갈립니다. 주사율이 일하는 곳과 안 하는 곳을 구분해서 정리했습니다.</description>
   </item>
 </channel>
 </rss>
