@@ -2,7 +2,7 @@
 title: SSD 수명 TBW — 개발용으로 정말 걱정할 일인가
 description: TBW를 하루 쓰기량으로 나눠보면 수십 년이 나옵니다. 개발에서 먼저 오는 건 수명이 아니라 보증 기간과 용량입니다. 계산식과 내 SSD 확인법을 정리했습니다.
 date: 2026-08-18
-updated: 2026-09-01
+updated: 2026-09-05
 category: memory
 tags: [SSD, TBW, 수명, QLC, 개발용PC]
 affiliate: true
@@ -197,7 +197,9 @@ Gen4/Gen5 비교와 DRAM 유무는 [개발용 SSD 고르기](/posts/dev-ssd-choo
 
 > ⚠️ 수명(쓰기 총량)과 **보존(안 쓰고 둘 때)은 다른 축**입니다.
 > TBW 가 많이 남은 SSD 도 전원 없이 서랍에 두는 백업용으로는 맞지
-> 않습니다 — [개발자 백업 글](/posts/dev-backup-strategy.html)에서 갈랐습니다.
+> 않습니다 — [무전원 보관의 시간 축](/posts/ssd-cold-storage.html)은
+> 따로 정리했고, 매체 선택은 [개발자 백업 글](/posts/dev-backup-strategy.html)에서
+> 갈랐습니다.
 
 ## 자주 묻는 질문
 

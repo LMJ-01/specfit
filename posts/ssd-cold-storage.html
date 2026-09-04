@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSD 오래 안 쓰면 데이터가 날아가나 — 몇 달은 걱정 말고, 몇 년은 맡기지 마세요 | 스펙핏</title>
+<meta name="description" content="서랍의 외장 SSD나 뽑아둔 SSD의 데이터가 증발한다는 말에 불안해집니다. 절반은 과장이고 절반은 사실입니다. 전하로 기억하는 구조라 시간 축의 어디까지가 안전권인지, 장기 보관은 뭘로 해야 하는지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/ssd-cold-storage.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="SSD 오래 안 쓰면 데이터가 날아가나 — 몇 달은 걱정 말고, 몇 년은 맡기지 마세요 | 스펙핏">
+<meta property="og:description" content="서랍의 외장 SSD나 뽑아둔 SSD의 데이터가 증발한다는 말에 불안해집니다. 절반은 과장이고 절반은 사실입니다. 전하로 기억하는 구조라 시간 축의 어디까지가 안전권인지, 장기 보관은 뭘로 해야 하는지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/ssd-cold-storage.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSD 오래 안 쓰면 데이터가 날아가나 — 몇 달은 걱정 말고, 몇 년은 맡기지 마세요","description":"서랍의 외장 SSD나 뽑아둔 SSD의 데이터가 증발한다는 말에 불안해집니다. 절반은 과장이고 절반은 사실입니다. 전하로 기억하는 구조라 시간 축의 어디까지가 안전권인지, 장기 보관은 뭘로 해야 하는지 정리했습니다.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ssd-cold-storage.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"SSD 오래 안 쓰면 데이터가 날아가나 — 몇 달은 걱정 말고, 몇 년은 맡기지 마세요","item":"https://specfit.kr/posts/ssd-cold-storage.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"반년 서랍에 있던 외장 SSD, 지금 열어봐도 되나요","acceptedAnswer":{"@type":"Answer","text":"네 — 그 기간은 걱정 범위가 아닙니다. 다만 열어본 김에 중요한 파일은 다른 곳에 사본 하나 만들어 두세요. 걱정을 없애는 건 매체가 아니라 사본 수입니다."}},{"@type":"Question","name":"USB 메모리도 같은가요","acceptedAnswer":{"@type":"Answer","text":"같은 계열입니다 — USB 메모리·SD카드도 전하로 기억하는 물건이라 무전원 장기 보관에 강하지 않고, 대개 SSD보다 등급이 낮은 셀을 써서 더 불리한 편입니다. \"USB에만 있는 소중한 사진\"이 제일 위험한 보관 형태입니다."}},{"@type":"Question","name":"꽂아두기만 하면 알아서 갱신되나요","acceptedAnswer":{"@type":"Answer","text":"전원이 들어오면 컨트롤러가 관리 작업을 할 기회가 생깁니다 — 다만 \"몇 분 꽂으면 전체가 갱신된다\"고 단정할 수는 없습니다 (동작은 제품 내부 구현에 달렸습니다). 확실한 갱신은 내용을 읽어서 다시 쓰는 것, 즉 사본 갱신입니다."}},{"@type":"Question","name":"새 SSD와 오래 쓴 SSD가 보존력이 다른가요","acceptedAnswer":{"@type":"Answer","text":"방향은 그렇습니다 — 셀은 쓰고 지울수록 마모되고, 마모된 셀은 전하를 오래 붙잡는 힘도 약해집니다. TBW를 많이 소진한 SSD를 은퇴시켜 보관용으로 돌리는 것은 순서가 거꾸로인 셈입니다."}},{"@type":"Question","name":"그럼 뭘로 장기 보관하나요","acceptedAnswer":{"@type":"Answer","text":"집에서는 외장 HDD + 클라우드의 조합이 현실적인 답입니다 — 백업 전략 글의 3-2-1 그대로 \"사본 셋, 매체 둘, 다른 곳 하나\"가 매체 수명 문제를 확률로 눌러 줍니다. 그리고 어떤 매체든 몇 년에 한 번은 꽂아서 확인하는 것까지가 보관입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>SSD 오래 안 쓰면 데이터가 날아가나 — 몇 달은 걱정 말고, 몇 년은 맡기지 마세요</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-05">2026년 9월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>컴퓨터에서 뽑아둔 SSD, 서랍 속 외장 SSD — 그러다 &quot;SSD는 오래
+안 쓰면 데이터가 증발한다&quot;는 글을 보면 불안해집니다. 커뮤니티에
+반복해서 올라오는 질문이고, 답변은 &quot;괜찮다&quot;와 &quot;조심하라&quot;가 늘
+섞여 있습니다.</p>
+<p>둘 다 반쪽 진실입니다. <strong>몇 달 서랍에 둔 걸 걱정할 일은 아니고,
+몇 년짜리 보관을 맡길 물건도 아닙니다.</strong> 시간 축의 어디서 갈리는지
+구조부터 보면 답이 깔끔해집니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td>몇 주~몇 달 안 꽂아둔 SSD</td><td><strong>걱정할 일 아닙니다</strong> — 정상 범위입니다</td></tr>
+<tr><td>1년 넘게 전원 없이 방치</td><td>⚠️ 슬슬 구조의 약점 구간입니다 — 꽂아서 확인·갱신하세요</td></tr>
+<tr><td>몇 년짜리 장기 보관 (추억 사진 등)</td><td>❌ <strong>SSD의 자리가 아닙니다</strong> — 외장 HDD·클라우드 복수 사본으로</td></tr>
+<tr><td>자주 켜는 컴퓨터 속 SSD</td><td>이 문제 자체가 없습니다 — 전원이 들어올 때마다 관리됩니다</td></tr>
+<tr><td>수명 끝물(마모 심한) SSD의 보관</td><td>더 불리합니다 — 보존을 맡기지 마세요</td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-그런가-전하로-기억하는-물건이라서">왜 그런가 — 전하로 기억하는 물건이라서</h2>
+<p>SSD가 데이터를 기억하는 방식은 <strong>셀에 전하(전기)를 가둬 두는
+것</strong>입니다. 전원이 끊긴 채 오래 두면 그 전하가 아주 서서히 새어
+나갑니다 — 하루아침의 증발이 아니라 <strong>년 단위의 느린 누설</strong>입니다.</p>
+<p>시간 감각을 잡아 주는 기준이 하나 있습니다. 업계의 소비자용 SSD
+설계 기준이 <strong>대략 상온에서 1년 수준의 무전원 보존을 하한</strong>으로
+잡습니다. 이 숫자에서 읽을 것은 둘입니다:</p>
+<ul>
+<li><strong>몇 주·몇 달 방치를 걱정하는 것은 과장</strong>입니다 — 기준 자체가
+년 단위입니다. 실제로는 하한보다 오래 버티는 경우가 대부분입니다</li>
+<li>그러나 <strong>&quot;몇 년이고 괜찮다&quot;는 보장은 어디에도 없습니다</strong> —
+하한 설계라는 것은, 그 너머는 각자 사정(셀 방식·온도·마모)에
+달렸다는 뜻입니다</li>
+</ul>
+<p>변수의 방향도 분명합니다. <strong>온도가 높을수록</strong>, 그리고
+<a href="/posts/ssd-tbw-lifespan.html">쓰기 수명이 많이 닳은 SSD일수록</a>
+보존에 불리합니다 — 수명(쓰기 총량)과 보존(안 쓰고 둘 때)은 다른
+축이지만, 마모가 보존력까지 깎는 방향으로는 이어져 있습니다.</p>
+<p>참고로 <strong>HDD는 자기(자석)로 기억하는 물건</strong>이라 무전원 보관에
+상대적으로 강합니다 — 장기 보관 이야기에서 HDD가 계속 소환되는
+이유입니다.</p>
+<h2 id="그래서-어떻게-하나">그래서 어떻게 하나</h2>
+<ol>
+<li><strong>자주 쓰는 SSD는 신경 끄세요</strong> — 켤 때마다 전원이 들어오는
+환경에서는 이 문제가 성립하지 않습니다</li>
+<li><strong>서랍의 SSD가 생각났다면</strong> — 지금 한 번 꽂아 주세요. 중요한
+내용이면 이 기회에 다른 곳에도 사본을 만들어 두는 것이
+정석입니다</li>
+<li><strong>몇 년짜리 보관은 SSD에 맡기지 마세요</strong> — 잠자는 보관은
+<a href="/posts/nas-vs-external-hdd.html">외장 HDD가 무난하고</a>, 진짜
+중요한 것은 매체 하나가 아니라
+<a href="/posts/dev-backup-strategy.html">3-2-1 복수 사본</a>이 지킵니다.
+어떤 매체든 단일 사본은 사고 앞에서 평등하게 약합니다</li>
+<li><strong>보관해 둔 SSD를 살릴 거면</strong> — 꽂아서 파일이 열리는지 확인한
+뒤 쓰세요. 오래 묵은 디스크를 그대로 주력으로 쓰는 것보다,
+내용을 새로 복사해 넣는 쪽이 개운합니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="반년-서랍에-있던-외장-ssd-지금-열어봐도-되나요">반년 서랍에 있던 외장 SSD, 지금 열어봐도 되나요</h3>
+<p>네 — 그 기간은 걱정 범위가 아닙니다. 다만 열어본 김에 중요한
+파일은 다른 곳에 사본 하나 만들어 두세요. 걱정을 없애는 건
+매체가 아니라 사본 수입니다.</p>
+<h3 id="usb-메모리도-같은가요">USB 메모리도 같은가요</h3>
+<p>같은 계열입니다 — USB 메모리·SD카드도 전하로 기억하는 물건이라
+무전원 장기 보관에 강하지 않고, 대개 SSD보다 등급이 낮은 셀을
+써서 더 불리한 편입니다. &quot;USB에만 있는 소중한 사진&quot;이 제일 위험한
+보관 형태입니다.</p>
+<h3 id="꽂아두기만-하면-알아서-갱신되나요">꽂아두기만 하면 알아서 갱신되나요</h3>
+<p>전원이 들어오면 컨트롤러가 관리 작업을 할 기회가 생깁니다 —
+다만 &quot;몇 분 꽂으면 전체가 갱신된다&quot;고 단정할 수는 없습니다
+(동작은 제품 내부 구현에 달렸습니다). 확실한 갱신은 <strong>내용을
+읽어서 다시 쓰는 것</strong>, 즉 사본 갱신입니다.</p>
+<h3 id="새-ssd와-오래-쓴-ssd가-보존력이-다른가요">새 SSD와 오래 쓴 SSD가 보존력이 다른가요</h3>
+<p>방향은 그렇습니다 — 셀은 쓰고 지울수록 마모되고, 마모된 셀은
+전하를 오래 붙잡는 힘도 약해집니다.
+<a href="/posts/ssd-tbw-lifespan.html">TBW를 많이 소진한 SSD</a>를 은퇴시켜
+보관용으로 돌리는 것은 순서가 거꾸로인 셈입니다.</p>
+<h3 id="그럼-뭘로-장기-보관하나요">그럼 뭘로 장기 보관하나요</h3>
+<p>집에서는 <strong>외장 HDD + 클라우드</strong>의 조합이 현실적인 답입니다 —
+<a href="/posts/dev-backup-strategy.html">백업 전략 글</a>의 3-2-1 그대로
+&quot;사본 셋, 매체 둘, 다른 곳 하나&quot;가 매체 수명 문제를 확률로
+눌러 줍니다. 그리고 어떤 매체든 몇 년에 한 번은 꽂아서 확인하는
+것까지가 보관입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>SSD는 <strong>전하로 기억</strong>합니다 — 무전원 방치 시 년 단위로 서서히
+새는 구조입니다</li>
+<li><strong>몇 주~몇 달은 걱정 대상이 아닙니다</strong> — 공포는 과장입니다</li>
+<li><strong>몇 년짜리 보관은 SSD의 자리가 아닙니다</strong> — 외장 HDD·클라우드
+복수 사본이 그 자리입니다</li>
+<li>고온과 마모는 보존에 불리한 방향입니다 — 끝물 SSD에 보관을
+맡기지 마세요</li>
+<li>지키는 것은 매체가 아니라 <strong>사본 수와 주기적 확인</strong>입니다</li>
+</ol>
+<p>저장 장치의 이웃 판정들 — <a href="/posts/dev-backup-strategy.html">백업 전략 3-2-1</a> ·
+<a href="/posts/ssd-tbw-lifespan.html">SSD 수명(TBW)</a> ·
+<a href="/posts/nas-vs-external-hdd.html">NAS vs 외장 HDD</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">SSD</span> <span class="tag">데이터보존</span> <span class="tag">장기보관</span> <span class="tag">외장SSD</span> <span class="tag">백업</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ram-usage-normal.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램 사용률 90%, 문제인가 — 숫자가 아니라 증상으로 판정합니다</span>
+        <span class="card-desc">작업 관리자의 램 사용률이 높으면 불안해집니다. 그런데 사용률은 기준선이 있는 숫자가 아니라, 증상과 주범을 같이 봐야 판정이 됩니다. 판정 순서, 주범 찾는 법, 램 정리 프로그램이 대개 헛수고인 이유까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ssd-migration-vs-clean-install.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">SSD 교체, 마이그레이션 vs 클린설치 — 지금 시스템의 상태가 정합니다</span>
+        <span class="card-desc">SSD를 바꿀 때 윈도우를 통째로 옮길지 새로 깔지 갈립니다. 판정 기준은 취향이 아니라 지금 시스템의 상태입니다. 복사는 좋은 것과 나쁜 것을 같이 옮기니까요. 갈림길과 안전 수칙, 실패 대비까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ssd-partition.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다</span>
+        <span class="card-desc">C·D 드라이브로 나누는 게 관습처럼 남아 있는데, 요즘 기본값은 통으로 쓰는 쪽입니다. 파티션이 실제로 해주는 것과 못 해주는 것(백업 아님, 속도 무관)을 가르고, 나누는 게 값을 하는 경우의 목록을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

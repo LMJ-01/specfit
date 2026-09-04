@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>SSD 오래 안 쓰면 데이터가 날아가나 — 몇 달은 걱정 말고, 몇 년은 맡기지 마세요</title>
+    <link>https://specfit.kr/posts/ssd-cold-storage.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ssd-cold-storage.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>서랍의 외장 SSD나 뽑아둔 SSD의 데이터가 증발한다는 말에 불안해집니다. 절반은 과장이고 절반은 사실입니다. 전하로 기억하는 구조라 시간 축의 어디까지가 안전권인지, 장기 보관은 뭘로 해야 하는지 정리했습니다.</description>
+  </item>
+  <item>
     <title>파워 용량이 크면 전기를 더 먹나 — 용량은 상한이고, 쓰는 만큼만 나갑니다</title>
     <link>https://specfit.kr/posts/psu-capacity-power-draw.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/psu-capacity-power-draw.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/desktop-wifi-vs-lan.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>컴퓨터 자리에 랜선이 안 닿으면 와이파이로 버티게 됩니다. 웹서핑엔 문제없고 게임에선 말리는 이유가 뭔지 — 평균 속도와 순간 변동을 갈라 보면 판정이 깔끔해집니다. 유선을 못 까는 집의 절충안까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다</title>
-    <link>https://specfit.kr/posts/cpu-mobo-swap-windows.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/cpu-mobo-swap-windows.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
