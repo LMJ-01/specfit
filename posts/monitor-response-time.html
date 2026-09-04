@@ -95,6 +95,13 @@
 <p>이름 때문에 생기는 오해부터. 응답속도는 <strong>픽셀이 색을 갈아입는
 시간</strong>입니다. 이게 느리면 움직이는 물체 뒤로 이전 색이 끌려서
 <strong>잔상(번짐)</strong>이 보입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 222" width="640" height="222" role="img" aria-label="입력 지연은 클릭이 화면에 반영되는 시간의 축, 응답속도는 움직임의 잔상 축 — 서로 다른 축이다">
+<title>입력 지연은 클릭이 화면에 반영되는 시간의 축, 응답속도는 움직임의 잔상 축 — 서로 다른 축이다</title>
+<text x="16" y="24" fill="var(--fg)" font-size="14" font-weight="600">① 입력 지연(인풋랙) — 빨리 반영되는가</text><rect x="16" y="38" width="96" height="34" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="64" y="59" fill="var(--fg)" font-size="12" text-anchor="middle">클릭</text><line x1="118" y1="55" x2="330" y2="55" stroke="var(--accent)" stroke-width="2.5"/><polygon points="330,55 320,50 320,60" fill="var(--accent)"/><text x="224" y="48" fill="var(--fg-muted)" font-size="11" text-anchor="middle">처리·전송 시간</text><rect x="336" y="38" width="130" height="34" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="401" y="59" fill="var(--fg)" font-size="12" text-anchor="middle">화면에 반영</text><text x="480" y="59" fill="var(--fg-muted)" font-size="11">← 모니터 처리·네트워크의 축</text><text x="16" y="112" fill="var(--fg)" font-size="14" font-weight="600">② 응답속도 — 움직임이 깨끗하게 보이는가</text><rect x="60" y="126" width="34" height="34" fill="var(--fig-fit)" rx="6"/><rect x="104" y="126" width="34" height="34" fill="var(--fig-fit)" rx="6"/><text x="79" y="180" fill="var(--fg-muted)" font-size="11">빠른 픽셀 — 깨끗</text><rect x="330" y="126" width="34" height="34" rx="6" fill="var(--fig-over)" opacity="0.2"/><rect x="352" y="126" width="34" height="34" rx="6" fill="var(--fig-over)" opacity="0.4"/><rect x="374" y="126" width="34" height="34" rx="6" fill="var(--fig-over)" opacity="0.7"/><rect x="396" y="126" width="34" height="34" fill="var(--fig-over)" rx="6"/><text x="378" y="180" fill="var(--fg-muted)" font-size="11">느린 픽셀 — 뒤로 끌림(잔상)</text><text x="16" y="210" fill="var(--fg)" font-size="13" font-weight="600">1ms 응답속도가 "반응 빠른 모니터"를 뜻하지 않습니다 — 두 축은 따로 잽니다.</text>
+</svg>
+<figcaption>게임의 "즉각 반응"은 ①의 축이고, 스펙표의 ms 숫자는 ②의 축입니다 — 리뷰에서 두 항목이 따로 실측되는 이유입니다.</figcaption>
+</figure>
 <p>내 입력이 화면에 반영되기까지의 <strong>지연(인풋랙)은 다른 축</strong>입니다.
 그건 모니터의 처리 지연과 <a href="/posts/desktop-wifi-vs-lan.html">네트워크·연결 쪽</a>이
 정하는 값이라, 응답속도 1ms 모니터가 &quot;반응 빠른 모니터&quot;라는 보장이

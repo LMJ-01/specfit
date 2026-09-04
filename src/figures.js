@@ -832,6 +832,7 @@ export const figures = {
   'tablet-os-wall': tabletOsWall,
   'noise-vs-load': noiseVsLoad,
   'partition-one-disk': partitionOneDisk,
+  'blur-vs-lag': blurVsLag,
 };
 
 /**
@@ -1483,5 +1484,49 @@ function partitionOneDisk() {
     170,
     body,
     '드라이브 문자가 달라 보여도 물리적으로는 한 장 — 재설치 편의는 주지만 데이터 안전은 못 줍니다.'
+  );
+}
+
+/**
+ * 응답속도(잔상)와 입력 지연(인풋랙)은 다른 축 — 혼동 교정.
+ * monitor-response-time 의 "반응이 아니라 번짐" 서술을 그림으로 고정합니다.
+ */
+function blurVsLag() {
+  const W = 640;
+
+  let body = '';
+  // 축 1: 입력 지연
+  body += t(16, 24, '① 입력 지연(인풋랙) — 빨리 반영되는가', { weight: 600, size: 14 });
+  body += rect(16, 38, 96, 34, COLOR.soft, { stroke: COLOR.line });
+  body += t(64, 59, '클릭', { anchor: 'middle', size: 12 });
+  body += `<line x1="118" y1="55" x2="330" y2="55" stroke="${COLOR.accent}" stroke-width="2.5"/>`;
+  body += `<polygon points="330,55 320,50 320,60" fill="${COLOR.accent}"/>`;
+  body += t(224, 48, '처리·전송 시간', { anchor: 'middle', size: 11, fill: COLOR.mute });
+  body += rect(336, 38, 130, 34, COLOR.soft, { stroke: COLOR.line });
+  body += t(401, 59, '화면에 반영', { anchor: 'middle', size: 12 });
+  body += t(480, 59, '← 모니터 처리·네트워크의 축', { size: 11, fill: COLOR.mute });
+
+  // 축 2: 응답속도
+  body += t(16, 112, '② 응답속도 — 움직임이 깨끗하게 보이는가', { weight: 600, size: 14 });
+  // 움직이는 사각형 + 잔상 꼬리
+  body += rect(60, 126, 34, 34, COLOR.fit, { r: 6 });
+  body += rect(104, 126, 34, 34, COLOR.fit, { r: 6 });
+  body += t(79, 180, '빠른 픽셀 — 깨끗', { size: 11, fill: COLOR.mute });
+  const ghost = (x, o) => `<rect x="${x}" y="126" width="34" height="34" rx="6" fill="${COLOR.over}" opacity="${o}"/>`;
+  body += ghost(330, 0.2) + ghost(352, 0.4) + ghost(374, 0.7);
+  body += rect(396, 126, 34, 34, COLOR.over, { r: 6 });
+  body += t(378, 180, '느린 픽셀 — 뒤로 끌림(잔상)', { size: 11, fill: COLOR.mute });
+
+  body += t(16, 210, '1ms 응답속도가 "반응 빠른 모니터"를 뜻하지 않습니다 — 두 축은 따로 잽니다.', {
+    weight: 600,
+    size: 13,
+  });
+
+  return figure(
+    '입력 지연은 클릭이 화면에 반영되는 시간의 축, 응답속도는 움직임의 잔상 축 — 서로 다른 축이다',
+    W,
+    222,
+    body,
+    '게임의 "즉각 반응"은 ①의 축이고, 스펙표의 ms 숫자는 ②의 축입니다 — 리뷰에서 두 항목이 따로 실측되는 이유입니다.'
   );
 }
