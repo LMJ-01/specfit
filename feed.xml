@@ -20,6 +20,13 @@
     <description>750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.</description>
   </item>
   <item>
+    <title>케이스 옆판 열고 쓰면 안 되나 — 진단용으로는 최고, 상시 운용으로는 손해입니다</title>
+    <link>https://specfit.kr/posts/pc-case-open.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-case-open.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>온도가 걱정되면 옆판을 열어두고 싶어집니다. 그런데 열어서 시원해지는 컴퓨터가 있고 오히려 나빠지는 자리도 있습니다. 옆판 열기의 진짜 쓸모는 상시 해법이 아니라 진단 도구라는 것 — 판정과 대가를 정리했습니다.</description>
+  </item>
+  <item>
     <title>컴퓨터 24시간 켜둬도 되나 — 수명 걱정이 아니라 용도로 정하는 문제입니다</title>
     <link>https://specfit.kr/posts/pc-always-on.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-always-on.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-gaming-fps.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>모니터를 한 대 더 달면 게임 성능이 깎이는지 걱정이 됩니다. 꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 보조 화면 위에서 도는 작업입니다. 구조와 판정, 줄이는 요령을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>듀얼 모니터 색감이 달라요 — 완전 일치는 목표가 아닙니다</title>
-    <link>https://specfit.kr/posts/dual-monitor-color-match.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-color-match.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>모니터 두 대의 색이 다른 것은 고장이 아니라 패널이 다른 물건이라는 뜻입니다. 왜 완전히 같아질 수 없는지, 현실적으로 어디까지 맞추는지, 색이 중요한 작업은 어떻게 배치로 푸는지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
