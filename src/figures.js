@@ -833,6 +833,7 @@ export const figures = {
   'noise-vs-load': noiseVsLoad,
   'partition-one-disk': partitionOneDisk,
   'blur-vs-lag': blurVsLag,
+  'ram-pressure': ramPressure,
 };
 
 /**
@@ -1528,5 +1529,55 @@ function blurVsLag() {
     222,
     body,
     '게임의 "즉각 반응"은 ①의 축이고, 스펙표의 ms 숫자는 ②의 축입니다 — 리뷰에서 두 항목이 따로 실측되는 이유입니다.'
+  );
+}
+
+/**
+ * 램 사용률이 높아도 여유가 있으면 조용하고, 압박은 페이징(디스크 왕복)으로 드러난다.
+ * ram-usage-normal 의 "숫자가 아니라 증상" 서술을 그림으로 고정합니다.
+ */
+function ramPressure() {
+  const W = 640;
+  const barW = 380;
+
+  const bar = (y, fillRatio, label) => {
+    let b = '';
+    b += rect(16, y, barW, 30, COLOR.soft, { stroke: COLOR.line });
+    b += rect(16, y, barW * fillRatio, 30, COLOR.fit);
+    b += t(16 + (barW * fillRatio) / 2, y + 20, label, { anchor: 'middle', fill: '#fff', size: 12, weight: 600 });
+    return b;
+  };
+
+  let body = '';
+  // 상태 1
+  body += t(16, 24, '사용률 90% — 그런데 증상 없음', { weight: 600, size: 14 });
+  body += bar(34, 0.9, '프로그램들이 쓰는 중');
+  body += t(412, 54, '= 산 램이 일하는 정상 상태', { size: 12, fill: COLOR.mute });
+
+  // 상태 2
+  body += t(16, 106, '사용률 95% + 쓰려는 양이 여유를 넘음', { weight: 600, size: 14 });
+  body += bar(116, 0.97, '꽉 참');
+  // 디스크 왕복 화살표
+  body += rect(470, 108, 150, 46, COLOR.soft, { stroke: COLOR.over });
+  body += t(545, 128, '디스크', { anchor: 'middle', size: 12, weight: 600 });
+  body += t(545, 145, '(페이징)', { anchor: 'middle', size: 11, fill: COLOR.mute });
+  body += `<line x1="400" y1="122" x2="466" y2="122" stroke="${COLOR.over}" stroke-width="2.5"/>`;
+  body += `<polygon points="466,122 456,117 456,127" fill="${COLOR.over}"/>`;
+  body += `<line x1="466" y1="140" x2="400" y2="140" stroke="${COLOR.over}" stroke-width="2.5"/>`;
+  body += `<polygon points="400,140 410,135 410,145" fill="${COLOR.over}"/>`;
+  body += t(16, 176, '↑ 이 왕복이 시작될 때 나오는 것이 증상입니다 — 멈칫 · 디스크 급증 · 앱 튕김', {
+    size: 12,
+    fill: COLOR.over,
+    weight: 600,
+  });
+
+  body += t(16, 206, '그래서 판정 증거는 사용률 숫자가 아니라 증상의 유무입니다.', { weight: 600, size: 13 });
+
+  return figure(
+    '램 사용률이 높아도 증상이 없으면 정상이고, 부족은 디스크 왕복(페이징)이 시작될 때 증상으로 드러난다',
+    W,
+    218,
+    body,
+    '"몇 %면 위험"이라는 선은 없습니다 — 여유를 넘는 순간이 부하에 따라 달라서, 증상이 판정 기준입니다.'
   );
 }
