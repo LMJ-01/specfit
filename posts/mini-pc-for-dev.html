@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다","description":"손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.","datePublished":"2026-08-26","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mini-pc-for-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다","description":"손바닥만 한 컴퓨터로 코딩이 되는지 궁금하실 겁니다. 됩니다 — 노트북으로 되는 만큼요. 미니PC의 속은 노트북이라, 판단 기준도 노트북과 같습니다. 사양표에서 확인할 것을 정리했습니다.","datePublished":"2026-08-26","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mini-pc-for-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다","item":"https://specfit.kr/posts/mini-pc-for-dev.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"노트북이 이미 있는데 미니PC를 또 살 이유가 있나요","acceptedAnswer":{"@type":"Answer","text":"책상에서만 쓸 두 번째 컴퓨터(서버·작업 분리)가 필요할 때입니다. 주력 컴퓨터를 고르는 문제라면 미니PC와 노트북 중 무엇을 살지부터 정리하는 것이 순서입니다."}},{"@type":"Question","name":"미니PC로 로컬 LLM을 돌리는 영상을 봤습니다","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다 — 문제는 어느 급의 미니PC냐이고, 사양표의 메모리 대역폭 한 줄로 판정됩니다. 저가형·일반형·통합메모리 급이 어떻게 갈리는지 미니PC 로컬 LLM 판정법에 계산법과 함께 정리했습니다."}},{"@type":"Question","name":"라즈베리파이 같은 것과는 다른가요","acceptedAnswer":{"@type":"Answer","text":"다릅니다. 라즈베리파이는 다른 칩 계열(ARM)의 학습·공작용 보드라 일반 프로그램 호환부터 다른 세계입니다. 이 글의 미니PC는 윈도우·리눅스가 그대로 도는 일반 컴퓨터입니다."}},{"@type":"Question","name":"사무실 PC로 회사에서 쓰는 건요","acceptedAnswer":{"@type":"Answer","text":"문서·웹 중심 업무에는 잘 맞습니다. 이 글은 개발 관점이라 램과 GPU를 따졌지만, 사무용은 그 두 걱정이 없는 자리입니다."}},{"@type":"Question","name":"중고 미니PC는요","acceptedAnswer":{"@type":"Answer","text":"노트북 중고와 같은 눈으로 보면 됩니다 — 중고 노트북에서 확인할 것 중 화면·배터리·키보드 항목이 빠지니 오히려 점검이 단순합니다. CPU 세대와 램 규격(DDR4냐 5냐)을 먼저 보세요."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>미니PC로 개발, 되나요 — 정체는 눕혀 놓은 노트북입니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-26">2026년 8월 26일</time>
-      <span class="updated">· 2026년 9월 1일 갱신</span>
+      <span class="updated">· 2026년 9월 5일 갱신</span>
     </p>
   </header>
 
@@ -246,7 +246,9 @@ CPU 는 <a href="/posts/dev-laptop-cpu.html">개발용 노트북 CPU 글의 결�
 보험(UPS)</a> 판단도 같이 보면 됩니다</li>
 </ul>
 <p>빌드 머신, 테스트 서버, 개인 NAS 겸용 — &quot;본체는 따로 있고 상시로
-돌 작은 컴퓨터가 하나 필요하다&quot;면 그게 정확히 미니PC 자리입니다.</p>
+돌 작은 컴퓨터가 하나 필요하다&quot;면 그게 정확히 미니PC 자리입니다.
+<a href="/posts/pc-always-on.html">24시간 켜둬도 되는가라는 질문 자체</a>는
+따로 정리했습니다 — 답은 용도로 정하는 문제라는 것입니다.</p>
 <h2 id="발열-통이-작으면-노트북의-문제도-따라옵니다">발열 — 통이 작으면 노트북의 문제도 따라옵니다</h2>
 <p>노트북 속이니 노트북의 약점도 옵니다. 작은 통에서 지속 부하가
 걸리면 열이 차고, <a href="/posts/laptop-thermal-throttling.html">온도가 차면 스스로 느려지는 동작(스로틀링)</a>도
@@ -315,6 +317,13 @@ GPU를 따졌지만, 사무용은 그 두 걱정이 없는 자리입니다.</p>
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/pc-always-on.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">컴퓨터 24시간 켜둬도 되나 — 수명 걱정이 아니라 용도로 정하는 문제입니다</span>
+        <span class="card-desc">컴퓨터를 계속 켜두면 고장 나는지, 껐다 켜는 게 더 해로운지 — 커뮤니티의 오랜 논쟁입니다. 어느 쪽도 관리만 되면 수명을 좌우할 크기가 아니라서, 판정 기준은 기계가 아니라 그 켜둠이 일을 하는가입니다. 켜둘 때의 관리 목록까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/mini-pc-noise.html">
         <span class="card-cat">미니PC</span>
         <span class="card-title">미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다</span>
@@ -326,13 +335,6 @@ GPU를 따졌지만, 사무용은 그 두 걱정이 없는 자리입니다.</p>
         <span class="card-cat">미니PC</span>
         <span class="card-title">미니PC로 게임이 되나 — 갈림길은 게임의 무게입니다</span>
         <span class="card-desc">롤 정도는 미니PC로 돌아가는지, 어디까지가 한계인지 질문이 많습니다. 미니PC의 게임 성능은 내장그래픽이 정하고, 되는 게임과 안 되는 게임의 경계가 비교적 뚜렷합니다. 판정 기준을 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/barebone-mini-pc.html">
-        <span class="card-cat">미니PC</span>
-        <span class="card-title">베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나</span>
-        <span class="card-desc">베어본은 미완성 컴퓨터입니다. 뭐가 빠져 있고 뭘 골라 넣어야 하는지, 완제품과는 언제 갈리는지 정리했습니다. 갖고 있는 램과 SSD를 살릴 수 있는 게 이 방식의 핵심입니다.</span>
       </a>
     </li>
   </ul>

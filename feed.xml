@@ -20,6 +20,13 @@
     <description>750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.</description>
   </item>
   <item>
+    <title>컴퓨터 24시간 켜둬도 되나 — 수명 걱정이 아니라 용도로 정하는 문제입니다</title>
+    <link>https://specfit.kr/posts/pc-always-on.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-always-on.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터를 계속 켜두면 고장 나는지, 껐다 켜는 게 더 해로운지 — 커뮤니티의 오랜 논쟁입니다. 어느 쪽도 관리만 되면 수명을 좌우할 크기가 아니라서, 판정 기준은 기계가 아니라 그 켜둠이 일을 하는가입니다. 켜둘 때의 관리 목록까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다</title>
     <link>https://specfit.kr/posts/game-stutter-fps.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/game-stutter-fps.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-color-match.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>모니터 두 대의 색이 다른 것은 고장이 아니라 패널이 다른 물건이라는 뜻입니다. 왜 완전히 같아질 수 없는지, 현실적으로 어디까지 맞추는지, 색이 중요한 작업은 어떻게 배치로 푸는지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다</title>
-    <link>https://specfit.kr/posts/desktop-wifi-vs-lan.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/desktop-wifi-vs-lan.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>컴퓨터 자리에 랜선이 안 닿으면 와이파이로 버티게 됩니다. 웹서핑엔 문제없고 게임에선 말리는 이유가 뭔지 — 평균 속도와 순간 변동을 갈라 보면 판정이 깔끔해집니다. 유선을 못 까는 집의 절충안까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
