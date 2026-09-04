@@ -48,6 +48,13 @@
     <description>새 컴퓨터의 파워 팬이 멈춰 있으면 불량인가 싶어집니다. 요즘 파워 상당수는 저부하에서 팬을 일부러 멈추는 제로팬 설계입니다. 기능인지 고장인지 가르는 판정 절차와, 그래픽카드 팬에도 같은 이야기가 적용되는 이유를 정리했습니다.</description>
   </item>
   <item>
+    <title>본체 먼지 청소, 얼마나 자주 — 달력이 아니라 신호를 보고 합니다</title>
+    <link>https://specfit.kr/posts/pc-dust-cleaning.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-dust-cleaning.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터 청소 주기를 물으면 몇 달에 한 번이라는 답이 제각각으로 돌아옵니다. 환경마다 쌓이는 속도가 달라 숫자 답이 없는 질문이라서입니다. 청소가 필요하다는 신호 세 가지와 안전한 청소 기본기, 덜 쌓이게 하는 배치를 정리했습니다.</description>
+  </item>
+  <item>
     <title>모니터 응답속도 1ms vs 5ms — 표기 숫자는 조건부라는 게 핵심입니다</title>
     <link>https://specfit.kr/posts/monitor-response-time.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-response-time.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/modular-psu.html</guid>
     <pubDate>Wed, 02 Sep 2026 15:00:00 GMT</pubDate>
     <description>풀 모듈러, 세미 모듈러, 논 모듈러 중 뭘 사야 하는지 헷갈립니다. 성능 차이는 없고, 값어치는 케이블 정리·조립 편의·케이스 공간에서 나옵니다. 판정 기준과 케이블 혼용 금지 경고까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>리눅스 듀얼부팅이 필요한가 — WSL로 안 되는 것의 목록으로 판정합니다</title>
-    <link>https://specfit.kr/posts/dual-boot-vs-wsl.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/dual-boot-vs-wsl.html</guid>
-    <pubDate>Wed, 02 Sep 2026 15:00:00 GMT</pubDate>
-    <description>개발 공부를 하다 보면 리눅스 듀얼부팅을 해야 하나 고민이 옵니다. 요즘 기본값은 WSL이고, 듀얼부팅이 값을 하는 경우는 목록이 짧습니다. 갈림길과 각 선택의 숨은 비용을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
