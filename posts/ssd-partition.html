@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다 | 스펙핏</title>
+<meta name="description" content="C·D 드라이브로 나누는 게 관습처럼 남아 있는데, 요즘 기본값은 통으로 쓰는 쪽입니다. 파티션이 실제로 해주는 것과 못 해주는 것(백업 아님, 속도 무관)을 가르고, 나누는 게 값을 하는 경우의 목록을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/ssd-partition.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다 | 스펙핏">
+<meta property="og:description" content="C·D 드라이브로 나누는 게 관습처럼 남아 있는데, 요즘 기본값은 통으로 쓰는 쪽입니다. 파티션이 실제로 해주는 것과 못 해주는 것(백업 아님, 속도 무관)을 가르고, 나누는 게 값을 하는 경우의 목록을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/ssd-partition.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다","description":"C·D 드라이브로 나누는 게 관습처럼 남아 있는데, 요즘 기본값은 통으로 쓰는 쪽입니다. 파티션이 실제로 해주는 것과 못 해주는 것(백업 아님, 속도 무관)을 가르고, 나누는 게 값을 하는 경우의 목록을 정리했습니다.","datePublished":"2026-09-04","dateModified":"2026-09-04","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ssd-partition.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다","item":"https://specfit.kr/posts/ssd-partition.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"이미 C·D로 나눠져 있는데 합쳐야 하나요","acceptedAnswer":{"@type":"Answer","text":"불편이 없다면 그대로 쓰세요 — 합치는 작업이 주는 이득이 크지 않습니다. C가 자꾸 차서 고생 중이라면 그때 파티션 조정이나 통합을 검토하면 됩니다."}},{"@type":"Question","name":"게임·프로그램은 어디에 까나요","acceptedAnswer":{"@type":"Answer","text":"나눠 놓았다면 큰 것들(게임·로컬 LLM 모델 등)을 D로 보내는 것이 C 만성 부족을 막는 실전 요령입니다. 통으로 쓴다면 고민 자체가 없습니다."}},{"@type":"Question","name":"파티션을 나누면 SSD 수명에 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"없습니다 — SSD 내부는 파티션 경계와 무관하게 전체 영역을 고르게 쓰도록 동작합니다. 수명은 쓰기 총량의 문제이지 구획의 문제가 아닙니다."}},{"@type":"Question","name":"재설치할 때 D는 정말 안전한가요","acceptedAnswer":{"@type":"Answer","text":"설치 과정에서 C 파티션만 선택해 포맷하면 D는 남습니다 — 다만 파티션 선택 실수라는 사람의 사고가 끼어들 수 있는 지점이라, 재설치 전 백업은 별개로 하는 것이 원칙입니다."}},{"@type":"Question","name":"회사 컴퓨터는 왜 다 나눠져 있나요","acceptedAnswer":{"@type":"Answer","text":"관리 정책의 흔적입니다 — 초기화·배포를 반복하는 환경에서는 위 \"재설치 보험\"이 조직 규모로 값을 하니까요. 개인 컴퓨터와 계산이 다른 환경입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-04">2026년 9월 4일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>새 SSD에 윈도우를 깔 때 한 번은 멈추게 되는 화면이 있습니다 —
+<strong>파티션.</strong> 예전 컴퓨터들이 다 C·D로 나뉘어 있었으니 나눠야 할 것
+같은데, 요즘 커뮤니티에 물어보면 &quot;그냥 통으로 쓰세요&quot;가 다수파라
+헷갈립니다.</p>
+<p>정리부터: <strong>파티션이 해주는 것은 성능도 백업도 아니고, 재설치
+때의 편의 하나</strong>입니다. 그게 필요한 사람의 목록에 내가 있는지만
+보면 됩니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>요즘 기본값은</td><td><strong>안 나누고 통으로</strong> — 폴더 관리로 충분합니다</td></tr>
+<tr><td>나누면 빨라지나</td><td><strong>아니요</strong> — SSD는 저장 위치와 속도가 무관합니다</td></tr>
+<tr><td>나누면 데이터가 안전해지나</td><td><strong>백업이 아닙니다</strong> — 물리 고장이면 파티션 전부가 같이 죽습니다</td></tr>
+<tr><td>그럼 뭘 해주나</td><td><strong>재설치 보험</strong> — C만 밀고 D의 데이터는 남길 수 있습니다</td></tr>
+<tr><td>나누는 게 값을 하는 사람</td><td>클린설치를 자주 하는 사람 · 듀얼부팅 · 아래 목록</td></tr>
+</tbody>
+</table></div>
+<h2 id="오해-둘부터-걷어내기">오해 둘부터 걷어내기</h2>
+<p><strong>① 파티션은 백업이 아닙니다.</strong> C와 D로 나뉘어 보여도 <strong>물리
+디스크는 한 장</strong>입니다. SSD가 고장 나면 C도 D도 같이 갑니다.
+데이터를 지키는 것은 파티션이 아니라
+<a href="/posts/dev-backup-strategy.html">다른 매체에 둔 사본</a>입니다 —
+이걸 혼동한 채 &quot;D에 뒀으니 안전하다&quot;고 믿는 것이 파티션의 가장
+위험한 부작용입니다.</p>
+<p><strong>② 파티션은 속도와 무관합니다.</strong> 하드디스크 시절에는 디스크
+바깥쪽이 빨라서 구획을 나누는 이유가 있었지만, SSD는 어디에
+저장하든 속도가 같습니다. 나눠서 빨라진다는 이야기는 그 시절
+관습의 잔재입니다.</p>
+<h2 id="파티션이-실제로-해주는-것-재설치-보험">파티션이 실제로 해주는 것 — 재설치 보험</h2>
+<p>파티션의 진짜 효용은 하나입니다. <strong>윈도우를 밀 때 C만 밀 수
+있다</strong>는 것.</p>
+<p><a href="/posts/ssd-migration-vs-clean-install.html">클린설치를 하기로 한 상황</a>에서
+데이터가 D에 있으면, C 파티션만 포맷하고 설치해도 D는 대개
+그대로 남습니다. 백업-복원 수고가 크게 줄어드는 구조라, <strong>클린설치를
+주기적으로 하는 습관이 있는 사람에게는 실질적인 보험</strong>입니다.</p>
+<p>다만 &quot;대개 남는다&quot;이지 보장이 아닙니다 — 설치 화면에서 파티션을
+잘못 고르는 실수가 실제로 있는 사고라서, 재설치 전 중요 데이터
+백업은 파티션과 무관하게 해야 합니다.</p>
+<h2 id="나누는-게-값을-하는-목록">나누는 게 값을 하는 목록</h2>
+<ol>
+<li><strong>클린설치를 자주 하는 사람</strong> — 위의 보험이 반복 회수됩니다</li>
+<li><strong>듀얼부팅</strong> — <a href="/posts/dual-boot-vs-wsl.html">다른 OS를 얹는 구성</a>은
+애초에 파티션이 전제입니다</li>
+<li><strong>가족 공용 등, 시스템과 자료를 강제로 격리하고 싶은 컴퓨터</strong> —
+폴더 약속보다 드라이브 문자가 센 울타리이긴 합니다</li>
+</ol>
+<p>여기 없다면 통으로 쓰는 쪽이 낫습니다. 이유는 파티션의 고질적인
+부작용 때문입니다 — <strong>한쪽만 꽉 차는 문제.</strong> 나눠 놓으면 C는
+차고 D는 남는(또는 반대) 불균형이 반드시 생기고,
+<a href="/posts/ssd-full-slowdown.html">SSD는 꽉 차면 느려지는 물건</a>이라
+전체로는 여유가 있는데 C가 막혀 고생하는 상황이 전형적입니다.
+윈도우와 프로그램은 시간이 갈수록 자라니, 나눈다면 C를 넉넉히
+잡아야 합니다.</p>
+<h2 id="더-나은-답-물리적으로-나누기">더 나은 답 — 물리적으로 나누기</h2>
+<p>&quot;시스템과 데이터를 나누고 싶다&quot;는 요구 자체는 정당합니다. 그
+요구의 더 좋은 답은 파티션이 아니라 <strong>두 번째 SSD</strong>인 경우가
+많습니다.</p>
+<ul>
+<li><a href="/posts/laptop-ssd-upgrade.html">슬롯이 2개인 컴퓨터</a>라면 1번에
+OS·프로그램, 2번에 프로젝트·모델·자료를 두는 배치가 정석입니다</li>
+<li>물리적으로 다른 디스크라 재설치 보험은 물론이고, <strong>한쪽 고장이
+다른 쪽을 데려가지 않습니다</strong> — 파티션이 못 주는 안전입니다</li>
+<li>용량 불균형 문제도 각자 디스크라 덜 꼬입니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="이미-cd로-나눠져-있는데-합쳐야-하나요">이미 C·D로 나눠져 있는데 합쳐야 하나요</h3>
+<p>불편이 없다면 그대로 쓰세요 — 합치는 작업이 주는 이득이 크지
+않습니다. C가 자꾸 차서 고생 중이라면 그때 파티션 조정이나
+통합을 검토하면 됩니다.</p>
+<h3 id="게임프로그램은-어디에-까나요">게임·프로그램은 어디에 까나요</h3>
+<p>나눠 놓았다면 큰 것들(게임·<a href="/posts/dev-ssd-choose.html">로컬 LLM 모델</a>
+등)을 D로 보내는 것이 C 만성 부족을 막는 실전 요령입니다.
+통으로 쓴다면 고민 자체가 없습니다.</p>
+<h3 id="파티션을-나누면-ssd-수명에-영향이-있나요">파티션을 나누면 SSD 수명에 영향이 있나요</h3>
+<p>없습니다 — SSD 내부는 파티션 경계와 무관하게 전체 영역을 고르게
+쓰도록 동작합니다. 수명은 <a href="/posts/ssd-tbw-lifespan.html">쓰기 총량의 문제</a>이지
+구획의 문제가 아닙니다.</p>
+<h3 id="재설치할-때-d는-정말-안전한가요">재설치할 때 D는 정말 안전한가요</h3>
+<p>설치 과정에서 C 파티션만 선택해 포맷하면 D는 남습니다 — 다만
+파티션 선택 실수라는 사람의 사고가 끼어들 수 있는 지점이라,
+<strong>재설치 전 백업은 별개</strong>로 하는 것이 원칙입니다.</p>
+<h3 id="회사-컴퓨터는-왜-다-나눠져-있나요">회사 컴퓨터는 왜 다 나눠져 있나요</h3>
+<p>관리 정책의 흔적입니다 — 초기화·배포를 반복하는 환경에서는 위
+&quot;재설치 보험&quot;이 조직 규모로 값을 하니까요. 개인 컴퓨터와 계산이
+다른 환경입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>파티션은 <strong>성능도 백업도 아닙니다</strong> — 물리 고장 앞에서는 한
+장의 디스크입니다</li>
+<li>실제 효용은 <strong>재설치 보험</strong> 하나입니다 — 클린설치를 자주 하는
+사람에게 값을 합니다</li>
+<li>요즘 기본값은 <strong>통으로 쓰기</strong>입니다 — 한쪽만 차는 불균형이
+파티션의 고질 부작용입니다</li>
+<li>시스템·자료 분리가 목적이면 <strong>두 번째 SSD가 더 좋은 답</strong>인
+경우가 많습니다</li>
+<li>나눈다면 <strong>C를 넉넉히</strong> — 윈도우와 프로그램은 자랍니다</li>
+</ol>
+<p>이어지는 판정들 — <a href="/posts/ssd-migration-vs-clean-install.html">마이그레이션 vs 클린설치</a> ·
+<a href="/posts/ssd-full-slowdown.html">꽉 찬 SSD가 느려지는 이유</a> ·
+<a href="/posts/dev-backup-strategy.html">백업의 틀</a>에 있습니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">파티션</span> <span class="tag">SSD</span> <span class="tag">C드라이브</span> <span class="tag">D드라이브</span> <span class="tag">디스크관리</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/ram-usage-normal.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램 사용률 90%, 문제인가 — 숫자가 아니라 증상으로 판정합니다</span>
+        <span class="card-desc">작업 관리자의 램 사용률이 높으면 불안해집니다. 그런데 사용률은 기준선이 있는 숫자가 아니라, 증상과 주범을 같이 봐야 판정이 됩니다. 판정 순서, 주범 찾는 법, 램 정리 프로그램이 대개 헛수고인 이유까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ssd-migration-vs-clean-install.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">SSD 교체, 마이그레이션 vs 클린설치 — 지금 시스템의 상태가 정합니다</span>
+        <span class="card-desc">SSD를 바꿀 때 윈도우를 통째로 옮길지 새로 깔지 갈립니다. 판정 기준은 취향이 아니라 지금 시스템의 상태입니다. 복사는 좋은 것과 나쁜 것을 같이 옮기니까요. 갈림길과 안전 수칙, 실패 대비까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mixed-ram-capacity.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">용량 다른 램 섞어 꽂기 — 돌아는 갑니다, 잃는 것을 알고 쓰세요</span>
+        <span class="card-desc">8GB에 16GB를 더 꽂는 식의 혼용이 되는지, 성능은 어떻게 되는지 질문이 많습니다. 대개 돌아가지만 듀얼 채널이 부분 동작이 되고 속도는 낮은 쪽에 맞춰집니다. 구조와 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

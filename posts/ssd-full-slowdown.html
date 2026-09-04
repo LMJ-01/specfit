@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다","description":"SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느려지는지 커뮤니티 질문이 많습니다. 구조적인 이유(빈 블록과 SLC 캐시)와 함께, 용도별로 어느 정도 여유가 현실적인지 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ssd-full-slowdown.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다","description":"SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느려지는지 커뮤니티 질문이 많습니다. 구조적인 이유(빈 블록과 SLC 캐시)와 함께, 용도별로 어느 정도 여유가 현실적인지 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-04","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ssd-full-slowdown.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다","item":"https://specfit.kr/posts/ssd-full-slowdown.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"트림(TRIM)을 돌려야 하나요","acceptedAnswer":{"@type":"Answer","text":"요즘 윈도우·맥은 자동으로 합니다 — 따로 챙길 일은 없습니다. \"최적화\" 명목의 별도 프로그램을 깔 필요도 없습니다."}},{"@type":"Question","name":"HDD도 꽉 차면 느려지는 건 같은 이유인가요","acceptedAnswer":{"@type":"Answer","text":"느려지는 건 같은데 이유가 다릅니다 — HDD 는 빈 공간이 줄면 조각난 자리에 나눠 쓰게 되는 물리적 이유입니다. SSD 의 블록·캐시 구조와는 별개 메커니즘이고, 어느 쪽이든 \"꽉 채우면 손해\"라는 결론만 같습니다."}},{"@type":"Question","name":"꽉 찼다고 데이터가 날아가지는 않나요","acceptedAnswer":{"@type":"Answer","text":"날아가지 않습니다. 다만 공간 0 에 가까워지면 프로그램들이 임시 파일을 못 만들어 오작동하는 건 별개 문제라, 그 지경 전에 정리가 필요합니다."}},{"@type":"Question","name":"용량 경고 기준을 바꿀 수 있나요","acceptedAnswer":{"@type":"Answer","text":"윈도우의 빨간 표시 기준 자체는 조정 대상이 아니라고 보는 게 편합니다 — 표시보다 위의 \"용도별 여유\"로 스스로 기준을 잡는 쪽이 실용적입니다."}},{"@type":"Question","name":"오버프로비저닝이라는 걸 설정해야 하나요","acceptedAnswer":{"@type":"Answer","text":"제조사 도구에 있는 그 항목은 여유 공간을 강제로 떼어 두는 기능인데, 여유를 습관으로 유지할 수 있다면 같은 효과입니다. 관리를 못 믿겠을 때 거는 안전벨트 정도로 생각하면 됩니다."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다</h1>
     <p class="post-meta">
       <time datetime="2026-09-01">2026년 9월 1일</time>
-      
+      <span class="updated">· 2026년 9월 4일 갱신</span>
     </p>
   </header>
 
@@ -153,7 +153,9 @@
 <h2 id="차올랐을-때의-순서">차올랐을 때의 순서</h2>
 <ol>
 <li><strong>범인부터 확인</strong> — 윈도우 설정 → 시스템 → 저장소에서 뭐가
-먹는지 봅니다. 임시 파일과 오래된 다운로드가 흔한 1순위입니다</li>
+먹는지 봅니다. 임시 파일과 오래된 다운로드가 흔한 1순위입니다.
+전체 디스크는 여유로운데 C만 차 있다면
+<a href="/posts/ssd-partition.html">파티션 불균형 쪽 문제</a>입니다</li>
 <li><strong>큰 덩어리 이동</strong> — 영상·사진 같은 &quot;읽기만 하는 큰 것&quot;을
 <a href="/posts/external-ssd-dev.html">외장·보조 드라이브</a>로 옮기는 게
 효율이 좋습니다</li>
@@ -220,10 +222,10 @@
       </a>
     </li>
     <li class="card">
-      <a href="/posts/mixed-ram-capacity.html">
+      <a href="/posts/ssd-partition.html">
         <span class="card-cat">메모리·스토리지</span>
-        <span class="card-title">용량 다른 램 섞어 꽂기 — 돌아는 갑니다, 잃는 것을 알고 쓰세요</span>
-        <span class="card-desc">8GB에 16GB를 더 꽂는 식의 혼용이 되는지, 성능은 어떻게 되는지 질문이 많습니다. 대개 돌아가지만 듀얼 채널이 부분 동작이 되고 속도는 낮은 쪽에 맞춰집니다. 구조와 판정 기준을 정리했습니다.</span>
+        <span class="card-title">SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다</span>
+        <span class="card-desc">C·D 드라이브로 나누는 게 관습처럼 남아 있는데, 요즘 기본값은 통으로 쓰는 쪽입니다. 파티션이 실제로 해주는 것과 못 해주는 것(백업 아님, 속도 무관)을 가르고, 나누는 게 값을 하는 경우의 목록을 정리했습니다.</span>
       </a>
     </li>
   </ul>

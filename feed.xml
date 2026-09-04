@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다</title>
+    <link>https://specfit.kr/posts/ssd-partition.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ssd-partition.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>C·D 드라이브로 나누는 게 관습처럼 남아 있는데, 요즘 기본값은 통으로 쓰는 쪽입니다. 파티션이 실제로 해주는 것과 못 해주는 것(백업 아님, 속도 무관)을 가르고, 나누는 게 값을 하는 경우의 목록을 정리했습니다.</description>
+  </item>
+  <item>
     <title>SSD 교체, 마이그레이션 vs 클린설치 — 지금 시스템의 상태가 정합니다</title>
     <link>https://specfit.kr/posts/ssd-migration-vs-clean-install.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/ssd-migration-vs-clean-install.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/psu-lifespan.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>파워서플라이 수명을 물으면 5년부터 15년까지 답이 갈립니다. 등급마다 다르고, 연식보다 이상 신호가 기준이기 때문입니다. 보증 기간을 수명 지표로 읽는 법과 진짜 교체 신호를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>NAS가 필요한가 — 외장하드와는 다른 물건입니다</title>
-    <link>https://specfit.kr/posts/nas-vs-external-hdd.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/nas-vs-external-hdd.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>외장하드가 꽉 차면 NAS를 검색하게 되는데, NAS는 더 큰 외장하드가 아니라 성격이 다른 장비입니다. 외장하드로 충분한 경우, NAS라야 되는 경우, 그 사이의 간이 NAS를 판정 기준으로 정리했습니다.</description>
   </item>
 </channel>
 </rss>
