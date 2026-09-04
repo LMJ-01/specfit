@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다 | 스펙핏</title>
+<meta name="description" content="프레임 수치는 높은데 화면이 뚝뚝 끊기는 느낌이 드는 경우가 있습니다. 부드러움을 정하는 것은 평균 프레임이 아니라 프레임 사이 간격의 고름이라서입니다. 끊김의 세 갈래를 가르는 판정 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/game-stutter-fps.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다 | 스펙핏">
+<meta property="og:description" content="프레임 수치는 높은데 화면이 뚝뚝 끊기는 느낌이 드는 경우가 있습니다. 부드러움을 정하는 것은 평균 프레임이 아니라 프레임 사이 간격의 고름이라서입니다. 끊김의 세 갈래를 가르는 판정 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/game-stutter-fps.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다","description":"프레임 수치는 높은데 화면이 뚝뚝 끊기는 느낌이 드는 경우가 있습니다. 부드러움을 정하는 것은 평균 프레임이 아니라 프레임 사이 간격의 고름이라서입니다. 끊김의 세 갈래를 가르는 판정 순서를 정리했습니다.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/game-stutter-fps.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다","item":"https://specfit.kr/posts/game-stutter-fps.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"수직동기는 켜야 하나요, 꺼야 하나요","acceptedAnswer":{"@type":"Answer","text":"찢김과 끊김 사이의 교환이라 정답이 없습니다 — 찢김이 거슬리면 켜고, 켠 상태의 멈칫이 거슬리면 끄는 것입니다. 가변 주사율을 지원하는 조합이면 이 교환 자체가 크게 완화되니 그쪽이 먼저입니다."}},{"@type":"Question","name":"프레임 제한을 걸면 손해 아닌가요","acceptedAnswer":{"@type":"Answer","text":"최고 숫자는 낮아지지만 간격이 고르게 됩니다 — 이 글의 증상 에는 오히려 처방입니다. 240이 나왔다 140으로 출렁이는 것보다 고른 140이 눈에는 부드럽습니다."}},{"@type":"Question","name":"프레임 타임 그래프는 어떻게 보나요","acceptedAnswer":{"@type":"Answer","text":"게임 오버레이·모니터링 도구의 프레임 타임(ms) 그래프에서 가끔 치솟는 뾰족한 봉우리가 이 글의 증상입니다. 평균 fps 는 좋은데 봉우리가 있다면 간격 문제 확정 — 판정 순서 3~5로 갑니다."}},{"@type":"Question","name":"저장 장치도 관련이 있나요","acceptedAnswer":{"@type":"Answer","text":"있습니다 — 지역 이동·로딩 순간의 끊김은 데이터를 읽는 속도가 끼는 자리입니다. 거의 꽉 찬 SSD나 하드디스크에 게임이 깔려 있다면 그 갈래도 봅니다."}},{"@type":"Question","name":"새 컴퓨터인데도 처음에 끊겨요","acceptedAnswer":{"@type":"Answer","text":"요즘 게임은 첫 실행·업데이트 직후에 내부 준비 작업(셰이더 준비 등)을 하는 경우가 많아, 초반 한동안의 끊김이 시간이 지나며 가라앉는 패턴이면 정상 범위입니다. 계속되면 위 판정 순서로 가면 됩니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-05">2026년 9월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>프레임 표시기는 분명 높은 숫자인데, 화면은 뚝뚝 끊깁니다.
+커뮤니티에 반복해서 올라오는 질문이고, &quot;프레임 잘 나오는데 왜
+이러죠&quot;라는 문장 그대로가 단서입니다.</p>
+<p><strong>부드러움을 정하는 것은 평균 프레임이 아니라, 프레임과 프레임
+사이 간격이 고른가이기 때문입니다.</strong> 평균 100프레임이라도 간격이
+널뛰면 눈은 끊김으로 읽습니다 — 숫자와 체감이 갈라지는 이유가
+구조에 있으니, 판정도 구조로 하면 됩니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>증상</th><th>갈래</th></tr></thead>
+<tbody>
+<tr><td>높은 프레임인데 간헐적으로 컥컥 멈칫함</td><td><strong>간격 문제(스터터)</strong> — 준비 단계가 순간적으로 밀리는 것입니다</td></tr>
+<tr><td>화면이 어긋나듯 찢어져 보임</td><td><strong>동기화 문제</strong> — 주사율·수직동기 설정 쪽입니다</td></tr>
+<tr><td>온라인에서만, 남들이 순간이동하듯 끊김</td><td><strong>네트워크 문제</strong> — 프레임이 아니라 <a href="/posts/desktop-wifi-vs-lan.html">핑 변동</a> 쪽입니다</td></tr>
+<tr><td>프레임 자체가 낮거나 출렁임</td><td>간격이 아니라 성능 — <a href="/posts/cpu-gpu-bottleneck.html">병목 판정</a>으로</td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-평균은-높은데-끊기나">왜 평균은 높은데 끊기나</h2>
+<p>프레임 표시기의 숫자는 대개 <strong>초 단위 평균</strong>입니다. 1초에 100장을
+그렸어도, 그중 한 장이 유난히 늦게 나오면 그 순간이 멈칫으로
+보입니다 — 평균에는 거의 안 잡히는데 눈에는 정확히 잡힙니다.</p>
+<p>이 &quot;늦은 한 장&quot;이 나오는 자리가 곧 판정 목록입니다:</p>
+<ul>
+<li><strong>준비 단계가 순간적으로 밀림</strong> — 게임이 데이터를 읽어 오는
+순간(지역 이동·전투 개시), 뒤에서 다른 프로그램이 끼어드는
+순간(알림·브라우저·녹화), 그리고
+<a href="/posts/cpu-gpu-bottleneck.html">CPU 한 코어만 포화되는 경우</a> —
+전체 사용률이 낮아 보여도 생기는 끊김의 단골입니다</li>
+<li><strong>화면에 내보내는 박자가 안 맞음</strong> — 수직동기가 켜진 채 프레임이
+기준 아래로 잠깐 내려가면 다음 박자까지 기다리느라 간격이 두
+배로 벌어집니다. 모니터 주사율 설정이 실제보다 낮게(흔히 60Hz)
+잡혀 있는 함정도 같은 계열입니다</li>
+<li><strong>네트워크가 끼는 갈래</strong> — 온라인 게임의 끊김은 프레임과 무관한
+경우가 많습니다. 내 화면은 부드러운데 상대가 순간이동하면
+그쪽입니다</li>
+</ul>
+<h2 id="판정-순서">판정 순서</h2>
+<ol>
+<li><strong>온라인 요소를 걷어냅니다</strong> — 솔로·오프라인 콘텐츠에서도
+끊기면 내 컴퓨터 문제, 온라인에서만 끊기면
+<a href="/posts/desktop-wifi-vs-lan.html">핑·변동 쪽</a>입니다. 갈래가
+반으로 줄어듭니다</li>
+<li><strong>주사율 설정부터 확인합니다</strong> — 윈도우 디스플레이 설정에서
+모니터가 제 주사율로 잡혀 있는지 봅니다.
+<a href="/posts/high-refresh-rate-coding.html">고주사율 모니터를 사놓고 60Hz로 쓰는 경우</a>가
+생각보다 흔하고, 그 상태의 화면은 구조적으로 덜 부드럽습니다</li>
+<li><strong>뒤에서 도는 것을 정리합니다</strong> — 브라우저 탭 더미, 녹화·방송
+도구, 메신저 알림. 끊김이 알림 순간과 겹치는지 보는 것만으로
+단서가 됩니다. <a href="/posts/ram-usage-normal.html">램이 부족할 때의 얼굴</a>도
+같은 계열의 용의자입니다</li>
+<li><strong>동기화 설정을 바꿔 봅니다</strong> — 수직동기를 끄거나(찢김이
+보이면 다시 켜고), 가변 주사율(지원 조합이라면)을 켜고, 게임
+내 프레임 제한을 모니터 주사율 근처로 걸어 봅니다 — <strong>간격을
+고르게 만드는 것</strong>이 목적이라, 최고 프레임을 조금 내주고
+일관성을 얻는 교환이 대개 이득입니다</li>
+<li><strong>그래도 남으면 특정 게임의 문제인지 봅니다</strong> — 모든 게임에서
+끊기면 내 시스템, 한 게임만 끊기면 그 게임(최적화·설정) 쪽으로
+좁혀집니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="수직동기는-켜야-하나요-꺼야-하나요">수직동기는 켜야 하나요, 꺼야 하나요</h3>
+<p>찢김과 끊김 사이의 교환이라 정답이 없습니다 — 찢김이 거슬리면
+켜고, 켠 상태의 멈칫이 거슬리면 끄는 것입니다. 가변 주사율을
+지원하는 조합이면 이 교환 자체가 크게 완화되니 그쪽이 먼저입니다.</p>
+<h3 id="프레임-제한을-걸면-손해-아닌가요">프레임 제한을 걸면 손해 아닌가요</h3>
+<p>최고 숫자는 낮아지지만 <strong>간격이 고르게</strong> 됩니다 — 이 글의 증상
+에는 오히려 처방입니다. 240이 나왔다 140으로 출렁이는 것보다
+고른 140이 눈에는 부드럽습니다.</p>
+<h3 id="프레임-타임-그래프는-어떻게-보나요">프레임 타임 그래프는 어떻게 보나요</h3>
+<p>게임 오버레이·모니터링 도구의 프레임 타임(ms) 그래프에서 <strong>가끔
+치솟는 뾰족한 봉우리</strong>가 이 글의 증상입니다. 평균 fps 는 좋은데
+봉우리가 있다면 간격 문제 확정 — 판정 순서 3~5로 갑니다.</p>
+<h3 id="저장-장치도-관련이-있나요">저장 장치도 관련이 있나요</h3>
+<p>있습니다 — 지역 이동·로딩 순간의 끊김은 데이터를 읽는 속도가
+끼는 자리입니다. <a href="/posts/ssd-full-slowdown.html">거의 꽉 찬 SSD</a>나
+하드디스크에 게임이 깔려 있다면 그 갈래도 봅니다.</p>
+<h3 id="새-컴퓨터인데도-처음에-끊겨요">새 컴퓨터인데도 처음에 끊겨요</h3>
+<p>요즘 게임은 첫 실행·업데이트 직후에 내부 준비 작업(셰이더 준비
+등)을 하는 경우가 많아, <strong>초반 한동안의 끊김이 시간이 지나며
+가라앉는 패턴</strong>이면 정상 범위입니다. 계속되면 위 판정 순서로
+가면 됩니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>부드러움은 <strong>평균 프레임이 아니라 간격의 고름</strong>입니다 —
+숫자와 체감이 갈라지는 이유입니다</li>
+<li>갈래 셋 — <strong>간격(스터터) · 동기화(주사율·수직동기) ·
+네트워크(핑)</strong>. 온라인 요소부터 걷어내면 반으로 줄어듭니다</li>
+<li><strong>주사율 설정 확인</strong>이 공짜 1순위입니다 — 60Hz 함정이 흔합니다</li>
+<li>수직동기·가변 주사율·프레임 제한은 <strong>간격을 고르게 하는
+손잡이</strong>입니다 — 최고 숫자보다 일관성이 체감입니다</li>
+<li>판정 도구는 프레임 타임 그래프의 <strong>뾰족한 봉우리</strong>입니다</li>
+</ol>
+<p>이웃 판정들 — <a href="/posts/cpu-gpu-bottleneck.html">CPU·GPU 병목</a> ·
+<a href="/posts/desktop-wifi-vs-lan.html">유선 vs 와이파이</a> ·
+<a href="/posts/ram-usage-normal.html">램 사용률 읽는 법</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">프레임드랍</span> <span class="tag">스터터링</span> <span class="tag">게임끊김</span> <span class="tag">프레임타임</span> <span class="tag">수직동기화</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/cpu-f-model.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">F 붙은 CPU 사도 되나 — 아끼는 건 지금, 내장그래픽의 값은 비상시에 나옵니다</span>
+        <span class="card-desc">같은 CPU인데 F가 붙으면 내장그래픽이 빠지고 값이 내려갑니다. 그래픽카드를 쓸 건데 내장이 왜 필요하냐 싶지만, 내장그래픽의 진짜 쓸모는 평소가 아니라 비상시와 전환기에 있습니다. 갈림길을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/cpu-mobo-swap-windows.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다</span>
+        <span class="card-desc">보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/gpu-case-clearance.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드가 케이스에 안 들어가요 — 사기 전 확인은 세 치수입니다</span>
+        <span class="card-desc">케이스 스펙의 호환 길이만 믿고 샀다가 안 들어가는 사고가 실제로 흔합니다. 길이·두께(슬롯 수)·전원 커넥터 공간 세 치수를 확인하는 법과, 허용치에 딱 맞는 조합이 왜 위험한지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
