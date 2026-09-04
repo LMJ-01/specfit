@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다","description":"카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.","datePublished":"2026-08-18","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/gpu-psu-wattage.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다","description":"카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.","datePublished":"2026-08-18","dateModified":"2026-09-04","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/gpu-psu-wattage.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다","item":"https://specfit.kr/posts/gpu-psu-wattage.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"권장보다 큰 파워를 사면 전기를 더 먹나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 파워 용량은 상한이고, 실제 소비는 부품이 쓰는 만큼입니다. 1000W 파워를 달아도 300W 를 쓰면 300W 만 나갑니다. 오히려 부하율이 낮으면 효율이 좋은 구간에 들어갑니다."}},{"@type":"Question","name":"지금 파워 W 를 어디서 확인하나요","acceptedAnswer":{"@type":"Answer","text":"파워 본체 옆면 스티커에 적혀 있습니다. 케이스를 열어야 보이는 경우가 많습니다. 모델명을 검색하면 커넥터 구성과 규격까지 나옵니다 — W 만 보지 마세요."}},{"@type":"Question","name":"어댑터로 8핀을 모아 쓰면 안 되나요","acceptedAnswer":{"@type":"Answer","text":"동작은 합니다. 카드에 딸려 오는 정품 어댑터라면 규격 안에서 쓰는 것입니다. 다만 여러 갈래를 하나로 모으는 구조라 파워 쪽 배선과 접점에 부담이 갑니다. 새로 사실 거면 처음부터 12V-2x6 이 있는 쪽을 권합니다."}},{"@type":"Question","name":"게임은 되는데 로컬 LLM 돌릴 때 꺼집니다","acceptedAnswer":{"@type":"Answer","text":"순서가 반대라 이상해 보이지만 가능합니다. 로컬 LLM은 오래 켜두는 작업이라 파워가 뜨거워진 상태로 계속 갑니다. 보호 회로는 온도에도 반응합니다. 케이스 통풍과 파워 나이를 함께 보세요."}},{"@type":"Question","name":"80 PLUS 등급은 봐야 하나요","acceptedAnswer":{"@type":"Answer","text":"효율 등급입니다. 높으면 같은 일에 전기를 덜 쓰고 발열이 적습니다. 오래 켜두는 용도라면 값어치가 있고, 가끔 쓰는 용도라면 브론즈로 충분합니다 — 갈림 조건과 회수 기간 계산은 80PLUS 등급, 골드에 웃돈 낼 가치에 따로 정리했습니다."}},{"@type":"Question","name":"파워는 나중에 바꿀 수 있나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 데스크톱에서 가장 바꾸기 쉬운 부품 중 하나입니다. 다만 카드를 먼저 사고 파워가 안 맞으면 그날 컴퓨터를 못 씁니다. 카드와 함께 확인하세요."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-18">2026년 8월 18일</time>
-      <span class="updated">· 2026년 9월 1일 갱신</span>
+      <span class="updated">· 2026년 9월 4일 갱신</span>
     </p>
   </header>
 
@@ -294,6 +294,9 @@
 <li><strong>로컬 LLM은 TDP 상한까지 안 갑니다.</strong> 게임 기준으로 잡으면 여유가 남습니다</li>
 <li>두 장은 <strong>TDP 도 커넥터도 두 배</strong>입니다</li>
 </ol>
+<p>전기 쪽이 통과됐다면 물리 쪽 —
+<a href="/posts/gpu-case-clearance.html">케이스에 들어가는지의 세 치수</a>가
+남은 확인입니다.</p>
 <p>실제 구성에서 계산과 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
@@ -306,6 +309,13 @@
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/gpu-case-clearance.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드가 케이스에 안 들어가요 — 사기 전 확인은 세 치수입니다</span>
+        <span class="card-desc">케이스 스펙의 호환 길이만 믿고 샀다가 안 들어가는 사고가 실제로 흔합니다. 길이·두께(슬롯 수)·전원 커넥터 공간 세 치수를 확인하는 법과, 허용치에 딱 맞는 조합이 왜 위험한지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/psu-zero-fan.html">
         <span class="card-cat">GPU</span>
         <span class="card-title">파워 팬이 안 돌아요 — 고장이 아니라 기능인 경우부터 확인합니다</span>
@@ -317,13 +327,6 @@
         <span class="card-cat">GPU</span>
         <span class="card-title">CPU 병목 걱정 — 계산기 말고 사용률 하나로 판정합니다</span>
         <span class="card-desc">조합을 정할 때마다 병목 걱정이 따라옵니다. 병목 계산기 사이트는 왜 믿을 게 못 되는지, 완벽한 균형이 왜 애초에 없는지, 내 컴퓨터의 병목을 사용률 하나로 판정하는 법을 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/modular-psu.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">모듈러 파워, 값어치 있나 — 성능이 아니라 정리와 공간의 지갑입니다</span>
-        <span class="card-desc">풀 모듈러, 세미 모듈러, 논 모듈러 중 뭘 사야 하는지 헷갈립니다. 성능 차이는 없고, 값어치는 케이블 정리·조립 편의·케이스 공간에서 나옵니다. 판정 기준과 케이블 혼용 금지 경고까지 정리했습니다.</span>
       </a>
     </li>
   </ul>

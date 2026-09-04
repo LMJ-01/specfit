@@ -2,7 +2,7 @@
 title: 그래픽카드 처짐(새그) — 지지대가 필요한 경우와 아닌 경우
 description: 요즘 상급 카드는 무거워서 끝이 처집니다. 어느 정도면 정상이고 언제 지지대가 필요한지, 수직 장착이 왜 완전한 해법이 아닌지 정리했습니다. 성능은 떨어지지 않습니다 — 문제는 다른 곳에 있습니다.
 date: 2026-08-25
-updated: 2026-08-26
+updated: 2026-09-04
 category: gpu
 tags: [그래픽카드지지대, 새그, GPU처짐, 조립, PCIe]
 affiliate: true
@@ -156,6 +156,7 @@ affiliate: true
 
 무거운 상급 카드를 알아보는 중이라면 [RTX 5090](/posts/rtx5090-local-llm.html)
 ·[중고 3090](/posts/rtx3090-vs-4070-local-llm.html) 글에서 전력·발열과 함께
-보시면 됩니다. 파워 쪽 확인은 [파워 용량 계산](/posts/gpu-psu-wattage.html)에 있습니다.
+보시면 됩니다. 파워 쪽 확인은 [파워 용량 계산](/posts/gpu-psu-wattage.html),
+사기 전의 [케이스 치수 확인](/posts/gpu-case-clearance.html)은 따로 있습니다.
 
 실제와 다르게 동작하면 [알려주세요](/contact.html). 확인 후 갱신합니다.

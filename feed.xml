@@ -55,6 +55,13 @@
     <description>아이패드가 이미 있으면 코딩 공부도 이걸로 되지 않을까 싶어집니다. 안 되는 이유는 사양이 아니라 소프트웨어 구조에 있고, 그래서 되는 범위와 안 되는 범위의 경계가 뚜렷합니다. 태블릿의 좋은 자리와 노트북이 필요한 순간을 정리했습니다.</description>
   </item>
   <item>
+    <title>그래픽카드가 케이스에 안 들어가요 — 사기 전 확인은 세 치수입니다</title>
+    <link>https://specfit.kr/posts/gpu-case-clearance.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/gpu-case-clearance.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>케이스 스펙의 호환 길이만 믿고 샀다가 안 들어가는 사고가 실제로 흔합니다. 길이·두께(슬롯 수)·전원 커넥터 공간 세 치수를 확인하는 법과, 허용치에 딱 맞는 조합이 왜 위험한지 정리했습니다.</description>
+  </item>
+  <item>
     <title>듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다</title>
     <link>https://specfit.kr/posts/dual-monitor-gaming-fps.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-gaming-fps.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ssd-full-slowdown.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느려지는지 커뮤니티 질문이 많습니다. 구조적인 이유(빈 블록과 SLC 캐시)와 함께, 용도별로 어느 정도 여유가 현실적인지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>램 방열판이 필요한가 — 효과는 있지만, 필요한 사람이 따로 있습니다</title>
-    <link>https://specfit.kr/posts/ram-heatsink-needed.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ram-heatsink-needed.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>튜닝램에는 다 달려 있고, 순정램에 따로 붙이자니 효과가 있는지 애매한 게 램 방열판입니다. 램 발열의 실제 크기와, 방열판이 의미 있는 경우·오히려 손해인 경우를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
