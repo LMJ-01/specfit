@@ -97,6 +97,13 @@
     <description>컴퓨터 자리에 랜선이 안 닿으면 와이파이로 버티게 됩니다. 웹서핑엔 문제없고 게임에선 말리는 이유가 뭔지 — 평균 속도와 순간 변동을 갈라 보면 판정이 깔끔해집니다. 유선을 못 까는 집의 절충안까지 정리했습니다.</description>
   </item>
   <item>
+    <title>CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다</title>
+    <link>https://specfit.kr/posts/cpu-mobo-swap-windows.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/cpu-mobo-swap-windows.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.</description>
+  </item>
+  <item>
     <title>공유기, 주기적으로 재부팅해야 하나 — 증상 기준 + 자동화가 답입니다</title>
     <link>https://specfit.kr/posts/router-reboot.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/router-reboot.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/mixed-ram-capacity.html</guid>
     <pubDate>Tue, 01 Sep 2026 15:00:00 GMT</pubDate>
     <description>8GB에 16GB를 더 꽂는 식의 혼용이 되는지, 성능은 어떻게 되는지 질문이 많습니다. 대개 돌아가지만 듀얼 채널이 부분 동작이 되고 속도는 낮은 쪽에 맞춰집니다. 구조와 판정 기준을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>와이파이 7 공유기로 바꾸면 빨라지나 — 관문 셋이 다 맞아야 합니다</title>
-    <link>https://specfit.kr/posts/wifi7-router-upgrade.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/wifi7-router-upgrade.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>최신 공유기를 사면 집 와이파이가 빨라질 것 같지만, 속도는 요금제·공유기·기기 세 관문 중 제일 낮은 것을 따라갑니다. 내 기기가 어느 세대인지 확인하는 법부터, 바꿀 가치가 있는 경우를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다 | 스펙핏</title>
+<meta name="description" content="보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/cpu-mobo-swap-windows.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다 | 스펙핏">
+<meta property="og:description" content="보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/cpu-mobo-swap-windows.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다","description":"보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.","datePublished":"2026-09-04","dateModified":"2026-09-04","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/cpu-mobo-swap-windows.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다","item":"https://specfit.kr/posts/cpu-mobo-swap-windows.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"교체했더니 정품 인증이 풀렸어요","acceptedAnswer":{"@type":"Answer","text":"보드 교체에서 예상 범위의 일입니다 — 설정의 정품 인증 메뉴에서 하드웨어 변경 문제 해결 경로로 계정에 연결된 라이선스를 다시 붙이는 게 첫 순서입니다. 계정 연결을 안 해 뒀거나 라이선스 종류가 이전 불가면, 인증 화면의 안내를 따라 지원 쪽으로 가는 수순입니다."}},{"@type":"Question","name":"부팅이 아예 안 돼요","acceptedAnswer":{"@type":"Answer","text":"새 보드의 저장장치 설정(부팅 순서, 저장장치 모드)이 이전과 다른 경우가 흔한 원인입니다 — 바이오스 화면에서 부팅 디스크가 잡혀 있는지부터 확인하세요. 그래도 안 되면 그때가 클린설치를 검토할 자리입니다."}},{"@type":"Question","name":"데이터는 날아가지 않나요","acceptedAnswer":{"@type":"Answer","text":"교체 자체로는 디스크 내용이 지워지지 않습니다 — 날아가는 사고는 대개 그 뒤의 재설치·포맷 과정에서 납니다. 그래서 백업이 교체 전 공통 전제인 것이고, 파티션 구성과 무관하게 별도 매체 사본이 원칙입니다."}},{"@type":"Question","name":"그래픽카드를 같이 바꾸는데 뭘 더 해야 하나요","acceptedAnswer":{"@type":"Answer","text":"재설치 관점에서는 추가 숙제가 없습니다 — 드라이버를 새로 잡는 정도입니다. 물리·전기 쪽 확인 (케이스 치수 · 파워 용량)이 진짜 숙제입니다."}},{"@type":"Question","name":"클린설치로 가기로 했어요. 순서는요","acceptedAnswer":{"@type":"Answer","text":"마이그레이션 vs 클린설치 글의 절차 그대로입니다 — 백업, 라이선스 키·계정 확인, 랜 드라이버 준비까지 챙기면 됩니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-04">2026년 9월 4일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p><a href="/posts/cpu-gpu-bottleneck.html">병목을 판정</a>하고 CPU나
+메인보드를 바꾸기로 하면, 마지막에 걸리는 게 이 질문입니다 —
+<strong>&quot;윈도우 다시 깔아야 하나요?&quot;</strong> 커뮤니티 답변은 &quot;요즘은 그냥
+된다&quot;와 &quot;그래도 클린이 낫다&quot;가 반반입니다.</p>
+<p>정리부터: <strong>&quot;보드 바꾸면 무조건 재설치&quot;는 옛 시대의 관습</strong>입니다.
+요즘 윈도우는 하드웨어 교체에 관대해졌고, 남는 것은 재설치
+여부가 아니라 <strong>라이선스와 드라이버라는 두 숙제</strong>입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>바꾸는 것</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td><strong>CPU만</strong> (같은 보드)</td><td><strong>재설치 불필요가 원칙</strong>입니다 — 켜면 그대로 돕니다</td></tr>
+<tr><td>램 · 그래픽카드 · SSD 추가</td><td>재설치와 무관합니다</td></tr>
+<tr><td><strong>메인보드 (+CPU)</strong></td><td>대개 그대로 부팅됩니다 — 대신 <strong>라이선스·드라이버 숙제</strong>가 붙습니다</td></tr>
+<tr><td>보드 교체 + 시스템이 오래 묵음</td><td><strong>겸사겸사 클린설치</strong>가 계산에 맞는 경우가 많습니다</td></tr>
+<tr><td>플랫폼 세대 점프 (램 규격까지 바뀜)</td><td>큰 공사라 클린설치 쪽으로 기웁니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-관습이-바뀌었나">왜 관습이 바뀌었나</h2>
+<p>예전 윈도우는 저장장치·칩셋 드라이버가 보드에 딱 붙어 있어서,
+보드를 바꾸면 부팅 자체가 실패하는 일이 흔했습니다 — &quot;보드 교체
+= 재설치&quot;라는 관습이 그 시절의 답이었습니다.</p>
+<p>요즘 윈도우는 <strong>범용 드라이버로 일단 부팅한 뒤 새 하드웨어에
+맞춰 재구성</strong>하는 쪽으로 관대해졌습니다. 그래서 보드가 바뀌어도
+대개 첫 부팅이 성립하고, 커뮤니티의 &quot;요즘은 그냥 되더라&quot;가 그
+경험담입니다. 다만 되는 것과 개운한 것은 달라서 — 숙제 두 개를
+알고 가야 합니다.</p>
+<h2 id="숙제-정품-인증라이선스">숙제 ① — 정품 인증(라이선스)</h2>
+<p>윈도우의 디지털 라이선스는 <strong>메인보드를 컴퓨터의 신원으로</strong>
+봅니다. 그래서:</p>
+<ul>
+<li><strong>CPU만 교체</strong> — 신원이 그대로라 인증도 대개 그대로입니다</li>
+<li><strong>보드 교체</strong> — 윈도우 입장에선 &quot;다른 컴퓨터&quot;로 보일 수 있어
+<strong>재인증이 걸릴 수 있습니다.</strong> 교체 전에 <strong>마이크로소프트
+계정에 라이선스를 연결</strong>해 두면, 교체 후 설정의 정품 인증
+메뉴 → 하드웨어 변경 경로로 다시 살리는 길이 열립니다</li>
+<li>다만 라이선스 종류(패키지/조립PC용 등)에 따라 이전 가능 여부가
+달라서, 단정할 수 없는 영역입니다 — 안 풀리면 인증 화면의
+안내와 지원 문의가 다음 순서입니다</li>
+</ul>
+<h2 id="숙제-이전-보드의-드라이버-잔재">숙제 ② — 이전 보드의 드라이버 잔재</h2>
+<p>그대로 부팅해 쓰는 길을 택하면, 이전 보드용 칩셋·랜·오디오
+드라이버가 시스템에 남습니다.</p>
+<ul>
+<li><strong>대개는 무해합니다</strong> — 안 쓰는 드라이버는 잠들어 있을 뿐입니다</li>
+<li>새 보드의 칩셋·랜 드라이버를 제조사 페이지에서 한 번 잡아주는
+것이 개운한 마무리입니다</li>
+<li>교체 후 <strong>원인 모를 멈칫·오류가 생기면</strong> — 잔재가 용의자에
+오르고, 그때가 <a href="/posts/ssd-migration-vs-clean-install.html">클린설치 판정</a>
+으로 넘어가는 시점입니다. &quot;문제가 생기면 클린&quot;이 실무 순서이지,
+선제 재설치가 의무인 건 아닙니다</li>
+</ul>
+<h2 id="그래서-판정-시스템-상태로-가릅니다">그래서 판정 — 시스템 상태로 가릅니다</h2>
+<p><a href="/posts/ssd-migration-vs-clean-install.html">SSD 이전 글의 그 기준</a>이
+여기에도 그대로 적용됩니다.</p>
+<ul>
+<li><strong>시스템이 멀쩡하고 최근 것</strong> → 그대로 부팅해 쓰고, 라이선스와
+새 드라이버만 챙깁니다. 문제가 생기면 그때 클린설치</li>
+<li><strong>몇 년 묵어 느려진 시스템</strong> → 어차피 보드까지 여는 큰 공사라면,
+겸사겸사 클린설치로 초기화하는 쪽이 계산에 맞는 경우가
+많습니다</li>
+<li><strong>램 규격까지 바뀌는 플랫폼 점프</strong> → 사실상 새 컴퓨터를 맞추는
+일이라 클린설치가 자연스러운 선택입니다</li>
+</ul>
+<p>어느 길이든 <strong>작업 전 백업은 공통 전제</strong>입니다 —
+<a href="/posts/dev-backup-strategy.html">백업의 틀</a>은 교체 성공 여부와
+무관하게 서 있어야 합니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="교체했더니-정품-인증이-풀렸어요">교체했더니 정품 인증이 풀렸어요</h3>
+<p>보드 교체에서 예상 범위의 일입니다 — 설정의 정품 인증 메뉴에서
+<strong>하드웨어 변경 문제 해결</strong> 경로로 계정에 연결된 라이선스를 다시
+붙이는 게 첫 순서입니다. 계정 연결을 안 해 뒀거나 라이선스
+종류가 이전 불가면, 인증 화면의 안내를 따라 지원 쪽으로 가는
+수순입니다.</p>
+<h3 id="부팅이-아예-안-돼요">부팅이 아예 안 돼요</h3>
+<p>새 보드의 저장장치 설정(부팅 순서, 저장장치 모드)이 이전과 다른
+경우가 흔한 원인입니다 — 바이오스 화면에서 부팅 디스크가 잡혀
+있는지부터 확인하세요. 그래도 안 되면 그때가 클린설치를 검토할
+자리입니다.</p>
+<h3 id="데이터는-날아가지-않나요">데이터는 날아가지 않나요</h3>
+<p>교체 자체로는 디스크 내용이 지워지지 않습니다 — 날아가는 사고는
+대개 그 뒤의 재설치·포맷 과정에서 납니다. 그래서 백업이 교체
+전 공통 전제인 것이고, <a href="/posts/ssd-partition.html">파티션 구성</a>과
+무관하게 별도 매체 사본이 원칙입니다.</p>
+<h3 id="그래픽카드를-같이-바꾸는데-뭘-더-해야-하나요">그래픽카드를 같이 바꾸는데 뭘 더 해야 하나요</h3>
+<p>재설치 관점에서는 추가 숙제가 없습니다 — 드라이버를 새로 잡는
+정도입니다. 물리·전기 쪽 확인
+(<a href="/posts/gpu-case-clearance.html">케이스 치수</a> ·
+<a href="/posts/gpu-psu-wattage.html">파워 용량</a>)이 진짜 숙제입니다.</p>
+<h3 id="클린설치로-가기로-했어요-순서는요">클린설치로 가기로 했어요. 순서는요</h3>
+<p><a href="/posts/ssd-migration-vs-clean-install.html">마이그레이션 vs 클린설치 글의 절차</a>
+그대로입니다 — 백업, 라이선스 키·계정 확인, 랜 드라이버 준비까지
+챙기면 됩니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>&quot;보드 바꾸면 무조건 재설치&quot;는 옛 관습</strong>입니다 — 요즘 윈도우는
+대개 그대로 부팅됩니다</li>
+<li>CPU만 교체면 <strong>숙제 자체가 없습니다</strong> — 램·그래픽카드·SSD도
+마찬가지입니다</li>
+<li>보드 교체의 진짜 숙제는 <strong>라이선스 재인증과 드라이버</strong>입니다 —
+교체 전 MS 계정 연결이 보험입니다</li>
+<li>재설치 여부는 <strong>시스템 상태로 판정</strong>합니다 — 멀쩡하면 그대로,
+묵었으면 겸사겸사 클린입니다</li>
+<li>어느 길이든 <strong>백업이 공통 전제</strong>입니다</li>
+</ol>
+<p>업그레이드의 이웃 판정들 — <a href="/posts/cpu-gpu-bottleneck.html">병목(무엇을 바꿀지)</a> ·
+<a href="/posts/gpu-case-clearance.html">케이스 치수</a> ·
+<a href="/posts/ssd-migration-vs-clean-install.html">클린설치 판정</a>과
+이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">메인보드교체</span> <span class="tag">CPU교체</span> <span class="tag">윈도우재설치</span> <span class="tag">정품인증</span> <span class="tag">업그레이드</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/gpu-case-clearance.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드가 케이스에 안 들어가요 — 사기 전 확인은 세 치수입니다</span>
+        <span class="card-desc">케이스 스펙의 호환 길이만 믿고 샀다가 안 들어가는 사고가 실제로 흔합니다. 길이·두께(슬롯 수)·전원 커넥터 공간 세 치수를 확인하는 법과, 허용치에 딱 맞는 조합이 왜 위험한지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/gpu-temp-normal.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 온도 80도, 괜찮나 — 숫자 하나가 아니라 거동 셋으로 판정합니다</span>
+        <span class="card-desc">게임 중 온도를 봤다가 80도에 놀라 검색하게 됩니다. 몇 도가 정상인지는 카드마다 달라 숫자로 답할 수 없고, 판정은 온도의 거동 세 가지로 합니다. 평형·성능 유지·추세라는 기준과 개선 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/psu-zero-fan.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">파워 팬이 안 돌아요 — 고장이 아니라 기능인 경우부터 확인합니다</span>
+        <span class="card-desc">새 컴퓨터의 파워 팬이 멈춰 있으면 불량인가 싶어집니다. 요즘 파워 상당수는 저부하에서 팬을 일부러 멈추는 제로팬 설계입니다. 기능인지 고장인지 가르는 판정 절차와, 그래픽카드 팬에도 같은 이야기가 적용되는 이유를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
