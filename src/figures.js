@@ -834,6 +834,7 @@ export const figures = {
   'partition-one-disk': partitionOneDisk,
   'blur-vs-lag': blurVsLag,
   'ram-pressure': ramPressure,
+  'temp-behavior': tempBehavior,
 };
 
 /**
@@ -1579,5 +1580,64 @@ function ramPressure() {
     218,
     body,
     '"몇 %면 위험"이라는 선은 없습니다 — 여유를 넘는 순간이 부하에 따라 달라서, 증상이 판정 기준입니다.'
+  );
+}
+
+/**
+ * 온도는 숫자 하나가 아니라 거동으로 판정 — 평형 / 계속 상승 / 추세 이동.
+ * gpu-temp-normal 의 판정 3기준을 시간-온도 곡선으로 고정합니다.
+ */
+function tempBehavior() {
+  const W = 640;
+  const panelW = 188;
+  const gap = 20;
+  const py0 = 150; // 각 패널 바닥
+  const pTop = 52;
+
+  const curve = (px0, fn, color, dash) => {
+    const pts = [];
+    for (let i = 0; i <= 30; i++) {
+      const x = i / 30;
+      pts.push(`${(px0 + 10 + x * (panelW - 24)).toFixed(1)},${(py0 - fn(x)).toFixed(1)}`);
+    }
+    return `<polyline points="${pts.join(' ')}" fill="none" stroke="${color}" stroke-width="3" stroke-linejoin="round"${dash ? ` stroke-dasharray="${dash}"` : ''}/>`;
+  };
+  const axes = (px0) =>
+    `<line x1="${px0 + 6}" y1="${py0}" x2="${px0 + panelW - 8}" y2="${py0}" stroke="${COLOR.line}"/>` +
+    `<line x1="${px0 + 6}" y1="${py0}" x2="${px0 + 6}" y2="${pTop}" stroke="${COLOR.line}"/>`;
+
+  let body = '';
+  body += t(16, 22, '같은 부하를 걸고 몇 분 — 곡선의 모양이 판정입니다', { weight: 600, size: 14 });
+
+  // ① 평형 도달 = 정상
+  const x1 = 16;
+  body += axes(x1);
+  body += curve(x1, (x) => 20 + 62 * (1 - Math.exp(-x * 4)), COLOR.fit);
+  body += t(x1 + panelW / 2, 44, '① 오르다 멈춤 (평형)', { anchor: 'middle', size: 12, weight: 600, fill: COLOR.fit });
+  body += t(x1 + panelW / 2, py0 + 18, '✅ 정상 — 냉각이 이겼습니다', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  // ② 계속 상승 = 쿨링 부족
+  const x2 = 16 + panelW + gap;
+  body += axes(x2);
+  body += curve(x2, (x) => 14 + 82 * x, COLOR.over);
+  body += t(x2 + panelW / 2, 44, '② 계속 오르기만', { anchor: 'middle', size: 12, weight: 600, fill: COLOR.over });
+  body += t(x2 + panelW / 2, py0 + 18, '⚠️ 쿨링이 지는 중 — 개선 순서로', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  // ③ 추세 이동 = 먼지·서멀
+  const x3 = 16 + (panelW + gap) * 2;
+  body += axes(x3);
+  body += curve(x3, (x) => 16 + 52 * (1 - Math.exp(-x * 4)), COLOR.fit, '5 4');
+  body += curve(x3, (x) => 16 + 74 * (1 - Math.exp(-x * 4)), COLOR.over);
+  body += t(x3 + panelW / 2, 44, '③ 예전보다 위로', { anchor: 'middle', size: 12, weight: 600, fill: COLOR.over });
+  body += t(x3 + 52, py0 - 44, '예전', { size: 11, fill: COLOR.fit });
+  body += t(x3 + 52, py0 - 82, '지금', { size: 11, fill: COLOR.over });
+  body += t(x3 + panelW / 2, py0 + 18, '⚠️ 먼지·서멀 신호 — 청소부터', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  return figure(
+    'GPU 온도 판정 — 평형 도달은 정상, 계속 상승은 쿨링 부족, 추세 상승은 먼지·서멀 신호',
+    W,
+    186,
+    body,
+    '숫자(80도 등)는 제품마다 설계가 달라 판정이 안 됩니다 — 시간축의 모양 셋이 판정 도구입니다.'
   );
 }
