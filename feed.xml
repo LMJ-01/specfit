@@ -55,6 +55,13 @@
     <description>아이패드가 이미 있으면 코딩 공부도 이걸로 되지 않을까 싶어집니다. 안 되는 이유는 사양이 아니라 소프트웨어 구조에 있고, 그래서 되는 범위와 안 되는 범위의 경계가 뚜렷합니다. 태블릿의 좋은 자리와 노트북이 필요한 순간을 정리했습니다.</description>
   </item>
   <item>
+    <title>듀얼 모니터 색감이 달라요 — 완전 일치는 목표가 아닙니다</title>
+    <link>https://specfit.kr/posts/dual-monitor-color-match.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-color-match.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>모니터 두 대의 색이 다른 것은 고장이 아니라 패널이 다른 물건이라는 뜻입니다. 왜 완전히 같아질 수 없는지, 현실적으로 어디까지 맞추는지, 색이 중요한 작업은 어떻게 배치로 푸는지 정리했습니다.</description>
+  </item>
+  <item>
     <title>데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다</title>
     <link>https://specfit.kr/posts/desktop-wifi-vs-lan.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/desktop-wifi-vs-lan.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ram-64gb-worth-it.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>램 32GB 다음 칸인 64GB가 필요한지 커뮤니티마다 답이 갈립니다. 갈리는 이유는 용도가 달라서입니다. 지금 32GB가 모자란지 확인하는 절차와, 64GB가 값을 하는 작업 목록을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>파워는 몇 년 쓰나 — 연식이 아니라 신호로 교체합니다</title>
-    <link>https://specfit.kr/posts/psu-lifespan.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/psu-lifespan.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>파워서플라이 수명을 물으면 5년부터 15년까지 답이 갈립니다. 등급마다 다르고, 연식보다 이상 신호가 기준이기 때문입니다. 보증 기간을 수명 지표로 읽는 법과 진짜 교체 신호를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
