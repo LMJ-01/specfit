@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>태블릿을 보조 모니터로 — 연결 방식과 용도가 판정을 정합니다</title>
+    <link>https://specfit.kr/posts/tablet-as-monitor.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/tablet-as-monitor.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>집에 있는 태블릿을 노트북 옆 보조 화면으로 쓸 수 있을까요. 되긴 되는데, 진짜 모니터와는 그림이 전달되는 방식이 달라서 잘 맞는 용도와 안 맞는 용도가 뚜렷하게 갈립니다. 갈림길과 확인 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다</title>
     <link>https://specfit.kr/posts/ssd-partition.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/ssd-partition.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/cpu-gpu-bottleneck.html</guid>
     <pubDate>Wed, 02 Sep 2026 15:00:00 GMT</pubDate>
     <description>조합을 정할 때마다 병목 걱정이 따라옵니다. 병목 계산기 사이트는 왜 믿을 게 못 되는지, 완벽한 균형이 왜 애초에 없는지, 내 컴퓨터의 병목을 사용률 하나로 판정하는 법을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>은퇴한 노트북 활용 — 성능이 아니라 빈자리로 고릅니다</title>
-    <link>https://specfit.kr/posts/old-laptop-uses.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/old-laptop-uses.html</guid>
-    <pubDate>Tue, 01 Sep 2026 15:00:00 GMT</pubDate>
-    <description>안 쓰는 노트북을 뭐라도 시키고 싶은데 마땅한 게 안 떠오릅니다. 노트북의 성능이 아니라 집에 비어 있는 역할부터 보면 답이 빨리 나옵니다. 역할 다섯 가지와 판정 절차, 처분 전 필수 절차를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
