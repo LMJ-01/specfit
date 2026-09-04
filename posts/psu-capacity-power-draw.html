@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>파워 용량이 크면 전기를 더 먹나 — 용량은 상한이고, 쓰는 만큼만 나갑니다 | 스펙핏</title>
+<meta name="description" content="750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/psu-capacity-power-draw.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="파워 용량이 크면 전기를 더 먹나 — 용량은 상한이고, 쓰는 만큼만 나갑니다 | 스펙핏">
+<meta property="og:description" content="750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/psu-capacity-power-draw.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"파워 용량이 크면 전기를 더 먹나 — 용량은 상한이고, 쓰는 만큼만 나갑니다","description":"750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/psu-capacity-power-draw.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"파워 용량이 크면 전기를 더 먹나 — 용량은 상한이고, 쓰는 만큼만 나갑니다","item":"https://specfit.kr/posts/psu-capacity-power-draw.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"컴퓨터를 꺼 두면 전기가 안 나가나요","acceptedAnswer":{"@type":"Answer","text":"완전히 0은 아닙니다 — 꺼진 상태에서도 대기 전력이 조금 흐르고, 빠른 시작·USB 충전 같은 설정에 따라 달라집니다. 신경 쓰인다면 스위치 달린 멀티탭으로 물리적으로 끊는 것이 확실한 방법입니다."}},{"@type":"Question","name":"제로팬 파워면 전기도 아끼나요","acceptedAnswer":{"@type":"Answer","text":"제로팬은 소음 기능이지 절전 기능이 아닙니다 — 팬 하나의 소비는 전체에서 아주 작은 몫입니다. 저부하 에서 팬이 멈춘다는 것이 효율 좋은 구간과 겹쳐 보일 뿐입니다."}},{"@type":"Question","name":"80PLUS 등급을 올리면 전기요금이 줄어드나요","acceptedAnswer":{"@type":"Answer","text":"방향은 맞습니다 — 같은 부하에서 낭비가 줄어드니까요. 다만 그 차이가 값어치를 하는지는 사용 시간과 부하의 함수라, 하루 종일 고부하로 돌리는 컴퓨터일수록 이득이 커지고 가끔 켜는 컴퓨터일수록 미미해집니다. 등급 글의 결론과 같습니다."}},{"@type":"Question","name":"우리 집 컴퓨터가 실제로 몇 W 쓰는지 알 수 있나요","acceptedAnswer":{"@type":"Answer","text":"콘센트와 컴퓨터 사이에 끼우는 전력 측정기가 그 용도의 물건입니다. 소프트웨어 추정치보다 벽에서 재는 쪽이 정확하고, 게임 중·유휴·꺼짐 세 상태를 재 보면 이 글의 구조가 숫자로 보입니다."}},{"@type":"Question","name":"전기 아끼는 쪽으로 컴퓨터를 고르고 싶어요","acceptedAnswer":{"@type":"Answer","text":"파워가 아니라 부품과 형태의 문제입니다 — 같은 일을 하는 데에 미니PC·노트북류가 데스크탑보다 적게 쓰는 구조 이야기를 따로 정리해 뒀습니다. 데스크탑에서는 그래픽카드 선택이 대부분을 정합니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>파워 용량이 크면 전기를 더 먹나 — 용량은 상한이고, 쓰는 만큼만 나갑니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-05">2026년 9월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>조립 견적에서 파워를 여유 있게 잡으라는 말을 듣고 나면 걱정이
+하나 따라옵니다 — <strong>&quot;750W 파워를 달면 전기도 그만큼 나가는 것
+아닌가?&quot;</strong> 파워 게시판의 단골 질문입니다.</p>
+<p>먼저 안심부터: <strong>아닙니다.</strong> 파워 용량은 <strong>낼 수 있는 상한</strong>이지
+소비량이 아닙니다. 수도관을 굵은 것으로 바꿔도 수도요금은 쓴
+물만큼 나오는 것과 같은 구조입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>용량 큰 파워 = 전기 많이 먹음?</td><td>❌ <strong>아닙니다</strong> — 부품이 쓰는 만큼만 나갑니다</td></tr>
+<tr><td>그럼 전기 사용은 뭐가 정하나</td><td><strong>부품 구성과 그 순간의 부하</strong>입니다 — 특히 그래픽카드와 게임 시간</td></tr>
+<tr><td>용량이 완전히 무관한가</td><td>소비량과는 무관, <strong>효율(낭비되는 몫)</strong>에는 약간 관여합니다</td></tr>
+<tr><td>전기가 걱정이면 뭘 보나</td><td>용량이 아니라 <strong>부품 선택·사용 패턴·효율 등급</strong>입니다</td></tr>
+<tr><td>실제로 얼마나 쓰는지 궁금하면</td><td>콘센트형 전력 측정기가 그 용도 물건입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="용량은-상한입니다-정하는-쪽은-부품">용량은 상한입니다 — 정하는 쪽은 부품</h2>
+<p>파워는 저장고가 아니라 <strong>변환기</strong>입니다. 부품들이 그 순간
+요구하는 전력만큼만 벽 콘센트에서 끌어와 변환해 공급합니다.</p>
+<ul>
+<li>1000W 파워를 단 컴퓨터가 웹서핑 중이라면 — 그 순간 부품들이
+쓰는 만큼(수십~백몇십 W 수준의 낮은 구간)만 나갑니다</li>
+<li>500W 파워든 1000W 파워든, <strong>같은 부품이 같은 일을 하면 끌어
+쓰는 전기는 사실상 같습니다</strong></li>
+</ul>
+<p>전기 사용을 실제로 정하는 것은:</p>
+<ol>
+<li><strong>부품 구성</strong> — 특히 <a href="/posts/gpu-psu-wattage.html">그래픽카드가 가장 큰 몫</a>
+입니다. 전기가 걱정이면 파워가 아니라 이쪽 선택의 문제입니다</li>
+<li><strong>그 순간의 부하</strong> — 같은 컴퓨터도 게임 중과 유휴 상태의
+소비가 몇 배씩 다릅니다. 하루 중 게임 시간이 전기의
+대부분을 정합니다</li>
+<li><strong>효율</strong> — 아래 절의, 용량이 유일하게 끼어드는 자리입니다</li>
+</ol>
+<h2 id="효율-용량이-살짝-끼어드는-자리">효율 — 용량이 살짝 끼어드는 자리</h2>
+<p>변환에는 손실이 있어서, 끌어온 전기의 일부는 열로 새어
+나갑니다. 이 <strong>낭비되는 몫의 비율(효율)</strong>은 두 가지를 탑니다:</p>
+<ul>
+<li><strong>파워의 물건 자체</strong> — <a href="/posts/psu-80plus.html">80PLUS 등급</a>이
+이 낭비를 얼마나 줄였는지의 표시입니다</li>
+<li><strong>로드율</strong> — 파워는 대개 <strong>부하가 용량의 중간쯤(50~80% 구간)일
+때 효율이 가장 좋습니다.</strong> 그래서 용량 대비 부하가 너무 낮거나
+꽉 차는 구성은 효율 곡선의 가장자리를 쓰게 됩니다</li>
+</ul>
+<p>즉 용량이 소비량을 정하지는 않지만, <strong>낭비의 비율에는 몇 %
+수준으로 관여합니다.</strong> 다만 이 차이가 체감 요금을 좌우하는
+크기는 아닌 편이라, 효율 때문에 용량을 바꿀 이유까지는 안
+됩니다 — 용량은 <a href="/posts/gpu-psu-wattage.html">부품 요구와 여유로 정하는 것</a>
+이고, 그 계산이 대개 효율 좋은 구간과도 겹칩니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="컴퓨터를-꺼-두면-전기가-안-나가나요">컴퓨터를 꺼 두면 전기가 안 나가나요</h3>
+<p>완전히 0은 아닙니다 — 꺼진 상태에서도 대기 전력이 조금 흐르고,
+빠른 시작·USB 충전 같은 설정에 따라 달라집니다. 신경 쓰인다면
+스위치 달린 멀티탭으로 물리적으로 끊는 것이 확실한 방법입니다.</p>
+<h3 id="제로팬-파워면-전기도-아끼나요">제로팬 파워면 전기도 아끼나요</h3>
+<p><a href="/posts/psu-zero-fan.html">제로팬</a>은 소음 기능이지 절전 기능이
+아닙니다 — 팬 하나의 소비는 전체에서 아주 작은 몫입니다. 저부하
+에서 팬이 멈춘다는 것이 효율 좋은 구간과 겹쳐 보일 뿐입니다.</p>
+<h3 id="80plus-등급을-올리면-전기요금이-줄어드나요">80PLUS 등급을 올리면 전기요금이 줄어드나요</h3>
+<p>방향은 맞습니다 — 같은 부하에서 낭비가 줄어드니까요. 다만 그
+차이가 값어치를 하는지는 <strong>사용 시간과 부하의 함수</strong>라, 하루
+종일 고부하로 돌리는 컴퓨터일수록 이득이 커지고 가끔 켜는
+컴퓨터일수록 미미해집니다. <a href="/posts/psu-80plus.html">등급 글</a>의
+결론과 같습니다.</p>
+<h3 id="우리-집-컴퓨터가-실제로-몇-w-쓰는지-알-수-있나요">우리 집 컴퓨터가 실제로 몇 W 쓰는지 알 수 있나요</h3>
+<p>콘센트와 컴퓨터 사이에 끼우는 <strong>전력 측정기</strong>가 그 용도의
+물건입니다. 소프트웨어 추정치보다 벽에서 재는 쪽이 정확하고,
+게임 중·유휴·꺼짐 세 상태를 재 보면 이 글의 구조가 숫자로
+보입니다.</p>
+<h3 id="전기-아끼는-쪽으로-컴퓨터를-고르고-싶어요">전기 아끼는 쪽으로 컴퓨터를 고르고 싶어요</h3>
+<p>파워가 아니라 <strong>부품과 형태</strong>의 문제입니다 — 같은 일을 하는
+데에 <a href="/posts/local-llm-power-cost.html">미니PC·노트북류가 데스크탑보다 적게 쓰는 구조</a>
+이야기를 따로 정리해 뒀습니다. 데스크탑에서는 그래픽카드
+선택이 대부분을 정합니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>파워 용량은 상한이지 소비량이 아닙니다</strong> — 쓰는 만큼만
+나갑니다</li>
+<li>전기 사용을 정하는 것은 <strong>부품 구성(특히 그래픽카드)과 사용
+패턴</strong>입니다</li>
+<li>용량이 끼는 자리는 <strong>효율(낭비 비율)</strong>뿐이고, 크기가 작아
+용량 선택을 바꿀 이유는 못 됩니다</li>
+<li>용량은 전기 걱정이 아니라 <a href="/posts/gpu-psu-wattage.html">부품 요구와 여유</a>로
+정하세요</li>
+<li>궁금하면 <strong>벽에서 재는 것</strong>(전력 측정기)이 정답입니다</li>
+</ol>
+<p>파워 클러스터의 나머지 — <a href="/posts/gpu-psu-wattage.html">용량 계산</a> ·
+<a href="/posts/psu-80plus.html">80PLUS 등급</a> ·
+<a href="/posts/psu-zero-fan.html">제로팬</a> ·
+<a href="/posts/psu-lifespan.html">수명·교체 신호</a>와 한 묶음입니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">파워서플라이</span> <span class="tag">전기세</span> <span class="tag">소비전력</span> <span class="tag">파워용량</span> <span class="tag">효율</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/game-stutter-fps.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다</span>
+        <span class="card-desc">프레임 수치는 높은데 화면이 뚝뚝 끊기는 느낌이 드는 경우가 있습니다. 부드러움을 정하는 것은 평균 프레임이 아니라 프레임 사이 간격의 고름이라서입니다. 끊김의 세 갈래를 가르는 판정 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/cpu-f-model.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">F 붙은 CPU 사도 되나 — 아끼는 건 지금, 내장그래픽의 값은 비상시에 나옵니다</span>
+        <span class="card-desc">같은 CPU인데 F가 붙으면 내장그래픽이 빠지고 값이 내려갑니다. 그래픽카드를 쓸 건데 내장이 왜 필요하냐 싶지만, 내장그래픽의 진짜 쓸모는 평소가 아니라 비상시와 전환기에 있습니다. 갈림길을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/cpu-mobo-swap-windows.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다</span>
+        <span class="card-desc">보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

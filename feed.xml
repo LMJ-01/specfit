@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>파워 용량이 크면 전기를 더 먹나 — 용량은 상한이고, 쓰는 만큼만 나갑니다</title>
+    <link>https://specfit.kr/posts/psu-capacity-power-draw.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/psu-capacity-power-draw.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.</description>
+  </item>
+  <item>
     <title>프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다</title>
     <link>https://specfit.kr/posts/game-stutter-fps.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/game-stutter-fps.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/cpu-mobo-swap-windows.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>F 붙은 CPU 사도 되나 — 아끼는 건 지금, 내장그래픽의 값은 비상시에 나옵니다</title>
-    <link>https://specfit.kr/posts/cpu-f-model.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/cpu-f-model.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>같은 CPU인데 F가 붙으면 내장그래픽이 빠지고 값이 내려갑니다. 그래픽카드를 쓸 건데 내장이 왜 필요하냐 싶지만, 내장그래픽의 진짜 쓸모는 평소가 아니라 비상시와 전환기에 있습니다. 갈림길을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
