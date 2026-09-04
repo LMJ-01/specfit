@@ -48,6 +48,13 @@
     <description>미니PC를 알아보면 팬소음 이야기가 꼭 따라옵니다. 작은 몸집이 구조적으로 불리한 건 맞는데, 시끄러운지는 제품이 아니라 내 부하가 정합니다. 사무·웹은 대개 조용하고, 지속 고부하가 소음을 부릅니다. 판정 기준과 줄이는 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>작년 모델 노트북, 사도 되나 — 연식이 아니라 기준 충족으로 판정합니다</title>
+    <link>https://specfit.kr/posts/last-year-laptop.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/last-year-laptop.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>신형이 나오면 이월된 작년 모델이 눈에 들어옵니다. 세대 차이가 실질인 경우와 이름만 바뀐 경우를 가르는 법, 구형 신품에서만 따로 확인할 것(제조일·배터리·보증 시작)을 정리했습니다. 판정 기준은 연식이 아니라 사양입니다.</description>
+  </item>
+  <item>
     <title>아이패드로 코딩 공부 되나 — 관문은 성능이 아니라 운영체제입니다</title>
     <link>https://specfit.kr/posts/ipad-coding-study.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/ipad-coding-study.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/wifi7-router-upgrade.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>최신 공유기를 사면 집 와이파이가 빨라질 것 같지만, 속도는 요금제·공유기·기기 세 관문 중 제일 낮은 것을 따라갑니다. 내 기기가 어느 세대인지 확인하는 법부터, 바꿀 가치가 있는 경우를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>스위칭허브 vs 공유기 — 포트가 모자랄 때 뭘 사야 하나</title>
-    <link>https://specfit.kr/posts/switch-hub-vs-router.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/switch-hub-vs-router.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>유선으로 물릴 기기는 늘었는데 공유기 뒤 포트는 네 개뿐. 이때 스위칭허브와 공유기 중 뭘 사야 하는지 헷갈립니다. 두 장비의 역할 차이와, 상황별로 답이 갈리는 기준을 정리했습니다.</description>
   </item>
 </channel>
 </rss>

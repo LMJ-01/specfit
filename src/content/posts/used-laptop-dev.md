@@ -2,7 +2,7 @@
 title: 중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다
 description: 중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.
 date: 2026-08-20
-updated: 2026-09-01
+updated: 2026-09-04
 category: laptop
 tags: [중고노트북, 배터리, SSD수명, 램슬롯, 개발용노트북]
 affiliate: true
@@ -211,7 +211,9 @@ Get-PhysicalDisk | Get-StorageReliabilityCounter |
 
 **개발 작업만 놓고 보면 몇 세대 전도 대체로 충분합니다.**
 그보다 **램이 늘어나는지, SSD 를 바꿀 수 있는지**가 실질적입니다.
-등급과 접미사 읽는 법은 [개발용 노트북 CPU](/posts/dev-laptop-cpu.html)에 있습니다.
+등급과 접미사 읽는 법은 [개발용 노트북 CPU](/posts/dev-laptop-cpu.html)에 있고,
+중고가 아니라 [이월 신품(작년 모델)을 보는 중이라면](/posts/last-year-laptop.html)
+확인 항목이 다릅니다.
 
 ### 중고 게이밍 노트북은 어떤가요
 
