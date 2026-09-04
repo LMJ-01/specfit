@@ -118,6 +118,13 @@
     <description>보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.</description>
   </item>
   <item>
+    <title>F 붙은 CPU 사도 되나 — 아끼는 건 지금, 내장그래픽의 값은 비상시에 나옵니다</title>
+    <link>https://specfit.kr/posts/cpu-f-model.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/cpu-f-model.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>같은 CPU인데 F가 붙으면 내장그래픽이 빠지고 값이 내려갑니다. 그래픽카드를 쓸 건데 내장이 왜 필요하냐 싶지만, 내장그래픽의 진짜 쓸모는 평소가 아니라 비상시와 전환기에 있습니다. 갈림길을 정리했습니다.</description>
+  </item>
+  <item>
     <title>공유기, 주기적으로 재부팅해야 하나 — 증상 기준 + 자동화가 답입니다</title>
     <link>https://specfit.kr/posts/router-reboot.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/router-reboot.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/dual-boot-vs-wsl.html</guid>
     <pubDate>Wed, 02 Sep 2026 15:00:00 GMT</pubDate>
     <description>개발 공부를 하다 보면 리눅스 듀얼부팅을 해야 하나 고민이 옵니다. 요즘 기본값은 WSL이고, 듀얼부팅이 값을 하는 경우는 목록이 짧습니다. 갈림길과 각 선택의 숨은 비용을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>CPU 병목 걱정 — 계산기 말고 사용률 하나로 판정합니다</title>
-    <link>https://specfit.kr/posts/cpu-gpu-bottleneck.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/cpu-gpu-bottleneck.html</guid>
-    <pubDate>Wed, 02 Sep 2026 15:00:00 GMT</pubDate>
-    <description>조합을 정할 때마다 병목 걱정이 따라옵니다. 병목 계산기 사이트는 왜 믿을 게 못 되는지, 완벽한 균형이 왜 애초에 없는지, 내 컴퓨터의 병목을 사용률 하나로 판정하는 법을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
