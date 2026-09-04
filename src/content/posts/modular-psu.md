@@ -2,6 +2,7 @@
 title: 모듈러 파워, 값어치 있나 — 성능이 아니라 정리와 공간의 지갑입니다
 description: 풀 모듈러, 세미 모듈러, 논 모듈러 중 뭘 사야 하는지 헷갈립니다. 성능 차이는 없고, 값어치는 케이블 정리·조립 편의·케이스 공간에서 나옵니다. 판정 기준과 케이블 혼용 금지 경고까지 정리했습니다.
 date: 2026-09-03
+updated: 2026-09-04
 category: gpu
 tags: [모듈러파워, 파워서플라이, 케이블정리, 조립PC, 세미모듈러]
 ---
@@ -132,6 +133,7 @@ tags: [모듈러파워, 파워서플라이, 케이블정리, 조립PC, 세미모
 
 파워 선택의 앞 단계들 — [용량 계산](/posts/gpu-psu-wattage.html) ·
 [80PLUS 등급](/posts/psu-80plus.html) ·
-[수명·교체 시기](/posts/psu-lifespan.html)와 이어집니다.
+[수명·교체 시기](/posts/psu-lifespan.html) ·
+[팬이 안 돌 때의 판정](/posts/psu-zero-fan.html)과 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
