@@ -2,7 +2,7 @@
 title: 중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다
 description: 중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.
 date: 2026-08-20
-updated: 2026-09-04
+updated: 2026-09-05
 category: laptop
 tags: [중고노트북, 배터리, SSD수명, 램슬롯, 개발용노트북]
 affiliate: true
@@ -164,6 +164,8 @@ Get-PhysicalDisk | Get-StorageReliabilityCounter |
 
 판매자가 말 안 하면 알 방법이 없습니다. 제조사 서비스에서 조회되는 경우가 있으니
 **시리얼로 보증 상태를 확인**해 보는 편이 낫습니다.
+([물을 쏟은 노트북이 어떤 일을 겪는지](/posts/laptop-water-spill.html)를
+알면, 침수 이력이 왜 큰 감점인지도 보입니다 — 부식은 시간을 두고 진행됩니다.)
 
 **③ 배터리 팽창**
 

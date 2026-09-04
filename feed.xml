@@ -34,6 +34,13 @@
     <description>컴퓨터를 계속 켜두면 고장 나는지, 껐다 켜는 게 더 해로운지 — 커뮤니티의 오랜 논쟁입니다. 어느 쪽도 관리만 되면 수명을 좌우할 크기가 아니라서, 판정 기준은 기계가 아니라 그 켜둠이 일을 하는가입니다. 켜둘 때의 관리 목록까지 정리했습니다.</description>
   </item>
   <item>
+    <title>노트북에 물을 쏟았다면 — 켜 보고 싶은 그 손이 제일 위험합니다</title>
+    <link>https://specfit.kr/posts/laptop-water-spill.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-water-spill.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>키보드에 물이나 커피를 쏟은 직후의 몇 분이 수리비를 정합니다. 즉시 할 것 세 가지와 절대 하면 안 되는 것들(드라이기·쌀통·켜서 확인), 맹물과 음료가 갈리는 이유, 수리점에 갈 판정 기준을 정리했습니다.</description>
+  </item>
+  <item>
     <title>프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다</title>
     <link>https://specfit.kr/posts/game-stutter-fps.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/game-stutter-fps.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-case-clearance.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>케이스 스펙의 호환 길이만 믿고 샀다가 안 들어가는 사고가 실제로 흔합니다. 길이·두께(슬롯 수)·전원 커넥터 공간 세 치수를 확인하는 법과, 허용치에 딱 맞는 조합이 왜 위험한지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다</title>
-    <link>https://specfit.kr/posts/dual-monitor-gaming-fps.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-gaming-fps.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>모니터를 한 대 더 달면 게임 성능이 깎이는지 걱정이 됩니다. 꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 보조 화면 위에서 도는 작업입니다. 구조와 판정, 줄이는 요령을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
