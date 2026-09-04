@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>듀얼 모니터 한쪽만 안 나올 때 — 맞바꾸기 한 번이면 범인이 갈립니다 | 스펙핏</title>
+<meta name="description" content="잘 쓰던 듀얼 모니터에서 한쪽만 화면이 안 나오는 일은 흔한데, 원인 후보가 많아 헤매기 쉽습니다. 케이블 맞바꾸기 한 번으로 범인의 절반이 갈리고, 증상 세 갈래로 나머지가 갈립니다. 진단 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/dual-monitor-one-blank.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="듀얼 모니터 한쪽만 안 나올 때 — 맞바꾸기 한 번이면 범인이 갈립니다 | 스펙핏">
+<meta property="og:description" content="잘 쓰던 듀얼 모니터에서 한쪽만 화면이 안 나오는 일은 흔한데, 원인 후보가 많아 헤매기 쉽습니다. 케이블 맞바꾸기 한 번으로 범인의 절반이 갈리고, 증상 세 갈래로 나머지가 갈립니다. 진단 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/dual-monitor-one-blank.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"듀얼 모니터 한쪽만 안 나올 때 — 맞바꾸기 한 번이면 범인이 갈립니다","description":"잘 쓰던 듀얼 모니터에서 한쪽만 화면이 안 나오는 일은 흔한데, 원인 후보가 많아 헤매기 쉽습니다. 케이블 맞바꾸기 한 번으로 범인의 절반이 갈리고, 증상 세 갈래로 나머지가 갈립니다. 진단 순서를 정리했습니다.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dual-monitor-one-blank.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"듀얼 모니터 한쪽만 안 나올 때 — 맞바꾸기 한 번이면 범인이 갈립니다","item":"https://specfit.kr/posts/dual-monitor-one-blank.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"어제까지 잘 됐는데 갑자기 안 나와요","acceptedAnswer":{"@type":"Answer","text":"\"갑자기\"의 단골은 접촉(청소·이동 중 살짝 빠짐)과 절전 복귀 실패입니다. 케이블 양끝을 딸깍 소리 나게 다시 꽂고, 모니터 전원을 완전히 껐다 켜 보세요 — 이 둘로 풀리는 경우가 가장 많습니다."}},{"@type":"Question","name":"윈도우에서 \"감지\" 버튼을 눌러도 안 잡혀요","acceptedAnswer":{"@type":"Answer","text":"감지는 신호가 닿는데 설정이 꼬인 경우를 푸는 버튼이라, 신호 자체가 안 닿는 상태(케이블·포트 문제)에는 효과가 없습니다 — 그래서 이 글이 설정보다 맞바꾸기를 먼저 두는 것입니다."}},{"@type":"Question","name":"재부팅하면 나오는데 매번 반복돼요","acceptedAnswer":{"@type":"Answer","text":"하드웨어가 아니라 드라이버·절전 복귀 계열의 신호입니다. 그래픽 드라이버를 최신으로 올리고, 그래도 반복되면 절전 대신 모니터만 끄는 운용으로 피해 가는 선택지도 있습니다."}},{"@type":"Question","name":"노트북인데 외부 모니터가 안 잡혀요","acceptedAnswer":{"@type":"Answer","text":"같은 진단 순서에 하나가 더해집니다 — 노트북은 동시 출력 가능한 화면 수의 상한이 있어서, 상한에 걸리면 고장이 아니라 사양입니다. USB-C 로 연결 중이면 그 포트가 영상 출력(DP Alt Mode)을 지원하는지도 그 글의 확인 목록에 있습니다."}},{"@type":"Question","name":"케이블은 멀쩡해 보이는데요","acceptedAnswer":{"@type":"Answer","text":"케이블 고장은 겉으로 안 보입니다 — 그리고 \"멀쩡해 보이는데 특정 해상도만 안 되는\" 경우가 규격 미달의 전형입니다. 잘 나오는 쪽 케이블과 바꿔 보는 것이 눈으로 보는 것보다 백 배 정확합니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>듀얼 모니터 한쪽만 안 나올 때 — 맞바꾸기 한 번이면 범인이 갈립니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-05">2026년 9월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>잘 쓰던 듀얼 모니터인데 어느 날 한쪽만 캄캄합니다. 검색해 보면
+케이블, 드라이버, 설정, 포트, 모니터 고장 — 후보가 너무 많아서
+어디부터 손대야 할지 모르게 됩니다.</p>
+<p>후보가 많을 때의 정석은 하나씩 다 해보는 게 아니라 <strong>반씩
+잘라내는 것</strong>입니다. 다행히 듀얼 모니터에는 그걸 한 번에 해주는
+공짜 진단이 있습니다 — <strong>두 모니터를 맞바꿔 보는 것.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>증상</th><th>갈래</th></tr></thead>
+<tbody>
+<tr><td>모니터에 &quot;신호 없음&quot;이 뜸</td><td>신호가 안 닿는 것 — <strong>케이블·포트·입력 소스</strong> 쪽입니다</td></tr>
+<tr><td>윈도우 설정에는 잡히는데 화면만 캄캄</td><td><strong>모니터 쪽</strong>(입력 소스·절전)이 유력합니다</td></tr>
+<tr><td>특정 해상도·주사율에서만 안 나옴</td><td><strong>대역폭</strong> — 케이블 규격 쪽입니다</td></tr>
+<tr><td>재부팅하면 돌아옴 (반복)</td><td><strong>드라이버·절전 복귀</strong> 계열입니다</td></tr>
+<tr><td>맞바꿨더니 증상이 자리를 따라감</td><td>모니터는 무죄 — <strong>그 케이블·포트</strong>가 범인입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="1단계-맞바꾸기-범인의-절반이-갈립니다">1단계 — 맞바꾸기: 범인의 절반이 갈립니다</h2>
+<p>안 나오는 모니터와 잘 나오는 모니터의 <strong>연결(케이블째)을 서로
+바꿔 꽂습니다.</strong> 결과는 둘 중 하나입니다:</p>
+<ul>
+<li><strong>증상이 자리를 따라간다</strong> (아까 그 케이블·포트에 꽂힌 쪽이
+또 안 나옴) → 모니터는 무죄. <strong>케이블, 변환 젠더, 그래픽카드
+포트</strong> 중 하나입니다. 케이블만 다른 것으로 바꿔 보면 케이블인지
+포트인지도 갈립니다</li>
+<li><strong>증상이 모니터를 따라간다</strong> (그 모니터가 어디에 꽂아도 안
+나옴) → <strong>모니터 쪽</strong>입니다. 아래 2단계로 갑니다</li>
+</ul>
+<p>이 한 번으로 후보 목록의 절반이 사라집니다 —
+<a href="/posts/cpu-f-model.html">문제를 갈라내는 격리 진단</a>의 모니터판입니다.</p>
+<h2 id="2단계-모니터를-따라온-경우">2단계 — 모니터를 따라온 경우</h2>
+<ol>
+<li><strong>입력 소스부터</strong> — 모니터가 HDMI 2번이나 DP 등 <strong>다른 입력을
+보고 있는 경우</strong>가 이 증상의 단골입니다. 모니터 버튼으로 입력
+목록을 직접 넘겨 보세요 (자동 전환의 동작은 제품에 따라
+다릅니다)</li>
+<li><strong>전원 껐다 켜기</strong> — 절전에서 못 깨어난 상태는 모니터 전원을
+완전히 껐다 켜면 풀리는 경우가 많습니다</li>
+<li><strong>다른 기기에 연결</strong> — 노트북이나 콘솔에 물려 화면이 나오면
+모니터는 살아 있는 것이고, 그 컴퓨터와의 조합(포트·설정)으로
+범위가 좁혀집니다</li>
+</ol>
+<h2 id="3단계-케이블포트를-따라온-경우">3단계 — 케이블·포트를 따라온 경우</h2>
+<ol>
+<li><strong>케이블 교체가 1순위</strong> — 접촉 불량과 규격 미달이 이 갈래의
+대부분입니다. 특히 <strong>특정 해상도·주사율에서만 안 나오는
+증상</strong>은 <a href="/posts/dp-vs-hdmi-coding.html">케이블 대역폭</a> 이야기
+그대로입니다 — 4K·고주사율은 요구 대역폭이 높아 옛 케이블이
+못 버팁니다</li>
+<li><strong>변환 젠더가 끼어 있다면 그게 용의자</strong> — 변환은 <strong>방향이
+있습니다</strong> (출력 단자 → 입력 단자 방향만 동작하는 물건이
+대부분). 방향이 맞아도 변환 장치 자체의 고장·규격 한계가 흔한
+범인입니다</li>
+<li><strong>그래픽카드의 다른 포트로</strong> — 포트 하나만 죽는 고장도
+있습니다. 옮겨 꽂아 나오면 그 포트만 피해서 쓰거나 AS
+판정으로 갑니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="어제까지-잘-됐는데-갑자기-안-나와요">어제까지 잘 됐는데 갑자기 안 나와요</h3>
+<p>&quot;갑자기&quot;의 단골은 <strong>접촉</strong>(청소·이동 중 살짝 빠짐)과 <strong>절전
+복귀 실패</strong>입니다. 케이블 양끝을 딸깍 소리 나게 다시 꽂고,
+모니터 전원을 완전히 껐다 켜 보세요 — 이 둘로 풀리는 경우가
+가장 많습니다.</p>
+<h3 id="윈도우에서-감지-버튼을-눌러도-안-잡혀요">윈도우에서 &quot;감지&quot; 버튼을 눌러도 안 잡혀요</h3>
+<p>감지는 신호가 닿는데 설정이 꼬인 경우를 푸는 버튼이라, 신호
+자체가 안 닿는 상태(케이블·포트 문제)에는 효과가 없습니다 —
+그래서 이 글이 설정보다 맞바꾸기를 먼저 두는 것입니다.</p>
+<h3 id="재부팅하면-나오는데-매번-반복돼요">재부팅하면 나오는데 매번 반복돼요</h3>
+<p>하드웨어가 아니라 <strong>드라이버·절전 복귀</strong> 계열의 신호입니다.
+그래픽 드라이버를 최신으로 올리고, 그래도 반복되면 절전 대신
+모니터만 끄는 운용으로 피해 가는 선택지도 있습니다.</p>
+<h3 id="노트북인데-외부-모니터가-안-잡혀요">노트북인데 외부 모니터가 안 잡혀요</h3>
+<p>같은 진단 순서에 하나가 더해집니다 — 노트북은
+<a href="/posts/laptop-dual-monitor-output.html">동시 출력 가능한 화면 수의 상한</a>이
+있어서, 상한에 걸리면 고장이 아니라 사양입니다. USB-C 로 연결
+중이면 그 포트가 영상 출력(DP Alt Mode)을 지원하는지도 그 글의
+확인 목록에 있습니다.</p>
+<h3 id="케이블은-멀쩡해-보이는데요">케이블은 멀쩡해 보이는데요</h3>
+<p>케이블 고장은 겉으로 안 보입니다 — 그리고 &quot;멀쩡해 보이는데 특정
+해상도만 안 되는&quot; 경우가 규격 미달의 전형입니다. 잘 나오는 쪽
+케이블과 바꿔 보는 것이 눈으로 보는 것보다 백 배 정확합니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>맞바꾸기 한 번이 먼저입니다</strong> — 증상이 자리를 따라가면
+케이블·포트, 모니터를 따라가면 모니터 쪽입니다</li>
+<li>모니터 쪽이면 <strong>입력 소스 → 전원 리셋 → 다른 기기</strong> 순서입니다</li>
+<li>케이블 쪽이면 <strong>교체 1순위</strong>, 변환 젠더가 있으면 그게
+용의자입니다</li>
+<li><strong>특정 해상도에서만 안 나오면 대역폭</strong>(케이블 규격)입니다</li>
+<li>재부팅으로 돌아오는 반복 증상은 드라이버·절전 계열입니다</li>
+</ol>
+<p>듀얼 모니터의 이웃 글들 — <a href="/posts/dual-monitor-vs-single.html">듀얼 구성의 효용</a> ·
+<a href="/posts/dp-vs-hdmi-coding.html">DP vs HDMI 대역폭</a> ·
+<a href="/posts/laptop-dual-monitor-output.html">노트북 출력 상한</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">듀얼모니터</span> <span class="tag">화면안나옴</span> <span class="tag">신호없음</span> <span class="tag">모니터인식</span> <span class="tag">케이블</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/dual-monitor-color-match.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터 색감이 달라요 — 완전 일치는 목표가 아닙니다</span>
+        <span class="card-desc">모니터 두 대의 색이 다른 것은 고장이 아니라 패널이 다른 물건이라는 뜻입니다. 왜 완전히 같아질 수 없는지, 현실적으로 어디까지 맞추는지, 색이 중요한 작업은 어떻게 배치로 푸는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dual-monitor-gaming-fps.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다</span>
+        <span class="card-desc">모니터를 한 대 더 달면 게임 성능이 깎이는지 걱정이 됩니다. 꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 보조 화면 위에서 도는 작업입니다. 구조와 판정, 줄이는 요령을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-response-time.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">모니터 응답속도 1ms vs 5ms — 표기 숫자는 조건부라는 게 핵심입니다</span>
+        <span class="card-desc">모니터 스펙표의 1ms가 구매 기준이 되곤 하는데, 그 숫자는 측정 기준과 설정 조건이 붙은 값이라 제품 간 비교 자체가 어렵습니다. 응답속도가 실제로 좌우하는 것, 입력 지연과의 차이, 용도별로 신경 써야 하는 선을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

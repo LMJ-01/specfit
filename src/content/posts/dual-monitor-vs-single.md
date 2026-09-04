@@ -2,7 +2,7 @@
 title: 듀얼 모니터 vs 큰 모니터 한 대 — 코딩에서는
 description: 두 대로 넓히면 세로는 그대로입니다. 코드를 더 보고 싶은 건지 참고 자료를 띄우고 싶은 건지에 따라 답이 갈립니다. 픽셀로 계산했습니다.
 date: 2026-08-16
-updated: 2026-09-04
+updated: 2026-09-05
 category: monitor
 tags: [듀얼모니터, 모니터, 코딩용모니터, 해상도, 32인치]
 affiliate: true
@@ -245,5 +245,8 @@ affiliate: true
    남는 게 정상이고, [게임 프레임 걱정](/posts/dual-monitor-gaming-fps.html)은
    보조 화면의 일이 정합니다
 6. 노트북 + 외부 모니터는 이미 듀얼입니다. **높이만 맞추세요**
+
+쓰다가 [한쪽이 안 나오는 날](/posts/dual-monitor-one-blank.html)의
+진단 순서는 따로 정리해 뒀습니다.
 
 실제로 써보신 결과가 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
