@@ -835,6 +835,7 @@ export const figures = {
   'blur-vs-lag': blurVsLag,
   'ram-pressure': ramPressure,
   'temp-behavior': tempBehavior,
+  'frame-pacing': framePacing,
 };
 
 /**
@@ -1639,5 +1640,47 @@ function tempBehavior() {
     186,
     body,
     '숫자(80도 등)는 제품마다 설계가 달라 판정이 안 됩니다 — 시간축의 모양 셋이 판정 도구입니다.'
+  );
+}
+
+/**
+ * 평균 프레임은 같아도 간격이 다르면 체감이 다르다 — 프레임 타임 비교.
+ * game-stutter-fps 의 "평균이 아니라 간격" 기둥을 그림으로 고정합니다.
+ */
+function framePacing() {
+  const W = 640;
+  const x0 = 130;
+  const laneW = 470;
+
+  const ticks = (y, xs, color) =>
+    xs.map((x) => `<line x1="${(x0 + x * laneW).toFixed(1)}" y1="${y - 14}" x2="${(x0 + x * laneW).toFixed(1)}" y2="${y}" stroke="${color}" stroke-width="3"/>`).join('');
+
+  // 위: 고른 간격 12틱 / 아래: 같은 12틱인데 가운데 큰 공백
+  const even = Array.from({ length: 12 }, (_, i) => i / 11);
+  const uneven = [0, 0.05, 0.1, 0.14, 0.18, 0.22, 0.27, 0.62, 0.68, 0.78, 0.89, 1];
+
+  let body = '';
+  body += t(16, 22, '같은 1초, 같은 프레임 수 — 간격이 체감을 정합니다', { weight: 600, size: 14 });
+
+  body += t(x0 - 10, 62, '간격이 고름', { anchor: 'end', size: 12, fill: COLOR.fit, weight: 600 });
+  body += `<line x1="${x0}" y1="66" x2="${x0 + laneW}" y2="66" stroke="${COLOR.line}"/>`;
+  body += ticks(64, even, COLOR.fit);
+  body += t(x0 + laneW, 84, '눈에는 부드러움', { anchor: 'end', size: 11, fill: COLOR.mute });
+
+  body += t(x0 - 10, 122, '평균은 같음', { anchor: 'end', size: 12, fill: COLOR.over, weight: 600 });
+  body += `<line x1="${x0}" y1="126" x2="${x0 + laneW}" y2="126" stroke="${COLOR.line}"/>`;
+  body += ticks(124, uneven, COLOR.over);
+  // 큰 공백 구간 표시
+  const gapA = x0 + 0.27 * laneW;
+  const gapB = x0 + 0.62 * laneW;
+  body += `<line x1="${gapA.toFixed(1)}" y1="136" x2="${gapB.toFixed(1)}" y2="136" stroke="${COLOR.over}" stroke-dasharray="4 3"/>`;
+  body += t((gapA + gapB) / 2, 152, '이 한 번의 긴 간격이 "멈칫"으로 보입니다', { anchor: 'middle', size: 11, fill: COLOR.over });
+
+  return figure(
+    '같은 평균 프레임에서 고른 간격과 널뛰는 간격의 비교 — 긴 간격 하나가 끊김으로 체감된다',
+    W,
+    168,
+    body,
+    '프레임 표시기의 숫자(초당 평균)에는 이 차이가 거의 안 잡힙니다 — 그래서 판정 도구는 평균 fps 가 아니라 프레임 타임 그래프입니다.'
   );
 }
