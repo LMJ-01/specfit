@@ -831,6 +831,7 @@ export const figures = {
   'cpu-gpu-relay': cpuGpuRelay,
   'tablet-os-wall': tabletOsWall,
   'noise-vs-load': noiseVsLoad,
+  'partition-one-disk': partitionOneDisk,
 };
 
 /**
@@ -1434,5 +1435,53 @@ function noiseVsLoad() {
     176,
     body,
     '두 사용기는 같은 제품의 다른 구간 이야기입니다 — 판정은 내 부하가 어느 구간이냐로 하면 됩니다.'
+  );
+}
+
+/**
+ * 파티션은 논리적 구획일 뿐 물리 디스크는 한 장 — 파티션 ≠ 백업.
+ * ssd-partition 의 오해 교정 기둥을 그림으로 고정합니다.
+ */
+function partitionOneDisk() {
+  const W = 640;
+
+  let body = '';
+  body += t(16, 22, '화면에는 두 개로 보여도', { weight: 600, size: 14 });
+  // 탐색기 아이콘 두 개
+  body += rect(16, 34, 120, 44, COLOR.soft, { stroke: COLOR.line });
+  body += t(76, 54, 'C:', { anchor: 'middle', weight: 600, size: 14 });
+  body += t(76, 70, '시스템', { anchor: 'middle', size: 11, fill: COLOR.mute });
+  body += rect(150, 34, 120, 44, COLOR.soft, { stroke: COLOR.line });
+  body += t(210, 54, 'D:', { anchor: 'middle', weight: 600, size: 14 });
+  body += t(210, 70, '자료', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  body += t(360, 22, '실제 물건은 한 장입니다', { weight: 600, size: 14 });
+  // SSD 한 장, 내부에 C/D 구획
+  body += rect(360, 34, 260, 60, COLOR.soft, { stroke: COLOR.text });
+  body += rect(368, 42, 118, 44, COLOR.fit);
+  body += t(427, 68, 'C:', { anchor: 'middle', fill: '#fff', weight: 600, size: 13 });
+  body += rect(492, 42, 118, 44, COLOR.fit);
+  body += t(551, 68, 'D:', { anchor: 'middle', fill: '#fff', weight: 600, size: 13 });
+  body += t(360, 110, 'SSD 한 장 위의 논리적 구획', { size: 12, fill: COLOR.mute });
+
+  // 고장 균열 — 디스크 전체를 관통
+  body += `<polyline points="358,30 420,58 395,80 470,64 450,98" fill="none" stroke="${COLOR.over}" stroke-width="3" stroke-linejoin="round"/>`;
+  body += t(370, 130, '⚡ 물리 고장은 구획을 가리지 않습니다 — C도 D도 같이 갑니다', {
+    size: 12,
+    fill: COLOR.over,
+    weight: 600,
+  });
+
+  body += t(16, 158, '그래서 파티션은 백업이 아닙니다 — 백업은 다른 매체에 둔 사본입니다.', {
+    weight: 600,
+    size: 13,
+  });
+
+  return figure(
+    '파티션 C와 D는 한 장의 SSD 위 논리 구획이라, 물리 고장이면 둘 다 잃는다',
+    W,
+    170,
+    body,
+    '드라이브 문자가 달라 보여도 물리적으로는 한 장 — 재설치 편의는 주지만 데이터 안전은 못 줍니다.'
   );
 }

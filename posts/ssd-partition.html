@@ -98,6 +98,13 @@
 <a href="/posts/dev-backup-strategy.html">다른 매체에 둔 사본</a>입니다 —
 이걸 혼동한 채 &quot;D에 뒀으니 안전하다&quot;고 믿는 것이 파티션의 가장
 위험한 부작용입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 170" width="640" height="170" role="img" aria-label="파티션 C와 D는 한 장의 SSD 위 논리 구획이라, 물리 고장이면 둘 다 잃는다">
+<title>파티션 C와 D는 한 장의 SSD 위 논리 구획이라, 물리 고장이면 둘 다 잃는다</title>
+<text x="16" y="22" fill="var(--fg)" font-size="14" font-weight="600">화면에는 두 개로 보여도</text><rect x="16" y="34" width="120" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="76" y="54" fill="var(--fg)" font-size="14" font-weight="600" text-anchor="middle">C:</text><text x="76" y="70" fill="var(--fg-muted)" font-size="11" text-anchor="middle">시스템</text><rect x="150" y="34" width="120" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="210" y="54" fill="var(--fg)" font-size="14" font-weight="600" text-anchor="middle">D:</text><text x="210" y="70" fill="var(--fg-muted)" font-size="11" text-anchor="middle">자료</text><text x="360" y="22" fill="var(--fg)" font-size="14" font-weight="600">실제 물건은 한 장입니다</text><rect x="360" y="34" width="260" height="60" fill="var(--bg-soft)" rx="4" stroke="var(--fg)"/><rect x="368" y="42" width="118" height="44" fill="var(--fig-fit)" rx="4"/><text x="427" y="68" fill="#fff" font-size="13" font-weight="600" text-anchor="middle">C:</text><rect x="492" y="42" width="118" height="44" fill="var(--fig-fit)" rx="4"/><text x="551" y="68" fill="#fff" font-size="13" font-weight="600" text-anchor="middle">D:</text><text x="360" y="110" fill="var(--fg-muted)" font-size="12">SSD 한 장 위의 논리적 구획</text><polyline points="358,30 420,58 395,80 470,64 450,98" fill="none" stroke="var(--fig-over)" stroke-width="3" stroke-linejoin="round"/><text x="370" y="130" fill="var(--fig-over)" font-size="12" font-weight="600">⚡ 물리 고장은 구획을 가리지 않습니다 — C도 D도 같이 갑니다</text><text x="16" y="158" fill="var(--fg)" font-size="13" font-weight="600">그래서 파티션은 백업이 아닙니다 — 백업은 다른 매체에 둔 사본입니다.</text>
+</svg>
+<figcaption>드라이브 문자가 달라 보여도 물리적으로는 한 장 — 재설치 편의는 주지만 데이터 안전은 못 줍니다.</figcaption>
+</figure>
 <p><strong>② 파티션은 속도와 무관합니다.</strong> 하드디스크 시절에는 디스크
 바깥쪽이 빨라서 구획을 나누는 이유가 있었지만, SSD는 어디에
 저장하든 속도가 같습니다. 나눠서 빨라진다는 이야기는 그 시절
