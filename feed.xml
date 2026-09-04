@@ -55,6 +55,13 @@
     <description>아이패드가 이미 있으면 코딩 공부도 이걸로 되지 않을까 싶어집니다. 안 되는 이유는 사양이 아니라 소프트웨어 구조에 있고, 그래서 되는 범위와 안 되는 범위의 경계가 뚜렷합니다. 태블릿의 좋은 자리와 노트북이 필요한 순간을 정리했습니다.</description>
   </item>
   <item>
+    <title>그래픽카드 온도 80도, 괜찮나 — 숫자 하나가 아니라 거동 셋으로 판정합니다</title>
+    <link>https://specfit.kr/posts/gpu-temp-normal.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/gpu-temp-normal.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>게임 중 온도를 봤다가 80도에 놀라 검색하게 됩니다. 몇 도가 정상인지는 카드마다 달라 숫자로 답할 수 없고, 판정은 온도의 거동 세 가지로 합니다. 평형·성능 유지·추세라는 기준과 개선 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>그래픽카드가 케이스에 안 들어가요 — 사기 전 확인은 세 치수입니다</title>
     <link>https://specfit.kr/posts/gpu-case-clearance.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-case-clearance.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/switch-hub-vs-router.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>유선으로 물릴 기기는 늘었는데 공유기 뒤 포트는 네 개뿐. 이때 스위칭허브와 공유기 중 뭘 사야 하는지 헷갈립니다. 두 장비의 역할 차이와, 상황별로 답이 갈리는 기준을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>SSD를 꽉 채우면 느려지나 — 사실이고, 느려지는 건 쓰기입니다</title>
-    <link>https://specfit.kr/posts/ssd-full-slowdown.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ssd-full-slowdown.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느려지는지 커뮤니티 질문이 많습니다. 구조적인 이유(빈 블록과 SLC 캐시)와 함께, 용도별로 어느 정도 여유가 현실적인지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
