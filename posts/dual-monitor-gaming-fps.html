@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다 | 스펙핏</title>
+<meta name="description" content="모니터를 한 대 더 달면 게임 성능이 깎이는지 걱정이 됩니다. 꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 보조 화면 위에서 도는 작업입니다. 구조와 판정, 줄이는 요령을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/dual-monitor-gaming-fps.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다 | 스펙핏">
+<meta property="og:description" content="모니터를 한 대 더 달면 게임 성능이 깎이는지 걱정이 됩니다. 꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 보조 화면 위에서 도는 작업입니다. 구조와 판정, 줄이는 요령을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/dual-monitor-gaming-fps.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다","description":"모니터를 한 대 더 달면 게임 성능이 깎이는지 걱정이 됩니다. 꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 보조 화면 위에서 도는 작업입니다. 구조와 판정, 줄이는 요령을 정리했습니다.","datePublished":"2026-09-04","dateModified":"2026-09-04","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dual-monitor-gaming-fps.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다","item":"https://specfit.kr/posts/dual-monitor-gaming-fps.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"게임할 때 보조 모니터를 꺼두면 나아지나요","acceptedAnswer":{"@type":"Answer","text":"보조 화면에서 도는 일이 없었다면 차이도 거의 없습니다 — 부하의 주범은 연결이 아니라 일이니까요. 다만 위 스터터류 증상을 겪는 환경에서는 꺼서 해결됐다는 보고도 있어, 증상이 있다면 시험해 볼 값어치는 있습니다."}},{"@type":"Question","name":"모니터 3대면 더 심해지나요","acceptedAnswer":{"@type":"Answer","text":"같은 논리가 그대로 늘어납니다 — 대수가 아니라 그 화면들 위의 일의 합이 부하입니다. 정지 화면 세 장은 여전히 가볍습니다."}},{"@type":"Question","name":"보조 모니터를 내장그래픽에 물리면 분담이 되나요","acceptedAnswer":{"@type":"Answer","text":"구성에 따라 가능한 이야기이고 실제로 쓰이는 우회이기도 한데, 조건과 부작용이 있는 구성이라 내장그래픽 출력 글의 전제를 먼저 확인하는 게 순서입니다. 대부분의 경우는 위의 요령들로 충분합니다."}},{"@type":"Question","name":"고주사율 모니터랑 60Hz를 섞어 써도 되나요","acceptedAnswer":{"@type":"Answer","text":"코딩·작업 기준으로는 문제없다고 정리 했고, 게임 기준으로도 대부분 무난합니다 — 위의 스터터 보고가 있는 환경만 예외라, 겪으면 그때 대응하면 됩니다."}},{"@type":"Question","name":"울트라와이드 한 장이 낫지 않나요","acceptedAnswer":{"@type":"Answer","text":"프레임 관점에서는 픽셀 수가 부하를 정하므로, 넓은 한 장도 두 장 못지않게 그릴 게 많습니다. 이 선택은 프레임보다 작업 스타일의 문제로 정하는 게 맞습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-04">2026년 9월 4일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p><a href="/posts/dual-monitor-vs-single.html">모니터를 두 대로 늘리려는</a>
+게이머의 마지막 걱정은 대개 이것입니다 — <strong>&quot;듀얼 모니터면 게임
+프레임 떨어진다던데?&quot;</strong> 커뮤니티에는 &quot;체감 없다&quot;와 &quot;확 떨어진다&quot;가
+공존해서 더 헷갈립니다.</p>
+<p>양쪽 다 맞습니다 — <strong>말하는 상황이 다를 뿐입니다.</strong> 모니터를
+꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 <strong>보조
+화면 위에서 도는 일</strong>입니다. 내 보조 화면에 뭐가 떠 있느냐로
+판정이 갈립니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>게임 중 보조 화면에</th><th>프레임 영향</th></tr></thead>
+<tbody>
+<tr><td>정지 화면 (문서·채팅·공략 페이지)</td><td><strong>사실상 없습니다</strong></td></tr>
+<tr><td>유튜브·트위치 등 <strong>영상 재생</strong></td><td>나눠 갖는 구조입니다 — GPU가 빠듯하면 체감됩니다</td></tr>
+<tr><td>녹화·방송 프로그램</td><td><strong>실질 부하입니다</strong> — 인코딩이 자원을 가져갑니다</td></tr>
+<tr><td>아무것도 없음 (그냥 연결만)</td><td>무시할 수준입니다</td></tr>
+<tr><td>GPU가 원래 여유로움</td><td>위 어느 경우든 체감이 작습니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-꽂는-것은-공짜에-가까운가">왜 &quot;꽂는 것&quot;은 공짜에 가까운가</h2>
+<p>화면에 그림을 내보내는 일 자체는 GPU에게 가벼운 일입니다 —
+<a href="/posts/igpu-dual-monitor.html">내장그래픽조차 듀얼 출력을 감당하는 이유</a>
+에서 본 그 구조입니다. 게임의 프레임을 만드는 무거운 연산과,
+완성된 화면을 단자로 내보내는 가벼운 일은 무게가 다른 작업입니다.</p>
+<p>그래서 <strong>보조 화면이 멈춰 있는 한</strong> — 문서, 채팅창, 공략 페이지가
+떠 있기만 한 상태 — 게임 프레임에 미치는 영향은 무시할
+수준입니다. &quot;체감 없다&quot;는 경험담이 이 구간입니다.</p>
+<h2 id="프레임을-가져가는-것-보조-화면의-일">프레임을 가져가는 것 — 보조 화면의 일</h2>
+<p>문제는 보조 화면이 <strong>일을 시작할 때</strong>입니다.</p>
+<ul>
+<li><strong>영상 재생</strong> — 영상을 푸는 일(디코딩)과 그리는 일이 GPU 자원을
+씁니다. 게임과 나눠 갖는 구조라, <a href="/posts/cpu-gpu-bottleneck.html">GPU가 이미 꽉 차게 일하는
+게임</a>이라면 그만큼이 프레임에서
+빠집니다</li>
+<li><strong>녹화·방송</strong> — 화면을 실시간으로 압축(인코딩)하는 일이라 실질
+부하입니다. 전용 인코더가 있는 카드라도 공짜는 아닙니다</li>
+<li><strong>브라우저의 애니메이션 가득한 페이지</strong>도 정도만 다를 뿐 같은
+방향입니다</li>
+</ul>
+<p>&quot;확 떨어진다&quot;는 경험담은 대개 이 구간 — 특히 <strong>빠듯한 GPU +
+보조 화면 영상</strong>의 조합입니다.</p>
+<h2 id="내-경우-판정하는-법">내 경우 판정하는 법</h2>
+<p>추정할 필요 없이 재면 됩니다.
+<a href="/posts/cpu-gpu-bottleneck.html">병목 글의 그 방법</a> 그대로입니다:</p>
+<ol>
+<li>게임만 켠 상태에서 프레임(또는 GPU 사용률)을 봐 둡니다</li>
+<li>보조 화면에 평소 띄우는 것(영상 등)을 켜고 다시 봅니다</li>
+<li>차이가 거슬리는 수준인지 — 그게 답입니다</li>
+</ol>
+<p>GPU 사용률이 원래 90%대에 붙어 있던 게임이라면 나눠 줄 여유가
+없어 차이가 잘 보이고, 여유가 있던 게임이라면 거의 안 보일
+것입니다.</p>
+<h2 id="체감을-줄이는-요령">체감을 줄이는 요령</h2>
+<ul>
+<li><strong>영상 해상도를 낮춥니다</strong> — 보조 화면의 영상이 꼭 고화질일
+필요가 없다면, 낮추는 만큼 디코딩·렌더 부담이 줄어듭니다</li>
+<li><strong>게임을 전용 전체화면으로</strong> — 창·테두리 없는 창 모드보다 전용
+전체화면이 유리하다는 보고가 많은 쪽입니다. 게임·환경에 따라
+달라서, 프레임이 아쉬우면 바꿔서 재보는 게 정확합니다</li>
+<li><strong>주사율 혼용 구성에서 끊김이 느껴진다면</strong> — 고주사율+일반
+모니터 조합에서 보조 화면 영상 재생 시 스터터(간헐적 끊김)가
+생기는 환경이 보고돼 있습니다. 겪고 있다면 그래픽 드라이버를
+최신으로 하고, 그래도 남으면 게임 중에는 보조 화면 영상을
+멈추는 것이 실용적인 우회입니다</li>
+<li><strong>방송·녹화가 목적이라면</strong> — 애초에 그 부하를 계산에 넣고
+<a href="/posts/cpu-gpu-bottleneck.html">GPU 여유</a>를 확보하는 쪽이
+순서입니다. 모니터 탓이 아니라 인코딩 몫입니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="게임할-때-보조-모니터를-꺼두면-나아지나요">게임할 때 보조 모니터를 꺼두면 나아지나요</h3>
+<p>보조 화면에서 도는 일이 없었다면 차이도 거의 없습니다 — 부하의
+주범은 연결이 아니라 일이니까요. 다만 위 스터터류 증상을 겪는
+환경에서는 꺼서 해결됐다는 보고도 있어, 증상이 있다면 시험해 볼
+값어치는 있습니다.</p>
+<h3 id="모니터-3대면-더-심해지나요">모니터 3대면 더 심해지나요</h3>
+<p>같은 논리가 그대로 늘어납니다 — 대수가 아니라 <strong>그 화면들 위의
+일의 합</strong>이 부하입니다. 정지 화면 세 장은 여전히 가볍습니다.</p>
+<h3 id="보조-모니터를-내장그래픽에-물리면-분담이-되나요">보조 모니터를 내장그래픽에 물리면 분담이 되나요</h3>
+<p>구성에 따라 가능한 이야기이고 실제로 쓰이는 우회이기도 한데,
+조건과 부작용이 있는 구성이라
+<a href="/posts/igpu-dual-monitor.html">내장그래픽 출력 글</a>의 전제를 먼저
+확인하는 게 순서입니다. 대부분의 경우는 위의 요령들로 충분합니다.</p>
+<h3 id="고주사율-모니터랑-60hz를-섞어-써도-되나요">고주사율 모니터랑 60Hz를 섞어 써도 되나요</h3>
+<p>코딩·작업 기준으로는 <a href="/posts/high-refresh-rate-coding.html">문제없다고 정리</a>
+했고, 게임 기준으로도 대부분 무난합니다 — 위의 스터터 보고가
+있는 환경만 예외라, 겪으면 그때 대응하면 됩니다.</p>
+<h3 id="울트라와이드-한-장이-낫지-않나요">울트라와이드 한 장이 낫지 않나요</h3>
+<p>프레임 관점에서는 픽셀 수가 부하를 정하므로, 넓은 한 장도 두 장
+못지않게 그릴 게 많습니다. 이 선택은 프레임보다
+<a href="/posts/dual-monitor-vs-single.html">작업 스타일의 문제</a>로 정하는
+게 맞습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>모니터를 <strong>꽂아두는 것 자체는 거의 공짜</strong>입니다 — 출력은
+가벼운 일입니다</li>
+<li>프레임을 가져가는 것은 <strong>보조 화면 위의 일</strong>입니다 — 영상
+재생, 녹화·방송이 주범입니다</li>
+<li>판정은 재보는 것입니다 — <strong>보조 화면 일 켜기 전/후의 프레임
+비교</strong> 한 번이면 됩니다</li>
+<li>GPU가 빠듯한 게임일수록 체감이 커집니다 — 여유 확인은
+<a href="/posts/cpu-gpu-bottleneck.html">병목 글의 방법</a>으로</li>
+<li>요령: 영상 화질 낮추기 · 전용 전체화면 시험 · 증상 있으면
+드라이버 갱신</li>
+</ol>
+<p>듀얼 구성의 다른 판정들 — <a href="/posts/dual-monitor-vs-single.html">듀얼 vs 큰 한 대</a> ·
+<a href="/posts/dual-monitor-color-match.html">색감 차이</a> ·
+<a href="/posts/monitor-mixed-resolution.html">해상도 혼용</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">듀얼모니터</span> <span class="tag">게임프레임</span> <span class="tag">프레임드랍</span> <span class="tag">GPU</span> <span class="tag">모니터두대</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/dual-monitor-color-match.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터 색감이 달라요 — 완전 일치는 목표가 아닙니다</span>
+        <span class="card-desc">모니터 두 대의 색이 다른 것은 고장이 아니라 패널이 다른 물건이라는 뜻입니다. 왜 완전히 같아질 수 없는지, 현실적으로 어디까지 맞추는지, 색이 중요한 작업은 어떻게 배치로 푸는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-response-time.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">모니터 응답속도 1ms vs 5ms — 표기 숫자는 조건부라는 게 핵심입니다</span>
+        <span class="card-desc">모니터 스펙표의 1ms가 구매 기준이 되곤 하는데, 그 숫자는 측정 기준과 설정 조건이 붙은 값이라 제품 간 비교 자체가 어렵습니다. 응답속도가 실제로 좌우하는 것, 입력 지연과의 차이, 용도별로 신경 써야 하는 선을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/curved-monitor-coding.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">커브드 모니터로 코딩·문서작업 — 곡률은 취향이 아니라 폭의 문제입니다</span>
+        <span class="card-desc">커브드 모니터가 코딩이나 문서작업에 괜찮은지 헷갈립니다. 판단 기준은 커브드냐 평면이냐가 아니라 화면 폭입니다. 곡률 숫자 읽는 법과, 평면을 골라야 하는 경우를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

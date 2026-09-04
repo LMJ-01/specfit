@@ -55,6 +55,13 @@
     <description>아이패드가 이미 있으면 코딩 공부도 이걸로 되지 않을까 싶어집니다. 안 되는 이유는 사양이 아니라 소프트웨어 구조에 있고, 그래서 되는 범위와 안 되는 범위의 경계가 뚜렷합니다. 태블릿의 좋은 자리와 노트북이 필요한 순간을 정리했습니다.</description>
   </item>
   <item>
+    <title>듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다</title>
+    <link>https://specfit.kr/posts/dual-monitor-gaming-fps.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-gaming-fps.html</guid>
+    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
+    <description>모니터를 한 대 더 달면 게임 성능이 깎이는지 걱정이 됩니다. 꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 보조 화면 위에서 도는 작업입니다. 구조와 판정, 줄이는 요령을 정리했습니다.</description>
+  </item>
+  <item>
     <title>듀얼 모니터 색감이 달라요 — 완전 일치는 목표가 아닙니다</title>
     <link>https://specfit.kr/posts/dual-monitor-color-match.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-color-match.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ram-heatsink-needed.html</guid>
     <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
     <description>튜닝램에는 다 달려 있고, 순정램에 따로 붙이자니 효과가 있는지 애매한 게 램 방열판입니다. 램 발열의 실제 크기와, 방열판이 의미 있는 경우·오히려 손해인 경우를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>램 64GB가 필요한 사람은 따로 있습니다 — 32GB에서 올릴지 판정</title>
-    <link>https://specfit.kr/posts/ram-64gb-worth-it.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ram-64gb-worth-it.html</guid>
-    <pubDate>Mon, 31 Aug 2026 15:00:00 GMT</pubDate>
-    <description>램 32GB 다음 칸인 64GB가 필요한지 커뮤니티마다 답이 갈립니다. 갈리는 이유는 용도가 달라서입니다. 지금 32GB가 모자란지 확인하는 절차와, 64GB가 값을 하는 작업 목록을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
