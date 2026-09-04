@@ -830,6 +830,7 @@ export const figures = {
   'wifi-jitter': wifiJitter,
   'cpu-gpu-relay': cpuGpuRelay,
   'tablet-os-wall': tabletOsWall,
+  'noise-vs-load': noiseVsLoad,
 };
 
 /**
@@ -1387,5 +1388,51 @@ function tabletOsWall() {
     222,
     body,
     '벽 안에서 되는 일(강의·필기·학습 앱)과 벽 때문에 안 되는 일(로컬 개발 환경)의 경계입니다.'
+  );
+}
+
+/**
+ * 같은 미니PC 의 두 얼굴 — 소음은 부하의 함수.
+ * mini-pc-noise 의 "무소음/못쓰겠다 사용기가 공존하는 이유" 서술을 곡선으로 고정합니다.
+ */
+function noiseVsLoad() {
+  const W = 640;
+  const x0 = 56;
+  const y0 = 150; // 바닥
+  const plotW = 550;
+
+  // 부하-소음 곡선: 저부하 평탄 → 임계 이후 가파름
+  const pts = [];
+  for (let i = 0; i <= 40; i++) {
+    const x = i / 40;
+    const noise = x < 0.45 ? 6 + x * 10 : 10.5 + Math.pow((x - 0.45) / 0.55, 1.6) * 95;
+    pts.push(`${(x0 + x * plotW).toFixed(1)},${(y0 - noise).toFixed(1)}`);
+  }
+
+  let body = '';
+  body += t(16, 22, '같은 미니PC, 소음은 부하가 정합니다', { weight: 600, size: 14 });
+
+  // 축
+  body += `<line x1="${x0}" y1="${y0}" x2="${x0 + plotW}" y2="${y0}" stroke="${COLOR.line}"/>`;
+  body += `<line x1="${x0}" y1="${y0}" x2="${x0}" y2="40" stroke="${COLOR.line}"/>`;
+  body += t(x0 - 8, 46, '소음', { anchor: 'end', size: 12, fill: COLOR.mute });
+  body += t(x0 + plotW, y0 + 18, '부하 →', { anchor: 'end', size: 12, fill: COLOR.mute });
+
+  // 구간 배경 라벨
+  body += t(x0 + plotW * 0.22, y0 + 18, '웹 · 문서 · 영상', { anchor: 'middle', size: 12, fill: COLOR.mute });
+  body += t(x0 + plotW * 0.8, y0 + 18, '게임 · 인코딩 · 지속 고부하', { anchor: 'middle', size: 12, fill: COLOR.mute });
+  body += `<line x1="${x0 + plotW * 0.45}" y1="${y0}" x2="${x0 + plotW * 0.45}" y2="44" stroke="${COLOR.line}" stroke-dasharray="4 3"/>`;
+
+  body += `<polyline points="${pts.join(' ')}" fill="none" stroke="${COLOR.over}" stroke-width="3" stroke-linejoin="round"/>`;
+
+  body += t(x0 + plotW * 0.2, y0 - 26, '"무소음 수준" 사용기의 구간', { anchor: 'middle', size: 12, fill: COLOR.fit });
+  body += t(x0 + plotW * 0.76, 60, '"못 쓰겠다" 사용기의 구간', { anchor: 'middle', size: 12, fill: COLOR.over });
+
+  return figure(
+    '미니PC 소음은 저부하에서 평탄하다가 지속 고부하에서 가파르게 올라간다',
+    W,
+    176,
+    body,
+    '두 사용기는 같은 제품의 다른 구간 이야기입니다 — 판정은 내 부하가 어느 구간이냐로 하면 됩니다.'
   );
 }
