@@ -163,5 +163,7 @@ tags: [블루투스이어폰, 소리끊김, 24GHz간섭, 절전설정, 노트북
 무선 이웃 판정들 — [무선 마우스 끊김](/posts/wireless-mouse-lag.html) ·
 [2.4GHz 공용 도로](/posts/desktop-wifi-vs-lan.html) ·
 [스피커 잡음(유선의 갈래)](/posts/pc-speaker-noise.html)과 이어집니다.
+(연결은 멀쩡한데 **특정 앱만 조용하다**면 —
+[앱별 소리 배선](/posts/app-no-sound.html) 이야기입니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
