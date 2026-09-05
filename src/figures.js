@@ -839,7 +839,68 @@ export const figures = {
   'swap-diagnosis': swapDiagnosis,
   'spill-first-aid': spillFirstAid,
   'retention-timeline': retentionTimeline,
+  'shutdown-shape': shutdownShape,
 };
+
+/**
+ * 게임 중 꺼짐 — 꺼진 모양 세 갈래.
+ * pc-shutdown-during-game 의 "꺼진 모양이 단서" 판정 고정.
+ */
+function shutdownShape() {
+  const W = 640;
+  const panelW = 188;
+  const gap = 20;
+  const boxY = 56;
+  const boxH = 64;
+
+  const panel = (px0, label, labelColor, desc1, desc2) => {
+    let s = '';
+    s += t(px0 + panelW / 2, 44, label, { anchor: 'middle', size: 12, weight: 600, fill: labelColor });
+    s += t(px0 + panelW / 2, 158, desc1, { anchor: 'middle', size: 11, fill: COLOR.mute });
+    s += t(px0 + panelW / 2, 174, desc2, { anchor: 'middle', size: 11, fill: COLOR.mute });
+    return s;
+  };
+
+  let body = '';
+  body += t(16, 22, '게임 중 꺼짐 — 꺼진 모양이 갈래를 알려줍니다', { weight: 600, size: 14 });
+
+  // ① 무징후 컷: 화면이 즉시 검게 — 실선이 뚝 끊김
+  const x1 = 16;
+  body += rect(x1, boxY, panelW, boxH, { fill: 'none', stroke: COLOR.line });
+  body += `<line x1="${x1 + 12}" y1="${boxY + 32}" x2="${x1 + 96}" y2="${boxY + 32}" stroke="${COLOR.over}" stroke-width="4"/>`;
+  body += t(x1 + 104, boxY + 37, '✕', { size: 15, weight: 700, fill: COLOR.over });
+  body += panel(x1, '① 아무 징후 없이 툭', COLOR.over, '전원 계열 유력', '콘센트 직결 → 커넥터 → 용량·나이');
+
+  // ② 재부팅: 끊겼다 다시 시작 — 선이 끊긴 뒤 재개
+  const x2 = 16 + panelW + gap;
+  body += rect(x2, boxY, panelW, boxH, { fill: 'none', stroke: COLOR.line });
+  body += `<line x1="${x2 + 12}" y1="${boxY + 32}" x2="${x2 + 76}" y2="${boxY + 32}" stroke="${COLOR.accent}" stroke-width="4"/>`;
+  body += `<path d="M ${x2 + 84} ${boxY + 32} a 10 10 0 1 1 -4 -18" fill="none" stroke="${COLOR.accent}" stroke-width="2.5"/>`;
+  body += `<line x1="${x2 + 108}" y1="${boxY + 32}" x2="${x2 + 172}" y2="${boxY + 32}" stroke="${COLOR.accent}" stroke-width="4"/>`;
+  body += panel(x2, '② 혼자 꺼졌다 켜짐', COLOR.accent, '가려진 오류 화면일 수 있음', '자동 재시작 해제가 1단계');
+
+  // ③ 부하 시간·계절 비례: 서서히 차오르다 컷 — 상승 곡선 끝 절단
+  const x3 = 16 + (panelW + gap) * 2;
+  body += rect(x3, boxY, panelW, boxH, { fill: 'none', stroke: COLOR.line });
+  {
+    const pts = [];
+    for (let i = 0; i <= 20; i++) {
+      const x = i / 20;
+      pts.push(`${(x3 + 12 + x * 130).toFixed(1)},${(boxY + 52 - 40 * x * x).toFixed(1)}`);
+    }
+    body += `<polyline points="${pts.join(' ')}" fill="none" stroke="${COLOR.over}" stroke-width="3" stroke-linejoin="round"/>`;
+    body += `<line x1="${x3 + 142}" y1="${boxY + 8}" x2="${x3 + 142}" y2="${boxY + 56}" stroke="${COLOR.over}" stroke-width="2" stroke-dasharray="4 3"/>`;
+  }
+  body += panel(x3, '③ 한참 하다·여름에', COLOR.over, '온도 보호 유력', '온도 그래프 거동으로 판정');
+
+  return figure(
+    '게임 중 꺼짐의 세 가지 모양 — 무징후 컷은 전원, 재부팅은 가려진 오류 가능, 부하 시간 비례는 온도',
+    W,
+    190,
+    body,
+    '모양으로 갈래를 좁힌 뒤의 순서는 본문대로 — 자동 재시작 해제가 공짜 1단계입니다.'
+  );
+}
 
 /**
  * 속도는 제일 약한 고리가 정한다 — 랜 연결 경로의 사슬.
