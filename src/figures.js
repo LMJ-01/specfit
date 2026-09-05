@@ -843,7 +843,60 @@ export const figures = {
   'boot-relay': bootRelay,
   'mouse-capture': mouseCapture,
   'power-budget': powerBudget,
+  'key-matrix': keyMatrix,
 };
+
+/**
+ * 키보드 매트릭스 — 한 라인이 죽으면 흩어진 키들이 같이 죽는다.
+ * keyboard-some-keys-dead 의 "죽은 키 배치가 단서" 구조 고정.
+ */
+function keyMatrix() {
+  const W = 640;
+  const cols = 10;
+  const rows = 4;
+  const kw = 44;
+  const kh = 30;
+  const gx = 10;
+  const gy = 10;
+  const x0 = 60;
+  const y0 = 56;
+  const deadLine = 2; // 죽은 세로 라인 index
+  const deadLine2 = 6;
+
+  let body = '';
+  body += t(16, 22, '키보드는 격자 배선입니다 — 라인 하나가 죽으면 그 라인의 키들이 같이 죽습니다', { weight: 600, size: 13.5 });
+
+  // 세로 라인 (배선) 표시
+  for (let c = 0; c < cols; c++) {
+    const lx = x0 + c * (kw + gx) + kw / 2;
+    const dead = c === deadLine || c === deadLine2;
+    body += `<line x1="${lx}" y1="${y0 - 12}" x2="${lx}" y2="${y0 + rows * (kh + gy) - gy + 12}" stroke="${dead ? COLOR.over : COLOR.line}" stroke-width="${dead ? 3 : 1.5}"${dead ? ' stroke-dasharray="5 4"' : ''}/>`;
+  }
+  body += t(x0 + deadLine * (kw + gx) + kw / 2, y0 - 20, '✕ 죽은 라인', { anchor: 'middle', size: 11, weight: 600, fill: COLOR.over });
+  body += t(x0 + deadLine2 * (kw + gx) + kw / 2, y0 - 20, '✕', { anchor: 'middle', size: 11, weight: 600, fill: COLOR.over });
+
+  // 키들
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const kx = x0 + c * (kw + gx);
+      const ky = y0 + r * (kh + gy);
+      const dead = c === deadLine || c === deadLine2;
+      body += rect(kx, ky, kw, kh, dead ? COLOR.over : COLOR.soft, { stroke: dead ? 'none' : COLOR.line, r: 5 });
+      if (dead) body += t(kx + kw / 2, ky + kh / 2 + 4, '✕', { anchor: 'middle', size: 11, fill: '#fff' });
+    }
+  }
+
+  const noteY = y0 + rows * (kh + gy) + 22;
+  body += t(x0, noteY, '자판 위에서는 흩어져 보여도, 배선으로는 한 줄의 이웃들입니다 — 이 패턴이면 청소가 아니라 회로 갈래입니다', { size: 11.5, fill: COLOR.mute });
+
+  return figure(
+    '키보드 매트릭스 배선 — 죽은 라인 두 개에 물린 키들이 자판 곳곳에서 한꺼번에 침묵하는 그림',
+    W,
+    250,
+    body,
+    '어느 키가 어느 라인에 물렸는지는 제품마다 달라서, "흩어진 여러 키 동시 사망"이라는 패턴 자체가 단서입니다.'
+  );
+}
 
 /**
  * 노트북 성능 = 전력 예산 — 전원 상황별 예산 막대.
