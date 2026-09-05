@@ -844,7 +844,50 @@ export const figures = {
   'mouse-capture': mouseCapture,
   'power-budget': powerBudget,
   'key-matrix': keyMatrix,
+  'slow-responder': slowResponder,
 };
+
+/**
+ * 느린 응답자를 모두가 기다린다 — 손상 디스크의 재시도가 시스템 체감을 멈추는 구조.
+ * external-hdd-freeze 갈래 ① 고정.
+ */
+function slowResponder() {
+  const W = 640;
+  const diskX = 60;
+  const diskY = 78;
+  const diskW = 120;
+  const diskH = 74;
+
+  let body = '';
+  body += t(16, 22, '컴퓨터가 느려진 게 아니라 — 한 명의 느린 응답자를 모두가 기다리는 중입니다', { weight: 600, size: 13.5 });
+
+  // 디스크 (느린 응답자)
+  body += rect(diskX, diskY, diskW, diskH, COLOR.soft, { stroke: COLOR.over, r: 8 });
+  body += t(diskX + diskW / 2, diskY + 28, '외장하드', { anchor: 'middle', size: 13, weight: 600 });
+  body += t(diskX + diskW / 2, diskY + 50, '읽기 재시도 ⟳⟳⟳', { anchor: 'middle', size: 11, fill: COLOR.over });
+  body += t(diskX + diskW / 2, diskY + diskH + 18, '손상 구간에서 응답을 못 냄', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  // 기다리는 쪽
+  const waiters = ['탐색기 (하얗게 멈춤)', '파일 열던 앱', '저장 대화상자'];
+  const wx = 330;
+  waiters.forEach((name, i) => {
+    const wy = 56 + i * 46;
+    body += rect(wx, wy, 250, 34, 'none', { stroke: COLOR.line, r: 6 });
+    body += t(wx + 12, wy + 22, '⌛ ' + name, { size: 12 });
+    // 대기 화살표 (waiters -> disk)
+    const ay = wy + 17;
+    body += `<line x1="${wx - 8}" y1="${ay}" x2="${diskX + diskW + 14}" y2="${diskY + diskH / 2}" stroke="${COLOR.mute}" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+  });
+  body += t(wx, 56 + 3 * 46 + 10, '응답이 올 때까지 줄줄이 대기 — 뽑으면 즉시 멀쩡해지는 이유', { size: 11, fill: COLOR.mute });
+
+  return figure(
+    '느린 응답자 구조 — 손상 구간을 재시도하는 외장하드 하나를 탐색기와 앱들이 줄줄이 기다리는 그림',
+    W,
+    226,
+    body,
+    '그래서 이 증상의 처방은 컴퓨터가 아니라 디스크 쪽 — 그리고 중요 데이터라면 진단보다 복사가 먼저입니다.'
+  );
+}
 
 /**
  * 키보드 매트릭스 — 한 라인이 죽으면 흩어진 키들이 같이 죽는다.
