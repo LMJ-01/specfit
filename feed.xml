@@ -13,6 +13,13 @@
     <description>서랍의 외장 SSD나 뽑아둔 SSD의 데이터가 증발한다는 말에 불안해집니다. 절반은 과장이고 절반은 사실입니다. 전하로 기억하는 구조라 시간 축의 어디까지가 안전권인지, 장기 보관은 뭘로 해야 하는지 정리했습니다.</description>
   </item>
   <item>
+    <title>램 16GB 두 장 vs 32GB 한 장 — 지금의 속도와 나중의 슬롯을 바꾸는 거래입니다</title>
+    <link>https://specfit.kr/posts/ram-16x2-vs-32x1.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/ram-16x2-vs-32x1.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>같은 32GB를 만드는 두 가지 방법 중 뭐가 나은지는 커뮤니티 단골 질문입니다. 두 장은 듀얼 채널로 지금 빠르고, 한 장은 슬롯을 남겨 나중이 넓습니다. 슬롯 수와 용도별 판정을 정리했습니다.</description>
+  </item>
+  <item>
     <title>파워 용량이 크면 전기를 더 먹나 — 용량은 상한이고, 쓰는 만큼만 나갑니다</title>
     <link>https://specfit.kr/posts/psu-capacity-power-draw.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/psu-capacity-power-draw.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-temp-normal.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>게임 중 온도를 봤다가 80도에 놀라 검색하게 됩니다. 몇 도가 정상인지는 카드마다 달라 숫자로 답할 수 없고, 판정은 온도의 거동 세 가지로 합니다. 평형·성능 유지·추세라는 기준과 개선 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>그래픽카드가 케이스에 안 들어가요 — 사기 전 확인은 세 치수입니다</title>
-    <link>https://specfit.kr/posts/gpu-case-clearance.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/gpu-case-clearance.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>케이스 스펙의 호환 길이만 믿고 샀다가 안 들어가는 사고가 실제로 흔합니다. 길이·두께(슬롯 수)·전원 커넥터 공간 세 치수를 확인하는 법과, 허용치에 딱 맞는 조합이 왜 위험한지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
