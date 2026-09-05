@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>컴퓨터가 혼자 켜질 때 — 유령이 아니라 &quot;깨우라는 신호&quot;가 있습니다 | 스펙핏</title>
+<meta name="description" content="끈 컴퓨터가 새벽에 저절로 켜져 있거나, 절전이 자꾸 풀리는 증상은 으스스하지만 원인은 논리적입니다. 컴퓨터는 누가 깨웠는지 장부를 남기고, 깨우는 신호의 출처는 몇 갈래로 정해져 있습니다. 확인 순서와 끄는 방법을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/pc-turns-on-by-itself.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="컴퓨터가 혼자 켜질 때 — 유령이 아니라 &quot;깨우라는 신호&quot;가 있습니다 | 스펙핏">
+<meta property="og:description" content="끈 컴퓨터가 새벽에 저절로 켜져 있거나, 절전이 자꾸 풀리는 증상은 으스스하지만 원인은 논리적입니다. 컴퓨터는 누가 깨웠는지 장부를 남기고, 깨우는 신호의 출처는 몇 갈래로 정해져 있습니다. 확인 순서와 끄는 방법을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/pc-turns-on-by-itself.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"컴퓨터가 혼자 켜질 때 — 유령이 아니라 \"깨우라는 신호\"가 있습니다","description":"끈 컴퓨터가 새벽에 저절로 켜져 있거나, 절전이 자꾸 풀리는 증상은 으스스하지만 원인은 논리적입니다. 컴퓨터는 누가 깨웠는지 장부를 남기고, 깨우는 신호의 출처는 몇 갈래로 정해져 있습니다. 확인 순서와 끄는 방법을 정리했습니다.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/pc-turns-on-by-itself.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"컴퓨터가 혼자 켜질 때 — 유령이 아니라 \"깨우라는 신호\"가 있습니다","item":"https://specfit.kr/posts/pc-turns-on-by-itself.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"악성코드 아닌가요","acceptedAnswer":{"@type":"Answer","text":"가능성이 없진 않지만 확률로는 위 설정 갈래들이 압도적입니다. 불안하면 장부(/lastwake·이벤트 로그)를 먼저 보세요 — 원인이 장치·타이머로 찍혀 있으면 그쪽 이야기이고, 백신 검사는 그것대로 돌려 두면 됩니다. 공포보다 로그가 정확합니다."}},{"@type":"Question","name":"절전이 아예 몇 초 만에 풀려요","acceptedAnswer":{"@type":"Answer","text":"깨우기 소스가 상시 신호를 보내는 상태입니다 — 채터링(연타 신호)을 내는 오래된 마우스, 트래픽에 계속 반응하는 랜카드가 전형입니다. 갈래 ①·②의 설정 해제로 소스를 하나씩 잘라 보세요."}},{"@type":"Question","name":"완전히 꺼도 USB에 불이 들어와 있어요","acceptedAnswer":{"@type":"Answer","text":"고장이 아닙니다 — 꺼진 상태에서도 USB에 대기 전원을 주는 보드가 많습니다(충전용). 바이오스에 끄는 항목이 있는 보드도 있고, 이 대기 전원 자체가 갈래 ④의 \"깨어날 여지\"와 같은 뿌리입니다."}},{"@type":"Question","name":"본체 전원 버튼이 이상한 걸까요","acceptedAnswer":{"@type":"Answer","text":"가능은 합니다 — 버튼 접촉 불량이 눌림 신호를 만드는 갈래인데, 설정 갈래를 다 자른 뒤에 남는 마지막 용의자로 두는 게 순서입니다. 케이스의 전원 스위치 커넥터를 보드에서 잠시 빼 두고 재현되는지 보는 것이 격리 진단이 됩니다 (그동안은 보드의 전원 버튼이나 커넥터 단락으로 켭니다 — 익숙하지 않다면 이 단계는 점검 맡기는 쪽이 안전합니다)."}},{"@type":"Question","name":"일부러 혼자 켜지게 하고 싶어요","acceptedAnswer":{"@type":"Answer","text":"이 글의 갈래들을 반대로 쓰면 됩니다 — 바이오스 알람으로 아침 자동 켜짐, WOL로 원격 깨우기. 24시간 켜두기와 비교 하면, \"필요할 때만 깨우기\"가 전기 면에서 한 수 위의 구성입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/minipc.html">미니PC</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>컴퓨터가 혼자 켜질 때 — 유령이 아니라 &quot;깨우라는 신호&quot;가 있습니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-05">2026년 9월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>분명히 끄고 잤는데 <strong>새벽에 컴퓨터가 켜져 있습니다.</strong> 혹은
+절전으로 둔 컴퓨터가 몇 분 뒤 스르륵 깨어납니다. 처음 겪으면
+으스스하고, 검색하면 악성코드 이야기까지 나와서 더 불안해집니다.</p>
+<p>결론부터 말하면 — <strong>컴퓨터는 이유 없이 켜지지 않습니다.</strong> 켜지는
+건 어딘가에서 &quot;깨우라&quot;는 신호를 받았기 때문이고, 신호의 출처는
+몇 갈래로 정해져 있습니다. 더 좋은 소식은, <strong>컴퓨터가 누가
+깨웠는지 장부를 남긴다</strong>는 것입니다. 장부부터 열면 됩니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>증상 패턴</th><th>유력 갈래</th></tr></thead>
+<tbody>
+<tr><td><strong>새벽 정해진 시간대</strong>에 켜져 있음</td><td>예약 깨우기 — 자동 유지 관리·업데이트·바이오스 알람</td></tr>
+<tr><td><strong>절전이 몇 분 만에</strong> 풀림</td><td>입력 장치·네트워크가 깨우는 갈래입니다</td></tr>
+<tr><td><strong>마우스를 살짝 건드리면</strong> 켜짐</td><td>고장이 아니라 설정입니다 — 깨우기 권한을 끄면 됩니다</td></tr>
+<tr><td><strong>정전 뒤에</strong> 저절로 켜져 있음</td><td>바이오스의 전원 복구 설정입니다</td></tr>
+<tr><td>완전 종료했는데도 켜짐</td><td>빠른 시작(완전 종료 아님)·WOL·하드웨어 갈래로</td></tr>
+<tr><td>켜지는 게 아니라 <strong>혼자 꺼지는</strong> 증상</td><td>반대 증상입니다 — <a href="/posts/pc-shutdown-during-game.html">게임 중 꺼짐 판정</a>으로</td></tr>
+</tbody>
+</table></div>
+<h2 id="1단계-장부부터-누가-깨웠나">1단계 — 장부부터: 누가 깨웠나</h2>
+<p>윈도우는 마지막으로 컴퓨터를 깨운 원인을 기록합니다. 명령
+프롬프트에서:</p>
+<ul>
+<li><code>powercfg /lastwake</code> — <strong>마지막 깨우기의 출처</strong>를 보여줍니다</li>
+<li><code>powercfg /waketimers</code> — <strong>예약된 깨우기</strong>(몇 시에 뭐가 깨울
+예정인지) 목록입니다</li>
+<li>이벤트 뷰어에서 Power-Troubleshooter 항목을 보면 깨어난
+시각과 원인이 시간순으로 남아 있습니다</li>
+</ul>
+<p>표시되는 내용과 표현은 윈도우 버전·장치에 따라 조금씩 다르지만,
+<strong>&quot;장치가 깨웠다 / 타이머가 깨웠다 / 전원 버튼&quot;</strong> 정도의 갈래는
+여기서 바로 갈립니다. 아래는 갈래별 처방입니다.</p>
+<h2 id="갈래-입력-장치가-깨움-마우스키보드">갈래 ① — 입력 장치가 깨움: 마우스·키보드</h2>
+<p>절전 해제의 제일 흔한 범인입니다. 책상 진동에 마우스가 살짝
+움직여도 깨는 설정이 기본인 경우가 많습니다.</p>
+<ul>
+<li>장치 관리자 → 마우스(키보드) → 전원 관리 탭 → <strong>&quot;이 장치를
+사용하여 컴퓨터의 절전 모드를 해제할 수 있음&quot; 체크 해제</strong></li>
+<li>무선 마우스라면 수신기(동글)가 신호를 받는 것이라, 같은 설정을
+수신기 쪽 장치에서 찾는 경우도 있습니다 — 절전 중 <a href="/posts/wireless-mouse-lag.html">무선
+기기들의 신호</a>가 깨우기 소스가
+되는 구조입니다</li>
+<li>키보드는 깨우기용으로 남겨 두고 마우스만 끄는 절충이 실용적
+입니다 — 깨울 수단은 하나면 되니까요</li>
+</ul>
+<h2 id="갈래-네트워크가-깨움-wol">갈래 ② — 네트워크가 깨움: WOL</h2>
+<p>랜카드에는 <strong>꺼진 컴퓨터를 네트워크 신호로 깨우는 기능</strong>(Wake
+on LAN)이 있습니다. 원격 접속용으로는 유용하지만, 쓸 계획이
+없는데 켜져 있으면 공유기·기기들의 트래픽에 반응해 원치 않는
+켜짐의 원인이 됩니다.</p>
+<ul>
+<li>장치 관리자 → 네트워크 어댑터 → 전원 관리 탭에서 깨우기 허용
+항목을 해제합니다 (매직 패킷 전용으로만 좁히는 중간 설정도
+있습니다)</li>
+<li>바이오스에도 같은 계열 항목(PCI-E 장치로 켜기 등)이 있는
+보드가 많습니다 — 명칭은 보드마다 다릅니다</li>
+<li>반대로 <a href="/posts/pc-always-on.html">원격으로 컴퓨터를 깨워 쓰는 구성</a>
+을 원한다면 이 기능이 바로 그 도구입니다 — 끄지 말고 활용하는
+쪽이죠</li>
+</ul>
+<h2 id="갈래-예약이-깨움-유지-관리와-업데이트">갈래 ③ — 예약이 깨움: 유지 관리와 업데이트</h2>
+<ul>
+<li>윈도우의 <strong>자동 유지 관리</strong>는 정해진 시간(기본 새벽대)에
+컴퓨터를 깨워 작업할 수 있는 설정이 있습니다 — 유지 관리
+설정에서 &quot;예약된 유지 관리 시간에 절전 모드 해제 허용&quot;을
+끄면 이 갈래가 닫힙니다</li>
+<li><strong>업데이트·백업 프로그램의 예약 작업</strong>도 깨우기 권한을 가질
+수 있습니다 — <code>powercfg /waketimers</code> 목록에 이름이 그대로
+뜨니, 장부에서 확인하고 해당 프로그램의 예약을 조정하면 됩니다</li>
+<li>전원 옵션 고급 설정의 <strong>&quot;절전 모드 해제 타이머 허용&quot;</strong>을 끄면
+타이머 깨우기 전체를 한 번에 막을 수도 있습니다 — 다만 백업
+같은 <a href="/posts/dev-backup-strategy.html">밤새 도는 작업</a>도 같이
+못 깨우게 되는 광역 스위치라, 갈래를 확인한 뒤 쓰는 게 순서입니다</li>
+</ul>
+<h2 id="갈래-종료했는데도-켜짐-빠른-시작과-바이오스">갈래 ④ — 종료했는데도 켜짐: 빠른 시작과 바이오스</h2>
+<p>&quot;절전도 아니고 완전히 껐는데 켜졌다&quot;는 경우의 갈래입니다.</p>
+<ul>
+<li><strong>빠른 시작</strong> — 요즘 윈도우의 기본 종료는 완전 종료가 아니라
+최대 절전을 섞은 혼합형입니다. 그래서 꺼진 상태로 보여도
+깨우기 신호에 반응하는 여지가 남습니다. 전원 옵션에서 빠른
+시작을 끄면 종료가 &quot;진짜 종료&quot;에 가까워집니다</li>
+<li><strong>바이오스 자동 켜짐(RTC 알람)</strong> — 정해진 시각에 켜지는
+기능이 켜져 있는 경우입니다. 매일 같은 시각에 켜져 있다면
+이 항목부터 보세요</li>
+<li><strong>AC 전원 복구 설정</strong> — &quot;전원이 끊겼다 돌아오면 켜기&quot;로 설정된
+보드는 <strong>정전 뒤에 저절로 켜집니다.</strong> 정전·두꺼비집 작업
+뒤에만 생기는 켜짐이라면 범인은 이것입니다.
+<a href="/posts/desktop-ups.html">정전이 잦은 환경</a>에서 서버로 쓰는
+게 아니라면 &quot;꺼진 상태 유지&quot;가 무난합니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="악성코드-아닌가요">악성코드 아닌가요</h3>
+<p>가능성이 없진 않지만 <strong>확률로는 위 설정 갈래들이 압도적</strong>입니다.
+불안하면 장부(<code>/lastwake</code>·이벤트 로그)를 먼저 보세요 — 원인이
+장치·타이머로 찍혀 있으면 그쪽 이야기이고, 백신 검사는 그것대로
+돌려 두면 됩니다. 공포보다 로그가 정확합니다.</p>
+<h3 id="절전이-아예-몇-초-만에-풀려요">절전이 아예 몇 초 만에 풀려요</h3>
+<p>깨우기 소스가 상시 신호를 보내는 상태입니다 — 채터링(연타
+신호)을 내는 오래된 마우스, 트래픽에 계속 반응하는 랜카드가
+전형입니다. 갈래 ①·②의 설정 해제로 소스를 하나씩 잘라 보세요.</p>
+<h3 id="완전히-꺼도-usb에-불이-들어와-있어요">완전히 꺼도 USB에 불이 들어와 있어요</h3>
+<p>고장이 아닙니다 — 꺼진 상태에서도 USB에 대기 전원을 주는
+보드가 많습니다(충전용). 바이오스에 끄는 항목이 있는 보드도
+있고, 이 대기 전원 자체가 갈래 ④의 &quot;깨어날 여지&quot;와 같은
+뿌리입니다.</p>
+<h3 id="본체-전원-버튼이-이상한-걸까요">본체 전원 버튼이 이상한 걸까요</h3>
+<p>가능은 합니다 — 버튼 접촉 불량이 눌림 신호를 만드는 갈래인데,
+<strong>설정 갈래를 다 자른 뒤에 남는 마지막 용의자</strong>로 두는 게
+순서입니다. 케이스의 전원 스위치 커넥터를 보드에서 잠시 빼 두고
+재현되는지 보는 것이 격리 진단이 됩니다 (그동안은 보드의 전원
+버튼이나 커넥터 단락으로 켭니다 — 익숙하지 않다면 이 단계는
+점검 맡기는 쪽이 안전합니다).</p>
+<h3 id="일부러-혼자-켜지게-하고-싶어요">일부러 혼자 켜지게 하고 싶어요</h3>
+<p>이 글의 갈래들을 반대로 쓰면 됩니다 — 바이오스 알람으로 아침
+자동 켜짐, WOL로 원격 깨우기. <a href="/posts/pc-always-on.html">24시간 켜두기와 비교</a>
+하면, &quot;필요할 때만 깨우기&quot;가 전기 면에서 한 수 위의 구성입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>컴퓨터는 이유 없이 안 켜집니다</strong> — 깨우라는 신호가 있고,
+장부(<code>powercfg /lastwake</code>·<code>/waketimers</code>)에 출처가 남습니다</li>
+<li>절전 풀림의 단골은 <strong>마우스·키보드와 랜카드(WOL)</strong> — 장치
+관리자의 깨우기 허용을 끄면 됩니다</li>
+<li>새벽 정시 켜짐은 <strong>예약</strong>(유지 관리·업데이트·바이오스 알람)
+갈래입니다 — waketimers 목록이 이름을 알려줍니다</li>
+<li>종료했는데도 켜지면 <strong>빠른 시작·AC 복구 설정</strong>부터 — &quot;진짜
+종료&quot;는 설정으로 만드는 것입니다</li>
+<li>하드웨어(전원 버튼·보드)는 <strong>설정을 다 자른 뒤의 마지막
+용의자</strong>입니다</li>
+</ol>
+<p>전원 이웃 글들 — <a href="/posts/pc-shutdown-during-game.html">혼자 꺼지는 반대 증상</a> ·
+<a href="/posts/pc-always-on.html">24시간 켜두기의 거래</a> ·
+<a href="/posts/desktop-ups.html">정전 대비 UPS</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">컴퓨터혼자켜짐</span> <span class="tag">절전해제</span> <span class="tag">WOL</span> <span class="tag">빠른시작</span> <span class="tag">전원설정</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/pc-always-on.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">컴퓨터 24시간 켜둬도 되나 — 수명 걱정이 아니라 용도로 정하는 문제입니다</span>
+        <span class="card-desc">컴퓨터를 계속 켜두면 고장 나는지, 껐다 켜는 게 더 해로운지 — 커뮤니티의 오랜 논쟁입니다. 어느 쪽도 관리만 되면 수명을 좌우할 크기가 아니라서, 판정 기준은 기계가 아니라 그 켜둠이 일을 하는가입니다. 켜둘 때의 관리 목록까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mini-pc-noise.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다</span>
+        <span class="card-desc">미니PC를 알아보면 팬소음 이야기가 꼭 따라옵니다. 작은 몸집이 구조적으로 불리한 건 맞는데, 시끄러운지는 제품이 아니라 내 부하가 정합니다. 사무·웹은 대개 조용하고, 지속 고부하가 소음을 부릅니다. 판정 기준과 줄이는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mini-pc-gaming.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC로 게임이 되나 — 갈림길은 게임의 무게입니다</span>
+        <span class="card-desc">롤 정도는 미니PC로 돌아가는지, 어디까지가 한계인지 질문이 많습니다. 미니PC의 게임 성능은 내장그래픽이 정하고, 되는 게임과 안 되는 게임의 경계가 비교적 뚜렷합니다. 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

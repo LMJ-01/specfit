@@ -34,6 +34,13 @@
     <description>750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.</description>
   </item>
   <item>
+    <title>컴퓨터가 혼자 켜질 때 — 유령이 아니라 "깨우라는 신호"가 있습니다</title>
+    <link>https://specfit.kr/posts/pc-turns-on-by-itself.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-turns-on-by-itself.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>끈 컴퓨터가 새벽에 저절로 켜져 있거나, 절전이 자꾸 풀리는 증상은 으스스하지만 원인은 논리적입니다. 컴퓨터는 누가 깨웠는지 장부를 남기고, 깨우는 신호의 출처는 몇 갈래로 정해져 있습니다. 확인 순서와 끄는 방법을 정리했습니다.</description>
+  </item>
+  <item>
     <title>스피커에서 지지직 소리가 날 때 — 노이즈가 나는 "때"가 범인을 알려줍니다</title>
     <link>https://specfit.kr/posts/pc-speaker-noise.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-speaker-noise.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-dust-cleaning.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>컴퓨터 청소 주기를 물으면 몇 달에 한 번이라는 답이 제각각으로 돌아옵니다. 환경마다 쌓이는 속도가 달라 숫자 답이 없는 질문이라서입니다. 청소가 필요하다는 신호 세 가지와 안전한 청소 기본기, 덜 쌓이게 하는 배치를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>모니터 응답속도 1ms vs 5ms — 표기 숫자는 조건부라는 게 핵심입니다</title>
-    <link>https://specfit.kr/posts/monitor-response-time.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-response-time.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>모니터 스펙표의 1ms가 구매 기준이 되곤 하는데, 그 숫자는 측정 기준과 설정 조건이 붙은 값이라 제품 간 비교 자체가 어렵습니다. 응답속도가 실제로 좌우하는 것, 입력 지연과의 차이, 용도별로 신경 써야 하는 선을 정리했습니다.</description>
   </item>
 </channel>
 </rss>

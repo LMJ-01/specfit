@@ -147,4 +147,7 @@ tags: [컴퓨터꺼짐, 게임중꺼짐, 재부팅, 파워, 과열]
 [GPU 온도 거동](/posts/gpu-temp-normal.html) ·
 [게임 끊김(꺼짐 아닌 멈칫)](/posts/game-stutter-fps.html)과 이어집니다.
 
+(반대 증상 — 꺼지는 게 아니라 [혼자 켜지는 컴퓨터](/posts/pc-turns-on-by-itself.html)는
+장부(깨우기 로그)부터 여는 다른 진단입니다.)
+
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
