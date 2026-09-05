@@ -836,6 +836,7 @@ export const figures = {
   'ram-pressure': ramPressure,
   'temp-behavior': tempBehavior,
   'frame-pacing': framePacing,
+  'swap-diagnosis': swapDiagnosis,
 };
 
 /**
@@ -1682,5 +1683,49 @@ function framePacing() {
     168,
     body,
     '프레임 표시기의 숫자(초당 평균)에는 이 차이가 거의 안 잡힙니다 — 그래서 판정 도구는 평균 fps 가 아니라 프레임 타임 그래프입니다.'
+  );
+}
+
+/**
+ * 맞바꾸기 한 번으로 범인의 절반이 갈린다 — 격리 진단의 두 갈래.
+ * dual-monitor-one-blank 의 1단계 판정을 그림으로 고정합니다.
+ */
+function swapDiagnosis() {
+  const W = 640;
+
+  const monitor = (x, y, label, dark) => {
+    let s = rect(x, y, 92, 58, dark ? COLOR.text : COLOR.soft, { stroke: COLOR.line });
+    s += rect(x + 34, y + 58, 24, 8, COLOR.line);
+    s += t(x + 46, y + 34, label, { anchor: 'middle', size: 12, weight: 600, fill: dark ? '#fff' : COLOR.text });
+    return s;
+  };
+
+  let body = '';
+  body += t(16, 22, '두 모니터의 연결(케이블째)을 서로 바꿔 꽂으면', { weight: 600, size: 14 });
+
+  // 갈래 1: 증상이 자리를 따라감
+  body += t(16, 56, '갈래 ①', { size: 12, weight: 600, fill: COLOR.over });
+  body += monitor(80, 44, 'A', false);
+  body += monitor(190, 44, 'B', true);
+  body += t(236, 122, '아까 그 자리(케이블·포트)가 또 캄캄', { anchor: 'middle', size: 11, fill: COLOR.mute });
+  body += t(320, 66, '→', { size: 16, fill: COLOR.mute });
+  body += t(345, 60, '증상이 자리를 따라감', { size: 12, weight: 600, fill: COLOR.over });
+  body += t(345, 78, '모니터 무죄 — 케이블·젠더·포트 중 범인', { size: 11, fill: COLOR.mute });
+
+  // 갈래 2: 증상이 모니터를 따라감
+  body += t(16, 168, '갈래 ②', { size: 12, weight: 600, fill: COLOR.accent });
+  body += monitor(80, 156, 'B', true);
+  body += monitor(190, 156, 'A', false);
+  body += t(126, 234, '어디에 꽂아도 그 모니터만 캄캄', { anchor: 'middle', size: 11, fill: COLOR.mute });
+  body += t(320, 178, '→', { size: 16, fill: COLOR.mute });
+  body += t(345, 172, '증상이 모니터를 따라감', { size: 12, weight: 600, fill: COLOR.accent });
+  body += t(345, 190, '모니터 쪽 — 입력 소스·절전·고장 순서로', { size: 11, fill: COLOR.mute });
+
+  return figure(
+    '맞바꾸기 격리 진단 — 증상이 자리를 따라가면 케이블·포트, 모니터를 따라가면 모니터가 범인',
+    W,
+    248,
+    body,
+    '한 번의 맞바꾸기로 용의자 목록이 절반으로 줄어듭니다 — 설정을 뒤지기 전에 이것부터입니다.'
   );
 }
