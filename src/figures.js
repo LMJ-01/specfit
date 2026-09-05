@@ -838,6 +838,7 @@ export const figures = {
   'frame-pacing': framePacing,
   'swap-diagnosis': swapDiagnosis,
   'spill-first-aid': spillFirstAid,
+  'retention-timeline': retentionTimeline,
 };
 
 /**
@@ -1772,5 +1773,51 @@ function spillFirstAid() {
     190,
     body,
     '이 셋이 끝난 다음이 닦기와 말리기입니다 — 그리고 겉이 말라 보여도 켜 보지 않는 것이 네 번째 규칙입니다.'
+  );
+}
+
+/**
+ * 무전원 보존의 시간 축 — 걱정 구간과 안전 구간을 한 줄로.
+ * ssd-cold-storage 의 "몇 달은 과장, 몇 년은 금지" 판정 고정.
+ */
+function retentionTimeline() {
+  const W = 640;
+  const x0 = 40;
+  const lineY = 96;
+  const lineW = 560;
+
+  let body = '';
+  body += t(16, 22, '전원 없이 둔 SSD — 시간 축의 세 구간', { weight: 600, size: 14 });
+
+  // 축
+  body += `<line x1="${x0}" y1="${lineY}" x2="${x0 + lineW}" y2="${lineY}" stroke="${COLOR.line}" stroke-width="2"/>`;
+
+  // 구간 1: 몇 주~몇 달 (0~35%)
+  body += `<line x1="${x0}" y1="${lineY}" x2="${x0 + lineW * 0.35}" y2="${lineY}" stroke="${COLOR.fit}" stroke-width="6"/>`;
+  body += t(x0 + lineW * 0.175, 66, '몇 주 ~ 몇 달', { anchor: 'middle', size: 12, weight: 600, fill: COLOR.fit });
+  body += t(x0 + lineW * 0.175, lineY + 24, '걱정 구간 아님 — 공포는 과장', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  // 하한 마커 (~50%)
+  body += `<line x1="${x0 + lineW * 0.5}" y1="${lineY - 22}" x2="${x0 + lineW * 0.5}" y2="${lineY + 10}" stroke="${COLOR.text}" stroke-dasharray="4 3"/>`;
+  body += t(x0 + lineW * 0.5, lineY - 30, '업계 설계 하한 (상온 1년 수준)', { anchor: 'middle', size: 11, fill: COLOR.text });
+
+  // 구간 2: 1년~ (35~70%)
+  body += `<line x1="${x0 + lineW * 0.35}" y1="${lineY}" x2="${x0 + lineW * 0.7}" y2="${lineY}" stroke="${COLOR.accent}" stroke-width="6" stroke-dasharray="8 5"/>`;
+  body += t(x0 + lineW * 0.55, lineY + 24, '꽂아서 확인·사본 갱신할 때', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  // 구간 3: 몇 년 (70~100%)
+  body += `<line x1="${x0 + lineW * 0.7}" y1="${lineY}" x2="${x0 + lineW}" y2="${lineY}" stroke="${COLOR.over}" stroke-width="6"/>`;
+  body += t(x0 + lineW * 0.85, 66, '몇 년', { anchor: 'middle', size: 12, weight: 600, fill: COLOR.over });
+  body += t(x0 + lineW * 0.85, lineY + 24, 'SSD의 자리 아님 — HDD·클라우드로', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  // 변수 각주
+  body += t(x0, 150, '※ 온도가 높을수록, 마모(TBW 소진)가 클수록 전체 축이 왼쪽으로 당겨집니다', { size: 11, fill: COLOR.mute });
+
+  return figure(
+    'SSD 무전원 보존 시간 축 — 몇 달은 안전권, 1년 언저리부터 확인 구간, 몇 년 보관은 다른 매체로',
+    W,
+    164,
+    body,
+    '정확한 경계는 셀 방식·온도·마모에 따라 달라 선이 아니라 구간으로 보는 것이 맞습니다.'
   );
 }
