@@ -2,6 +2,7 @@
 title: 본체 먼지 청소, 얼마나 자주 — 달력이 아니라 신호를 보고 합니다
 description: 컴퓨터 청소 주기를 물으면 몇 달에 한 번이라는 답이 제각각으로 돌아옵니다. 환경마다 쌓이는 속도가 달라 숫자 답이 없는 질문이라서입니다. 청소가 필요하다는 신호 세 가지와 안전한 청소 기본기, 덜 쌓이게 하는 배치를 정리했습니다.
 date: 2026-09-04
+updated: 2026-09-06
 category: gpu
 tags: [먼지청소, 본체청소, 컴퓨터관리, 발열, PC청소]
 ---
@@ -145,5 +146,9 @@ tags: [먼지청소, 본체청소, 컴퓨터관리, 발열, PC청소]
 발열 판정의 이웃 글들 — [GPU 온도 정상 범위](/posts/gpu-temp-normal.html) ·
 [케이스 팬 구성](/posts/case-fan-setup.html) ·
 [노트북 스로틀링](/posts/laptop-thermal-throttling.html)과 이어집니다.
+
+(청소 뒤에 [화면이 안 나오면 재장착](/posts/pc-boot-no-display.html),
+[키가 안 눌리면 키캡·커넥터](/posts/keyboard-some-keys-dead.html) —
+청소 후 증상의 단골 둘도 같이 알아두세요.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

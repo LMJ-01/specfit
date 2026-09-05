@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다 | 스펙핏</title>
+<meta name="description" content="키보드에서 몇 개의 키만 반응이 없으면 교체해야 하나 싶지만, 소프트웨어 층이 범인인 경우도 많습니다. 화면 키보드와 외부 키보드로 층을 가르는 격리 진단, 그리고 죽은 키들의 배치가 알려주는 것까지 — 판정 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/keyboard-some-keys-dead.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다 | 스펙핏">
+<meta property="og:description" content="키보드에서 몇 개의 키만 반응이 없으면 교체해야 하나 싶지만, 소프트웨어 층이 범인인 경우도 많습니다. 화면 키보드와 외부 키보드로 층을 가르는 격리 진단, 그리고 죽은 키들의 배치가 알려주는 것까지 — 판정 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/keyboard-some-keys-dead.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다","description":"키보드에서 몇 개의 키만 반응이 없으면 교체해야 하나 싶지만, 소프트웨어 층이 범인인 경우도 많습니다. 화면 키보드와 외부 키보드로 층을 가르는 격리 진단, 그리고 죽은 키들의 배치가 알려주는 것까지 — 판정 순서를 정리했습니다.","datePublished":"2026-09-06","dateModified":"2026-09-06","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/keyboard-some-keys-dead.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다","item":"https://specfit.kr/posts/keyboard-some-keys-dead.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"키가 안 눌리는 게 아니라 두 번씩 눌려요","acceptedAnswer":{"@type":"Answer","text":"반대 증상(채터링)입니다 — 접점 노화가 한 번 입력을 여러 번으로 만드는 것으로, 물리 갈래인 것은 같습니다. 소프트웨어로는 필터 키의 반복 무시 기능을 역으로 켜서 완화하는 우회가 있습니다."}},{"@type":"Question","name":"게임에서만 여러 키를 같이 누르면 씹혀요","acceptedAnswer":{"@type":"Answer","text":"고장이 아니라 동시 입력 한계(롤오버) 이야기일 수 있습니다 — 키보드 설계에 따라 동시에 인식하는 키 수가 다르고, 특정 조합이 서로 막는 경우(고스팅)도 있습니다. 한 키씩은 다 되는데 조합만 씹히면 이 갈래이고, 해법은 설정이 아니라 동시 입력 지원이 넓은 키보드 쪽입니다."}},{"@type":"Question","name":"청소하고 나서부터 안 눌려요","acceptedAnswer":{"@type":"Answer","text":"청소 중 커넥터·키캡이 자리를 벗어난 경우가 흔합니다 — 먼지 청소 후 증상의 키보드판 입니다. 키캡이 삐뚤게 얹힌 키가 없는지부터 보세요."}},{"@type":"Question","name":"노트북 키보드 교체는 큰 수리인가요","acceptedAnswer":{"@type":"Answer","text":"제품에 따라 갈립니다 — 키보드만 모듈로 갈리는 구조부터 상판 전체를 여는 구조까지 다양해서, 견적을 받아 보고 노트북의 남은 수명과 저울질하는 것이 순서입니다. 외장 키보드 운용이라는 우회가 늘 있다는 것도 계산에 넣고요."}},{"@type":"Question","name":"새 키보드인데 특정 키가 안 눌려요","acceptedAnswer":{"@type":"Answer","text":"초기 불량 갈래라 진단보다 교환이 먼저입니다 — 위의 층 가르기(화면·외부 키보드)로 물리 층 확정만 하고, 고치려 들지 말고 판매처로 가세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-06">2026년 9월 6일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>키보드에서 <strong>몇 개의 키만 침묵</strong>합니다. 나머지는 멀쩡한데 'ㄷ'과
+'5'만 안 나온다거나, F키 줄이 통째로 이상하다거나. 노트북이면
+&quot;키보드 교체각인가&quot;부터 떠오르는 증상입니다.</p>
+<p>교체 판정을 내리기 전에 알아 둘 것 — 키 입력은 <strong>물리(키와 회로)
+층과 소프트웨어(OS·앱) 층을 차례로 지나서</strong> 화면에 도착합니다.
+어느 층에서 막혔는지 가르는 공짜 진단이 있고, 물리 층이라도
+<strong>죽은 키들의 배치</strong>가 남은 단서를 줍니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>정황</th><th>유력 갈래</th></tr></thead>
+<tbody>
+<tr><td><strong>화면 키보드로는 그 글자가 입력됨</strong></td><td>OS·앱 무죄 — <strong>물리 키보드 쪽</strong>입니다</td></tr>
+<tr><td><strong>외부 키보드에서는 그 키가 됨</strong> (노트북)</td><td>내장 키보드의 물리 문제로 확정입니다</td></tr>
+<tr><td><strong>길게 꾹 누르면 입력됨</strong></td><td>접근성의 <strong>필터 키</strong> 설정입니다 — 끄면 끝</td></tr>
+<tr><td><strong>특정 프로그램·게임에서만</strong> 안 됨</td><td>그 앱의 키 설정·조합 한계 갈래입니다</td></tr>
+<tr><td><strong>F키·볼륨키 동작이 뒤바뀜</strong></td><td>고장이 아니라 <strong>Fn 잠금</strong> 상태입니다</td></tr>
+<tr><td><strong>흩어진 여러 키가 한꺼번에</strong> 죽음</td><td>회로 라인 쪽 정황 — 교체 판정 갈래입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="1단계-층-가르기-공짜-격리-둘">1단계 — 층 가르기: 공짜 격리 둘</h2>
+<p><a href="/posts/dual-monitor-one-blank.html">맞바꾸기 격리</a>의 키보드판
+입니다. 두 번이면 층이 갈립니다.</p>
+<ol>
+<li><strong>화면 키보드로</strong> — 윈도우의 화면 키보드(터치 키보드)를 띄워
+마우스로 그 글자를 눌러 봅니다. <strong>입력되면</strong> OS와 앱은
+무죄 — 범인은 물리 키보드 쪽으로 좁혀집니다. 화면 키보드로도
+안 되면 소프트웨어 층(설정·앱)입니다</li>
+<li><strong>외부 키보드로</strong> (노트북) — 아무 USB 키보드를 꽂아 그 키를
+눌러 봅니다. 되면 내장 키보드의 물리 문제로 확정이고, 외부
+키보드가 그대로 <strong>임시방편</strong>도 됩니다</li>
+</ol>
+<h2 id="2단계-소프트웨어-층이면-설정-용의자들">2단계 — 소프트웨어 층이면: 설정 용의자들</h2>
+<ul>
+<li><strong>필터 키</strong> — 접근성 기능 중 &quot;짧거나 반복된 입력을 무시&quot;하는
+설정이 켜져 있으면, 평소처럼 톡톡 치는 입력이 걸러집니다.
+<strong>꾹 누르면 들어가는데 톡 치면 안 되는</strong> 패턴이 이 갈래의
+지문입니다. 접근성 → 키보드에서 끕니다</li>
+<li><strong>Fn 잠금</strong> — F1~F12가 새로고침 대신 볼륨·밝기로 동작하는
+(또는 그 반대) 증상은 고장이 아니라 Fn 잠금 상태입니다.
+전환 조합은 제품마다 달라(Fn+Esc가 흔한 편) 키보드에 자물쇠
+아이콘이 그려진 키를 찾아보세요</li>
+<li><strong>특정 앱·게임에서만</strong> — 그 앱의 키 바인딩이 바뀌었거나,
+게임이라면 여러 키 동시 입력의 한계(아래 FAQ)일 수 있습니다.
+다른 앱(메모장)에서 되는지가 판정선입니다</li>
+<li><strong>드라이버</strong> — 위가 다 아니면 장치 관리자에서 키보드 드라이버
+제거 후 재부팅(자동 재설치)이 이 층의 마지막 수입니다</li>
+</ul>
+<h2 id="3단계-물리-층이면-죽은-키들의-배치를-보세요">3단계 — 물리 층이면: 죽은 키들의 배치를 보세요</h2>
+<p>키보드는 키마다 전선을 하나씩 두지 않고 <strong>가로·세로 격자(매트릭스)
+에 키들을 물려 놓은 구조</strong>입니다. 그래서 죽은 키들의 배치가
+단서가 됩니다:</p>
+<ul>
+<li><strong>키 하나만</strong> 죽음 — 그 키 자리의 문제입니다. 밑에 낀 이물·
+먼지, 눌림, 액체 잔류물 순서로 의심합니다. 훅 불거나 압축
+공기로 틈을 청소해 보는 것까지가 집에서 할 수 있는 선입니다
+(키캡을 들어내는 건 제품마다 구조가 달라, 무리하면 걸쇠가
+부러집니다)</li>
+<li><strong>서로 떨어진 여러 키가 한꺼번에</strong> 죽음 — 자판 위 위치는
+흩어져 있어도 <strong>같은 회로 라인에 물린 키들</strong>일 수 있습니다.
+이 패턴은 청소로 안 돌아오는 회로 쪽 정황이라, 노트북이면
+키보드 교체(또는 외장 키보드 운용) 판정 갈래입니다</li>
+<li><strong>물·음료를 쏟은 이력이 있다</strong>면 — 잔류물의 전형적 후유증
+입니다. <a href="/posts/laptop-water-spill.html">응급 처치와 판정 기준</a>
+글의 그 이야기이고, 잔류물은 스스로 낫지 않습니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="키가-안-눌리는-게-아니라-두-번씩-눌려요">키가 안 눌리는 게 아니라 두 번씩 눌려요</h3>
+<p>반대 증상(채터링)입니다 — 접점 노화가 한 번 입력을 여러 번으로
+만드는 것으로, 물리 갈래인 것은 같습니다. 소프트웨어로는 필터
+키의 반복 무시 기능을 <strong>역으로 켜서</strong> 완화하는 우회가 있습니다.</p>
+<h3 id="게임에서만-여러-키를-같이-누르면-씹혀요">게임에서만 여러 키를 같이 누르면 씹혀요</h3>
+<p>고장이 아니라 <strong>동시 입력 한계</strong>(롤오버) 이야기일 수 있습니다 —
+키보드 설계에 따라 동시에 인식하는 키 수가 다르고, 특정 조합이
+서로 막는 경우(고스팅)도 있습니다. 한 키씩은 다 되는데 조합만
+씹히면 이 갈래이고, 해법은 설정이 아니라 동시 입력 지원이 넓은
+키보드 쪽입니다.</p>
+<h3 id="청소하고-나서부터-안-눌려요">청소하고 나서부터 안 눌려요</h3>
+<p>청소 중 커넥터·키캡이 자리를 벗어난 경우가 흔합니다 —
+<a href="/posts/pc-dust-cleaning.html">먼지 청소 후 증상</a>의 키보드판
+입니다. 키캡이 삐뚤게 얹힌 키가 없는지부터 보세요.</p>
+<h3 id="노트북-키보드-교체는-큰-수리인가요">노트북 키보드 교체는 큰 수리인가요</h3>
+<p>제품에 따라 갈립니다 — 키보드만 모듈로 갈리는 구조부터 상판
+전체를 여는 구조까지 다양해서, 견적을 받아 보고
+<a href="/posts/laptop-lifespan.html">노트북의 남은 수명</a>과 저울질하는
+것이 순서입니다. 외장 키보드 운용이라는 우회가 늘 있다는 것도
+계산에 넣고요.</p>
+<h3 id="새-키보드인데-특정-키가-안-눌려요">새 키보드인데 특정 키가 안 눌려요</h3>
+<p>초기 불량 갈래라 진단보다 <strong>교환이 먼저</strong>입니다 — 위의 층
+가르기(화면·외부 키보드)로 물리 층 확정만 하고, 고치려 들지
+말고 판매처로 가세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>층부터 가르세요</strong> — 화면 키보드(OS·앱 층)와 외부 키보드
+(물리 층 확정), 두 번의 공짜 격리면 됩니다</li>
+<li><strong>꾹 누르면 되는 건 필터 키</strong>, F키가 뒤바뀐 건 <strong>Fn 잠금</strong> —
+고장이 아니라 설정입니다</li>
+<li>물리 층이면 <strong>죽은 키들의 배치가 단서</strong> — 하나면 그 키 밑,
+흩어진 여럿이 한꺼번에면 회로 라인 정황입니다</li>
+<li>액체 이력이 있으면 잔류물 후유증 — 스스로 낫지 않습니다</li>
+<li>노트북은 <strong>외장 키보드라는 우회</strong>가 늘 있습니다 — 교체
+견적과 남은 수명을 저울질하세요</li>
+</ol>
+<p>이웃 판정들 — <a href="/posts/laptop-water-spill.html">물 쏟은 뒤의 판정</a> ·
+<a href="/posts/dual-monitor-one-blank.html">격리 진단의 원형</a> ·
+<a href="/posts/laptop-lifespan.html">노트북 수명 계산</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">키보드고장</span> <span class="tag">키안눌림</span> <span class="tag">필터키</span> <span class="tag">키보드매트릭스</span> <span class="tag">노트북키보드</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/laptop-water-spill.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">노트북에 물을 쏟았다면 — 켜 보고 싶은 그 손이 제일 위험합니다</span>
+        <span class="card-desc">키보드에 물이나 커피를 쏟은 직후의 몇 분이 수리비를 정합니다. 즉시 할 것 세 가지와 절대 하면 안 되는 것들(드라이기·쌀통·켜서 확인), 맹물과 음료가 갈리는 이유, 수리점에 갈 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ipad-coding-study.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">아이패드로 코딩 공부 되나 — 관문은 성능이 아니라 운영체제입니다</span>
+        <span class="card-desc">아이패드가 이미 있으면 코딩 공부도 이걸로 되지 않을까 싶어집니다. 안 되는 이유는 사양이 아니라 소프트웨어 구조에 있고, 그래서 되는 범위와 안 되는 범위의 경계가 뚜렷합니다. 태블릿의 좋은 자리와 노트북이 필요한 순간을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/last-year-laptop.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">작년 모델 노트북, 사도 되나 — 연식이 아니라 기준 충족으로 판정합니다</span>
+        <span class="card-desc">신형이 나오면 이월된 작년 모델이 눈에 들어옵니다. 세대 차이가 실질인 경우와 이름만 바뀐 경우를 가르는 법, 구형 신품에서만 따로 확인할 것(제조일·배터리·보증 시작)을 정리했습니다. 판정 기준은 연식이 아니라 사양입니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

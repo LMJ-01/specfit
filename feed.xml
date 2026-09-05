@@ -13,6 +13,13 @@
     <description>듀얼 모니터에서 절전이나 디스플레이 끄기 후 복귀하면 열어 둔 창이 전부 한쪽 화면으로 몰리거나 왼쪽 위에 쌓이는 증상이 있습니다. 고장이 아니라 모니터가 꺼지는 순간 윈도우에게 사라진 것으로 보이기 때문입니다. 구조와 완화책 사다리를 정리했습니다.</description>
   </item>
   <item>
+    <title>키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다</title>
+    <link>https://specfit.kr/posts/keyboard-some-keys-dead.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/keyboard-some-keys-dead.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>키보드에서 몇 개의 키만 반응이 없으면 교체해야 하나 싶지만, 소프트웨어 층이 범인인 경우도 많습니다. 화면 키보드와 외부 키보드로 층을 가르는 격리 진단, 그리고 죽은 키들의 배치가 알려주는 것까지 — 판정 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>외장하드를 연결하면 컴퓨터가 멈출 때 — 멈춤의 모양이 갈래를 알려줍니다</title>
     <link>https://specfit.kr/posts/external-hdd-freeze.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/external-hdd-freeze.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-mouse-escape.html</guid>
     <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
     <description>듀얼 모니터로 게임하다 마우스가 옆 화면으로 빠져 클릭 사고가 나는 사람과, 반대로 옆 화면으로 안 넘어가서 불편한 사람이 같은 게시판에 공존합니다. 둘 다 게임의 화면 모드가 마우스를 다루는 방식 하나로 설명되고, 해법도 그 스위치 하나입니다.</description>
-  </item>
-  <item>
-    <title>태블릿을 보조 모니터로 — 연결 방식과 용도가 판정을 정합니다</title>
-    <link>https://specfit.kr/posts/tablet-as-monitor.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/tablet-as-monitor.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>집에 있는 태블릿을 노트북 옆 보조 화면으로 쓸 수 있을까요. 되긴 되는데, 진짜 모니터와는 그림이 전달되는 방식이 달라서 잘 맞는 용도와 안 맞는 용도가 뚜렷하게 갈립니다. 갈림길과 확인 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
