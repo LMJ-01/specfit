@@ -2,7 +2,7 @@
 title: 2.5기가 인터넷 — 요금제만 올리면 안 되고, 경로의 장비를 세어봐야 합니다
 description: 요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 많습니다. 인터넷이 지나는 경로의 장비 하나하나가 2.5G를 받아줘야 하기 때문입니다. 어떤 장비를 점검해야 하는지, 어디까지가 과투자인지 정리했습니다.
 date: 2026-09-01
-updated: 2026-09-04
+updated: 2026-09-05
 category: network
 tags: [2.5기가인터넷, 스위칭허브, 공유기, 랜카드, 홈네트워크]
 ---
@@ -154,5 +154,9 @@ CAT.5E 배선에서 동작하도록 설계됐습니다 —
 경로 점검의 각 구간은 [랜선 규격](/posts/lan-cable-cat.html) ·
 [단자함 진단](/posts/apartment-lan-panel.html) ·
 [공유기 세대](/posts/wifi7-router-upgrade.html) 글에 하나씩 있습니다.
+
+(업그레이드 전에, 지금 속도가 정말 모자란 게 맞는지부터 —
+[Mbps와 MB/s 단위 착시](/posts/internet-download-speed.html)로
+"느리다"의 절반은 착시로 밝혀집니다.)
 
 규격이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

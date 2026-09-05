@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>500메가 인터넷인데 다운로드가 느릴 때 — 실망의 절반은 단위 착시입니다 | 스펙핏</title>
+<meta name="description" content="500메가 요금제를 쓰는데 다운로드 창에는 60MB/s만 떠서 속은 기분이 들 때가 있습니다. 그런데 그 숫자는 사실 만점입니다. 통신사의 메가와 다운로드 창의 MB는 단위가 8배 다르고, 진짜 느린 경우의 범인은 관문 목록에서 찾습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/internet-download-speed.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="500메가 인터넷인데 다운로드가 느릴 때 — 실망의 절반은 단위 착시입니다 | 스펙핏">
+<meta property="og:description" content="500메가 요금제를 쓰는데 다운로드 창에는 60MB/s만 떠서 속은 기분이 들 때가 있습니다. 그런데 그 숫자는 사실 만점입니다. 통신사의 메가와 다운로드 창의 MB는 단위가 8배 다르고, 진짜 느린 경우의 범인은 관문 목록에서 찾습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/internet-download-speed.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"500메가 인터넷인데 다운로드가 느릴 때 — 실망의 절반은 단위 착시입니다","description":"500메가 요금제를 쓰는데 다운로드 창에는 60MB/s만 떠서 속은 기분이 들 때가 있습니다. 그런데 그 숫자는 사실 만점입니다. 통신사의 메가와 다운로드 창의 MB는 단위가 8배 다르고, 진짜 느린 경우의 범인은 관문 목록에서 찾습니다.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/internet-download-speed.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"500메가 인터넷인데 다운로드가 느릴 때 — 실망의 절반은 단위 착시입니다","item":"https://specfit.kr/posts/internet-download-speed.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"스팀은 MB/s로 보여주던데요","acceptedAnswer":{"@type":"Answer","text":"프로그램마다 표기가 갈립니다 — 다운로드 창은 MB/s가 흔하고, 속도 측정 사이트는 Mbps가 흔합니다. 8배 차이의 두 단위가 섞여 쓰이는 것 자체가 이 착시의 뿌리라, 숫자를 볼 때마다 \"b냐 B냐\"부터 확인하는 습관이 답입니다."}},{"@type":"Question","name":"100메가에서 500메가로 바꿨는데 그대로예요","acceptedAnswer":{"@type":"Answer","text":"요금제만 올리고 집 안 관문이 그대로인 경우의 전형입니다 — 100Mbps에 딱 걸려 있다면 랜선·공유기 포트 규격부터 보세요. 업그레이드 전에 세어 볼 장비 목록 이 그 계산입니다."}},{"@type":"Question","name":"속도 측정 사이트마다 다르게 나와요","acceptedAnswer":{"@type":"Answer","text":"측정 서버 위치·혼잡이 달라서 편차는 정상입니다 — 하나의 절대값 보다 같은 조건(같은 사이트·유선·비슷한 시간)으로 잰 변화가 판정에 쓸 수 있는 숫자입니다."}},{"@type":"Question","name":"통신사가 속도를 제한하기도 하나요","acceptedAnswer":{"@type":"Answer","text":"약관에 따라 대용량 트래픽 관리 조항이 있는 상품이 있습니다 — 다만 일상 다운로드에서 만날 일은 드물고, 의심 전에 위의 단위 환산과 관문 점검이 먼저입니다. 대부분은 거기서 끝납니다."}},{"@type":"Question","name":"다운로드는 빠른데 게임 핑이 튀어요","acceptedAnswer":{"@type":"Answer","text":"속도(대역폭)와 지연(핑)은 다른 축입니다 — 다운로드가 만점이어도 핑은 튈 수 있습니다. 그 갈래는 유선 vs 와이파이의 변동 이야기로 가세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>500메가 인터넷인데 다운로드가 느릴 때 — 실망의 절반은 단위 착시입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-05">2026년 9월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>500메가 인터넷을 쓰는데 게임 다운로드 창에는 <strong>60MB/s</strong>가 떠
+있습니다. &quot;500이라며. 8분의 1밖에 안 나오잖아?&quot; — 커뮤니티에
+끊이지 않는 질문이고, 속은 기분에 통신사 전화부터 잡게 됩니다.</p>
+<p>전화 걸기 전에 좋은 소식 하나 — <strong>그 60MB/s는 사실상 만점</strong>
+입니다. 실망의 절반은 속도가 아니라 <strong>단위</strong>에서 옵니다. 나머지
+절반(진짜 느린 경우)은 관문 목록에서 범인을 찾으면 됩니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>증상</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td>다운로드 창에 <strong>60MB/s대</strong> (500메가 요금제)</td><td><strong>정상 — 만점에 가깝습니다.</strong> 단위가 8배 다른 것뿐입니다</td></tr>
+<tr><td>속도 측정은 잘 나오는데 <strong>특정 게임·사이트만</strong> 느림</td><td>내 회선이 아니라 <strong>상대(서버) 쪽 관문</strong>입니다</td></tr>
+<tr><td>유선인데 <strong>100Mbps 언저리에 딱</strong> 걸림</td><td>케이블·포트의 <a href="/posts/lan-cable-cat.html">규격 관문</a>입니다</td></tr>
+<tr><td><strong>와이파이만</strong> 느리고 유선은 정상</td><td>무선 구간이 관문 — <a href="/posts/desktop-wifi-vs-lan.html">무선의 숙명</a> 쪽입니다</td></tr>
+<tr><td>유선 직결 측정부터 낮게 나옴</td><td>회선·장비 점검 갈래입니다 — 아래 순서로</td></tr>
+</tbody>
+</table></div>
+<h2 id="착시의-정체-메가와-메가가-다릅니다">착시의 정체 — 메가와 메가가 다릅니다</h2>
+<ul>
+<li>통신사의 500&quot;메가&quot;는 <strong>Mbps</strong> — 초당 5억 <strong>비트</strong>입니다</li>
+<li>다운로드 창의 MB/s는 초당 <strong>바이트</strong> — 1바이트 = 8비트입니다</li>
+</ul>
+<p>그래서 <strong>500Mbps ÷ 8 = 이론상 62.5MB/s.</strong> 다운로드 창에 60MB/s대가
+떠 있다면 요금제가 낼 수 있는 거의 전부를 받고 있는 겁니다.
+1기가(1000Mbps)라면 이론 상한이 125MB/s인 식으로, <strong>통신사
+숫자를 8로 나눈 값</strong>이 다운로드 창의 만점입니다. (오버헤드가
+있어 실측은 이론값에 조금 못 미치는 게 보통입니다.)</p>
+<p>같은 표기 혼란이 <a href="/posts/lan-cable-cat.html">랜선·포트 규격</a>이나
+<a href="/posts/internet-2-5g-upgrade.html">요금제 업그레이드 계산</a>에도
+그대로 등장하니, &quot;b(비트)와 B(바이트)&quot; 한 번 잡아 두면 여러
+군데서 써먹습니다.</p>
+<h2 id="진짜-느릴-때-관문-순서대로">진짜 느릴 때 — 관문 순서대로</h2>
+<p>단위를 환산했는데도 한참 모자라면, 그때부터가 진단입니다.
+속도는 경로에서 <strong>제일 낮은 관문</strong>을 따라갑니다.</p>
+<ol>
+<li><strong>회선 자체부터 측정</strong> — 속도 측정 사이트에서, 가능하면
+<strong>유선 직결</strong>(공유기 없이 모뎀/벽 포트에 직접)로 재 보세요.
+여기서 요금제대로 나오면 회선은 무죄고, 관문은 집 안에
+있습니다</li>
+<li><strong>유선인데 100Mbps 딱 걸림</strong> — 전형적인 규격 관문입니다.
+오래된 랜선(CAT.5), 4가닥 결선, 100Mbps 포트 장비 중 하나가
+고리입니다 — <a href="/posts/lan-cable-cat.html">랜선 글의 진단</a>
+순서대로요</li>
+<li><strong>와이파이만 느림</strong> — 무선 구간(세대·거리·혼잡)이 관문입니다.
+<a href="/posts/wifi7-router-upgrade.html">공유기 세대 판정</a>과
+<a href="/posts/router-device-count.html">기기 수 혼잡</a>이 그 갈래입니다</li>
+<li><strong>특정 서비스만 느림</strong> — 측정은 만점인데 특정 게임 런처·
+사이트만 느리면, 관문은 내 쪽이 아니라 <strong>그 서버와 거기까지의
+길</strong>입니다. 해외 서버·붐비는 시간대에 흔하고, 내가 조일 수
+있는 나사가 아니라서 시간대를 바꾸거나 기다리는 게 답인
+경우가 많습니다</li>
+<li><strong>밤에만 느림</strong> — 혼잡 시간대의 편차 갈래입니다. 며칠 같은
+시간에 재서 패턴이면, 그 기록을 들고 통신사 점검을 요청하는
+것이 순서입니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="스팀은-mbs로-보여주던데요">스팀은 MB/s로 보여주던데요</h3>
+<p>프로그램마다 표기가 갈립니다 — 다운로드 창은 MB/s가 흔하고,
+속도 측정 사이트는 Mbps가 흔합니다. <strong>8배 차이의 두 단위가
+섞여 쓰이는 것</strong> 자체가 이 착시의 뿌리라, 숫자를 볼 때마다
+&quot;b냐 B냐&quot;부터 확인하는 습관이 답입니다.</p>
+<h3 id="100메가에서-500메가로-바꿨는데-그대로예요">100메가에서 500메가로 바꿨는데 그대로예요</h3>
+<p>요금제만 올리고 <strong>집 안 관문이 그대로</strong>인 경우의 전형입니다 —
+100Mbps에 딱 걸려 있다면 랜선·공유기 포트 규격부터 보세요.
+<a href="/posts/internet-2-5g-upgrade.html">업그레이드 전에 세어 볼 장비 목록</a>
+이 그 계산입니다.</p>
+<h3 id="속도-측정-사이트마다-다르게-나와요">속도 측정 사이트마다 다르게 나와요</h3>
+<p>측정 서버 위치·혼잡이 달라서 편차는 정상입니다 — 하나의 절대값
+보다 <strong>같은 조건(같은 사이트·유선·비슷한 시간)으로 잰 변화</strong>가
+판정에 쓸 수 있는 숫자입니다.</p>
+<h3 id="통신사가-속도를-제한하기도-하나요">통신사가 속도를 제한하기도 하나요</h3>
+<p>약관에 따라 대용량 트래픽 관리 조항이 있는 상품이 있습니다 —
+다만 일상 다운로드에서 만날 일은 드물고, 의심 전에 위의 단위
+환산과 관문 점검이 먼저입니다. 대부분은 거기서 끝납니다.</p>
+<h3 id="다운로드는-빠른데-게임-핑이-튀어요">다운로드는 빠른데 게임 핑이 튀어요</h3>
+<p>속도(대역폭)와 지연(핑)은 다른 축입니다 — 다운로드가 만점이어도
+핑은 튈 수 있습니다. 그 갈래는 <a href="/posts/desktop-wifi-vs-lan.html">유선 vs 와이파이의 변동
+이야기</a>로 가세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>통신사 숫자 ÷ 8 = 다운로드 창의 만점</strong>입니다 — 500메가면
+62.5MB/s, 60MB/s대는 정상입니다</li>
+<li>진짜 느리면 <strong>유선 직결 측정</strong>부터 — 회선 무죄가 갈리는
+지점입니다</li>
+<li><strong>100Mbps 딱 걸림은 규격 관문</strong> — 랜선·포트·장비 중 고리를
+찾으세요</li>
+<li><strong>특정 서비스만 느리면 서버 쪽</strong> — 내 나사가 아닙니다</li>
+<li>시간대 패턴이면 기록을 들고 점검 요청 — 감이 아니라 숫자로요</li>
+</ol>
+<p>속도 이웃 글들 — <a href="/posts/lan-cable-cat.html">랜선 규격 관문</a> ·
+<a href="/posts/internet-2-5g-upgrade.html">요금제 업그레이드 계산</a> ·
+<a href="/posts/desktop-wifi-vs-lan.html">유선 vs 와이파이</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">인터넷속도</span> <span class="tag">다운로드속도</span> <span class="tag">Mbps</span> <span class="tag">기가인터넷</span> <span class="tag">속도측정</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/wireless-mouse-lag.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">무선 마우스 커서가 뚝뚝 끊길 때 — 배터리, 전파 길, 옆자리 USB 순서로 봅니다</span>
+        <span class="card-desc">무선 마우스 커서가 순간순간 멈추거나 튀는 증상은 원인이 여럿이라 헤매기 쉽습니다. 제일 흔한 배터리 출력 저하부터, 동글의 전파 길, 의외의 범인인 USB 3.0 간섭까지 — 공짜 진단 순서대로 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/desktop-wifi-vs-lan.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">데스크탑을 와이파이로 써도 되나 — 평균 속도가 아니라 튐을 봅니다</span>
+        <span class="card-desc">컴퓨터 자리에 랜선이 안 닿으면 와이파이로 버티게 됩니다. 웹서핑엔 문제없고 게임에선 말리는 이유가 뭔지 — 평균 속도와 순간 변동을 갈라 보면 판정이 깔끔해집니다. 유선을 못 까는 집의 절충안까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/router-device-count.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">공유기에 기기 많이 물리면 느려지나 — 대수가 아니라 동시 통신량이 정합니다</span>
+        <span class="card-desc">집에 와이파이 기기가 수십 대로 늘면서 &quot;몇 대까지 되나&quot;가 궁금해집니다. 숫자로 답할 수 없는 질문인데, 한계가 세 종류(접속 수·처리 체급·전파 혼잡)로 갈려서입니다. 증상별 판정과 대응 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

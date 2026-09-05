@@ -83,6 +83,13 @@
     <description>키보드에 물이나 커피를 쏟은 직후의 몇 분이 수리비를 정합니다. 즉시 할 것 세 가지와 절대 하면 안 되는 것들(드라이기·쌀통·켜서 확인), 맹물과 음료가 갈리는 이유, 수리점에 갈 판정 기준을 정리했습니다.</description>
   </item>
   <item>
+    <title>500메가 인터넷인데 다운로드가 느릴 때 — 실망의 절반은 단위 착시입니다</title>
+    <link>https://specfit.kr/posts/internet-download-speed.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/internet-download-speed.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>500메가 요금제를 쓰는데 다운로드 창에는 60MB/s만 떠서 속은 기분이 들 때가 있습니다. 그런데 그 숫자는 사실 만점입니다. 통신사의 메가와 다운로드 창의 MB는 단위가 8배 다르고, 진짜 느린 경우의 범인은 관문 목록에서 찾습니다.</description>
+  </item>
+  <item>
     <title>프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다</title>
     <link>https://specfit.kr/posts/game-stutter-fps.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/game-stutter-fps.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/psu-zero-fan.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>새 컴퓨터의 파워 팬이 멈춰 있으면 불량인가 싶어집니다. 요즘 파워 상당수는 저부하에서 팬을 일부러 멈추는 제로팬 설계입니다. 기능인지 고장인지 가르는 판정 절차와, 그래픽카드 팬에도 같은 이야기가 적용되는 이유를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>본체 먼지 청소, 얼마나 자주 — 달력이 아니라 신호를 보고 합니다</title>
-    <link>https://specfit.kr/posts/pc-dust-cleaning.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-dust-cleaning.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>컴퓨터 청소 주기를 물으면 몇 달에 한 번이라는 답이 제각각으로 돌아옵니다. 환경마다 쌓이는 속도가 달라 숫자 답이 없는 질문이라서입니다. 청소가 필요하다는 신호 세 가지와 안전한 청소 기본기, 덜 쌓이게 하는 배치를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
