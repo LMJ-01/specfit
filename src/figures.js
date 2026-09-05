@@ -840,7 +840,62 @@ export const figures = {
   'spill-first-aid': spillFirstAid,
   'retention-timeline': retentionTimeline,
   'shutdown-shape': shutdownShape,
+  'boot-relay': bootRelay,
 };
+
+/**
+ * "켜짐 ≠ 부팅" — 전원부터 모니터까지의 릴레이.
+ * pc-boot-no-display 의 진단 프레임 고정: 팬 회전은 첫 주자일 뿐.
+ */
+function bootRelay() {
+  const W = 640;
+  const y0 = 64;
+  const h = 44;
+  const stops = ['전원', 'CPU', '램', '그래픽', '케이블', '모니터'];
+  const bw = 78;
+  const gap = 26;
+  const x0 = 16;
+
+  let body = '';
+  body += t(16, 22, '화면이 나오기까지의 릴레이 — 팬 회전은 첫 주자가 뛰었다는 뜻일 뿐입니다', { weight: 600, size: 14 });
+
+  stops.forEach((name, i) => {
+    const x = x0 + i * (bw + gap);
+    const isFirst = i === 0;
+    body += rect(x, y0, bw, h, isFirst ? COLOR.soft : 'none', { stroke: isFirst ? COLOR.fit : COLOR.line });
+    body += t(x + bw / 2, y0 + h / 2 + 5, name, { anchor: 'middle', size: 13, weight: 600, fill: isFirst ? COLOR.fit : COLOR.text });
+    if (i < stops.length - 1) {
+      const ax = x + bw + 4;
+      body += `<line x1="${ax}" y1="${y0 + h / 2}" x2="${ax + gap - 8}" y2="${y0 + h / 2}" stroke="${COLOR.mute}" stroke-width="2"/>`;
+      body += `<polygon points="${ax + gap - 8},${y0 + h / 2 - 4} ${ax + gap - 1},${y0 + h / 2} ${ax + gap - 8},${y0 + h / 2 + 4}" fill="${COLOR.mute}"/>`;
+    }
+  });
+
+  // 첫 구간 주석: 팬이 도는 지점
+  body += t(x0 + bw / 2, y0 + h + 20, '팬이 도는 건', { anchor: 'middle', size: 11, fill: COLOR.fit });
+  body += t(x0 + bw / 2, y0 + h + 34, '여기까지의 증거', { anchor: 'middle', size: 11, fill: COLOR.fit });
+
+  // 안쪽 구간 (CPU·램·그래픽): 비프음·LED가 알려주는 구간
+  const innerX = x0 + (bw + gap) * 1 - 8;
+  const innerW = bw * 3 + gap * 2 + 16;
+  body += `<line x1="${innerX}" y1="${y0 - 14}" x2="${innerX + innerW}" y2="${y0 - 14}" stroke="${COLOR.over}" stroke-dasharray="5 4" stroke-width="2"/>`;
+  body += t(innerX + innerW / 2, y0 - 22, '멈추면 비프음·디버그 LED가 가리키는 구간 (안쪽 격리: 재장착)', { anchor: 'middle', size: 11, fill: COLOR.over });
+
+  // 바깥 구간 (케이블·모니터): 공짜 격리
+  const outX = x0 + (bw + gap) * 4 - 8;
+  const outW = bw * 2 + gap + 16;
+  body += `<line x1="${outX}" y1="${y0 + h + 14}" x2="${outX + outW}" y2="${y0 + h + 14}" stroke="${COLOR.accent}" stroke-width="2"/>`;
+  body += t(outX + outW / 2, y0 + h + 30, '바깥 격리부터 (공짜) —', { anchor: 'middle', size: 11, fill: COLOR.accent });
+  body += t(outX + outW / 2, y0 + h + 44, '메뉴·소스·케이블·포트', { anchor: 'middle', size: 11, fill: COLOR.accent });
+
+  return figure(
+    '부팅 릴레이 — 전원·CPU·램·그래픽·케이블·모니터 중 어디서 바통이 떨어졌는지 찾는 진단',
+    W,
+    174,
+    body,
+    '진단 순서는 거꾸로가 쌉니다 — 바깥(케이블·모니터)을 공짜로 먼저 자르고, 안쪽(램·그래픽 재장착)으로 들어갑니다.'
+  );
+}
 
 /**
  * 게임 중 꺼짐 — 꺼진 모양 세 갈래.
@@ -866,14 +921,14 @@ function shutdownShape() {
 
   // ① 무징후 컷: 화면이 즉시 검게 — 실선이 뚝 끊김
   const x1 = 16;
-  body += rect(x1, boxY, panelW, boxH, { fill: 'none', stroke: COLOR.line });
+  body += rect(x1, boxY, panelW, boxH, 'none', { stroke: COLOR.line });
   body += `<line x1="${x1 + 12}" y1="${boxY + 32}" x2="${x1 + 96}" y2="${boxY + 32}" stroke="${COLOR.over}" stroke-width="4"/>`;
   body += t(x1 + 104, boxY + 37, '✕', { size: 15, weight: 700, fill: COLOR.over });
   body += panel(x1, '① 아무 징후 없이 툭', COLOR.over, '전원 계열 유력', '콘센트 직결 → 커넥터 → 용량·나이');
 
   // ② 재부팅: 끊겼다 다시 시작 — 선이 끊긴 뒤 재개
   const x2 = 16 + panelW + gap;
-  body += rect(x2, boxY, panelW, boxH, { fill: 'none', stroke: COLOR.line });
+  body += rect(x2, boxY, panelW, boxH, 'none', { stroke: COLOR.line });
   body += `<line x1="${x2 + 12}" y1="${boxY + 32}" x2="${x2 + 76}" y2="${boxY + 32}" stroke="${COLOR.accent}" stroke-width="4"/>`;
   body += `<path d="M ${x2 + 84} ${boxY + 32} a 10 10 0 1 1 -4 -18" fill="none" stroke="${COLOR.accent}" stroke-width="2.5"/>`;
   body += `<line x1="${x2 + 108}" y1="${boxY + 32}" x2="${x2 + 172}" y2="${boxY + 32}" stroke="${COLOR.accent}" stroke-width="4"/>`;
@@ -881,7 +936,7 @@ function shutdownShape() {
 
   // ③ 부하 시간·계절 비례: 서서히 차오르다 컷 — 상승 곡선 끝 절단
   const x3 = 16 + (panelW + gap) * 2;
-  body += rect(x3, boxY, panelW, boxH, { fill: 'none', stroke: COLOR.line });
+  body += rect(x3, boxY, panelW, boxH, 'none', { stroke: COLOR.line });
   {
     const pts = [];
     for (let i = 0; i <= 20; i++) {
