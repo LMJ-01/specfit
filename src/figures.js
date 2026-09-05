@@ -842,7 +842,51 @@ export const figures = {
   'shutdown-shape': shutdownShape,
   'boot-relay': bootRelay,
   'mouse-capture': mouseCapture,
+  'power-budget': powerBudget,
 };
+
+/**
+ * 노트북 성능 = 전력 예산 — 전원 상황별 예산 막대.
+ * laptop-slow-on-battery 의 "한 축으로 양방향 설명" 구조 고정.
+ */
+function powerBudget() {
+  const W = 640;
+  const x0 = 170;
+  const maxW = 420;
+  const rowH = 34;
+  const gap = 18;
+  const y0 = 52;
+
+  const row = (i, label, frac, color, note, dashed) => {
+    const y = y0 + i * (rowH + gap);
+    let s = '';
+    s += t(x0 - 12, y + rowH / 2 + 5, label, { anchor: 'end', size: 12, weight: 600 });
+    s += rect(x0, y, maxW, rowH, 'none', { stroke: COLOR.line, r: 6 });
+    if (dashed) {
+      s += `<rect x="${x0}" y="${y}" width="${maxW * frac}" height="${rowH}" rx="6" fill="${color}" opacity="0.45"/>`;
+      s += `<line x1="${x0 + maxW * frac}" y1="${y + 3}" x2="${x0 + maxW * frac}" y2="${y + rowH - 3}" stroke="${color}" stroke-width="3" stroke-dasharray="4 4"/>`;
+    } else {
+      s += rect(x0, y, maxW * frac, rowH, color, { r: 6 });
+    }
+    s += t(x0 + maxW + 10, y + rowH / 2 + 5, note, { size: 11, fill: COLOR.mute });
+    return s;
+  };
+
+  let body = '';
+  body += t(16, 22, '같은 노트북, 다른 전력 예산 — 예산이 속도를 정합니다', { weight: 600, size: 14 });
+  body += row(0, '정격 어댑터', 1.0, COLOR.fit, '기준선');
+  body += row(1, '배터리 구동', 0.55, COLOR.accent, '줄인 예산 = 설계');
+  body += row(2, '정격 미달 어댑터', 0.75, COLOR.over, '어정쩡 — 고부하에서 출렁', true);
+  body += t(x0, y0 + 3 * (rowH + gap) + 8, '※ 비율은 개념 예시입니다 — 실제 폭은 기기·모드 설정에 따라 다릅니다', { size: 11, fill: COLOR.mute });
+
+  return figure(
+    '전력 예산 막대 — 정격 어댑터가 기준선, 배터리는 설계상 줄인 예산, 정격 미달 어댑터는 고부하에서 출렁이는 어정쩡한 예산',
+    W,
+    216,
+    body,
+    '"배터리에서 느림"과 "어댑터 꽂고 느림"이 같은 축의 다른 지점인 이유입니다.'
+  );
+}
 
 /**
  * 화면 모드별 마우스 캡처 — 독점 전체화면은 벽, 테두리 없는 창은 개방.
