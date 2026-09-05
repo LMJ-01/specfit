@@ -27,6 +27,13 @@
     <description>750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.</description>
   </item>
   <item>
+    <title>게임하다 컴퓨터가 꺼진다면 — 꺼진 모양이 범인을 알려줍니다</title>
+    <link>https://specfit.kr/posts/pc-shutdown-during-game.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-shutdown-during-game.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>게임 중에만 컴퓨터가 툭 꺼지거나 혼자 재부팅되는 증상은 원인 후보가 많아 막막합니다. 그런데 꺼진 모양(무징후 컷·재부팅·서서히 뜨거워지다)이 갈래를 알려줍니다. 진단 순서와 격리 방법을 정리했습니다.</description>
+  </item>
+  <item>
     <title>케이스 옆판 열고 쓰면 안 되나 — 진단용으로는 최고, 상시 운용으로는 손해입니다</title>
     <link>https://specfit.kr/posts/pc-case-open.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-case-open.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ipad-coding-study.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>아이패드가 이미 있으면 코딩 공부도 이걸로 되지 않을까 싶어집니다. 안 되는 이유는 사양이 아니라 소프트웨어 구조에 있고, 그래서 되는 범위와 안 되는 범위의 경계가 뚜렷합니다. 태블릿의 좋은 자리와 노트북이 필요한 순간을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>그래픽카드 온도 80도, 괜찮나 — 숫자 하나가 아니라 거동 셋으로 판정합니다</title>
-    <link>https://specfit.kr/posts/gpu-temp-normal.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/gpu-temp-normal.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>게임 중 온도를 봤다가 80도에 놀라 검색하게 됩니다. 몇 도가 정상인지는 카드마다 달라 숫자로 답할 수 없고, 판정은 온도의 거동 세 가지로 합니다. 평형·성능 유지·추세라는 기준과 개선 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
