@@ -13,6 +13,13 @@
     <description>듀얼 모니터에서 절전이나 디스플레이 끄기 후 복귀하면 열어 둔 창이 전부 한쪽 화면으로 몰리거나 왼쪽 위에 쌓이는 증상이 있습니다. 고장이 아니라 모니터가 꺼지는 순간 윈도우에게 사라진 것으로 보이기 때문입니다. 구조와 완화책 사다리를 정리했습니다.</description>
   </item>
   <item>
+    <title>노트북에서 블루투스 이어폰이 뚝뚝 끊길 때 — 끊기는 정황이 갈래를 알려줍니다</title>
+    <link>https://specfit.kr/posts/bluetooth-earbuds-stutter.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/bluetooth-earbuds-stutter.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>폰에서는 멀쩡한 블루투스 이어폰이 노트북·컴퓨터에서만 끊기고 지직거리는 증상은 흔한데 원인 후보가 많아 헤매기 쉽습니다. 와이파이를 쓸 때 심한지, 한동안 조용하다 재생하면 끊기는지, 통화를 켜면 음질이 망가지는지 — 정황별 판정과 처방을 정리했습니다.</description>
+  </item>
+  <item>
     <title>무선 마우스 커서가 뚝뚝 끊길 때 — 배터리, 전파 길, 옆자리 USB 순서로 봅니다</title>
     <link>https://specfit.kr/posts/wireless-mouse-lag.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/wireless-mouse-lag.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ssd-migration-vs-clean-install.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>SSD를 바꿀 때 윈도우를 통째로 옮길지 새로 깔지 갈립니다. 판정 기준은 취향이 아니라 지금 시스템의 상태입니다. 복사는 좋은 것과 나쁜 것을 같이 옮기니까요. 갈림길과 안전 수칙, 실패 대비까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>공유기에 기기 많이 물리면 느려지나 — 대수가 아니라 동시 통신량이 정합니다</title>
-    <link>https://specfit.kr/posts/router-device-count.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/router-device-count.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>집에 와이파이 기기가 수십 대로 늘면서 "몇 대까지 되나"가 궁금해집니다. 숫자로 답할 수 없는 질문인데, 한계가 세 종류(접속 수·처리 체급·전파 혼잡)로 갈려서입니다. 증상별 판정과 대응 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
