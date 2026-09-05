@@ -151,5 +151,7 @@ tags: [듀얼모니터, 마우스이탈, 전체화면, 테두리없는창, 게�
 듀얼 모니터의 이웃 판정들 — [게임 프레임 영향](/posts/dual-monitor-gaming-fps.html) ·
 [해상도 혼용](/posts/monitor-mixed-resolution.html) ·
 [듀얼 vs 큰 한 대](/posts/dual-monitor-vs-single.html)와 이어집니다.
+(절전에서 깰 때 [창이 한쪽으로 몰리는 증상](/posts/monitor-sleep-window-move.html)은
+"때"가 다른 이웃 증상입니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

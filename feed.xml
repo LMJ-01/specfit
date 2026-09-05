@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>절전에서 깨면 창이 한쪽 모니터로 몰릴 때 — 모니터가 잠깐 "없는 것"이 됐기 때문입니다</title>
+    <link>https://specfit.kr/posts/monitor-sleep-window-move.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-sleep-window-move.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>듀얼 모니터에서 절전이나 디스플레이 끄기 후 복귀하면 열어 둔 창이 전부 한쪽 화면으로 몰리거나 왼쪽 위에 쌓이는 증상이 있습니다. 고장이 아니라 모니터가 꺼지는 순간 윈도우에게 사라진 것으로 보이기 때문입니다. 구조와 완화책 사다리를 정리했습니다.</description>
+  </item>
+  <item>
     <title>무선 마우스 커서가 뚝뚝 끊길 때 — 배터리, 전파 길, 옆자리 USB 순서로 봅니다</title>
     <link>https://specfit.kr/posts/wireless-mouse-lag.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/wireless-mouse-lag.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/router-device-count.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>집에 와이파이 기기가 수십 대로 늘면서 "몇 대까지 되나"가 궁금해집니다. 숫자로 답할 수 없는 질문인데, 한계가 세 종류(접속 수·처리 체급·전파 혼잡)로 갈려서입니다. 증상별 판정과 대응 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>램 사용률 90%, 문제인가 — 숫자가 아니라 증상으로 판정합니다</title>
-    <link>https://specfit.kr/posts/ram-usage-normal.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ram-usage-normal.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>작업 관리자의 램 사용률이 높으면 불안해집니다. 그런데 사용률은 기준선이 있는 숫자가 아니라, 증상과 주범을 같이 봐야 판정이 됩니다. 판정 순서, 주범 찾는 법, 램 정리 프로그램이 대개 헛수고인 이유까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
