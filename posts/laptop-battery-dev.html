@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 노트북 배터리 — 표기 시간이 안 맞는 이유","description":"제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-08-22","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-battery-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 노트북 배터리 — 표기 시간이 안 맞는 이유","description":"제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-09-06","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-battery-dev.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"개발용 노트북 배터리 — 표기 시간이 안 맞는 이유","item":"https://specfit.kr/posts/laptop-battery-dev.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"배터리는 나중에 교체할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"제조사 서비스로는 대개 가능합니다. 다만 최근 얇은 모델은 접착식이 많아 사용자가 직접 하기는 어렵습니다. SSD처럼 쉽게 바꾸는 부품이 아닙니다."}},{"@type":"Question","name":"항상 꽂아두면 배터리가 상하나요","acceptedAnswer":{"@type":"Answer","text":"완충 상태로 오래 두는 것이 좋지는 않습니다. 그래서 요즘 노트북에는 충전을 80% 선에서 멈추는 기능이 들어 있는 경우가 많습니다. 주로 책상에서 쓰신다면 켜두시는 편이 낫습니다."}},{"@type":"Question","name":"배터리가 몇 % 남았는지가 실제와 다릅니다","acceptedAnswer":{"@type":"Answer","text":"배터리가 닳으면 실제 용량과 표시가 어긋납니다. powercfg /batteryreport 로 설계 용량과 현재 용량을 비교해 보세요. 차이가 크면 노후입니다."}},{"@type":"Question","name":"화면 밝기가 그렇게 영향이 큰가요","acceptedAnswer":{"@type":"Answer","text":"큽니다. 화면은 상시 켜져 있는 부품이라 누적이 큽니다. 밝기를 낮추는 것이 가장 손쉬운 절약입니다."}},{"@type":"Question","name":"맥북이 배터리가 더 오래 가나요","acceptedAnswer":{"@type":"Answer","text":"일반적으로 유리한 편입니다. 다만 로컬 LLM처럼 오래 부하가 걸리는 작업에서는 맥도 빨리 닳습니다. 칩별 차이는 맥북 에어 vs 프로에 있습니다."}},{"@type":"Question","name":"로컬 LLM을 배터리로 돌려도 되나요","acceptedAnswer":{"@type":"Answer","text":"동작은 합니다. 다만 소비 전력이 커서 시간이 매우 짧고, 배터리 모드에서 성능도 제한됩니다. 전원을 꽂고 쓰는 작업이라고 보시는 편이 맞습니다. 사양 기준은 Ollama 최소 사양에 있습니다."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>개발용 노트북 배터리 — 표기 시간이 안 맞는 이유</h1>
     <p class="post-meta">
       <time datetime="2026-08-17">2026년 8월 17일</time>
-      <span class="updated">· 2026년 8월 22일 갱신</span>
+      <span class="updated">· 2026년 9월 6일 갱신</span>
     </p>
   </header>
 
@@ -215,7 +215,8 @@
 <li><strong>대부분 100Wh 아래</strong>입니다. 항공 규정 때문이고, 여지는 최대 두 배 정도입니다</li>
 <li>실제 시간은 <strong>Wh ÷ 소비 W</strong> 입니다. 나눗셈 하나면 나옵니다</li>
 <li>표기 시간은 영상 재생 기준입니다. <strong>절반 이하로 잡으세요</strong></li>
-<li><strong>배터리로 돌리면 성능이 제한됩니다.</strong> 시간보다 이쪽이 성가십니다</li>
+<li><strong>배터리로 돌리면 성능이 제한됩니다.</strong> 시간보다 이쪽이 성가십니다 —
+<a href="/posts/laptop-slow-on-battery.html">왜 그런지와 조절 손잡이</a>는 따로 정리했습니다</li>
 <li><code>powercfg /batteryreport</code> 로 <strong>본인 기기에서 직접 재세요</strong></li>
 </ol>
 <p>수치가 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
@@ -237,17 +238,17 @@
       </a>
     </li>
     <li class="card">
+      <a href="/posts/laptop-slow-on-battery.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">배터리로 쓰면 노트북이 느려질 때 — 성능은 전력 예산의 함수입니다</span>
+        <span class="card-desc">어댑터를 뽑으면 노트북이 눈에 띄게 느려지는 건 고장이 아니라 설계입니다. 그런데 반대로 어댑터를 꽂으면 렉이 걸린다는 사람도 있습니다. 두 반대 증상이 전력 예산이라는 한 축으로 설명되고, 판정 순서도 거기서 나옵니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/laptop-water-spill.html">
         <span class="card-cat">노트북</span>
         <span class="card-title">노트북에 물을 쏟았다면 — 켜 보고 싶은 그 손이 제일 위험합니다</span>
         <span class="card-desc">키보드에 물이나 커피를 쏟은 직후의 몇 분이 수리비를 정합니다. 즉시 할 것 세 가지와 절대 하면 안 되는 것들(드라이기·쌀통·켜서 확인), 맹물과 음료가 갈리는 이유, 수리점에 갈 판정 기준을 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/ipad-coding-study.html">
-        <span class="card-cat">노트북</span>
-        <span class="card-title">아이패드로 코딩 공부 되나 — 관문은 성능이 아니라 운영체제입니다</span>
-        <span class="card-desc">아이패드가 이미 있으면 코딩 공부도 이걸로 되지 않을까 싶어집니다. 안 되는 이유는 사양이 아니라 소프트웨어 구조에 있고, 그래서 되는 범위와 안 되는 범위의 경계가 뚜렷합니다. 태블릿의 좋은 자리와 노트북이 필요한 순간을 정리했습니다.</span>
       </a>
     </li>
   </ul>

@@ -13,6 +13,13 @@
     <description>듀얼 모니터에서 절전이나 디스플레이 끄기 후 복귀하면 열어 둔 창이 전부 한쪽 화면으로 몰리거나 왼쪽 위에 쌓이는 증상이 있습니다. 고장이 아니라 모니터가 꺼지는 순간 윈도우에게 사라진 것으로 보이기 때문입니다. 구조와 완화책 사다리를 정리했습니다.</description>
   </item>
   <item>
+    <title>배터리로 쓰면 노트북이 느려질 때 — 성능은 전력 예산의 함수입니다</title>
+    <link>https://specfit.kr/posts/laptop-slow-on-battery.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-slow-on-battery.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>어댑터를 뽑으면 노트북이 눈에 띄게 느려지는 건 고장이 아니라 설계입니다. 그런데 반대로 어댑터를 꽂으면 렉이 걸린다는 사람도 있습니다. 두 반대 증상이 전력 예산이라는 한 축으로 설명되고, 판정 순서도 거기서 나옵니다.</description>
+  </item>
+  <item>
     <title>키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다</title>
     <link>https://specfit.kr/posts/keyboard-some-keys-dead.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/keyboard-some-keys-dead.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-one-blank.html</guid>
     <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
     <description>잘 쓰던 듀얼 모니터에서 한쪽만 화면이 안 나오는 일은 흔한데, 원인 후보가 많아 헤매기 쉽습니다. 케이블 맞바꾸기 한 번으로 범인의 절반이 갈리고, 증상 세 갈래로 나머지가 갈립니다. 진단 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>게임 중 마우스가 옆 모니터로 나갈 때 — 반대 고민 둘이 같은 구조입니다</title>
-    <link>https://specfit.kr/posts/dual-monitor-mouse-escape.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-mouse-escape.html</guid>
-    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
-    <description>듀얼 모니터로 게임하다 마우스가 옆 화면으로 빠져 클릭 사고가 나는 사람과, 반대로 옆 화면으로 안 넘어가서 불편한 사람이 같은 게시판에 공존합니다. 둘 다 게임의 화면 모드가 마우스를 다루는 방식 하나로 설명되고, 해법도 그 스위치 하나입니다.</description>
   </item>
 </channel>
 </rss>

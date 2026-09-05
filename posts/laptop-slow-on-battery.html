@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>배터리로 쓰면 노트북이 느려질 때 — 성능은 전력 예산의 함수입니다 | 스펙핏</title>
+<meta name="description" content="어댑터를 뽑으면 노트북이 눈에 띄게 느려지는 건 고장이 아니라 설계입니다. 그런데 반대로 어댑터를 꽂으면 렉이 걸린다는 사람도 있습니다. 두 반대 증상이 전력 예산이라는 한 축으로 설명되고, 판정 순서도 거기서 나옵니다.">
+<link rel="canonical" href="https://specfit.kr/posts/laptop-slow-on-battery.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="배터리로 쓰면 노트북이 느려질 때 — 성능은 전력 예산의 함수입니다 | 스펙핏">
+<meta property="og:description" content="어댑터를 뽑으면 노트북이 눈에 띄게 느려지는 건 고장이 아니라 설계입니다. 그런데 반대로 어댑터를 꽂으면 렉이 걸린다는 사람도 있습니다. 두 반대 증상이 전력 예산이라는 한 축으로 설명되고, 판정 순서도 거기서 나옵니다.">
+<meta property="og:url" content="https://specfit.kr/posts/laptop-slow-on-battery.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"배터리로 쓰면 노트북이 느려질 때 — 성능은 전력 예산의 함수입니다","description":"어댑터를 뽑으면 노트북이 눈에 띄게 느려지는 건 고장이 아니라 설계입니다. 그런데 반대로 어댑터를 꽂으면 렉이 걸린다는 사람도 있습니다. 두 반대 증상이 전력 예산이라는 한 축으로 설명되고, 판정 순서도 거기서 나옵니다.","datePublished":"2026-09-06","dateModified":"2026-09-06","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-slow-on-battery.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"배터리로 쓰면 노트북이 느려질 때 — 성능은 전력 예산의 함수입니다","item":"https://specfit.kr/posts/laptop-slow-on-battery.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"배터리로도 영상·문서는 멀쩡한데요","acceptedAnswer":{"@type":"Answer","text":"그게 설계의 의도입니다 — 가벼운 작업은 줄어든 예산으로도 충분해서 차이가 안 보이고, 예산을 다 쓰는 작업(게임·빌드· 변환)에서만 축소가 드러납니다."}},{"@type":"Question","name":"배터리 아낀다고 항상 절전 모드로 두는데, 괜찮나요","acceptedAnswer":{"@type":"Answer","text":"작업이 굼뜨게 느껴지지 않는다면 괜찮은 운용입니다 — 다만 \"노트북이 원래 이렇게 느린가\"라는 오해의 흔한 원인이기도 합니다. 느리다고 느껴질 때 전원 모드부터 확인하는 습관이 사양 탓과 설정 탓을 가르는 첫 단추입니다."}},{"@type":"Question","name":"USB-C 보조배터리로 노트북을 돌리면요","acceptedAnswer":{"@type":"Answer","text":"같은 축입니다 — 보조배터리가 내는 와트가 예산이 됩니다. PD 규격과 와트 계산이 그 글이고, 대개 \"충전은 되지만 고부하 예산은 안 나오는\" 구간에 걸립니다."}},{"@type":"Question","name":"게임 노트북인데 배터리로 게임하면 프레임이 반토막이에요","acceptedAnswer":{"@type":"Answer","text":"위 구조의 전형입니다 — 그 등급의 그래픽은 배터리 출력으로 감당이 안 되는 전력을 먹습니다. 고장 진단이 아니라 \"어댑터 꽂고 하는 게임\"이 그 제품의 사용 설명서라고 보는 게 맞습니다."}},{"@type":"Question","name":"어댑터를 꽂으면 팬이 시끄러워져요","acceptedAnswer":{"@type":"Answer","text":"느려짐이 아니라 시끄러움이면 대체로 반대 이야기입니다 — 예산이 커진 만큼 최대로 일하고, 그만큼 열이 나서 팬이 도는 것입니다. 소음이 부담이면 전원 모드를 한 단계 낮추는 것이 그 절충의 손잡이입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>배터리로 쓰면 노트북이 느려질 때 — 성능은 전력 예산의 함수입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-06">2026년 9월 6일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>어댑터를 뽑는 순간 <strong>노트북이 눈에 띄게 굼떠집니다.</strong> 게임
+프레임이 뚝 떨어지고, 빌드가 배로 걸립니다. 고장인가 싶어
+검색하면 — 반대로 <strong>&quot;어댑터를 꽂으면 렉이 걸려요&quot;</strong>라는 사람들도
+있습니다. 같은 게시판에 정반대 증상이 공존합니다.</p>
+<p><a href="/posts/dual-monitor-mouse-escape.html">마우스 이탈 문제</a>처럼, 이
+반대 증상 둘도 <strong>한 축으로 설명됩니다</strong> — 노트북 성능은 <strong>전력
+예산의 함수</strong>라는 축입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>증상</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td><strong>배터리로 쓰면 느림</strong></td><td>대부분 <strong>고장이 아니라 설계</strong>입니다 — 예산을 줄여 오래 버티는 모드</td></tr>
+<tr><td>배터리에서도 제 속도가 필요함</td><td>전원 모드(성능 슬라이더)를 올리는 절충이 있습니다 — 시간과 맞바꿈</td></tr>
+<tr><td><strong>어댑터를 꽂으면</strong> 느려짐·렉</td><td>역설 증상 — <strong>정격 미달 어댑터</strong> 또는 <strong>충전+부하 발열</strong>이 용의자입니다</td></tr>
+<tr><td>게임 노트북이 어댑터 없이 프레임 반토막</td><td>흔한 설계입니다 — 큰 전력은 어댑터에서만 나옵니다</td></tr>
+<tr><td>꽂아도 뽑아도 똑같이 느림</td><td>이 글이 아니라 <a href="/posts/laptop-thermal-throttling.html">온도·스로틀링 판정</a> 쪽입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="축-하나-성능은-전력-예산의-함수">축 하나 — 성능은 전력 예산의 함수</h2>
+<p>노트북의 CPU·그래픽은 <strong>쓸 수 있는 전력과 견딜 수 있는 발열의
+한도 안에서</strong> 속도를 정합니다. 그 한도(예산)가 상황마다 다릅니다:</p>
+<ul>
+<li><strong>어댑터 연결</strong> — 예산이 가장 큽니다. 제 성능의 기준선입니다</li>
+<li><strong>배터리 구동</strong> — 예산을 줄입니다. 배터리를 오래 버티게 하고
+순간 방전 부담을 줄이는, <strong>의도된 설계</strong>입니다. 어댑터를 뽑을
+때 느려지는 건 이 예산 축소가 보이는 것뿐입니다</li>
+<li>특히 <strong>전력을 크게 먹는 게임·고성능 노트북</strong>은 배터리가 낼 수
+있는 전력 자체가 어댑터에 한참 못 미쳐서, 어댑터 없이는 제
+성능이 구조적으로 안 나오는 제품이 흔합니다</li>
+</ul>
+<p>그래서 &quot;배터리에서 느림&quot;의 처방은 수리가 아니라 <strong>예산 설정</strong>
+입니다: 윈도우 전원 모드(슬라이더)나 제조사 유틸리티에서 배터리
+시 성능 수위를 올릴 수 있습니다 — 대신
+<a href="/posts/laptop-battery-dev.html">배터리 시간과의 맞바꿈</a>이라는
+가격표가 붙습니다. 무거운 작업은 어댑터를 꽂고 하는 것이 정석인
+이유이기도 합니다.</p>
+<h2 id="역설-증상-어댑터를-꽂았더니-느려졌다">역설 증상 — 어댑터를 꽂았더니 느려졌다</h2>
+<p>예산이 커졌는데 느려졌다면, 예산 축의 다른 두 변수를 봅니다.</p>
+<ol>
+<li><strong>어댑터가 정격 미달</strong> — 노트북이 요구하는 와트보다 작은
+어댑터(여행용 소형, 폰 충전기, 규격 미달 케이블)를 꽂으면
+&quot;전원은 연결됐는데 예산은 모자란&quot; 어정쩡한 상태가 됩니다.
+충전이 느린 정도로 끝나기도 하지만, 전력이 모자라는 고부하
+에서는 성능이 출렁이는 원인이 됩니다 —
+<a href="/posts/laptop-charger-watt-pd.html">어댑터 와트 읽는 법</a>으로
+정격부터 확인하세요. <strong>번들 어댑터로 바꿔 재현되는지</strong>가
+격리 진단입니다</li>
+<li><strong>충전 + 부하의 동시 발열</strong> — 충전 자체가 열을 냅니다. 방전된
+배터리를 급히 채우면서 게임까지 돌리면 열 예산이 먼저
+바닥나고, <a href="/posts/gpu-temp-normal.html">온도 거동 판정</a>대로
+스로틀링이 걸립니다. 온도 그래프가 이 갈래의 판정 도구이고,
+완충 후에도 같은지 보는 것이 격리입니다</li>
+<li>둘 다 아니면 — 전원 관련 드라이버·바이오스 갱신이 남은
+카드입니다. 이 증상은 펌웨어 버전을 타는 계열입니다</li>
+</ol>
+<p>참고로 커뮤니티에는 배터리 관련 장치를 비활성화해 제한을 푸는
+우회가 돌아다니는데, <strong>배터리 잔량 표시·관리까지 같이 잃는
+방법이라 권하지 않습니다</strong> — 전원 모드라는 정식 손잡이가 있는
+자리입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="배터리로도-영상문서는-멀쩡한데요">배터리로도 영상·문서는 멀쩡한데요</h3>
+<p>그게 설계의 의도입니다 — 가벼운 작업은 줄어든 예산으로도
+충분해서 차이가 안 보이고, <strong>예산을 다 쓰는 작업(게임·빌드·
+변환)에서만</strong> 축소가 드러납니다.</p>
+<h3 id="배터리-아낀다고-항상-절전-모드로-두는데-괜찮나요">배터리 아낀다고 항상 절전 모드로 두는데, 괜찮나요</h3>
+<p>작업이 굼뜨게 느껴지지 않는다면 괜찮은 운용입니다 — 다만
+&quot;노트북이 원래 이렇게 느린가&quot;라는 오해의 흔한 원인이기도
+합니다. 느리다고 느껴질 때 전원 모드부터 확인하는 습관이
+<a href="/posts/ram-usage-normal.html">사양 탓과 설정 탓을 가르는</a> 첫
+단추입니다.</p>
+<h3 id="usb-c-보조배터리로-노트북을-돌리면요">USB-C 보조배터리로 노트북을 돌리면요</h3>
+<p>같은 축입니다 — 보조배터리가 내는 와트가 예산이 됩니다.
+<a href="/posts/laptop-charger-watt-pd.html">PD 규격과 와트 계산</a>이 그
+글이고, 대개 &quot;충전은 되지만 고부하 예산은 안 나오는&quot; 구간에
+걸립니다.</p>
+<h3 id="게임-노트북인데-배터리로-게임하면-프레임이-반토막이에요">게임 노트북인데 배터리로 게임하면 프레임이 반토막이에요</h3>
+<p>위 구조의 전형입니다 — 그 등급의 그래픽은 배터리 출력으로
+감당이 안 되는 전력을 먹습니다. 고장 진단이 아니라 &quot;어댑터
+꽂고 하는 게임&quot;이 그 제품의 사용 설명서라고 보는 게 맞습니다.</p>
+<h3 id="어댑터를-꽂으면-팬이-시끄러워져요">어댑터를 꽂으면 팬이 시끄러워져요</h3>
+<p>느려짐이 아니라 시끄러움이면 대체로 반대 이야기입니다 —
+예산이 커진 만큼 최대로 일하고, 그만큼 열이 나서 팬이 도는
+것입니다. 소음이 부담이면 전원 모드를 한 단계 낮추는 것이
+그 절충의 손잡이입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>노트북 성능 = 전력 예산의 함수</strong>입니다 — 어댑터는 큰 예산,
+배터리는 줄인 예산(설계)입니다</li>
+<li>배터리에서 느린 건 고장이 아닙니다 — <strong>전원 모드 슬라이더</strong>가
+정식 손잡이고, 배터리 시간과의 맞바꿈입니다</li>
+<li><strong>어댑터 꽂고 느려지는 역설</strong>은 정격 미달 어댑터·충전 발열
+순서로 봅니다 — 번들 어댑터 격리가 판정입니다</li>
+<li>게임·고성능 노트북은 어댑터 없이 제 성능이 안 나오는 설계가
+흔합니다</li>
+<li>장치 비활성화류 우회는 권하지 않습니다 — 정식 손잡이가 있는
+자리입니다</li>
+</ol>
+<p>전원 이웃 글들 — <a href="/posts/laptop-battery-dev.html">배터리 시간 계산</a> ·
+<a href="/posts/laptop-charger-watt-pd.html">충전기 와트와 PD</a> ·
+<a href="/posts/laptop-thermal-throttling.html">스로틀링 판정</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">노트북느려짐</span> <span class="tag">배터리모드</span> <span class="tag">전원모드</span> <span class="tag">어댑터와트</span> <span class="tag">스로틀링</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/keyboard-some-keys-dead.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다</span>
+        <span class="card-desc">키보드에서 몇 개의 키만 반응이 없으면 교체해야 하나 싶지만, 소프트웨어 층이 범인인 경우도 많습니다. 화면 키보드와 외부 키보드로 층을 가르는 격리 진단, 그리고 죽은 키들의 배치가 알려주는 것까지 — 판정 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-water-spill.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">노트북에 물을 쏟았다면 — 켜 보고 싶은 그 손이 제일 위험합니다</span>
+        <span class="card-desc">키보드에 물이나 커피를 쏟은 직후의 몇 분이 수리비를 정합니다. 즉시 할 것 세 가지와 절대 하면 안 되는 것들(드라이기·쌀통·켜서 확인), 맹물과 음료가 갈리는 이유, 수리점에 갈 판정 기준을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ipad-coding-study.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">아이패드로 코딩 공부 되나 — 관문은 성능이 아니라 운영체제입니다</span>
+        <span class="card-desc">아이패드가 이미 있으면 코딩 공부도 이걸로 되지 않을까 싶어집니다. 안 되는 이유는 사양이 아니라 소프트웨어 구조에 있고, 그래서 되는 범위와 안 되는 범위의 경계가 뚜렷합니다. 태블릿의 좋은 자리와 노트북이 필요한 순간을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
