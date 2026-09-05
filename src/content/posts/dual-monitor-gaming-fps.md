@@ -2,6 +2,7 @@
 title: 듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다
 description: 모니터를 한 대 더 달면 게임 성능이 깎이는지 걱정이 됩니다. 꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 보조 화면 위에서 도는 작업입니다. 구조와 판정, 줄이는 요령을 정리했습니다.
 date: 2026-09-04
+updated: 2026-09-05
 category: monitor
 tags: [듀얼모니터, 게임프레임, 프레임드랍, GPU, 모니터두대]
 ---
@@ -148,5 +149,9 @@ GPU 사용률이 원래 90%대에 붙어 있던 게임이라면 나눠 줄 여�
 듀얼 구성의 다른 판정들 — [듀얼 vs 큰 한 대](/posts/dual-monitor-vs-single.html) ·
 [색감 차이](/posts/dual-monitor-color-match.html) ·
 [해상도 혼용](/posts/monitor-mixed-resolution.html)과 이어집니다.
+
+(프레임이 아니라 **게임 중 마우스가 옆 화면으로 나가는(또는 안
+넘어가는) 문제**라면 — [화면 모드의 마우스 캡처 구조](/posts/dual-monitor-mouse-escape.html)가
+그 답입니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

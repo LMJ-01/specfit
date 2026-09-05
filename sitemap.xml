@@ -12,6 +12,7 @@
   <url><loc>https://specfit.kr/contact.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/dual-monitor-mouse-escape.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dual-monitor-one-blank.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-stutter-fps.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-download-speed.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
@@ -30,7 +31,7 @@
   <url><loc>https://specfit.kr/posts/cpu-mobo-swap-windows.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/desktop-wifi-vs-lan.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dual-monitor-color-match.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/dual-monitor-gaming-fps.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/dual-monitor-gaming-fps.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-case-clearance.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-temp-normal.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ipad-coding-study.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
@@ -82,7 +83,7 @@
   <url><loc>https://specfit.kr/posts/gpu-sag-support.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-kvm.html</loc><lastmod>2026-08-30</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/tv-as-monitor.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/monitor-mixed-resolution.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/monitor-mixed-resolution.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/psu-80plus.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ai-coding-tool-pc-spec.html</loc><lastmod>2026-08-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-charger-watt-pd.html</loc><lastmod>2026-08-26</lastmod><priority>0.8</priority></url>

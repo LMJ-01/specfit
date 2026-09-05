@@ -104,6 +104,13 @@
     <description>잘 쓰던 듀얼 모니터에서 한쪽만 화면이 안 나오는 일은 흔한데, 원인 후보가 많아 헤매기 쉽습니다. 케이블 맞바꾸기 한 번으로 범인의 절반이 갈리고, 증상 세 갈래로 나머지가 갈립니다. 진단 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>게임 중 마우스가 옆 모니터로 나갈 때 — 반대 고민 둘이 같은 구조입니다</title>
+    <link>https://specfit.kr/posts/dual-monitor-mouse-escape.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-mouse-escape.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>듀얼 모니터로 게임하다 마우스가 옆 화면으로 빠져 클릭 사고가 나는 사람과, 반대로 옆 화면으로 안 넘어가서 불편한 사람이 같은 게시판에 공존합니다. 둘 다 게임의 화면 모드가 마우스를 다루는 방식 하나로 설명되고, 해법도 그 스위치 하나입니다.</description>
+  </item>
+  <item>
     <title>태블릿을 보조 모니터로 — 연결 방식과 용도가 판정을 정합니다</title>
     <link>https://specfit.kr/posts/tablet-as-monitor.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/tablet-as-monitor.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ram-usage-normal.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>작업 관리자의 램 사용률이 높으면 불안해집니다. 그런데 사용률은 기준선이 있는 숫자가 아니라, 증상과 주범을 같이 봐야 판정이 됩니다. 판정 순서, 주범 찾는 법, 램 정리 프로그램이 대개 헛수고인 이유까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>파워 팬이 안 돌아요 — 고장이 아니라 기능인 경우부터 확인합니다</title>
-    <link>https://specfit.kr/posts/psu-zero-fan.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/psu-zero-fan.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>새 컴퓨터의 파워 팬이 멈춰 있으면 불량인가 싶어집니다. 요즘 파워 상당수는 저부하에서 팬을 일부러 멈추는 제로팬 설계입니다. 기능인지 고장인지 가르는 판정 절차와, 그래픽카드 팬에도 같은 이야기가 적용되는 이유를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

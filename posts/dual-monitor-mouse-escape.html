@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>게임 중 마우스가 옆 모니터로 나갈 때 — 반대 고민 둘이 같은 구조입니다 | 스펙핏</title>
+<meta name="description" content="듀얼 모니터로 게임하다 마우스가 옆 화면으로 빠져 클릭 사고가 나는 사람과, 반대로 옆 화면으로 안 넘어가서 불편한 사람이 같은 게시판에 공존합니다. 둘 다 게임의 화면 모드가 마우스를 다루는 방식 하나로 설명되고, 해법도 그 스위치 하나입니다.">
+<link rel="canonical" href="https://specfit.kr/posts/dual-monitor-mouse-escape.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="게임 중 마우스가 옆 모니터로 나갈 때 — 반대 고민 둘이 같은 구조입니다 | 스펙핏">
+<meta property="og:description" content="듀얼 모니터로 게임하다 마우스가 옆 화면으로 빠져 클릭 사고가 나는 사람과, 반대로 옆 화면으로 안 넘어가서 불편한 사람이 같은 게시판에 공존합니다. 둘 다 게임의 화면 모드가 마우스를 다루는 방식 하나로 설명되고, 해법도 그 스위치 하나입니다.">
+<meta property="og:url" content="https://specfit.kr/posts/dual-monitor-mouse-escape.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"게임 중 마우스가 옆 모니터로 나갈 때 — 반대 고민 둘이 같은 구조입니다","description":"듀얼 모니터로 게임하다 마우스가 옆 화면으로 빠져 클릭 사고가 나는 사람과, 반대로 옆 화면으로 안 넘어가서 불편한 사람이 같은 게시판에 공존합니다. 둘 다 게임의 화면 모드가 마우스를 다루는 방식 하나로 설명되고, 해법도 그 스위치 하나입니다.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dual-monitor-mouse-escape.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"게임 중 마우스가 옆 모니터로 나갈 때 — 반대 고민 둘이 같은 구조입니다","item":"https://specfit.kr/posts/dual-monitor-mouse-escape.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"롤 하다가 자꾸 옆으로 나가요","acceptedAnswer":{"@type":"Answer","text":"커서 조작 게임 + 창 계열 모드의 전형입니다 — 게임 내 커서 관련 옵션과 표시 모드(전체화면)부터 확인하세요. 화면 끝 카메라 조작이 잦은 게임일수록 이 설정의 값이 큽니다."}},{"@type":"Question","name":"전체화면으로 하면 알탭이 한참 걸려요","acceptedAnswer":{"@type":"Answer","text":"독점 모드의 특성입니다 — 모니터를 통째로 넘겼다 돌려받는 전환이라 창 모드보다 무겁습니다. 옆 화면을 자주 쓰는 스타일 이면 테두리 없는 창 + (필요시) 가두기 도구 조합이 그 반대 트레이드오프입니다."}},{"@type":"Question","name":"게임은 안 나가는데 커서가 화면 사이에서 걸려요","acceptedAnswer":{"@type":"Answer","text":"이 글의 증상이 아니라 두 모니터의 해상도·배율 차이 때문에 경계에서 커서가 걸리는 다른 문제입니다 — 해상도 혼용의 함정에 그 구조를 정리했습니다."}},{"@type":"Question","name":"모니터 세 대여도 같나요","acceptedAnswer":{"@type":"Answer","text":"같습니다 — 구조는 모니터 수와 무관하게 \"게임이 커서를 잡고 있느냐\"라서, 위의 모드 스위치가 그대로 적용됩니다. 커서가 지나갈 수 있는 국경이 하나 더 있을 뿐입니다."}},{"@type":"Question","name":"게임 중 옆 모니터 영상이 끊겨요","acceptedAnswer":{"@type":"Answer","text":"커서가 아니라 성능 배분 이야기라 다른 글입니다 — 듀얼 모니터와 게임 프레임 쪽 판정으로 가세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>게임 중 마우스가 옆 모니터로 나갈 때 — 반대 고민 둘이 같은 구조입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-05">2026년 9월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>듀얼 모니터 게시판에는 정반대의 두 고민이 나란히 올라옵니다.</p>
+<ul>
+<li>&quot;게임하다 <strong>마우스가 자꾸 옆 화면으로 나가서</strong> 미치겠어요 —
+한타 중에 옆 모니터를 클릭해서 게임이 내려가요&quot;</li>
+<li>&quot;게임 중에 <strong>마우스가 옆 화면으로 안 넘어가요</strong> — 두 번째
+모니터의 방송·디스코드를 클릭할 수가 없어요&quot;</li>
+</ul>
+<p>재미있는 건, <strong>둘 다 같은 스위치 하나로 설명된다</strong>는 점입니다.
+게임의 <strong>화면 모드</strong>가 마우스를 다루는 방식이 그것입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>고민</th><th>스위치</th></tr></thead>
+<tbody>
+<tr><td>마우스가 <strong>나가서</strong> 문제 (클릭 사고)</td><td><strong>전체화면(독점) 모드로</strong> — 게임이 커서를 가둡니다. 게임 안에 커서 가두기 옵션이 있으면 그것부터</td></tr>
+<tr><td>마우스가 <strong>안 나가서</strong> 문제 (옆 화면 못 씀)</td><td><strong>테두리 없는 창 모드로</strong> — 커서가 자유로워집니다</td></tr>
+<tr><td>시점 전환 게임(FPS류)인데 나감</td><td>대개 창 계열 모드로 돼 있는 정황입니다 — 표시 모드부터 확인</td></tr>
+<tr><td>커서가 화면 <strong>경계에 걸려서</strong> 불편</td><td>다른 증상입니다 — <a href="/posts/monitor-mixed-resolution.html">해상도 혼용 문제</a>로</td></tr>
+</tbody>
+</table></div>
+<h2 id="구조-게임이-마우스를-잡고-있느냐">구조 — 게임이 마우스를 &quot;잡고 있느냐&quot;</h2>
+<p>윈도우 입장에서 화면 모드는 크게 둘입니다:</p>
+<ul>
+<li><strong>전체화면 (독점)</strong> — 게임이 그 모니터를 통째로 넘겨받습니다.
+입력도 게임이 독점해서, <strong>커서는 게임 화면 안에 갇히는 것</strong>이
+일반적입니다. 옆 모니터는 &quot;존재하지만 닿지 않는&quot; 상태가 됩니다</li>
+<li><strong>테두리 없는 창 / 창 모드</strong> — 전체화면처럼 보여도 실체는
+<strong>바탕화면 위의 큰 창</strong>입니다. 커서는 바탕화면의 규칙대로
+움직이니, 화면 끝을 넘으면 그대로 옆 모니터로 갑니다</li>
+</ul>
+<p>여기에 게임의 조작 방식이 곱해집니다:</p>
+<ul>
+<li><strong>시점 전환 게임</strong>(FPS·3인칭) — 마우스가 커서가 아니라 <strong>시점</strong>
+입니다. 커서 자체가 숨어 있어서 어느 모드든 대체로 안 나갑니다.
+이런 게임인데 나간다면, 표시 모드가 창 계열인지부터 보세요</li>
+<li><strong>커서 조작 게임</strong>(AOS·RTS·시뮬레이션) — <strong>화면 끝으로 커서를
+미는 것이 카메라 조작</strong>입니다. 테두리 없는 창에서는 그 조작이
+그대로 &quot;옆 모니터로 이탈&quot;이 되고, 그 상태로 클릭하면 게임 밖을
+클릭해 게임이 내려가는 사고가 됩니다. &quot;한타 중 알탭 사고&quot;의
+정체가 이것입니다</li>
+</ul>
+<h2 id="나가서-문제인-경우-가두는-순서">나가서 문제인 경우 — 가두는 순서</h2>
+<ol>
+<li><strong>게임 안 옵션부터</strong> — 커서를 화면 안에 가두는 설정을 둔
+게임들이 있습니다 (명칭·위치는 게임마다 다릅니다). 있으면
+이게 제일 깔끔합니다</li>
+<li><strong>표시 모드를 전체화면(독점)으로</strong> — 테두리 없는 창을 쓰고
+있었다면 이 전환만으로 갇힙니다</li>
+<li><strong>그래도 필요하면 가두기 도구</strong> — 커서를 지정 모니터에
+잠그는 유틸리티들이 커뮤니티에서 쓰입니다. 단축키로 잠금을
+풀었다 걸었다 할 수 있어, 테두리 없는 창을 유지하면서 가두고
+싶을 때의 절충안입니다</li>
+</ol>
+<h2 id="안-나가서-문제인-경우-풀어주는-순서">안 나가서 문제인 경우 — 풀어주는 순서</h2>
+<ol>
+<li><strong>테두리 없는 창으로</strong> — 독점 전체화면을 쓰고 있었다면 이
+전환으로 커서가 자유로워집니다. 요즘 게임들이 이 모드를
+기본처럼 제공하는 이유가 듀얼 모니터 사용자들입니다</li>
+<li><strong>독점을 유지하고 싶다면</strong> — Alt+Tab(또는 윈도우 키)으로
+포커스를 빼면 커서가 풀립니다. 다만 독점 모드의 전환은 화면이
+깜빡이며 한 박자 걸리는 게 보통이라, 옆 화면을 자주 오간다면
+1번이 맞는 답입니다</li>
+</ol>
+<p><strong>트레이드오프</strong>는 이렇습니다 — 독점 전체화면은 게임에 화면을
+몰아주는 만큼 성능·지연에서 유리한 편이고, 테두리 없는 창은
+전환이 즉각적인 대신 바탕화면과 자원을 나눕니다. 어느 쪽이
+체감되는지는 환경·게임에 따라 달라서, 둘 다 켜 보고 고르는 게
+정직한 방법입니다. (듀얼 모니터가 게임 프레임에 주는 영향
+자체는 <a href="/posts/dual-monitor-gaming-fps.html">따로 정리한 판정</a>이
+있습니다.)</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="롤-하다가-자꾸-옆으로-나가요">롤 하다가 자꾸 옆으로 나가요</h3>
+<p>커서 조작 게임 + 창 계열 모드의 전형입니다 — 게임 내 커서
+관련 옵션과 표시 모드(전체화면)부터 확인하세요. 화면 끝 카메라
+조작이 잦은 게임일수록 이 설정의 값이 큽니다.</p>
+<h3 id="전체화면으로-하면-알탭이-한참-걸려요">전체화면으로 하면 알탭이 한참 걸려요</h3>
+<p>독점 모드의 특성입니다 — 모니터를 통째로 넘겼다 돌려받는
+전환이라 창 모드보다 무겁습니다. 옆 화면을 자주 쓰는 스타일
+이면 테두리 없는 창 + (필요시) 가두기 도구 조합이 그 반대
+트레이드오프입니다.</p>
+<h3 id="게임은-안-나가는데-커서가-화면-사이에서-걸려요">게임은 안 나가는데 커서가 화면 사이에서 걸려요</h3>
+<p>이 글의 증상이 아니라 <strong>두 모니터의 해상도·배율 차이</strong> 때문에
+경계에서 커서가 걸리는 다른 문제입니다 —
+<a href="/posts/monitor-mixed-resolution.html">해상도 혼용의 함정</a>에
+그 구조를 정리했습니다.</p>
+<h3 id="모니터-세-대여도-같나요">모니터 세 대여도 같나요</h3>
+<p>같습니다 — 구조는 모니터 수와 무관하게 &quot;게임이 커서를 잡고
+있느냐&quot;라서, 위의 모드 스위치가 그대로 적용됩니다. 커서가
+지나갈 수 있는 국경이 하나 더 있을 뿐입니다.</p>
+<h3 id="게임-중-옆-모니터-영상이-끊겨요">게임 중 옆 모니터 영상이 끊겨요</h3>
+<p>커서가 아니라 성능 배분 이야기라 다른 글입니다 —
+<a href="/posts/dual-monitor-gaming-fps.html">듀얼 모니터와 게임 프레임</a>
+쪽 판정으로 가세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>반대 고민 둘이 같은 스위치입니다</strong> — 게임이 커서를 잡는
+전체화면(독점) vs 커서가 자유로운 테두리 없는 창</li>
+<li><strong>나가서 문제면</strong>: 게임 내 가두기 옵션 → 전체화면 → 가두기
+도구 순서입니다</li>
+<li><strong>안 나가서 문제면</strong>: 테두리 없는 창으로 — 독점 유지가
+필요하면 Alt+Tab이 열쇠입니다</li>
+<li>시점 전환 게임은 대체로 안 나갑니다 — 나간다면 표시 모드부터
+보세요</li>
+<li>경계에서 커서가 걸리는 건 다른 증상(해상도 혼용)입니다</li>
+</ol>
+<p>듀얼 모니터의 이웃 판정들 — <a href="/posts/dual-monitor-gaming-fps.html">게임 프레임 영향</a> ·
+<a href="/posts/monitor-mixed-resolution.html">해상도 혼용</a> ·
+<a href="/posts/dual-monitor-vs-single.html">듀얼 vs 큰 한 대</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">듀얼모니터</span> <span class="tag">마우스이탈</span> <span class="tag">전체화면</span> <span class="tag">테두리없는창</span> <span class="tag">게임설정</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/dual-monitor-one-blank.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터 한쪽만 안 나올 때 — 맞바꾸기 한 번이면 범인이 갈립니다</span>
+        <span class="card-desc">잘 쓰던 듀얼 모니터에서 한쪽만 화면이 안 나오는 일은 흔한데, 원인 후보가 많아 헤매기 쉽습니다. 케이블 맞바꾸기 한 번으로 범인의 절반이 갈리고, 증상 세 갈래로 나머지가 갈립니다. 진단 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/pc-speaker-noise.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">스피커에서 지지직 소리가 날 때 — 노이즈가 나는 &quot;때&quot;가 범인을 알려줍니다</span>
+        <span class="card-desc">컴퓨터 스피커나 이어폰에서 지지직, 웅, 쏴아 하는 잡음이 나면 원인 후보가 많아 헤매기 쉽습니다. 그런데 잡음이 언제 나는지가 갈래를 알려줍니다. 증상별 판정과 해결 사다리, 구조적으로 끝내는 방법까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dual-monitor-color-match.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터 색감이 달라요 — 완전 일치는 목표가 아닙니다</span>
+        <span class="card-desc">모니터 두 대의 색이 다른 것은 고장이 아니라 패널이 다른 물건이라는 뜻입니다. 왜 완전히 같아질 수 없는지, 현실적으로 어디까지 맞추는지, 색이 중요한 작업은 어떻게 배치로 푸는지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
