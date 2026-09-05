@@ -134,4 +134,7 @@ tags: [듀얼모니터, 화면안나옴, 신호없음, 모니터인식, 케이�
 [DP vs HDMI 대역폭](/posts/dp-vs-hdmi-coding.html) ·
 [노트북 출력 상한](/posts/laptop-dual-monitor-output.html)과 이어집니다.
 
+(한쪽이 아니라 **양쪽 다, 부팅부터** 안 나온다면 다른 증상입니다 —
+[팬은 도는데 화면이 안 나올 때](/posts/pc-boot-no-display.html)로 가세요.)
+
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

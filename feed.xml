@@ -55,6 +55,13 @@
     <description>온도가 걱정되면 옆판을 열어두고 싶어집니다. 그런데 열어서 시원해지는 컴퓨터가 있고 오히려 나빠지는 자리도 있습니다. 옆판 열기의 진짜 쓸모는 상시 해법이 아니라 진단 도구라는 것 — 판정과 대가를 정리했습니다.</description>
   </item>
   <item>
+    <title>컴퓨터 팬은 도는데 화면이 안 나올 때 — "켜짐"과 "부팅"은 다릅니다</title>
+    <link>https://specfit.kr/posts/pc-boot-no-display.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-boot-no-display.html</guid>
+    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
+    <description>전원을 누르면 팬도 돌고 불도 들어오는데 화면만 안 나오는 증상은 조립 직후든 잘 쓰던 컴퓨터든 갑자기 찾아옵니다. 팬이 돈다는 건 전기가 들어왔다는 뜻일 뿐이라, 어디서 멈췄는지 바깥부터 안쪽으로 잘라 들어가는 진단 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>컴퓨터 24시간 켜둬도 되나 — 수명 걱정이 아니라 용도로 정하는 문제입니다</title>
     <link>https://specfit.kr/posts/pc-always-on.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-always-on.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-response-time.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>모니터 스펙표의 1ms가 구매 기준이 되곤 하는데, 그 숫자는 측정 기준과 설정 조건이 붙은 값이라 제품 간 비교 자체가 어렵습니다. 응답속도가 실제로 좌우하는 것, 입력 지연과의 차이, 용도별로 신경 써야 하는 선을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다</title>
-    <link>https://specfit.kr/posts/mini-pc-noise.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-noise.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>미니PC를 알아보면 팬소음 이야기가 꼭 따라옵니다. 작은 몸집이 구조적으로 불리한 건 맞는데, 시끄러운지는 제품이 아니라 내 부하가 정합니다. 사무·웹은 대개 조용하고, 지속 고부하가 소음을 부릅니다. 판정 기준과 줄이는 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
