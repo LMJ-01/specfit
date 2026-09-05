@@ -837,6 +837,7 @@ export const figures = {
   'temp-behavior': tempBehavior,
   'frame-pacing': framePacing,
   'swap-diagnosis': swapDiagnosis,
+  'spill-first-aid': spillFirstAid,
 };
 
 /**
@@ -1727,5 +1728,49 @@ function swapDiagnosis() {
     248,
     body,
     '한 번의 맞바꾸기로 용의자 목록이 절반으로 줄어듭니다 — 설정을 뒤지기 전에 이것부터입니다.'
+  );
+}
+
+/**
+ * 물 쏟은 직후 3단계 — 읽기 전에 행동이 먼저인 글이라 그림으로 고정.
+ * laptop-water-spill 의 응급 순서.
+ */
+function spillFirstAid() {
+  const W = 640;
+  const py = 44;
+  const ph = 130;
+
+  const panel = (x, num, title, sub) => {
+    let s = rect(x, py, 190, ph, COLOR.soft, { stroke: COLOR.line });
+    s += t(x + 12, py + 24, num, { weight: 700, size: 16, fill: COLOR.accent });
+    s += t(x + 95, py + 50, title, { anchor: 'middle', weight: 600, size: 13 });
+    s += t(x + 95, py + ph - 14, sub, { anchor: 'middle', size: 11, fill: COLOR.mute });
+    return s;
+  };
+
+  let body = '';
+  body += t(16, 22, '읽기 전에 이 순서부터 — 전기를 끊고, 중력을 돌립니다', { weight: 600, size: 14 });
+
+  // ① 강제 종료
+  body += panel(16, '①', '전원 버튼 길게', '강제 종료 — 저장보다 기계');
+  body += `<circle cx="111" cy="118" r="16" fill="none" stroke="${COLOR.over}" stroke-width="3"/>`;
+  body += `<line x1="111" y1="96" x2="111" y2="112" stroke="${COLOR.over}" stroke-width="3"/>`;
+
+  // ② 어댑터 분리
+  body += panel(225, '②', '어댑터·주변기기 분리', '충전 중이면 전기가 살아 있음');
+  body += rect(295, 104, 30, 20, COLOR.text);
+  body += `<line x1="325" y1="114" x2="352" y2="114" stroke="${COLOR.text}" stroke-width="3"/>`;
+  body += t(362, 120, '⌁', { size: 16, fill: COLOR.over });
+
+  // ③ ㅅ자 뒤집기
+  body += panel(434, '③', 'ㅅ자로 엎어 두기', '키보드 아래가 메인보드');
+  body += `<polyline points="484,124 529,96 574,124" fill="none" stroke="${COLOR.fit}" stroke-width="4" stroke-linejoin="round"/>`;
+
+  return figure(
+    '물 쏟은 직후 응급 순서 — 전원 강제 종료, 어댑터 분리, ㅅ자로 뒤집기',
+    W,
+    190,
+    body,
+    '이 셋이 끝난 다음이 닦기와 말리기입니다 — 그리고 겉이 말라 보여도 켜 보지 않는 것이 네 번째 규칙입니다.'
   );
 }
