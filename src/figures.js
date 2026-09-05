@@ -841,7 +841,62 @@ export const figures = {
   'retention-timeline': retentionTimeline,
   'shutdown-shape': shutdownShape,
   'boot-relay': bootRelay,
+  'mouse-capture': mouseCapture,
 };
+
+/**
+ * 화면 모드별 마우스 캡처 — 독점 전체화면은 벽, 테두리 없는 창은 개방.
+ * dual-monitor-mouse-escape 의 "반대 고민 둘이 같은 스위치" 구조 고정.
+ */
+function mouseCapture() {
+  const W = 640;
+  const py = 56;
+  const mh = 84;
+  const m1w = 128;
+  const m2w = 96;
+
+  const monitors = (x0, lockWall) => {
+    let s = '';
+    s += rect(x0, py, m1w, mh, 'none', { stroke: COLOR.text });
+    s += t(x0 + m1w / 2, py + mh + 16, '게임 화면', { anchor: 'middle', size: 11, fill: COLOR.mute });
+    s += rect(x0 + m1w + 14, py + 10, m2w, mh - 20, 'none', { stroke: COLOR.line });
+    s += t(x0 + m1w + 14 + m2w / 2, py + mh + 16, '보조 모니터', { anchor: 'middle', size: 11, fill: COLOR.mute });
+    // 커서 경로
+    const cy = py + mh / 2;
+    s += `<line x1="${x0 + 22}" y1="${cy}" x2="${x0 + m1w - 12}" y2="${cy}" stroke="${COLOR.accent}" stroke-width="2.5" stroke-dasharray="6 4"/>`;
+    if (lockWall) {
+      // 오른쪽 끝 벽
+      s += `<line x1="${x0 + m1w - 4}" y1="${py + 6}" x2="${x0 + m1w - 4}" y2="${py + mh - 6}" stroke="${COLOR.over}" stroke-width="4"/>`;
+      s += t(x0 + m1w - 12, cy - 12, '⟲', { size: 14, fill: COLOR.over });
+    } else {
+      // 국경 통과 화살표
+      s += `<line x1="${x0 + m1w - 12}" y1="${cy}" x2="${x0 + m1w + 14 + 24}" y2="${cy}" stroke="${COLOR.fit}" stroke-width="2.5"/>`;
+      s += `<polygon points="${x0 + m1w + 38},${cy - 5} ${x0 + m1w + 46},${cy} ${x0 + m1w + 38},${cy + 5}" fill="${COLOR.fit}"/>`;
+    }
+    return s;
+  };
+
+  let body = '';
+  body += t(16, 22, '같은 듀얼 모니터 — 화면 모드가 커서의 국경을 정합니다', { weight: 600, size: 14 });
+
+  const x1 = 16;
+  body += t(x1 + (m1w + 14 + m2w) / 2, 44, '① 전체화면 (독점)', { anchor: 'middle', size: 12, weight: 600, fill: COLOR.over });
+  body += monitors(x1, true);
+  body += t(x1 + (m1w + 14 + m2w) / 2, py + mh + 36, '게임이 커서를 가둡니다 — 이탈 사고 없음', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  const x2 = 344;
+  body += t(x2 + (m1w + 14 + m2w) / 2, 44, '② 테두리 없는 창 / 창 모드', { anchor: 'middle', size: 12, weight: 600, fill: COLOR.fit });
+  body += monitors(x2, false);
+  body += t(x2 + (m1w + 14 + m2w) / 2, py + mh + 36, '바탕화면의 일부 — 커서가 자유롭게 넘어갑니다', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  return figure(
+    '화면 모드별 마우스 캡처 — 독점 전체화면은 커서를 가두고, 테두리 없는 창은 옆 모니터로 열려 있습니다',
+    W,
+    206,
+    body,
+    '"나가서 문제"면 ①로, "안 나가서 문제"면 ②로 — 반대 고민 둘의 스위치가 같은 이유입니다.'
+  );
+}
 
 /**
  * "켜짐 ≠ 부팅" — 전원부터 모니터까지의 릴레이.
