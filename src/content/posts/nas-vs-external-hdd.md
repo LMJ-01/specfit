@@ -2,6 +2,7 @@
 title: NAS가 필요한가 — 외장하드와는 다른 물건입니다
 description: 외장하드가 꽉 차면 NAS를 검색하게 되는데, NAS는 더 큰 외장하드가 아니라 성격이 다른 장비입니다. 외장하드로 충분한 경우, NAS라야 되는 경우, 그 사이의 간이 NAS를 판정 기준으로 정리했습니다.
 date: 2026-09-01
+updated: 2026-09-06
 category: network
 tags: [NAS, 외장하드, 홈서버, 네트워크저장소, 백업]
 ---
@@ -150,5 +151,9 @@ NAS를 사면 백업이 해결된다고 생각하기 쉬운데,
 NAS까지 가기로 했다면, 그 앞의 숙제는
 [집 안 배선](/posts/apartment-lan-panel.html)과
 [백업 설계](/posts/dev-backup-strategy.html)입니다.
+
+(쓰던 외장하드가 [연결하면 컴퓨터를 멈추게 하는 증상](/posts/external-hdd-freeze.html)을
+보이기 시작했다면 — 그 판정과 데이터 보호 순서가 이 갈림길보다
+먼저입니다.)
 
 구조나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

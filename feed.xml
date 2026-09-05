@@ -13,6 +13,13 @@
     <description>듀얼 모니터에서 절전이나 디스플레이 끄기 후 복귀하면 열어 둔 창이 전부 한쪽 화면으로 몰리거나 왼쪽 위에 쌓이는 증상이 있습니다. 고장이 아니라 모니터가 꺼지는 순간 윈도우에게 사라진 것으로 보이기 때문입니다. 구조와 완화책 사다리를 정리했습니다.</description>
   </item>
   <item>
+    <title>외장하드를 연결하면 컴퓨터가 멈출 때 — 멈춤의 모양이 갈래를 알려줍니다</title>
+    <link>https://specfit.kr/posts/external-hdd-freeze.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/external-hdd-freeze.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>외장하드만 꽂으면 탐색기가 멈추고 컴퓨터가 버벅이는 증상은 디스크 손상부터 USB 간섭, 절전, 썸네일 생성까지 원인이 다양합니다. 언제 어떻게 멈추는지가 갈래를 알려주고, 안에 중요한 데이터가 있다면 순서를 지키는 것이 데이터를 지킵니다.</description>
+  </item>
+  <item>
     <title>노트북에서 블루투스 이어폰이 뚝뚝 끊길 때 — 끊기는 정황이 갈래를 알려줍니다</title>
     <link>https://specfit.kr/posts/bluetooth-earbuds-stutter.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/bluetooth-earbuds-stutter.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ssd-partition.html</guid>
     <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
     <description>C·D 드라이브로 나누는 게 관습처럼 남아 있는데, 요즘 기본값은 통으로 쓰는 쪽입니다. 파티션이 실제로 해주는 것과 못 해주는 것(백업 아님, 속도 무관)을 가르고, 나누는 게 값을 하는 경우의 목록을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>SSD 교체, 마이그레이션 vs 클린설치 — 지금 시스템의 상태가 정합니다</title>
-    <link>https://specfit.kr/posts/ssd-migration-vs-clean-install.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ssd-migration-vs-clean-install.html</guid>
-    <pubDate>Thu, 03 Sep 2026 15:00:00 GMT</pubDate>
-    <description>SSD를 바꿀 때 윈도우를 통째로 옮길지 새로 깔지 갈립니다. 판정 기준은 취향이 아니라 지금 시스템의 상태입니다. 복사는 좋은 것과 나쁜 것을 같이 옮기니까요. 갈림길과 안전 수칙, 실패 대비까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
