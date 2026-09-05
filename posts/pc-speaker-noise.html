@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스피커에서 지지직 소리가 날 때 — 노이즈가 나는 &quot;때&quot;가 범인을 알려줍니다 | 스펙핏</title>
+<meta name="description" content="컴퓨터 스피커나 이어폰에서 지지직, 웅, 쏴아 하는 잡음이 나면 원인 후보가 많아 헤매기 쉽습니다. 그런데 잡음이 언제 나는지가 갈래를 알려줍니다. 증상별 판정과 해결 사다리, 구조적으로 끝내는 방법까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/pc-speaker-noise.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="스피커에서 지지직 소리가 날 때 — 노이즈가 나는 &quot;때&quot;가 범인을 알려줍니다 | 스펙핏">
+<meta property="og:description" content="컴퓨터 스피커나 이어폰에서 지지직, 웅, 쏴아 하는 잡음이 나면 원인 후보가 많아 헤매기 쉽습니다. 그런데 잡음이 언제 나는지가 갈래를 알려줍니다. 증상별 판정과 해결 사다리, 구조적으로 끝내는 방법까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/pc-speaker-noise.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"스피커에서 지지직 소리가 날 때 — 노이즈가 나는 \"때\"가 범인을 알려줍니다","description":"컴퓨터 스피커나 이어폰에서 지지직, 웅, 쏴아 하는 잡음이 나면 원인 후보가 많아 헤매기 쉽습니다. 그런데 잡음이 언제 나는지가 갈래를 알려줍니다. 증상별 판정과 해결 사다리, 구조적으로 끝내는 방법까지 정리했습니다.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/pc-speaker-noise.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"스피커에서 지지직 소리가 날 때 — 노이즈가 나는 \"때\"가 범인을 알려줍니다","item":"https://specfit.kr/posts/pc-speaker-noise.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"이어폰을 꽂으면 유독 심해요","acceptedAnswer":{"@type":"Answer","text":"이어폰은 감도가 높아 같은 잡음도 더 크게 들립니다 — 스피커 에서 안 들리던 바닥 잡음이 드러나는 것일 수 있습니다. 갈래 판정은 동일하고, 디지털 경로(USB·모니터 출력)로 빠지는 해법도 같습니다."}},{"@type":"Question","name":"무선(블루투스) 스피커인데도 잡음이 나요","acceptedAnswer":{"@type":"Answer","text":"선으로 새는 잡음은 아니라는 뜻이니 갈래가 다릅니다 — 블루투스 전파 간섭(2.4GHz 도로)이나 절전·코덱 쪽입니다. 무선 마우스 끊김에서 본 그 도로 사정이 소리에서는 뚝뚝 끊김·지연으로 나타납니다."}},{"@type":"Question","name":"사운드카드나 DAC를 사야 하나요","acceptedAnswer":{"@type":"Answer","text":"내장 단자의 내부 간섭을 벗어난다는 점에서 방향은 맞습니다 — 다만 사기 전에 위의 공짜 처방(후면 단자·볼륨 균형·같은 멀티탭) 과, 이미 있는 장비로 되는 디지털 경로(모니터 스피커·USB 연결) 부터 확인하는 것이 순서입니다."}},{"@type":"Question","name":"마이크에도 잡음이 들어가요","acceptedAnswer":{"@type":"Answer","text":"같은 구조의 입력판입니다 — 내장 마이크 단자도 같은 이웃 잡음을 받습니다. 향상 기능(마이크 증폭)을 낮추고, 그래도 남으면 USB 마이크가 같은 원리의 출구입니다."}},{"@type":"Question","name":"본체에서 나는 찌르르 소리는요","acceptedAnswer":{"@type":"Answer","text":"스피커와 무관하게 본체 자체에서 나는 가는 소리는 코일 노이즈라는 다른 주제입니다 — 부하 따라 우는 소리라면 그 글의 판정으로 가세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>스피커에서 지지직 소리가 날 때 — 노이즈가 나는 &quot;때&quot;가 범인을 알려줍니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-05">2026년 9월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>볼륨을 올린 것도 아닌데 스피커에서 <strong>지지직</strong>, 조용한 순간에
+<strong>웅</strong> — 컴퓨터 오디오 잡음은 원인 후보(케이블, 접지, 드라이버,
+간섭)가 많아서 검색할수록 막막해집니다.</p>
+<p>후보를 줄여 주는 단서는 <strong>잡음이 나는 &quot;때&quot;</strong>입니다. 잡음마다
+스며드는 경로가 달라서, 언제 나는지가 곧 어디서 새는지를
+알려줍니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>잡음이 나는 때</th><th>유력 갈래</th></tr></thead>
+<tbody>
+<tr><td><strong>마우스를 움직일 때·화면이 바쁠 때</strong> 지지직</td><td>컴퓨터 <strong>내부 간섭</strong> — 내장 사운드 경로에 새는 것</td></tr>
+<tr><td><strong>항상 일정한</strong> 웅~/험</td><td><strong>접지·전원 경로</strong> 계열입니다</td></tr>
+<tr><td><strong>볼륨을 올릴수록</strong> 쏴아(화이트노이즈)</td><td><strong>증폭 바닥 잡음</strong> — 볼륨 균형의 문제</td></tr>
+<tr><td><strong>간헐적으로 뚝·팝</strong></td><td>드라이버·절전·설정 갈래입니다</td></tr>
+<tr><td>스피커가 아니라 <strong>본체에서</strong> 찌르르</td><td>잡음이 아니라 <a href="/posts/gpu-coil-whine.html">코일 노이즈</a> — 다른 글입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="0단계-격리-어느-구간에서-새는가">0단계 — 격리: 어느 구간에서 새는가</h2>
+<p>해결 전에 구간부터 자릅니다. <a href="/posts/dual-monitor-one-blank.html">맞바꾸기 격리</a>의
+오디오판입니다:</p>
+<ul>
+<li><strong>다른 재생 기기로</strong> — 같은 스피커를 폰·노트북에 연결해
+깨끗하면 스피커는 무죄, 컴퓨터 쪽입니다</li>
+<li><strong>다른 출력으로</strong> — 스피커 대신 이어폰을 꽂아도 같은 잡음이면
+스피커가 아니라 컴퓨터의 출력 경로입니다</li>
+<li>이 두 번이면 범인이 &quot;컴퓨터 안&quot;인지 &quot;스피커·케이블&quot;인지
+갈립니다</li>
+</ul>
+<h2 id="갈래-마우스-따라-지지직-내부-간섭">갈래 ① — 마우스 따라 지지직: 내부 간섭</h2>
+<p>내장 사운드는 <strong>디지털 신호와 전원이 바쁘게 오가는 메인보드
+위의 이웃</strong>입니다. 그 잡음이 아날로그 오디오 경로에 새면, 컴퓨터가
+일하는 리듬(마우스·그래픽 부하)대로 지지직거리는 특유의 증상이
+됩니다.</p>
+<ol>
+<li><strong>후면 단자로</strong> — 전면 오디오 단자는 케이스 안을 한참 지나는
+연장 케이블 경유라 대개 더 취약합니다. 메인보드 후면 직결로
+옮겨 보세요</li>
+<li><strong>케이블 정리</strong> — 오디오 케이블이 전원선과 나란히 길게 붙어
+달리는 배치를 풀어 주는 것도 같은 계열의 처방입니다</li>
+<li><strong>구조적으로 끝내려면 디지털 경로로</strong> — USB 연결(스피커·DAC)
+이나 모니터 스피커(HDMI·DP로 소리 전달)는 소리가 <strong>디지털인
+채로 컴퓨터를 빠져나가</strong> 내부 간섭 구간 자체를 우회합니다.
+내장 단자에서 못 잡는 잡음의 정석적인 출구입니다</li>
+</ol>
+<h2 id="갈래-항상-웅-접지전원-경로">갈래 ② — 항상 웅~: 접지·전원 경로</h2>
+<p>컴퓨터·스피커·다른 기기들이 <strong>서로 다른 전원 경로</strong>에 물려 있으면
+그 차이가 낮은 웅 소리(험)로 들어오는 계열이 있습니다.</p>
+<ul>
+<li>컴퓨터와 스피커를 <strong>같은 멀티탭</strong>에 물려 보세요</li>
+<li>접지가 없는 콘센트 환경이라면 <strong>접지 되는 멀티탭·콘센트로</strong>
+옮기는 것이 시도 순서입니다 — 접지 유무는 건물·콘센트에 따라
+달라서, 이 갈래는 환경 편차가 큽니다</li>
+<li>특정 기기(노트북 어댑터, 모니터 등)를 뺐을 때 사라지면 그
+기기의 전원 경로가 고리였던 것입니다</li>
+</ul>
+<h2 id="갈래-볼륨-올리면-쏴아-증폭-바닥-잡음">갈래 ③ — 볼륨 올리면 쏴아: 증폭 바닥 잡음</h2>
+<p>모든 증폭기는 바닥 잡음이 있고, <strong>증폭을 올릴수록 같이
+커집니다.</strong> 스피커 자체 볼륨은 최대에 가깝게 두고 윈도우 볼륨을
+낮춰 쓰는 조합이 이 잡음을 키우는 전형입니다 — <strong>윈도우 볼륨을
+높이고 스피커 쪽 볼륨을 낮추는 균형</strong>으로 바꿔 보세요. 무음
+시의 옅은 쏴아까지 완전히 0으로 만드는 것은 장비의 급 문제라,
+거슬리지 않는 수준이면 정상 범위입니다.</p>
+<h2 id="갈래-간헐-뚝팝-소프트웨어">갈래 ④ — 간헐 뚝·팝: 소프트웨어</h2>
+<ul>
+<li><strong>오디오 향상 기능 끄기</strong> — 사운드 설정의 각종 효과·향상
+기능이 잡음·팝의 원인이 되는 경우가 있습니다</li>
+<li><strong>절전 복귀 직후의 팝</strong>은 오디오 장치가 깨어나는 소리인 경우가
+많아, 반복이 심하면 드라이버 업데이트가 다음 단계입니다</li>
+<li>샘플레이트 설정(기본 형식)을 바꿔 보는 것도 이 갈래의
+확인법입니다 — 동작은 장치·드라이버에 따라 다릅니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="이어폰을-꽂으면-유독-심해요">이어폰을 꽂으면 유독 심해요</h3>
+<p>이어폰은 감도가 높아 <strong>같은 잡음도 더 크게 들립니다</strong> — 스피커
+에서 안 들리던 바닥 잡음이 드러나는 것일 수 있습니다. 갈래
+판정은 동일하고, 디지털 경로(USB·모니터 출력)로 빠지는 해법도
+같습니다.</p>
+<h3 id="무선블루투스-스피커인데도-잡음이-나요">무선(블루투스) 스피커인데도 잡음이 나요</h3>
+<p>선으로 새는 잡음은 아니라는 뜻이니 갈래가 다릅니다 — 블루투스
+전파 간섭(2.4GHz 도로)이나 절전·코덱 쪽입니다.
+<a href="/posts/wireless-mouse-lag.html">무선 마우스 끊김에서 본 그 도로</a>
+사정이 소리에서는 뚝뚝 끊김·지연으로 나타납니다.</p>
+<h3 id="사운드카드나-dac를-사야-하나요">사운드카드나 DAC를 사야 하나요</h3>
+<p>내장 단자의 내부 간섭을 벗어난다는 점에서 방향은 맞습니다 —
+다만 사기 전에 위의 공짜 처방(후면 단자·볼륨 균형·같은 멀티탭)
+과, 이미 있는 장비로 되는 디지털 경로(모니터 스피커·USB 연결)
+부터 확인하는 것이 순서입니다.</p>
+<h3 id="마이크에도-잡음이-들어가요">마이크에도 잡음이 들어가요</h3>
+<p>같은 구조의 입력판입니다 — 내장 마이크 단자도 같은 이웃 잡음을
+받습니다. 향상 기능(마이크 증폭)을 낮추고, 그래도 남으면 USB
+마이크가 같은 원리의 출구입니다.</p>
+<h3 id="본체에서-나는-찌르르-소리는요">본체에서 나는 찌르르 소리는요</h3>
+<p>스피커와 무관하게 본체 자체에서 나는 가는 소리는
+<a href="/posts/gpu-coil-whine.html">코일 노이즈</a>라는 다른 주제입니다 —
+부하 따라 우는 소리라면 그 글의 판정으로 가세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>잡음이 나는 &quot;때&quot;가 갈래를 알려줍니다</strong> — 마우스 따라=내부
+간섭, 항상 웅=접지·전원, 볼륨 비례=증폭 바닥, 간헐 팝=설정</li>
+<li>격리 먼저 — <strong>다른 기기·다른 출력</strong>으로 구간을 자르면 후보가
+절반이 됩니다</li>
+<li>내부 간섭은 <strong>후면 단자 → 케이블 정리 → 디지털 경로(USB·
+모니터 출력)</strong> 순서입니다 — 디지털 탈출이 구조적 해법입니다</li>
+<li>웅 소리는 <strong>같은 멀티탭·접지</strong>부터, 쏴아는 <strong>볼륨 균형</strong>부터
+입니다</li>
+<li>무음 시의 옅은 바닥 잡음까지는 장비의 정상 범위입니다</li>
+</ol>
+<p>소리 문제의 이웃 판정들 — <a href="/posts/gpu-coil-whine.html">코일 노이즈(본체 소리)</a> ·
+<a href="/posts/wireless-mouse-lag.html">무선 주변기기 끊김</a> ·
+<a href="/posts/dual-monitor-one-blank.html">격리 진단의 원형</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">스피커노이즈</span> <span class="tag">지지직</span> <span class="tag">화이트노이즈</span> <span class="tag">접지</span> <span class="tag">오디오</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/dual-monitor-one-blank.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터 한쪽만 안 나올 때 — 맞바꾸기 한 번이면 범인이 갈립니다</span>
+        <span class="card-desc">잘 쓰던 듀얼 모니터에서 한쪽만 화면이 안 나오는 일은 흔한데, 원인 후보가 많아 헤매기 쉽습니다. 케이블 맞바꾸기 한 번으로 범인의 절반이 갈리고, 증상 세 갈래로 나머지가 갈립니다. 진단 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dual-monitor-color-match.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터 색감이 달라요 — 완전 일치는 목표가 아닙니다</span>
+        <span class="card-desc">모니터 두 대의 색이 다른 것은 고장이 아니라 패널이 다른 물건이라는 뜻입니다. 왜 완전히 같아질 수 없는지, 현실적으로 어디까지 맞추는지, 색이 중요한 작업은 어떻게 배치로 푸는지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dual-monitor-gaming-fps.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터면 게임 프레임이 떨어지나 — 연결이 아니라 보조 화면의 일이 정합니다</span>
+        <span class="card-desc">모니터를 한 대 더 달면 게임 성능이 깎이는지 걱정이 됩니다. 꽂아두는 것 자체는 거의 공짜이고, 프레임을 가져가는 것은 보조 화면 위에서 도는 작업입니다. 구조와 판정, 줄이는 요령을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

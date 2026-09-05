@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다","description":"게임이나 고부하 작업 때 그래픽카드 쪽에서 찌르르 하는 고주파음이 나면 고장부터 의심하게 됩니다. 코일노이즈의 정체와 고장 소리와의 구분법, 줄이는 방법을 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/gpu-coil-whine.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다","description":"게임이나 고부하 작업 때 그래픽카드 쪽에서 찌르르 하는 고주파음이 나면 고장부터 의심하게 됩니다. 코일노이즈의 정체와 고장 소리와의 구분법, 줄이는 방법을 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-05","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/gpu-coil-whine.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다","item":"https://specfit.kr/posts/gpu-coil-whine.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"새 카드인데 소리가 나요. 교환해야 하나요","acceptedAnswer":{"@type":"Answer","text":"판매처 초기 교환 기간 안이라면 시도해 볼 수는 있습니다 — 개체 차이가 크니 다음 개체는 조용할 수 있습니다. 다만 제조사 AS 기준으로 코일노이즈 단독은 정상 판정이 흔하다는 것을 알고 문의하는 게 정신 건강에 좋습니다."}},{"@type":"Question","name":"중고로 산 카드가 우는데 속은 건가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다 — 위 표의 구분대로 코일노이즈면 성능·수명 문제가 아니라서, 중고 GPU 확인 절차의 불량 항목과는 별개입니다. 확인 절차에서 봐야 할 건 갈리는 소리·딸깍 소리 쪽입니다."}},{"@type":"Question","name":"로컬 LLM 돌릴 때만 소리가 나요","acceptedAnswer":{"@type":"Answer","text":"추론이 짧은 고부하를 반복하는 패턴이라, 그때만 우는 게 자연스러운 동작입니다. 전력 상한을 걸어 쓰는 방법이 전류 출렁임도 눌러 줘서, 소리에도 같은 방향으로 작용하는 경우가 있습니다."}},{"@type":"Question","name":"미니PC나 노트북에서도 나나요","acceptedAnswer":{"@type":"Answer","text":"전원부가 있는 모든 보드에서 날 수 있습니다 — 어댑터에서 나는 경우도 있습니다. 구분법은 같습니다: 부하를 따라 변하는 가는 소리인가."}},{"@type":"Question","name":"소리로 카드 상태를 점검할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"반대로 쓰는 게 유용합니다 — 평소와 다른 종류의 소리(갈림·딸깍)가 새로 생겼을 때가 점검 신호입니다. 늘 나던 코일노이즈는 신호가 아닙니다."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>그래픽카드에서 고주파 소리 — 고장이 아닙니다, 다만 구분할 소리가 있습니다</h1>
     <p class="post-meta">
       <time datetime="2026-09-01">2026년 9월 1일</time>
-      
+      <span class="updated">· 2026년 9월 5일 갱신</span>
     </p>
   </header>
 
@@ -110,7 +110,7 @@
 <tr><td>부하 때만 나는 <strong>가늘고 높은</strong> 소리, 장면 따라 톤 변화</td><td>코일노이즈</td><td>고장 아님</td></tr>
 <tr><td><strong>드르륵·갈리는</strong> 소리, 부하 무관</td><td>팬 베어링·케이블 간섭</td><td>점검 대상입니다</td></tr>
 <tr><td><strong>딸깍/찰칵</strong> 반복</td><td>팬 걸림·이물</td><td>점검 대상입니다</td></tr>
-<tr><td>스피커·헤드폰에서 나는 지지직</td><td>사운드 쪽 노이즈</td><td>카드가 아니라 <strong>오디오 경로</strong> 문제입니다</td></tr>
+<tr><td>스피커·헤드폰에서 나는 지지직</td><td>사운드 쪽 노이즈</td><td>카드가 아니라 <a href="/posts/pc-speaker-noise.html">오디오 경로 문제</a>입니다</td></tr>
 </tbody>
 </table></div>
 <p>가장 쉬운 판별: <strong>화면 프레임이 치솟는 순간</strong>(게임 메뉴, 로딩 직후)
