@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>USB를 꽂으면 소리만 나고 안 보일 때 — 소리가 났다는 건 절반은 성공했다는 뜻입니다</title>
+    <link>https://specfit.kr/posts/usb-not-showing.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/usb-not-showing.html</guid>
+    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
+    <description>USB를 꽂으면 "뚜둥" 연결음은 나는데 내 PC에는 아무것도 안 뜨는 증상은 커뮤니티 단골 질문입니다. 소리가 났다면 연결 층은 통과한 것이라 범인은 그 윗층에 있습니다 — 드라이브 문자, 드라이버, 인식 모드 순서의 판정과, 함부로 포맷하면 안 되는 이유까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>켤 때만 팬소리가 크게 나는 컴퓨터 — 몇 초의 "위잉"은 고장이 아니라 점호입니다</title>
     <link>https://specfit.kr/posts/pc-fan-loud-at-boot.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-fan-loud-at-boot.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/bluetooth-earbuds-stutter.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>폰에서는 멀쩡한 블루투스 이어폰이 노트북·컴퓨터에서만 끊기고 지직거리는 증상은 흔한데 원인 후보가 많아 헤매기 쉽습니다. 와이파이를 쓸 때 심한지, 한동안 조용하다 재생하면 끊기는지, 통화를 켜면 음질이 망가지는지 — 정황별 판정과 처방을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>유튜브는 나오는데 게임 소리만 안 날 때 — 소리는 앱마다 따로 배선돼 있습니다</title>
-    <link>https://specfit.kr/posts/app-no-sound.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/app-no-sound.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>전체 소리는 멀쩡한데 특정 게임이나 프로그램만 조용한 증상은 고장이 아니라 배선 문제인 경우가 대부분입니다. 윈도우가 앱마다 볼륨과 출력 장치를 따로 기억하기 때문인데, 그 장부를 여는 순서와 헤드셋을 꽂았다 뺀 뒤 생기는 전형적인 함정까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>

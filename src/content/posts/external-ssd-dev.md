@@ -2,7 +2,7 @@
 title: 개발용 외장 SSD — USB 규격이 상한을 정합니다
 description: 외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.
 date: 2026-08-20
-updated: 2026-08-30
+updated: 2026-09-07
 category: memory
 tags: [외장SSD, USB, NVMe, 로컬LLM, 개발용PC]
 affiliate: true
@@ -248,5 +248,8 @@ TBW 기준은 [SSD 수명 TBW](/posts/ssd-tbw-lifespan.html)에 계산해 뒀습
 4. **로컬 LLM 모델을 둬도 생성 속도는 그대로**입니다. 로딩만 몇 초 붙습니다
 5. 실제로 조심할 것은 **케이스 규격**과 **발열**입니다
 6. **자주 쓰는 건 내장, 보관용은 외장**으로 나누세요
+
+(꽂았을 때 연결음만 나고 탐색기에 안 보인다면 —
+[그 증상의 판정 순서](/posts/usb-not-showing.html)를 먼저 타 보세요.)
 
 수치나 판단이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

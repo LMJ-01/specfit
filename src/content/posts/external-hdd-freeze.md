@@ -176,7 +176,8 @@ tags: [외장하드, 탐색기멈춤, 배드섹터, USB간섭, 백업]
 5. 이 증상의 진짜 결론은 **백업 두 벌**입니다 — 외장하드
    한 개는 단일 실패 지점입니다
 
-저장장치 이웃 글들 — [백업 전략](/posts/dev-backup-strategy.html) ·
+저장장치 이웃 글들 — [소리만 나고 안 보일 때](/posts/usb-not-showing.html) ·
+[백업 전략](/posts/dev-backup-strategy.html) ·
 [NAS vs 외장하드](/posts/nas-vs-external-hdd.html) ·
 [USB 3.0 간섭(무선 끊김)](/posts/wireless-mouse-lag.html)과 이어집니다.
 

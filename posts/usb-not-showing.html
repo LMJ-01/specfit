@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USB를 꽂으면 소리만 나고 안 보일 때 — 소리가 났다는 건 절반은 성공했다는 뜻입니다 | 스펙핏</title>
+<meta name="description" content="USB를 꽂으면 &quot;뚜둥&quot; 연결음은 나는데 내 PC에는 아무것도 안 뜨는 증상은 커뮤니티 단골 질문입니다. 소리가 났다면 연결 층은 통과한 것이라 범인은 그 윗층에 있습니다 — 드라이브 문자, 드라이버, 인식 모드 순서의 판정과, 함부로 포맷하면 안 되는 이유까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/usb-not-showing.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="USB를 꽂으면 소리만 나고 안 보일 때 — 소리가 났다는 건 절반은 성공했다는 뜻입니다 | 스펙핏">
+<meta property="og:description" content="USB를 꽂으면 &quot;뚜둥&quot; 연결음은 나는데 내 PC에는 아무것도 안 뜨는 증상은 커뮤니티 단골 질문입니다. 소리가 났다면 연결 층은 통과한 것이라 범인은 그 윗층에 있습니다 — 드라이브 문자, 드라이버, 인식 모드 순서의 판정과, 함부로 포맷하면 안 되는 이유까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/usb-not-showing.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"USB를 꽂으면 소리만 나고 안 보일 때 — 소리가 났다는 건 절반은 성공했다는 뜻입니다","description":"USB를 꽂으면 \"뚜둥\" 연결음은 나는데 내 PC에는 아무것도 안 뜨는 증상은 커뮤니티 단골 질문입니다. 소리가 났다면 연결 층은 통과한 것이라 범인은 그 윗층에 있습니다 — 드라이브 문자, 드라이버, 인식 모드 순서의 판정과, 함부로 포맷하면 안 되는 이유까지 정리했습니다.","datePublished":"2026-09-07","dateModified":"2026-09-07","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/usb-not-showing.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"USB를 꽂으면 소리만 나고 안 보일 때 — 소리가 났다는 건 절반은 성공했다는 뜻입니다","item":"https://specfit.kr/posts/usb-not-showing.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"폰을 꽂으면 소리만 나고 파일이 안 보여요","acceptedAnswer":{"@type":"Answer","text":"고장이 아니라 모드 문제인 경우가 대부분입니다 — 폰은 기본이 충전 모드라, 폰 화면에서 \"파일 전송(MTP)\"을 골라야 탐색기에 나타납니다. 카메라도 같은 계열입니다."}},{"@type":"Question","name":"어제까지 잘 되던 USB인데 갑자기 이래요","acceptedAnswer":{"@type":"Answer","text":"문자 충돌(네트워크 드라이브 등과 겹침)·드라이버 꼬임처럼 소프트웨어 층의 일시 문제가 흔합니다 — 1·2단계로 대부분 돌아오고, 다른 컴퓨터에서 잘 보인다면 데이터도 무사하다는 뜻이니 침착하게 층부터 가르세요."}},{"@type":"Question","name":"디스크 관리에서 용량이 이상하게 보여요","acceptedAnswer":{"@type":"Answer","text":"파티션이 깨졌거나 도구(부팅 USB 제작 등)가 구조를 바꿔 놓은 경우입니다 — 데이터가 필요 없다면 새로 초기화하면 되고, 필요한 데이터가 있다면 그 상태로 더 만지지 않는 것이 우선입니다."}},{"@type":"Question","name":"USB 허브에 꽂으면 안 되고 본체에 꽂으면 돼요","acceptedAnswer":{"@type":"Answer","text":"허브의 전원·대역 한계입니다 — 특히 전원을 따로 받지 않는 허브에 외장하드를 물리면 이 증상이 잘 납니다. 전원 어댑터가 있는 허브로 바꾸거나, 저장장치는 본체 직결이 정석입니다."}},{"@type":"Question","name":"소리조차 안 나면 뭐부터 보나요","acceptedAnswer":{"@type":"Answer","text":"물리 층입니다 — 포트 바꾸기 → 케이블 바꾸기(케이블 단선이 의외로 흔합니다) → 다른 컴퓨터 순서로 격리하면 포트/케이블/장치 중 어디가 죽었는지 갈립니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>USB를 꽂으면 소리만 나고 안 보일 때 — 소리가 났다는 건 절반은 성공했다는 뜻입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-07">2026년 9월 7일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>USB 메모리나 외장하드를 꽂으면 <strong>&quot;뚜둥&quot; 소리는 나는데, 내 PC를
+열어 봐도 아무것도 없습니다.</strong> 뽑았다 꽂아도 소리만 반복되고요.
+커뮤니티에 몇 년째 올라오는 단골 증상입니다.</p>
+<p>먼저 좋은 소식 — <strong>그 소리가 났다는 것 자체가 단서</strong>입니다.
+연결음은 윈도우가 &quot;뭔가 꽂혔다&quot;를 감지했다는 신호라서, 전원과
+물리 연결 층은 통과한 상태라는 뜻입니다. 범인은 그 윗층 —
+<strong>꽂힌 장치를 화면에 보여주는 단계</strong> 어딘가에 있고, 그 목록은
+짧습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>정황</th><th>유력 갈래</th></tr></thead>
+<tbody>
+<tr><td>소리 O + 내 PC에 없음</td><td><strong>드라이브 문자·초기화 갈래</strong> — 디스크 관리부터 보세요</td></tr>
+<tr><td>장치 관리자에 <strong>노란 표시</strong></td><td><strong>드라이버 갈래</strong> — 제거 후 재연결이 처방입니다</td></tr>
+<tr><td><strong>폰·카메라</strong>를 꽂았을 때</td><td>고장 아님 — 기기 쪽에서 <strong>파일 전송 모드</strong>를 골라야 합니다</td></tr>
+<tr><td>소리가 <strong>꽂힘/뽑힘 반복</strong></td><td>접촉·전원 불안정 — 포트를 바꾸고 허브를 빼세요</td></tr>
+<tr><td>소리도 <strong>안 남</strong></td><td>이 글의 아래층입니다 — 포트·케이블·장치 자체 순서로 격리하세요</td></tr>
+</tbody>
+</table></div>
+<h2 id="1단계-디스크-관리부터-여세요">1단계 — 디스크 관리부터 여세요</h2>
+<p>내 PC(탐색기)는 <strong>문자(D:, E: …)가 붙은 드라이브만</strong> 보여줍니다.
+장치는 붙었는데 문자가 없으면, 연결음은 나고 화면에는 없는 —
+정확히 이 증상이 됩니다. 시작 버튼 우클릭 → <strong>디스크 관리</strong>를
+열어 보세요:</p>
+<ul>
+<li><strong>디스크는 보이는데 문자가 없다</strong> — 해당 볼륨 우클릭 →
+&quot;드라이브 문자 및 경로 변경&quot;으로 문자를 붙이면 끝입니다.
+이 갈래가 은근히 흔합니다</li>
+<li><strong>&quot;초기화되지 않음&quot;으로 보인다</strong> — 산 지 얼마 안 된 <strong>새
+디스크</strong>라면 초기화·볼륨 생성이 필요한 정상 절차입니다.
+단, <strong>쓰던 디스크가 이렇게 보인다면 절차가 아니라 증상</strong>이니
+아래 경고를 읽고 멈추세요</li>
+<li><strong>디스크 관리에도 아예 없다</strong> — 화면 층 문제가 아니라 그
+아래(드라이버·연결) 층입니다. 2단계로 갑니다</li>
+</ul>
+<h2 id="먼저-경고-포맷하세요라는-답변의-함정">⚠️ 먼저 경고 — &quot;포맷하세요&quot;라는 답변의 함정</h2>
+<p>이 증상을 검색하면 포맷·초기화로 해결했다는 답이 많이 나옵니다.
+<strong>새 디스크라면 맞는 절차지만, 데이터가 든 디스크라면 그 답을
+따라가면 안 됩니다</strong> — 문자 할당·드라이버 문제였을 뿐인 디스크를
+포맷하면 멀쩡한 데이터만 날아갑니다. 윈도우가 &quot;포맷하시겠습니까&quot;
+를 물어도, 안에 데이터가 있다면 <strong>일단 취소</strong>가 정답입니다.</p>
+<h2 id="2단계-장치-관리자-드라이버-층">2단계 — 장치 관리자: 드라이버 층</h2>
+<p>장치 관리자를 열고 USB를 꽂았다 뽑으며 목록 변화를 보세요.</p>
+<ul>
+<li><strong>노란 느낌표</strong>가 붙은 항목이 생긴다면 드라이버 갈래입니다 —
+해당 장치 우클릭 → 제거 후, 뽑았다 다시 꽂으면 재설치됩니다.
+&quot;알 수 없는 USB 장치&quot; 표기도 같은 갈래입니다</li>
+<li>목록에 아무 변화가 없다면 — 소리와 달리 실제로는 감지가
+불안정한 상태라, 3단계 격리로 갑니다</li>
+</ul>
+<h2 id="3단계-격리-포트-컴퓨터-장치">3단계 — 격리: 포트, 컴퓨터, 장치</h2>
+<p><a href="/posts/dual-monitor-one-blank.html">맞바꾸기 격리</a>의 USB판입니다.</p>
+<ol>
+<li><strong>다른 포트로</strong> — 앞면에 꽂았다면 메인보드에 직결된 <strong>뒷면
+포트</strong>로. 허브·연장선을 거쳤다면 빼고 직결로. 꽂힘/뽑힘
+소리가 반복되는 증상은 특히 이 갈래(접촉·전원)가 흔합니다</li>
+<li><strong>다른 컴퓨터에</strong> — 거기서도 안 보이면 장치 쪽, 보이면 원래
+컴퓨터 쪽으로 범인이 갈립니다</li>
+<li><strong>외장하드라면</strong> — 전원이 부족하면 걸리다 끊기는 동작이
+됩니다. <a href="/posts/external-hdd-freeze.html">외장하드 멈춤 글</a>의
+전원 갈래가 그대로 얹힙니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="폰을-꽂으면-소리만-나고-파일이-안-보여요">폰을 꽂으면 소리만 나고 파일이 안 보여요</h3>
+<p>고장이 아니라 <strong>모드 문제</strong>인 경우가 대부분입니다 — 폰은 기본이
+충전 모드라, 폰 화면에서 <strong>&quot;파일 전송(MTP)&quot;을 골라야</strong> 탐색기에
+나타납니다. 카메라도 같은 계열입니다.</p>
+<h3 id="어제까지-잘-되던-usb인데-갑자기-이래요">어제까지 잘 되던 USB인데 갑자기 이래요</h3>
+<p>문자 충돌(네트워크 드라이브 등과 겹침)·드라이버 꼬임처럼
+소프트웨어 층의 일시 문제가 흔합니다 — 1·2단계로 대부분
+돌아오고, 다른 컴퓨터에서 잘 보인다면 데이터도 무사하다는
+뜻이니 침착하게 층부터 가르세요.</p>
+<h3 id="디스크-관리에서-용량이-이상하게-보여요">디스크 관리에서 용량이 이상하게 보여요</h3>
+<p>파티션이 깨졌거나 도구(부팅 USB 제작 등)가 구조를 바꿔 놓은
+경우입니다 — 데이터가 필요 없다면 새로 초기화하면 되고, 필요한
+데이터가 있다면 그 상태로 더 만지지 않는 것이 우선입니다.</p>
+<h3 id="usb-허브에-꽂으면-안-되고-본체에-꽂으면-돼요">USB 허브에 꽂으면 안 되고 본체에 꽂으면 돼요</h3>
+<p>허브의 전원·대역 한계입니다 — 특히 전원을 따로 받지 않는 허브에
+외장하드를 물리면 이 증상이 잘 납니다. 전원 어댑터가 있는 허브로
+바꾸거나, 저장장치는 본체 직결이 정석입니다.</p>
+<h3 id="소리조차-안-나면-뭐부터-보나요">소리조차 안 나면 뭐부터 보나요</h3>
+<p>물리 층입니다 — 포트 바꾸기 → 케이블 바꾸기(케이블 단선이 의외로
+흔합니다) → 다른 컴퓨터 순서로 격리하면 포트/케이블/장치 중
+어디가 죽었는지 갈립니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>연결음이 났다면 절반은 성공</strong>입니다 — 물리·전원 층은 통과,
+범인은 보여주는 층입니다</li>
+<li><strong>디스크 관리부터</strong> — 문자 미할당이 이 증상의 단골이고, 문자
+하나 붙이면 끝나는 경우가 많습니다</li>
+<li><strong>데이터 있는 디스크는 포맷 권유를 따라가지 마세요</strong> — 문자·
+드라이버 문제에 포맷은 데이터만 잃는 오답입니다</li>
+<li>장치 관리자 <strong>노란 표시는 제거 후 재연결</strong>, 그래도 안 되면
+<strong>포트·컴퓨터·장치 순서로 격리</strong>입니다</li>
+<li>폰·카메라는 고장이 아니라 <strong>전송 모드 선택</strong>입니다</li>
+</ol>
+<p>저장장치 이웃 판정들 — <a href="/posts/external-hdd-freeze.html">외장하드 걸림·멈춤</a> ·
+<a href="/posts/dual-monitor-one-blank.html">격리 진단의 원형</a> ·
+<a href="/posts/dev-backup-strategy.html">백업 두 벌 원칙</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">USB인식</span> <span class="tag">드라이브문자</span> <span class="tag">장치관리자</span> <span class="tag">디스크관리</span> <span class="tag">외장저장장치</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/pc-fan-loud-at-boot.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">켤 때만 팬소리가 크게 나는 컴퓨터 — 몇 초의 &quot;위잉&quot;은 고장이 아니라 점호입니다</span>
+        <span class="card-desc">컴퓨터를 켜는 순간 팬이 크게 위잉 돌다가 몇 초 뒤 조용해지는 현상이 고장 신호인지 걱정하는 질문은 커뮤니티 단골입니다. 결론은 정상 — 제어가 잡히기 전의 점호입니다. 오히려 조용해지지 않고 계속 클 때, 소리의 결이 다를 때가 판정 대상입니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/boot-into-bios.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">켤 때마다 바이오스 화면만 나올 때 — 부팅이 길을 잃었다는 뜻입니다</span>
+        <span class="card-desc">컴퓨터를 켜면 윈도우 대신 바이오스 설정 화면으로만 들어가는 증상은 보드가 부팅할 디스크를 못 찾았다는 신호입니다. 바이오스 안에서 디스크가 보이는지가 첫 갈림길이고, 매번 반복되며 시계까지 초기화된다면 범인은 따로 있습니다. 판정 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/external-hdd-freeze.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">외장하드를 연결하면 컴퓨터가 멈출 때 — 멈춤의 모양이 갈래를 알려줍니다</span>
+        <span class="card-desc">외장하드만 꽂으면 탐색기가 멈추고 컴퓨터가 버벅이는 증상은 디스크 손상부터 USB 간섭, 절전, 썸네일 생성까지 원인이 다양합니다. 언제 어떻게 멈추는지가 갈래를 알려주고, 안에 중요한 데이터가 있다면 순서를 지키는 것이 데이터를 지킵니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
