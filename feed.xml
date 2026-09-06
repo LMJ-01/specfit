@@ -34,6 +34,13 @@
     <description>절전 복귀 후 스피커가 침묵하는데 재부팅하면 돌아오는 증상은 오디오 경로의 어느 장치가 깨어나는 점호에 늦은 상태입니다. 재부팅 없이 그 장치만 다시 깨우는 방법과, 소리가 나오는 경로별 예방 스위치를 정리했습니다.</description>
   </item>
   <item>
+    <title>마우스 휠이 튀거나 반대로 갈 때 — "항상"과 "가끔"이 다른 문제입니다</title>
+    <link>https://specfit.kr/posts/mouse-wheel-jump.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mouse-wheel-jump.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>스크롤을 내리는데 화면이 위로 확 튀는 증상과, 방향이 아예 반대로 뒤집힌 증상은 원인이 완전히 다릅니다. 항상 반대면 설정이고, 가끔 튀면 휠의 부품 노화입니다. 두 갈래의 판정과 처방, 응급처치의 한계까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>절전에서 깨면 창이 한쪽 모니터로 몰릴 때 — 모니터가 잠깐 "없는 것"이 됐기 때문입니다</title>
     <link>https://specfit.kr/posts/monitor-sleep-window-move.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-sleep-window-move.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-speaker-noise.html</guid>
     <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
     <description>컴퓨터 스피커나 이어폰에서 지지직, 웅, 쏴아 하는 잡음이 나면 원인 후보가 많아 헤매기 쉽습니다. 그런데 잡음이 언제 나는지가 갈래를 알려줍니다. 증상별 판정과 해결 사다리, 구조적으로 끝내는 방법까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>게임하다 컴퓨터가 꺼진다면 — 꺼진 모양이 범인을 알려줍니다</title>
-    <link>https://specfit.kr/posts/pc-shutdown-during-game.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-shutdown-during-game.html</guid>
-    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
-    <description>게임 중에만 컴퓨터가 툭 꺼지거나 혼자 재부팅되는 증상은 원인 후보가 많아 막막합니다. 그런데 꺼진 모양(무징후 컷·재부팅·서서히 뜨거워지다)이 갈래를 알려줍니다. 진단 순서와 격리 방법을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
