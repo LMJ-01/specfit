@@ -851,6 +851,7 @@ export const figures = {
   'case-orientation': caseOrientation,
   'mixed-refresh': mixedRefresh,
   'strip-budget': stripBudget,
+  'band-trap': bandTrap,
 };
 
 /**
@@ -2431,5 +2432,49 @@ function stripBudget() {
     206,
     body,
     '컴퓨터 식구는 얌전한 편입니다. 합계를 위험하게 만드는 것은 대개 전열 기기 쪽입니다.'
+  );
+}
+
+/**
+ * 대역 함정 — 한 이름표 뒤에 숨은 두 개의 문(2.4GHz / 5GHz).
+ * laptop-wifi-not-connecting "함정부터" 절 고정.
+ */
+function bandTrap() {
+  const W = 640;
+
+  let body = '';
+  body += t(16, 22, '"같은 와이파이"의 실제 구조 — 이름표는 하나, 문은 둘', { weight: 600, size: 13.5 });
+
+  // 공유기 + 이름표
+  body += rect(40, 76, 120, 64, 'none', { stroke: COLOR.line, r: 8 });
+  body += t(100, 102, '공유기', { anchor: 'middle', size: 12.5, weight: 600 });
+  body += t(100, 122, '이름: 우리집WiFi', { anchor: 'middle', size: 10.5, fill: COLOR.mute });
+
+  const lane = (y, color, name, note, dst, ok) => {
+    let s = '';
+    s += `<line x1="160" y1="${y}" x2="380" y2="${y}" stroke="${color}" stroke-width="2"/>`;
+    s += t(270, y - 8, name, { anchor: 'middle', size: 11.5, weight: 600, fill: color });
+    s += t(270, y + 16, note, { anchor: 'middle', size: 10, fill: COLOR.mute });
+    s += rect(390, y - 22, 200, 44, 'none', { stroke: color, r: 6 });
+    s += t(490, y - 2, dst, { anchor: 'middle', size: 11.5 });
+    s += t(490, y + 14, ok, { anchor: 'middle', size: 10, fill: COLOR.mute });
+    return s;
+  };
+
+  body += lane(90, COLOR.fit, '5GHz 문', '빠르고 짧은 전파', '폰 → 여기 붙어 잘 씀 ✓', '그래서 "와이파이는 정상"처럼 보임');
+  body += lane(168, COLOR.over, '2.4GHz 문', '느리지만 멀리 감', '노트북 → 이 문 사정만 나쁘면?', '"같은 와이파이인데 나만 안 됨"');
+
+  body += t(320, 218, '이름을 대역별로 갈라 내보내면(우리집WiFi_2.4 / _5) 어느 문의 문제인지 바로 갈립니다', {
+    anchor: 'middle',
+    size: 11,
+    fill: COLOR.mute,
+  });
+
+  return figure(
+    '한 와이파이 이름 뒤에 2.4GHz와 5GHz 두 대역이 숨어 있어, 기기마다 다른 대역에 붙으며 "같은 와이파이인데 한 기기만 안 되는" 그림이 되는 구조',
+    W,
+    234,
+    body,
+    '"같은 와이파이"가 실제로는 다른 문일 수 있습니다 — 이름을 갈라 보면 함정이 드러납니다.'
   );
 }
