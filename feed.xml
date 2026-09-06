@@ -20,6 +20,13 @@
     <description>컴퓨터를 켜는 순간 팬이 크게 위잉 돌다가 몇 초 뒤 조용해지는 현상이 고장 신호인지 걱정하는 질문은 커뮤니티 단골입니다. 결론은 정상 — 제어가 잡히기 전의 점호입니다. 오히려 조용해지지 않고 계속 클 때, 소리의 결이 다를 때가 판정 대상입니다.</description>
   </item>
   <item>
+    <title>게임 중 갑자기 바탕화면으로 튕겨 나올 때 — 꺼진 게 아니라 누가 끼어든 겁니다</title>
+    <link>https://specfit.kr/posts/game-minimizes-itself.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/game-minimizes-itself.html</guid>
+    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
+    <description>게임을 하다가 알트탭을 누른 것도 아닌데 갑자기 바탕화면이나 다른 창으로 튕겨 나오는 증상은 게시판 단골 질문입니다. 게임이 살아 있다면 크래시가 아니라 포커스를 빼앗긴 것 — 끼어든 범인을 찾는 순서와 방해 금지·화면 모드 우회까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>인터넷은 되는데 특정 사이트만 안 열릴 때 — 두 번의 맞바꾸기로 층이 갈립니다</title>
     <link>https://specfit.kr/posts/website-not-loading.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/website-not-loading.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/boot-into-bios.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>컴퓨터를 켜면 윈도우 대신 바이오스 설정 화면으로만 들어가는 증상은 보드가 부팅할 디스크를 못 찾았다는 신호입니다. 바이오스 안에서 디스크가 보이는지가 첫 갈림길이고, 매번 반복되며 시계까지 초기화된다면 범인은 따로 있습니다. 판정 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>노트북에서 블루투스 이어폰이 뚝뚝 끊길 때 — 끊기는 정황이 갈래를 알려줍니다</title>
-    <link>https://specfit.kr/posts/bluetooth-earbuds-stutter.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/bluetooth-earbuds-stutter.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>폰에서는 멀쩡한 블루투스 이어폰이 노트북·컴퓨터에서만 끊기고 지직거리는 증상은 흔한데 원인 후보가 많아 헤매기 쉽습니다. 와이파이를 쓸 때 심한지, 한동안 조용하다 재생하면 끊기는지, 통화를 켜면 음질이 망가지는지 — 정황별 판정과 처방을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
