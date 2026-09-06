@@ -76,6 +76,13 @@
     <description>어느 날 바탕화면이 텅 비어 있으면 파일이 다 날아간 줄 알고 심장이 내려앉습니다. 그런데 아이콘만 사라진 건지, 파일도 사라진 건지, 작업표시줄까지 사라진 건지 — 사라진 범위에 따라 원인이 완전히 다르고, 대부분은 1분짜리 설정 문제입니다.</description>
   </item>
   <item>
+    <title>켤 때마다 바이오스 화면만 나올 때 — 부팅이 길을 잃었다는 뜻입니다</title>
+    <link>https://specfit.kr/posts/boot-into-bios.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/boot-into-bios.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터를 켜면 윈도우 대신 바이오스 설정 화면으로만 들어가는 증상은 보드가 부팅할 디스크를 못 찾았다는 신호입니다. 바이오스 안에서 디스크가 보이는지가 첫 갈림길이고, 매번 반복되며 시계까지 초기화된다면 범인은 따로 있습니다. 판정 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>노트북에서 블루투스 이어폰이 뚝뚝 끊길 때 — 끊기는 정황이 갈래를 알려줍니다</title>
     <link>https://specfit.kr/posts/bluetooth-earbuds-stutter.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/bluetooth-earbuds-stutter.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-shutdown-during-game.html</guid>
     <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
     <description>게임 중에만 컴퓨터가 툭 꺼지거나 혼자 재부팅되는 증상은 원인 후보가 많아 막막합니다. 그런데 꺼진 모양(무징후 컷·재부팅·서서히 뜨거워지다)이 갈래를 알려줍니다. 진단 순서와 격리 방법을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>케이스 옆판 열고 쓰면 안 되나 — 진단용으로는 최고, 상시 운용으로는 손해입니다</title>
-    <link>https://specfit.kr/posts/pc-case-open.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-case-open.html</guid>
-    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
-    <description>온도가 걱정되면 옆판을 열어두고 싶어집니다. 그런데 열어서 시원해지는 컴퓨터가 있고 오히려 나빠지는 자리도 있습니다. 옆판 열기의 진짜 쓸모는 상시 해법이 아니라 진단 도구라는 것 — 판정과 대가를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

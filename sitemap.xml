@@ -14,6 +14,7 @@
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/posts/app-no-sound.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/bluetooth-earbuds-stutter.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/boot-into-bios.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/desktop-icons-missing.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/external-hdd-freeze.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-not-detected.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
@@ -54,7 +55,7 @@
   <url><loc>https://specfit.kr/posts/psu-zero-fan.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-usage-normal.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/router-device-count.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/ssd-migration-vs-clean-install.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/ssd-migration-vs-clean-install.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ssd-partition.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/tablet-as-monitor.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/cpu-gpu-bottleneck.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>

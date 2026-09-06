@@ -166,6 +166,8 @@ tags: [부팅안됨, 화면안나옴, 램재장착, 비프음, 조립PC]
 [듀얼 중 한쪽만 안 나옴](/posts/dual-monitor-one-blank.html) ·
 [F 모델과 내장그래픽](/posts/cpu-f-model.html)과 이어집니다.
 (화면은 나오는데 **그래픽카드만 안 잡히는** 경우는
-[인식의 층 판정](/posts/gpu-not-detected.html)이 그다음 글입니다.)
+[인식의 층 판정](/posts/gpu-not-detected.html), 화면은 나오는데
+**바이오스에서만 멈추는** 경우는
+[길 잃은 부팅 판정](/posts/boot-into-bios.html)이 그다음 글입니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
