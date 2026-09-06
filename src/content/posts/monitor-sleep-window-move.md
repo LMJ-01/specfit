@@ -136,5 +136,7 @@ DP 연결에서 더 흔해서, HDMI로 바꿔 완화됐다는 보고가 있습�
 듀얼 모니터의 이웃 판정들 — [한쪽만 안 나옴](/posts/dual-monitor-one-blank.html) ·
 [게임 중 커서 이탈](/posts/dual-monitor-mouse-escape.html) ·
 [DP vs HDMI](/posts/dp-vs-hdmi-coding.html)와 이어집니다.
+(절전 복귀의 형제 증상 — 창이 아니라 [소리가 안 돌아오는
+날](/posts/no-sound-after-sleep.html)도 같은 "점호" 이야기입니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

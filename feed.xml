@@ -27,6 +27,13 @@
     <description>본체에서 탄내나 매캐한 냄새가 나면 "작동은 잘 되는데"라는 이유로 계속 쓰기 쉽습니다. 그런데 이 증상만은 순서가 다릅니다. 전원부터 끊고, 끈 상태에서 냄새의 종류와 위치로 갈래를 가르는 판정 — 그리고 다시 켜도 되는 기준까지 정리했습니다.</description>
   </item>
   <item>
+    <title>절전에서 깨면 소리가 안 날 때 — 점호에 늦은 장치를 다시 깨우면 됩니다</title>
+    <link>https://specfit.kr/posts/no-sound-after-sleep.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/no-sound-after-sleep.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>절전 복귀 후 스피커가 침묵하는데 재부팅하면 돌아오는 증상은 오디오 경로의 어느 장치가 깨어나는 점호에 늦은 상태입니다. 재부팅 없이 그 장치만 다시 깨우는 방법과, 소리가 나오는 경로별 예방 스위치를 정리했습니다.</description>
+  </item>
+  <item>
     <title>절전에서 깨면 창이 한쪽 모니터로 몰릴 때 — 모니터가 잠깐 "없는 것"이 됐기 때문입니다</title>
     <link>https://specfit.kr/posts/monitor-sleep-window-move.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-sleep-window-move.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-case-open.html</guid>
     <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
     <description>온도가 걱정되면 옆판을 열어두고 싶어집니다. 그런데 열어서 시원해지는 컴퓨터가 있고 오히려 나빠지는 자리도 있습니다. 옆판 열기의 진짜 쓸모는 상시 해법이 아니라 진단 도구라는 것 — 판정과 대가를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>컴퓨터 팬은 도는데 화면이 안 나올 때 — "켜짐"과 "부팅"은 다릅니다</title>
-    <link>https://specfit.kr/posts/pc-boot-no-display.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-boot-no-display.html</guid>
-    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
-    <description>전원을 누르면 팬도 돌고 불도 들어오는데 화면만 안 나오는 증상은 조립 직후든 잘 쓰던 컴퓨터든 갑자기 찾아옵니다. 팬이 돈다는 건 전기가 들어왔다는 뜻일 뿐이라, 어디서 멈췄는지 바깥부터 안쪽으로 잘라 들어가는 진단 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

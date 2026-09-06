@@ -150,5 +150,7 @@ tags: [게임소리안남, 볼륨믹서, 출력장치, 사운드설정, 윈도�
 소리 이웃 판정들 — [스피커 잡음(지지직)](/posts/pc-speaker-noise.html) ·
 [블루투스 이어폰 끊김](/posts/bluetooth-earbuds-stutter.html) ·
 [무선 주변기기 끊김](/posts/wireless-mouse-lag.html)과 이어집니다.
+(특정 앱이 아니라 **절전에서 깬 뒤 전체가** 조용하다면 —
+[점호에 늦은 장치 깨우기](/posts/no-sound-after-sleep.html)가 그 글입니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
