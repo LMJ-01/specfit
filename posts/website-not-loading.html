@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인터넷은 되는데 특정 사이트만 안 열릴 때 — 두 번의 맞바꾸기로 층이 갈립니다 | 스펙핏</title>
+<meta name="description" content="다른 사이트는 다 되는데 한 곳만 안 열리는 증상은 브라우저, 컴퓨터, 집 회선, 사이트 자체 중 어느 층의 문제인지부터 갈라야 합니다. 다른 브라우저와 다른 기기, 두 번의 격리로 층을 자르는 판정과 층별 처방을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/website-not-loading.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="인터넷은 되는데 특정 사이트만 안 열릴 때 — 두 번의 맞바꾸기로 층이 갈립니다 | 스펙핏">
+<meta property="og:description" content="다른 사이트는 다 되는데 한 곳만 안 열리는 증상은 브라우저, 컴퓨터, 집 회선, 사이트 자체 중 어느 층의 문제인지부터 갈라야 합니다. 다른 브라우저와 다른 기기, 두 번의 격리로 층을 자르는 판정과 층별 처방을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/website-not-loading.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"인터넷은 되는데 특정 사이트만 안 열릴 때 — 두 번의 맞바꾸기로 층이 갈립니다","description":"다른 사이트는 다 되는데 한 곳만 안 열리는 증상은 브라우저, 컴퓨터, 집 회선, 사이트 자체 중 어느 층의 문제인지부터 갈라야 합니다. 다른 브라우저와 다른 기기, 두 번의 격리로 층을 자르는 판정과 층별 처방을 정리했습니다.","datePublished":"2026-09-06","dateModified":"2026-09-06","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/website-not-loading.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"인터넷은 되는데 특정 사이트만 안 열릴 때 — 두 번의 맞바꾸기로 층이 갈립니다","item":"https://specfit.kr/posts/website-not-loading.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"\"연결이 비공개로 설정되어 있지 않습니다\" 경고가 떠요","acceptedAnswer":{"@type":"Answer","text":"인증서 계열입니다 — 사이트 쪽 인증서가 만료됐거나, 드물게 내 컴퓨터의 날짜·시간이 틀어져 있어도 이 경고가 납니다. 모든 사이트에서 경고가 나면 내 시계부터, 한 사이트만이면 그 사이트 쪽 문제일 확률이 높습니다."}},{"@type":"Question","name":"어제까지 잘 됐는데 갑자기 안 돼요","acceptedAnswer":{"@type":"Answer","text":"\"갑자기\"는 대개 어제와 오늘 사이에 바뀐 것이 범인입니다 — 브라우저·보안 프로그램 업데이트, 새로 깐 확장 프로그램, 그리고 사이트 쪽 변화(장애·이전). 격리 순서는 같고, 층 ④일 확률이 평소보다 높습니다."}},{"@type":"Question","name":"회사(학교)에서만 안 열려요","acceptedAnswer":{"@type":"Answer","text":"관리되는 네트워크의 정책 차단일 가능성이 큽니다 — 진단할 문제가 아니라 네트워크 관리자의 결정 영역이라, 필요하면 그쪽에 문의하는 것이 맞는 경로입니다."}},{"@type":"Question","name":"열리긴 하는데 그 사이트만 느려요","acceptedAnswer":{"@type":"Answer","text":"안 열림이 아니라 느림이면 다른 글입니다 — 다운로드 속도 판정의 \"서버 쪽 관문\" 이 그 갈래입니다. 내 회선이 아니라 거기까지의 길·상대 서버 사정인 경우가 많습니다."}},{"@type":"Question","name":"DNS가 뭔데 자꾸 나오나요","acceptedAnswer":{"@type":"Answer","text":"사이트 이름을 실제 주소로 바꿔 주는 주소록입니다. 주소록이 낡았거나(캐시), 주소록 서비스가 그 항목만 못 찾아 주면(서버) 그 사이트만 못 가는 증상이 됩니다 — 캐시 비우기와 주소록 바꾸기가 처방인 이유입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>인터넷은 되는데 특정 사이트만 안 열릴 때 — 두 번의 맞바꾸기로 층이 갈립니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-06">2026년 9월 6일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>유튜브도 검색도 다 되는데 <strong>딱 한 사이트만 안 열립니다.</strong> 뱅글뱅글
+돌다가 시간 초과가 나거나, 이상한 오류 페이지가 뜹니다. 인터넷이
+되니 통신사 탓도 아닌 것 같고, 어디부터 봐야 할지 막막한
+증상입니다.</p>
+<p>이 증상의 정석은 <a href="/posts/dual-monitor-one-blank.html">한쪽만 안 나오는 모니터</a>
+에서 쓴 그 방법입니다 — <strong>맞바꾸기 격리.</strong> 두 번이면 문제가 사는
+층이 갈립니다.</p>
+<h2 id="결론부터-두-번의-격리">결론부터 — 두 번의 격리</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>격리 결과</th><th>문제의 층</th></tr></thead>
+<tbody>
+<tr><td><strong>다른 브라우저</strong>에서는 열림</td><td><strong>브라우저 층</strong> — 확장 프로그램·캐시입니다</td></tr>
+<tr><td>다른 브라우저도 안 됨 + <strong>폰(와이파이)</strong> 은 열림</td><td><strong>이 컴퓨터 층</strong> — 보안 프로그램·DNS 캐시입니다</td></tr>
+<tr><td>집 와이파이 기기 전부 안 됨 + <strong>폰 데이터</strong>로는 열림</td><td><strong>집 회선·공유기·DNS 층</strong>입니다</td></tr>
+<tr><td><strong>폰 데이터로도</strong> 안 열림</td><td><strong>사이트 자체</strong>가 아픈 겁니다 — 내 잘못이 아닙니다</td></tr>
+</tbody>
+</table></div>
+<p>순서대로: ① 다른 브라우저로 열어 본다 ② 폰으로 열어 본다
+(와이파이로 한 번, 와이파이 끄고 데이터로 한 번). 이 세 번의
+시도로 위 표의 어느 줄인지가 정해집니다.</p>
+<h2 id="층-브라우저-확장-프로그램과-캐시">층 ① — 브라우저: 확장 프로그램과 캐시</h2>
+<p>다른 브라우저에서는 열린다면 범인은 원래 브라우저 안에 있습니다.</p>
+<ol>
+<li><strong>확장 프로그램(특히 광고 차단·보안류)을 잠시 꺼 보세요</strong> —
+특정 사이트의 요소를 잘못 막아 페이지 전체가 죽는 경우가
+단골입니다. 시크릿 창(확장이 대개 꺼진 상태)으로 열리는지
+보는 게 빠른 확인법입니다</li>
+<li><strong>그 사이트의 캐시·쿠키만 삭제</strong> — 전체 삭제까지 갈 것 없이
+사이트별 삭제 기능으로 충분한 경우가 많습니다</li>
+<li>브라우저 업데이트가 밀려 있다면 그것도 이 층의 용의자입니다</li>
+</ol>
+<h2 id="층-컴퓨터-보안-프로그램과-dns-캐시">층 ② — 컴퓨터: 보안 프로그램과 DNS 캐시</h2>
+<p>이 컴퓨터의 모든 브라우저가 안 되는데 폰(같은 와이파이)은 된다면:</p>
+<ol>
+<li><strong>보안 프로그램·방화벽</strong> — 웹 보호 기능이 그 사이트를 오탐으로
+막는 경우가 있습니다. 잠시 꺼서 재현되는지 보는 것이 격리이고,
+맞다면 해당 프로그램의 예외 목록이 정식 처방입니다</li>
+<li><strong>DNS 캐시 비우기</strong> — 명령 프롬프트에서 <code>ipconfig /flushdns</code>.
+컴퓨터가 기억해 둔 옛 주소가 낡아서 생기는 갈래를 한 줄로
+자릅니다</li>
+<li>위로 안 잡히면 — 악성코드·보안 프로그램이 주소록(hosts 파일)을
+건드리는 갈래도 있으니, 백신 검사가 이 층의 마무리입니다</li>
+</ol>
+<h2 id="층-집-회선-공유기와-dns">층 ③ — 집 회선: 공유기와 DNS</h2>
+<p>집 안 기기 전부가 안 되는데 폰 데이터로는 열린다면, 문제는 집의
+경로 어딘가입니다.</p>
+<ol>
+<li><strong>공유기 재부팅부터</strong> — <a href="/posts/router-reboot.html">쌓여서 생기는 문제들</a>
+의 즉효약이 여기서도 1순위입니다</li>
+<li><strong>DNS 서버 바꿔 보기</strong> — 기본값은 대개 통신사 DNS인데, 특정
+사이트의 주소만 못 찾아 주는 상태가 생길 수 있습니다. 공개
+DNS로 바꿔 열리는지 보는 것이 격리 겸 처방입니다 (설정
+위치는 어댑터 속성 또는 공유기 관리 화면)</li>
+<li><strong>차단 페이지가 뜬다면</strong> — 오류가 아니라 안내 페이지
+(warning.or.kr 등)로 넘어가는 건 고장이 아니라 <strong>회선
+차원의 차단</strong>입니다. 이건 진단으로 풀 문제가 아니라 그
+사이트의 성격 문제입니다</li>
+</ol>
+<h2 id="층-사이트-자체-내-잘못이-아닌-날">층 ④ — 사이트 자체: 내 잘못이 아닌 날</h2>
+<p>폰 데이터로도 안 열리면 <strong>그 사이트가 아픈 날</strong>입니다. 서버
+점검·장애·도메인 문제 — 내 쪽에서 할 일은 없고, 기다리는 게
+처방입니다. 큰 서비스라면 장애 소식이 검색·SNS에 먼저 올라와
+있는 경우가 많습니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="연결이-비공개로-설정되어-있지-않습니다-경고가-떠요">&quot;연결이 비공개로 설정되어 있지 않습니다&quot; 경고가 떠요</h3>
+<p>인증서 계열입니다 — 사이트 쪽 인증서가 만료됐거나, 드물게 <strong>내
+컴퓨터의 날짜·시간이 틀어져 있어도</strong> 이 경고가 납니다. 모든
+사이트에서 경고가 나면 내 시계부터, 한 사이트만이면 그 사이트
+쪽 문제일 확률이 높습니다.</p>
+<h3 id="어제까지-잘-됐는데-갑자기-안-돼요">어제까지 잘 됐는데 갑자기 안 돼요</h3>
+<p>&quot;갑자기&quot;는 대개 <strong>어제와 오늘 사이에 바뀐 것</strong>이 범인입니다 —
+브라우저·보안 프로그램 업데이트, 새로 깐 확장 프로그램, 그리고
+사이트 쪽 변화(장애·이전). 격리 순서는 같고, 층 ④일 확률이
+평소보다 높습니다.</p>
+<h3 id="회사학교에서만-안-열려요">회사(학교)에서만 안 열려요</h3>
+<p>관리되는 네트워크의 정책 차단일 가능성이 큽니다 — 진단할 문제가
+아니라 네트워크 관리자의 결정 영역이라, 필요하면 그쪽에 문의하는
+것이 맞는 경로입니다.</p>
+<h3 id="열리긴-하는데-그-사이트만-느려요">열리긴 하는데 그 사이트만 느려요</h3>
+<p>안 열림이 아니라 느림이면 다른 글입니다 —
+<a href="/posts/internet-download-speed.html">다운로드 속도 판정의 &quot;서버 쪽 관문&quot;</a>
+이 그 갈래입니다. 내 회선이 아니라 거기까지의 길·상대 서버
+사정인 경우가 많습니다.</p>
+<h3 id="dns가-뭔데-자꾸-나오나요">DNS가 뭔데 자꾸 나오나요</h3>
+<p>사이트 이름을 실제 주소로 바꿔 주는 <strong>주소록</strong>입니다. 주소록이
+낡았거나(캐시), 주소록 서비스가 그 항목만 못 찾아 주면(서버)
+그 사이트만 못 가는 증상이 됩니다 — 캐시 비우기와 주소록
+바꾸기가 처방인 이유입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>두 번의 맞바꾸기</strong> — 다른 브라우저, 다른 기기(폰 와이파이/
+데이터)로 문제의 층부터 자르세요</li>
+<li>브라우저 층은 <strong>확장 프로그램·사이트별 캐시</strong>, 컴퓨터 층은
+<strong>보안 프로그램·DNS 캐시 비우기</strong>입니다</li>
+<li>집 전체면 <strong>공유기 재부팅 → DNS 변경</strong> 순서입니다</li>
+<li>폰 데이터로도 안 되면 <strong>사이트가 아픈 날</strong>입니다 — 내 쪽
+할 일이 없습니다</li>
+<li>차단 안내 페이지·정책 네트워크는 고장이 아니라 <strong>의도된
+막힘</strong>입니다 — 진단 대상이 아닙니다</li>
+</ol>
+<p>네트워크 이웃 판정들 — <a href="/posts/internet-download-speed.html">다운로드 속도(느림의 갈래)</a> ·
+<a href="/posts/router-reboot.html">공유기 재부팅</a> ·
+<a href="/posts/dual-monitor-one-blank.html">격리 진단의 원형</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">사이트접속안됨</span> <span class="tag">DNS</span> <span class="tag">브라우저</span> <span class="tag">격리진단</span> <span class="tag">인터넷문제</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/bluetooth-earbuds-stutter.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">노트북에서 블루투스 이어폰이 뚝뚝 끊길 때 — 끊기는 정황이 갈래를 알려줍니다</span>
+        <span class="card-desc">폰에서는 멀쩡한 블루투스 이어폰이 노트북·컴퓨터에서만 끊기고 지직거리는 증상은 흔한데 원인 후보가 많아 헤매기 쉽습니다. 와이파이를 쓸 때 심한지, 한동안 조용하다 재생하면 끊기는지, 통화를 켜면 음질이 망가지는지 — 정황별 판정과 처방을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/internet-download-speed.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">500메가 인터넷인데 다운로드가 느릴 때 — 실망의 절반은 단위 착시입니다</span>
+        <span class="card-desc">500메가 요금제를 쓰는데 다운로드 창에는 60MB/s만 떠서 속은 기분이 들 때가 있습니다. 그런데 그 숫자는 사실 만점입니다. 통신사의 메가와 다운로드 창의 MB는 단위가 8배 다르고, 진짜 느린 경우의 범인은 관문 목록에서 찾습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/wireless-mouse-lag.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">무선 마우스 커서가 뚝뚝 끊길 때 — 배터리, 전파 길, 옆자리 USB 순서로 봅니다</span>
+        <span class="card-desc">무선 마우스 커서가 순간순간 멈추거나 튀는 증상은 원인이 여럿이라 헤매기 쉽습니다. 제일 흔한 배터리 출력 저하부터, 동글의 전파 길, 의외의 범인인 USB 3.0 간섭까지 — 공짜 진단 순서대로 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

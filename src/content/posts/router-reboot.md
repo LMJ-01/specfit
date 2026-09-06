@@ -146,5 +146,7 @@ tags: [공유기재부팅, 인터넷끊김, 자동재부팅, 공유기관리, �
 집 네트워크의 다른 조각들 — [공유기 세대](/posts/wifi7-router-upgrade.html) ·
 [스위칭허브](/posts/switch-hub-vs-router.html) ·
 [메시 백홀](/posts/mesh-wifi-backhaul.html)과 이어집니다.
+(전체가 아니라 [특정 사이트만 안 열리는 증상](/posts/website-not-loading.html)은
+층부터 가르는 다른 판정입니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
