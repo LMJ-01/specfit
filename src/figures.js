@@ -847,7 +847,54 @@ export const figures = {
   'slow-responder': slowResponder,
   'site-layers': siteLayers,
   'uptime-illusion': uptimeIllusion,
+  'bt-profiles': btProfiles,
 };
+
+/**
+ * 블루투스의 두 모드 — 음악 모드(고음질, 듣기만)와 통화 모드(저음질, 마이크 포함).
+ * bluetooth-earbuds-stutter 갈래 ④ "고장이 아니라 표준 동작" 고정.
+ */
+function btProfiles() {
+  const W = 640;
+  const y0 = 56;
+  const bh = 96;
+  const bw = 272;
+
+  const lane = (x, title, color, lines, note) => {
+    let s = '';
+    s += rect(x, y0, bw, bh, 'none', { stroke: color, r: 8 });
+    s += t(x + bw / 2, y0 - 10, title, { anchor: 'middle', size: 12.5, weight: 600, fill: color });
+    lines.forEach((L, i) => {
+      s += t(x + 16, y0 + 26 + i * 22, L, { size: 11.5 });
+    });
+    s += t(x + bw / 2, y0 + bh + 20, note, { anchor: 'middle', size: 11, fill: COLOR.mute });
+    return s;
+  };
+
+  let body = '';
+  body += t(16, 22, '블루투스 이어폰의 두 모드 — 마이크를 켜는 순간 차선이 바뀝니다', { weight: 600, size: 13.5 });
+
+  body += lane(30, '음악 모드 (듣기 전용)', COLOR.fit,
+    ['소리: 고음질 ♪♪♪', '마이크: 없음', '유튜브·음악 감상이 이 차선'],
+    '평소의 그 좋은 소리');
+  body += lane(338, '통화 모드 (듣기+마이크)', COLOR.over,
+    ['소리: 전화기 음질 ♪', '마이크: 켜짐 🎙', '회의·게임 보이스가 이 차선'],
+    '고장이 아니라 표준 동작');
+
+  // 전환 화살표
+  const midY = y0 + bh / 2;
+  body += `<line x1="${30 + bw + 8}" y1="${midY - 8}" x2="${338 - 8}" y2="${midY - 8}" stroke="${COLOR.mute}" stroke-width="2"/>`;
+  body += `<polygon points="${338 - 8},${midY - 12} ${338 - 1},${midY - 8} ${338 - 8},${midY - 4}" fill="${COLOR.mute}"/>`;
+  body += t((30 + bw + 338) / 2, midY - 16, '마이크 사용 시작', { anchor: 'middle', size: 10.5, fill: COLOR.mute });
+
+  return figure(
+    '블루투스 음악 모드와 통화 모드 — 마이크를 쓰는 순간 고음질 차선에서 전화기 음질 차선으로 옮겨 타는 구조',
+    W,
+    206,
+    body,
+    '회의 음질이 중요하면 소리는 블루투스로 듣되 마이크만 유선·내장으로 받는 조합이 실용적인 우회입니다.'
+  );
+}
 
 /**
  * 빠른 시작 착시 — "종료"해도 작동 시간이 리셋되지 않는 타임라인.
