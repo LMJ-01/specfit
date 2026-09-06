@@ -845,7 +845,53 @@ export const figures = {
   'power-budget': powerBudget,
   'key-matrix': keyMatrix,
   'slow-responder': slowResponder,
+  'site-layers': siteLayers,
 };
+
+/**
+ * 특정 사이트만 안 열릴 때 — 4개 층과 층을 가르는 격리 도구.
+ * website-not-loading 의 "두 번의 맞바꾸기" 구조 고정.
+ */
+function siteLayers() {
+  const W = 640;
+  const x0 = 40;
+  const bw = 330;
+  const bh = 40;
+  const gap = 14;
+  const y0 = 44;
+
+  const layers = [
+    ['브라우저', '확장 프로그램 · 캐시', '다른 브라우저로 열어 본다'],
+    ['이 컴퓨터', '보안 프로그램 · DNS 캐시', '폰(같은 와이파이)으로 열어 본다'],
+    ['집 회선·공유기', '재부팅 · DNS · 차단', '폰의 와이파이를 끄고 데이터로 열어 본다'],
+    ['사이트 자체', '서버 장애 — 내 잘못 아님', '어디서도 안 열리면 여기'],
+  ];
+
+  let body = '';
+  body += t(16, 22, '문제는 네 개 층 중 하나에 삽니다 — 격리 한 번마다 층 하나가 갈립니다', { weight: 600, size: 13.5 });
+
+  layers.forEach((L, i) => {
+    const y = y0 + i * (bh + gap);
+    const last = i === layers.length - 1;
+    body += rect(x0, y, bw, bh, last ? COLOR.soft : 'none', { stroke: last ? COLOR.accent : COLOR.line, r: 6 });
+    body += t(x0 + 12, y + 17, L[0], { size: 12.5, weight: 600 });
+    body += t(x0 + 12, y + 33, L[1], { size: 10.5, fill: COLOR.mute });
+    // 격리 도구 라벨
+    body += `<line x1="${x0 + bw + 10}" y1="${y + bh / 2}" x2="${x0 + bw + 26}" y2="${y + bh / 2}" stroke="${COLOR.fit}" stroke-width="2"/>`;
+    body += t(x0 + bw + 32, y + bh / 2 + 4, '✂ ' + L[2], { size: 10.5, fill: COLOR.fit });
+    if (!last) {
+      body += `<line x1="${x0 + 24}" y1="${y + bh}" x2="${x0 + 24}" y2="${y + bh + gap}" stroke="${COLOR.mute}" stroke-width="1.5" stroke-dasharray="3 3"/>`;
+    }
+  });
+
+  return figure(
+    '4층 격리 — 브라우저·컴퓨터·집 회선·사이트 자체를 다른 브라우저와 폰(와이파이/데이터)으로 잘라 나가는 그림',
+    W,
+    y0 + 4 * (bh + gap) + 8,
+    body,
+    '세 번의 시도(다른 브라우저 → 폰 와이파이 → 폰 데이터)로 어느 층인지가 정해집니다.'
+  );
+}
 
 /**
  * 느린 응답자를 모두가 기다린다 — 손상 디스크의 재시도가 시스템 체감을 멈추는 구조.
