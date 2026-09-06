@@ -69,6 +69,13 @@
     <description>듀얼 모니터에서 절전이나 디스플레이 끄기 후 복귀하면 열어 둔 창이 전부 한쪽 화면으로 몰리거나 왼쪽 위에 쌓이는 증상이 있습니다. 고장이 아니라 모니터가 꺼지는 순간 윈도우에게 사라진 것으로 보이기 때문입니다. 구조와 완화책 사다리를 정리했습니다.</description>
   </item>
   <item>
+    <title>모니터를 매번 꺼야 하나, 절전에 맡겨도 되나 — 수명 논쟁이 아니라 습관 비용 이야기입니다</title>
+    <link>https://specfit.kr/posts/monitor-off-or-sleep.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-off-or-sleep.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터를 끌 때 모니터 전원도 같이 눌러 꺼야 하는지, 켜둔 채 절전에 맡겨도 되는지 — 수명 걱정이 붙는 단골 질문입니다. 절전 중 모니터는 사실상 쉬고 있어서 어느 쪽이든 수명 차이는 미미합니다. 오히려 매일 눌리는 전원 버튼과 OLED의 예외가 실제 변수입니다.</description>
+  </item>
+  <item>
     <title>144Hz와 60Hz 모니터를 같이 써도 되나 — 끌려 내려가지 않습니다, 문제는 다른 곳에서 납니다</title>
     <link>https://specfit.kr/posts/monitor-mixed-refresh.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-mixed-refresh.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/wireless-mouse-lag.html</guid>
     <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
     <description>무선 마우스 커서가 순간순간 멈추거나 튀는 증상은 원인이 여럿이라 헤매기 쉽습니다. 제일 흔한 배터리 출력 저하부터, 동글의 전파 길, 의외의 범인인 USB 3.0 간섭까지 — 공짜 진단 순서대로 정리했습니다.</description>
-  </item>
-  <item>
-    <title>SSD 오래 안 쓰면 데이터가 날아가나 — 몇 달은 걱정 말고, 몇 년은 맡기지 마세요</title>
-    <link>https://specfit.kr/posts/ssd-cold-storage.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/ssd-cold-storage.html</guid>
-    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
-    <description>서랍의 외장 SSD나 뽑아둔 SSD의 데이터가 증발한다는 말에 불안해집니다. 절반은 과장이고 절반은 사실입니다. 전하로 기억하는 구조라 시간 축의 어디까지가 안전권인지, 장기 보관은 뭘로 해야 하는지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
