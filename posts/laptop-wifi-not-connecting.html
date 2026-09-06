@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>폰은 되는데 노트북만 와이파이가 안 될 때 — 이미 절반의 진단은 끝났습니다 | 스펙핏</title>
+<meta name="description" content="같은 와이파이에 폰은 멀쩡히 붙는데 노트북만 안 잡히거나 &quot;인터넷 없음&quot;이 뜨는 증상은 커뮤니티 단골 질문입니다. 폰이 된다는 사실이 공유기와 회선의 무죄를 증명해 준 상태라, 남은 용의자는 짧습니다 — 대역 함정부터 핫스팟 격리까지 순서대로 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/laptop-wifi-not-connecting.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="폰은 되는데 노트북만 와이파이가 안 될 때 — 이미 절반의 진단은 끝났습니다 | 스펙핏">
+<meta property="og:description" content="같은 와이파이에 폰은 멀쩡히 붙는데 노트북만 안 잡히거나 &quot;인터넷 없음&quot;이 뜨는 증상은 커뮤니티 단골 질문입니다. 폰이 된다는 사실이 공유기와 회선의 무죄를 증명해 준 상태라, 남은 용의자는 짧습니다 — 대역 함정부터 핫스팟 격리까지 순서대로 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/laptop-wifi-not-connecting.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"폰은 되는데 노트북만 와이파이가 안 될 때 — 이미 절반의 진단은 끝났습니다","description":"같은 와이파이에 폰은 멀쩡히 붙는데 노트북만 안 잡히거나 \"인터넷 없음\"이 뜨는 증상은 커뮤니티 단골 질문입니다. 폰이 된다는 사실이 공유기와 회선의 무죄를 증명해 준 상태라, 남은 용의자는 짧습니다 — 대역 함정부터 핫스팟 격리까지 순서대로 정리했습니다.","datePublished":"2026-09-07","dateModified":"2026-09-07","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-wifi-not-connecting.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"폰은 되는데 노트북만 와이파이가 안 될 때 — 이미 절반의 진단은 끝났습니다","item":"https://specfit.kr/posts/laptop-wifi-not-connecting.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"유선 랜을 꽂으면 잘 돼요","acceptedAnswer":{"@type":"Answer","text":"무선 층만의 문제라는 확정 정황입니다 — 위 노트북 갈래(스위치· 드라이버·절전)로 좁혀서 보면 되고, 급한 작업은 유선이라는 우회로 버티면 됩니다."}},{"@type":"Question","name":"어제까지 잘 되다가 갑자기 이래요","acceptedAnswer":{"@type":"Answer","text":"\"갑자기\"의 단골은 업데이트(드라이버·윈도우)와 저장 정보 꼬임입니다 — 저장된 네트워크 삭제 → 재연결 → 드라이버 순서로 대부분 돌아옵니다. 공유기 쪽에서 비밀번호·설정이 바뀐 날이라면 그쪽이 먼저고요."}},{"@type":"Question","name":"카페·회사 와이파이만 안 붙어요","acceptedAnswer":{"@type":"Answer","text":"로그인(인증) 페이지가 떠야 하는 와이파이의 특성입니다 — 연결 직후 브라우저를 열어 아무 주소나 들어가 보면 인증 페이지가 뜨는 경우가 많습니다. 이건 고장 갈래가 아니라 그 네트워크의 동작 방식입니다."}},{"@type":"Question","name":"와이파이 신호는 꽉 찼는데 인터넷 없음이래요","acceptedAnswer":{"@type":"Answer","text":"신호 세기는 노트북–공유기 사이 이야기이고, \"인터넷 없음\"은 그 너머(IP·DNS·회선) 이야기라 서로 다른 층입니다. 신호가 꽉 찼다는 건 무선 층 무죄의 정황일 뿐이니, 네트워크 재설정 갈래로 가세요."}},{"@type":"Question","name":"새 공유기로 바꾼 뒤부터 노트북만 안 붙어요","acceptedAnswer":{"@type":"Answer","text":"새 공유기의 대역 설정(합쳐진 이름·5GHz 전용 채널)과 구형 어댑터의 궁합 문제가 흔합니다 — 대역별 이름 분리 + 2.4GHz로 붙여 보는 것이 첫 실험이고, 그래도 안 되면 어댑터 드라이버 갱신이 다음 수입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>폰은 되는데 노트북만 와이파이가 안 될 때 — 이미 절반의 진단은 끝났습니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-07">2026년 9월 7일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>폰도, 태블릿도, 식구들 기기도 다 되는 와이파이에 <strong>내 노트북만
+못 붙습니다.</strong> 목록에 아예 안 뜨거나, 붙긴 하는데 &quot;인터넷 없음&quot;이
+뜨거나. 커뮤니티에 몇 년째 반복되는 단골 증상입니다.</p>
+<p>먼저 좋은 소식 — <strong>폰이 된다는 사실이 이미 절반의 진단</strong>입니다.
+<a href="/posts/dual-monitor-one-blank.html">맞바꾸기 격리</a>의 관점으로
+보면, 회선과 공유기의 광역 장애는 무죄가 증명된 셈이니까요. 남은
+용의자는 <strong>노트북 쪽 층</strong>과, 의외로 흔한 <strong>대역 함정</strong> 정도로
+좁혀져 있습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>정황</th><th>유력 갈래</th></tr></thead>
+<tbody>
+<tr><td>목록에 그 와이파이가 <strong>아예 안 뜸</strong></td><td><strong>대역 함정</strong> 또는 무선 스위치·드라이버 갈래입니다</td></tr>
+<tr><td>붙는데 <strong>&quot;인터넷 없음&quot;</strong></td><td>연결 층은 통과 — <strong>IP·DNS 층</strong>입니다. 네트워크 재설정이 정공법입니다</td></tr>
+<tr><td><strong>한동안 쓰다 보면</strong> 끊겼다 붙었다</td><td>절전 갈래 — <a href="/posts/bluetooth-earbuds-stutter.html">블루투스 끊김과 같은 처방</a>입니다</td></tr>
+<tr><td><strong>폰 핫스팟에는</strong> 잘 붙음</td><td>노트북 무죄 쪽 정황 — 공유기 설정·궁합 갈래로 넘어갑니다</td></tr>
+<tr><td>어느 와이파이에도 못 붙음</td><td>노트북 어댑터 갈래 확정 — 드라이버·하드웨어 순서입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="함정부터-같은-와이파이가-같지-않을-수-있습니다">함정부터 — &quot;같은 와이파이&quot;가 같지 않을 수 있습니다</h2>
+<p>요즘 공유기는 <strong>2.4GHz와 5GHz 두 대역</strong>을 내보내고, 설정에 따라
+<strong>한 이름으로 합쳐서</strong> 보이기도 합니다. 폰은 5GHz에 붙어 잘 쓰는데
+노트북(특히 연식 있는 모델)은 2.4GHz만 지원한다거나, 반대로
+5GHz 신호가 약한 방에서 노트북만 5GHz를 고집하는 조합이면 —
+&quot;같은 와이파이인데 나만 안 되는&quot; 그림이 됩니다.</p>
+<ul>
+<li>공유기 관리 화면에서 대역별 이름을 따로 내보내게 하면(예:
+이름_2.4 / 이름_5) 어느 대역의 문제인지 바로 갈립니다</li>
+<li>방(거리)에 따라 증상이 달라진다면 이 갈래의 냄새가 짙습니다 —
+<a href="/posts/desktop-wifi-vs-lan.html">5GHz는 빠르고 짧다는 그 구조</a>
+입니다</li>
+</ul>
+<h2 id="노트북-갈래-순서대로-자르기">노트북 갈래 — 순서대로 자르기</h2>
+<ol>
+<li><strong>스위치부터</strong> — 비행기 모드, 그리고 노트북의 무선 켬/끔
+단축키(Fn 조합)가 의외의 단골입니다. 청소하다 눌린 Fn 조합
+하나로 며칠 고생한 사례가 흔합니다</li>
+<li><strong>저장된 네트워크 지우고 재연결</strong> — 비밀번호가 바뀌었거나
+저장 정보가 꼬인 경우의 정공법입니다. 그 와이파이를 &quot;삭제
+(지우기)&quot; 후 새로 붙어 보세요</li>
+<li><strong>&quot;인터넷 없음&quot;이라면 네트워크 재설정</strong> — 연결은 됐는데
+인터넷만 없다는 건 <a href="/posts/website-not-loading.html">특정 사이트 안 열림 글에서 본 층
+구조</a>의 아랫층(IP·DNS)이 꼬인
+상태입니다. 설정의 <strong>네트워크 재설정</strong>(어댑터 초기화)이 이
+층을 통째로 리셋합니다 — 재부팅이 따라오니 저장부터 하고요</li>
+<li><strong>드라이버</strong> — 장치 관리자에서 무선 어댑터 제거 후 재부팅
+(자동 재설치), 또는 제조사(인텔 등) 최신 드라이버로 갱신</li>
+<li><strong>끊겼다 붙었다 반복이라면 절전</strong> — 어댑터의 &quot;전원을 절약하기
+위해…&quot; 항목 해제. <a href="/posts/bluetooth-earbuds-stutter.html">블루투스 이어폰 글의 절전 갈래</a>
+와 같은 스위치입니다</li>
+</ol>
+<h2 id="심화-격리-폰-핫스팟이라는-공짜-실험실">심화 격리 — 폰 핫스팟이라는 공짜 실험실</h2>
+<p>노트북이 문제인지, 노트북과 <strong>그 공유기의 조합</strong>이 문제인지
+가르는 공짜 격리가 있습니다 — <strong>폰 핫스팟을 켜고 노트북을 거기
+붙여 보세요.</strong></p>
+<ul>
+<li><strong>핫스팟에는 잘 붙는다</strong> → 노트북 무선부는 무죄 쪽입니다.
+공유기 설정 갈래로 — 기기 간 통신을 막는 격리 옵션, MAC 필터,
+<a href="/posts/router-device-count.html">접속 기기 수 제한</a> 같은
+항목들이 용의자입니다 (설정 이름은 공유기마다 다릅니다).
+<a href="/posts/router-reboot.html">공유기 재부팅</a>도 이 갈래의 첫 수입니다</li>
+<li><strong>핫스팟에도 못 붙는다</strong> → 노트북 어댑터 갈래 확정입니다 —
+위 4번(드라이버)으로, 그래도 안 되면 하드웨어(무선 모듈) 점검
+차례입니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="유선-랜을-꽂으면-잘-돼요">유선 랜을 꽂으면 잘 돼요</h3>
+<p>무선 층만의 문제라는 확정 정황입니다 — 위 노트북 갈래(스위치·
+드라이버·절전)로 좁혀서 보면 되고, 급한 작업은
+<a href="/posts/desktop-wifi-vs-lan.html">유선이라는 우회</a>로 버티면 됩니다.</p>
+<h3 id="어제까지-잘-되다가-갑자기-이래요">어제까지 잘 되다가 갑자기 이래요</h3>
+<p>&quot;갑자기&quot;의 단골은 업데이트(드라이버·윈도우)와 저장 정보 꼬임입니다
+— 저장된 네트워크 삭제 → 재연결 → 드라이버 순서로 대부분
+돌아옵니다. 공유기 쪽에서 비밀번호·설정이 바뀐 날이라면 그쪽이
+먼저고요.</p>
+<h3 id="카페회사-와이파이만-안-붙어요">카페·회사 와이파이만 안 붙어요</h3>
+<p>로그인(인증) 페이지가 떠야 하는 와이파이의 특성입니다 — 연결
+직후 브라우저를 열어 아무 주소나 들어가 보면 인증 페이지가
+뜨는 경우가 많습니다. 이건 고장 갈래가 아니라 그 네트워크의
+동작 방식입니다.</p>
+<h3 id="와이파이-신호는-꽉-찼는데-인터넷-없음이래요">와이파이 신호는 꽉 찼는데 인터넷 없음이래요</h3>
+<p>신호 세기는 노트북–공유기 사이 이야기이고, &quot;인터넷 없음&quot;은 그
+너머(IP·DNS·회선) 이야기라 <strong>서로 다른 층</strong>입니다. 신호가 꽉
+찼다는 건 무선 층 무죄의 정황일 뿐이니, 네트워크 재설정
+갈래로 가세요.</p>
+<h3 id="새-공유기로-바꾼-뒤부터-노트북만-안-붙어요">새 공유기로 바꾼 뒤부터 노트북만 안 붙어요</h3>
+<p>새 공유기의 대역 설정(합쳐진 이름·5GHz 전용 채널)과 구형
+어댑터의 궁합 문제가 흔합니다 — 대역별 이름 분리 + 2.4GHz로
+붙여 보는 것이 첫 실험이고, 그래도 안 되면 어댑터 드라이버
+갱신이 다음 수입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>폰이 되면 회선·공유기 광역 장애는 무죄</strong>입니다 — 남은 건
+노트북 층과 대역 함정입니다</li>
+<li><strong>대역 함정부터 확인</strong> — 한 이름 뒤에 두 대역이 숨어 있을 수
+있습니다. 이름을 갈라 내보내면 바로 갈립니다</li>
+<li>노트북 갈래는 <strong>스위치 → 재연결 → 네트워크 재설정 →
+드라이버 → 절전</strong> 순서입니다</li>
+<li><strong>폰 핫스팟 격리</strong>가 노트북 문제인지 공유기 조합 문제인지
+공짜로 갈라 줍니다</li>
+<li>&quot;인터넷 없음&quot;은 무선이 아니라 <strong>IP·DNS 층</strong>입니다 — 신호
+세기와는 다른 층의 이야기입니다</li>
+</ol>
+<p>네트워크 이웃 판정들 — <a href="/posts/website-not-loading.html">특정 사이트만 안 열림(층 구조)</a> ·
+<a href="/posts/router-reboot.html">공유기 재부팅이 약이 되는 이유</a> ·
+<a href="/posts/desktop-wifi-vs-lan.html">2.4GHz vs 5GHz 구조</a> ·
+<a href="/posts/router-device-count.html">접속 기기 수의 한계</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">노트북와이파이</span> <span class="tag">인터넷없음</span> <span class="tag">와이파이연결안됨</span> <span class="tag">네트워크재설정</span> <span class="tag">격리진단</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/bluetooth-earbuds-stutter.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">노트북에서 블루투스 이어폰이 뚝뚝 끊길 때 — 끊기는 정황이 갈래를 알려줍니다</span>
+        <span class="card-desc">폰에서는 멀쩡한 블루투스 이어폰이 노트북·컴퓨터에서만 끊기고 지직거리는 증상은 흔한데 원인 후보가 많아 헤매기 쉽습니다. 와이파이를 쓸 때 심한지, 한동안 조용하다 재생하면 끊기는지, 통화를 켜면 음질이 망가지는지 — 정황별 판정과 처방을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mouse-wheel-jump.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 휠이 튀거나 반대로 갈 때 — &quot;항상&quot;과 &quot;가끔&quot;이 다른 문제입니다</span>
+        <span class="card-desc">스크롤을 내리는데 화면이 위로 확 튀는 증상과, 방향이 아예 반대로 뒤집힌 증상은 원인이 완전히 다릅니다. 항상 반대면 설정이고, 가끔 튀면 휠의 부품 노화입니다. 두 갈래의 판정과 처방, 응급처치의 한계까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/website-not-loading.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">인터넷은 되는데 특정 사이트만 안 열릴 때 — 두 번의 맞바꾸기로 층이 갈립니다</span>
+        <span class="card-desc">다른 사이트는 다 되는데 한 곳만 안 열리는 증상은 브라우저, 컴퓨터, 집 회선, 사이트 자체 중 어느 층의 문제인지부터 갈라야 합니다. 다른 브라우저와 다른 기기, 두 번의 격리로 층을 자르는 판정과 층별 처방을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

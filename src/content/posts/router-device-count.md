@@ -2,7 +2,7 @@
 title: 공유기에 기기 많이 물리면 느려지나 — 대수가 아니라 동시 통신량이 정합니다
 description: 집에 와이파이 기기가 수십 대로 늘면서 "몇 대까지 되나"가 궁금해집니다. 숫자로 답할 수 없는 질문인데, 한계가 세 종류(접속 수·처리 체급·전파 혼잡)로 갈려서입니다. 증상별 판정과 대응 순서를 정리했습니다.
 date: 2026-09-04
-updated: 2026-09-05
+updated: 2026-09-07
 category: network
 tags: [공유기, 기기연결, 와이파이혼잡, 최대접속, 홈네트워크]
 ---
@@ -145,5 +145,8 @@ tags: [공유기, 기기연결, 와이파이혼잡, 최대접속, 홈네트워�
 집 네트워크의 이웃 판정들 — [유선 vs 무선](/posts/desktop-wifi-vs-lan.html) ·
 [공유기 세대](/posts/wifi7-router-upgrade.html) ·
 [재부팅 판정](/posts/router-reboot.html)과 이어집니다.
+
+(집 안에서 **한 기기만** 와이파이가 안 붙는 증상은 —
+[그 격리 판정](/posts/laptop-wifi-not-connecting.html)이 따로 있습니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

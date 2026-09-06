@@ -145,7 +145,8 @@ tags: [사이트접속안됨, DNS, 브라우저, 격리진단, 인터넷문제]
 5. 차단 안내 페이지·정책 네트워크는 고장이 아니라 **의도된
    막힘**입니다 — 진단 대상이 아닙니다
 
-네트워크 이웃 판정들 — [다운로드 속도(느림의 갈래)](/posts/internet-download-speed.html) ·
+네트워크 이웃 판정들 — [노트북만 와이파이 안 될 때](/posts/laptop-wifi-not-connecting.html) ·
+[다운로드 속도(느림의 갈래)](/posts/internet-download-speed.html) ·
 [공유기 재부팅](/posts/router-reboot.html) ·
 [격리 진단의 원형](/posts/dual-monitor-one-blank.html)과 이어집니다.
 
