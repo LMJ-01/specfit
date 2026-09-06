@@ -849,6 +849,7 @@ export const figures = {
   'uptime-illusion': uptimeIllusion,
   'bt-profiles': btProfiles,
   'case-orientation': caseOrientation,
+  'mixed-refresh': mixedRefresh,
 };
 
 /**
@@ -2328,5 +2329,55 @@ function caseOrientation() {
     250,
     body,
     '세우면 카드가 매달리고, 눕히면 얹힙니다 — 무거운 카드에게는 눕히기가 오히려 편한 자세입니다.'
+  );
+}
+
+/**
+ * 주사율 혼용 — 그래픽카드가 모니터마다 따로 부치는 두 배송 주기.
+ * monitor-mixed-refresh "오해부터 — 통일되지 않습니다" 고정.
+ */
+function mixedRefresh() {
+  const W = 640;
+
+  let body = '';
+  body += t(16, 22, '한 그래픽카드, 두 개의 배송 주기', { weight: 600, size: 13.5 });
+
+  // GPU 박스
+  body += rect(40, 84, 96, 72, 'none', { stroke: COLOR.line, r: 8 });
+  body += t(88, 114, 'GPU', { anchor: 'middle', size: 12.5, weight: 600 });
+  body += t(88, 134, '(그래픽카드)', { anchor: 'middle', size: 10, fill: COLOR.mute });
+
+  const lane = (y, color, label, note, n) => {
+    let s = '';
+    // 케이블 선
+    s += `<line x1="136" y1="${y}" x2="470" y2="${y}" stroke="${color}" stroke-width="2"/>`;
+    // 틱(프레임 배송)
+    const span = 300;
+    for (let i = 0; i < n; i++) {
+      const x = 150 + (span / n) * i;
+      s += `<line x1="${x}" y1="${y - 7}" x2="${x}" y2="${y + 7}" stroke="${color}" stroke-width="2"/>`;
+    }
+    // 모니터 박스
+    s += rect(480, y - 26, 120, 52, 'none', { stroke: color, r: 6 });
+    s += t(540, y - 4, label, { anchor: 'middle', size: 12, weight: 600, fill: color });
+    s += t(540, y + 14, note, { anchor: 'middle', size: 10, fill: COLOR.mute });
+    return s;
+  };
+
+  body += lane(102, COLOR.fit, '144Hz 모니터', '촘촘한 주기 그대로', 24);
+  body += lane(150, COLOR.over, '60Hz 모니터', '성긴 주기 그대로', 10);
+
+  body += t(300, 190, '케이블마다 각자의 주기로 부칩니다 — 낮은 쪽이 높은 쪽을 끌어내리지 않습니다', {
+    anchor: 'middle',
+    size: 11,
+    fill: COLOR.mute,
+  });
+
+  return figure(
+    '그래픽카드가 144Hz 모니터에는 촘촘한 주기로, 60Hz 모니터에는 성긴 주기로 화면을 따로 부치는 구조 — 서로 끌어내리지 않습니다',
+    W,
+    206,
+    body,
+    '두 배송이 동시에 각자 굴러가는 구조라, 60Hz를 붙여도 144Hz는 144장씩 받습니다.'
   );
 }
