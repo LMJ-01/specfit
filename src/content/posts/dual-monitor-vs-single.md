@@ -246,6 +246,8 @@ affiliate: true
    보조 화면의 일이 정합니다
 6. 노트북 + 외부 모니터는 이미 듀얼입니다. **높이만 맞추세요**
 
+두 대로 가기로 했다면 **어떻게 놓을지**(좌우 vs 위아래)는
+[상하 배치 판정](/posts/dual-monitor-stacked.html)에 정리했습니다.
 쓰다가 [한쪽이 안 나오는 날](/posts/dual-monitor-one-blank.html)의
 진단 순서와, [절전에서 깰 때마다 창이 몰리는 증상](/posts/monitor-sleep-window-move.html)의
 완화책은 따로 정리해 뒀습니다.
