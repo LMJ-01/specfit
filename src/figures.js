@@ -850,6 +850,7 @@ export const figures = {
   'bt-profiles': btProfiles,
   'case-orientation': caseOrientation,
   'mixed-refresh': mixedRefresh,
+  'strip-budget': stripBudget,
 };
 
 /**
@@ -2379,5 +2380,56 @@ function mixedRefresh() {
     206,
     body,
     '두 배송이 동시에 각자 굴러가는 구조라, 60Hz를 붙여도 144Hz는 144장씩 받습니다.'
+  );
+}
+
+/**
+ * 멀티탭 정격 게이지 — 컴퓨터 식구는 얌전하고 전열 기기가 대식가.
+ * pc-power-strip "동거인" 절 고정. (수치 미기재 — 비례만)
+ */
+function stripBudget() {
+  const W = 640;
+  const x0 = 60;
+  const bw = 520;
+
+  const gauge = (y, label, segs, note) => {
+    let s = '';
+    s += t(x0, y - 12, label, { size: 12, weight: 600 });
+    s += rect(x0, y, bw, 26, 'none', { stroke: COLOR.line, r: 6 });
+    let x = x0;
+    segs.forEach(([w, color, name]) => {
+      s += rect(x, y, w, 26, color, { opacity: 0.55 });
+      if (name) s += t(x + w / 2, y + 17, name, { anchor: 'middle', size: 10, fill: COLOR.text });
+      x += w;
+    });
+    // 정격 한도선
+    s += `<line x1="${x0 + bw}" y1="${y - 6}" x2="${x0 + bw}" y2="${y + 32}" stroke="${COLOR.text}" stroke-width="2"/>`;
+    s += t(x0 + bw, y + 46, '정격 한도', { anchor: 'end', size: 10.5, fill: COLOR.mute });
+    s += t(x0, y + 46, note, { size: 10.5, fill: COLOR.mute });
+    return s;
+  };
+
+  let body = '';
+  body += t(16, 22, '같은 멀티탭, 다른 합계', { weight: 600, size: 13.5 });
+
+  body += gauge(58, '컴퓨터 식구끼리', [
+    [110, COLOR.fit, '본체'],
+    [55, COLOR.fit, '모니터'],
+    [25, COLOR.fit, ''],
+  ], '공유기·스피커까지 더해도 여유가 큽니다');
+
+  body += gauge(140, '히터가 얹히면', [
+    [110, COLOR.fit, '본체'],
+    [55, COLOR.fit, '모니터'],
+    [25, COLOR.fit, ''],
+    [310, COLOR.over, '전열 기기 하나'],
+  ], '혼자서 한도의 대부분을 차지합니다 — 벽으로 분리가 정석');
+
+  return figure(
+    '멀티탭 정격 게이지 비교 — 본체·모니터·주변기기 합계는 여유가 크지만, 히터 같은 전열 기기 하나가 얹히는 순간 한도에 다다르는 구조',
+    W,
+    206,
+    body,
+    '컴퓨터 식구는 얌전한 편입니다. 합계를 위험하게 만드는 것은 대개 전열 기기 쪽입니다.'
   );
 }
