@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CPU 기본 쿨러로 충분한가 — 부하와 소음, 두 기준으로 갈립니다","description":"CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 살지 헷갈립니다. 성능이 모자라서가 아니라 소음 때문에 바꾸는 경우가 많다는 것까지 포함해서, 판정 기준을 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/cpu-stock-cooler.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CPU 기본 쿨러로 충분한가 — 부하와 소음, 두 기준으로 갈립니다","description":"CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 살지 헷갈립니다. 성능이 모자라서가 아니라 소음 때문에 바꾸는 경우가 많다는 것까지 포함해서, 판정 기준을 정리했습니다.","datePublished":"2026-09-01","dateModified":"2026-09-07","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/cpu-stock-cooler.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"CPU 기본 쿨러로 충분한가 — 부하와 소음, 두 기준으로 갈립니다","item":"https://specfit.kr/posts/cpu-stock-cooler.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"로컬 LLM 돌리려는데 CPU 쿨러부터 바꿔야 하나요","acceptedAnswer":{"@type":"Answer","text":"GPU 로 돌린다면 열원은 그래픽카드 쪽이라 CPU 쿨러는 우선순위가 아닙니다. CPU 추론(GPU 없이)을 상시로 돌릴 계획일 때만 위 \"지속 고부하\" 줄이 적용됩니다."}},{"@type":"Question","name":"써멀만 다시 발라도 좋아지나요","acceptedAnswer":{"@type":"Answer","text":"몇 년 된 컴퓨터라면 의미 있는 항목입니다 — 굳은 써멀은 열 전달이 떨어집니다. 다만 새 컴퓨터에서는 기본 도포로 충분해서, \"먼지 청소 → 써멀 → 쿨러 교체\" 순서로 싼 것부터 시도하는 게 순서입니다."}},{"@type":"Question","name":"완제품 PC의 쿨러도 같은 이야기인가요","acceptedAnswer":{"@type":"Answer","text":"같습니다 — 완제품에 들어가는 쿨러도 대개 동봉급입니다. 다만 완제품은 케이스 통풍 설계가 제각각이라, 쿨러만 바꿔서 해결이 안 되는 경우(흡배기 부족)도 있습니다. 부하 시 온도를 먼저 재보는 이유이고, 케이스 기류 쪽 정리는 따로 있습니다."}},{"@type":"Question","name":"팬 소리가 갑자기 커졌어요","acceptedAnswer":{"@type":"Answer","text":"쿨러 성능 문제가 아니라 먼지이거나, 무언가가 백그라운드에서 CPU 를 먹고 있는 경우가 흔합니다. 작업 관리자에서 부하 원인부터, 그다음 방열판 먼지 순서로 보세요."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>CPU 기본 쿨러로 충분한가 — 부하와 소음, 두 기준으로 갈립니다</h1>
     <p class="post-meta">
       <time datetime="2026-09-01">2026년 9월 1일</time>
-      
+      <span class="updated">· 2026년 9월 7일 갱신</span>
     </p>
   </header>
 
@@ -192,7 +192,9 @@ CPU 를 먹고 있는 경우가 흔합니다. 작업 관리자에서 부하 원�
 <li>이 단계에서 수랭까지 갈 이유는 없습니다 — <strong>공랭이 기본값</strong>입니다</li>
 </ol>
 <p>열과 보호 동작의 원리는 <a href="/posts/laptop-thermal-throttling.html">스로틀링 글</a>,
-전원 쪽 계산은 <a href="/posts/gpu-psu-wattage.html">파워 용량</a>에 있습니다.</p>
+전원 쪽 계산은 <a href="/posts/gpu-psu-wattage.html">파워 용량</a>에 있습니다.
+(켤 때만 몇 초 크게 도는 소리는 고장이 아닙니다 —
+<a href="/posts/pc-fan-loud-at-boot.html">부팅 점호 이야기</a>에 정리했습니다.)</p>
 <p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 

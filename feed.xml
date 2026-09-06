@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>켤 때만 팬소리가 크게 나는 컴퓨터 — 몇 초의 "위잉"은 고장이 아니라 점호입니다</title>
+    <link>https://specfit.kr/posts/pc-fan-loud-at-boot.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-fan-loud-at-boot.html</guid>
+    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터를 켜는 순간 팬이 크게 위잉 돌다가 몇 초 뒤 조용해지는 현상이 고장 신호인지 걱정하는 질문은 커뮤니티 단골입니다. 결론은 정상 — 제어가 잡히기 전의 점호입니다. 오히려 조용해지지 않고 계속 클 때, 소리의 결이 다를 때가 판정 대상입니다.</description>
+  </item>
+  <item>
     <title>인터넷은 되는데 특정 사이트만 안 열릴 때 — 두 번의 맞바꾸기로 층이 갈립니다</title>
     <link>https://specfit.kr/posts/website-not-loading.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/website-not-loading.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/app-no-sound.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>전체 소리는 멀쩡한데 특정 게임이나 프로그램만 조용한 증상은 고장이 아니라 배선 문제인 경우가 대부분입니다. 윈도우가 앱마다 볼륨과 출력 장치를 따로 기억하기 때문인데, 그 장부를 여는 순서와 헤드셋을 꽂았다 뺀 뒤 생기는 전형적인 함정까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>무선 마우스 커서가 뚝뚝 끊길 때 — 배터리, 전파 길, 옆자리 USB 순서로 봅니다</title>
-    <link>https://specfit.kr/posts/wireless-mouse-lag.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/wireless-mouse-lag.html</guid>
-    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
-    <description>무선 마우스 커서가 순간순간 멈추거나 튀는 증상은 원인이 여럿이라 헤매기 쉽습니다. 제일 흔한 배터리 출력 저하부터, 동글의 전파 길, 의외의 범인인 USB 3.0 간섭까지 — 공짜 진단 순서대로 정리했습니다.</description>
   </item>
 </channel>
 </rss>

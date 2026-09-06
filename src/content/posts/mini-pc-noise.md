@@ -2,6 +2,7 @@
 title: 미니PC 소음, 각오해야 하나 — 부하 프로필로 갈립니다
 description: 미니PC를 알아보면 팬소음 이야기가 꼭 따라옵니다. 작은 몸집이 구조적으로 불리한 건 맞는데, 시끄러운지는 제품이 아니라 내 부하가 정합니다. 사무·웹은 대개 조용하고, 지속 고부하가 소음을 부릅니다. 판정 기준과 줄이는 순서를 정리했습니다.
 date: 2026-09-04
+updated: 2026-09-07
 category: minipc
 tags: [미니PC, 팬소음, 소음, 팬리스, 쿨링]
 ---
@@ -148,7 +149,8 @@ tags: [미니PC, 팬소음, 소음, 팬리스, 쿨링]
    대가입니다
 5. 산 후의 손잡이는 **배치 → 전원 모드 → 먼지 청소** 순입니다
 
-미니PC 판정의 다른 축들 — [노트북과의 구조 비교](/posts/mini-pc-vs-laptop.html) ·
+미니PC 판정의 다른 축들 — [켤 때만 큰 팬소리(점호)](/posts/pc-fan-loud-at-boot.html) ·
+[노트북과의 구조 비교](/posts/mini-pc-vs-laptop.html) ·
 [게임 부하](/posts/mini-pc-gaming.html) ·
 [개발 서버 용도](/posts/mini-pc-for-dev.html)와 이어집니다.
 
