@@ -161,7 +161,8 @@ CPU·램·SSD·파워는 방향과 무관하게 동작합니다. 하드디스크
 5. **수랭 구성만 예외**적으로 배치 확인이 필요하고, HDD는 켜진
    채 방향만 바꾸지 않으면 됩니다
 
-배치·케이스의 이웃 판정들 — [그래픽카드 처짐과 지지대](/posts/gpu-sag-support.html) ·
+배치·케이스의 이웃 판정들 — [책상 위인가 아래인가](/posts/pc-on-desk.html) ·
+[그래픽카드 처짐과 지지대](/posts/gpu-sag-support.html) ·
 [케이스 팬과 공기의 길](/posts/case-fan-setup.html) ·
 [옆판 열고 쓰기](/posts/pc-case-open.html) ·
 [먼지 청소 신호](/posts/pc-dust-cleaning.html)와 이어집니다.

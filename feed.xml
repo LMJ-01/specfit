@@ -27,6 +27,13 @@
     <description>컴퓨터를 멀티탭에 꽂아도 되는지, 안 쓸 때 스위치를 꺼도 되는지는 커뮤니티 단골 질문입니다. 판정 기준은 하나 — 멀티탭 정격 용량과 실소비 합계입니다. 같이 꽂으면 안 되는 조합과 멀티탭 교체 신호까지 정리했습니다.</description>
   </item>
   <item>
+    <title>본체는 책상 위인가 아래인가 — 취향 문제 같지만 축별로 실익이 갈립니다</title>
+    <link>https://specfit.kr/posts/pc-on-desk.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-on-desk.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터 본체를 책상 위에 올릴지 아래에 둘지는 커뮤니티 설문까지 있는 단골 논쟁입니다. 정답은 없지만 축별 실익은 분명합니다 — 먼지와 무선은 위가 유리하고, 소음과 공간은 아래가 유리합니다. 발열은 어느 쪽이든 막힘만 피하면 됩니다.</description>
+  </item>
+  <item>
     <title>컴퓨터 본체 눕혀서 써도 되나 — 됩니다, 확인할 것은 구멍과 먼지 둘뿐입니다</title>
     <link>https://specfit.kr/posts/pc-case-horizontal.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-case-horizontal.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/ram-16x2-vs-32x1.html</guid>
     <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
     <description>같은 32GB를 만드는 두 가지 방법 중 뭐가 나은지는 커뮤니티 단골 질문입니다. 두 장은 듀얼 채널로 지금 빠르고, 한 장은 슬롯을 남겨 나중이 넓습니다. 슬롯 수와 용도별 판정을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>파워 용량이 크면 전기를 더 먹나 — 용량은 상한이고, 쓰는 만큼만 나갑니다</title>
-    <link>https://specfit.kr/posts/psu-capacity-power-draw.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/psu-capacity-power-draw.html</guid>
-    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
-    <description>750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
