@@ -846,7 +846,62 @@ export const figures = {
   'key-matrix': keyMatrix,
   'slow-responder': slowResponder,
   'site-layers': siteLayers,
+  'uptime-illusion': uptimeIllusion,
 };
+
+/**
+ * 빠른 시작 착시 — "종료"해도 작동 시간이 리셋되지 않는 타임라인.
+ * pc-slow-until-reboot 판정 ① 고정.
+ */
+function uptimeIllusion() {
+  const W = 640;
+  const x0 = 60;
+  const lineW = 520;
+  const y1 = 66;   // 위: 종료만 반복
+  const y2 = 150;  // 아래: 다시 시작
+  const days = ['월', '화', '수', '목', '금'];
+
+  const axis = (y) => `<line x1="${x0}" y1="${y}" x2="${x0 + lineW}" y2="${y}" stroke="${COLOR.line}" stroke-width="2"/>`;
+  const dayTicks = (y) => days.map((d, i) => {
+    const x = x0 + (i + 0.5) * (lineW / days.length);
+    return t(x, y + 18, d, { anchor: 'middle', size: 11, fill: COLOR.mute });
+  }).join('');
+
+  let body = '';
+  body += t(16, 22, '매일 끄는데 왜 느려지나 — "종료"와 "다시 시작"은 다른 버튼입니다', { weight: 600, size: 13.5 });
+
+  // 위: 빠른 시작 종료 — uptime 계속 증가 (두꺼워지는 바)
+  body += t(x0, y1 - 26, '매일 "시스템 종료" (빠른 시작 켜짐)', { size: 12, weight: 600, fill: COLOR.over });
+  body += axis(y1);
+  for (let i = 0; i < days.length; i++) {
+    const x = x0 + (i + 0.5) * (lineW / days.length);
+    const h = 8 + i * 5;
+    body += rect(x - 16, y1 - h - 4, 32, h, COLOR.over, { r: 3 });
+    body += t(x + 26, y1 - 8, '⏻', { size: 10, fill: COLOR.mute });
+  }
+  body += dayTicks(y1);
+  body += t(x0 + lineW, y1 - 26, '작동 시간·누적이 계속 쌓임 →', { anchor: 'end', size: 11, fill: COLOR.over });
+
+  // 아래: 다시 시작 — 리셋
+  body += t(x0, y2 - 26, '수요일에 "다시 시작" 한 번', { size: 12, weight: 600, fill: COLOR.fit });
+  body += axis(y2);
+  for (let i = 0; i < days.length; i++) {
+    const x = x0 + (i + 0.5) * (lineW / days.length);
+    const h = i < 2 ? 8 + i * 5 : 8 + (i - 2) * 5;
+    const isReset = i === 2;
+    body += rect(x - 16, y2 - h - 4, 32, h, isReset ? COLOR.fit : COLOR.soft, { stroke: isReset ? 'none' : COLOR.line, r: 3 });
+    if (isReset) body += t(x, y2 - h - 10, '↺ 리셋', { anchor: 'middle', size: 10.5, weight: 600, fill: COLOR.fit });
+  }
+  body += dayTicks(y2);
+
+  return figure(
+    '빠른 시작 착시 타임라인 — 매일 종료해도 누적이 쌓이고, 다시 시작 한 번이 진짜 리셋인 두 줄 비교',
+    W,
+    192,
+    body,
+    '작업 관리자 성능 탭의 "작동 시간"이 이 착시를 확인하는 계기판입니다.'
+  );
+}
 
 /**
  * 특정 사이트만 안 열릴 때 — 4개 층과 층을 가르는 격리 도구.
