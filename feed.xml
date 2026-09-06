@@ -20,6 +20,13 @@
     <description>컴퓨터를 며칠 켜두면 점점 굼떠지다가 재부팅 한 번에 쌩쌩해지는 경험은 흔합니다. 재부팅으로 낫는다는 사실이 이미 절반의 진단이고, 매일 끄는데도 느려진다면 종료가 진짜 재부팅이 아니었다는 착시가 숨어 있습니다. 범인 찾기와 처방을 정리했습니다.</description>
   </item>
   <item>
+    <title>컴퓨터를 멀티탭에 꽂아도 되나 — 됩니다, 계산할 것은 합계 하나입니다</title>
+    <link>https://specfit.kr/posts/pc-power-strip.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-power-strip.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터 본체를 벽 콘센트가 아니라 멀티탭에 꽂아 쓰는 게 위험하지 않은지, 안 쓸 때 멀티탭 스위치를 꺼도 되는지는 커뮤니티에 반복해서 올라오는 질문입니다. 판정 기준은 하나 — 멀티탭에 적힌 정격 용량과 꽂힌 것들의 실소비 합계입니다. 같이 꽂으면 안 되는 조합과 멀티탭 교체 신호까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>컴퓨터 본체 눕혀서 써도 되나 — 됩니다, 확인할 것은 구멍과 먼지 둘뿐입니다</title>
     <link>https://specfit.kr/posts/pc-case-horizontal.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-case-horizontal.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/psu-capacity-power-draw.html</guid>
     <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
     <description>750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하는 걱정이 커뮤니티에 반복해서 올라옵니다. 용량은 낼 수 있는 상한이지 소비량이 아닙니다. 실제 전기 사용을 정하는 것과 효율이 끼어드는 자리를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>컴퓨터가 혼자 켜질 때 — 유령이 아니라 "깨우라는 신호"가 있습니다</title>
-    <link>https://specfit.kr/posts/pc-turns-on-by-itself.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-turns-on-by-itself.html</guid>
-    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
-    <description>끈 컴퓨터가 새벽에 저절로 켜져 있거나, 절전이 자꾸 풀리는 증상은 으스스하지만 원인은 논리적입니다. 컴퓨터는 누가 깨웠는지 장부를 남기고, 깨우는 신호의 출처는 몇 갈래로 정해져 있습니다. 확인 순서와 끄는 방법을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
