@@ -848,6 +848,7 @@ export const figures = {
   'site-layers': siteLayers,
   'uptime-illusion': uptimeIllusion,
   'bt-profiles': btProfiles,
+  'case-orientation': caseOrientation,
 };
 
 /**
@@ -2278,5 +2279,54 @@ function retentionTimeline() {
     164,
     body,
     '정확한 경계는 셀 방식·온도·마모에 따라 달라 선이 아니라 구간으로 보는 것이 맞습니다.'
+  );
+}
+
+/**
+ * 케이스 방향과 그래픽카드 하중 — 세우면 매달리고 눕히면 얹힙니다.
+ * pc-case-horizontal 의 "눕히기의 의외의 장점" 고정.
+ */
+function caseOrientation() {
+  const W = 640;
+
+  let body = '';
+  body += t(16, 22, '같은 그래픽카드, 다른 하중 방향', { weight: 600, size: 13.5 });
+
+  // 왼쪽 — 세운 케이스
+  const lx = 60;
+  const ly = 52;
+  body += rect(lx, ly, 130, 158, 'none', { stroke: COLOR.line, r: 8 });
+  body += t(lx + 65, ly - 8, '세운 케이스', { anchor: 'middle', size: 12, weight: 600 });
+  // 메인보드(세로)
+  body += rect(lx + 104, ly + 14, 8, 130, COLOR.soft, { stroke: COLOR.line });
+  // GPU 가로로 매달림 (끝이 살짝 처진 모양은 직사각형 + 화살표로 표현)
+  body += rect(lx + 18, ly + 66, 88, 16, 'none', { stroke: COLOR.over, r: 3 });
+  body += t(lx + 62, ly + 77, 'GPU', { anchor: 'middle', size: 10.5, fill: COLOR.over });
+  // 처짐 화살표 (카드 끝에서 아래로)
+  body += `<line x1="${lx + 26}" y1="${ly + 88}" x2="${lx + 26}" y2="${ly + 112}" stroke="${COLOR.over}" stroke-width="2"/>`;
+  body += `<polygon points="${lx + 22},${ly + 108} ${lx + 26},${ly + 118} ${lx + 30},${ly + 108}" fill="${COLOR.over}"/>`;
+  body += t(lx + 65, ly + 178, '끝이 슬롯에 매달려 처짐', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  // 오른쪽 — 눕힌 케이스
+  const rx = 330;
+  const ry = 96;
+  body += rect(rx, ry, 240, 114, 'none', { stroke: COLOR.line, r: 8 });
+  body += t(rx + 120, ry - 8, '눕힌 케이스 (메인보드가 바닥)', { anchor: 'middle', size: 12, weight: 600 });
+  // 메인보드(가로, 바닥)
+  body += rect(rx + 24, ry + 88, 192, 8, COLOR.soft, { stroke: COLOR.line });
+  // GPU 세로로 서 있음
+  body += rect(rx + 104, ry + 16, 16, 72, 'none', { stroke: COLOR.fit, r: 3 });
+  body += t(rx + 112, ry + 56, 'G', { anchor: 'middle', size: 10.5, fill: COLOR.fit });
+  // 하중 화살표 (카드 옆에서 아래로, 슬롯 방향)
+  body += `<line x1="${rx + 146}" y1="${ry + 28}" x2="${rx + 146}" y2="${ry + 66}" stroke="${COLOR.fit}" stroke-width="2"/>`;
+  body += `<polygon points="${rx + 142},${ry + 62} ${rx + 146},${ry + 72} ${rx + 150},${ry + 62}" fill="${COLOR.fit}"/>`;
+  body += t(rx + 120, ry + 134, '무게가 슬롯을 따라 눌리는 방향', { anchor: 'middle', size: 11, fill: COLOR.mute });
+
+  return figure(
+    '세운 케이스에서는 그래픽카드가 슬롯에 가로로 매달려 끝이 처지고, 눕힌 케이스에서는 무게가 슬롯 방향으로 실려 처짐 부담이 사라지는 구조',
+    W,
+    250,
+    body,
+    '세우면 카드가 매달리고, 눕히면 얹힙니다 — 무거운 카드에게는 눕히기가 오히려 편한 자세입니다.'
   );
 }

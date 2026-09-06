@@ -20,6 +20,13 @@
     <description>컴퓨터를 며칠 켜두면 점점 굼떠지다가 재부팅 한 번에 쌩쌩해지는 경험은 흔합니다. 재부팅으로 낫는다는 사실이 이미 절반의 진단이고, 매일 끄는데도 느려진다면 종료가 진짜 재부팅이 아니었다는 착시가 숨어 있습니다. 범인 찾기와 처방을 정리했습니다.</description>
   </item>
   <item>
+    <title>컴퓨터 본체 눕혀서 써도 되나 — 됩니다, 확인할 것은 구멍과 먼지 둘뿐입니다</title>
+    <link>https://specfit.kr/posts/pc-case-horizontal.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-case-horizontal.html</guid>
+    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
+    <description>책상 아래가 좁거나 선반에 넣고 싶어서 본체를 눕히고 싶은데 고장 나지 않을지 걱정되는 질문은 커뮤니티 단골입니다. 결론은 대부분 괜찮다는 쪽이고, 오히려 무거운 그래픽카드에게는 좋은 자세이기도 합니다 — 확인해야 할 두 가지와 예외 구성을 정리했습니다.</description>
+  </item>
+  <item>
     <title>컴퓨터에서 타는 냄새가 날 때 — 진단보다 전원 차단이 먼저입니다</title>
     <link>https://specfit.kr/posts/pc-burning-smell.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-burning-smell.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-turns-on-by-itself.html</guid>
     <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
     <description>끈 컴퓨터가 새벽에 저절로 켜져 있거나, 절전이 자꾸 풀리는 증상은 으스스하지만 원인은 논리적입니다. 컴퓨터는 누가 깨웠는지 장부를 남기고, 깨우는 신호의 출처는 몇 갈래로 정해져 있습니다. 확인 순서와 끄는 방법을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>스피커에서 지지직 소리가 날 때 — 노이즈가 나는 "때"가 범인을 알려줍니다</title>
-    <link>https://specfit.kr/posts/pc-speaker-noise.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-speaker-noise.html</guid>
-    <pubDate>Fri, 04 Sep 2026 15:00:00 GMT</pubDate>
-    <description>컴퓨터 스피커나 이어폰에서 지지직, 웅, 쏴아 하는 잡음이 나면 원인 후보가 많아 헤매기 쉽습니다. 그런데 잡음이 언제 나는지가 갈래를 알려줍니다. 증상별 판정과 해결 사다리, 구조적으로 끝내는 방법까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>

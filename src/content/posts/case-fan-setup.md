@@ -2,7 +2,7 @@
 title: 케이스 팬은 몇 개나 — 개수보다 방향과 균형이 먼저입니다
 description: 케이스 팬을 더 달아야 하는지, 흡기·배기는 어떻게 나눠야 하는지 헷갈립니다. 팬 쇼핑 전에 확인할 것과, 몇 개부터는 효과가 급감하는 구조를 정리했습니다.
 date: 2026-09-01
-updated: 2026-09-05
+updated: 2026-09-06
 category: gpu
 tags: [케이스팬, 흡기배기, 쿨링, 데스크톱조립, 발열관리]
 ---
@@ -152,5 +152,7 @@ tags: [케이스팬, 흡기배기, 쿨링, 데스크톱조립, 발열관리]
 발열 관리의 이웃 글들 — [CPU 쿨러 판정](/posts/cpu-stock-cooler.html) ·
 [스로틀링 확인](/posts/laptop-thermal-throttling.html) ·
 [파워 용량](/posts/gpu-psu-wattage.html)과 이어집니다.
+(본체를 **눕혀서** 배치하려는 경우의 구멍 판정은
+[본체 눕히기 글](/posts/pc-case-horizontal.html)에 있습니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
