@@ -2,7 +2,7 @@
 title: 해상도 다른 모니터 두 대 — 커서가 걸리고 창이 튀는 이유
 description: 섞어 쓰면 세 가지가 생깁니다. 경계에서 커서가 걸리고, 창을 옮기면 크기가 튀거나 흐려지고, 글자 크기가 안 맞습니다. 각각의 원리와 대처, 무난한 조합을 정리했습니다.
 date: 2026-08-24
-updated: 2026-09-05
+updated: 2026-09-06
 category: monitor
 tags: [듀얼모니터, 해상도, 배율, DPI, 멀티모니터]
 affiliate: true
@@ -169,7 +169,9 @@ PPI 는 계산으로 나옵니다:
 [원케이블 연결 조건](/posts/monitor-usb-c-one-cable.html)과
 [노트북에 모니터 두 대](/posts/laptop-dual-monitor-output.html)를 보세요.
 해상도 말고 [색감이 달라 거슬리는 문제](/posts/dual-monitor-color-match.html)는
-따로 정리했습니다. 커서가 걸리는 게 아니라 **게임 중 옆 화면으로
+따로 정리했습니다. **주사율을 섞는 경우**(144Hz+60Hz)의 걱정과
+실제 문제는 [주사율 혼용 판정](/posts/monitor-mixed-refresh.html)에
+같은 구조로 정리했습니다. 커서가 걸리는 게 아니라 **게임 중 옆 화면으로
 나가는(또는 안 넘어가는) 문제**는
 [화면 모드의 마우스 캡처](/posts/dual-monitor-mouse-escape.html) 이야기입니다.
 
