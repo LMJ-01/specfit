@@ -2,7 +2,7 @@
 title: 파워 80PLUS 등급 — 골드에 웃돈 낼 가치가 있는 경우
 description: 브론즈냐 골드냐는 취향이 아니라 나눗셈입니다. 등급이 실제로 뜻하는 것, 절감량을 kWh로 계산하는 법, 웃돈이 회수되는 조건을 정리했습니다. 로컬 LLM을 상시 돌리면 계산이 달라집니다.
 date: 2026-08-24
-updated: 2026-09-05
+updated: 2026-09-07
 category: gpu
 tags: [파워서플라이, 80PLUS, 골드, 효율, 전기요금]
 affiliate: false
@@ -172,5 +172,8 @@ affiliate: false
 
 "용량이 크면 전기를 더 먹는 것 아닌가"라는 이웃 질문은
 [따로 정리](/posts/psu-capacity-power-draw.html)했습니다 — 답은 아니오입니다.
+
+(효율이 만드는 낭비열이 **방 온도**에는 얼마나 일하는지 —
+[컴퓨터와 방 온도 글](/posts/pc-heats-room.html)에 정리했습니다. 결론: 미미합니다.)
 
 수치나 계산이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

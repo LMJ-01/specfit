@@ -2,7 +2,7 @@
 title: 그래픽카드 온도 80도, 괜찮나 — 숫자 하나가 아니라 거동 셋으로 판정합니다
 description: 게임 중 온도를 봤다가 80도에 놀라 검색하게 됩니다. 몇 도가 정상인지는 카드마다 달라 숫자로 답할 수 없고, 판정은 온도의 거동 세 가지로 합니다. 평형·성능 유지·추세라는 기준과 개선 순서를 정리했습니다.
 date: 2026-09-04
-updated: 2026-09-05
+updated: 2026-09-07
 category: gpu
 tags: [그래픽카드온도, GPU온도, 발열, 스로틀링, 핫스팟]
 ---
@@ -148,7 +148,8 @@ tags: [그래픽카드온도, GPU온도, 발열, 스로틀링, 핫스팟]
 5. 같은 부하인데 **예전보다 높아지는 추세**가 진짜 신호입니다 —
    먼지·서멀부터 보세요
 
-발열의 이웃 판정들 — [케이스 기류](/posts/case-fan-setup.html) ·
+발열의 이웃 판정들 — [컴퓨터가 방을 데우는 구조](/posts/pc-heats-room.html) ·
+[케이스 기류](/posts/case-fan-setup.html) ·
 [스로틀링의 구조](/posts/laptop-thermal-throttling.html) ·
 [중고 카드 부하 테스트](/posts/used-gpu-check.html)와 이어집니다.
 
