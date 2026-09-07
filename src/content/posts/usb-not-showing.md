@@ -2,6 +2,7 @@
 title: USB를 꽂으면 소리만 나고 안 보일 때 — 소리가 났다는 건 절반은 성공했다는 뜻입니다
 description: USB를 꽂으면 "뚜둥" 연결음은 나는데 내 PC에는 아무것도 안 뜨는 증상은 커뮤니티 단골 질문입니다. 소리가 났다면 연결 층은 통과한 것이라 범인은 그 윗층에 있습니다 — 드라이브 문자, 드라이버, 인식 모드 순서의 판정과, 함부로 포맷하면 안 되는 이유까지 정리했습니다.
 date: 2026-09-07
+updated: 2026-09-07
 category: memory
 tags: [USB인식, 드라이브문자, 장치관리자, 디스크관리, 외장저장장치]
 ---
@@ -140,6 +141,7 @@ USB 메모리나 외장하드를 꽂으면 **"뚜둥" 소리는 나는데, 내 P
 5. 폰·카메라는 고장이 아니라 **전송 모드 선택**입니다
 
 저장장치 이웃 판정들 — [외장하드 걸림·멈춤](/posts/external-hdd-freeze.html) ·
+[USB 포트의 전원 체급](/posts/usb-port-charging.html) ·
 [격리 진단의 원형](/posts/dual-monitor-one-blank.html) ·
 [백업 두 벌 원칙](/posts/dev-backup-strategy.html)과 이어집니다.
 

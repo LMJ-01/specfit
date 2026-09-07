@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>본체 USB로 폰 충전, 선풍기 꽂기 — 됩니다, 왜 느린지와 두 가지 함정만 알면요</title>
+    <link>https://specfit.kr/posts/usb-port-charging.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/usb-port-charging.html</guid>
+    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터 USB에 폰을 꽂아 충전하고 선풍기·조명을 꽂아 쓰는 게 컴퓨터에 무리는 아닌지, 왜 충전이 느린지 궁금해하는 질문이 꾸준합니다. USB 포트는 데이터 통로에 곁들인 소량의 전원이라 전용 충전기와 체급이 다릅니다 — 컴퓨터 부담·절전 함정·허브 함정까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>USB를 꽂으면 소리만 나고 안 보일 때 — 소리가 났다는 건 절반은 성공했다는 뜻입니다</title>
     <link>https://specfit.kr/posts/usb-not-showing.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/usb-not-showing.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-off-or-sleep.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>컴퓨터를 끌 때 모니터 전원도 같이 눌러 꺼야 하는지, 켜둔 채 절전에 맡겨도 되는지 — 수명 걱정이 붙는 단골 질문입니다. 절전 중 모니터는 사실상 쉬고 있어서 어느 쪽이든 수명 차이는 미미합니다. 오히려 매일 눌리는 전원 버튼과 OLED의 예외가 실제 변수입니다.</description>
-  </item>
-  <item>
-    <title>144Hz와 60Hz 모니터를 같이 써도 되나 — 끌려 내려가지 않습니다, 문제는 다른 곳에서 납니다</title>
-    <link>https://specfit.kr/posts/monitor-mixed-refresh.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-mixed-refresh.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>고주사율 모니터에 60Hz를 보조로 붙이면 144가 60으로 끌려 내려가는 것 아닌지 걱정하게 됩니다. 각 모니터는 각자의 주사율로 돕니다 — 실제로 겪는 문제는 끌려감이 아니라 설정·케이블로 60에 묶인 새 모니터와, 혼용 조합에서의 간헐 버벅임입니다.</description>
   </item>
 </channel>
 </rss>
