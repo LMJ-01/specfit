@@ -13,6 +13,13 @@
     <description>USB를 꽂으면 "뚜둥" 연결음은 나는데 내 PC에는 아무것도 안 뜨는 증상은 커뮤니티 단골 질문입니다. 소리가 났다면 연결 층은 통과한 것이라 범인은 그 윗층에 있습니다 — 드라이브 문자, 드라이버, 인식 모드 순서의 판정과, 함부로 포맷하면 안 되는 이유까지 정리했습니다.</description>
   </item>
   <item>
+    <title>이사할 때 컴퓨터 본체 — 진짜 걱정은 딱 하나, 매달려 있는 부품입니다</title>
+    <link>https://specfit.kr/posts/pc-moving-day.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-moving-day.html</guid>
+    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
+    <description>이사철마다 컴퓨터 본체를 어떻게 옮겨야 하나 걱정이 올라옵니다. 대부분의 부품은 생각보다 튼튼합니다 — 문제는 슬롯에 매달린 무거운 그래픽카드 하나이고, 나머지는 눕히는 방향과 선 사진 정도입니다. 포장 전 준비부터 도착 후 첫 부팅까지 순서로 정리했습니다.</description>
+  </item>
+  <item>
     <title>컴퓨터 때문에 방이 더울 때 — 본체만 시원하게 만들 방법은 없습니다</title>
     <link>https://specfit.kr/posts/pc-heats-room.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-heats-room.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-slow-on-battery.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>어댑터를 뽑으면 노트북이 눈에 띄게 느려지는 건 고장이 아니라 설계입니다. 그런데 반대로 어댑터를 꽂으면 렉이 걸린다는 사람도 있습니다. 두 반대 증상이 전력 예산이라는 한 축으로 설명되고, 판정 순서도 거기서 나옵니다.</description>
-  </item>
-  <item>
-    <title>키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다</title>
-    <link>https://specfit.kr/posts/keyboard-some-keys-dead.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/keyboard-some-keys-dead.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>키보드에서 몇 개의 키만 반응이 없으면 교체해야 하나 싶지만, 소프트웨어 층이 범인인 경우도 많습니다. 화면 키보드와 외부 키보드로 층을 가르는 격리 진단, 그리고 죽은 키들의 배치가 알려주는 것까지 — 판정 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
