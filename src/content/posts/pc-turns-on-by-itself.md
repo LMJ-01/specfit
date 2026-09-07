@@ -178,4 +178,7 @@ on LAN)이 있습니다. 원격 접속용으로는 유용하지만, 쓸 계획�
 [24시간 켜두기의 거래](/posts/pc-always-on.html) ·
 [정전 대비 UPS](/posts/desktop-ups.html)와 이어집니다.
 
+(노트북이 **가방 안에서** 깨어나 뜨거워지는 증상은 —
+[그 판정과 "깊은 잠" 처방](/posts/laptop-hot-in-bag.html)을 따로 정리했습니다.)
+
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

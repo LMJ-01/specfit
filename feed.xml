@@ -27,6 +27,13 @@
     <description>같은 와이파이에 폰은 멀쩡히 붙는데 노트북만 안 잡히거나 "인터넷 없음"이 뜨는 증상은 커뮤니티 단골 질문입니다. 폰이 된다는 사실이 공유기와 회선의 무죄를 증명해 준 상태라, 남은 용의자는 짧습니다 — 대역 함정부터 핫스팟 격리까지 순서대로 정리했습니다.</description>
   </item>
   <item>
+    <title>가방에서 꺼낸 노트북이 뜨겁고 배터리가 닳아 있을 때 — 잔 게 아니라 잠꼬대를 한 겁니다</title>
+    <link>https://specfit.kr/posts/laptop-hot-in-bag.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-hot-in-bag.html</guid>
+    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
+    <description>덮개를 닫고 가방에 넣었는데 꺼내 보니 후끈하고 배터리가 줄어 있는 경험은 노트북 사용자 단골 사연입니다. 절전은 얕은 잠이라 가방 안에서 깨어나 일할 수 있고, 가방은 최악의 발열 환경입니다 — 확인 습관과 "이동할 땐 깊은 잠" 처방을 정리했습니다.</description>
+  </item>
+  <item>
     <title>게임 중 갑자기 바탕화면으로 튕겨 나올 때 — 꺼진 게 아니라 누가 끼어든 겁니다</title>
     <link>https://specfit.kr/posts/game-minimizes-itself.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/game-minimizes-itself.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-not-detected.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>그래픽카드가 장치 관리자에 아예 없는 것, 알 수 없는 장치로 뜨는 것, 잡혀 있는데 게임이 내장그래픽만 쓰는 것은 전부 다른 문제입니다. 인식이 어느 층에서 끊겼는지부터 가르면 장착·전원·드라이버·선택 중 어느 갈래인지가 정해집니다.</description>
-  </item>
-  <item>
-    <title>외장하드를 연결하면 컴퓨터가 멈출 때 — 멈춤의 모양이 갈래를 알려줍니다</title>
-    <link>https://specfit.kr/posts/external-hdd-freeze.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/external-hdd-freeze.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>외장하드만 꽂으면 탐색기가 멈추고 컴퓨터가 버벅이는 증상은 디스크 손상부터 USB 간섭, 절전, 썸네일 생성까지 원인이 다양합니다. 언제 어떻게 멈추는지가 갈래를 알려주고, 안에 중요한 데이터가 있다면 순서를 지키는 것이 데이터를 지킵니다.</description>
   </item>
 </channel>
 </rss>

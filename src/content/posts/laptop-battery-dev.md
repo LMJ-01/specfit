@@ -2,7 +2,7 @@
 title: 개발용 노트북 배터리 — 표기 시간이 안 맞는 이유
 description: 제조사 표기는 영상 재생 기준입니다. 개발은 부하가 달라 계산이 다릅니다. Wh와 소비 전력으로 실제 시간을 뽑는 법과 확인 명령을 정리했습니다.
 date: 2026-08-17
-updated: 2026-09-06
+updated: 2026-09-07
 category: laptop
 tags: [노트북배터리, Wh, 개발용노트북, USB-C충전, 전력]
 affiliate: true
@@ -215,5 +215,8 @@ HTML 파일이 하나 생깁니다. 거기에 **설계 용량, 현재 완충 용
 5. **배터리로 돌리면 성능이 제한됩니다.** 시간보다 이쪽이 성가십니다 —
    [왜 그런지와 조절 손잡이](/posts/laptop-slow-on-battery.html)는 따로 정리했습니다
 6. `powercfg /batteryreport` 로 **본인 기기에서 직접 재세요**
+
+(가방에서 꺼낼 때마다 **뜨겁고 배터리가 줄어 있다**면 — 배터리
+탓이 아니라 [절전이 깨어난 문제](/posts/laptop-hot-in-bag.html)입니다.)
 
 수치가 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
