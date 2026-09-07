@@ -62,6 +62,13 @@
     <description>덮개를 닫고 가방에 넣었는데 꺼내 보니 후끈하고 배터리가 줄어 있는 경험은 노트북 사용자 단골 사연입니다. 절전은 얕은 잠이라 가방 안에서 깨어나 일할 수 있고, 가방은 최악의 발열 환경입니다 — 확인 습관과 "이동할 땐 깊은 잠" 처방을 정리했습니다.</description>
   </item>
   <item>
+    <title>저녁만 되면 인터넷이 느려질 때 — 시간표가 규칙적이라는 것 자체가 지문입니다</title>
+    <link>https://specfit.kr/posts/internet-slow-at-night.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/internet-slow-at-night.html</guid>
+    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
+    <description>낮에는 쌩쌩한 인터넷이 저녁 8시쯤부터 느려지고 밤이 깊으면 돌아오는 패턴은 통신 게시판의 단골 하소연입니다. 시간이 규칙적이라는 건 혼잡의 지문 — 집 안 혼잡인지 집 밖 혼잡인지 가르는 격리와, 통신사에 말이 통하게 하는 기록 요령까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>게임 중 갑자기 바탕화면으로 튕겨 나올 때 — 꺼진 게 아니라 누가 끼어든 겁니다</title>
     <link>https://specfit.kr/posts/game-minimizes-itself.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/game-minimizes-itself.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-sleep-window-move.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>듀얼 모니터에서 절전이나 디스플레이 끄기 후 복귀하면 열어 둔 창이 전부 한쪽 화면으로 몰리거나 왼쪽 위에 쌓이는 증상이 있습니다. 고장이 아니라 모니터가 꺼지는 순간 윈도우에게 사라진 것으로 보이기 때문입니다. 구조와 완화책 사다리를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>모니터를 매번 꺼야 하나, 절전에 맡겨도 되나 — 수명 논쟁이 아니라 습관 비용 이야기입니다</title>
-    <link>https://specfit.kr/posts/monitor-off-or-sleep.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-off-or-sleep.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>컴퓨터를 끌 때 모니터 전원도 같이 눌러 꺼야 하는지, 켜둔 채 절전에 맡겨도 되는지 — 수명 걱정이 붙는 단골 질문입니다. 절전 중 모니터는 사실상 쉬고 있어서 어느 쪽이든 수명 차이는 미미합니다. 오히려 매일 눌리는 전원 버튼과 OLED의 예외가 실제 변수입니다.</description>
   </item>
 </channel>
 </rss>
