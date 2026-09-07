@@ -852,6 +852,7 @@ export const figures = {
   'mixed-refresh': mixedRefresh,
   'strip-budget': stripBudget,
   'band-trap': bandTrap,
+  'heat-flow': heatFlow,
 };
 
 /**
@@ -2476,5 +2477,58 @@ function bandTrap() {
     234,
     body,
     '"같은 와이파이"가 실제로는 다른 문일 수 있습니다 — 이름을 갈라 보면 함정이 드러납니다.'
+  );
+}
+
+/**
+ * 전기→열 흐름 — 컴퓨터가 쓴 전기는 결국 전부 방의 열이 됨.
+ * pc-heats-room 구조 절 고정. 쿨링은 이동 속도일 뿐 총량 불변.
+ */
+function heatFlow() {
+  const W = 640;
+  const y = 96;
+
+  const box = (x, w, title, sub, color) => {
+    let s = '';
+    s += rect(x, y - 34, w, 68, 'none', { stroke: color, r: 8 });
+    s += t(x + w / 2, y - 6, title, { anchor: 'middle', size: 12.5, weight: 600 });
+    s += t(x + w / 2, y + 14, sub, { anchor: 'middle', size: 10.5, fill: COLOR.mute });
+    return s;
+  };
+
+  const arrow = (x1, x2, label, color) => {
+    let s = '';
+    s += `<line x1="${x1}" y1="${y}" x2="${x2 - 10}" y2="${y}" stroke="${color}" stroke-width="3"/>`;
+    s += `<polygon points="${x2 - 12},${y - 6} ${x2},${y} ${x2 - 12},${y + 6}" fill="${color}"/>`;
+    s += t((x1 + x2) / 2, y - 16, label, { anchor: 'middle', size: 10.5, fill: color });
+    return s;
+  };
+
+  let body = '';
+  body += t(16, 22, '전기가 들어간 만큼, 열이 나옵니다', { weight: 600, size: 13.5 });
+
+  body += box(30, 130, '벽 콘센트', '전기', COLOR.line);
+  body += arrow(160, 240, '소비 전력', COLOR.fit);
+  body += box(240, 150, '컴퓨터', '일하는 동안', COLOR.fit);
+  body += arrow(390, 470, '같은 양의 열', COLOR.over);
+  body += box(470, 140, '방', '열의 종착지', COLOR.over);
+
+  body += t(320, 172, '쿨러·팬 강화는 부품→방으로 옮기는 속도를 높일 뿐 — 방이 받는 총량은 그대로입니다', {
+    anchor: 'middle',
+    size: 11,
+    fill: COLOR.mute,
+  });
+  body += t(320, 192, '방 온도의 손잡이는 둘뿐: 전기를 덜 쓰거나(총량↓), 열을 방 밖으로(환기)', {
+    anchor: 'middle',
+    size: 11,
+    fill: COLOR.mute,
+  });
+
+  return figure(
+    '벽에서 끌어 쓴 전기가 컴퓨터를 거쳐 같은 양의 열로 방에 쌓이는 흐름 — 쿨링 강화는 이동 속도만 바꾸고 총량은 바꾸지 못하는 구조',
+    W,
+    208,
+    body,
+    '컴퓨터는 쓰는 전력만큼의 난로입니다 — 본체만 시원하게 만드는 방법이 없는 이유입니다.'
   );
 }
