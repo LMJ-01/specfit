@@ -2,7 +2,7 @@
 title: 노트북에 모니터 두 대 — 왜 한 대만 나오나
 description: 포트가 두 개인데 한 대만 나오는 이유가 있습니다. 노트북이 동시에 내보낼 수 있는 화면 수는 정해져 있고, 내장 화면도 그 수에 들어갑니다. 확인 순서를 정리했습니다.
 date: 2026-08-18
-updated: 2026-09-05
+updated: 2026-09-08
 category: monitor
 tags: [듀얼모니터, 도킹스테이션, MST, DisplayLink, 노트북]
 affiliate: true
@@ -62,7 +62,7 @@ affiliate: true
 ```
 
 그래서 **노트북 화면을 끄면 외부를 한 대 더 붙일 수 있는 경우**가 있습니다.
-덮개를 닫고 외부만 쓰는 구성이 그렇습니다.
+[덮개를 닫고 외부만 쓰는 구성](/posts/laptop-clamshell-mode.html)이 그렇습니다.
 
 ### 확인하는 법
 
