@@ -13,6 +13,13 @@
     <description>공유기를 몇 년마다 바꿔야 하는지, 오래된 공유기를 계속 써도 되는지는 커뮤니티 단골 질문입니다. 공유기는 집에서 유일하게 24시간 내내 일하는 기계 — 노화 신호, 진짜 교체 사유(세대·보안), 오래 쓰는 관리까지 판정을 정리했습니다.</description>
   </item>
   <item>
+    <title>컴퓨터 옆에 가습기 둬도 되나 — 종류와 방향만 알면 겁낼 일이 아닙니다</title>
+    <link>https://specfit.kr/posts/pc-humidifier.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-humidifier.html</guid>
+    <pubDate>Mon, 07 Sep 2026 15:00:00 GMT</pubDate>
+    <description>겨울마다 컴퓨터 옆에 가습기를 둬도 되는지 묻는 글이 올라옵니다. 판정의 절반은 가습기 종류입니다 — 찬 안개를 뿜는 초음파식과 수증기를 내는 가열·기화식은 다른 물건이라서요. 안전한 배치 기준과 하얀 가루의 정체까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>모니터 수명은 몇 년인가 — 죽는 날보다 서서히 저무는 날이 먼저 옵니다</title>
     <link>https://specfit.kr/posts/monitor-lifespan.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-lifespan.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-case-horizontal.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>책상 아래가 좁거나 선반에 넣고 싶어서 본체를 눕히고 싶은데 고장 나지 않을지 걱정되는 질문은 커뮤니티 단골입니다. 결론은 대부분 괜찮다는 쪽이고, 오히려 무거운 그래픽카드에게는 좋은 자세이기도 합니다 — 확인해야 할 두 가지와 예외 구성을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>컴퓨터에서 타는 냄새가 날 때 — 진단보다 전원 차단이 먼저입니다</title>
-    <link>https://specfit.kr/posts/pc-burning-smell.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-burning-smell.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>본체에서 탄내나 매캐한 냄새가 나면 "작동은 잘 되는데"라는 이유로 계속 쓰기 쉽습니다. 그런데 이 증상만은 순서가 다릅니다. 전원부터 끊고, 끈 상태에서 냄새의 종류와 위치로 갈래를 가르는 판정 — 그리고 다시 켜도 되는 기준까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
