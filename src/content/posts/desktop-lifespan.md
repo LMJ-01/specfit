@@ -2,6 +2,7 @@
 title: 데스크탑 수명은 몇 년인가 — 하나의 수명이 없다는 게 데스크탑의 답입니다
 description: 조립 컴퓨터를 맞추고 나면 이게 몇 년이나 갈지 궁금해집니다. 노트북과 달리 데스크탑에는 하나의 수명이 없습니다 — 부품마다 시계가 따로 돌고, 낡은 부품만 갈아 끼우면 계속 삽니다. 부품별 시계와 실제 은퇴 시점, 수명을 늘리는 관리까지 정리했습니다.
 date: 2026-09-07
+updated: 2026-09-08
 category: minipc
 tags: [컴퓨터수명, 데스크탑수명, 부품교체, 업그레이드, 교체시기]
 ---
@@ -147,6 +148,7 @@ tags: [컴퓨터수명, 데스크탑수명, 부품교체, 업그레이드, 교�
    오진이 제일 흔한 동네입니다
 
 수명의 이웃 판정들 — [노트북의 남은 수명](/posts/laptop-lifespan.html) ·
+[모니터의 노화와 은퇴](/posts/monitor-lifespan.html) ·
 [파워 교체 신호](/posts/psu-lifespan.html) ·
 [SSD 쓰기 수명(TBW)](/posts/ssd-tbw-lifespan.html) ·
 [재부팅으로 낫는 느려짐](/posts/pc-slow-until-reboot.html)과 이어집니다.

@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>모니터 수명은 몇 년인가 — 죽는 날보다 서서히 저무는 날이 먼저 옵니다</title>
+    <link>https://specfit.kr/posts/monitor-lifespan.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-lifespan.html</guid>
+    <pubDate>Mon, 07 Sep 2026 15:00:00 GMT</pubDate>
+    <description>모니터를 몇 년 쓰고 바꿔야 하는지는 커뮤니티 단골 질문입니다. 모니터는 급사보다 노화가 먼저 오는 기기 — 백라이트가 서서히 어두워지고 색이 변하는 소모품이라서요. 노화의 지문, 진짜 고장 신호, 그리고 세대 은퇴까지 세 갈래로 정리했습니다.</description>
+  </item>
+  <item>
     <title>본체 USB로 폰 충전, 선풍기 꽂기 — 됩니다, 왜 느린지와 두 가지 함정만 알면요</title>
     <link>https://specfit.kr/posts/usb-port-charging.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/usb-port-charging.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/no-sound-after-sleep.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>절전 복귀 후 스피커가 침묵하는데 재부팅하면 돌아오는 증상은 오디오 경로의 어느 장치가 깨어나는 점호에 늦은 상태입니다. 재부팅 없이 그 장치만 다시 깨우는 방법과, 소리가 나오는 경로별 예방 스위치를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>마우스 휠이 튀거나 반대로 갈 때 — "항상"과 "가끔"이 다른 문제입니다</title>
-    <link>https://specfit.kr/posts/mouse-wheel-jump.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/mouse-wheel-jump.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>스크롤을 내리는데 화면이 위로 확 튀는 증상과, 방향이 아예 반대로 뒤집힌 증상은 원인이 완전히 다릅니다. 항상 반대면 설정이고, 가끔 튀면 휠의 부품 노화입니다. 두 갈래의 판정과 처방, 응급처치의 한계까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
