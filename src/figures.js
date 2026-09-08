@@ -853,6 +853,7 @@ export const figures = {
   'strip-budget': stripBudget,
   'band-trap': bandTrap,
   'heat-flow': heatFlow,
+  'component-clocks': componentClocks,
 };
 
 /**
@@ -2530,5 +2531,45 @@ function heatFlow() {
     208,
     body,
     '컴퓨터는 쓰는 전력만큼의 난로입니다 — 본체만 시원하게 만드는 방법이 없는 이유입니다.'
+  );
+}
+
+/**
+ * 데스크탑에는 하나의 수명이 없다 — 부품별 시계.
+ * desktop-lifespan 의 핵심 프레임: 소모품 계열은 시계가 돌고(교체 신호 있음),
+ * 반영구 계열은 고장보다 성능 은퇴가 먼저. 막대 길이는 전부 동일 —
+ * 부품 간 수명 비교로 읽히지 않게 의도적으로 맞춤.
+ */
+function componentClocks() {
+  const W = 640;
+  const x0 = 24;
+  const barX = 150;
+  const barW = 330;
+
+  const row = (y, name, note, fill) =>
+    t(x0, y + 14, name, { size: 12.5, weight: 600 }) +
+    rect(barX, y, barW, 20, fill, { r: 10 }) +
+    t(barX + barW + 12, y + 14, note, { size: 10.5, fill: COLOR.mute });
+
+  let b = '';
+  b += t(x0, 26, '한 대의 컴퓨터, 부품마다 따로 도는 시계', { weight: 600, size: 14 });
+
+  b += t(x0, 54, '소모품 계열 — 시계가 돕니다 (각자 교체 신호가 있음)', {
+    size: 11.5, weight: 600, fill: COLOR.over,
+  });
+  b += row(64, '파워', '콘덴서 노화', COLOR.over);
+  b += row(92, '팬', '베어링 마모 — 소리', COLOR.over);
+  b += row(120, 'HDD', '기계식 — 딸깍=백업 먼저', COLOR.over);
+  b += row(148, 'SSD', '쓰기 수명(TBW)', COLOR.over);
+
+  b += t(x0, 198, '반영구 계열 — 고장보다 은퇴가 먼저', {
+    size: 11.5, weight: 600, fill: COLOR.accent,
+  });
+  b += row(208, 'CPU · 램', '성능 은퇴 = 용도가 정함', COLOR.fit);
+
+  return figure(
+    '데스크탑의 부품별 시계 — 소모품 계열과 반영구 계열',
+    W, 250, b,
+    '하나의 수명이 아니라 부품별 시계 — 낡은 시계만 갈아 끼우면 컴퓨터는 계속 삽니다. 막대 길이는 비교가 아닙니다.'
   );
 }
