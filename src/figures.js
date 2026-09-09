@@ -854,6 +854,7 @@ export const figures = {
   'band-trap': bandTrap,
   'heat-flow': heatFlow,
   'component-clocks': componentClocks,
+  'shock-two-paths': shockTwoPaths,
 };
 
 /**
@@ -2571,5 +2572,39 @@ function componentClocks() {
     '데스크탑의 부품별 시계 — 소모품 계열과 반영구 계열',
     W, 250, b,
     '하나의 수명이 아니라 부품별 시계 — 낡은 시계만 갈아 끼우면 컴퓨터는 계속 삽니다. 막대 길이는 비교가 아닙니다.'
+  );
+}
+
+/**
+ * 본체 찌릿의 두 갈래 — 정전기(사람→케이스, 1회 방전)와
+ * 누설 전류(파워→케이스, 접지 유무가 체감을 가름).
+ * pc-static-shock 의 핵심 판정 고정. 전류 방향을 화살표 텍스트로 표기.
+ */
+function shockTwoPaths() {
+  const W = 640;
+
+  const box = (x, y, w, label, color) =>
+    rect(x, y, w, 30, 'none', { stroke: color, r: 8 }) +
+    t(x + w / 2, y + 20, label, { anchor: 'middle', size: 12, weight: 600 });
+
+  let b = '';
+  b += t(24, 26, '갈래 ① 한 번 "톡" — 정전기', { weight: 600, size: 13, fill: COLOR.accent });
+  b += box(24, 40, 110, '건조한 몸', COLOR.line);
+  b += t(150, 60, '→ 순간 1회 방전', { size: 11, fill: COLOR.mute });
+  b += box(268, 40, 90, '케이스', COLOR.line);
+  b += t(24, 96, '범인은 컴퓨터가 아니라 환경(건조·마찰) — 기기·사람 모두 실질 무해', { size: 11, fill: COLOR.mute });
+
+  b += t(24, 136, '갈래 ② 계속 저릿 — 누설 전류', { weight: 600, size: 13, fill: COLOR.over });
+  b += box(24, 150, 90, '파워', COLOR.line);
+  b += t(126, 170, '→ 미세 전류', { size: 11, fill: COLOR.mute });
+  b += box(216, 150, 90, '케이스', COLOR.line);
+  b += t(320, 163, '→ 접지 있음: 땅으로 (아무 느낌 없음)', { size: 11, fill: COLOR.fit });
+  b += t(320, 183, '→ 접지 없음: 사람으로 (만질 때마다 저릿)', { size: 11, weight: 600, fill: COLOR.over });
+  b += t(24, 216, '지속 저릿 = 접지가 끊겨 있다는 신호 — 접지 콘센트 직결로 재현 여부부터', { size: 11, fill: COLOR.mute });
+
+  return figure(
+    '본체 찌릿의 두 갈래 — 정전기와 누설 전류',
+    W, 232, b,
+    '한 번 톡이면 정전기(환경), 계속 저릿이면 누설 전류(접지 확인 신호)입니다.'
   );
 }
