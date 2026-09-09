@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>듀얼 모니터 한쪽만 끄고 싶을 때 — 전원 버튼이 오답인 이유부터 압니다 | 스펙핏</title>
+<meta name="description" content="게임이나 영화 볼 때 보조 모니터만 잠깐 끄고 싶다는 질문이 게시판에 꾸준합니다. 모니터 전원 버튼은 창이 다 넘어오는 부작용의 지름길이라 오답에 가깝습니다 — 윈도우 쪽에서 끄는 정답 경로와, 연결 방식에 따라 부작용이 갈리는 이유를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/dual-monitor-turn-off-one.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="듀얼 모니터 한쪽만 끄고 싶을 때 — 전원 버튼이 오답인 이유부터 압니다 | 스펙핏">
+<meta property="og:description" content="게임이나 영화 볼 때 보조 모니터만 잠깐 끄고 싶다는 질문이 게시판에 꾸준합니다. 모니터 전원 버튼은 창이 다 넘어오는 부작용의 지름길이라 오답에 가깝습니다 — 윈도우 쪽에서 끄는 정답 경로와, 연결 방식에 따라 부작용이 갈리는 이유를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/dual-monitor-turn-off-one.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"듀얼 모니터 한쪽만 끄고 싶을 때 — 전원 버튼이 오답인 이유부터 압니다","description":"게임이나 영화 볼 때 보조 모니터만 잠깐 끄고 싶다는 질문이 게시판에 꾸준합니다. 모니터 전원 버튼은 창이 다 넘어오는 부작용의 지름길이라 오답에 가깝습니다 — 윈도우 쪽에서 끄는 정답 경로와, 연결 방식에 따라 부작용이 갈리는 이유를 정리했습니다.","datePublished":"2026-09-09","dateModified":"2026-09-09","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dual-monitor-turn-off-one.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"듀얼 모니터 한쪽만 끄고 싶을 때 — 전원 버튼이 오답인 이유부터 압니다","item":"https://specfit.kr/posts/dual-monitor-turn-off-one.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"한쪽만 절전 모드로 들어가게 할 수는 없나요","acceptedAnswer":{"@type":"Answer","text":"모니터별로 따로 절전 타이머를 거는 표준 기능은 없습니다 — 위의 \"1에만 표시\"로 빼 두면 신호가 끊긴 보조 모니터가 스스로 절전으로 들어가니, 실질적으로 같은 결과가 됩니다."}},{"@type":"Question","name":"껐다 켜니 아이콘·창 배치가 엉망이 됐어요","acceptedAnswer":{"@type":"Answer","text":"\"실종 처리\"의 후유증입니다 — 창 몰림 글 의 완화책 사다리(연결 방식, 설정, 도구)가 그대로 적용됩니다. 디스플레이 설정 경로로 껐다면 이 후유증이 훨씬 적었을 거고요."}},{"@type":"Question","name":"자주 껐다 켰다 하면 모니터에 안 좋나요","acceptedAnswer":{"@type":"Answer","text":"걱정할 수준이 아닙니다 — 전원 습관 글 의 결론처럼 수명을 쓰는 건 화면 표시 시간이지 껐다 켜는 횟수가 아니고, 신호가 끊겨 절전으로 들어가는 건 그중에서도 가장 얌전한 경로입니다."}},{"@type":"Question","name":"단축키로 빠르게 전환할 수는 없나요","acceptedAnswer":{"@type":"Answer","text":"Win+P가 그 자리입니다 — 원래 프로젝터 전환용 메뉴지만 \"PC 화면만/확장\" 전환이 한 손에 됩니다. 다만 이 메뉴의 항목 구성은 모니터 조합에 따라 다르게 보일 수 있어, 내 조합에서 원하는 동작이 나오는지 한 번 확인하고 쓰는 게 좋습니다."}},{"@type":"Question","name":"게임 중에 보조 모니터로 공략을 보고 싶은데요","acceptedAnswer":{"@type":"Answer","text":"그럼 끄면 안 되는 쪽이네요 — 그 용도는 마우스 이탈 판정의 \"테두리 없는 창\" 모드가 본론입니다. 게임과 보조 화면을 같이 쓰는 구성의 표준 답이고요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>듀얼 모니터 한쪽만 끄고 싶을 때 — 전원 버튼이 오답인 이유부터 압니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-09">2026년 9월 9일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>게임을 켜거나 영화를 틀 때, 옆의 보조 모니터가 갑자기 거슬립니다.
+빛나는 흰 화면이 시야에 걸리니까요. 그래서 <strong>&quot;한쪽만 잠깐 끄고
+싶다&quot;</strong>는 질문이 게시판에 꾸준히 올라오는데 — 답글의 절반은 부작용
+하소연입니다. <strong>&quot;껐더니 창이 전부 이쪽으로 넘어왔어요.&quot;</strong></p>
+<p>그 부작용에는 구조적인 이유가 있고, 그래서 이 문제의 정답은
+<strong>어디서 끄느냐</strong>에 있습니다 — 모니터의 버튼이 아니라, 윈도우
+쪽에서요.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>방법</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td>모니터 <strong>전원 버튼</strong>으로 끄기</td><td><strong>오답에 가깝습니다</strong> — 연결 방식에 따라 &quot;모니터 실종&quot;으로 처리돼 창이 넘어옵니다</td></tr>
+<tr><td>윈도우 <strong>디스플레이 설정</strong>에서 끄기</td><td><strong>정답 경로</strong> — &quot;1에만 표시&quot;류 옵션이 이 용도의 공식 기능입니다</td></tr>
+<tr><td>게임만 메인으로 보내고 싶다</td><td>게임 그래픽 설정의 <strong>디스플레이 선택</strong>이 먼저입니다 — 끌 필요가 없을 수 있어요</td></tr>
+<tr><td>빛만 거슬린다</td><td><strong>화면 비우기</strong>(검정 배경·빈 바탕화면)도 끄기 없이 해결되는 절충입니다</td></tr>
+<tr><td>껐다 켤 때마다 창이 몰린다</td><td><a href="/posts/monitor-sleep-window-move.html">그 증상의 전용 판정</a>이 따로 있습니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-전원-버튼이-오답인가-실종-처리됩니다">왜 전원 버튼이 오답인가 — &quot;실종 처리&quot;됩니다</h2>
+<p>직관적으로는 모니터 버튼을 누르는 게 제일 쉬워 보이지만,
+연결 방식에 따라(특히 DP 계열에서) 전원이 꺼진 모니터는 윈도우에게
+<strong>&quot;잠깐 꺼진 화면&quot;이 아니라 &quot;사라진 화면&quot;</strong>으로 보일 수 있습니다.
+그 순간 윈도우는 성실하게 일합니다 — 없어진 화면의 창들을 남은
+화면으로 옮기고, 경우에 따라 메인 모니터까지 바꿔 버립니다.</p>
+<ul>
+<li>&quot;한쪽을 끄면 나머지가 메인으로 잡혀요&quot;라는 그 단골 질문이
+정확히 이 동작입니다</li>
+<li>다시 켜면 창을 손으로 되돌려 놓아야 하는 것까지가 세트고요</li>
+<li>같은 메커니즘이 절전 복귀 때도 일어납니다 —
+<a href="/posts/monitor-sleep-window-move.html">창 몰림 판정 글</a>에서
+구조와 완화책을 따로 정리해 뒀습니다. HDMI 쪽은 이 실종 처리가
+덜한 경향이 있어, <strong>내 조합이 어느 쪽인지는 한 번 꺼 보면</strong>
+바로 압니다</li>
+</ul>
+<h2 id="정답-경로-윈도우에게-말로-하세요">정답 경로 — 윈도우에게 말로 하세요</h2>
+<p>버튼 대신 <strong>윈도우 쪽에서 정식으로 화면을 빼는</strong> 게 이 용도의
+공식 기능입니다:</p>
+<ol>
+<li>바탕화면 우클릭 → <strong>디스플레이 설정</strong></li>
+<li><strong>다중 디스플레이</strong> 항목에서 — <strong>&quot;1에만 표시&quot;</strong>(또는 &quot;해당
+디스플레이 연결 끊기&quot;) 선택. 명칭과 위치는 윈도우 버전에 따라
+조금 다릅니다</li>
+<li>되돌릴 땐 같은 자리에서 &quot;확장&quot;으로 — 모니터 배치·순서 설정은
+대개 기억된 채 돌아옵니다</li>
+</ol>
+<p>이 경로가 나은 이유는 단순합니다 — 갑작스러운 실종이 아니라
+<strong>예고된 퇴장</strong>이라, 메인 지정이 엉키는 사고가 훨씬 적고,
+보조 모니터는 신호가 끊겨 알아서 절전으로 들어갑니다. 전원
+버튼까지 누를 필요도 없고요.</p>
+<h2 id="끄기-전에-정말-꺼야-하는지부터">끄기 전에 — 정말 꺼야 하는지부터</h2>
+<p>목적이 &quot;게임을 방해받지 않기&quot;라면, 끄는 것보다 가벼운 수가
+있는지 먼저 보세요:</p>
+<ul>
+<li><strong>게임이 보조 화면에 뜨는 게 문제</strong> → 게임 그래픽 설정의
+<strong>디스플레이 선택</strong>(모니터 1/2 지정)이 정답입니다. 옵션이 없는
+게임은 창 모드에서 끌어다 옮긴 뒤 전체화면으로 바꾸는 코스고요</li>
+<li><strong>마우스가 옆 화면으로 새는 게 문제</strong> →
+<a href="/posts/dual-monitor-mouse-escape.html">그 판정 글</a>의 화면 모드
+스위치 하나로 해결되는 문제라, 모니터를 끌 이유가 없습니다</li>
+<li><strong>빛이 거슬리는 게 문제</strong> → 보조 화면에 검정 배경의 빈
+바탕화면만 남기는 것으로도 체감이 크게 달라집니다 — 끄고 켜는
+의식 없이요</li>
+<li><strong>성능 때문이라면</strong> → <a href="/posts/dual-monitor-gaming-fps.html">보조 모니터와 게임 프레임 판정</a>
+의 결론처럼, 보조 화면에 영상이 돌아가는 경우가 아니면 기대만큼의
+이득이 아닐 수 있습니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="한쪽만-절전-모드로-들어가게-할-수는-없나요">한쪽만 절전 모드로 들어가게 할 수는 없나요</h3>
+<p>모니터별로 따로 절전 타이머를 거는 표준 기능은 없습니다 — 위의
+&quot;1에만 표시&quot;로 빼 두면 신호가 끊긴 보조 모니터가 스스로 절전으로
+들어가니, 실질적으로 같은 결과가 됩니다.</p>
+<h3 id="껐다-켜니-아이콘창-배치가-엉망이-됐어요">껐다 켜니 아이콘·창 배치가 엉망이 됐어요</h3>
+<p>&quot;실종 처리&quot;의 후유증입니다 — <a href="/posts/monitor-sleep-window-move.html">창 몰림 글</a>
+의 완화책 사다리(연결 방식, 설정, 도구)가 그대로 적용됩니다.
+디스플레이 설정 경로로 껐다면 이 후유증이 훨씬 적었을 거고요.</p>
+<h3 id="자주-껐다-켰다-하면-모니터에-안-좋나요">자주 껐다 켰다 하면 모니터에 안 좋나요</h3>
+<p>걱정할 수준이 아닙니다 — <a href="/posts/monitor-off-or-sleep.html">전원 습관 글</a>
+의 결론처럼 수명을 쓰는 건 화면 표시 시간이지 껐다 켜는 횟수가
+아니고, 신호가 끊겨 절전으로 들어가는 건 그중에서도 가장 얌전한
+경로입니다.</p>
+<h3 id="단축키로-빠르게-전환할-수는-없나요">단축키로 빠르게 전환할 수는 없나요</h3>
+<p><strong>Win+P</strong>가 그 자리입니다 — 원래 프로젝터 전환용 메뉴지만
+&quot;PC 화면만/확장&quot; 전환이 한 손에 됩니다. 다만 이 메뉴의 항목
+구성은 모니터 조합에 따라 다르게 보일 수 있어, 내 조합에서 원하는
+동작이 나오는지 한 번 확인하고 쓰는 게 좋습니다.</p>
+<h3 id="게임-중에-보조-모니터로-공략을-보고-싶은데요">게임 중에 보조 모니터로 공략을 보고 싶은데요</h3>
+<p>그럼 끄면 안 되는 쪽이네요 — 그 용도는
+<a href="/posts/dual-monitor-mouse-escape.html">마우스 이탈 판정</a>의
+&quot;테두리 없는 창&quot; 모드가 본론입니다. 게임과 보조 화면을 같이 쓰는
+구성의 표준 답이고요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>전원 버튼은 오답에 가깝습니다</strong> — 연결 방식에 따라 &quot;실종
+처리&quot;돼 창이 넘어오고 메인이 바뀝니다</li>
+<li><strong>디스플레이 설정의 &quot;1에만 표시&quot;가 정답 경로</strong>입니다 — 예고된
+퇴장이라 사고가 적습니다</li>
+<li>끄기 전에 <strong>더 가벼운 수</strong>부터 — 게임 디스플레이 지정, 검정
+바탕화면, 화면 모드 스위치</li>
+<li>성능 목적이라면 기대치를 확인하세요 — 보조 화면 영상 재생이
+아니면 이득이 크지 않을 수 있습니다</li>
+<li>껐다 켤 때 창이 몰리는 증상은 <strong>전용 판정 글</strong>로 — 구조가 같은
+문제입니다</li>
+</ol>
+<p>듀얼 모니터의 이웃 판정들 — <a href="/posts/monitor-sleep-window-move.html">창 몰림의 구조</a> ·
+<a href="/posts/dual-monitor-mouse-escape.html">마우스 이탈 스위치</a> ·
+<a href="/posts/dual-monitor-gaming-fps.html">보조 모니터와 게임 프레임</a> ·
+<a href="/posts/monitor-off-or-sleep.html">모니터 전원 습관</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">듀얼모니터</span> <span class="tag">모니터끄기</span> <span class="tag">보조모니터</span> <span class="tag">디스플레이설정</span> <span class="tag">게임환경</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/monitor-lifespan.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">모니터 수명은 몇 년인가 — 죽는 날보다 서서히 저무는 날이 먼저 옵니다</span>
+        <span class="card-desc">모니터를 몇 년 쓰고 바꿔야 하는지는 커뮤니티 단골 질문입니다. 모니터는 급사보다 노화가 먼저 오는 기기 — 백라이트가 서서히 어두워지고 색이 변하는 소모품이라서요. 노화의 지문, 진짜 고장 신호, 그리고 세대 은퇴까지 세 갈래로 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dual-monitor-stacked.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터, 옆이 아니라 위아래로 두면 어떤가 — 목이 아니라 용도가 기준입니다</span>
+        <span class="card-desc">책상이 좁아서, 또는 그냥 궁금해서 — 듀얼 모니터를 좌우가 아니라 상하로 쌓는 배치를 고민하는 질문이 커뮤니티에 꾸준히 올라옵니다. 결론은 보조 화면의 용도가 기준이라는 것 — 흘깃 보는 용도면 위가 통하고, 오래 읽는 용도면 목이 값을 치릅니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/app-no-sound.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">유튜브는 나오는데 게임 소리만 안 날 때 — 소리는 앱마다 따로 배선돼 있습니다</span>
+        <span class="card-desc">전체 소리는 멀쩡한데 특정 게임이나 프로그램만 조용한 증상은 고장이 아니라 배선 문제인 경우가 대부분입니다. 윈도우가 앱마다 볼륨과 출력 장치를 따로 기억하기 때문인데, 그 장부를 여는 순서와 헤드셋을 꽂았다 뺀 뒤 생기는 전형적인 함정까지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
