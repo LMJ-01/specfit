@@ -12,8 +12,9 @@
   <url><loc>https://specfit.kr/contact.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-static-shock.html</loc><lastmod>2026-09-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-lifespan.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/pc-humidifier.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-humidifier.html</loc><lastmod>2026-09-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/router-lifespan.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/desktop-lifespan.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dual-monitor-stacked.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
@@ -43,7 +44,7 @@
   <url><loc>https://specfit.kr/posts/pc-burning-smell.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-case-horizontal.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-on-desk.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/pc-power-strip.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-power-strip.html</loc><lastmod>2026-09-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-slow-until-reboot.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/website-not-loading.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dual-monitor-mouse-escape.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
