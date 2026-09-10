@@ -2,7 +2,7 @@
 title: 켤 때만 팬소리가 크게 나는 컴퓨터 — 몇 초의 "위잉"은 고장이 아니라 점호입니다
 description: 컴퓨터를 켜는 순간 팬이 크게 위잉 돌다가 몇 초 뒤 조용해지는 현상이 고장 신호인지 걱정하는 질문은 커뮤니티 단골입니다. 결론은 정상 — 제어가 잡히기 전의 점호입니다. 오히려 조용해지지 않고 계속 클 때, 소리의 결이 다를 때가 판정 대상입니다.
 date: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-10
 category: memory
 tags: [팬소음, 부팅소음, 풀스핀, 팬커브, 컴퓨터소리]
 ---
@@ -139,7 +139,8 @@ tags: [팬소음, 부팅소음, 풀스핀, 팬커브, 컴퓨터소리]
 5. 큰 소리와 함께 화면이 안 나오면 팬이 아니라 **부팅 실패
    판정**으로 가세요
 
-부팅과 소음의 이웃 판정들 — [화면 안 나올 때](/posts/pc-boot-no-display.html) ·
+부팅과 소음의 이웃 판정들 — [노트북 팬의 양방향 판정](/posts/laptop-fan-noise.html) ·
+[화면 안 나올 때](/posts/pc-boot-no-display.html) ·
 [쿨러 소음 판정](/posts/cpu-stock-cooler.html) ·
 [미니PC 소음](/posts/mini-pc-noise.html) ·
 [먼지 청소 신호](/posts/pc-dust-cleaning.html)와 이어집니다.

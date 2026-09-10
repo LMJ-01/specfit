@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 발열과 성능 저하 — 얇으면 왜 느려지나","description":"짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-thermal-throttling.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 발열과 성능 저하 — 얇으면 왜 느려지나","description":"짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.","datePublished":"2026-08-17","dateModified":"2026-09-10","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-thermal-throttling.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"노트북 발열과 성능 저하 — 얇으면 왜 느려지나","item":"https://specfit.kr/posts/laptop-thermal-throttling.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"온도가 90℃를 넘는데 고장인가요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 노트북은 그 근처에서 동작하도록 설계됩니다. 온도가 높은 것 자체보다 그때 속도가 얼마나 떨어지는지가 중요합니다."}},{"@type":"Question","name":"팬 소리가 커지는 게 나쁜 건가요","acceptedAnswer":{"@type":"Answer","text":"오히려 반대입니다. 팬이 돌아야 열을 버립니다. 소리가 안 나면서 느려지고 있다면 그게 더 나쁜 상태입니다."}},{"@type":"Question","name":"쿨링 패드가 효과 있나요","acceptedAnswer":{"@type":"Answer","text":"바닥을 띄워 공기 길을 확보하는 것만으로도 도움이 됩니다. 다만 설계상의 지속 전력을 넘기게 해주지는 않습니다. 기대치를 조정하세요."}},{"@type":"Question","name":"벤치마크 점수를 보면 알 수 있나요","acceptedAnswer":{"@type":"Answer","text":"짧게 재는 점수로는 알기 어렵습니다. 같은 작업을 오래 돌렸을 때의 결과를 보여주는 리뷰를 찾으시는 편이 낫습니다."}},{"@type":"Question","name":"데스크톱은 이 문제가 없나요","acceptedAnswer":{"@type":"Answer","text":"훨씬 덜합니다. 공간과 냉각 여유가 비교가 안 됩니다. 이동이 필요 없다면 데스크톱이 같은 예산에서 유리한 이유 중 하나입니다."}},{"@type":"Question","name":"로컬 LLM에서 얼마나 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"VRAM에 다 올라간다면 발열은 속도 문제이지 가능 여부를 바꾸지는 않습니다. 돌아가느냐 아니냐는 여전히 VRAM이 정합니다 — Ollama 최소 사양에 기준이 있습니다."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>노트북 발열과 성능 저하 — 얇으면 왜 느려지나</h1>
     <p class="post-meta">
       <time datetime="2026-08-17">2026년 8월 17일</time>
-      
+      <span class="updated">· 2026년 9월 10일 갱신</span>
     </p>
   </header>
 
@@ -311,6 +311,8 @@
 <li><strong>받침대로 바닥을 띄우는 것</strong>이 가장 값싸고 확실합니다</li>
 <li><strong>로컬 LLM이 가장 잘 걸리는 작업</strong>입니다. 냉각을 우선순위에 넣으세요</li>
 </ol>
+<p>(팬 소리 자체가 걱정이라면 — 계속 돌거나 안 돌거나 —
+<a href="/posts/laptop-fan-noise.html">팬의 양방향 판정</a>을 먼저 보세요.)</p>
 <p>실제 사용 결과가 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
@@ -323,6 +325,13 @@
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/laptop-fan-noise.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">노트북 팬이 계속 돌 때, 안 돌 때 — 반대 걱정 둘이 같은 문장으로 풀립니다</span>
+        <span class="card-desc">팬이 쉬지 않고 돌아서 불안한 사람과, 너무 조용해서 고장인가 싶은 사람이 같은 게시판에 있습니다. 팬은 원인이 아니라 온도의 통역사 — 팬이 하는 말을 읽는 법과, 계속 돎·안 돎 각각의 판정 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/laptop-hot-in-bag.html">
         <span class="card-cat">노트북</span>
         <span class="card-title">가방에서 꺼낸 노트북이 뜨겁고 배터리가 닳아 있을 때 — 잔 게 아니라 잠꼬대를 한 겁니다</span>
@@ -334,13 +343,6 @@
         <span class="card-cat">노트북</span>
         <span class="card-title">키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다</span>
         <span class="card-desc">키보드에서 몇 개의 키만 반응이 없으면 교체해야 하나 싶지만, 소프트웨어 층이 범인인 경우도 많습니다. 화면 키보드와 외부 키보드로 층을 가르는 격리 진단, 그리고 죽은 키들의 배치가 알려주는 것까지 — 판정 순서를 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/laptop-slow-on-battery.html">
-        <span class="card-cat">노트북</span>
-        <span class="card-title">배터리로 쓰면 노트북이 느려질 때 — 성능은 전력 예산의 함수입니다</span>
-        <span class="card-desc">어댑터를 뽑으면 노트북이 눈에 띄게 느려지는 건 고장이 아니라 설계입니다. 그런데 반대로 어댑터를 꽂으면 렉이 걸린다는 사람도 있습니다. 두 반대 증상이 전력 예산이라는 한 축으로 설명되고, 판정 순서도 거기서 나옵니다.</span>
       </a>
     </li>
   </ul>

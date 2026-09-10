@@ -13,6 +13,13 @@
     <description>미니PC를 만져보고 뜨거워서 놀라는 질문이 게시판에 꾸준합니다. 작은 몸은 같은 일을 해도 따뜻한 게 기본값이고, 금속 바디의 열은 오히려 열이 잘 빠져나오고 있다는 뜻일 수 있습니다 — 걱정할 신호와 아닌 것의 구분, 배치 처방까지 정리했습니다.</description>
   </item>
   <item>
+    <title>노트북 팬이 계속 돌 때, 안 돌 때 — 반대 걱정 둘이 같은 문장으로 풀립니다</title>
+    <link>https://specfit.kr/posts/laptop-fan-noise.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-fan-noise.html</guid>
+    <pubDate>Wed, 09 Sep 2026 15:00:00 GMT</pubDate>
+    <description>팬이 쉬지 않고 돌아서 불안한 사람과, 너무 조용해서 고장인가 싶은 사람이 같은 게시판에 있습니다. 팬은 원인이 아니라 온도의 통역사 — 팬이 하는 말을 읽는 법과, 계속 돎·안 돎 각각의 판정 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>본체 만질 때마다 찌릿할 때 — "한 번 톡"과 "계속 저릿"은 완전히 다른 문제입니다</title>
     <link>https://specfit.kr/posts/pc-static-shock.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-static-shock.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/website-not-loading.html</guid>
     <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
     <description>다른 사이트는 다 되는데 한 곳만 안 열리는 증상은 브라우저, 컴퓨터, 집 회선, 사이트 자체 중 어느 층의 문제인지부터 갈라야 합니다. 다른 브라우저와 다른 기기, 두 번의 격리로 층을 자르는 판정과 층별 처방을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>오래 켜두면 느려지고 재부팅하면 빨라질 때 — "낫는다"는 것 자체가 단서입니다</title>
-    <link>https://specfit.kr/posts/pc-slow-until-reboot.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-slow-until-reboot.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>컴퓨터를 며칠 켜두면 점점 굼떠지다가 재부팅 한 번에 쌩쌩해지는 경험은 흔합니다. 재부팅으로 낫는다는 사실이 이미 절반의 진단이고, 매일 끄는데도 느려진다면 종료가 진짜 재부팅이 아니었다는 착시가 숨어 있습니다. 범인 찾기와 처방을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
