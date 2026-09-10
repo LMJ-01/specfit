@@ -855,6 +855,7 @@ export const figures = {
   'heat-flow': heatFlow,
   'component-clocks': componentClocks,
   'shock-two-paths': shockTwoPaths,
+  'reboot-trend': rebootTrend,
 };
 
 /**
@@ -2606,5 +2607,34 @@ function shockTwoPaths() {
     '본체 찌릿의 두 갈래 — 정전기와 누설 전류',
     W, 232, b,
     '한 번 톡이면 정전기(환경), 계속 저릿이면 누설 전류(접지 확인 신호)입니다.'
+  );
+}
+
+/**
+ * 공유기 노화의 지문 — 재부팅 즉효약이 듣는 간격이 짧아지는 추세.
+ * router-lifespan 의 "연식이 아니라 신호" 판정 고정. 막대는 간격(길수록 건강).
+ */
+function rebootTrend() {
+  const W = 640;
+  const x0 = 150;
+  const rows = [
+    ['첫해', 420, '몇 달에 한 번, 혹은 안 함', COLOR.fit],
+    ['그다음', 280, '한 달에 한 번쯤', COLOR.fit],
+    ['요즘', 140, '일주일을 못 감', COLOR.over],
+    ['지금', 60, '이틀마다 껐다 켬', COLOR.over],
+  ];
+  let b = '';
+  b += t(24, 26, '재부팅 사이의 간격 — 이 막대가 짧아지는 추세가 노화의 지문', { weight: 600, size: 13.5 });
+  rows.forEach(([label, w, note, color], i) => {
+    const y = 44 + i * 34;
+    b += t(24, y + 15, label, { size: 12, weight: 600 });
+    b += rect(x0, y, w, 20, color, { r: 10 });
+    b += t(x0 + w + 10, y + 15, note, { size: 10.5, fill: COLOR.mute });
+  });
+  b += t(24, 196, '한 번의 재부팅은 청소(정상) — 간격이 계속 짧아지면 소프트웨어 청소로 안 풀리는 쪽입니다', { size: 11, fill: COLOR.mute });
+  return figure(
+    '공유기 재부팅 간격의 단축 추세 — 노화의 지문',
+    W, 212, b,
+    '즉효약이 듣는 간격이 계속 짧아지는 추세가 하드웨어 노화 신호입니다. 막대 길이는 예시입니다.'
   );
 }
