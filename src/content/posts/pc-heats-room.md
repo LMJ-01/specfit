@@ -2,6 +2,7 @@
 title: 컴퓨터 때문에 방이 더울 때 — 본체만 시원하게 만들 방법은 없습니다
 description: 게임 좀 하면 방이 후끈해지고, 에어컨 없는 컴퓨터방은 여름마다 고역입니다. 구조부터 말하면 컴퓨터가 쓴 전기는 거의 전부 열이 되어 방으로 나옵니다 — 팬을 늘려도 방은 똑같이 더워집니다. 열의 총량을 줄이는 쪽과 내보내는 쪽, 그리고 더위 속 컴퓨터 걱정까지 정리했습니다.
 date: 2026-09-07
+updated: 2026-09-10
 category: gpu
 tags: [컴퓨터발열, 방온도, 여름컴퓨터, 소비전력, 컴퓨터방]
 ---
@@ -152,7 +153,8 @@ tags: [컴퓨터발열, 방온도, 여름컴퓨터, 소비전력, 컴퓨터방]
 5. 더위 속 컴퓨터는 **제어가 지켜 줍니다** — 비용은 고장이
    아니라 소음·성능·장기 수명입니다
 
-발열의 이웃 판정들 — [온도 몇 도가 정상인가](/posts/gpu-temp-normal.html) ·
+발열의 이웃 판정들 — [미니PC의 뜨거움 판정](/posts/mini-pc-heat.html) ·
+[온도 몇 도가 정상인가](/posts/gpu-temp-normal.html) ·
 [스로틀링의 구조](/posts/laptop-thermal-throttling.html) ·
 [실소비 전력의 구조](/posts/psu-capacity-power-draw.html) ·
 [케이스 기류(부품 온도용)](/posts/case-fan-setup.html)과 이어집니다.
