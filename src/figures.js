@@ -857,6 +857,7 @@ export const figures = {
   'shock-two-paths': shockTwoPaths,
   'reboot-trend': rebootTrend,
   'fan-interpreter': fanInterpreter,
+  'cleaning-ladder': cleaningLadder,
 };
 
 /**
@@ -2669,5 +2670,37 @@ function fanInterpreter() {
     '팬은 온도의 통역사 — 온도 구간별 정상 동작과 예외',
     W, 202, b,
     '팬 소리는 원인이 아니라 열 상태의 보고입니다. 뜨거운데 무음인 조합만 고장 신호입니다.'
+  );
+}
+
+/**
+ * 청소 후 안 켜짐 — 움직인 것들의 점검 사다리 (아래에서 위로).
+ * pc-wont-boot-after-cleaning 의 순서 고정. 물기 갈래는 별도 표기.
+ */
+function cleaningLadder() {
+  const W = 640;
+  const steps = [
+    ['0', '스위치·플러그', '파워 뒷면 O/I · 벽 · 멀티탭 · 모니터 입력'],
+    ['1', '전원 케이블 2가닥', '24핀 메인 + CPU 보조(8핀) 끝까지'],
+    ['2', '램 재장착', '뺐다가 좌우 딸깍 — 화면 안 나옴의 단골 1위'],
+    ['3', 'GPU·프런트 패널', '카드 재장착 + 보조전원 / PWR SW 선'],
+  ];
+  let b = '';
+  b += t(24, 26, '점검 사다리 — 허무한 것부터 순서대로', { weight: 600, size: 13.5 });
+  steps.forEach(([n, name, note], i) => {
+    const y = 42 + i * 38;
+    b += rect(24, y, 30, 26, COLOR.accent, { r: 8 });
+    b += t(39, y + 17, n, { anchor: 'middle', size: 12.5, weight: 600, fill: '#fff' });
+    b += rect(64, y, 170, 26, 'none', { stroke: COLOR.line, r: 8 });
+    b += t(149, y + 17, name, { anchor: 'middle', size: 12, weight: 600 });
+    b += t(248, y + 17, note, { size: 10.5, fill: COLOR.mute });
+  });
+  b += t(24, 208, '⚠ 물기·습기가 있었다면 — 이 사다리보다 완전 건조가 먼저입니다', {
+    size: 11.5, weight: 600, fill: COLOR.over,
+  });
+  return figure(
+    '청소 후 미부팅 점검 사다리 — 스위치부터 램·GPU까지',
+    W, 224, b,
+    '대부분 부품 고장이 아니라 풀린 접촉입니다. 각 단계 후 켜보고, 켜지면 거기서 끝.'
   );
 }
