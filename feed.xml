@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>청소했더니 컴퓨터가 안 켜질 때 — 범인은 먼지가 아니라 움직인 것들입니다</title>
+    <link>https://specfit.kr/posts/pc-wont-boot-after-cleaning.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-wont-boot-after-cleaning.html</guid>
+    <pubDate>Thu, 10 Sep 2026 15:00:00 GMT</pubDate>
+    <description>큰맘 먹고 본체를 청소했는데 컴퓨터가 안 켜지는 사연이 게시판에 꾸준합니다. 대부분 부품이 죽은 게 아니라 청소 중에 무언가 풀리거나 덜 꽂힌 것 — 스위치·케이블·램·그래픽카드 순서의 점검 사다리와 증상별 갈래를 정리했습니다.</description>
+  </item>
+  <item>
     <title>게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다</title>
     <link>https://specfit.kr/posts/game-install-ssd-hdd.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/game-install-ssd-hdd.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-stacked.html</guid>
     <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
     <description>책상이 좁아서, 또는 그냥 궁금해서 — 듀얼 모니터를 좌우가 아니라 상하로 쌓는 배치를 고민하는 질문이 커뮤니티에 꾸준히 올라옵니다. 결론은 보조 화면의 용도가 기준이라는 것 — 흘깃 보는 용도면 위가 통하고, 오래 읽는 용도면 목이 값을 치릅니다.</description>
-  </item>
-  <item>
-    <title>데스크탑 수명은 몇 년인가 — 하나의 수명이 없다는 게 데스크탑의 답입니다</title>
-    <link>https://specfit.kr/posts/desktop-lifespan.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/desktop-lifespan.html</guid>
-    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
-    <description>조립 컴퓨터를 맞추고 나면 이게 몇 년이나 갈지 궁금해집니다. 노트북과 달리 데스크탑에는 하나의 수명이 없습니다 — 부품마다 시계가 따로 돌고, 낡은 부품만 갈아 끼우면 계속 삽니다. 부품별 시계와 실제 은퇴 시점, 수명을 늘리는 관리까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
