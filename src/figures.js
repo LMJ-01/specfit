@@ -856,6 +856,7 @@ export const figures = {
   'component-clocks': componentClocks,
   'shock-two-paths': shockTwoPaths,
   'reboot-trend': rebootTrend,
+  'fan-interpreter': fanInterpreter,
 };
 
 /**
@@ -2636,5 +2637,37 @@ function rebootTrend() {
     '공유기 재부팅 간격의 단축 추세 — 노화의 지문',
     W, 212, b,
     '즉효약이 듣는 간격이 계속 짧아지는 추세가 하드웨어 노화 신호입니다. 막대 길이는 예시입니다.'
+  );
+}
+
+/**
+ * 팬은 원인이 아니라 온도의 통역사 — 온도 구간별 팬의 말.
+ * laptop-fan-noise 핵심 프레임 고정. 마지막 행은 예외(고장 신호).
+ */
+function fanInterpreter() {
+  const W = 640;
+  const rows = [
+    ['서늘함', '팬 정지 (0팬 구간)', '무음이 정상인 설계가 흔함', COLOR.fit],
+    ['따뜻함', '천천히 돎', '평상시의 소리', COLOR.fit],
+    ['뜨거움', '빠르게 돎', '열이 많다는 통역 — 출처를 찾을 것', COLOR.over],
+  ];
+  let b = '';
+  b += t(24, 26, '온도 → 팬의 말 (팬 속도는 온도를 따라갑니다)', { weight: 600, size: 13.5 });
+  rows.forEach(([temp, fan, note, color], i) => {
+    const y = 42 + i * 40;
+    b += rect(24, y, 96, 26, 'none', { stroke: color, r: 8 });
+    b += t(72, y + 17, temp, { anchor: 'middle', size: 12, weight: 600 });
+    b += t(134, y + 17, '→', { size: 12, fill: COLOR.mute });
+    b += rect(158, y, 150, 26, color, { r: 8 });
+    b += t(233, y + 17, fan, { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+    b += t(322, y + 17, note, { size: 10.5, fill: COLOR.mute });
+  });
+  b += t(24, 186, '⚠ 예외 — 뜨거운데 팬이 무음: 통역사 결근(팬 고장 갈래), 점검 대상', {
+    size: 11.5, weight: 600, fill: COLOR.over,
+  });
+  return figure(
+    '팬은 온도의 통역사 — 온도 구간별 정상 동작과 예외',
+    W, 202, b,
+    '팬 소리는 원인이 아니라 열 상태의 보고입니다. 뜨거운데 무음인 조합만 고장 신호입니다.'
   );
 }
