@@ -2,7 +2,7 @@
 title: 프레임은 잘 나오는데 끊기는 게임 — 평균이 아니라 간격의 문제입니다
 description: 프레임 수치는 높은데 화면이 뚝뚝 끊기는 느낌이 드는 경우가 있습니다. 부드러움을 정하는 것은 평균 프레임이 아니라 프레임 사이 간격의 고름이라서입니다. 끊김의 세 갈래를 가르는 판정 순서를 정리했습니다.
 date: 2026-09-05
-updated: 2026-09-07
+updated: 2026-09-11
 category: gpu
 tags: [프레임드랍, 스터터링, 게임끊김, 프레임타임, 수직동기화]
 ---
@@ -139,7 +139,8 @@ tags: [프레임드랍, 스터터링, 게임끊김, 프레임타임, 수직동�
 (끊기는 게 아니라 **게임이 통째로 바탕화면으로 튕겨 나온다**면 —
 포커스를 뺏긴 [별개 증상](/posts/game-minimizes-itself.html)입니다.)
 
-이웃 판정들 — [CPU·GPU 병목](/posts/cpu-gpu-bottleneck.html) ·
+이웃 판정들 — [게임 설치 위치(SSD/HDD)의 몫](/posts/game-install-ssd-hdd.html) ·
+[CPU·GPU 병목](/posts/cpu-gpu-bottleneck.html) ·
 [유선 vs 와이파이](/posts/desktop-wifi-vs-lan.html) ·
 [램 사용률 읽는 법](/posts/ram-usage-normal.html)과 이어집니다.
 

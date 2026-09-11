@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다","description":"C·D 드라이브로 나누는 게 관습처럼 남아 있는데, 요즘 기본값은 통으로 쓰는 쪽입니다. 파티션이 실제로 해주는 것과 못 해주는 것(백업 아님, 속도 무관)을 가르고, 나누는 게 값을 하는 경우의 목록을 정리했습니다.","datePublished":"2026-09-04","dateModified":"2026-09-04","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ssd-partition.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다","description":"C·D 드라이브로 나누는 게 관습처럼 남아 있는데, 요즘 기본값은 통으로 쓰는 쪽입니다. 파티션이 실제로 해주는 것과 못 해주는 것(백업 아님, 속도 무관)을 가르고, 나누는 게 값을 하는 경우의 목록을 정리했습니다.","datePublished":"2026-09-04","dateModified":"2026-09-11","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ssd-partition.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다","item":"https://specfit.kr/posts/ssd-partition.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"이미 C·D로 나눠져 있는데 합쳐야 하나요","acceptedAnswer":{"@type":"Answer","text":"불편이 없다면 그대로 쓰세요 — 합치는 작업이 주는 이득이 크지 않습니다. C가 자꾸 차서 고생 중이라면 그때 파티션 조정이나 통합을 검토하면 됩니다."}},{"@type":"Question","name":"게임·프로그램은 어디에 까나요","acceptedAnswer":{"@type":"Answer","text":"나눠 놓았다면 큰 것들(게임·로컬 LLM 모델 등)을 D로 보내는 것이 C 만성 부족을 막는 실전 요령입니다. 통으로 쓴다면 고민 자체가 없습니다."}},{"@type":"Question","name":"파티션을 나누면 SSD 수명에 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"없습니다 — SSD 내부는 파티션 경계와 무관하게 전체 영역을 고르게 쓰도록 동작합니다. 수명은 쓰기 총량의 문제이지 구획의 문제가 아닙니다."}},{"@type":"Question","name":"재설치할 때 D는 정말 안전한가요","acceptedAnswer":{"@type":"Answer","text":"설치 과정에서 C 파티션만 선택해 포맷하면 D는 남습니다 — 다만 파티션 선택 실수라는 사람의 사고가 끼어들 수 있는 지점이라, 재설치 전 백업은 별개로 하는 것이 원칙입니다."}},{"@type":"Question","name":"회사 컴퓨터는 왜 다 나눠져 있나요","acceptedAnswer":{"@type":"Answer","text":"관리 정책의 흔적입니다 — 초기화·배포를 반복하는 환경에서는 위 \"재설치 보험\"이 조직 규모로 값을 하니까요. 개인 컴퓨터와 계산이 다른 환경입니다."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>SSD 파티션, 나눠야 하나 — 성능도 백업도 아니고 재설치 보험입니다</h1>
     <p class="post-meta">
       <time datetime="2026-09-04">2026년 9월 4일</time>
-      
+      <span class="updated">· 2026년 9월 11일 갱신</span>
     </p>
   </header>
 
@@ -178,6 +178,9 @@ OS·프로그램, 2번에 프로젝트·모델·자료를 두는 배치가 정�
 경우가 많습니다</li>
 <li>나눈다면 <strong>C를 넉넉히</strong> — 윈도우와 프로그램은 자랍니다</li>
 </ol>
+<p>(나누려는 이유가 <strong>게임 정리</strong>라면 — 파티션보다
+<a href="/posts/game-install-ssd-hdd.html">게임 설치 위치의 역할 분담</a>이
+그 답에 가깝습니다.)</p>
 <p>이어지는 판정들 — <a href="/posts/ssd-migration-vs-clean-install.html">마이그레이션 vs 클린설치</a> ·
 <a href="/posts/ssd-full-slowdown.html">꽉 찬 SSD가 느려지는 이유</a> ·
 <a href="/posts/dev-backup-strategy.html">백업의 틀</a>에 있습니다.</p>
@@ -193,6 +196,13 @@ OS·프로그램, 2번에 프로젝트·모델·자료를 두는 배치가 정�
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/game-install-ssd-hdd.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다</span>
+        <span class="card-desc">SSD와 HDD 중 어디에 게임을 설치해야 하는지는 저장장치 게시판의 단골 질문입니다. 설치 위치는 프레임을 바꾸지 않고 로딩을 바꿉니다 — 그 구조와 예외(스트리밍형 대작), 자주 하는 게임만 SSD에 두는 운용까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/pc-static-shock.html">
         <span class="card-cat">메모리·스토리지</span>
         <span class="card-title">본체 만질 때마다 찌릿할 때 — &quot;한 번 톡&quot;과 &quot;계속 저릿&quot;은 완전히 다른 문제입니다</span>
@@ -204,13 +214,6 @@ OS·프로그램, 2번에 프로젝트·모델·자료를 두는 배치가 정�
         <span class="card-cat">메모리·스토리지</span>
         <span class="card-title">본체에서 딸깍 소리가 날 때 — 언제, 어디서 나는지가 판정의 전부입니다</span>
         <span class="card-desc">컴퓨터에서 딸깍·딱딱 소리가 나면 폭탄 초침처럼 불안해집니다. 켜고 끌 때 한 번이면 정상인 스위치 소리이고, 하드디스크 쪽에서 반복되면 백업부터 해야 하는 경고이고, 부하 때 틱틱거리면 팬 간섭입니다 — 소리의 때와 출처로 가르는 판정을 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/pc-fan-loud-at-boot.html">
-        <span class="card-cat">메모리·스토리지</span>
-        <span class="card-title">켤 때만 팬소리가 크게 나는 컴퓨터 — 몇 초의 &quot;위잉&quot;은 고장이 아니라 점호입니다</span>
-        <span class="card-desc">컴퓨터를 켜는 순간 팬이 크게 위잉 돌다가 몇 초 뒤 조용해지는 현상이 고장 신호인지 걱정하는 질문은 커뮤니티 단골입니다. 결론은 정상 — 제어가 잡히기 전의 점호입니다. 오히려 조용해지지 않고 계속 클 때, 소리의 결이 다를 때가 판정 대상입니다.</span>
       </a>
     </li>
   </ul>

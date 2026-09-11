@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다 | 스펙핏</title>
+<meta name="description" content="SSD와 HDD 중 어디에 게임을 설치해야 하는지는 저장장치 게시판의 단골 질문입니다. 설치 위치는 프레임을 바꾸지 않고 로딩을 바꿉니다 — 그 구조와 예외(스트리밍형 대작), 자주 하는 게임만 SSD에 두는 운용까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/game-install-ssd-hdd.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다 | 스펙핏">
+<meta property="og:description" content="SSD와 HDD 중 어디에 게임을 설치해야 하는지는 저장장치 게시판의 단골 질문입니다. 설치 위치는 프레임을 바꾸지 않고 로딩을 바꿉니다 — 그 구조와 예외(스트리밍형 대작), 자주 하는 게임만 SSD에 두는 운용까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/game-install-ssd-hdd.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다","description":"SSD와 HDD 중 어디에 게임을 설치해야 하는지는 저장장치 게시판의 단골 질문입니다. 설치 위치는 프레임을 바꾸지 않고 로딩을 바꿉니다 — 그 구조와 예외(스트리밍형 대작), 자주 하는 게임만 SSD에 두는 운용까지 정리했습니다.","datePublished":"2026-09-11","dateModified":"2026-09-11","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/game-install-ssd-hdd.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다","item":"https://specfit.kr/posts/game-install-ssd-hdd.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"게임을 많이 깔면 SSD 수명이 닳지 않나요","acceptedAnswer":{"@type":"Answer","text":"게임 설치는 한 번 쓰고 오래 읽는 사용이라, SSD의 쓰기 수명(TBW) 관점에선 부담이 작은 축입니다. 설치·삭제를 매일 반복하는 극단이 아니라면 수명 걱정으로 HDD를 고를 이유는 없습니다."}},{"@type":"Question","name":"외장 SSD에 깔아서 해도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다 — 다만 속도의 상한은 디스크가 아니라 USB 연결 규격이 정합니다. 좋은 외장 SSD를 느린 포트에 꽂으면 내장 HDD와 비슷해질 수도 있어서, 포트 규격 확인이 먼저입니다."}},{"@type":"Question","name":"HDD에 깔았더니 게임 시작이 한참 걸려요","acceptedAnswer":{"@type":"Answer","text":"그 게임에선 그게 HDD의 정직한 속도입니다 — 고장이 아니고요. 자주 하는 동안만 SSD로 옮기고, 접으면 다시 HDD로 보내는 운용이 답입니다. 시작이 느린 것과 별개로 플레이 중 반복 끊김이 있다면 끊김의 갈래 판정부터 가르는 게 순서입니다."}},{"@type":"Question","name":"윈도우는 SSD인데 게임만 HDD에 깔면 어떤가요","acceptedAnswer":{"@type":"Answer","text":"흔하고 합리적인 구성입니다 — 운영체제·프로그램의 반응 속도는 시스템 디스크(SSD)가 책임지니, 게임 로딩만 게임별로 판단하면 됩니다. 위의 스트리밍형 예외만 SSD로 보내면 되고요."}},{"@type":"Question","name":"HDD에서 게임 도중 드르륵 소리가 나요","acceptedAnswer":{"@type":"Answer","text":"기계식 디스크가 읽는 소리 자체는 정상인데, 딸깍 소리가 반복된다면 그 판정 글의 경고대로 백업부터입니다 — 게임보다 데이터가 먼저입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-11">2026년 9월 11일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>SSD와 HDD를 같이 쓰는 컴퓨터라면 게임을 깔 때마다 잠깐
+고민하게 됩니다 — <strong>빠른 쪽은 자리가 아깝고, 넉넉한 쪽은 느릴까
+봐 걱정이고.</strong> 게시판의 단골 질문이고, 답들도 &quot;무조건 SSD&quot;와
+&quot;차이 없다&quot;로 갈려 보입니다.</p>
+<p>구조를 알면 양쪽 다 반만 맞습니다. <strong>설치 위치가 사주는 건
+프레임이 아니라 기다림입니다</strong> — 어디에 깔든 게임의 초당 프레임은
+같고, 달라지는 건 <strong>게임이 뜨고, 맵이 열리기까지의 시간</strong>입니다.
+단, 요즘 게임엔 예외 갈래가 하나 생겼습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>프레임 차이 나나</td><td><strong>안 납니다</strong> — 프레임은 GPU·CPU 몫이고, 저장장치는 로딩 담당입니다</td></tr>
+<tr><td>그럼 뭐가 달라지나</td><td><strong>기다림</strong> — 실행·맵 로딩·재접속이 빨라집니다. 자주 죽는 게임일수록 체감이 큽니다</td></tr>
+<tr><td>예외는</td><td><strong>스트리밍형 오픈월드 일부</strong> — 플레이 중에도 읽는 게임은 HDD에서 끊김·팝인이 날 수 있습니다</td></tr>
+<tr><td>그래서 어디에</td><td><strong>자주 하는 게임만 SSD에</strong> — 나머지는 HDD 보관이 정석 운용입니다</td></tr>
+<tr><td>옮길 수 있나</td><td>됩니다 — 게임 플랫폼의 <strong>라이브러리 이동 기능</strong>이 그 용도라 재설치가 필요 없습니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="구조-저장장치의-일은-로딩에서-끝납니다">구조 — 저장장치의 일은 로딩에서 끝납니다</h2>
+<p>게임 실행의 분업은 단순합니다: 저장장치가 데이터를 <strong>램과 VRAM에
+올려 주면</strong>, 그다음부터 그림을 그리는 건
+<a href="/posts/cpu-gpu-bottleneck.html">GPU와 CPU의 일</a>입니다. 일단
+올라간 데이터는 어느 디스크에서 왔는지 아무도 기억하지 않습니다.</p>
+<ul>
+<li>그래서 <strong>로딩 화면의 길이</strong>는 저장장치가 정하고, <strong>로딩이 끝난
+뒤의 프레임</strong>은 저장장치와 무관합니다</li>
+<li>&quot;SSD로 바꿨더니 게임이 빨라졌다&quot;는 체감담의 정체는 대부분 이
+기다림의 단축입니다 — 로딩이 잦은 게임(죽고 다시, 맵 이동
+잦음)일수록 삶의 질 차이가 커지고요</li>
+</ul>
+<h2 id="예외-플레이-중에도-읽는-게임들">예외 — 플레이 중에도 읽는 게임들</h2>
+<p>다만 요즘 생긴 갈래가 하나 있습니다. 거대한 오픈월드 게임 중엔
+로딩 화면에서 다 올리지 않고 <strong>달리는 동안 계속 뒤따라 읽는
+(스트리밍) 방식</strong>이 있는데, 이런 게임은 저장장치가 느리면 플레이
+중에 티가 납니다:</p>
+<ul>
+<li>빠르게 이동할 때 <a href="/posts/game-stutter-fps.html">순간 끊김</a>이
+생기거나, 저 멀리 건물·텍스처가 늦게 선명해지는(팝인) 증상</li>
+<li>그래서 <strong>일부 최신 대작은 권장·요구 사양에 아예 SSD를
+명시</strong>하는 경향입니다 — 이 부류는 고민 없이 SSD가 답입니다</li>
+</ul>
+<p>내 게임이 어느 쪽인지는 요구 사양의 저장장치 항목을 보면 되고,
+사양에 말이 없다면 대부분 &quot;로딩만 담당&quot; 쪽입니다.</p>
+<h2 id="운용-책상과-서랍처럼">운용 — 책상과 서랍처럼</h2>
+<p>정석은 역할 분담입니다:</p>
+<ol>
+<li><strong>지금 자주 하는 게임 = SSD</strong> — 책상 위입니다. 손이 자주 가는
+것에 빠른 자리를 줍니다</li>
+<li><strong>언젠가 다시 할 게임 = HDD</strong> — 서랍입니다. 지워서 다시 받는
+것보다 옮겨 두는 쪽이 몇 배 편합니다</li>
+<li>철이 바뀌면 <strong>옮깁니다</strong> — 스팀 등 게임 플랫폼엔 설치 폴더
+간 <strong>이동 기능</strong>이 있어 재설치·재다운로드 없이 서랍과 책상을
+오갈 수 있습니다</li>
+</ol>
+<p>용량 걱정으로 <a href="/posts/ssd-partition.html">SSD를 파티션으로 나누는 것</a>
+보다, 이렇게 <strong>디스크 단위로 역할을 나누는 쪽</strong>이 관리도 체감도
+단순합니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="게임을-많이-깔면-ssd-수명이-닳지-않나요">게임을 많이 깔면 SSD 수명이 닳지 않나요</h3>
+<p>게임 설치는 한 번 쓰고 <strong>오래 읽는</strong> 사용이라, SSD의
+<a href="/posts/ssd-tbw-lifespan.html">쓰기 수명(TBW)</a> 관점에선 부담이
+작은 축입니다. 설치·삭제를 매일 반복하는 극단이 아니라면 수명
+걱정으로 HDD를 고를 이유는 없습니다.</p>
+<h3 id="외장-ssd에-깔아서-해도-되나요">외장 SSD에 깔아서 해도 되나요</h3>
+<p>됩니다 — 다만 속도의 상한은 디스크가 아니라
+<a href="/posts/external-ssd-dev.html">USB 연결 규격</a>이 정합니다. 좋은
+외장 SSD를 느린 포트에 꽂으면 내장 HDD와 비슷해질 수도 있어서,
+포트 규격 확인이 먼저입니다.</p>
+<h3 id="hdd에-깔았더니-게임-시작이-한참-걸려요">HDD에 깔았더니 게임 시작이 한참 걸려요</h3>
+<p>그 게임에선 그게 HDD의 정직한 속도입니다 — 고장이 아니고요.
+자주 하는 동안만 SSD로 옮기고, 접으면 다시 HDD로 보내는 운용이
+답입니다. 시작이 느린 것과 별개로 <strong>플레이 중 반복 끊김</strong>이
+있다면 <a href="/posts/game-stutter-fps.html">끊김의 갈래 판정</a>부터
+가르는 게 순서입니다.</p>
+<h3 id="윈도우는-ssd인데-게임만-hdd에-깔면-어떤가요">윈도우는 SSD인데 게임만 HDD에 깔면 어떤가요</h3>
+<p>흔하고 합리적인 구성입니다 — 운영체제·프로그램의 반응 속도는
+시스템 디스크(SSD)가 책임지니, 게임 로딩만 게임별로 판단하면
+됩니다. 위의 스트리밍형 예외만 SSD로 보내면 되고요.</p>
+<h3 id="hdd에서-게임-도중-드르륵-소리가-나요">HDD에서 게임 도중 드르륵 소리가 나요</h3>
+<p>기계식 디스크가 읽는 소리 자체는 정상인데, <strong>딸깍 소리가
+반복</strong>된다면 <a href="/posts/pc-clicking-noise.html">그 판정 글</a>의
+경고대로 백업부터입니다 — 게임보다 데이터가 먼저입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>설치 위치는 프레임을 바꾸지 않습니다</strong> — 바꾸는 건
+기다림(로딩)입니다</li>
+<li>예외는 <strong>스트리밍형 대작</strong> — 사양표에 SSD가 적힌 게임은
+고민 없이 SSD입니다</li>
+<li>운용은 <strong>책상과 서랍</strong> — 자주 하는 것만 SSD, 나머지는 HDD
+보관, 이동 기능으로 오가면 됩니다</li>
+<li>게임 설치는 읽기 위주라 <strong>SSD 수명 걱정은 접어도</strong> 됩니다</li>
+<li>외장에 깔 거면 <strong>포트 규격</strong>이 상한입니다</li>
+</ol>
+<p>저장장치의 이웃 판정들 — <a href="/posts/ssd-tbw-lifespan.html">SSD 쓰기 수명(TBW)</a> ·
+<a href="/posts/ssd-partition.html">파티션 나누기 판정</a> ·
+<a href="/posts/game-stutter-fps.html">게임 끊김의 갈래</a> ·
+<a href="/posts/external-ssd-dev.html">외장 SSD와 포트 규격</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">게임설치위치</span> <span class="tag">SSD게임</span> <span class="tag">HDD게임</span> <span class="tag">로딩속도</span> <span class="tag">스팀라이브러리</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/pc-static-shock.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">본체 만질 때마다 찌릿할 때 — &quot;한 번 톡&quot;과 &quot;계속 저릿&quot;은 완전히 다른 문제입니다</span>
+        <span class="card-desc">컴퓨터 케이스를 만질 때 찌릿한 경험은 겨울 단골 하소연입니다. 순간 한 번 톡 하고 끝나는 정전기와, 만질 때마다 저릿한 누설 전류는 원인도 처방도 다릅니다 — 두 갈래를 가르는 판정과 각각의 대응을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/pc-clicking-noise.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">본체에서 딸깍 소리가 날 때 — 언제, 어디서 나는지가 판정의 전부입니다</span>
+        <span class="card-desc">컴퓨터에서 딸깍·딱딱 소리가 나면 폭탄 초침처럼 불안해집니다. 켜고 끌 때 한 번이면 정상인 스위치 소리이고, 하드디스크 쪽에서 반복되면 백업부터 해야 하는 경고이고, 부하 때 틱틱거리면 팬 간섭입니다 — 소리의 때와 출처로 가르는 판정을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/pc-fan-loud-at-boot.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">켤 때만 팬소리가 크게 나는 컴퓨터 — 몇 초의 &quot;위잉&quot;은 고장이 아니라 점호입니다</span>
+        <span class="card-desc">컴퓨터를 켜는 순간 팬이 크게 위잉 돌다가 몇 초 뒤 조용해지는 현상이 고장 신호인지 걱정하는 질문은 커뮤니티 단골입니다. 결론은 정상 — 제어가 잡히기 전의 점호입니다. 오히려 조용해지지 않고 계속 클 때, 소리의 결이 다를 때가 판정 대상입니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

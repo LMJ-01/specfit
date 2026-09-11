@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다</title>
+    <link>https://specfit.kr/posts/game-install-ssd-hdd.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/game-install-ssd-hdd.html</guid>
+    <pubDate>Thu, 10 Sep 2026 15:00:00 GMT</pubDate>
+    <description>SSD와 HDD 중 어디에 게임을 설치해야 하는지는 저장장치 게시판의 단골 질문입니다. 설치 위치는 프레임을 바꾸지 않고 로딩을 바꿉니다 — 그 구조와 예외(스트리밍형 대작), 자주 하는 게임만 SSD에 두는 운용까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>미니PC가 뜨거운데 괜찮은 건가 — 몸이 뜨거운 것과 아픈 것은 다릅니다</title>
     <link>https://specfit.kr/posts/mini-pc-heat.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-heat.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/desktop-lifespan.html</guid>
     <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
     <description>조립 컴퓨터를 맞추고 나면 이게 몇 년이나 갈지 궁금해집니다. 노트북과 달리 데스크탑에는 하나의 수명이 없습니다 — 부품마다 시계가 따로 돌고, 낡은 부품만 갈아 끼우면 계속 삽니다. 부품별 시계와 실제 은퇴 시점, 수명을 늘리는 관리까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>인터넷은 되는데 특정 사이트만 안 열릴 때 — 두 번의 맞바꾸기로 층이 갈립니다</title>
-    <link>https://specfit.kr/posts/website-not-loading.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/website-not-loading.html</guid>
-    <pubDate>Sat, 05 Sep 2026 15:00:00 GMT</pubDate>
-    <description>다른 사이트는 다 되는데 한 곳만 안 열리는 증상은 브라우저, 컴퓨터, 집 회선, 사이트 자체 중 어느 층의 문제인지부터 갈라야 합니다. 다른 브라우저와 다른 기기, 두 번의 격리로 층을 자르는 판정과 층별 처방을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
