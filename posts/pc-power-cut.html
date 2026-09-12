@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>쓰다가 정전으로 컴퓨터가 꺼졌을 때 — 부품 걱정보다 파일 확인이 먼저입니다 | 스펙핏</title>
+<meta name="description" content="정전이나 뽑힌 코드로 컴퓨터가 강제로 꺼지면 고장 났을까 걱정부터 됩니다. 요즘 컴퓨터에서 한 번의 강제 차단으로 부품이 상하는 일은 드물고, 진짜 피해 후보는 저장 중이던 데이터입니다 — 다시 켜는 순서와 진짜 조심할 두 장면을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/pc-power-cut.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="쓰다가 정전으로 컴퓨터가 꺼졌을 때 — 부품 걱정보다 파일 확인이 먼저입니다 | 스펙핏">
+<meta property="og:description" content="정전이나 뽑힌 코드로 컴퓨터가 강제로 꺼지면 고장 났을까 걱정부터 됩니다. 요즘 컴퓨터에서 한 번의 강제 차단으로 부품이 상하는 일은 드물고, 진짜 피해 후보는 저장 중이던 데이터입니다 — 다시 켜는 순서와 진짜 조심할 두 장면을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/pc-power-cut.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"쓰다가 정전으로 컴퓨터가 꺼졌을 때 — 부품 걱정보다 파일 확인이 먼저입니다","description":"정전이나 뽑힌 코드로 컴퓨터가 강제로 꺼지면 고장 났을까 걱정부터 됩니다. 요즘 컴퓨터에서 한 번의 강제 차단으로 부품이 상하는 일은 드물고, 진짜 피해 후보는 저장 중이던 데이터입니다 — 다시 켜는 순서와 진짜 조심할 두 장면을 정리했습니다.","datePublished":"2026-09-12","dateModified":"2026-09-12","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/pc-power-cut.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"쓰다가 정전으로 컴퓨터가 꺼졌을 때 — 부품 걱정보다 파일 확인이 먼저입니다","item":"https://specfit.kr/posts/pc-power-cut.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"정전 후 컴퓨터가 아예 안 켜져요","acceptedAnswer":{"@type":"Answer","text":"드문 경우지만 복전 순간의 출렁임이 얹힌 사례일 수 있습니다 — 청소 후 안 켜짐의 사다리 중 0~1단계(스위치·플러그·케이블)를 먼저 보고, 그래도 무반응이면 파워 쪽 판정 갈래입니다. 원래 노후 징후가 있던 파워가 이 계기로 드러나는 경우도 있고요."}},{"@type":"Question","name":"정전도 아닌데 저절로 꺼졌어요","acceptedAnswer":{"@type":"Answer","text":"그건 이 글이 아니라 다른 문제입니다 — 전기는 살아 있는데 꺼졌다면 꺼짐 반복 판정의 온도·전원 용의자 순서로 가세요. 이 글은 \"바깥 전기가 끊긴\" 경우 전용입니다."}},{"@type":"Question","name":"낙뢰가 치던 날이었어요","acceptedAnswer":{"@type":"Answer","text":"정전과 낙뢰 동반은 급이 다른 상황입니다 — 낙뢰는 차단이 아니라 서지(순간 과전압)를 실어 보낼 수 있어서, 서지 보호와 UPS 구분이 그 갈래의 본론입니다. 천둥번개가 심한 날 아예 뽑아두는 습관은 이 경우엔 근거 있는 조심입니다."}},{"@type":"Question","name":"게임 세이브가 날아갔어요","acceptedAnswer":{"@type":"Answer","text":"쓰기 중 차단의 전형적 피해입니다 — 클라우드 세이브를 지원하는 게임이면 복구되는 경우가 많으니 그쪽부터 확인하세요. 이런 날을 위한 보험이 백업 두 벌 원칙 이고요."}},{"@type":"Question","name":"우리 집은 한 달에 몇 번씩 깜빡여요","acceptedAnswer":{"@type":"Answer","text":"한 번은 해프닝이지만 반복은 환경입니다 — 건물 전기 사정이면 관리사무소 문의가 먼저고, 컴퓨터 쪽 대비로는 UPS가 값을 하는 바로 그 경우입니다. 잦은 강제 차단은 확률 게임을 계속 돌리는 셈이라서요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/minipc.html">미니PC</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>쓰다가 정전으로 컴퓨터가 꺼졌을 때 — 부품 걱정보다 파일 확인이 먼저입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-12">2026년 9월 12일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>한창 쓰던 중에 <strong>집이 깜깜해지면서 컴퓨터가 툭 꺼졌습니다.</strong>
+혹은 청소기가 멀티탭을 건드렸거나, 차단기가 내려갔거나. 불이야
+다시 들어왔는데, 이제 컴퓨터 앞에서 고민이 시작됩니다 — <strong>그냥
+켜도 되나? 어디 상하지 않았을까?</strong></p>
+<p>안심부터: <strong>요즘 컴퓨터에서 한 번의 강제 차단으로 부품이 상하는
+일은 드뭅니다.</strong> 파워와 부품엔 보호 설계가 들어 있어서, 전기가
+끊기면 그냥 꺼질 뿐입니다. 진짜 피해 후보는 부품이 아니라 <strong>그
+순간 저장되고 있던 것들</strong> — 그래서 확인할 곳도 부품이 아니라
+파일입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>질문</th><th>답</th></tr></thead>
+<tbody>
+<tr><td>부품 고장 났을까</td><td><strong>드뭅니다</strong> — 한 번의 차단은 대개 해프닝입니다. 그냥 켜면 됩니다</td></tr>
+<tr><td>진짜 피해 후보는</td><td><strong>저장 중이던 데이터</strong> — 안 저장한 작업, 쓰기 중이던 파일입니다</td></tr>
+<tr><td>켜기 전에 할 일</td><td>전기 상태 확인 — 차단기·멀티탭이 온전한지, 불이 안정됐는지 정도면 됩니다</td></tr>
+<tr><td>켠 뒤 검은 화면에 디스크 점검이 돌아요</td><td><strong>정상 동작</strong>입니다 — 끄지 말고 기다리세요</td></tr>
+<tr><td>정전·깜빡임이 잦은 집이라면</td><td>그때가 <a href="/posts/desktop-ups.html">UPS 계산</a>을 할 시점입니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="왜-부품은-대개-무사한가">왜 부품은 대개 무사한가</h2>
+<p>강제 차단은 &quot;전기 공급이 멎음&quot; — 부품 입장에선 갑작스러운 퇴근일
+뿐, 과전압처럼 때리는 힘이 아닙니다. 파워는 출력이 끊기면 그냥
+멎도록 설계돼 있고, 나머지 부품들도 전기가 없으면 조용히 멈춥니다.</p>
+<ul>
+<li>&quot;정전 한 번에 컴퓨터 수명이 준다&quot;는 걱정은 근거가 약합니다 —
+손상 사례담의 다수는 정전 자체가 아니라 <strong>복전 순간의 불안정</strong>
+이나 낙뢰 동반 상황 쪽이고, 그건 아래 반복·서지 갈래의
+이야기입니다</li>
+<li>그래서 확인 순서도 하드웨어 검사가 아니라, <strong>켜서 정상 부팅되는지
++ 내 작업 파일이 온전한지</strong>입니다</li>
+</ul>
+<h2 id="조심할-두-장면-이때였다면-체크가-필요합니다">조심할 두 장면 — 이때였다면 체크가 필요합니다</h2>
+<ol>
+<li><strong>HDD가 한창 쓰던 중이었다면</strong> — 기계식 디스크는 쓰는 도중의
+차단에 상대적으로 취약한 부품입니다. 재부팅 후 그 디스크의
+파일이 열리는지 확인하고, 이후
+<a href="/posts/pc-clicking-noise.html">딸깍 소리가 반복된다면</a> 그 글의
+경고대로 백업 먼저입니다. SSD 위주 구성이면 이 걱정은 크게
+줄어듭니다</li>
+<li><strong>윈도우 업데이트가 설치 중이었다면</strong> — 시스템 파일을 갈아
+끼우는 중의 차단이라 부팅 문제로 이어질 수 있는 장면입니다.
+재부팅 시 복구 절차가 자동으로 돌면 기다리는 게 먼저이고,
+부팅이 안 되면 그때가 복구 모드·점검 갈래입니다</li>
+</ol>
+<p>둘 다 아니었다면(웹서핑·영상·게임 중) — 저장 안 한 작업 말고는
+잃은 게 없을 가능성이 큽니다.</p>
+<h2 id="다시-켜는-순서">다시 켜는 순서</h2>
+<ol>
+<li><strong>전기부터</strong> — 차단기가 올라와 있는지, <a href="/posts/pc-power-strip.html">멀티탭</a>
+이 멀쩡한지(타는 냄새·그을음 없는지) 확인합니다. 복전 직후
+불이 깜빡거리는 불안정 상태라면 몇 분 기다렸다 켜는 게 낫습니다</li>
+<li><strong>그냥 켭니다</strong> — 특별한 의식은 필요 없습니다</li>
+<li><strong>디스크 점검이 자동으로 돌면 기다립니다</strong> — 강제 종료 후
+파일 시스템을 확인하는 정상 동작이라, 중간에 끄는 것만
+피하세요</li>
+<li><strong>작업하던 파일을 열어봅니다</strong> — 문서 프로그램들은 대개 자동
+저장본을 제안합니다. 여기서 온전하면 상황 종료입니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="정전-후-컴퓨터가-아예-안-켜져요">정전 후 컴퓨터가 아예 안 켜져요</h3>
+<p>드문 경우지만 복전 순간의 출렁임이 얹힌 사례일 수 있습니다 —
+<a href="/posts/pc-wont-boot-after-cleaning.html">청소 후 안 켜짐의 사다리</a>
+중 0~1단계(스위치·플러그·케이블)를 먼저 보고, 그래도 무반응이면
+<a href="/posts/psu-lifespan.html">파워 쪽 판정</a> 갈래입니다. 원래 노후
+징후가 있던 파워가 이 계기로 드러나는 경우도 있고요.</p>
+<h3 id="정전도-아닌데-저절로-꺼졌어요">정전도 아닌데 저절로 꺼졌어요</h3>
+<p>그건 이 글이 아니라 다른 문제입니다 — 전기는 살아 있는데 꺼졌다면
+<a href="/posts/pc-shutdown-during-game.html">꺼짐 반복 판정</a>의 온도·전원
+용의자 순서로 가세요. 이 글은 &quot;바깥 전기가 끊긴&quot; 경우 전용입니다.</p>
+<h3 id="낙뢰가-치던-날이었어요">낙뢰가 치던 날이었어요</h3>
+<p>정전과 낙뢰 동반은 급이 다른 상황입니다 — 낙뢰는 차단이 아니라
+<strong>서지(순간 과전압)</strong>를 실어 보낼 수 있어서,
+<a href="/posts/desktop-ups.html">서지 보호와 UPS 구분</a>이 그 갈래의
+본론입니다. 천둥번개가 심한 날 아예 뽑아두는 습관은 이 경우엔
+근거 있는 조심입니다.</p>
+<h3 id="게임-세이브가-날아갔어요">게임 세이브가 날아갔어요</h3>
+<p>쓰기 중 차단의 전형적 피해입니다 — 클라우드 세이브를 지원하는
+게임이면 복구되는 경우가 많으니 그쪽부터 확인하세요. 이런 날을
+위한 보험이 <a href="/posts/dev-backup-strategy.html">백업 두 벌 원칙</a>
+이고요.</p>
+<h3 id="우리-집은-한-달에-몇-번씩-깜빡여요">우리 집은 한 달에 몇 번씩 깜빡여요</h3>
+<p>한 번은 해프닝이지만 <strong>반복은 환경</strong>입니다 — 건물 전기 사정이면
+관리사무소 문의가 먼저고, 컴퓨터 쪽 대비로는
+<a href="/posts/desktop-ups.html">UPS가 값을 하는 바로 그 경우</a>입니다.
+잦은 강제 차단은 확률 게임을 계속 돌리는 셈이라서요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li><strong>한 번의 정전은 대개 해프닝</strong>입니다 — 부품은 그냥 퇴근했을
+뿐입니다</li>
+<li>피해 후보는 <strong>데이터</strong>입니다 — 저장 안 한 작업과 쓰기 중이던
+파일을 확인하세요</li>
+<li>조심할 두 장면은 <strong>HDD 쓰기 중, 윈도우 업데이트 중</strong>입니다</li>
+<li>재부팅 때 <strong>디스크 점검은 정상 동작</strong> — 기다리세요</li>
+<li><strong>반복되면 환경 문제</strong>입니다 — 그때가 UPS와 전기 점검의
+시점입니다</li>
+</ol>
+<p>전원 사고의 이웃 판정들 — <a href="/posts/desktop-ups.html">UPS가 필요한 경우</a> ·
+<a href="/posts/pc-power-strip.html">멀티탭 안전 상식</a> ·
+<a href="/posts/pc-clicking-noise.html">HDD 딸깍 경고</a> ·
+<a href="/posts/dev-backup-strategy.html">백업 두 벌 원칙</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">정전</span> <span class="tag">강제종료</span> <span class="tag">컴퓨터꺼짐</span> <span class="tag">데이터손상</span> <span class="tag">전원차단</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mini-pc-heat.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">미니PC가 뜨거운데 괜찮은 건가 — 몸이 뜨거운 것과 아픈 것은 다릅니다</span>
+        <span class="card-desc">미니PC를 만져보고 뜨거워서 놀라는 질문이 게시판에 꾸준합니다. 작은 몸은 같은 일을 해도 따뜻한 게 기본값이고, 금속 바디의 열은 오히려 열이 잘 빠져나오고 있다는 뜻일 수 있습니다 — 걱정할 신호와 아닌 것의 구분, 배치 처방까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/desktop-lifespan.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">데스크탑 수명은 몇 년인가 — 하나의 수명이 없다는 게 데스크탑의 답입니다</span>
+        <span class="card-desc">조립 컴퓨터를 맞추고 나면 이게 몇 년이나 갈지 궁금해집니다. 노트북과 달리 데스크탑에는 하나의 수명이 없습니다 — 부품마다 시계가 따로 돌고, 낡은 부품만 갈아 끼우면 계속 삽니다. 부품별 시계와 실제 은퇴 시점, 수명을 늘리는 관리까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/usb-port-charging.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">본체 USB로 폰 충전, 선풍기 꽂기 — 됩니다, 왜 느린지와 두 가지 함정만 알면요</span>
+        <span class="card-desc">컴퓨터 USB에 폰을 꽂아 충전하고 선풍기·조명을 꽂아 쓰는 게 컴퓨터에 무리는 아닌지, 왜 충전이 느린지 궁금해하는 질문이 꾸준합니다. USB 포트는 데이터 통로에 곁들인 소량의 전원이라 전용 충전기와 체급이 다릅니다 — 컴퓨터 부담·절전 함정·허브 함정까지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

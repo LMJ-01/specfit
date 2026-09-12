@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>쓰다가 정전으로 컴퓨터가 꺼졌을 때 — 부품 걱정보다 파일 확인이 먼저입니다</title>
+    <link>https://specfit.kr/posts/pc-power-cut.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-power-cut.html</guid>
+    <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
+    <description>정전이나 뽑힌 코드로 컴퓨터가 강제로 꺼지면 고장 났을까 걱정부터 됩니다. 요즘 컴퓨터에서 한 번의 강제 차단으로 부품이 상하는 일은 드물고, 진짜 피해 후보는 저장 중이던 데이터입니다 — 다시 켜는 순서와 진짜 조심할 두 장면을 정리했습니다.</description>
+  </item>
+  <item>
     <title>청소했더니 컴퓨터가 안 켜질 때 — 범인은 먼지가 아니라 움직인 것들입니다</title>
     <link>https://specfit.kr/posts/pc-wont-boot-after-cleaning.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-wont-boot-after-cleaning.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/game-minimizes-itself.html</guid>
     <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
     <description>게임을 하다가 알트탭을 누른 것도 아닌데 갑자기 바탕화면이나 다른 창으로 튕겨 나오는 증상은 게시판 단골 질문입니다. 게임이 살아 있다면 크래시가 아니라 포커스를 빼앗긴 것 — 끼어든 범인을 찾는 순서와 방해 금지·화면 모드 우회까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>듀얼 모니터, 옆이 아니라 위아래로 두면 어떤가 — 목이 아니라 용도가 기준입니다</title>
-    <link>https://specfit.kr/posts/dual-monitor-stacked.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-stacked.html</guid>
-    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
-    <description>책상이 좁아서, 또는 그냥 궁금해서 — 듀얼 모니터를 좌우가 아니라 상하로 쌓는 배치를 고민하는 질문이 커뮤니티에 꾸준히 올라옵니다. 결론은 보조 화면의 용도가 기준이라는 것 — 흘깃 보는 용도면 위가 통하고, 오래 읽는 용도면 목이 값을 치릅니다.</description>
   </item>
 </channel>
 </rss>
