@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>폰 핫스팟으로 노트북 인터넷 쓰기 — 됩니다, 컴퓨터가 대식가라는 것만 알면요</title>
+    <link>https://specfit.kr/posts/phone-hotspot-laptop.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/phone-hotspot-laptop.html</guid>
+    <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
+    <description>폰 핫스팟으로 노트북이나 데스크탑 인터넷을 써도 되는지, 데이터가 얼마나 드는지 궁금해하는 질문이 꾸준합니다. 됩니다 — 다만 컴퓨터는 폰보다 데이터를 크게 먹는 기기라, 자동 업데이트 함정과 종량제 설정 하나가 판정의 핵심입니다.</description>
+  </item>
+  <item>
     <title>쓰다가 정전으로 컴퓨터가 꺼졌을 때 — 부품 걱정보다 파일 확인이 먼저입니다</title>
     <link>https://specfit.kr/posts/pc-power-cut.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-power-cut.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/internet-slow-at-night.html</guid>
     <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
     <description>낮에는 쌩쌩한 인터넷이 저녁 8시쯤부터 느려지고 밤이 깊으면 돌아오는 패턴은 통신 게시판의 단골 하소연입니다. 시간이 규칙적이라는 건 혼잡의 지문 — 집 안 혼잡인지 집 밖 혼잡인지 가르는 격리와, 통신사에 말이 통하게 하는 기록 요령까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>게임 중 갑자기 바탕화면으로 튕겨 나올 때 — 꺼진 게 아니라 누가 끼어든 겁니다</title>
-    <link>https://specfit.kr/posts/game-minimizes-itself.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/game-minimizes-itself.html</guid>
-    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
-    <description>게임을 하다가 알트탭을 누른 것도 아닌데 갑자기 바탕화면이나 다른 창으로 튕겨 나오는 증상은 게시판 단골 질문입니다. 게임이 살아 있다면 크래시가 아니라 포커스를 빼앗긴 것 — 끼어든 범인을 찾는 순서와 방해 금지·화면 모드 우회까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
