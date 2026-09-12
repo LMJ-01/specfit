@@ -20,6 +20,13 @@
     <description>정전이나 뽑힌 코드로 컴퓨터가 강제로 꺼지면 고장 났을까 걱정부터 됩니다. 요즘 컴퓨터에서 한 번의 강제 차단으로 부품이 상하는 일은 드물고, 진짜 피해 후보는 저장 중이던 데이터입니다 — 다시 켜는 순서와 진짜 조심할 두 장면을 정리했습니다.</description>
   </item>
   <item>
+    <title>노트북 키스킨, 써도 되나 — 내 키보드가 통풍구인지부터 확인합니다</title>
+    <link>https://specfit.kr/posts/laptop-keyboard-skin.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-keyboard-skin.html</guid>
+    <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
+    <description>노트북 키스킨을 두고 발열 때문에 쓰지 말라는 쪽과 잘만 쓴다는 쪽이 갈립니다. 둘 다 맞습니다 — 키보드 면이 열의 통로인 설계와 아닌 설계가 있어서요. 내 노트북이 어느 쪽인지 확인하는 법과, 키스킨의 값어치가 있는 경우를 정리했습니다.</description>
+  </item>
+  <item>
     <title>청소했더니 컴퓨터가 안 켜질 때 — 범인은 먼지가 아니라 움직인 것들입니다</title>
     <link>https://specfit.kr/posts/pc-wont-boot-after-cleaning.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-wont-boot-after-cleaning.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-hot-in-bag.html</guid>
     <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
     <description>덮개를 닫고 가방에 넣었는데 꺼내 보니 후끈하고 배터리가 줄어 있는 경험은 노트북 사용자 단골 사연입니다. 절전은 얕은 잠이라 가방 안에서 깨어나 일할 수 있고, 가방은 최악의 발열 환경입니다 — 확인 습관과 "이동할 땐 깊은 잠" 처방을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>저녁만 되면 인터넷이 느려질 때 — 시간표가 규칙적이라는 것 자체가 지문입니다</title>
-    <link>https://specfit.kr/posts/internet-slow-at-night.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/internet-slow-at-night.html</guid>
-    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
-    <description>낮에는 쌩쌩한 인터넷이 저녁 8시쯤부터 느려지고 밤이 깊으면 돌아오는 패턴은 통신 게시판의 단골 하소연입니다. 시간이 규칙적이라는 건 혼잡의 지문 — 집 안 혼잡인지 집 밖 혼잡인지 가르는 격리와, 통신사에 말이 통하게 하는 기록 요령까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
