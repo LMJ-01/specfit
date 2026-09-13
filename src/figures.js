@@ -858,6 +858,7 @@ export const figures = {
   'reboot-trend': rebootTrend,
   'fan-interpreter': fanInterpreter,
   'cleaning-ladder': cleaningLadder,
+  'monitor-three-ends': monitorThreeEnds,
 };
 
 /**
@@ -2702,5 +2703,46 @@ function cleaningLadder() {
     '청소 후 미부팅 점검 사다리 — 스위치부터 램·GPU까지',
     W, 224, b,
     '대부분 부품 고장이 아니라 풀린 접촉입니다. 각 단계 후 켜보고, 켜지면 거기서 끝.'
+  );
+}
+
+/**
+ * 모니터의 끝 세 갈래 — 노화(서서히)/고장(사건)/은퇴(요구 변화).
+ * monitor-lifespan 의 판정 구조 고정.
+ */
+function monitorThreeEnds() {
+  const W = 640;
+  const col = (x, title, lines, color) => {
+    let s = rect(x, 44, 190, 26, color, { r: 8 });
+    s += t(x + 95, 61, title, { anchor: 'middle', size: 12.5, weight: 600, fill: '#fff' });
+    lines.forEach((ln, i) => {
+      s += t(x + 8, 92 + i * 20, ln, { size: 10.5, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '모니터의 끝은 세 갈래 — 성격이 전부 다릅니다', { weight: 600, size: 13.5 });
+  b += col(24, '노화 — 서서히', [
+    '백라이트가 어두워지고',
+    '색이 누래짐',
+    '새 화면 옆에서야 보임',
+    '→ 정상 경로, 고장 아님',
+  ], COLOR.fit);
+  b += col(225, '고장 — 사건', [
+    '세로줄 · 잦은 깜빡임',
+    '안 켜짐 · 전원 불안정',
+    '나이와 무관하게 발생',
+    '→ 격리 후 남으면 실질적 끝',
+  ], COLOR.over);
+  b += col(426, '은퇴 — 요구 변화', [
+    '해상도·주사율 세대 상승',
+    '고장 없이 교체됨',
+    '실제 교체 사유의 다수',
+    '→ 보조 모니터로 2막',
+  ], COLOR.accent);
+  return figure(
+    '모니터 수명의 세 갈래 — 노화·고장·은퇴',
+    W, 180, b,
+    '통설 연수가 산포하는 이유 — 세 갈래 중 무엇을 "끝"으로 세느냐가 사람마다 달라서입니다.'
   );
 }
