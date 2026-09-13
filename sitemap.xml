@@ -12,6 +12,7 @@
   <url><loc>https://specfit.kr/contact.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-humming-vibration.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-keyboard-skin.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-power-cut.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/phone-hotspot-laptop.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
@@ -30,7 +31,7 @@
   <url><loc>https://specfit.kr/posts/internet-slow-at-night.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-hot-in-bag.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-wifi-not-connecting.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/pc-clicking-noise.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-clicking-noise.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-fan-loud-at-boot.html</loc><lastmod>2026-09-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-heats-room.html</loc><lastmod>2026-09-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-moving-day.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
@@ -100,7 +101,7 @@
   <url><loc>https://specfit.kr/posts/curved-monitor-coding.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/diy-nas-vs-prebuilt.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/glare-vs-matte-display.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/gpu-coil-whine.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/gpu-coil-whine.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/high-refresh-rate-coding.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/igpu-dual-monitor.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-2-5g-upgrade.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>

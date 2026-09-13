@@ -2,6 +2,7 @@
 title: 본체에서 딸깍 소리가 날 때 — 언제, 어디서 나는지가 판정의 전부입니다
 description: 컴퓨터에서 딸깍·딱딱 소리가 나면 폭탄 초침처럼 불안해집니다. 켜고 끌 때 한 번이면 정상인 스위치 소리이고, 하드디스크 쪽에서 반복되면 백업부터 해야 하는 경고이고, 부하 때 틱틱거리면 팬 간섭입니다 — 소리의 때와 출처로 가르는 판정을 정리했습니다.
 date: 2026-09-07
+updated: 2026-09-13
 category: memory
 tags: [컴퓨터소음, 딸깍소리, 하드디스크소리, 팬간섭, 백업]
 ---
@@ -142,7 +143,8 @@ SSD만 쓰는 구성이라면 이 갈래는 목록에서 지워도 됩니다 —
 5. SSD 전용 구성이면 HDD 갈래는 지우고 시작하세요 — 판정이
    절반으로 줄어듭니다
 
-소리 판정의 이웃들 — [켤 때의 팬 위잉(점호)](/posts/pc-fan-loud-at-boot.html) ·
+소리 판정의 이웃들 — [웅웅 떨림(공진) 판정](/posts/pc-humming-vibration.html) ·
+[켤 때의 팬 위잉(점호)](/posts/pc-fan-loud-at-boot.html) ·
 [스피커 잡음(전기음)](/posts/pc-speaker-noise.html) ·
 [외장하드 걸림·멈춤](/posts/external-hdd-freeze.html) ·
 [백업 두 벌 원칙](/posts/dev-backup-strategy.html)과 이어집니다.

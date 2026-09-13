@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>본체에서 웅웅 떨리는 소리가 날 때 — 소리를 내는 것과 울리는 것은 다른 부품입니다</title>
+    <link>https://specfit.kr/posts/pc-humming-vibration.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-humming-vibration.html</guid>
+    <pubDate>Sat, 12 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터에서 웅웅·지잉 하는 떨림 소리가 나고, 본체를 손으로 누르면 잦아드는 증상은 게시판 단골입니다. 그 소리엔 범인이 둘입니다 — 진동을 만드는 부품과, 그걸 확성하는 케이스 철판. 둘을 가르는 판정과 각각의 처방을 정리했습니다.</description>
+  </item>
+  <item>
     <title>폰 핫스팟으로 노트북 인터넷 쓰기 — 됩니다, 컴퓨터가 대식가라는 것만 알면요</title>
     <link>https://specfit.kr/posts/phone-hotspot-laptop.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/phone-hotspot-laptop.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-wifi-not-connecting.html</guid>
     <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
     <description>같은 와이파이에 폰은 멀쩡히 붙는데 노트북만 안 잡히거나 "인터넷 없음"이 뜨는 증상은 커뮤니티 단골 질문입니다. 폰이 된다는 사실이 공유기와 회선의 무죄를 증명해 준 상태라, 남은 용의자는 짧습니다 — 대역 함정부터 핫스팟 격리까지 순서대로 정리했습니다.</description>
-  </item>
-  <item>
-    <title>가방에서 꺼낸 노트북이 뜨겁고 배터리가 닳아 있을 때 — 잔 게 아니라 잠꼬대를 한 겁니다</title>
-    <link>https://specfit.kr/posts/laptop-hot-in-bag.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/laptop-hot-in-bag.html</guid>
-    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
-    <description>덮개를 닫고 가방에 넣었는데 꺼내 보니 후끈하고 배터리가 줄어 있는 경험은 노트북 사용자 단골 사연입니다. 절전은 얕은 잠이라 가방 안에서 깨어나 일할 수 있고, 가방은 최악의 발열 환경입니다 — 확인 습관과 "이동할 땐 깊은 잠" 처방을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
