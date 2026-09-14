@@ -12,6 +12,7 @@
   <url><loc>https://specfit.kr/contact.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/screen-tearing.html</loc><lastmod>2026-09-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/modem-direct-connection.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-humming-vibration.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-keyboard-skin.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
@@ -59,7 +60,7 @@
   <url><loc>https://specfit.kr/posts/website-not-loading.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dual-monitor-mouse-escape.html</loc><lastmod>2026-09-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dual-monitor-one-blank.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/game-stutter-fps.html</loc><lastmod>2026-09-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/game-stutter-fps.html</loc><lastmod>2026-09-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-download-speed.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-water-spill.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-always-on.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
@@ -82,7 +83,7 @@
   <url><loc>https://specfit.kr/posts/ipad-coding-study.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/last-year-laptop.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mini-pc-noise.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/monitor-response-time.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/monitor-response-time.html</loc><lastmod>2026-09-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-dust-cleaning.html</loc><lastmod>2026-09-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/psu-zero-fan.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-usage-normal.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
