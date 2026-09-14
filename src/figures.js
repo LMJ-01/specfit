@@ -859,6 +859,7 @@ export const figures = {
   'fan-interpreter': fanInterpreter,
   'cleaning-ladder': cleaningLadder,
   'monitor-three-ends': monitorThreeEnds,
+  'tearing-split': tearingSplit,
 };
 
 /**
@@ -2744,5 +2745,33 @@ function monitorThreeEnds() {
     '모니터 수명의 세 갈래 — 노화·고장·은퇴',
     W, 180, b,
     '통설 연수가 산포하는 이유 — 세 갈래 중 무엇을 "끝"으로 세느냐가 사람마다 달라서입니다.'
+  );
+}
+
+/**
+ * 티어링의 구조 — 모니터가 위→아래로 그리는 도중 GPU가 프레임을 교체,
+ * 경계선 위아래가 다른 장면이 됨. screen-tearing 핵심 고정.
+ */
+function tearingSplit() {
+  const W = 640;
+  const mx = 40, mw = 260, my = 44, mh = 150;
+  let b = '';
+  b += t(24, 26, '그리는 도중 장면이 바뀌면 — 경계선이 곧 찢김입니다', { weight: 600, size: 13.5 });
+  b += rect(mx, my, mw, 62, COLOR.fit, { r: 0 });
+  b += rect(mx, my + 62, mw, mh - 62, COLOR.over, { r: 0 });
+  b += rect(mx, my, mw, mh, 'none', { stroke: COLOR.line, r: 8 });
+  b += t(mx + mw / 2, my + 36, '옛 장면 (그리다 만 부분)', { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+  b += t(mx + mw / 2, my + 106, '새 장면 (교체 후 부분)', { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+  b += `<line x1="${mx - 8}" y1="${my + 62}" x2="${mx + mw + 8}" y2="${my + 62}" stroke="${COLOR.text}" stroke-width="2" stroke-dasharray="6 4"/>`;
+  b += t(mx + mw + 14, my + 66, '← 찢김 경계선', { size: 11, weight: 600 });
+  b += t(360, 70, '모니터: 위→아래 한 줄씩, 정해진 박자로', { size: 11, fill: COLOR.mute });
+  b += t(360, 92, 'GPU: 준비되는 대로 새 장면을 밀어 넣음', { size: 11, fill: COLOR.mute });
+  b += t(360, 126, '처방 = 박자 맞추기', { size: 11.5, weight: 600 });
+  b += t(360, 146, '· 수직동기 — GPU가 모니터를 기다림', { size: 10.5, fill: COLOR.mute });
+  b += t(360, 164, '· 가변주사율 — 모니터가 GPU에 맞춤', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '티어링의 구조 — 그리는 도중의 장면 교체',
+    W, 214, b,
+    '한 화면에 두 장면이 섞인 상태입니다. 고장이 아니라 동기화 설정의 영역입니다.'
   );
 }
