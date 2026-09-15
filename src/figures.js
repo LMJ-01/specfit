@@ -860,6 +860,7 @@ export const figures = {
   'cleaning-ladder': cleaningLadder,
   'monitor-three-ends': monitorThreeEnds,
   'tearing-split': tearingSplit,
+  'storage-two-culprits': storageTwoCulprits,
 };
 
 /**
@@ -2773,5 +2774,41 @@ function tearingSplit() {
     '티어링의 구조 — 그리는 도중의 장면 교체',
     W, 214, b,
     '한 화면에 두 장면이 섞인 상태입니다. 고장이 아니라 동기화 설정의 영역입니다.'
+  );
+}
+
+
+/**
+ * 장기 방치 후 재가동의 두 단골 — 시계 초기화(코인 배터리)와
+ * 부팅 실패(접점 사다리). pc-long-storage "방치 무죄 + 단골 둘" 고정.
+ */
+function storageTwoCulprits() {
+  const W = 640;
+  const col = (x, head, headColor, lines, verdict, verdictColor) => {
+    let s = rect(x, 44, 280, 26, headColor, { r: 8 });
+    s += t(x + 140, 61, head, { anchor: 'middle', size: 12.5, weight: 600, fill: '#fff' });
+    lines.forEach((ln, i) => {
+      s += t(x + 10, 92 + i * 20, ln, { size: 10.5, fill: COLOR.mute });
+    });
+    s += rect(x, 148, 280, 24, 'transparent', { r: 8, stroke: verdictColor });
+    s += t(x + 140, 164, verdict, { anchor: 'middle', size: 11, weight: 600, fill: verdictColor });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '몇 달 만에 켠 날, 문제가 난다면 대개 이 둘입니다', { weight: 600, size: 13.5 });
+  b += col(30, '시계·설정이 초기화됐다', COLOR.soft, [
+    '날짜가 엉뚱한 과거로',
+    '바이오스 설정이 초기값으로',
+    '범인: 보드 위 코인 배터리 소모',
+  ], '고장 아님 — 소모품 교체 사안', COLOR.fit);
+  b += col(330, '아예 켜지지 않는다', COLOR.soft, [
+    '전원 케이블·멀티탭부터 바깥쪽 확인',
+    '다음이 접점(램·케이블) 재장착',
+    '익숙하지 않으면 여기서 점검 의뢰',
+  ], '부품 사망 단정은 사다리 끝에서', COLOR.over);
+  return figure(
+    '재가동의 두 단골 — 배터리와 접점',
+    W, 200, b,
+    '방치라는 시간이 아니라 재가동 순간의 두 단골 — 둘 다 정체가 있고 대처가 있습니다.'
   );
 }
