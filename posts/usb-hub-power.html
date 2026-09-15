@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>USB 허브에 외장하드 꽂아도 되나 — 허브는 전기를 나눠 쓰는 멀티탭입니다 | 스펙핏</title>
+<meta name="description" content="USB 허브에 꽂은 외장하드가 인식이 안 되거나 끊기는 건 게시판 단골 하소연입니다. 허브는 포트 하나의 전력을 나눠 쓰는 구조라, 꽂아도 되는 기기와 직결해야 하는 기기가 갈립니다 — 무전원·유전원의 차이와 판정 기준을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/usb-hub-power.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="USB 허브에 외장하드 꽂아도 되나 — 허브는 전기를 나눠 쓰는 멀티탭입니다 | 스펙핏">
+<meta property="og:description" content="USB 허브에 꽂은 외장하드가 인식이 안 되거나 끊기는 건 게시판 단골 하소연입니다. 허브는 포트 하나의 전력을 나눠 쓰는 구조라, 꽂아도 되는 기기와 직결해야 하는 기기가 갈립니다 — 무전원·유전원의 차이와 판정 기준을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/usb-hub-power.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"USB 허브에 외장하드 꽂아도 되나 — 허브는 전기를 나눠 쓰는 멀티탭입니다","description":"USB 허브에 꽂은 외장하드가 인식이 안 되거나 끊기는 건 게시판 단골 하소연입니다. 허브는 포트 하나의 전력을 나눠 쓰는 구조라, 꽂아도 되는 기기와 직결해야 하는 기기가 갈립니다 — 무전원·유전원의 차이와 판정 기준을 정리했습니다.","datePublished":"2026-09-15","dateModified":"2026-09-15","author":{"@type":"Organization","name":"스펙핏"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/usb-hub-power.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"USB 허브에 외장하드 꽂아도 되나 — 허브는 전기를 나눠 쓰는 멀티탭입니다","item":"https://specfit.kr/posts/usb-hub-power.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"유전원 허브면 외장하드 몇 개든 되나요","acceptedAnswer":{"@type":"Answer","text":"어댑터 용량 안에서는 됩니다 — 다만 동시에 여러 개가 바쁘게 돌면 어댑터 체급에 따라 다시 한계가 옵니다. 상시로 여러 디스크를 돌리는 용도라면 NAS 쪽 구성이 그 자리의 물건입니다."}},{"@type":"Question","name":"외장 SSD는 왜 무전원 허브에서도 되나요","acceptedAnswer":{"@type":"Answer","text":"모터가 없어 전기를 훨씬 적게 쓰는 구조라서입니다. 그래도 대용량 전송 중 끊김이 보이면 같은 처방(직결)이 먼저고, 외장 SSD의 속도 관문은 전력과 별개로 포트 세대도 탑니다."}},{"@type":"Question","name":"허브에 꽂은 마우스가 가끔 끊겨요","acceptedAnswer":{"@type":"Answer","text":"전력보다 무선 수신기와 USB 3.0 간섭 갈래가 단골입니다 — 수신기를 허브 말고 본체 포트에, 그것도 앞쪽에 옮겨 보는 게 공짜 실험입니다."}},{"@type":"Question","name":"모니터에 달린 USB 포트도 허브인가요","acceptedAnswer":{"@type":"Answer","text":"맞습니다 — USB-C 한 줄 연결 구성의 모니터 포트도 결국 허브라, 같은 판정이 적용됩니다. 키보드· 마우스는 무난하고, 외장하드는 끊기면 본체 직결로 옮깁니다."}},{"@type":"Question","name":"허브를 허브에 이어 꽂아도 되나요","acceptedAnswer":{"@type":"Answer","text":"동작은 하는 경우가 많지만 나눠 쓰기가 두 번 겹치는 구성이라, 저전력 기기 전용으로만 권할 만합니다. 외장하드가 낄 자리는 아닙니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>USB 허브에 외장하드 꽂아도 되나 — 허브는 전기를 나눠 쓰는 멀티탭입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-15">2026년 9월 15일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>포트가 모자라 USB 허브를 샀는데 — <strong>허브에 꽂은 외장하드만 인식이
+안 되거나, 쓰다가 뚝뚝 끊깁니다.</strong> 마우스와 키보드는 멀쩡한데요.
+게시판에 반복해서 올라오는 그 증상입니다.</p>
+<p>허브가 불량이라서가 아니라, 대개 <strong>구조</strong>입니다. USB 허브는 컴퓨터
+포트 하나가 주는 전기를 <strong>여러 포트가 나눠 쓰는 멀티탭</strong>이라 —
+전기를 적게 쓰는 기기는 문제없고, 많이 쓰는 기기부터 탈이 납니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>기기</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td>키보드·마우스·USB 메모리·카드리더</td><td><strong>허브에 꽂아도 됩니다</strong> — 전기를 조금만 씁니다</td></tr>
+<tr><td>외장하드(회전식)</td><td><strong>직결 또는 유전원 허브</strong> — 무전원 허브의 단골 탈락자입니다</td></tr>
+<tr><td>외장 SSD·대용량 전송</td><td>되는 경우도 많지만 <strong>끊기면 직결</strong>이 처방입니다</td></tr>
+<tr><td>기기 충전(폰·태블릿)</td><td>허브 경유는 <strong>느리거나 안 됩니다</strong> — <a href="/posts/usb-port-charging.html">포트 체급</a> 문제이기도 합니다</td></tr>
+<tr><td>무전원 vs 유전원</td><td><strong>어댑터가 달린 유전원</strong>은 전기를 따로 받아 이 한계가 풀립니다</td></tr>
+</tbody>
+</table></div>
+<h2 id="구조-한-포트의-전기를-나눠-씁니다">구조 — 한 포트의 전기를 나눠 씁니다</h2>
+<p>컴퓨터의 USB 포트 하나는 정해진 양의 전력을 내줍니다(규격 세대에
+따라 다르고, 뒷세대일수록 여유가 있는 방향입니다). <strong>무전원 허브</strong>는
+이 한 포트의 전력을 받아 자기 포트 수만큼 나눠 주는 물건이라 —
+4포트 허브에 기기 네 개를 꽂으면 각자 몫이 얼마 안 남습니다.</p>
+<ul>
+<li>키보드·마우스·리더기는 워낙 조금 써서 나눠 받아도 충분합니다</li>
+<li><strong>회전식 외장하드는 모터를 돌려야 해서</strong> 몫이 모자라기 쉽습니다 —
+인식 자체가 안 되거나, 돌다가 전력이 출렁이면 끊깁니다</li>
+<li>허브 케이블이 길거나 연장선을 거치면 전달 손실이 더해져 같은
+구성인데 안 되는 경우도 생깁니다</li>
+</ul>
+<p><strong>유전원 허브</strong>는 자체 어댑터로 벽에서 전기를 따로 받습니다 —
+나눠 쓰기 구조의 한계가 풀려서, 외장하드 여러 개 물리는 용도는
+이쪽이 정석입니다.</p>
+<h2 id="증상으로-판정하기">증상으로 판정하기</h2>
+<ul>
+<li><strong>허브에서만 안 되고 직결하면 잘 된다</strong> — 이 글의 구조가 확정
+입니다. 그 기기는 직결로 쓰거나 유전원 허브로 옮기면 됩니다</li>
+<li><strong>전송 중에 뚝 끊기거나 복사가 멈춘다</strong> — 전력 출렁임의 얼굴
+입니다. <a href="/posts/external-hdd-freeze.html">외장하드가 걸리고 멈추는 증상</a>
+판정에서 &quot;허브 경유인가&quot;를 먼저 묻는 이유고요</li>
+<li><strong>소리는 나는데 탐색기에 안 보인다</strong> — 전력 문제일 수도, 별개
+갈래일 수도 있습니다. <a href="/posts/usb-not-showing.html">그 증상 전용 판정</a>
+이 따로 있습니다</li>
+<li><strong>직결해도 같은 증상</strong> — 허브 무죄입니다. 케이블·포트·기기
+순서로 격리를 이어갑니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="유전원-허브면-외장하드-몇-개든-되나요">유전원 허브면 외장하드 몇 개든 되나요</h3>
+<p>어댑터 용량 안에서는 됩니다 — 다만 동시에 여러 개가 바쁘게 돌면
+어댑터 체급에 따라 다시 한계가 옵니다. 상시로 여러 디스크를 돌리는
+용도라면 <a href="/posts/nas-vs-external-hdd.html">NAS 쪽 구성</a>이 그 자리의
+물건입니다.</p>
+<h3 id="외장-ssd는-왜-무전원-허브에서도-되나요">외장 SSD는 왜 무전원 허브에서도 되나요</h3>
+<p>모터가 없어 전기를 훨씬 적게 쓰는 구조라서입니다. 그래도 대용량
+전송 중 끊김이 보이면 같은 처방(직결)이 먼저고, <a href="/posts/external-ssd-dev.html">외장 SSD의 속도
+관문</a>은 전력과 별개로 포트 세대도
+탑니다.</p>
+<h3 id="허브에-꽂은-마우스가-가끔-끊겨요">허브에 꽂은 마우스가 가끔 끊겨요</h3>
+<p>전력보다 <a href="/posts/wireless-mouse-lag.html">무선 수신기와 USB 3.0 간섭</a>
+갈래가 단골입니다 — 수신기를 허브 말고 본체 포트에, 그것도 앞쪽에
+옮겨 보는 게 공짜 실험입니다.</p>
+<h3 id="모니터에-달린-usb-포트도-허브인가요">모니터에 달린 USB 포트도 허브인가요</h3>
+<p>맞습니다 — <a href="/posts/monitor-usb-c-one-cable.html">USB-C 한 줄 연결</a>
+구성의 모니터 포트도 결국 허브라, 같은 판정이 적용됩니다. 키보드·
+마우스는 무난하고, 외장하드는 끊기면 본체 직결로 옮깁니다.</p>
+<h3 id="허브를-허브에-이어-꽂아도-되나요">허브를 허브에 이어 꽂아도 되나요</h3>
+<p>동작은 하는 경우가 많지만 나눠 쓰기가 <strong>두 번 겹치는</strong> 구성이라,
+저전력 기기 전용으로만 권할 만합니다. 외장하드가 낄 자리는
+아닙니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>USB 허브는 <strong>전기를 나눠 쓰는 멀티탭</strong>입니다 — 저전력 기기용
+이 기본 용도입니다</li>
+<li><strong>회전식 외장하드는 무전원 허브의 단골 탈락자</strong>입니다 — 직결
+또는 유전원 허브가 처방입니다</li>
+<li>판정은 간단합니다 — <strong>직결하면 되는데 허브에서만 안 되면</strong> 이
+구조가 확정입니다</li>
+<li>유전원 허브는 전기를 따로 받아 한계가 풀립니다 — 디스크 여러 개
+용도의 정석입니다</li>
+<li>전송 중 끊김·복사 멈춤도 같은 갈래입니다 — 허브 경유부터
+의심하세요</li>
+</ol>
+<p>저장장치 이웃 판정들 — <a href="/posts/external-hdd-freeze.html">외장하드 걸림·멈춤</a> ·
+<a href="/posts/usb-not-showing.html">USB 인식 판정</a> ·
+<a href="/posts/usb-port-charging.html">USB 포트의 전원 체급</a> ·
+<a href="/posts/external-ssd-dev.html">외장 SSD 속도 관문</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">USB허브</span> <span class="tag">외장하드</span> <span class="tag">무전원</span> <span class="tag">유전원</span> <span class="tag">인식불량</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/game-install-ssd-hdd.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다</span>
+        <span class="card-desc">SSD와 HDD 중 어디에 게임을 설치해야 하는지는 저장장치 게시판의 단골 질문입니다. 설치 위치는 프레임을 바꾸지 않고 로딩을 바꿉니다 — 그 구조와 예외(스트리밍형 대작), 자주 하는 게임만 SSD에 두는 운용까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/pc-wont-boot-after-cleaning.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">청소했더니 컴퓨터가 안 켜질 때 — 범인은 먼지가 아니라 움직인 것들입니다</span>
+        <span class="card-desc">큰맘 먹고 본체를 청소했는데 컴퓨터가 안 켜지는 사연이 게시판에 꾸준합니다. 대부분 부품이 죽은 게 아니라 청소 중에 무언가 풀리거나 덜 꽂힌 것 — 스위치·케이블·램·그래픽카드 순서의 점검 사다리와 증상별 갈래를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/pc-static-shock.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">본체 만질 때마다 찌릿할 때 — &quot;한 번 톡&quot;과 &quot;계속 저릿&quot;은 완전히 다른 문제입니다</span>
+        <span class="card-desc">컴퓨터 케이스를 만질 때 찌릿한 경험은 겨울 단골 하소연입니다. 순간 한 번 톡 하고 끝나는 정전기와, 만질 때마다 저릿한 누설 전류는 원인도 처방도 다릅니다 — 두 갈래를 가르는 판정과 각각의 대응을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
