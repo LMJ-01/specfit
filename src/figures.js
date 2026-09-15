@@ -861,6 +861,7 @@ export const figures = {
   'monitor-three-ends': monitorThreeEnds,
   'tearing-split': tearingSplit,
   'storage-two-culprits': storageTwoCulprits,
+  'hub-power-split': hubPowerSplit,
 };
 
 /**
@@ -2810,5 +2811,42 @@ function storageTwoCulprits() {
     '재가동의 두 단골 — 배터리와 접점',
     W, 200, b,
     '방치라는 시간이 아니라 재가동 순간의 두 단골 — 둘 다 정체가 있고 대처가 있습니다.'
+  );
+}
+
+
+/**
+ * USB 허브의 전력 나눠 쓰기 — 무전원 허브는 포트 하나의 전력을 분배,
+ * 유전원 허브는 어댑터로 따로 공급. usb-hub-power 구조 고정.
+ */
+function hubPowerSplit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '무전원 허브 — 포트 하나의 전기를 넷이 나눕니다', { weight: 600, size: 13 });
+  b += rect(30, 40, 90, 30, COLOR.soft, { r: 8 });
+  b += t(75, 59, '본체 포트', { anchor: 'middle', size: 11, weight: 600 });
+  b += '<line x1="120" y1="55" x2="170" y2="55" stroke="var(--line)" stroke-width="2"/>';
+  b += rect(170, 40, 70, 30, COLOR.soft, { r: 8 });
+  b += t(205, 59, '허브', { anchor: 'middle', size: 11, weight: 600 });
+  const devices = [
+    ['키보드', COLOR.fit, '충분'],
+    ['마우스', COLOR.fit, '충분'],
+    ['USB 메모리', COLOR.fit, '충분'],
+    ['외장하드(모터)', COLOR.over, '부족 → 끊김'],
+  ];
+  devices.forEach((d, i) => {
+    const y = 92 + i * 30;
+    b += `<line x1="205" y1="70" x2="280" y2="${y + 10}" stroke="var(--line)" stroke-width="1.5"/>`;
+    b += rect(280, y, 130, 22, 'transparent', { r: 6, stroke: d[1] });
+    b += t(345, y + 15, d[0], { anchor: 'middle', size: 10.5, fill: d[1] });
+    b += t(420, y + 15, d[2], { size: 10.5, fill: d[1] });
+  });
+  b += t(24, 226, '유전원 허브 — 어댑터가 전기를 따로 공급해 이 한계가 풀립니다', {
+    weight: 600, size: 12, fill: COLOR.accent,
+  });
+  return figure(
+    'USB 허브는 전기를 나눠 쓰는 멀티탭입니다',
+    W, 244, b,
+    '저전력 기기는 나눠 받아도 충분하지만, 모터를 돌리는 외장하드부터 몫이 모자랍니다.'
   );
 }
