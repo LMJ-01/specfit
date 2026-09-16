@@ -863,6 +863,7 @@ export const figures = {
   'storage-two-culprits': storageTwoCulprits,
   'hub-power-split': hubPowerSplit,
   'router-three-jobs': routerThreeJobs,
+  'update-two-phases': updateTwoPhases,
 };
 
 /**
@@ -2890,5 +2891,38 @@ function routerThreeJobs() {
     '공유기 경유 vs 모뎀 직결 — 잃는 것은 속도가 아닙니다',
     W, 220, b,
     '직결도 표준 구성입니다 — 판정 기준은 속도가 아니라 공유기의 세 가지 일이 나에게 필요한가입니다.'
+  );
+}
+
+
+/**
+ * 윈도우 업데이트의 두 단계 — 받는 단계(끊어도 무방)와 갈아끼우는
+ * 단계(위험 구간, 단 자동 롤백 안전망). windows-update-force-shutdown 고정.
+ */
+function updateTwoPhases() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '같은 "업데이트"지만 두 단계의 무게가 다릅니다', { weight: 600, size: 13 });
+  // 1단계
+  b += rect(30, 44, 270, 26, COLOR.fit, { r: 8 });
+  b += t(165, 61, '① 받는 단계 (윈도우 쓰는 중)', { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+  ['뒤에서 파일 다운로드·준비만 함', '아직 아무것도 안 바꿈', '→ 이때 꺼도 무방 — 다음에 이어받음'].forEach((ln, i) => {
+    b += t(38, 90 + i * 19, ln, { size: 10.5, fill: COLOR.mute });
+  });
+  // 2단계
+  b += rect(340, 44, 270, 26, COLOR.over, { r: 8 });
+  b += t(475, 61, '② 갈아끼우는 단계 ("구성 중 N%")', { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+  ['재부팅 후 전용 화면에서 파일 교체 중', '전원 끊기면 어중간한 상태 위험', '→ "끄지 마세요"는 이 구간의 경고'].forEach((ln, i) => {
+    b += t(348, 90 + i * 19, ln, { size: 10.5, fill: COLOR.mute });
+  });
+  // 안전망
+  b += rect(30, 158, 580, 26, 'transparent', { r: 8, stroke: COLOR.accent });
+  b += t(320, 175, '안전망: 사고가 나도 다음 부팅에서 "변경 사항 취소 중" — 자동 롤백이 대개 되돌립니다 (보험이지 면허 아님)', {
+    anchor: 'middle', size: 10.5, fill: COLOR.accent,
+  });
+  return figure(
+    '업데이트의 두 단계 — 위험은 한 구간에만 있습니다',
+    W, 200, b,
+    '받는 단계는 끊어도 이어받고, 갈아끼우는 단계만 전원이 끊기면 안 되는 구간입니다.'
   );
 }
