@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>윈도우 업데이트 중 꺼도 되나 — 위험한 순간은 딱 한 구간입니다</title>
+    <link>https://specfit.kr/posts/windows-update-force-shutdown.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/windows-update-force-shutdown.html</guid>
+    <pubDate>Tue, 15 Sep 2026 15:00:00 GMT</pubDate>
+    <description>나가야 하는데 화면은 "업데이트 구성 중 30%". 강제 종료하면 큰일 나는지는 게시판 단골 질문입니다. 업데이트의 어느 단계냐에 따라 답이 갈립니다 — 위험한 구간과 무방한 구간, 이미 꺼버렸을 때의 복구 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>USB 허브에 외장하드 꽂아도 되나 — 허브는 전기를 나눠 쓰는 멀티탭입니다</title>
     <link>https://specfit.kr/posts/usb-hub-power.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/usb-hub-power.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/usb-not-showing.html</guid>
     <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
     <description>USB를 꽂으면 "뚜둥" 연결음은 나는데 내 PC에는 아무것도 안 뜨는 증상은 커뮤니티 단골 질문입니다. 소리가 났다면 연결 층은 통과한 것이라 범인은 그 윗층에 있습니다 — 드라이브 문자, 드라이버, 인식 모드 순서의 판정과, 함부로 포맷하면 안 되는 이유까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>이사할 때 컴퓨터 본체 — 진짜 걱정은 딱 하나, 매달려 있는 부품입니다</title>
-    <link>https://specfit.kr/posts/pc-moving-day.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-moving-day.html</guid>
-    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
-    <description>이사철마다 컴퓨터 본체를 어떻게 옮겨야 하나 걱정이 올라옵니다. 대부분의 부품은 생각보다 튼튼합니다 — 문제는 슬롯에 매달린 무거운 그래픽카드 하나이고, 나머지는 눕히는 방향과 선 사진 정도입니다. 포장 전 준비부터 도착 후 첫 부팅까지 순서로 정리했습니다.</description>
   </item>
 </channel>
 </rss>

@@ -2,7 +2,7 @@
 title: 개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 셋뿐입니다
 description: 정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.
 date: 2026-08-25
-updated: 2026-09-12
+updated: 2026-09-16
 category: gpu
 tags: [UPS, 무정전전원장치, 정전, 데스크톱, 홈서버]
 affiliate: true
@@ -156,7 +156,9 @@ UPS 는 **끊김을 배터리로 메우는 것**입니다. 정전 대비가 목�
 
 (이미 정전을 **겪은 뒤**라면 — 걱정의 크기부터
 [사후 판정 글](/posts/pc-power-cut.html)로 정하세요. 대개
-해프닝입니다.)
+해프닝입니다. 하필 **윈도우 업데이트 중의 전원 사고**가 걱정이라면
+[그 구간의 위험 계산](/posts/windows-update-force-shutdown.html)도
+따로 있습니다.)
 
 전력 쪽 다른 계산들 — [파워 용량](/posts/gpu-psu-wattage.html) ·
 [80PLUS 등급](/posts/psu-80plus.html) ·
