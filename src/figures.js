@@ -862,6 +862,7 @@ export const figures = {
   'tearing-split': tearingSplit,
   'storage-two-culprits': storageTwoCulprits,
   'hub-power-split': hubPowerSplit,
+  'router-three-jobs': routerThreeJobs,
 };
 
 /**
@@ -2848,5 +2849,46 @@ function hubPowerSplit() {
     'USB 허브는 전기를 나눠 쓰는 멀티탭입니다',
     W, 244, b,
     '저전력 기기는 나눠 받아도 충분하지만, 모터를 돌리는 외장하드부터 몫이 모자랍니다.'
+  );
+}
+
+
+/**
+ * 공유기 직결 비교 — 직결은 표준 구성이지만 공유기가 하던 세 가지 일
+ * (나눠 쓰기·문지기·내부망)이 사라짐. modem-direct-connection 고정.
+ */
+function routerThreeJobs() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '공유기를 빼면 — 속도가 아니라 "세 가지 일"이 사라집니다', { weight: 600, size: 13 });
+  // 왼쪽: 공유기 경유
+  b += t(30, 52, '공유기 경유 (기본 구성)', { size: 11.5, weight: 600, fill: COLOR.fit });
+  b += rect(30, 62, 74, 26, COLOR.soft, { r: 7 });
+  b += t(67, 79, '모뎀', { anchor: 'middle', size: 10.5 });
+  b += '<line x1="104" y1="75" x2="128" y2="75" stroke="var(--line)" stroke-width="2"/>';
+  b += rect(128, 62, 74, 26, COLOR.fit, { r: 7 });
+  b += t(165, 79, '공유기', { anchor: 'middle', size: 10.5, weight: 600, fill: '#fff' });
+  ['컴퓨터', '폰·TV', '프린터·NAS'].forEach((d, i) => {
+    const y = 108 + i * 26;
+    b += `<line x1="165" y1="88" x2="220" y2="${y + 9}" stroke="var(--line)" stroke-width="1.5"/>`;
+    b += rect(220, y, 86, 20, 'transparent', { r: 6, stroke: COLOR.line });
+    b += t(263, y + 14, d, { anchor: 'middle', size: 10, fill: COLOR.mute });
+  });
+  // 오른쪽: 직결
+  b += t(370, 52, '모뎀 직결 (역시 표준)', { size: 11.5, weight: 600, fill: COLOR.accent });
+  b += rect(370, 62, 74, 26, COLOR.soft, { r: 7 });
+  b += t(407, 79, '모뎀', { anchor: 'middle', size: 10.5 });
+  b += '<line x1="444" y1="75" x2="468" y2="75" stroke="var(--line)" stroke-width="2"/>';
+  b += rect(468, 62, 86, 26, 'transparent', { r: 7, stroke: COLOR.accent });
+  b += t(511, 79, '컴퓨터 1대', { anchor: 'middle', size: 10.5, fill: COLOR.accent });
+  const lost = ['나눠 쓰기 사라짐 — 다른 기기 인터넷 불가', '문지기 사라짐 — 방화벽 확인 필수', '내부망 사라짐 — 기기 공유 불가'];
+  lost.forEach((ln, i) => {
+    b += t(370, 116 + i * 20, '· ' + ln, { size: 10, fill: COLOR.over });
+  });
+  b += t(24, 202, '속도: 기가 이하 요금제에선 두 구성의 체감 차이 없음(통설)', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '공유기 경유 vs 모뎀 직결 — 잃는 것은 속도가 아닙니다',
+    W, 220, b,
+    '직결도 표준 구성입니다 — 판정 기준은 속도가 아니라 공유기의 세 가지 일이 나에게 필요한가입니다.'
   );
 }
