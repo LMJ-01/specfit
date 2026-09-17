@@ -25,9 +25,8 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-08-18","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-09-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","item":"https://specfit.kr/posts/ollama-minimum-spec.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"VRAM 8GB인데 14B 모델을 돌릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 다만 컨텍스트를 크게 줄여야 하고, 일부 레이어가 CPU로 넘어가 속도가 떨어집니다. 8GB에서는 7~8B 모델을 쓰는 편이 훨씬 쾌적합니다."}},{"@type":"Question","name":"그래픽카드 두 장을 꽂으면 VRAM이 합쳐지나요","acceptedAnswer":{"@type":"Answer","text":"용량은 늘어나지만 속도는 합쳐지지 않습니다. 카드들이 동시가 아니라 순서대로 일하고, 중간 결과를 주고받는 시간이 더 붙습니다. 8GB 두 장보다 16GB 한 장이 낫습니다. 파워·슬롯 간격까지 포함한 판단은 그래픽카드 두 장에 정리했습니다."}},{"@type":"Question","name":"AMD 라데온으로도 되나요","acceptedAnswer":{"@type":"Answer","text":"VRAM 과 대역폭 규칙은 제조사와 무관하게 같습니다. 갈리는 건 실행 프로그램의 지원 범위입니다. 확인할 것은 AMD 라데온으로 로컬 LLM에 적었습니다."}},{"@type":"Question","name":"시스템 램은 얼마나 필요한가요","acceptedAnswer":{"@type":"Answer","text":"모델을 VRAM에 전부 올린다면 시스템 램은 16GB로도 충분합니다. 다만 VRAM을 넘기는 모델을 쓸 계획이라면 32GB 이상을 권합니다."}},{"@type":"Question","name":"양자화를 낮추면 더 큰 모델을 돌릴 수 있나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. Q4 대신 Q3나 Q2를 쓰면 용량이 줄어듭니다. 다만 Q4 아래로 내려가면 품질 저하가 체감되기 시작합니다. 같은 VRAM이라면 \"더 큰 모델을 강하게 양자화\"보다 \"작은 모델을 Q4로\"가 대체로 낫습니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -66,7 +65,7 @@
     <h1>Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나</h1>
     <p class="post-meta">
       <time datetime="2026-08-13">2026년 8월 13일</time>
-      <span class="updated">· 2026년 8월 18일 갱신</span>
+      <span class="updated">· 2026년 9월 17일 갱신</span>
     </p>
   </header>
 
@@ -176,7 +175,7 @@
     경계선에 있다면 한 단계 위 메모리를 택하는 편이 안전합니다.
   </p>
 </div></div>
-<h2 id="결론부터">결론부터</h2>
+<h2 id="vram별-한계선-지도">VRAM별 한계선 지도</h2>
 <p>VRAM 용량별로 무리 없이 돌아가는 모델 크기입니다. <strong>Q4 양자화 기준</strong>입니다.</p>
 <div class="table-wrap"><table>
 <thead><tr><th>VRAM</th><th>여유 (전부 VRAM에)</th><th>그 위</th><th>대표 GPU</th></tr></thead>
@@ -269,32 +268,26 @@ VRAM이 부족하면 아무리 빠른 GPU라도 CPU로 넘어가면서 느려집
 <li>용량이 필요하면 → 맥이 유리</li>
 <li>속도가 필요하면 → 전용 GPU가 유리</li>
 </ul>
-<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="vram-8gb인데-14b-모델을-돌릴-수-있나요">VRAM 8GB인데 14B 모델을 돌릴 수 있나요</h3>
-<p>돌아가긴 합니다. 다만 컨텍스트를 크게 줄여야 하고, 일부 레이어가 CPU로 넘어가
-속도가 떨어집니다. 8GB에서는 7~8B 모델을 쓰는 편이 훨씬 쾌적합니다.</p>
-<h3 id="그래픽카드-두-장을-꽂으면-vram이-합쳐지나요">그래픽카드 두 장을 꽂으면 VRAM이 합쳐지나요</h3>
-<p>용량은 늘어나지만 속도는 합쳐지지 않습니다. 카드들이 동시가 아니라 순서대로 일하고,
-중간 결과를 주고받는 시간이 더 붙습니다. <strong>8GB 두 장보다 16GB 한 장이 낫습니다.</strong>
-파워·슬롯 간격까지 포함한 판단은
-<a href="/posts/multi-gpu-local-llm.html">그래픽카드 두 장</a>에 정리했습니다.</p>
-<h3 id="amd-라데온으로도-되나요">AMD 라데온으로도 되나요</h3>
-<p>VRAM 과 대역폭 규칙은 제조사와 무관하게 같습니다. 갈리는 건 실행 프로그램의 지원 범위입니다.
-확인할 것은 <a href="/posts/amd-radeon-local-llm.html">AMD 라데온으로 로컬 LLM</a>에 적었습니다.</p>
-<h3 id="시스템-램은-얼마나-필요한가요">시스템 램은 얼마나 필요한가요</h3>
-<p>모델을 VRAM에 전부 올린다면 시스템 램은 16GB로도 충분합니다.
-다만 VRAM을 넘기는 모델을 쓸 계획이라면 32GB 이상을 권합니다.</p>
-<h3 id="양자화를-낮추면-더-큰-모델을-돌릴-수-있나요">양자화를 낮추면 더 큰 모델을 돌릴 수 있나요</h3>
-<p>가능합니다. Q4 대신 Q3나 Q2를 쓰면 용량이 줄어듭니다.
-다만 Q4 아래로 내려가면 품질 저하가 체감되기 시작합니다.
-<strong>같은 VRAM이라면 &quot;더 큰 모델을 강하게 양자화&quot;보다 &quot;작은 모델을 Q4로&quot;가 대체로 낫습니다.</strong></p>
-<h2 id="정리">정리</h2>
-<ol>
-<li><strong>돌릴 모델을 먼저 정합니다</strong> — GPU가 아니라</li>
-<li><strong>VRAM = 가중치 + KV 캐시 + 여유 1~2GB</strong>로 계산합니다</li>
-<li>VRAM이 부족하면 에러가 아니라 <strong>느려집니다</strong></li>
-<li>로컬 LLM에서는 <strong>연산 성능보다 VRAM 용량이 먼저</strong>입니다</li>
-</ol>
+<h2 id="표를-보고-나면-생기는-질문들">표를 보고 나면 생기는 질문들</h2>
+<p><strong>&quot;8GB인데 14B는 안 되나?&quot;</strong> — 돌아가긴 합니다. 다만 컨텍스트를
+크게 줄여야 하고 일부 레이어가 CPU로 넘어가 속도가 떨어져서,
+8GB에서는 7~8B를 쓰는 편이 훨씬 쾌적합니다. <strong>&quot;두 장 꽂으면
+합쳐지나?&quot;</strong> — 용량은 늘지만 속도는 합쳐지지 않습니다. 카드들이
+순서대로 일하고 중간 결과를 주고받는 시간이 붙어서, 8GB 두 장보다
+16GB 한 장이 낫습니다 — 파워·슬롯 간격까지 포함한 판단은
+<a href="/posts/multi-gpu-local-llm.html">그래픽카드 두 장</a>에 있습니다.</p>
+<p><strong>AMD 라데온도</strong> VRAM·대역폭 규칙은 제조사와 무관하게 같고, 갈리는
+건 실행 프로그램의 지원 범위입니다 —
+<a href="/posts/amd-radeon-local-llm.html">확인할 것들</a>은 따로 적었습니다.
+<strong>시스템 램은</strong> 모델을 VRAM에 전부 올린다면 16GB로도 충분하고,
+넘기는 모델을 쓸 계획일 때 32GB 이상입니다. <strong>양자화를 낮춰 더 큰
+모델을 넣는 것도</strong> 가능하지만 Q4 아래부터 품질 저하가 체감되기
+시작해서, 같은 VRAM이면 &quot;큰 모델을 강하게 양자화&quot;보다 &quot;작은 모델을
+Q4로&quot;가 대체로 낫습니다.</p>
+<p>원칙은 처음 그대로입니다 — <strong>돌릴 모델을 먼저 정하고</strong>(GPU가
+아니라), VRAM은 가중치 + KV 캐시 + 여유 1~2GB로 계산하며, 부족하면
+에러가 아니라 느려지고, 로컬 LLM에서는 연산 성능보다 VRAM 용량이
+먼저입니다.</p>
 <p>수치가 최신 정보와 다르거나 실제 사용 결과가 다르다면 <a href="/contact.html">알려주세요</a>.
 확인 후 본문을 고치고 갱신일을 표시합니다.</p>
   </div>

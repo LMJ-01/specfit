@@ -25,9 +25,8 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다","description":"모두에게 필요한 건 아닙니다. Gen3면 대개 불필요하고 Gen5면 사실상 필수입니다. 내 SSD가 실제로 스로틀링을 겪는지 확인하는 법과, 달 때 조심할 것을 정리했습니다.","datePublished":"2026-08-22","dateModified":"2026-08-26","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/nvme-heatsink.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다","description":"모두에게 필요한 건 아닙니다. Gen3면 대개 불필요하고 Gen5면 사실상 필수입니다. 내 SSD가 실제로 스로틀링을 겪는지 확인하는 법과, 달 때 조심할 것을 정리했습니다.","datePublished":"2026-08-22","dateModified":"2026-09-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/nvme-heatsink.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다","item":"https://specfit.kr/posts/nvme-heatsink.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"게임 로딩 때문에 필요한가요","acceptedAnswer":{"@type":"Answer","text":"대개 아닙니다. 게임 로딩은 짧은 읽기라 열이 쌓이기 전에 끝납니다. 로딩이 느린 원인은 발열보다 다른 곳에 있는 경우가 많습니다."}},{"@type":"Question","name":"Gen5를 사려는데 방열판 때문에 고민입니다","acceptedAnswer":{"@type":"Answer","text":"Gen5는 방열판을 전제로 한 물건이라고 보는 편이 맞습니다. 그런데 그 전에 — 개발 용도에서 Gen5가 필요한지부터 따져보세요. 체감 차이가 작은 경우가 많습니다. 개발용 SSD 고르기에 그 계산이 있습니다."}},{"@type":"Question","name":"외장 SSD도 방열판이 필요한가요","acceptedAnswer":{"@type":"Answer","text":"외장은 케이스 자체가 방열판 역할을 합니다. 다만 지속 쓰기에서 느려지는 건 외장도 마찬가지라, 원인이 발열일 수도 규격일 수도 있습니다 — 외장 SSD 속도가 안 나오는 이유에 갈라 뒀습니다."}},{"@type":"Question","name":"방열판을 달면 온도가 얼마나 내려가나요","acceptedAnswer":{"@type":"Answer","text":"제품·통풍에 따라 다르지만 지속 부하에서 10도 안팎 내려갔다는 보고가 흔합니다. 스로틀링 경계(70~80도대) 근처에서 걸리던 경우라면 그 10도가 속도 하락을 없애 줍니다. 반대로 원래 60도를 안 넘던 환경이면 숫자만 내려가고 체감은 없습니다."}},{"@type":"Question","name":"온도가 낮을수록 무조건 좋은 건가요","acceptedAnswer":{"@type":"Answer","text":"스로틀링을 피할 만큼 낮으면 충분합니다. 거기서 더 낮추는 것이 속도를 더 올려주지는 않습니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -66,7 +65,7 @@
     <h1>NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-22">2026년 8월 22일</time>
-      <span class="updated">· 2026년 8월 26일 갱신</span>
+      <span class="updated">· 2026년 9월 17일 갱신</span>
     </p>
   </header>
 
@@ -76,20 +75,14 @@
 <p>NVMe SSD를 사면 따라오는 질문입니다. <strong>&quot;방열판 달아야 하나요?&quot;</strong></p>
 <p>커뮤니티 답변은 &quot;필수다&quot;와 &quot;일반인은 필요 없다&quot;로 갈립니다.
 둘 다 맞습니다 — <strong>어떤 SSD로 무슨 작업을 하느냐</strong>가 빠져 있을 뿐입니다.</p>
-<h2 id="결론부터">결론부터</h2>
-<div class="table-wrap"><table>
-<thead><tr><th>상황</th><th>방열판</th></tr></thead>
-<tbody>
-<tr><td>Gen3 SSD</td><td><strong>대개 불필요</strong>합니다</td></tr>
-<tr><td>Gen4, 가벼운 사용</td><td>불필요 — 걱정되면 아래 확인법으로 재보세요</td></tr>
-<tr><td>Gen4, 지속 부하</td><td><strong>메인보드 기본 방열판</strong>이면 대개 충분합니다</td></tr>
-<tr><td><strong>Gen5</strong></td><td><strong>사실상 필수.</strong> 동봉되거나 보드 방열판을 전제로 나옵니다</td></tr>
-<tr><td>노트북</td><td><strong>달 공간이 없습니다.</strong> 방열판이 아니라 모델 선택의 문제입니다</td></tr>
-<tr><td>PS5 확장 슬롯</td><td>소니가 방열판 장착을 요구합니다</td></tr>
-</tbody>
-</table></div>
-<p>요약하면 — <strong>데스크톱 Gen3·Gen4의 일반적인 사용에서는 없어도 되고,
-Gen5와 지속 쓰기 작업에서는 있어야 합니다.</strong></p>
+<h2 id="세대가-답의-절반입니다">세대가 답의 절반입니다</h2>
+<p><strong>데스크톱 Gen3·Gen4의 일반적인 사용에서는 없어도 되고, Gen5와
+지속 쓰기 작업에서는 있어야 합니다.</strong> Gen3는 대개 불필요, Gen4는
+가벼운 사용이면 불필요하고 지속 부하라도 메인보드 기본 방열판이면
+대개 충분합니다. Gen5는 방열판 동봉이나 보드 방열판을 전제로 나오는
+물건이라 사실상 필수고요. 노트북은 애초에 달 공간이 없어 방열판이
+아니라 발열 적은 모델을 고르는 문제이고, PS5 확장 슬롯은 소니가
+방열판 장착을 요구합니다.</p>
 <h2 id="왜-뜨거워지나-주범은-컨트롤러입니다">왜 뜨거워지나 — 주범은 컨트롤러입니다</h2>
 <p>M.2 SSD에서 열을 내는 건 저장 칩(낸드)보다 <strong>컨트롤러</strong>입니다.
 데이터가 지나갈 때마다 일하는 칩이라, <strong>속도 세대가 올라갈수록</strong>
@@ -143,38 +136,30 @@ M.2 방열판이 붙어 나옵니다. 그거면 대개 충분하고, 따로 살 
 <strong>발열이 적은 모델(Gen4 이하, 단면 실장)을 고르는 문제</strong>가 됩니다 —
 <a href="/posts/laptop-ssd-upgrade.html">노트북 SSD 교체</a>에서 두께·규격과 함께
 확인하세요.</p>
-<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="게임-로딩-때문에-필요한가요">게임 로딩 때문에 필요한가요</h3>
-<p>대개 아닙니다. 게임 로딩은 짧은 읽기라 열이 쌓이기 전에 끝납니다.
-로딩이 느린 원인은 발열보다 다른 곳에 있는 경우가 많습니다.</p>
-<h3 id="gen5를-사려는데-방열판-때문에-고민입니다">Gen5를 사려는데 방열판 때문에 고민입니다</h3>
-<p>Gen5는 방열판을 전제로 한 물건이라고 보는 편이 맞습니다.
-그런데 그 전에 — <strong>개발 용도에서 Gen5가 필요한지</strong>부터 따져보세요.
-체감 차이가 작은 경우가 많습니다.
-<a href="/posts/dev-ssd-choose.html">개발용 SSD 고르기</a>에 그 계산이 있습니다.</p>
-<h3 id="외장-ssd도-방열판이-필요한가요">외장 SSD도 방열판이 필요한가요</h3>
-<p>외장은 케이스 자체가 방열판 역할을 합니다. 다만 지속 쓰기에서
-느려지는 건 외장도 마찬가지라, 원인이 발열일 수도 규격일 수도 있습니다 —
-<a href="/posts/external-ssd-dev.html">외장 SSD 속도가 안 나오는 이유</a>에 갈라 뒀습니다.</p>
-<h3 id="방열판을-달면-온도가-얼마나-내려가나요">방열판을 달면 온도가 얼마나 내려가나요</h3>
-<p>제품·통풍에 따라 다르지만 지속 부하에서 <strong>10도 안팎</strong> 내려갔다는
-보고가 흔합니다. 스로틀링 경계(70~80도대) 근처에서 걸리던 경우라면
-그 10도가 속도 하락을 없애 줍니다. 반대로 원래 60도를 안 넘던 환경이면
-숫자만 내려가고 체감은 없습니다.</p>
-<h3 id="온도가-낮을수록-무조건-좋은-건가요">온도가 낮을수록 무조건 좋은 건가요</h3>
-<p>스로틀링을 피할 만큼 낮으면 충분합니다. 거기서 더 낮추는 것이
-속도를 더 올려주지는 않습니다.</p>
-<h2 id="정리">정리</h2>
-<ol>
-<li><strong>Gen3·Gen4의 일반 사용은 방열판 없이 됩니다.</strong> Gen5는 사실상 필수입니다</li>
-<li>스로틀링은 <strong>에러 없이 속도만 떨어지는</strong> 보호 동작입니다.
-대용량 복사 중간에 속도가 꺾이면 의심하세요</li>
-<li>논쟁 말고 <strong>CrystalDiskInfo로 부하 중 온도를 재보세요.</strong> 그게 답입니다</li>
-<li>단다면 <strong>보드 기본 방열판 먼저</strong>, 이중 장착 금지, 라벨은 떼지 않기</li>
-<li>노트북은 방열판이 아니라 <strong>발열 적은 모델을 고르는 문제</strong>입니다</li>
-</ol>
-<p>SSD 수명이 걱정이라면 그건 온도가 아니라 쓰기 총량 문제입니다 —
-<a href="/posts/ssd-tbw-lifespan.html">SSD 수명, TBW 읽는 법</a>에 있습니다.</p>
+<h2 id="망설여지는-지점-몇-가지">망설여지는 지점 몇 가지</h2>
+<p><strong>게임 로딩 때문이라면</strong> 대개 필요 없습니다 — 로딩은 짧은 읽기라
+열이 쌓이기 전에 끝나고, 로딩이 느린 원인은 발열보다 다른 곳에
+있는 경우가 많습니다. <strong>Gen5 구매를 방열판 때문에 망설이는
+중이라면</strong> 순서를 바꿔서, 개발 용도에 Gen5가 필요한지부터
+따져보세요 — 체감 차이가 작은 경우가 많고,
+<a href="/posts/dev-ssd-choose.html">개발용 SSD 고르기</a>에 그 계산이
+있습니다.</p>
+<p><strong>외장 SSD는</strong> 케이스 자체가 방열판 역할을 합니다. 다만 지속
+쓰기에서 느려지는 건 외장도 마찬가지라, 원인이 발열일 수도 규격일
+수도 있습니다 — <a href="/posts/external-ssd-dev.html">외장 SSD 속도가 안 나오는
+이유</a>에 갈라 뒀습니다.</p>
+<p><strong>효과의 크기는</strong> 제품·통풍에 따라 다르지만 지속 부하에서 10도
+안팎 내려갔다는 보고가 흔합니다. 스로틀링 경계(70~80도대) 근처에서
+걸리던 경우라면 그 10도가 속도 하락을 없애 주고, 원래 60도를 안
+넘던 환경이면 숫자만 내려가고 체감은 없습니다. 온도는 스로틀링을
+피할 만큼 낮으면 충분하고 — 더 낮춘다고 속도가 더 오르진 않습니다.</p>
+<p>결국 이 논쟁의 답은 장비마다 다르고, <strong>CrystalDiskInfo로 부하 중
+온도를 재보는 것</strong>이 내 답입니다. 스로틀링은 에러 없이 속도만
+떨어지는 보호 동작이라 대용량 복사 중간에 속도가 꺾이면 의심하면
+되고, 단다면 보드 기본 방열판 먼저·이중 장착 금지·라벨은 떼지
+않기 — 그게 전부입니다. SSD 수명이 걱정이라면 그건 온도가 아니라
+쓰기 총량 문제입니다 — <a href="/posts/ssd-tbw-lifespan.html">SSD 수명, TBW 읽는
+법</a>에 있습니다.</p>
 <p>수치나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 
