@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모니터 3대 연결, 되는지 확인하는 법 — 포트 수만 세면 반만 맞습니다 | 스펙핏</title>
+<meta name="description" content="내 컴퓨터에 모니터를 3대까지 달 수 있는지는 게시판에 꾸준히 올라오는 질문입니다. 그래픽카드 뒷면 포트 수를 세는 게 시작이지만 그게 전부는 아닙니다 — 동시 출력 수 확인법과 포트가 모자랄 때의 우회로 세 가지를 순서대로 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/triple-monitor-setup.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="모니터 3대 연결, 되는지 확인하는 법 — 포트 수만 세면 반만 맞습니다 | 스펙핏">
+<meta property="og:description" content="내 컴퓨터에 모니터를 3대까지 달 수 있는지는 게시판에 꾸준히 올라오는 질문입니다. 그래픽카드 뒷면 포트 수를 세는 게 시작이지만 그게 전부는 아닙니다 — 동시 출력 수 확인법과 포트가 모자랄 때의 우회로 세 가지를 순서대로 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/triple-monitor-setup.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"모니터 3대 연결, 되는지 확인하는 법 — 포트 수만 세면 반만 맞습니다","description":"내 컴퓨터에 모니터를 3대까지 달 수 있는지는 게시판에 꾸준히 올라오는 질문입니다. 그래픽카드 뒷면 포트 수를 세는 게 시작이지만 그게 전부는 아닙니다 — 동시 출력 수 확인법과 포트가 모자랄 때의 우회로 세 가지를 순서대로 정리했습니다.","datePublished":"2026-09-17","dateModified":"2026-09-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/triple-monitor-setup.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"모니터 3대 연결, 되는지 확인하는 법 — 포트 수만 세면 반만 맞습니다","item":"https://specfit.kr/posts/triple-monitor-setup.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>모니터 3대 연결, 되는지 확인하는 법 — 포트 수만 세면 반만 맞습니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-17">2026년 9월 17일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>듀얼 모니터에 맛을 들이면 다음 질문은 정해져 있습니다 — <strong>&quot;한 대
+더 달면 안 되나?&quot;</strong> 게시판에도 &quot;모니터 3대 연결 가능한가요&quot;가
+꾸준히 올라오고, 답변은 대개 &quot;포트 세 개 있으면 됩니다&quot;로
+끝납니다. 반쯤 맞는 답입니다. 포트 수는 시작이고, 확인할 게 두
+가지 더 있습니다.</p>
+<h2 id="확인-그래픽카드-뒷면-포트를-셉니다">확인 ① — 그래픽카드 뒷면 포트를 셉니다</h2>
+<p>본체 뒤 <strong>그래픽카드 쪽</strong>(가로로 누운 단자 묶음)에 HDMI·DP가 몇
+개인지 세는 게 시작입니다. 요즘 외장 카드는 3~4개가 보통이라,
+여기서 이미 3대분이 나오는 경우가 많습니다.</p>
+<p>주의할 건 <strong>꽂는 위치</strong>입니다 — 외장 카드가 있는 컴퓨터에서
+모니터 하나를 메인보드 쪽(세로 단자 묶음)에 꽂으면
+<a href="/posts/igpu-dual-monitor.html">내장 그래픽 출력이 꺼져 있는 구성</a>
+에서는 화면이 안 나옵니다. 3대 모두 <strong>카드 쪽에</strong> 꽂는 게
+기본값입니다.</p>
+<h2 id="확인-포트-수-동시-출력-수일-수-있습니다">확인 ② — 포트 수 ≠ 동시 출력 수일 수 있습니다</h2>
+<p>포트가 4개라고 4대가 항상 되는 건 아닙니다. 카드마다 <strong>동시에 켤
+수 있는 화면 수의 상한</strong>이 정해져 있어서요. 요즘 카드는 대개
+3~4대를 지원해 3대 목표라면 무난하지만, 오래된 카드나 보급형에서
+간혹 걸리는 지점이라 — 확실히 하려면 <strong>카드 모델명으로 사양표의
+&quot;최대 디스플레이 수&quot;를 확인</strong>하는 게 정석입니다. 검색 한 번이면
+끝나는 확인이고, 포트만 세고 모니터부터 사는 것보다 쌉니다.</p>
+<h2 id="확인-해상도-조합도-대역폭을-씁니다">확인 ③ — 해상도 조합도 대역폭을 씁니다</h2>
+<p>3대가 전부 고해상도·고주사율이면 카드와 케이블의 대역폭을 그만큼
+씁니다. 사무·코딩 용도의 FHD·QHD 3대는 대개 문제가 없지만, 4K
+셋·고주사율 조합으로 갈수록 사양표의 지원 조합을 봐야 하는 영역에
+들어갑니다. 단자 규격별 상한은
+<a href="/posts/dp-vs-hdmi-coding.html">DP vs HDMI</a>에 정리돼 있습니다.</p>
+<h2 id="포트가-모자랄-때의-우회로-셋">포트가 모자랄 때의 우회로 셋</h2>
+<p><strong>내장 그래픽 출력을 살리는 길</strong> — 카드 포트가 2개뿐이라면,
+메인보드 쪽 단자로 한 대를 받는 구성이 가능한 컴퓨터가 많습니다.
+바이오스에서 내장 그래픽을 켜야 하는 경우가 있고, 조건과 한계는
+<a href="/posts/igpu-dual-monitor.html">내장 그래픽 듀얼 글</a>에 있습니다.</p>
+<p><strong>DP 데이지체인(모니터끼리 연결)</strong> — DP 출력을 지원하는
+모니터라면, 컴퓨터→모니터1→모니터2로 <strong>모니터를 사슬처럼 잇는</strong>
+방식이 있습니다. 케이블 정리가 깔끔한 대신 <strong>모니터가 이 기능(MST
+출력)을 지원해야</strong> 해서, 사양표에서 DP 출력 단자 유무를 확인해야
+합니다.</p>
+<p><strong>USB 디스플레이 어댑터</strong> — 포트 종류와 무관하게 USB로 화면을
+추가하는 물건입니다. 문서·웹 위주의 사무 화면엔 충분하지만 그래픽
+성능을 쓰는 게임·영상 작업용 화면으로는 부적합한 방향이라, &quot;세
+번째 화면 = 보조 정보용&quot;일 때의 우회로로 보면 됩니다.</p>
+<p>노트북이라면 이야기가 조금 다릅니다 — 포트가 아니라 <strong>출력 상한과
+독·허브의 조건</strong>이 관문이라,
+<a href="/posts/laptop-dual-monitor-output.html">노트북 외부 모니터 출력 글</a>
+이 그 판정입니다. 그리고 3대를 달기 전에 배치 고민이 남았다면 —
+<a href="/posts/dual-monitor-vs-single.html">듀얼 vs 큰 한 대</a>의 저울질이
+3대 구성에도 그대로 적용됩니다. 화면이 늘수록
+<a href="/posts/dual-monitor-mouse-escape.html">커서 이탈</a> 같은 듀얼의
+자잘한 마찰도 같이 늘어난다는 것까지 계산에 넣으면, 후회 없는
+확장이 됩니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">트리플모니터</span> <span class="tag">모니터3대</span> <span class="tag">그래픽카드포트</span> <span class="tag">다중모니터</span> <span class="tag">듀얼모니터</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/game-wrong-monitor.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">게임이 자꾸 보조 모니터에서 열릴 때 — 윈도우의 &quot;주 모니터&quot;부터 잡으면 됩니다</span>
+        <span class="card-desc">듀얼 모니터에서 게임을 켰더니 옆의 보조 화면에서 전체화면으로 열리는 증상은 게시판 단골 질문입니다. 전체화면 게임 대부분이 윈도우의 &quot;주 디스플레이&quot;를 따르기 때문입니다 — 주 모니터 설정과 창모드 이동, 게임별 예외까지 손잡이 세 개를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/screen-tearing.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">게임 화면이 가로로 찢어져 보일 때 — 고장이 아니라 박자가 어긋난 겁니다</span>
+        <span class="card-desc">게임 중 화면이 가로선으로 어긋나 찢어져 보이는 티어링은 게시판 단골 하소연입니다. 그래픽카드가 미는 박자와 모니터가 그리는 박자가 어긋나면 한 화면에 두 장면이 섞이는 것 — 부품 무죄 판정과 수직동기·가변주사율 처방 사다리를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/dual-monitor-turn-off-one.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">듀얼 모니터 한쪽만 끄고 싶을 때 — 전원 버튼이 오답인 이유부터 압니다</span>
+        <span class="card-desc">게임이나 영화 볼 때 보조 모니터만 잠깐 끄고 싶다는 질문이 게시판에 꾸준합니다. 모니터 전원 버튼은 창이 다 넘어오는 부작용의 지름길이라 오답에 가깝습니다 — 윈도우 쪽에서 끄는 정답 경로와, 연결 방식에 따라 부작용이 갈리는 이유를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

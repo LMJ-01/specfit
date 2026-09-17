@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>모니터 3대 연결, 되는지 확인하는 법 — 포트 수만 세면 반만 맞습니다</title>
+    <link>https://specfit.kr/posts/triple-monitor-setup.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/triple-monitor-setup.html</guid>
+    <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
+    <description>내 컴퓨터에 모니터를 3대까지 달 수 있는지는 게시판에 꾸준히 올라오는 질문입니다. 그래픽카드 뒷면 포트 수를 세는 게 시작이지만 그게 전부는 아닙니다 — 동시 출력 수 확인법과 포트가 모자랄 때의 우회로 세 가지를 순서대로 정리했습니다.</description>
+  </item>
+  <item>
     <title>컴퓨터 시계가 자꾸 틀릴 때 — 틀리는 모양이 범인을 말해줍니다</title>
     <link>https://specfit.kr/posts/pc-clock-wrong.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-clock-wrong.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-humidifier.html</guid>
     <pubDate>Mon, 07 Sep 2026 15:00:00 GMT</pubDate>
     <description>겨울마다 컴퓨터 옆에 가습기를 둬도 되는지 묻는 글이 올라옵니다. 판정의 절반은 가습기 종류입니다 — 찬 안개를 뿜는 초음파식과 수증기를 내는 가열·기화식은 다른 물건이라서요. 안전한 배치 기준과 하얀 가루의 정체까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>모니터 수명은 몇 년인가 — 죽는 날보다 서서히 저무는 날이 먼저 옵니다</title>
-    <link>https://specfit.kr/posts/monitor-lifespan.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-lifespan.html</guid>
-    <pubDate>Mon, 07 Sep 2026 15:00:00 GMT</pubDate>
-    <description>모니터를 몇 년 쓰고 바꿔야 하는지는 커뮤니티 단골 질문입니다. 모니터는 급사보다 노화가 먼저 오는 기기 — 백라이트가 서서히 어두워지고 색이 변하는 소모품이라서요. 노화의 지문, 진짜 고장 신호, 그리고 세대 은퇴까지 세 갈래로 정리했습니다.</description>
   </item>
 </channel>
 </rss>

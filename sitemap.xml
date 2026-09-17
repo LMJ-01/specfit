@@ -15,6 +15,7 @@
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/posts/game-wrong-monitor.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-clock-wrong.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/triple-monitor-setup.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/windows-update-force-shutdown.html</loc><lastmod>2026-09-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/usb-hub-power.html</loc><lastmod>2026-09-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-long-storage.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
@@ -111,7 +112,7 @@
   <url><loc>https://specfit.kr/posts/glare-vs-matte-display.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-coil-whine.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/high-refresh-rate-coding.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/igpu-dual-monitor.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/igpu-dual-monitor.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-2-5g-upgrade.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/lan-cable-cat.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-clamshell-mode.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
@@ -149,7 +150,7 @@
   <url><loc>https://specfit.kr/posts/used-laptop-dev.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/amd-radeon-local-llm.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-psu-wattage.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/laptop-dual-monitor-output.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/laptop-dual-monitor-output.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-ram-upgrade.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/local-llm-power-cost.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-arm-vesa.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>

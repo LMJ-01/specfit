@@ -2,7 +2,7 @@
 title: 내장그래픽으로 듀얼 모니터 — 관건은 CPU가 아니라 메인보드 뒷면입니다
 description: 그래픽카드 없이 내장그래픽만으로 모니터 두 대를 쓸 수 있는지 자주 묻습니다. 답은 됩니다이고, 성능도 문제가 아닙니다. 진짜 확인할 곳은 메인보드 뒷면의 출력 단자 수입니다.
 date: 2026-09-01
-updated: 2026-09-04
+updated: 2026-09-17
 category: monitor
 tags: [내장그래픽, 듀얼모니터, 메인보드, 모니터연결, 사무용PC]
 ---
@@ -133,5 +133,7 @@ tags: [내장그래픽, 듀얼모니터, 메인보드, 모니터연결, 사무�
 
 듀얼 구성 자체의 판단은 [듀얼 vs 한 대](/posts/dual-monitor-vs-single.html),
 단자 규격은 [DP vs HDMI](/posts/dp-vs-hdmi-coding.html)에 있습니다.
+여기서 한 대 더 — **3대 구성의 확인 순서**는
+[트리플 모니터 판정](/posts/triple-monitor-setup.html)에 정리했습니다.
 
 규격이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
