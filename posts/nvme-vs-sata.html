@@ -25,9 +25,8 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배","description":"M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생김새가 같은데 속도가 6배 차이나고, 슬롯이 안 받는 경우도 있습니다. 사기 전에 확인할 것을 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-08-22","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/nvme-vs-sata.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배","description":"M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생김새가 같은데 속도가 6배 차이나고, 슬롯이 안 받는 경우도 있습니다. 사기 전에 확인할 것을 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-09-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/nvme-vs-sata.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배","item":"https://specfit.kr/posts/nvme-vs-sata.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"M.2 슬롯이 하나뿐인데 SATA가 꽂혀 있습니다","acceptedAnswer":{"@type":"Answer","text":"그 슬롯이 NVMe를 지원하면 NVMe로 바꿔 끼울 수 있습니다. 지원 여부는 메인보드 사양에서 확인하세요. 슬롯이 SATA 전용이면 바꿔도 소용없습니다."}},{"@type":"Question","name":"2.5인치 SATA SSD를 M.2로 바꾸면 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"M.2 NVMe로 바꾸면 순차 속도는 크게 오릅니다. 다만 M.2 SATA로 바꾸면 모양만 바뀌고 속도는 똑같습니다."}},{"@type":"Question","name":"하드디스크에서 SSD로 바꾸는 거라면요","acceptedAnswer":{"@type":"Answer","text":"그건 차원이 다릅니다. SATA SSD만 해도 하드디스크보다 훨씬 빠릅니다. NVMe냐 SATA냐를 고민하기 전에, 아직 하드디스크를 쓰고 계시다면 그것부터 바꾸는 게 체감이 가장 큽니다."}},{"@type":"Question","name":"노트북에도 NVMe가 들어가나요","acceptedAnswer":{"@type":"Answer","text":"대부분 들어갑니다. 다만 일부 초슬림 모델은 SSD도 납땜되어 있어 교체가 안 됩니다. 확인법은 노트북 SSD 교체에 적었습니다."}},{"@type":"Question","name":"두 개를 꽂으면 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"용량이 늘어날 뿐 속도는 그대로입니다. (RAID로 묶는 방법이 있지만 개발용으로는 권하지 않습니다 — 복잡해지고 한쪽이 고장 나면 전부 잃습니다.)"}},{"@type":"Question","name":"발열이 걱정됩니다","acceptedAnswer":{"@type":"Answer","text":"Gen3·Gen4는 대개 문제없습니다. Gen5는 방열판을 챙기세요. 메인보드에 기본 방열판이 붙어 있는 경우가 많으니 확인해 보세요. 내 SSD가 실제로 스로틀링을 겪는지 재보는 법은 NVMe 방열판 필요한가에 있습니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -66,7 +65,7 @@
     <h1>NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배</h1>
     <p class="post-meta">
       <time datetime="2026-08-16">2026년 8월 16일</time>
-      <span class="updated">· 2026년 8월 22일 갱신</span>
+      <span class="updated">· 2026년 9월 17일 갱신</span>
     </p>
   </header>
 
@@ -75,7 +74,11 @@
   <div class="post-body">
 <p>SSD를 사려고 보면 <code>NVMe</code>와 <code>SATA</code>가 나뉘어 있습니다. 값도 꽤 차이납니다.</p>
 <p><strong>문제는 둘 다 M.2라는 같은 모양으로 나온다는 것</strong>입니다. 생긴 게 똑같은데 속도는 6배 차이가 나고, 심지어 내 컴퓨터에 안 꽂히는 경우도 있습니다.</p>
-<h2 id="결론부터">결론부터</h2>
+<h2 id="갈림길은-짧습니다">갈림길은 짧습니다</h2>
+<p>새로 사는 거라면 <strong>NVMe</strong>입니다 — 값 차이가 크지 않아서요. 오래된
+컴퓨터에 추가하는 거라면 <strong>슬롯이 뭘 받는지부터</strong> 확인해야 하고,
+사진·문서 보관용이라면 SATA로도 충분합니다. 그리고 속도 숫자만
+보고 고르는 중이라면 — 잠깐, 아래를 보세요.</p>
 <div class="table-wrap"><table>
 <thead><tr><th></th><th>SATA</th><th>NVMe</th></tr></thead>
 <tbody>
@@ -83,15 +86,6 @@
 <tr><td>생김새</td><td>2.5인치 또는 <strong>M.2</strong></td><td><strong>M.2</strong></td></tr>
 <tr><td>값</td><td>쌉니다</td><td>비쌉니다</td></tr>
 <tr><td>개발 작업 체감</td><td>—</td><td><strong>생각보다 작습니다</strong></td></tr>
-</tbody>
-</table></div>
-<div class="table-wrap"><table>
-<thead><tr><th>상황</th><th>선택</th></tr></thead>
-<tbody>
-<tr><td>새로 사는 거라면</td><td><strong>NVMe.</strong> 값 차이가 크지 않습니다</td></tr>
-<tr><td>오래된 컴퓨터에 추가</td><td><strong>슬롯을 먼저 확인하세요</strong></td></tr>
-<tr><td>사진·문서 보관용</td><td>SATA로 충분합니다</td></tr>
-<tr><td><strong>속도만 보고 고르는 중</strong></td><td>잠깐, 아래를 보세요</td></tr>
 </tbody>
 </table></div>
 <h2 id="1-같은-m2인데-다른-물건입니다">1. 같은 M.2인데 다른 물건입니다</h2>
@@ -181,36 +175,29 @@ SATA / NVMe  =  실제로 데이터가 오가는 방식</code></pre>
 <p><strong>즉 SSD를 빠른 걸로 바꿔도 생성 속도는 그대로입니다.</strong> 모델 로딩이 몇 초 빨라질 뿐입니다.</p>
 <p>다만 <strong>용량은 중요합니다.</strong> 모델 파일이 하나에 5~43GB라 금방 찹니다.
 <a href="/posts/dev-ssd-choose.html">로컬 LLM을 겸하면 1TB 이상</a>을 권합니다.</p>
-<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="m2-슬롯이-하나뿐인데-sata가-꽂혀-있습니다">M.2 슬롯이 하나뿐인데 SATA가 꽂혀 있습니다</h3>
-<p>그 슬롯이 NVMe를 지원하면 NVMe로 바꿔 끼울 수 있습니다.
-지원 여부는 메인보드 사양에서 확인하세요. <strong>슬롯이 SATA 전용이면 바꿔도 소용없습니다.</strong></p>
-<h3 id="25인치-sata-ssd를-m2로-바꾸면-빨라지나요">2.5인치 SATA SSD를 M.2로 바꾸면 빨라지나요</h3>
-<p><strong>M.2 NVMe로 바꾸면</strong> 순차 속도는 크게 오릅니다.
-다만 M.2 SATA로 바꾸면 모양만 바뀌고 속도는 똑같습니다.</p>
-<h3 id="하드디스크에서-ssd로-바꾸는-거라면요">하드디스크에서 SSD로 바꾸는 거라면요</h3>
-<p>그건 차원이 다릅니다. <strong>SATA SSD만 해도 하드디스크보다 훨씬 빠릅니다.</strong>
-NVMe냐 SATA냐를 고민하기 전에, 아직 하드디스크를 쓰고 계시다면 그것부터 바꾸는 게 체감이 가장 큽니다.</p>
-<h3 id="노트북에도-nvme가-들어가나요">노트북에도 NVMe가 들어가나요</h3>
-<p>대부분 들어갑니다. 다만 <strong>일부 초슬림 모델은 SSD도 납땜</strong>되어 있어 교체가 안 됩니다.
-확인법은 <a href="/posts/laptop-ssd-upgrade.html">노트북 SSD 교체</a>에 적었습니다.</p>
-<h3 id="두-개를-꽂으면-빨라지나요">두 개를 꽂으면 빨라지나요</h3>
-<p>용량이 늘어날 뿐 속도는 그대로입니다. (RAID로 묶는 방법이 있지만 개발용으로는 권하지 않습니다 —
-복잡해지고 한쪽이 고장 나면 전부 잃습니다.)</p>
-<h3 id="발열이-걱정됩니다">발열이 걱정됩니다</h3>
-<p>Gen3·Gen4는 대개 문제없습니다. <strong>Gen5는 방열판을 챙기세요.</strong>
-메인보드에 기본 방열판이 붙어 있는 경우가 많으니 확인해 보세요.
-내 SSD가 실제로 스로틀링을 겪는지 재보는 법은
+<h2 id="바꿔-끼우기-전에-나오는-질문들">바꿔 끼우기 전에 나오는 질문들</h2>
+<p><strong>M.2 슬롯 하나에 SATA가 꽂혀 있는 경우</strong> — 그 슬롯이 NVMe를
+지원하면 바꿔 끼울 수 있습니다. 지원 여부는 메인보드 사양에서
+확인하고, 슬롯이 SATA 전용이면 바꿔도 소용없습니다. 2.5인치
+SATA를 M.2 NVMe로 바꾸면 순차 속도는 크게 오르지만, M.2 SATA로
+바꾸는 건 모양만 바뀌고 속도는 똑같습니다.</p>
+<p><strong>아직 하드디스크에서 넘어오는 중이라면</strong> 그건 차원이 다른
+이야기입니다 — SATA SSD만 해도 하드디스크보다 훨씬 빨라서,
+NVMe냐 SATA냐를 고민하기 전에 그 교체부터 하는 게 체감이 가장
+큽니다. 노트북도 대부분 NVMe가 들어가는데, 일부 초슬림 모델은
+SSD도 납땜이라 교체가 안 됩니다 —
+<a href="/posts/laptop-ssd-upgrade.html">노트북 SSD 교체</a>에 확인법이
+있습니다.</p>
+<p><strong>두 개를 꽂으면</strong> 용량이 늘 뿐 속도는 그대로고(RAID는 개발용으로
+권하지 않습니다 — 복잡해지고 한쪽이 고장 나면 전부 잃습니다),
+<strong>발열은</strong> Gen3·Gen4에선 대개 문제없고 Gen5부터 방열판을
+챙깁니다. 내 SSD가 실제로 스로틀링을 겪는지 재보는 법은
 <a href="/posts/nvme-heatsink.html">NVMe 방열판 필요한가</a>에 있습니다.</p>
-<h2 id="정리">정리</h2>
-<ol>
-<li><strong>M.2는 모양 이름입니다.</strong> 그 안에 SATA가 들어 있을 수 있습니다</li>
-<li><strong>550 MB/s라고 적혀 있으면 SATA입니다.</strong> 규격 한계가 거기입니다</li>
-<li>사기 전에 <strong>메인보드가 NVMe를 받는지</strong> 확인하세요</li>
-<li>숫자는 6배지만 <strong>개발 작업 체감은 작습니다.</strong> 병목이 순차 속도가 아닙니다</li>
-<li>그래도 <strong>새로 사면 NVMe</strong>입니다. 값 차이가 크지 않습니다</li>
-<li>순차 속도보다 <strong>DRAM 유무와 용량</strong>이 개발 환경에 영향이 큽니다</li>
-</ol>
+<p>돌아와서 한 줄로 줄이면 — <strong>M.2는 모양 이름이라 그 안에 SATA가
+들어 있을 수 있고</strong>(550 MB/s라 적혀 있으면 그게 SATA입니다), 사기
+전에 메인보드가 NVMe를 받는지 확인하고, 숫자는 6배지만 개발 작업
+체감은 그보다 작으며, 그래도 새로 사면 NVMe입니다. 그리고 순차
+속도보다 <strong>DRAM 유무와 용량</strong>이 개발 환경엔 더 큰 변수입니다.</p>
 <p>스펙이나 판단이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 

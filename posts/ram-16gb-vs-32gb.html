@@ -25,9 +25,8 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점","description":"32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-09-05","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ram-16gb-vs-32gb.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점","description":"32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-09-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ram-16gb-vs-32gb.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점","item":"https://specfit.kr/posts/ram-16gb-vs-32gb.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"16GB에서 32GB로 늘리면 로컬 LLM이 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"모델이 이미 VRAM에 전부 올라가고 있다면 차이가 없습니다. 반대로 CPU 오프로딩이 일어나고 있었다면 체감할 수 있습니다. 위 표에서 내 GPU와 모델 조합이 \"전부 VRAM\"이면 램을 늘려도 그대로입니다."}},{"@type":"Question","name":"32GB와 64GB 중에 고민입니다","acceptedAnswer":{"@type":"Answer","text":"지금 32B 이상을 오프로딩으로 쓸 계획이 없다면 32GB로 충분합니다. 그 돈을 VRAM이 더 큰 그래픽카드에 쓰는 편이 로컬 LLM에서는 훨씬 낫습니다. LLM 밖의 작업(가상머신·해석·영상)까지 포함한 판정은 64GB 글에 따로 정리했습니다."}},{"@type":"Question","name":"DDR4와 DDR5 중 어느 쪽이 유리한가요","acceptedAnswer":{"@type":"Answer","text":"CPU 오프로딩을 자주 한다면 대역폭이 높은 DDR5가 유리합니다. 모델이 VRAM에 다 올라가는 환경이라면 차이가 크지 않습니다. 이것 때문에 메인보드와 CPU까지 바꿀 정도의 차이는 아닙니다. 애초에 고를 수 있는 게 아닙니다 — 메인보드가 정합니다. 왜 그런지는 DDR4와 DDR5 차이에 정리했습니다."}},{"@type":"Question","name":"램 클럭도 중요한가요","acceptedAnswer":{"@type":"Answer","text":"용량만큼은 아닙니다. 우선순위는 용량 → 듀얼 채널 → 클럭 순입니다. 32GB 싱글 채널보다 32GB 듀얼 채널이 먼저입니다. 다만 이미 산 클럭조차 기본 설정으로는 안 나옵니다. DDR5-6000 을 사도 켜지 않으면 4800 으로 돕니다 — 램 XMP·EXPO에 확인법과 계산을 적었습니다."}},{"@type":"Question","name":"16GB 한 장이 있는데 8GB를 더 꽂아도 되나요","acceptedAnswer":{"@type":"Answer","text":"동작은 합니다. 다만 용량이 다르면 듀얼 채널 이득을 온전히 못 받습니다 (겹치는 만큼만 듀얼로 동작하는 경우가 많습니다). 같은 용량 한 장을 더 꽂는 편이 낫습니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -66,7 +65,7 @@
     <h1>램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점</h1>
     <p class="post-meta">
       <time datetime="2026-08-15">2026년 8월 15일</time>
-      <span class="updated">· 2026년 9월 5일 갱신</span>
+      <span class="updated">· 2026년 9월 17일 갱신</span>
     </p>
   </header>
 
@@ -77,16 +76,11 @@
 <p>가장 많이 돌아오는 답이 <strong>&quot;32GB 사세요&quot;</strong>입니다. 틀린 답은 아니지만 쓸모도 적습니다.
 <strong>왜 32GB인지, 16GB로는 정확히 어디서 막히는지</strong>를 알아야 판단이 됩니다.</p>
 <p>그리고 로컬 LLM에서는 그 답이 <strong>본인 GPU에 따라 달라집니다.</strong></p>
-<h2 id="결론부터">결론부터</h2>
-<div class="table-wrap"><table>
-<thead><tr><th>상황</th><th>필요한 시스템 램</th></tr></thead>
-<tbody>
-<tr><td>모델이 VRAM에 전부 들어감</td><td><strong>16GB</strong> 로 충분</td></tr>
-<tr><td>VRAM을 조금 넘김 (2~3GB)</td><td>16GB로 가능하지만 여유 없음</td></tr>
-<tr><td>VRAM을 크게 넘김 (5GB 이상)</td><td><strong>32GB</strong></td></tr>
-<tr><td>GPU 없이 CPU로만</td><td><strong>모델 크기 + 8GB</strong></td></tr>
-</tbody>
-</table></div>
+<h2 id="답은-네-갈래뿐입니다">답은 네 갈래뿐입니다</h2>
+<p>모델이 VRAM에 <strong>전부 들어가면 16GB로 충분</strong>하고, 조금(2~3GB)
+넘기면 16GB로 버티지만 여유가 없고, <strong>크게(5GB 이상) 넘기면
+32GB</strong>가 필요하고, GPU 없이 CPU로만 돌리면 <strong>모델 크기 + 8GB</strong>를
+잡아야 합니다.</p>
 <p><strong>핵심은 &quot;VRAM을 얼마나 넘기느냐&quot;입니다.</strong> 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다.</p>
 <p>램과 VRAM이 각각 무슨 일을 하는지는
 <a href="/posts/local-llm-ram-vs-vram.html">로컬 LLM 램 몇 GB 필요한가</a>에 정리했습니다.
@@ -291,42 +285,32 @@ LPDDR 계열을 쓰는 모델이 특히 그렇습니다.</p>
 남는 램은 그냥 남습니다 — VRAM처럼 쓰이지 않습니다.</p>
 <p><strong>큰 모델을 쓰고 싶다면 램이 아니라 VRAM을 늘려야 합니다.</strong>
 32B를 제대로 쓰려면 램 64GB가 아니라 VRAM 24GB 이상입니다.</p>
-<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
-<h3 id="16gb에서-32gb로-늘리면-로컬-llm이-빨라지나요">16GB에서 32GB로 늘리면 로컬 LLM이 빨라지나요</h3>
-<p><strong>모델이 이미 VRAM에 전부 올라가고 있다면 차이가 없습니다.</strong>
-반대로 CPU 오프로딩이 일어나고 있었다면 체감할 수 있습니다.</p>
-<p>위 표에서 내 GPU와 모델 조합이 &quot;전부 VRAM&quot;이면 램을 늘려도 그대로입니다.</p>
-<h3 id="32gb와-64gb-중에-고민입니다">32GB와 64GB 중에 고민입니다</h3>
-<p>지금 32B 이상을 오프로딩으로 쓸 계획이 없다면 <strong>32GB로 충분합니다.</strong>
-그 돈을 VRAM이 더 큰 그래픽카드에 쓰는 편이 로컬 LLM에서는 훨씬 낫습니다.
-LLM 밖의 작업(가상머신·해석·영상)까지 포함한 판정은
-<a href="/posts/ram-64gb-worth-it.html">64GB 글</a>에 따로 정리했습니다.</p>
-<h3 id="ddr4와-ddr5-중-어느-쪽이-유리한가요">DDR4와 DDR5 중 어느 쪽이 유리한가요</h3>
-<p>CPU 오프로딩을 자주 한다면 대역폭이 높은 DDR5가 유리합니다.
-모델이 VRAM에 다 올라가는 환경이라면 차이가 크지 않습니다.
-<strong>이것 때문에 메인보드와 CPU까지 바꿀 정도의 차이는 아닙니다.</strong></p>
-<p>애초에 <strong>고를 수 있는 게 아닙니다</strong> — 메인보드가 정합니다.
-왜 그런지는 <a href="/posts/ddr4-vs-ddr5.html">DDR4와 DDR5 차이</a>에 정리했습니다.</p>
-<h3 id="램-클럭도-중요한가요">램 클럭도 중요한가요</h3>
-<p>용량만큼은 아닙니다. 우선순위는 <strong>용량 → 듀얼 채널 → 클럭</strong> 순입니다.
-32GB 싱글 채널보다 32GB 듀얼 채널이 먼저입니다.</p>
-<p>다만 <strong>이미 산 클럭조차 기본 설정으로는 안 나옵니다.</strong>
-<code>DDR5-6000</code> 을 사도 켜지 않으면 4800 으로 돕니다 —
-<a href="/posts/ram-xmp-expo.html">램 XMP·EXPO</a>에 확인법과 계산을 적었습니다.</p>
-<h3 id="16gb-한-장이-있는데-8gb를-더-꽂아도-되나요">16GB 한 장이 있는데 8GB를 더 꽂아도 되나요</h3>
-<p>동작은 합니다. 다만 용량이 다르면 듀얼 채널 이득을 온전히 못 받습니다
-(겹치는 만큼만 듀얼로 동작하는 경우가 많습니다).
-<strong>같은 용량 한 장을 더 꽂는 편</strong>이 낫습니다.</p>
-<h2 id="정리">정리</h2>
-<ol>
-<li><strong>&quot;32GB 사세요&quot;는 답이 아닙니다.</strong> VRAM을 얼마나 넘기느냐가 정합니다</li>
-<li><strong>모델이 VRAM에 다 들어가면 16GB로 충분</strong>합니다</li>
-<li>넘어가는 양이 <strong>5GB 이상이면 32GB</strong>가 필요합니다</li>
-<li>도커·에뮬레이터·VM을 <strong>둘 이상 동시에</strong> 쓰면 그것만으로도 32GB입니다</li>
-<li>큰 모델을 쓰고 싶으면 <strong>램이 아니라 VRAM</strong>을 늘려야 합니다</li>
-<li><strong>노트북·맥은 나중에 못 늘립니다.</strong> 살 때 정하세요</li>
-</ol>
-<p>내 GPU에서 어떤 모델이 돌아가는지는
+<h2 id="사면서-같이-나오는-고민들">사면서 같이 나오는 고민들</h2>
+<p><strong>&quot;늘리면 빨라지나&quot;부터</strong> — 모델이 이미 VRAM에 전부 올라가고
+있다면 램을 늘려도 차이가 없습니다. 반대로 CPU 오프로딩이
+일어나고 있었다면 체감합니다. 위 표에서 내 GPU와 모델 조합이
+&quot;전부 VRAM&quot;인지가 그 판정입니다.</p>
+<p><strong>32GB냐 64GB냐에서 고민된다면</strong> — 32B 이상을 오프로딩으로 쓸
+계획이 없는 한 32GB로 충분하고, 그 차액은 VRAM이 더 큰
+그래픽카드에 쓰는 편이 로컬 LLM에서는 훨씬 낫습니다. LLM 밖의
+작업(가상머신·해석·영상)까지 포함한 판정은
+<a href="/posts/ram-64gb-worth-it.html">64GB 글</a>에 따로 있습니다.</p>
+<p><strong>DDR4냐 DDR5냐는</strong> 애초에 고를 수 있는 게 아닙니다 — 메인보드가
+정합니다(<a href="/posts/ddr4-vs-ddr5.html">왜 그런지는 여기</a>). 오프로딩을
+자주 하면 대역폭 높은 DDR5가 유리한 방향이긴 하지만, 이것 때문에
+보드와 CPU까지 바꿀 정도의 차이는 아닙니다.</p>
+<p><strong>클럭은</strong> 용량만큼 중요하지 않습니다 — 우선순위는 <strong>용량 → 듀얼
+채널 → 클럭</strong> 순입니다. 그리고 이미 산 클럭조차 기본 설정으로는
+안 나옵니다. <code>DDR5-6000</code>을 사도 켜지 않으면 4800으로 돕니다 —
+<a href="/posts/ram-xmp-expo.html">XMP·EXPO 확인법</a>이 그 글입니다.</p>
+<p><strong>16GB 한 장에 8GB를 더 꽂는 조합은</strong> 동작은 하지만 용량이 다르면
+듀얼 채널 이득을 온전히 못 받습니다(겹치는 만큼만 듀얼로 도는
+경우가 많습니다). 같은 용량 한 장을 더 꽂는 편이 낫습니다.</p>
+<p>결론은 처음의 그 문장으로 돌아갑니다 — <strong>&quot;32GB 사세요&quot;는 답이
+아니라, VRAM을 얼마나 넘기느냐가 답을 정합니다.</strong> 다 들어가면
+16GB, 5GB 이상 넘치면 32GB, 큰 모델이 목표라면 램이 아니라 VRAM.
+그리고 노트북과 맥은 나중에 못 늘리니 살 때 정해야 합니다. 내
+GPU에서 어떤 모델이 돌아가는지는
 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>에 있습니다.</p>
 <p>수치가 실제 환경과 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
