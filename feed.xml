@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>게임이 자꾸 보조 모니터에서 열릴 때 — 윈도우의 "주 모니터"부터 잡으면 됩니다</title>
+    <link>https://specfit.kr/posts/game-wrong-monitor.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/game-wrong-monitor.html</guid>
+    <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
+    <description>듀얼 모니터에서 게임을 켰더니 옆의 보조 화면에서 전체화면으로 열리는 증상은 게시판 단골 질문입니다. 전체화면 게임 대부분이 윈도우의 "주 디스플레이"를 따르기 때문입니다 — 주 모니터 설정과 창모드 이동, 게임별 예외까지 손잡이 세 개를 정리했습니다.</description>
+  </item>
+  <item>
     <title>윈도우 업데이트 중 꺼도 되나 — 위험한 순간은 딱 한 구간입니다</title>
     <link>https://specfit.kr/posts/windows-update-force-shutdown.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/windows-update-force-shutdown.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/usb-port-charging.html</guid>
     <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
     <description>컴퓨터 USB에 폰을 꽂아 충전하고 선풍기·조명을 꽂아 쓰는 게 컴퓨터에 무리는 아닌지, 왜 충전이 느린지 궁금해하는 질문이 꾸준합니다. USB 포트는 데이터 통로에 곁들인 소량의 전원이라 전용 충전기와 체급이 다릅니다 — 컴퓨터 부담·절전 함정·허브 함정까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>USB를 꽂으면 소리만 나고 안 보일 때 — 소리가 났다는 건 절반은 성공했다는 뜻입니다</title>
-    <link>https://specfit.kr/posts/usb-not-showing.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/usb-not-showing.html</guid>
-    <pubDate>Sun, 06 Sep 2026 15:00:00 GMT</pubDate>
-    <description>USB를 꽂으면 "뚜둥" 연결음은 나는데 내 PC에는 아무것도 안 뜨는 증상은 커뮤니티 단골 질문입니다. 소리가 났다면 연결 층은 통과한 것이라 범인은 그 윗층에 있습니다 — 드라이브 문자, 드라이버, 인식 모드 순서의 판정과, 함부로 포맷하면 안 되는 이유까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>

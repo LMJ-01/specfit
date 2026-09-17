@@ -2,7 +2,7 @@
 title: 절전에서 깨면 창이 한쪽 모니터로 몰릴 때 — 모니터가 잠깐 "없는 것"이 됐기 때문입니다
 description: 듀얼 모니터에서 절전이나 디스플레이 끄기 후 복귀하면 열어 둔 창이 전부 한쪽 화면으로 몰리거나 왼쪽 위에 쌓이는 증상이 있습니다. 고장이 아니라 모니터가 꺼지는 순간 윈도우에게 사라진 것으로 보이기 때문입니다. 구조와 완화책 사다리를 정리했습니다.
 date: 2026-09-06
-updated: 2026-09-09
+updated: 2026-09-17
 category: monitor
 tags: [듀얼모니터, 절전모드, 창위치, 창몰림, 디스플레이끄기]
 ---
@@ -140,6 +140,7 @@ DP 연결에서 더 흔해서, HDMI로 바꿔 완화됐다는 보고가 있습�
 
 듀얼 모니터의 이웃 판정들 — [한쪽만 안 나옴](/posts/dual-monitor-one-blank.html) ·
 [게임 중 커서 이탈](/posts/dual-monitor-mouse-escape.html) ·
+[게임이 보조 모니터에서 열림](/posts/game-wrong-monitor.html) ·
 [DP vs HDMI](/posts/dp-vs-hdmi-coding.html)와 이어집니다.
 (절전 복귀의 형제 증상 — 창이 아니라 [소리가 안 돌아오는
 날](/posts/no-sound-after-sleep.html)도 같은 "점호" 이야기입니다.)
