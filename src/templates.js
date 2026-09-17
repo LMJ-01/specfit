@@ -205,7 +205,7 @@ export function postPage(post, related = []) {
       description: post.description,
       datePublished: post.date,
       dateModified: post.updated || post.date,
-      author: { '@type': 'Organization', name: config.author.name },
+      author: { '@type': 'Person', name: config.author.name, url: abs('/about.html') },
       publisher: { '@type': 'Organization', name: config.siteName },
       mainEntityOfPage: abs(post.url),
       image: abs(post.image || '/assets/og-default.png'),

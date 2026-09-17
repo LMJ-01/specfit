@@ -13,8 +13,10 @@ export const config = {
   locale: 'ko_KR',
   lang: 'ko',
 
+  // 운영자 닉네임 (2026-09-17 익명→닉네임 전환: E-E-A-T 보강,
+  // 글 저자 스키마 Person + 소개 페이지 "만드는 사람" 섹션과 세트)
   author: {
-    name: '스펙핏',
+    name: 'MJ',
     email: 'lmj010903@naver.com',
   },
 
