@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"리눅스 듀얼부팅이 필요한가 — WSL로 안 되는 것의 목록으로 판정합니다","description":"개발 공부를 하다 보면 리눅스 듀얼부팅을 해야 하나 고민이 옵니다. 요즘 기본값은 WSL이고, 듀얼부팅이 값을 하는 경우는 목록이 짧습니다. 갈림길과 각 선택의 숨은 비용을 정리했습니다.","datePublished":"2026-09-03","dateModified":"2026-09-03","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dual-boot-vs-wsl.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"리눅스 듀얼부팅이 필요한가 — WSL로 안 되는 것의 목록으로 판정합니다","description":"개발 공부를 하다 보면 리눅스 듀얼부팅을 해야 하나 고민이 옵니다. 요즘 기본값은 WSL이고, 듀얼부팅이 값을 하는 경우는 목록이 짧습니다. 갈림길과 각 선택의 숨은 비용을 정리했습니다.","datePublished":"2026-09-03","dateModified":"2026-09-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dual-boot-vs-wsl.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"리눅스 듀얼부팅이 필요한가 — WSL로 안 되는 것의 목록으로 판정합니다","item":"https://specfit.kr/posts/dual-boot-vs-wsl.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥북이면 어떻게 되나요","acceptedAnswer":{"@type":"Answer","text":"이 고민 자체가 없습니다 — 맥의 터미널이 이미 유닉스 계열이라 리눅스 개발 환경과의 거리가 가깝고, 도커도 그대로 돕니다. 맥에서 듀얼부팅을 검색하게 되는 경우는 드뭅니다."}},{"@type":"Question","name":"게임 때문에 윈도우는 지워도 못 지우는데요","acceptedAnswer":{"@type":"Answer","text":"그게 대부분의 현실이고, WSL이 기본값이 된 이유이기도 합니다 — 윈도우를 유지한 채 리눅스 환경을 얹는 구성이니까요. 듀얼부팅도 윈도우를 지우는 게 아니지만, 전환 마찰 때문에 게임 하는 날은 리눅스에 안 들어가게 되는 것이 흔한 패턴입니다."}},{"@type":"Question","name":"가상머신(VM)은 어디에 끼나요","acceptedAnswer":{"@type":"Answer","text":"WSL과 네이티브의 중간입니다 — 리눅스 데스크톱 화면까지 필요한데 듀얼부팅은 부담일 때의 절충입니다. 다만 램을 지정해 떼어 주는 물건이라 메모리 여유가 있어야 하고, 개발 터미널이 목적이면 WSL이 더 가볍습니다."}},{"@type":"Question","name":"회사·강의가 \"우분투 기준\"이라는데 WSL로 따라가도 되나요","acceptedAnswer":{"@type":"Answer","text":"WSL에 우분투를 깔면 명령어·패키지 기준으로 같은 환경입니다. 문제가 되는 것은 위 약점 목록(하드웨어·USB)에 걸리는 실습뿐이라, 걸리기 전까지는 WSL로 따라가는 게 정석입니다."}},{"@type":"Question","name":"WSL 쓰면 컴퓨터가 무거워진다던데요","acceptedAnswer":{"@type":"Answer","text":"리눅스를 통째로 돌리니 공짜는 아닙니다 — 특히 램을 넉넉히 잡는 동작이 체감의 주범인데, 상한 설정 한 줄로 다스릴 수 있습니다. 그 글이 이 글의 짝입니다."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>리눅스 듀얼부팅이 필요한가 — WSL로 안 되는 것의 목록으로 판정합니다</h1>
     <p class="post-meta">
       <time datetime="2026-09-03">2026년 9월 3일</time>
-      
+      <span class="updated">· 2026년 9월 17일 갱신</span>
     </p>
   </header>
 
@@ -171,7 +171,9 @@ WSL에서 다루면 눈에 띄게 느립니다. <strong>프로젝트를 WSL 파�
 </ol>
 <p>WSL의 메모리 문제는 <a href="/posts/wsl2-memory-limit.html">상한 설정 글</a>,
 개발 노트북 자체의 기준은 <a href="/posts/dev-laptop-spec.html">사양 글</a>에
-있습니다.</p>
+있습니다. (듀얼부팅을 이미 쓰는 중이고 <strong>부팅을 바꿀 때마다 시계가
+틀어진다</strong>면 — <a href="/posts/pc-clock-wrong.html">시계 판정 글</a>의 모양
+③이 그 증상입니다.)</p>
 <p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
   </div>
 

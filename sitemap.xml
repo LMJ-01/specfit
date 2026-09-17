@@ -14,9 +14,10 @@
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/posts/game-wrong-monitor.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-clock-wrong.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/windows-update-force-shutdown.html</loc><lastmod>2026-09-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/usb-hub-power.html</loc><lastmod>2026-09-15</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/pc-long-storage.html</loc><lastmod>2026-09-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-long-storage.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/screen-tearing.html</loc><lastmod>2026-09-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/modem-direct-connection.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-humming-vibration.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
@@ -97,7 +98,7 @@
   <url><loc>https://specfit.kr/posts/ssd-partition.html</loc><lastmod>2026-09-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/tablet-as-monitor.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/cpu-gpu-bottleneck.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/dual-boot-vs-wsl.html</loc><lastmod>2026-09-03</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/dual-boot-vs-wsl.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/modular-psu.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/router-reboot.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mixed-ram-capacity.html</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
