@@ -81,6 +81,13 @@
 (때로 두어 번) 꺼졌다 켜진 뒤 멀쩡히 부팅되면 정상 동작인 경우가
 많고, 켜졌다 꺼지기를 무한히 반복하며 화면까지 못 가면 그건 진단이
 필요한 갈래입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 210" width="640" height="210" role="img" aria-label="한 번이면 정상, 반복이면 사다리">
+<title>한 번이면 정상, 반복이면 사다리</title>
+<text x="24" y="26" fill="var(--fg)" font-size="13.5" font-weight="600">기준은 하나 — 결국 정상 부팅에 도달하는가</text><rect x="230" y="40" width="180" height="26" fill="var(--bg-soft)" rx="8"/><text x="320" y="57" fill="var(--fg)" font-size="11" font-weight="600" text-anchor="middle">켜짐 → 툭 꺼짐 → 다시 켜짐</text><line x1="280" y1="66" x2="165" y2="92" stroke="var(--line)" stroke-width="1.5"/><line x1="360" y1="66" x2="475" y2="92" stroke="var(--line)" stroke-width="1.5"/><rect x="30" y="92" width="270" height="26" fill="var(--fig-fit)" rx="8"/><text x="165" y="109" fill="#fff" font-size="11.5" font-weight="600" text-anchor="middle">한두 번 뒤 정상 부팅 도달</text><text x="38" y="138" fill="var(--fg-muted)" font-size="10.5">램 점호(메모리 트레이닝)일 확률 높음</text><text x="38" y="157" fill="var(--fg-muted)" font-size="10.5">XMP·설정 변경·정전 직후라면 더 그렇습니다</text><text x="38" y="176" fill="var(--fg-muted)" font-size="10.5">→ 정상 동작 — 부품 상하지 않음</text><rect x="340" y="92" width="270" height="26" fill="var(--fig-over)" rx="8"/><text x="475" y="109" fill="#fff" font-size="11.5" font-weight="600" text-anchor="middle">반복만 하고 화면까지 못 감</text><text x="348" y="138" fill="var(--fg-muted)" font-size="10.5">진단 갈래 — 순서대로:</text><text x="348" y="157" fill="var(--fg-muted)" font-size="10.5">① 전원(파워 노화·용량·벽 직결) ② 접점(재장착)</text><text x="348" y="176" fill="var(--fg-muted)" font-size="10.5">③ 설정(XMP 끄기·CMOS 리셋)</text>
+</svg>
+<figcaption>같은 이름으로 불리는 두 증상 — 정상 부팅 도달 여부가 갈림길입니다.</figcaption>
+</figure>
 <h2 id="한-번-꺼졌다-켜짐-램-점호인-경우가-많습니다">한 번 꺼졌다 켜짐 — &quot;램 점호&quot;인 경우가 많습니다</h2>
 <p>요즘 메인보드는 전원이 들어오면 <strong>램을 초기화하고 안정 값을 잡는
 과정(메모리 트레이닝)</strong>을 거치는데, 이 과정에서 <strong>일부러 전원을

@@ -865,6 +865,7 @@ export const figures = {
   'router-three-jobs': routerThreeJobs,
   'update-two-phases': updateTwoPhases,
   'clock-three-shapes': clockThreeShapes,
+  'off-on-fork': offOnFork,
 };
 
 /**
@@ -2964,5 +2965,37 @@ function clockThreeShapes() {
     '시계가 틀리는 세 모양 — 범인이 전부 다릅니다',
     W, 192, b,
     '모양만 보면 갈래가 하나로 좁혀지고, 세 갈래 모두 처방이 가볍습니다.'
+  );
+}
+
+
+/**
+ * 켜졌다 꺼짐의 갈림 — 한 번 후 정상 부팅(램 점호=정상 가능) vs
+ * 무한 반복(전원→접점→설정 사다리). pc-turns-off-then-on 고정.
+ */
+function offOnFork() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '기준은 하나 — 결국 정상 부팅에 도달하는가', { weight: 600, size: 13.5 });
+  b += rect(230, 40, 180, 26, COLOR.soft, { r: 8 });
+  b += t(320, 57, '켜짐 → 툭 꺼짐 → 다시 켜짐', { anchor: 'middle', size: 11, weight: 600 });
+  b += '<line x1="280" y1="66" x2="165" y2="92" stroke="var(--line)" stroke-width="1.5"/>';
+  b += '<line x1="360" y1="66" x2="475" y2="92" stroke="var(--line)" stroke-width="1.5"/>';
+  // 왼쪽: 정상 도달
+  b += rect(30, 92, 270, 26, COLOR.fit, { r: 8 });
+  b += t(165, 109, '한두 번 뒤 정상 부팅 도달', { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+  ['램 점호(메모리 트레이닝)일 확률 높음', 'XMP·설정 변경·정전 직후라면 더 그렇습니다', '→ 정상 동작 — 부품 상하지 않음'].forEach((ln, i) => {
+    b += t(38, 138 + i * 19, ln, { size: 10.5, fill: COLOR.mute });
+  });
+  // 오른쪽: 반복
+  b += rect(340, 92, 270, 26, COLOR.over, { r: 8 });
+  b += t(475, 109, '반복만 하고 화면까지 못 감', { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+  ['진단 갈래 — 순서대로:', '① 전원(파워 노화·용량·벽 직결) ② 접점(재장착)', '③ 설정(XMP 끄기·CMOS 리셋)'].forEach((ln, i) => {
+    b += t(348, 138 + i * 19, ln, { size: 10.5, fill: COLOR.mute });
+  });
+  return figure(
+    '한 번이면 정상, 반복이면 사다리',
+    W, 210, b,
+    '같은 이름으로 불리는 두 증상 — 정상 부팅 도달 여부가 갈림길입니다.'
   );
 }
