@@ -864,6 +864,7 @@ export const figures = {
   'hub-power-split': hubPowerSplit,
   'router-three-jobs': routerThreeJobs,
   'update-two-phases': updateTwoPhases,
+  'clock-three-shapes': clockThreeShapes,
 };
 
 /**
@@ -2924,5 +2925,44 @@ function updateTwoPhases() {
     '업데이트의 두 단계 — 위험은 한 구간에만 있습니다',
     W, 200, b,
     '받는 단계는 끊어도 이어받고, 갈아끼우는 단계만 전원이 끊기면 안 되는 구간입니다.'
+  );
+}
+
+
+/**
+ * 시계가 틀리는 세 모양 — 슬금슬금(동기화)·켤 때마다 과거(배터리)·
+ * 몇 시간 단위(시간대/듀얼부팅). pc-clock-wrong 갈래 고정.
+ */
+function clockThreeShapes() {
+  const W = 640;
+  const col = (x, head, lines, verdict, color) => {
+    let s = rect(x, 44, 190, 40, COLOR.soft, { r: 8 });
+    s += t(x + 95, 61, head[0], { anchor: 'middle', size: 11.5, weight: 600 });
+    s += t(x + 95, 77, head[1], { anchor: 'middle', size: 11.5, weight: 600 });
+    lines.forEach((ln, i) => {
+      s += t(x + 8, 106 + i * 18, ln, { size: 10, fill: COLOR.mute });
+    });
+    s += rect(x, 152, 190, 24, 'transparent', { r: 8, stroke: color });
+    s += t(x + 95, 168, verdict, { anchor: 'middle', size: 10.5, weight: 600, fill: color });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '어떻게 틀리는지가 곧 갈래입니다', { weight: 600, size: 13.5 });
+  b += col(24, ['몇 분씩', '슬금슬금 어긋남'], [
+    '내부 시계의 자연스러운 오차',
+    '맞춰줄 동기화가 안 도는 상태',
+  ], '동기화 켜기 · 지금 동기화', COLOR.fit);
+  b += col(225, ['껐다 켜면', '몇 년 전으로'], [
+    '꺼진 동안 시계를 지키는',
+    '코인 배터리가 소모됨',
+  ], '배터리 교체 사안 (고장 아님)', COLOR.accent);
+  b += col(426, ['정확히 몇 시간', '단위로 어긋남'], [
+    '시계가 아니라 해석의 문제',
+    '시간대 설정 · 듀얼부팅',
+  ], '시간대 확인 · 기준 통일', COLOR.over);
+  return figure(
+    '시계가 틀리는 세 모양 — 범인이 전부 다릅니다',
+    W, 192, b,
+    '모양만 보면 갈래가 하나로 좁혀지고, 세 갈래 모두 처방이 가볍습니다.'
   );
 }
