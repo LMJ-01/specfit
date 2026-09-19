@@ -2,6 +2,7 @@
 title: 노트북 팬이 계속 돌 때, 안 돌 때 — 반대 걱정 둘이 같은 문장으로 풀립니다
 description: 팬이 쉬지 않고 돌아서 불안한 사람과, 너무 조용해서 고장인가 싶은 사람이 같은 게시판에 있습니다. 팬은 원인이 아니라 온도의 통역사 — 팬이 하는 말을 읽는 법과, 계속 돎·안 돎 각각의 판정 순서를 정리했습니다.
 date: 2026-09-10
+updated: 2026-09-19
 category: laptop
 tags: [노트북팬소음, 팬안돌아감, 노트북발열, 팬소리, 노트북관리]
 ---
@@ -149,6 +150,7 @@ tags: [노트북팬소음, 팬안돌아감, 노트북발열, 팬소리, 노트�
 팬과 열의 이웃 판정들 — [부팅 때만 큰 팬소리(점호)](/posts/pc-fan-loud-at-boot.html) ·
 [파워 제로팬의 논리](/posts/psu-zero-fan.html) ·
 [스로틀링의 구조](/posts/laptop-thermal-throttling.html) ·
+[침대·이불 사용 판정](/posts/laptop-on-bed.html) ·
 [미니PC의 발열 판정](/posts/mini-pc-heat.html)과 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
