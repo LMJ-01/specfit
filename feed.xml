@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>게임하다 갑자기 "신호 없음" — 본체가 살아 있다면 용의자는 셋뿐입니다</title>
+    <link>https://specfit.kr/posts/monitor-no-signal-gaming.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-no-signal-gaming.html</guid>
+    <pubDate>Fri, 18 Sep 2026 15:00:00 GMT</pubDate>
+    <description>게임 중 화면이 툭 꺼지고 모니터에 신호 없음이 뜨는데 본체 팬은 계속 돌고 게임 소리도 들립니다. 전원이 나간 게 아니라 화면 신호 계통만 끊긴 증상이라 용의자가 좁혀집니다 — 복귀 여부로 가르는 판정과 격리 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>침대에서 노트북 써도 되나 — 문제는 침대가 아니라 이불이 막는 구멍입니다</title>
     <link>https://specfit.kr/posts/laptop-on-bed.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-on-bed.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-fan-noise.html</guid>
     <pubDate>Wed, 09 Sep 2026 15:00:00 GMT</pubDate>
     <description>팬이 쉬지 않고 돌아서 불안한 사람과, 너무 조용해서 고장인가 싶은 사람이 같은 게시판에 있습니다. 팬은 원인이 아니라 온도의 통역사 — 팬이 하는 말을 읽는 법과, 계속 돎·안 돎 각각의 판정 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>본체 만질 때마다 찌릿할 때 — "한 번 톡"과 "계속 저릿"은 완전히 다른 문제입니다</title>
-    <link>https://specfit.kr/posts/pc-static-shock.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-static-shock.html</guid>
-    <pubDate>Tue, 08 Sep 2026 15:00:00 GMT</pubDate>
-    <description>컴퓨터 케이스를 만질 때 찌릿한 경험은 겨울 단골 하소연입니다. 순간 한 번 톡 하고 끝나는 정전기와, 만질 때마다 저릿한 누설 전류는 원인도 처방도 다릅니다 — 두 갈래를 가르는 판정과 각각의 대응을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
