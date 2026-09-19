@@ -866,6 +866,7 @@ export const figures = {
   'update-two-phases': updateTwoPhases,
   'clock-three-shapes': clockThreeShapes,
   'off-on-fork': offOnFork,
+  'triple-check-funnel': tripleCheckFunnel,
 };
 
 /**
@@ -2997,5 +2998,35 @@ function offOnFork() {
     '한 번이면 정상, 반복이면 사다리',
     W, 210, b,
     '같은 이름으로 불리는 두 증상 — 정상 부팅 도달 여부가 갈림길입니다.'
+  );
+}
+
+
+/**
+ * 트리플 모니터 확인 3단계 — 포트 수 → 동시 출력 상한 → 대역폭.
+ * triple-monitor-setup "포트만 세면 반만 맞다" 고정.
+ */
+function tripleCheckFunnel() {
+  const W = 640;
+  const step = (x, num, head, sub, color) => {
+    let s = rect(x, 52, 180, 26, color, { r: 8 });
+    s += t(x + 90, 69, num + ' ' + head, { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 96 + i * 17, ln, { size: 9.8, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '"포트 세 개 있으면 됩니다"는 반만 맞는 답입니다', { weight: 600, size: 13 });
+  b += step(24, '①', '포트 수 세기', ['카드 뒷면 HDMI·DP', '요즘 카드는 3~4개', '전부 카드 쪽에 꽂기'], COLOR.fit);
+  b += '<line x1="204" y1="65" x2="228" y2="65" stroke="var(--line)" stroke-width="2"/>';
+  b += step(228, '②', '동시 출력 상한', ['포트 수 ≠ 출력 수일 수', '있음 — 사양표의', '"최대 디스플레이 수" 확인'], COLOR.accent);
+  b += '<line x1="408" y1="65" x2="432" y2="65" stroke="var(--line)" stroke-width="2"/>';
+  b += step(432, '③', '해상도 조합', ['FHD·QHD 셋은 대개 무난', '4K·고주사율 조합부터', '지원 조합 확인 영역'], COLOR.over);
+  b += t(24, 172, '셋 다 통과 못 하면 → 우회로: 내장 그래픽 출력 · DP 데이지체인(MST) · USB 어댑터', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '모니터 3대의 확인 3단계',
+    W, 190, b,
+    '포트 수는 시작일 뿐 — 동시 출력 상한과 해상도 조합까지 봐야 계산이 끝납니다.'
   );
 }
