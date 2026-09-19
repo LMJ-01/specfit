@@ -13,6 +13,13 @@
     <description>침대나 이불 위에서 노트북을 쓰면 고장 난다는 말에 걱정이 됩니다. 반은 과장이고 반은 사실입니다 — 바닥의 숨구멍이 막히면 무슨 일이 생기는지, 실제 위험은 어느 축인지, 침대에서 괜찮게 쓰는 조건 셋을 정리했습니다.</description>
   </item>
   <item>
+    <title>전면 USB만 안 될 때 — 앞 포트는 연장선 너머에 있습니다</title>
+    <link>https://specfit.kr/posts/front-usb-not-working.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/front-usb-not-working.html</guid>
+    <pubDate>Fri, 18 Sep 2026 15:00:00 GMT</pubDate>
+    <description>본체 뒤 USB는 멀쩡한데 앞 포트만 인식이 안 되거나 끊기는 증상은 게시판 단골 질문입니다. 뒷면은 메인보드 직결, 전면은 케이스 케이블을 한 번 거치는 구조라 용의자가 다릅니다 — 갈래별 판정 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>켜자마자 꺼졌다가 다시 켜지는 컴퓨터 — 한 번이면 정상, 반복이면 사다리입니다</title>
     <link>https://specfit.kr/posts/pc-turns-off-then-on.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-turns-off-then-on.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-static-shock.html</guid>
     <pubDate>Tue, 08 Sep 2026 15:00:00 GMT</pubDate>
     <description>컴퓨터 케이스를 만질 때 찌릿한 경험은 겨울 단골 하소연입니다. 순간 한 번 톡 하고 끝나는 정전기와, 만질 때마다 저릿한 누설 전류는 원인도 처방도 다릅니다 — 두 갈래를 가르는 판정과 각각의 대응을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>듀얼 모니터 한쪽만 끄고 싶을 때 — 전원 버튼이 오답인 이유부터 압니다</title>
-    <link>https://specfit.kr/posts/dual-monitor-turn-off-one.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/dual-monitor-turn-off-one.html</guid>
-    <pubDate>Tue, 08 Sep 2026 15:00:00 GMT</pubDate>
-    <description>게임이나 영화 볼 때 보조 모니터만 잠깐 끄고 싶다는 질문이 게시판에 꾸준합니다. 모니터 전원 버튼은 창이 다 넘어오는 부작용의 지름길이라 오답에 가깝습니다 — 윈도우 쪽에서 끄는 정답 경로와, 연결 방식에 따라 부작용이 갈리는 이유를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
