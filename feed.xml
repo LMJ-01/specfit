@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>화면이 멈추고 소리가 드르륵 반복될 때 — 마지막 소리 조각이 남긴 단서입니다</title>
+    <link>https://specfit.kr/posts/pc-freeze-sound-loop.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-freeze-sound-loop.html</guid>
+    <pubDate>Sat, 19 Sep 2026 15:00:00 GMT</pubDate>
+    <description>게임이나 작업 중 화면이 정지하고 소리가 드르륵 끊겨 반복되는 프리징은 게시판 단골 증상입니다. 그 드르륵이 무엇인지 알면 갈래가 보입니다 — 멈추는 때와 복귀 여부로 가르는 판정, 드라이버·저장장치·램·온도 네 갈래를 정리했습니다.</description>
+  </item>
+  <item>
     <title>게임하다 갑자기 "신호 없음" — 본체가 살아 있다면 용의자는 셋뿐입니다</title>
     <link>https://specfit.kr/posts/monitor-no-signal-gaming.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-no-signal-gaming.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-heat.html</guid>
     <pubDate>Wed, 09 Sep 2026 15:00:00 GMT</pubDate>
     <description>미니PC를 만져보고 뜨거워서 놀라는 질문이 게시판에 꾸준합니다. 작은 몸은 같은 일을 해도 따뜻한 게 기본값이고, 금속 바디의 열은 오히려 열이 잘 빠져나오고 있다는 뜻일 수 있습니다 — 걱정할 신호와 아닌 것의 구분, 배치 처방까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>노트북 팬이 계속 돌 때, 안 돌 때 — 반대 걱정 둘이 같은 문장으로 풀립니다</title>
-    <link>https://specfit.kr/posts/laptop-fan-noise.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/laptop-fan-noise.html</guid>
-    <pubDate>Wed, 09 Sep 2026 15:00:00 GMT</pubDate>
-    <description>팬이 쉬지 않고 돌아서 불안한 사람과, 너무 조용해서 고장인가 싶은 사람이 같은 게시판에 있습니다. 팬은 원인이 아니라 온도의 통역사 — 팬이 하는 말을 읽는 법과, 계속 돎·안 돎 각각의 판정 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
