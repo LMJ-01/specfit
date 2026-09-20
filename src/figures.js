@@ -867,6 +867,7 @@ export const figures = {
   'clock-three-shapes': clockThreeShapes,
   'off-on-fork': offOnFork,
   'triple-check-funnel': tripleCheckFunnel,
+  'bed-intake-block': bedIntakeBlock,
 };
 
 /**
@@ -3028,5 +3029,36 @@ function tripleCheckFunnel() {
     '모니터 3대의 확인 3단계',
     W, 190, b,
     '포트 수는 시작일 뿐 — 동시 출력 상한과 해상도 조합까지 봐야 계산이 끝납니다.'
+  );
+}
+
+
+/**
+ * 침대 위 노트북 — 딱딱한 바닥(흡기 생존) vs 이불 위(막힘+열 재흡입).
+ * laptop-on-bed "막힌 구멍이 죄" 고정.
+ */
+function bedIntakeBlock() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '같은 노트북, 다른 바닥 — 숨구멍의 운명이 갈립니다', { weight: 600, size: 13 });
+  // 왼쪽: 책상/판
+  b += t(30, 52, '딱딱한 바닥 (책상·트레이·책)', { size: 11.5, weight: 600, fill: COLOR.fit });
+  b += rect(30, 64, 250, 18, COLOR.soft, { r: 6 });
+  b += t(155, 77, '노트북', { anchor: 'middle', size: 10.5 });
+  b += '<line x1="30" y1="96" x2="280" y2="96" stroke="var(--line)" stroke-width="3"/>';
+  b += t(30, 114, '바닥과 틈 → 찬 공기가 들어올 길이 있음', { size: 10, fill: COLOR.mute });
+  b += t(30, 132, '→ 팬 정상 · 성능 유지', { size: 10.5, weight: 600, fill: COLOR.fit });
+  // 오른쪽: 이불
+  b += t(360, 52, '이불·매트리스 위', { size: 11.5, weight: 600, fill: COLOR.over });
+  b += rect(360, 64, 250, 18, COLOR.soft, { r: 6 });
+  b += t(485, 77, '노트북', { anchor: 'middle', size: 10.5 });
+  b += '<path d="M360 92 Q385 84 410 92 T460 92 T510 92 T560 92 T610 92" fill="none" stroke="var(--line)" stroke-width="3"/>';
+  b += t(360, 114, '푹신함이 흡기구를 막고 배출열을 품음', { size: 10, fill: COLOR.mute });
+  b += t(360, 132, '→ 팬 최대 → 스로틀링(항복)', { size: 10.5, weight: 600, fill: COLOR.over });
+  b += t(24, 166, '처방은 판 하나 — 이불과 노트북 사이를 끊는 딱딱한 받침이면 숨구멍이 살아납니다', { size: 10.5, fill: COLOR.accent });
+  return figure(
+    '침대가 아니라 막힌 구멍이 죄입니다',
+    W, 184, b,
+    '노트북 다수는 바닥·측면 흡기 — 푹신한 표면은 구멍을 막고 열을 되돌려 보냅니다.'
   );
 }
