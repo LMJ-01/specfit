@@ -82,6 +82,8 @@ SSD](/posts/ssd-full-slowdown.html), 노후 디스크, 케이블 접촉이
 프리징이 **오래 부하를 준 뒤에만** 온다면 이 갈래 — 먼지·통풍을
 먼저 보는 게 순서입니다.
 
+{{FIG:game-issue-family}}
+
 마지막으로 이웃 지도를 그려두면 헤매지 않습니다. 게임 중 이상은
 네 갈래로 갈립니다 — 순간 멈칫했다 돌아오면
 [스터터](/posts/game-stutter-fps.html), 화면만 꺼지고 소리는

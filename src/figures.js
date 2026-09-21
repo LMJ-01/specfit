@@ -869,6 +869,7 @@ export const figures = {
   'triple-check-funnel': tripleCheckFunnel,
   'bed-intake-block': bedIntakeBlock,
   'signal-path-suspects': signalPathSuspects,
+  'game-issue-family': gameIssueFamily,
 };
 
 /**
@@ -3095,5 +3096,33 @@ function signalPathSuspects() {
     '"신호 없음" 용의자 셋 — 싼 것부터',
     W, 236, b,
     '소리로 생존을 확인했다면 남은 길은 카드 출력→케이블→모니터 — 케이블·전기·카드 순으로 배제합니다.'
+  );
+}
+
+/**
+ * 게임 중 이상 4가족 지도 — 증상의 얼굴로 갈래를 가르는 분기.
+ * pc-freeze-sound-loop 마무리 "이웃 지도" 고정.
+ */
+function gameIssueFamily() {
+  const W = 640;
+  const cell = (x, y, head, sub, color, headFill) => {
+    let s = rect(x, y, 296, 26, color, { r: 8, stroke: COLOR.line });
+    s += t(x + 148, y + 17, head, { anchor: 'middle', size: 11.5, weight: 600, fill: headFill || '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 8, y + 44 + i * 16, ln, { size: 9.8, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '게임 중 이상 — 증상의 얼굴이 곧 갈래입니다', { weight: 600, size: 13 });
+  b += cell(24, 44, '순간 멈칫했다 돌아옴', ['끊김(스터터) 갈래', '평균 프레임이 아니라 간격 문제'], COLOR.fit);
+  b += cell(330, 44, '화면만 꺼짐 · 소리는 계속', ['"신호 없음" 갈래', '신호 길(카드→케이블→모니터)만 단절'], COLOR.accent);
+  b += cell(24, 122, '통째로 꺼짐 · 소리도 정적', ['게임 중 꺼짐 갈래', '전원 계통(보호 동작·전압) 무게'], COLOR.over);
+  b += cell(330, 122, '화면·소리·입력 다 얼어붙음', ['프리징 갈래 — 이 글', '드르륵 반복음 = 시스템 전체 정지'], COLOR.soft, COLOR.text);
+  b += t(24, 206, '판정 기준은 둘 — 소리가 계속 나는가, 저절로 돌아오는가', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '게임 중 이상 4갈래 지도',
+    W, 224, b,
+    '멈칫·화면만·통째·전부 — 얼굴만 정확히 읽어도 판정의 절반입니다.'
   );
 }
