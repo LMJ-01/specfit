@@ -868,6 +868,7 @@ export const figures = {
   'off-on-fork': offOnFork,
   'triple-check-funnel': tripleCheckFunnel,
   'bed-intake-block': bedIntakeBlock,
+  'signal-path-suspects': signalPathSuspects,
 };
 
 /**
@@ -3060,5 +3061,39 @@ function bedIntakeBlock() {
     '침대가 아니라 막힌 구멍이 죄입니다',
     W, 184, b,
     '노트북 다수는 바닥·측면 흡기 — 푹신한 표면은 구멍을 막고 열을 되돌려 보냅니다.'
+  );
+}
+
+/**
+ * 게임 중 "신호 없음" — 살아 있는 시스템과 끊긴 신호 길, 용의자 셋.
+ * monitor-no-signal-gaming "소리가 나면 용의자는 셋" 고정.
+ */
+function signalPathSuspects() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '본체는 살아 있는데 화면만 죽었다 — 신호가 지나는 길을 봅니다', { weight: 600, size: 13 });
+  // 생존 확인 배지
+  b += rect(24, 44, 180, 26, COLOR.fit, { r: 8 });
+  b += t(114, 61, '팬 회전 · 게임 소리 지속', { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+  b += t(24, 88, '= 전원·시스템 생존 — 용의선상에서 제외', { size: 10.5, fill: COLOR.mute });
+  // 신호 경로: 카드 → 케이블 → 모니터
+  const stop = (x, label, num, sub) => {
+    let s = rect(x, 108, 170, 26, COLOR.over, { r: 8 });
+    s += t(x + 85, 125, num + ' ' + label, { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 152 + i * 17, ln, { size: 9.8, fill: COLOR.mute });
+    });
+    return s;
+  };
+  b += stop(24, '길: 케이블·커넥터', '①', ['다른 케이블·포트·모니터', '교차 실험이 가장 싼 배제', '각도 따라 오락가락=접촉']);
+  b += '<line x1="194" y1="121" x2="218" y2="121" stroke="var(--line)" stroke-width="2"/>';
+  b += stop(218, '전기: 부하 순간 전압', '②', ['게임 부하 순간에만 끊김', '파워 나이·용량·보조전원', '체결까지가 이 갈래']);
+  b += '<line x1="388" y1="121" x2="412" y2="121" stroke="var(--line)" stroke-width="2"/>';
+  b += stop(412, '카드: 내장으로 격리', '③', ['보드 포트에 꽂아 재현', '내장은 멀쩡+카드만 끊김', '= 카드 쪽 확정']);
+  b += t(24, 218, '순서의 이유 — 돈 드는 결론(카드·파워 교체)을 맨 뒤로 미루는 배치입니다', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '"신호 없음" 용의자 셋 — 싼 것부터',
+    W, 236, b,
+    '소리로 생존을 확인했다면 남은 길은 카드 출력→케이블→모니터 — 케이블·전기·카드 순으로 배제합니다.'
   );
 }
