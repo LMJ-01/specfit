@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다</title>
+    <link>https://specfit.kr/posts/mouse-double-click.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mouse-double-click.html</guid>
+    <pubDate>Sun, 20 Sep 2026 15:00:00 GMT</pubDate>
+    <description>마우스를 한 번 클릭했는데 창이 두 개 열리고, 드래그하던 파일이 중간에 떨어집니다. 버튼 밑 스위치의 접점 노화가 만드는 채터링 증상입니다 — 진짜 고장인지 가르는 판별, 당장 쓸 수 있는 완화, 근본 해결의 저울을 정리했습니다.</description>
+  </item>
+  <item>
     <title>화면이 멈추고 소리가 드르륵 반복될 때 — 마지막 소리 조각이 남긴 단서입니다</title>
     <link>https://specfit.kr/posts/pc-freeze-sound-loop.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-freeze-sound-loop.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/game-install-ssd-hdd.html</guid>
     <pubDate>Thu, 10 Sep 2026 15:00:00 GMT</pubDate>
     <description>SSD와 HDD 중 어디에 게임을 설치해야 하는지는 저장장치 게시판의 단골 질문입니다. 설치 위치는 프레임을 바꾸지 않고 로딩을 바꿉니다 — 그 구조와 예외(스트리밍형 대작), 자주 하는 게임만 SSD에 두는 운용까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>미니PC가 뜨거운데 괜찮은 건가 — 몸이 뜨거운 것과 아픈 것은 다릅니다</title>
-    <link>https://specfit.kr/posts/mini-pc-heat.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/mini-pc-heat.html</guid>
-    <pubDate>Wed, 09 Sep 2026 15:00:00 GMT</pubDate>
-    <description>미니PC를 만져보고 뜨거워서 놀라는 질문이 게시판에 꾸준합니다. 작은 몸은 같은 일을 해도 따뜻한 게 기본값이고, 금속 바디의 열은 오히려 열이 잘 빠져나오고 있다는 뜻일 수 있습니다 — 걱정할 신호와 아닌 것의 구분, 배치 처방까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>

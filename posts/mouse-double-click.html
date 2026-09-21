@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다 | 스펙핏</title>
+<meta name="description" content="마우스를 한 번 클릭했는데 창이 두 개 열리고, 드래그하던 파일이 중간에 떨어집니다. 버튼 밑 스위치의 접점 노화가 만드는 채터링 증상입니다 — 진짜 고장인지 가르는 판별, 당장 쓸 수 있는 완화, 근본 해결의 저울을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/mouse-double-click.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다 | 스펙핏">
+<meta property="og:description" content="마우스를 한 번 클릭했는데 창이 두 개 열리고, 드래그하던 파일이 중간에 떨어집니다. 버튼 밑 스위치의 접점 노화가 만드는 채터링 증상입니다 — 진짜 고장인지 가르는 판별, 당장 쓸 수 있는 완화, 근본 해결의 저울을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/mouse-double-click.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다","description":"마우스를 한 번 클릭했는데 창이 두 개 열리고, 드래그하던 파일이 중간에 떨어집니다. 버튼 밑 스위치의 접점 노화가 만드는 채터링 증상입니다 — 진짜 고장인지 가르는 판별, 당장 쓸 수 있는 완화, 근본 해결의 저울을 정리했습니다.","datePublished":"2026-09-21","dateModified":"2026-09-21","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mouse-double-click.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다","item":"https://specfit.kr/posts/mouse-double-click.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-21">2026년 9월 21일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>한 번 클릭했는데 폴더가 두 개 열립니다. 파일을 끌고 가다가 중간에
+툭 떨어뜨리고, 문서에서 단어 하나를 클릭했는데 문단이 통째로
+선택됩니다 — 전부 같은 증상의 다른 얼굴입니다. 마우스가 <strong>한 번
+누름을 여러 번으로 보고하는</strong> 상태고, 게시판에서는 특정 브랜드
+&quot;고질병&quot; 논쟁으로 단골 등판하는 그 문제입니다.</p>
+<h2 id="진짜-고장인지-3분-판별">진짜 고장인지 3분 판별</h2>
+<p>수리 이야기 전에, 마우스 죄가 맞는지부터 확인할 가치가 있습니다.
+헛수고를 크게 줄여주는 확인 셋입니다.</p>
+<p><strong>설정부터 배제합니다.</strong> 윈도우 폴더 옵션에 &quot;한 번 클릭해서
+열기&quot;가 켜져 있으면 고장이 아니라 설정입니다 — 파일 탐색기 옵션
+에서 &quot;두 번 클릭해서 열기&quot;로 되어 있는지 봅니다. 더블클릭 인식
+속도가 너무 빠르게 잡혀 있어도 체감이 비슷해질 수 있고요.</p>
+<p><strong>드래그로 관찰합니다.</strong> 파일이나 창을 끌고 다녀 봅니다. 버튼을
+계속 누르고 있는데 <strong>중간에 놓쳤다 다시 잡는다면</strong> — 설정으로는
+설명이 안 되는, 접점이 순간적으로 끊긴 물리 증상입니다.</p>
+<p><strong>다른 컴퓨터에 꽂아 봅니다.</strong> 거기서도 재현되면 마우스 확정,
+멀쩡하면 내 컴퓨터 쪽(설정·드라이버)으로 무게가 옮겨 갑니다 —
+<a href="/posts/dual-monitor-one-blank.html">듀얼 모니터 진단의 맞바꾸기</a>와
+같은 격리 논리입니다.</p>
+<h2 id="정체-접점의-노화가-만드는-떨림">정체 — 접점의 노화가 만드는 떨림</h2>
+<p>버튼 아래에는 클릭을 전기 신호로 바꾸는 작은 스위치가 있습니다.
+이 스위치의 금속 접점이 오래 쓰이며 닳거나 오염되면, 한 번
+눌렀을 때 신호가 깔끔하게 한 번 나가는 게 아니라 <strong>붙었다
+떨어졌다를 순간적으로 반복</strong>하게 됩니다(채터링이라 부릅니다).
+컴퓨터 입장에선 아주 빠른 두 번 클릭과 구분이 안 되니, 더블클릭
+으로 처리되는 겁니다.</p>
+<p><a href="/posts/keyboard-some-keys-dead.html">키보드에서 한 번 친 키가 두 번 입력되는 것</a>,
+<a href="/posts/mouse-wheel-jump.html">휠이 반대로 튀는 것</a>과 부품만 다른
+같은 계열이라, 성질도 같습니다 — <strong>어쩌다 한 번에서 시작해 점점
+잦아지는 방향</strong>이고, 저절로 낫는 경우는 기대하기 어렵습니다.</p>
+<h2 id="당장-쓸-수-있는-완화-단-임시입니다">당장 쓸 수 있는 완화 — 단, 임시입니다</h2>
+<p>버튼 틈의 먼지·이물을 청소하면 오염이 원인인 경우 나아질 수
+있습니다. 제조사 소프트웨어나 커뮤니티에서 쓰이는 도구 중에는
+<strong>너무 빨리 연달아 들어온 클릭을 무시하게 하는 설정</strong>(더블클릭
+딜레이류)이 있는 제품·도구도 있어, 소프트웨어로 증상을 걸러내는
+우회가 됩니다.</p>
+<p>다만 성격을 정확히 아는 게 중요합니다 — 둘 다 닳은 접점을
+되돌리는 게 아니라 <strong>증상을 가리는 처치</strong>라, 노화가 진행되면
+결국 다시 뚫고 나옵니다. 급한 작업을 넘기는 다리로는 충분하고,
+해결로 오해하지만 않으면 됩니다.</p>
+<h2 id="근본과-저울">근본과 저울</h2>
+<p>근본 해결은 <strong>스위치를 새것으로 바꾸는 것</strong>입니다. 그리고 여기서
+저울이 등장합니다 — 스위치 교체는 분해와 납땜이 따르는 수리라
+숙련도와 제품 구조에 따라 난이도가 크게 다르고, 커뮤니티에 수리
+정리가 있는 만큼 실패 사례도 있습니다.</p>
+<p>그래서 순서는 이렇게 잡는 게 안전합니다. <strong>보증 기간이 남았다면
+무조건 AS가 먼저</strong>입니다 — 분해 흔적은 보증을 날릴 수 있어,
+자가 수리는 보증이 끝난 뒤의 선택지입니다. 보증이 끝났다면
+수리 비용·수고와 새 마우스 값의 저울인데, 분해가 익숙하지 않다면
+무리하지 않는 쪽을 권합니다 — 같은 돈이 들어도 결과가 보장되는
+쪽이 새것이라서요.</p>
+<p>정리하면 — 설정과 격리로 <strong>마우스 죄인지부터 확정</strong>하고, 청소·
+소프트웨어 완화로 <strong>시간을 벌고</strong>, 보증 → 수리 vs 교체 순서로
+<strong>저울질</strong>하면 됩니다. 클릭이 아니라 <strong>커서 자체가 뚝뚝 끊기는</strong>
+증상이라면 접점이 아니라 <a href="/posts/wireless-mouse-lag.html">무선 연결 쪽 판정</a>
+이라는, 아예 다른 갈래입니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">마우스더블클릭</span> <span class="tag">채터링</span> <span class="tag">마우스고장</span> <span class="tag">스위치</span> <span class="tag">드래그끊김</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/modem-direct-connection.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">공유기 없이 모뎀에 컴퓨터 직결 — 됩니다, 공유기가 해주던 세 가지 일만 알면요</span>
+        <span class="card-desc">컴퓨터 한 대뿐인데 공유기가 꼭 필요한지, 모뎀에 직결하면 더 빠른지 궁금해하는 질문이 꾸준합니다. 직결은 표준 구성이라 됩니다 — 다만 공유기가 조용히 해주던 나눠 쓰기·문지기·내부망 세 가지 일이 사라진다는 것만 알면, 판정은 간단합니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/phone-hotspot-laptop.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">폰 핫스팟으로 노트북 인터넷 쓰기 — 됩니다, 컴퓨터가 대식가라는 것만 알면요</span>
+        <span class="card-desc">폰 핫스팟으로 노트북이나 데스크탑 인터넷을 써도 되는지, 데이터가 얼마나 드는지 궁금해하는 질문이 꾸준합니다. 됩니다 — 다만 컴퓨터는 폰보다 데이터를 크게 먹는 기기라, 자동 업데이트 함정과 종량제 설정 하나가 판정의 핵심입니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/router-lifespan.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">공유기 수명은 몇 년인가 — 집에서 유일하게 한 번도 안 쉬는 기계 이야기입니다</span>
+        <span class="card-desc">공유기를 몇 년마다 바꿔야 하는지, 오래된 공유기를 계속 써도 되는지는 커뮤니티 단골 질문입니다. 공유기는 집에서 유일하게 24시간 내내 일하는 기계 — 노화 신호, 진짜 교체 사유(세대·보안), 오래 쓰는 관리까지 판정을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

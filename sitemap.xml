@@ -13,6 +13,7 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/mouse-double-click.html</loc><lastmod>2026-09-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-freeze-sound-loop.html</loc><lastmod>2026-09-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/front-usb-not-working.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-on-bed.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
@@ -57,12 +58,12 @@
   <url><loc>https://specfit.kr/posts/desktop-icons-missing.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/external-hdd-freeze.html</loc><lastmod>2026-09-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-not-detected.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/keyboard-some-keys-dead.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/keyboard-some-keys-dead.html</loc><lastmod>2026-09-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-slow-on-battery.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-mixed-refresh.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-off-or-sleep.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-sleep-window-move.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/mouse-wheel-jump.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/mouse-wheel-jump.html</loc><lastmod>2026-09-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/no-sound-after-sleep.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-burning-smell.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-case-horizontal.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
