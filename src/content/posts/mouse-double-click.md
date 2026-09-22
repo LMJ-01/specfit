@@ -62,6 +62,8 @@ tags: [마우스더블클릭, 채터링, 마우스고장, 스위치, 드래그�
 컴퓨터 입장에선 아주 빠른 두 번 클릭과 구분이 안 되니, 더블클릭
 으로 처리되는 겁니다.
 
+{{FIG:switch-chattering}}
+
 [키보드에서 한 번 친 키가 두 번 입력되는 것](/posts/keyboard-some-keys-dead.html),
 [휠이 반대로 튀는 것](/posts/mouse-wheel-jump.html)과 부품만 다른
 같은 계열이라, 성질도 같습니다 — **어쩌다 한 번에서 시작해 점점

@@ -870,6 +870,7 @@ export const figures = {
   'bed-intake-block': bedIntakeBlock,
   'signal-path-suspects': signalPathSuspects,
   'game-issue-family': gameIssueFamily,
+  'switch-chattering': switchChattering,
 };
 
 /**
@@ -3124,5 +3125,35 @@ function gameIssueFamily() {
     '게임 중 이상 4갈래 지도',
     W, 224, b,
     '멈칫·화면만·통째·전부 — 얼굴만 정확히 읽어도 판정의 절반입니다.'
+  );
+}
+
+/**
+ * 스위치 채터링 — 건강한 접점(신호 1회) vs 닳은 접점(붙었다 떨어짐 반복).
+ * mouse-double-click "한 번 누름이 여러 번으로" 고정.
+ */
+function switchChattering() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '같은 "한 번 클릭" — 접점 상태가 신호를 가릅니다', { weight: 600, size: 13 });
+  // 왼쪽: 건강한 접점
+  b += rect(24, 44, 280, 26, COLOR.fit, { r: 8 });
+  b += t(164, 61, '건강한 접점', { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+  // 신호 파형: 낮음 - 높음(한 덩어리) - 낮음
+  b += '<path d="M 40 130 L 90 130 L 90 96 L 230 96 L 230 130 L 288 130" fill="none" stroke="var(--fig-fit)" stroke-width="2.5"/>';
+  b += t(160, 90, '누름 = 신호 한 덩어리', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += t(164, 152, '→ 클릭 1회로 등록', { anchor: 'middle', size: 10.5, fill: COLOR.mute });
+  // 오른쪽: 닳은 접점
+  b += rect(336, 44, 280, 26, COLOR.over, { r: 8 });
+  b += t(476, 61, '닳거나 오염된 접점', { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+  // 파형: 떨림 — 두 덩어리로 갈라짐
+  b += '<path d="M 352 130 L 392 130 L 392 96 L 448 96 L 448 130 L 462 130 L 462 96 L 540 96 L 540 130 L 600 130" fill="none" stroke="var(--fig-over)" stroke-width="2.5"/>';
+  b += t(476, 90, '누름 중 순간적으로 떨어졌다 붙음', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += t(476, 152, '→ 아주 빠른 두 번 클릭 = 더블클릭으로 등록', { anchor: 'middle', size: 10.5, fill: COLOR.mute });
+  b += t(24, 182, '드래그 중 놓침도 같은 원리 — 누르고 있는 신호가 순간 끊기는 것입니다', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '채터링 — 접점의 떨림이 더블클릭이 되는 길',
+    W, 200, b,
+    '한 번의 누름이 신호 두 덩어리로 갈라지면, 컴퓨터에겐 빠른 더블클릭과 구분되지 않습니다.'
   );
 }
