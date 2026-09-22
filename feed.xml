@@ -13,6 +13,13 @@
     <description>모니터 화면이 어느 날 누렇게, 종이색처럼 변해서 고장을 의심하게 됩니다. 갑자기 변했는지 서서히 변했는지가 첫 갈림길입니다 — 갑자기라면 야간 모드·리더 모드·색온도 같은 설정 갈래가 대부분이라, 용의자를 끄는 순서와 서서히 갈래의 판정까지 정리했습니다.</description>
   </item>
   <item>
+    <title>전체 화면이냐 테두리 없는 창이냐 — 고르는 기준은 성능이 아니라 생활 패턴입니다</title>
+    <link>https://specfit.kr/posts/game-fullscreen-borderless.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/game-fullscreen-borderless.html</guid>
+    <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
+    <description>게임 그래픽 설정의 화면 모드 세 가지 중 뭘 골라야 하는지는 커뮤니티 단골 논쟁입니다. 두 모드가 구조적으로 뭐가 다른지, 알트탭·듀얼 모니터·티어링이 각 모드에서 왜 다르게 동작하는지 — 내 사용 패턴으로 답이 나오는 선택 기준을 정리했습니다.</description>
+  </item>
+  <item>
     <title>한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다</title>
     <link>https://specfit.kr/posts/mouse-double-click.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/mouse-double-click.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-keyboard-skin.html</guid>
     <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
     <description>노트북 키스킨을 두고 발열 때문에 쓰지 말라는 쪽과 잘만 쓴다는 쪽이 갈립니다. 둘 다 맞습니다 — 키보드 면이 열의 통로인 설계와 아닌 설계가 있어서요. 내 노트북이 어느 쪽인지 확인하는 법과, 키스킨의 값어치가 있는 경우를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>청소했더니 컴퓨터가 안 켜질 때 — 범인은 먼지가 아니라 움직인 것들입니다</title>
-    <link>https://specfit.kr/posts/pc-wont-boot-after-cleaning.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-wont-boot-after-cleaning.html</guid>
-    <pubDate>Thu, 10 Sep 2026 15:00:00 GMT</pubDate>
-    <description>큰맘 먹고 본체를 청소했는데 컴퓨터가 안 켜지는 사연이 게시판에 꾸준합니다. 대부분 부품이 죽은 게 아니라 청소 중에 무언가 풀리거나 덜 꽂힌 것 — 스위치·케이블·램·그래픽카드 순서의 점검 사다리와 증상별 갈래를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

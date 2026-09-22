@@ -13,6 +13,7 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/game-fullscreen-borderless.html</loc><lastmod>2026-09-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-yellow-tint.html</loc><lastmod>2026-09-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-double-click.html</loc><lastmod>2026-09-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-freeze-sound-loop.html</loc><lastmod>2026-09-20</lastmod><priority>0.8</priority></url>
@@ -43,7 +44,7 @@
   <url><loc>https://specfit.kr/posts/router-lifespan.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/desktop-lifespan.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dual-monitor-stacked.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/game-minimizes-itself.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/game-minimizes-itself.html</loc><lastmod>2026-09-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-slow-at-night.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-hot-in-bag.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-wifi-not-connecting.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
@@ -72,7 +73,7 @@
   <url><loc>https://specfit.kr/posts/pc-power-strip.html</loc><lastmod>2026-09-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-slow-until-reboot.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/website-not-loading.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/dual-monitor-mouse-escape.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/dual-monitor-mouse-escape.html</loc><lastmod>2026-09-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/dual-monitor-one-blank.html</loc><lastmod>2026-09-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-stutter-fps.html</loc><lastmod>2026-09-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-download-speed.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
