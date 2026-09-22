@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>화면이 누렇게 변했을 때 — "갑자기"라면 십중팔구 고장이 아닙니다</title>
+    <link>https://specfit.kr/posts/monitor-yellow-tint.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-yellow-tint.html</guid>
+    <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
+    <description>모니터 화면이 어느 날 누렇게, 종이색처럼 변해서 고장을 의심하게 됩니다. 갑자기 변했는지 서서히 변했는지가 첫 갈림길입니다 — 갑자기라면 야간 모드·리더 모드·색온도 같은 설정 갈래가 대부분이라, 용의자를 끄는 순서와 서서히 갈래의 판정까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다</title>
     <link>https://specfit.kr/posts/mouse-double-click.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/mouse-double-click.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-wont-boot-after-cleaning.html</guid>
     <pubDate>Thu, 10 Sep 2026 15:00:00 GMT</pubDate>
     <description>큰맘 먹고 본체를 청소했는데 컴퓨터가 안 켜지는 사연이 게시판에 꾸준합니다. 대부분 부품이 죽은 게 아니라 청소 중에 무언가 풀리거나 덜 꽂힌 것 — 스위치·케이블·램·그래픽카드 순서의 점검 사다리와 증상별 갈래를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>게임을 SSD에 깔까 HDD에 깔까 — SSD가 사주는 건 프레임이 아니라 기다림입니다</title>
-    <link>https://specfit.kr/posts/game-install-ssd-hdd.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/game-install-ssd-hdd.html</guid>
-    <pubDate>Thu, 10 Sep 2026 15:00:00 GMT</pubDate>
-    <description>SSD와 HDD 중 어디에 게임을 설치해야 하는지는 저장장치 게시판의 단골 질문입니다. 설치 위치는 프레임을 바꾸지 않고 로딩을 바꿉니다 — 그 구조와 예외(스트리밍형 대작), 자주 하는 게임만 SSD에 두는 운용까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
