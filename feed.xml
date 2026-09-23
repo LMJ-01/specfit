@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>부팅이 오래 걸릴 때 — 어느 구간에서 머무는지가 범인을 알려줍니다</title>
+    <link>https://specfit.kr/posts/pc-slow-boot.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-slow-boot.html</guid>
+    <pubDate>Tue, 22 Sep 2026 15:00:00 GMT</pubDate>
+    <description>전원을 누르고 바탕화면이 쓸 만해질 때까지 한참 걸리는 증상은 원인 후보가 너무 많아 헤매기 쉽습니다. 부팅을 세 구간(로고 전·로고에서 로그인·로그인 뒤)으로 자르면 구간마다 용의자가 다릅니다 — 시계로 재는 판정과 구간별 처방을 정리했습니다.</description>
+  </item>
+  <item>
     <title>화면이 누렇게 변했을 때 — "갑자기"라면 십중팔구 고장이 아닙니다</title>
     <link>https://specfit.kr/posts/monitor-yellow-tint.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-yellow-tint.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-power-cut.html</guid>
     <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
     <description>정전이나 뽑힌 코드로 컴퓨터가 강제로 꺼지면 고장 났을까 걱정부터 됩니다. 요즘 컴퓨터에서 한 번의 강제 차단으로 부품이 상하는 일은 드물고, 진짜 피해 후보는 저장 중이던 데이터입니다 — 다시 켜는 순서와 진짜 조심할 두 장면을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>노트북 키스킨, 써도 되나 — 내 키보드가 통풍구인지부터 확인합니다</title>
-    <link>https://specfit.kr/posts/laptop-keyboard-skin.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/laptop-keyboard-skin.html</guid>
-    <pubDate>Fri, 11 Sep 2026 15:00:00 GMT</pubDate>
-    <description>노트북 키스킨을 두고 발열 때문에 쓰지 말라는 쪽과 잘만 쓴다는 쪽이 갈립니다. 둘 다 맞습니다 — 키보드 면이 열의 통로인 설계와 아닌 설계가 있어서요. 내 노트북이 어느 쪽인지 확인하는 법과, 키스킨의 값어치가 있는 경우를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

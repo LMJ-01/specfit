@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부팅이 오래 걸릴 때 — 어느 구간에서 머무는지가 범인을 알려줍니다 | 스펙핏</title>
+<meta name="description" content="전원을 누르고 바탕화면이 쓸 만해질 때까지 한참 걸리는 증상은 원인 후보가 너무 많아 헤매기 쉽습니다. 부팅을 세 구간(로고 전·로고에서 로그인·로그인 뒤)으로 자르면 구간마다 용의자가 다릅니다 — 시계로 재는 판정과 구간별 처방을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/pc-slow-boot.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="부팅이 오래 걸릴 때 — 어느 구간에서 머무는지가 범인을 알려줍니다 | 스펙핏">
+<meta property="og:description" content="전원을 누르고 바탕화면이 쓸 만해질 때까지 한참 걸리는 증상은 원인 후보가 너무 많아 헤매기 쉽습니다. 부팅을 세 구간(로고 전·로고에서 로그인·로그인 뒤)으로 자르면 구간마다 용의자가 다릅니다 — 시계로 재는 판정과 구간별 처방을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/pc-slow-boot.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"부팅이 오래 걸릴 때 — 어느 구간에서 머무는지가 범인을 알려줍니다","description":"전원을 누르고 바탕화면이 쓸 만해질 때까지 한참 걸리는 증상은 원인 후보가 너무 많아 헤매기 쉽습니다. 부팅을 세 구간(로고 전·로고에서 로그인·로그인 뒤)으로 자르면 구간마다 용의자가 다릅니다 — 시계로 재는 판정과 구간별 처방을 정리했습니다.","datePublished":"2026-09-23","dateModified":"2026-09-23","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/pc-slow-boot.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"부팅이 오래 걸릴 때 — 어느 구간에서 머무는지가 범인을 알려줍니다","item":"https://specfit.kr/posts/pc-slow-boot.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/minipc.html">미니PC</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>부팅이 오래 걸릴 때 — 어느 구간에서 머무는지가 범인을 알려줍니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-23">2026년 9월 23일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>전원 버튼을 누르고 커피를 타 와도 아직 로그인 화면입니다.
+검색하면 시작 프로그램 정리부터 포맷까지 처방이 쏟아지는데,
+어느 게 내 경우인지 알 수가 없죠.</p>
+<p>순서를 바꾸면 헤매지 않습니다 — <strong>처방 말고 시계부터.</strong> 부팅은
+세 구간으로 잘리고, 구간마다 일하는 주체가 달라서 <strong>어디서 오래
+머무는지만 재면 용의자가 확 줄어듭니다.</strong> 한 번만 스톱워치(또는
+휴대폰 초시계)를 들고 켜 보세요: ① 전원 버튼 → 제조사 로고,
+② 로고 → 로그인 화면, ③ 로그인 → 실제로 쓸 만해질 때까지.</p>
+<h2 id="구간-로고가-늦게-뜬다-윈도우는-무죄">구간 ① — 로고가 늦게 뜬다: 윈도우는 무죄</h2>
+<p>제조사 로고 전까지는 윈도우가 아니라 <strong>메인보드(펌웨어)의
+시간</strong>입니다. 여기서 오래 머문다면 용의자는 하드웨어 쪽:</p>
+<ul>
+<li><strong>꽂혀 있는 것들</strong> — 외장하드, USB 허브, 카드 리더기 같은
+주변기기를 하나하나 점검하고 지나가느라 늦어지는 경우가
+흔합니다. 다 뽑고 켜서 빨라지면 범인은 그중 하나이고, 하나씩
+되꽂으면 특정됩니다</li>
+<li><strong>부팅 순서의 허탕</strong> — 펌웨어가 이미 없는 장치나 네트워크
+부팅을 먼저 찾아보다 시간을 쓰는 경우 — 바이오스의 부팅 순서
+에서 실제 부팅 디스크를 1순위로 두면 허탕이 사라집니다.
+아예 <a href="/posts/boot-into-bios.html">바이오스 화면으로 빠져 버리는 증상</a>
+은 같은 동네의 더 심한 갈래고요</li>
+<li><strong>설정을 바꾼 직후라면</strong> — 램 설정(XMP) 변경이나 정전 뒤 첫
+부팅은 <a href="/posts/pc-turns-off-then-on.html">메모리 점호로 원래 한 번 오래 걸립니다</a> —
+매번이 아니라면 정상 범위입니다</li>
+</ul>
+<h2 id="구간-로고에서-로그인까지-한참-윈도우와-디스크">구간 ② — 로고에서 로그인까지 한참: 윈도우와 디스크</h2>
+<p>이 구간의 주인공은 <strong>윈도우를 읽어 오는 저장장치</strong>입니다.</p>
+<ul>
+<li><strong>하드디스크(HDD)에 윈도우가 깔려 있다면</strong> — 이 구간이 긴 건
+고장이 아니라 구조입니다. 시작 프로그램을 아무리 정리해도
+한계가 있고, <a href="/posts/nvme-vs-sata.html">SSD로 바꾸는 것</a>이 이
+구간을 몇 배로 줄이는 사실상 유일한 처방입니다</li>
+<li><strong>&quot;업데이트 구성 중&quot; 류의 문구가 떠 있다면</strong> — 느린 게 아니라
+<strong>일하는 중</strong>입니다. 이때만큼은 기다리는 게 정답이고,
+<a href="/posts/windows-update-force-shutdown.html">강제로 끄면 안 되는 이유</a>
+는 따로 정리돼 있습니다</li>
+<li><strong>갑자기 이 구간이 늘었다면</strong> — 최근 업데이트·새 프로그램이
+단서입니다. 윈도우의 <strong>빠른 시작</strong> 기능도 양면이 있어서 —
+부팅을 앞당기라고 있는 기능이지만 환경에 따라 꼬임(느려짐·
+주변기기 오동작)의 원인으로 지목되기도 합니다. 켜져 있다면
+꺼서, 꺼져 있다면 켜서 재보는 것이 공짜 실험입니다</li>
+</ul>
+<h2 id="구간-로그인-뒤가-문제-시작-프로그램의-줄서기">구간 ③ — 로그인 뒤가 문제: 시작 프로그램의 줄서기</h2>
+<p>바탕화면은 떴는데 클릭이 한참 버벅인다면, 부팅이 아니라
+<strong>로그인과 함께 뜨는 프로그램들의 줄서기</strong>입니다. 작업 관리자의
+시작 프로그램(시작 앱) 탭에서 &quot;높음&quot; 영향 항목부터 정리하는
+게 정석이고 — 메신저·게임 런처·클라우드 동기화가 단골입니다.
+<a href="/posts/pc-slow-until-reboot.html">켜둔 뒤 점점 느려지는 증상</a>과
+용의자 목록을 공유하는 구간이라, 그 글의 상주 프로그램 정리가
+여기에도 그대로 일합니다.</p>
+<p>참고로 같은 탭에 <strong>&quot;마지막 BIOS 시간&quot;</strong>이 표시되는 윈도우
+버전이라면 구간 ①의 길이를 숫자로 볼 수 있습니다 — 이 값이
+크면 하드웨어 쪽, 작은데 전체가 느리면 ②·③ 쪽이라는 교차
+확인이 됩니다.</p>
+<p>마지막 갈림 하나 — <strong>원래부터 느렸는가, 갑자기 느려졌는가.</strong>
+원래부터라면 구조(HDD·시작 프로그램 누적) 쪽이라 위 처방이
+그대로 답이고, 며칠 사이 갑자기라면 그사이의 변화(업데이트·
+새 프로그램·새 주변기기)가 범인일 확률이 높으니 최근 것부터
+되돌려 보는 순서가 빠릅니다. 켜지긴 하는데 <strong>화면 자체가 한참
+안 나온다</strong>면 이 글이 아니라 <a href="/posts/pc-boot-no-display.html">부팅 릴레이 판정</a>
+의 영역입니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">부팅느림</span> <span class="tag">부팅오래걸림</span> <span class="tag">시작프로그램</span> <span class="tag">빠른시작</span> <span class="tag">SSD업그레이드</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/front-usb-not-working.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">전면 USB만 안 될 때 — 앞 포트는 연장선 너머에 있습니다</span>
+        <span class="card-desc">본체 뒤 USB는 멀쩡한데 앞 포트만 인식이 안 되거나 끊기는 증상은 게시판 단골 질문입니다. 뒷면은 메인보드 직결, 전면은 케이스 케이블을 한 번 거치는 구조라 용의자가 다릅니다 — 갈래별 판정 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/pc-clock-wrong.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">컴퓨터 시계가 자꾸 틀릴 때 — 틀리는 모양이 범인을 말해줍니다</span>
+        <span class="card-desc">컴퓨터 시간이 몇 분씩 어긋나거나, 껐다 켜면 몇 년 전으로 돌아가거나, 정확히 몇 시간 단위로 틀어지는 증상은 게시판 단골입니다. 셋은 범인이 전부 다릅니다 — 동기화·코인 배터리·시간대라는 세 갈래를 틀리는 모양으로 가르는 판정을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/windows-update-force-shutdown.html">
+        <span class="card-cat">미니PC</span>
+        <span class="card-title">윈도우 업데이트 중 꺼도 되나 — 위험한 순간은 딱 한 구간입니다</span>
+        <span class="card-desc">나가야 하는데 화면은 &quot;업데이트 구성 중 30%&quot;. 강제 종료하면 큰일 나는지는 게시판 단골 질문입니다. 업데이트의 어느 단계냐에 따라 답이 갈립니다 — 위험한 구간과 무방한 구간, 이미 꺼버렸을 때의 복구 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
