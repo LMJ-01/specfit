@@ -871,6 +871,7 @@ export const figures = {
   'signal-path-suspects': signalPathSuspects,
   'game-issue-family': gameIssueFamily,
   'switch-chattering': switchChattering,
+  'screen-mode-stage': screenModeStage,
 };
 
 /**
@@ -3155,5 +3156,36 @@ function switchChattering() {
     '채터링 — 접점의 떨림이 더블클릭이 되는 길',
     W, 200, b,
     '한 번의 누름이 신호 두 덩어리로 갈라지면, 컴퓨터에겐 빠른 더블클릭과 구분되지 않습니다.'
+  );
+}
+
+/**
+ * 화면 모드의 무대 구조 — 독점(화면 통째) vs 테두리 없는 창(한 무대의 창).
+ * game-fullscreen-borderless "무대가 다릅니다" 고정.
+ */
+function screenModeStage() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '같은 "꽉 찬 화면" — 무대에 선 방식이 다릅니다', { weight: 600, size: 13 });
+  // 왼쪽: 독점 — 모니터 사각형을 게임이 통째로 채움
+  b += t(164, 50, '전체 화면 (독점)', { anchor: 'middle', size: 11.5, weight: 600 });
+  b += rect(44, 60, 240, 130, COLOR.soft, { r: 10, stroke: COLOR.line });
+  b += rect(52, 68, 224, 114, COLOR.fit, { r: 6 });
+  b += t(164, 128, '게임', { anchor: 'middle', size: 13, weight: 700, fill: '#fff' });
+  b += t(164, 206, '화면 출력을 통째로 넘겨받음', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += t(164, 222, '끼어들 것 없음 · 나갔다 오는 길이 무거움', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  // 오른쪽: 테두리 없는 창 — 바탕화면 무대 위에 게임 창 + 뒤의 다른 창들
+  b += t(476, 50, '테두리 없는 창', { anchor: 'middle', size: 11.5, weight: 600 });
+  b += rect(356, 60, 240, 130, COLOR.soft, { r: 10, stroke: COLOR.line });
+  b += rect(478, 74, 96, 40, COLOR.mute, { r: 4 });
+  b += t(526, 98, '다른 창', { anchor: 'middle', size: 9.5, fill: '#fff' });
+  b += rect(368, 70, 200, 112, COLOR.accent, { r: 6, stroke: COLOR.line });
+  b += t(468, 130, '게임 (화면 크기의 창)', { anchor: 'middle', size: 11.5, weight: 700, fill: '#fff' });
+  b += t(476, 206, '바탕화면 무대 위의 큰 창일 뿐', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += t(476, 222, '왕래가 즉각적 · 무대를 독점하진 못함', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  return figure(
+    '독점이냐 한 무대냐 — 화면 모드의 실체',
+    W, 240, b,
+    '알트탭·듀얼 모니터에서의 차이는 전부 이 무대 구조 하나에서 따라 나옵니다.'
   );
 }
