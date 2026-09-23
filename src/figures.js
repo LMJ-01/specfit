@@ -872,6 +872,7 @@ export const figures = {
   'game-issue-family': gameIssueFamily,
   'switch-chattering': switchChattering,
   'screen-mode-stage': screenModeStage,
+  'boot-three-segments': bootThreeSegments,
 };
 
 /**
@@ -3187,5 +3188,36 @@ function screenModeStage() {
     '독점이냐 한 무대냐 — 화면 모드의 실체',
     W, 240, b,
     '알트탭·듀얼 모니터에서의 차이는 전부 이 무대 구조 하나에서 따라 나옵니다.'
+  );
+}
+
+/**
+ * 부팅 3구간 타임라인 — 구간별 주체와 용의자.
+ * pc-slow-boot "시계부터" 고정.
+ */
+function bootThreeSegments() {
+  const W = 640;
+  const seg = (x, w, color, head, sub) => {
+    let s = rect(x, 64, w, 26, color, { r: 8 });
+    s += t(x + w / 2, 81, head, { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 108 + i * 16, ln, { size: 9.6, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '스톱워치 하나로 용의자가 갈립니다', { weight: 600, size: 13 });
+  b += t(24, 50, '전원 버튼', { size: 10, fill: COLOR.mute });
+  b += t(238, 50, '제조사 로고', { size: 10, fill: COLOR.mute });
+  b += t(420, 50, '로그인 화면', { size: 10, fill: COLOR.mute });
+  b += t(616, 50, '실사용', { anchor: 'end', size: 10, fill: COLOR.mute });
+  b += seg(24, 190, COLOR.over, '① 로고 전 = 펌웨어', ['주변기기 점검 대기 · 부팅', '순서 허탕 · 메모리 점호', '→ 다 뽑고 켜보기가 격리']);
+  b += seg(222, 190, COLOR.accent, '② 로고~로그인 = 디스크', ['HDD의 구조적 느림(SSD 처방)', '"업데이트 구성 중"은 기다리기', '빠른 시작 켜고/끄고 실험']);
+  b += seg(420, 196, COLOR.fit, '③ 로그인 뒤 = 줄서기', ['시작 프로그램 정리("높음"부터)', '런처·동기화·메신저 단골', '→ 켠 뒤 느려짐 글과 공유']);
+  b += t(24, 172, '교차 도구: 작업 관리자 "마지막 BIOS 시간" = ①구간의 길이 (표시되는 버전에서)', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '부팅 3구간 — 어디서 머무나',
+    W, 190, b,
+    '로고 전은 하드웨어, 로고에서 로그인까지는 디스크와 윈도우, 로그인 뒤는 시작 프로그램의 시간입니다.'
   );
 }
