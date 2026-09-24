@@ -2,7 +2,7 @@
 title: 무선 마우스 커서가 뚝뚝 끊길 때 — 배터리, 전파 길, 옆자리 USB 순서로 봅니다
 description: 무선 마우스 커서가 순간순간 멈추거나 튀는 증상은 원인이 여럿이라 헤매기 쉽습니다. 제일 흔한 배터리 출력 저하부터, 동글의 전파 길, 의외의 범인인 USB 3.0 간섭까지 — 공짜 진단 순서대로 정리했습니다.
 date: 2026-09-05
-updated: 2026-09-19
+updated: 2026-09-24
 category: network
 tags: [무선마우스, 커서끊김, 동글, 전파간섭, 블루투스]
 ---
@@ -151,7 +151,8 @@ CPU·USB 처리도 바빠져서, 마우스 증상이 그 결과로 보이는
 
 이웃 판정들 — [유선 vs 와이파이](/posts/desktop-wifi-vs-lan.html) ·
 [2.4GHz 혼잡과 기기 수](/posts/router-device-count.html) ·
-[게임 끊김 판정](/posts/game-stutter-fps.html)과 이어집니다.
+[게임 끊김 판정](/posts/game-stutter-fps.html) ·
+[게임패드가 게임에서 무반응인 문제](/posts/gamepad-not-working.html)와 이어집니다.
 
 (같은 간섭 이웃의 소리판 — [스피커 지지직 노이즈](/posts/pc-speaker-noise.html)도
 증상의 "때"로 갈래를 가르는 같은 방식입니다. 커서가 아니라

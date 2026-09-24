@@ -2,6 +2,7 @@
 title: 노트북에서 블루투스 이어폰이 뚝뚝 끊길 때 — 끊기는 정황이 갈래를 알려줍니다
 description: 폰에서는 멀쩡한 블루투스 이어폰이 노트북·컴퓨터에서만 끊기고 지직거리는 증상은 흔한데 원인 후보가 많아 헤매기 쉽습니다. 와이파이를 쓸 때 심한지, 한동안 조용하다 재생하면 끊기는지, 통화를 켜면 음질이 망가지는지 — 정황별 판정과 처방을 정리했습니다.
 date: 2026-09-06
+updated: 2026-09-24
 category: network
 tags: [블루투스이어폰, 소리끊김, 24GHz간섭, 절전설정, 노트북]
 ---
@@ -164,7 +165,8 @@ tags: [블루투스이어폰, 소리끊김, 24GHz간섭, 절전설정, 노트북
 
 무선 이웃 판정들 — [무선 마우스 끊김](/posts/wireless-mouse-lag.html) ·
 [2.4GHz 공용 도로](/posts/desktop-wifi-vs-lan.html) ·
-[스피커 잡음(유선의 갈래)](/posts/pc-speaker-noise.html)과 이어집니다.
+[스피커 잡음(유선의 갈래)](/posts/pc-speaker-noise.html) ·
+[게임패드 인식 판정](/posts/gamepad-not-working.html)과 이어집니다.
 (연결은 멀쩡한데 **특정 앱만 조용하다**면 —
 [앱별 소리 배선](/posts/app-no-sound.html) 이야기입니다.)
 
