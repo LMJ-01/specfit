@@ -15,6 +15,7 @@
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/posts/game-recording-fps-drop.html</loc><lastmod>2026-09-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gamepad-not-working.html</loc><lastmod>2026-09-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-no-power.html</loc><lastmod>2026-09-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-slow-boot.html</loc><lastmod>2026-09-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-fullscreen-borderless.html</loc><lastmod>2026-09-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-yellow-tint.html</loc><lastmod>2026-09-22</lastmod><priority>0.8</priority></url>
@@ -82,7 +83,7 @@
   <url><loc>https://specfit.kr/posts/internet-download-speed.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-water-spill.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-always-on.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/pc-boot-no-display.html</loc><lastmod>2026-09-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-boot-no-display.html</loc><lastmod>2026-09-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-case-open.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-shutdown-during-game.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-speaker-noise.html</loc><lastmod>2026-09-13</lastmod><priority>0.8</priority></url>
@@ -131,7 +132,7 @@
   <url><loc>https://specfit.kr/posts/mesh-wifi-backhaul.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mini-pc-gaming.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/nas-vs-external-hdd.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/psu-lifespan.html</loc><lastmod>2026-09-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/psu-lifespan.html</loc><lastmod>2026-09-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-64gb-worth-it.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-heatsink-needed.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ssd-full-slowdown.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>

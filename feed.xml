@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>전원 버튼을 눌러도 완전 무반응일 때 — 전기의 길을 바깥에서 안으로 자릅니다</title>
+    <link>https://specfit.kr/posts/pc-no-power.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-no-power.html</guid>
+    <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
+    <description>버튼을 눌러도 팬도 불도 소리도 없는 완전 무반응은 전기가 어딘가에서 끊겼다는 뜻입니다. 벽 콘센트부터 본체 안까지 전기가 지나는 길은 정해져 있어서, 바깥에서 안쪽으로 하나씩 자르면 공짜 격리만으로 용의자가 두셋으로 좁혀집니다.</description>
+  </item>
+  <item>
     <title>게임패드를 꽂았는데 게임이 몰라볼 때 — 패드와 게임이 다른 언어를 쓰고 있어서입니다</title>
     <link>https://specfit.kr/posts/gamepad-not-working.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/gamepad-not-working.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-humming-vibration.html</guid>
     <pubDate>Sat, 12 Sep 2026 15:00:00 GMT</pubDate>
     <description>컴퓨터에서 웅웅·지잉 하는 떨림 소리가 나고, 본체를 손으로 누르면 잦아드는 증상은 게시판 단골입니다. 그 소리엔 범인이 둘입니다 — 진동을 만드는 부품과, 그걸 확성하는 케이스 철판. 둘을 가르는 판정과 각각의 처방을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>공유기 없이 모뎀에 컴퓨터 직결 — 됩니다, 공유기가 해주던 세 가지 일만 알면요</title>
-    <link>https://specfit.kr/posts/modem-direct-connection.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/modem-direct-connection.html</guid>
-    <pubDate>Sat, 12 Sep 2026 15:00:00 GMT</pubDate>
-    <description>컴퓨터 한 대뿐인데 공유기가 꼭 필요한지, 모뎀에 직결하면 더 빠른지 궁금해하는 질문이 꾸준합니다. 직결은 표준 구성이라 됩니다 — 다만 공유기가 조용히 해주던 나눠 쓰기·문지기·내부망 세 가지 일이 사라진다는 것만 알면, 판정은 간단합니다.</description>
   </item>
 </channel>
 </rss>
