@@ -873,6 +873,7 @@ export const figures = {
   'switch-chattering': switchChattering,
   'screen-mode-stage': screenModeStage,
   'boot-three-segments': bootThreeSegments,
+  'recording-pipeline': recordingPipeline,
 };
 
 /**
@@ -3219,5 +3220,43 @@ function bootThreeSegments() {
     '부팅 3구간 — 어디서 머무나',
     W, 190, b,
     '로고 전은 하드웨어, 로고에서 로그인까지는 디스크와 윈도우, 로그인 뒤는 시작 프로그램의 시간입니다.'
+  );
+}
+
+/**
+ * 녹화 3단계 파이프라인 — 인코딩 담당자 분기(CPU vs 전용 회로).
+ * game-recording-fps-drop "압축을 누가 하느냐" 고정.
+ */
+function recordingPipeline() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '녹화가 하는 일 셋 — 게임과 다투는 건 압축입니다', { weight: 600, size: 13 });
+  // 3단계 흐름
+  b += rect(24, 44, 150, 26, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(99, 61, '① 받기 (캡처)', { anchor: 'middle', size: 11, weight: 600, fill: COLOR.text });
+  b += '<line x1="174" y1="57" x2="198" y2="57" stroke="var(--line)" stroke-width="2"/>';
+  b += rect(198, 44, 190, 26, COLOR.accent, { r: 8 });
+  b += t(293, 61, '② 압축 (인코딩) ← 갈림길', { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+  b += '<line x1="388" y1="57" x2="412" y2="57" stroke="var(--line)" stroke-width="2"/>';
+  b += rect(412, 44, 150, 26, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(487, 61, '③ 저장 (디스크)', { anchor: 'middle', size: 11, weight: 600, fill: COLOR.text });
+  // 분기: 소프트웨어 vs 하드웨어
+  b += '<line x1="255" y1="70" x2="150" y2="96" stroke="var(--line)" stroke-width="1.5"/>';
+  b += '<line x1="330" y1="70" x2="470" y2="96" stroke="var(--line)" stroke-width="1.5"/>';
+  b += rect(30, 96, 250, 26, COLOR.over, { r: 8 });
+  b += t(155, 113, '소프트웨어 인코딩 = CPU가', { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+  ['게임과 CPU를 나눠 씀 → 프레임 하락', '녹화 켜면 CPU 급등이 지문'].forEach((ln, i) => {
+    b += t(38, 140 + i * 17, ln, { size: 10, fill: COLOR.mute });
+  });
+  b += rect(350, 96, 250, 26, COLOR.fit, { r: 8 });
+  b += t(475, 113, '하드웨어 인코딩 = 전용 회로가', { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+  ['게임 연산과 분리 → 영향 작음', '그래픽카드의 전용 인코더 이용'].forEach((ln, i) => {
+    b += t(358, 140 + i * 17, ln, { size: 10, fill: COLOR.mute });
+  });
+  b += t(24, 192, '③에서 끊기면 저장 갈래 — 높은 비트레이트 + 하드디스크/꽉 찬 SSD 조합을 의심', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '압축의 담당자가 프레임을 가릅니다',
+    W, 210, b,
+    '같은 녹화라도 압축을 CPU가 하면 게임과 다투고, 전용 회로가 하면 비켜 갑니다.'
   );
 }

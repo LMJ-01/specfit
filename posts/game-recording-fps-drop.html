@@ -81,6 +81,13 @@
 <strong>압축</strong>입니다. 화면 원본은 그대로 저장하기엔 너무 커서 반드시
 실시간으로 압축해야 하는데 — <strong>이 압축을 누가 하느냐</strong>가 이
 증상의 갈림길입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 210" width="640" height="210" role="img" aria-label="압축의 담당자가 프레임을 가릅니다">
+<title>압축의 담당자가 프레임을 가릅니다</title>
+<text x="24" y="26" fill="var(--fg)" font-size="13" font-weight="600">녹화가 하는 일 셋 — 게임과 다투는 건 압축입니다</text><rect x="24" y="44" width="150" height="26" fill="var(--bg-soft)" rx="8" stroke="var(--border)"/><text x="99" y="61" fill="var(--fg)" font-size="11" font-weight="600" text-anchor="middle">① 받기 (캡처)</text><line x1="174" y1="57" x2="198" y2="57" stroke="var(--line)" stroke-width="2"/><rect x="198" y="44" width="190" height="26" fill="var(--accent)" rx="8"/><text x="293" y="61" fill="#fff" font-size="11" font-weight="600" text-anchor="middle">② 압축 (인코딩) ← 갈림길</text><line x1="388" y1="57" x2="412" y2="57" stroke="var(--line)" stroke-width="2"/><rect x="412" y="44" width="150" height="26" fill="var(--bg-soft)" rx="8" stroke="var(--border)"/><text x="487" y="61" fill="var(--fg)" font-size="11" font-weight="600" text-anchor="middle">③ 저장 (디스크)</text><line x1="255" y1="70" x2="150" y2="96" stroke="var(--line)" stroke-width="1.5"/><line x1="330" y1="70" x2="470" y2="96" stroke="var(--line)" stroke-width="1.5"/><rect x="30" y="96" width="250" height="26" fill="var(--fig-over)" rx="8"/><text x="155" y="113" fill="#fff" font-size="11" font-weight="600" text-anchor="middle">소프트웨어 인코딩 = CPU가</text><text x="38" y="140" fill="var(--fg-muted)" font-size="10">게임과 CPU를 나눠 씀 → 프레임 하락</text><text x="38" y="157" fill="var(--fg-muted)" font-size="10">녹화 켜면 CPU 급등이 지문</text><rect x="350" y="96" width="250" height="26" fill="var(--fig-fit)" rx="8"/><text x="475" y="113" fill="#fff" font-size="11" font-weight="600" text-anchor="middle">하드웨어 인코딩 = 전용 회로가</text><text x="358" y="140" fill="var(--fg-muted)" font-size="10">게임 연산과 분리 → 영향 작음</text><text x="358" y="157" fill="var(--fg-muted)" font-size="10">그래픽카드의 전용 인코더 이용</text><text x="24" y="192" fill="var(--fg-muted)" font-size="10.5">③에서 끊기면 저장 갈래 — 높은 비트레이트 + 하드디스크/꽉 찬 SSD 조합을 의심</text>
+</svg>
+<figcaption>같은 녹화라도 압축을 CPU가 하면 게임과 다투고, 전용 회로가 하면 비켜 갑니다.</figcaption>
+</figure>
 <h2 id="갈림길-압축의-담당자가-둘-있습니다">갈림길 — 압축의 담당자가 둘 있습니다</h2>
 <p><strong>소프트웨어 인코딩</strong>은 압축을 <strong>CPU</strong>가 합니다. 품질을 세밀하게
 다루는 데 유리한 방식이지만, 게임도 CPU가 필요하니 <strong>한정된
