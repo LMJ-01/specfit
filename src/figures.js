@@ -2123,7 +2123,7 @@ function tempBehavior() {
   body += t(x3 + panelW / 2, py0 + 18, '⚠️ 먼지·서멀 신호 — 청소부터', { anchor: 'middle', size: 11, fill: COLOR.mute });
 
   return figure(
-    'GPU 온도 판정 — 평형 도달은 정상, 계속 상승은 쿨링 부족, 추세 상승은 먼지·서멀 신호',
+    '온도 판정 — 평형 도달은 정상, 계속 상승은 쿨링 부족, 추세 상승은 먼지·서멀 신호',
     W,
     186,
     body,
