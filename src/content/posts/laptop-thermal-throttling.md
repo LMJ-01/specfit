@@ -2,7 +2,7 @@
 title: 노트북 발열과 성능 저하 — 얇으면 왜 느려지나
 description: 짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM에서만 나옵니다. 왜 시간이 지나야 느려지는지, 사양에서 뭘 보면 미리 아는지 정리했습니다.
 date: 2026-08-17
-updated: 2026-09-19
+updated: 2026-09-25
 category: laptop
 tags: [노트북발열, 스로틀링, 지속성능, 개발용노트북, 냉각]
 affiliate: true
@@ -215,6 +215,9 @@ VRAM에 다 올라간다면 발열은 **속도 문제**이지 가능 여부를 �
 6. **로컬 LLM이 가장 잘 걸리는 작업**입니다. 냉각을 우선순위에 넣으세요
 
 (팬 소리 자체가 걱정이라면 — 계속 돌거나 안 돌거나 —
-[팬의 양방향 판정](/posts/laptop-fan-noise.html)을 먼저 보세요.)
+[팬의 양방향 판정](/posts/laptop-fan-noise.html)을 먼저 보세요.
+데스크탑에서 게임 중 온도가 걱정이라면 같은 거동 논리를
+[CPU 온도 판정](/posts/cpu-temp-normal.html)·[그래픽카드 온도
+판정](/posts/gpu-temp-normal.html)에 정리했습니다.)
 
 실제 사용 결과가 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
