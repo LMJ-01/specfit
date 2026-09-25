@@ -2,7 +2,7 @@
 title: CPU 기본 쿨러로 충분한가 — 부하와 소음, 두 기준으로 갈립니다
 description: CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 살지 헷갈립니다. 성능이 모자라서가 아니라 소음 때문에 바꾸는 경우가 많다는 것까지 포함해서, 판정 기준을 정리했습니다.
 date: 2026-09-01
-updated: 2026-09-07
+updated: 2026-09-25
 category: gpu
 tags: [CPU쿨러, 기본쿨러, 공랭쿨러, 소음, 데스크톱조립]
 ---
@@ -137,6 +137,7 @@ CPU 를 먹고 있는 경우가 흔합니다. 작업 관리자에서 부하 원�
 5. 이 단계에서 수랭까지 갈 이유는 없습니다 — **공랭이 기본값**입니다
 
 열과 보호 동작의 원리는 [스로틀링 글](/posts/laptop-thermal-throttling.html),
+게임 중 온도가 정상인지의 판정은 [CPU 온도 거동 글](/posts/cpu-temp-normal.html),
 전원 쪽 계산은 [파워 용량](/posts/gpu-psu-wattage.html)에 있습니다.
 (켤 때만 몇 초 크게 도는 소리는 고장이 아닙니다 —
 [부팅 점호 이야기](/posts/pc-fan-loud-at-boot.html)에 정리했습니다.)
