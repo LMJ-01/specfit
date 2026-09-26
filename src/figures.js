@@ -874,6 +874,7 @@ export const figures = {
   'screen-mode-stage': screenModeStage,
   'boot-three-segments': bootThreeSegments,
   'recording-pipeline': recordingPipeline,
+  'disconnect-two-cuts': disconnectTwoCuts,
 };
 
 /**
@@ -3258,5 +3259,38 @@ function recordingPipeline() {
     '압축의 담당자가 프레임을 가릅니다',
     W, 210, b,
     '같은 녹화라도 압축을 CPU가 하면 게임과 다투고, 전용 회로가 하면 비켜 갑니다.'
+  );
+}
+
+/**
+ * 인터넷 순단 — 두 번 가르기(범위→층) 격리 트리.
+ * internet-random-disconnect "두 번만 자르면" 고정.
+ */
+function disconnectTwoCuts() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '끊길 때 두 가지만 확인하면 용의자가 남습니다', { weight: 600, size: 13 });
+  // 1차 분기
+  b += rect(220, 42, 200, 26, COLOR.accent, { r: 8 });
+  b += t(320, 59, '① 다른 기기도 같이 끊기나?', { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+  b += '<line x1="280" y1="68" x2="150" y2="96" stroke="var(--line)" stroke-width="1.5"/>';
+  b += '<line x1="360" y1="68" x2="490" y2="96" stroke="var(--line)" stroke-width="1.5"/>';
+  // 왼쪽: 내 기기만
+  b += rect(40, 96, 220, 26, COLOR.fit, { r: 8 });
+  b += t(150, 113, '내 기기만 → 기기~공유기 사이', { anchor: 'middle', size: 10.5, weight: 600, fill: '#fff' });
+  ['유선: 재체결 → 다른 포트 → 케이블 교체', '랜카드 절전(전원 관리) 끄기', '무선: 유선으로 며칠 격리'].forEach((ln, i) => {
+    b += t(48, 142 + i * 17, ln, { size: 9.8, fill: COLOR.mute });
+  });
+  // 오른쪽: 온 집 → 2차 분기
+  b += rect(380, 96, 220, 26, COLOR.over, { r: 8 });
+  b += t(490, 113, '온 집 → ② 공유기 앞? 뒤?', { anchor: 'middle', size: 10.5, weight: 600, fill: '#fff' });
+  ['공유기 핑 생존+외부만 끊김 = 회선', '  → 시각 기록 → 통신사 (직결 실험)', '공유기 핑부터 무응답 = 공유기', '  → 재부팅으로 잠시 낫다 재발 = 노후'].forEach((ln, i) => {
+    b += t(388, 142 + i * 17, ln, { size: 9.8, fill: COLOR.mute });
+  });
+  b += t(24, 222, '도구: 공유기 주소·외부 주소로 연속 핑을 띄워 두고 끊김 순간을 봅니다', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '순단의 두 번 가르기 — 범위, 그다음 층',
+    W, 240, b,
+    '내 기기만이면 기기 쪽, 온 집이면 핑으로 공유기 앞뒤를 가릅니다 — 후보가 두셋으로 줄어듭니다.'
   );
 }
