@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>144Hz 모니터인데 60Hz만 잡힐 때 — 목록에 없는 숫자는 길이 못 실어온 겁니다</title>
+    <link>https://specfit.kr/posts/monitor-144hz-not-working.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-144hz-not-working.html</guid>
+    <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
+    <description>고주사율 모니터를 샀는데 윈도우 설정에는 60Hz만 보이는 사연이 게시판에 꾸준합니다. 설정 목록은 지금 연결된 길로 실어올 수 있는 주사율만 보여주기 때문 — 설정 위치부터 케이블·포트·모니터 메뉴·드라이버까지, 잃어버린 144를 찾는 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>인터넷이 툭 끊겼다 돌아올 때 — 범위와 층, 두 번만 자르면 됩니다</title>
     <link>https://specfit.kr/posts/internet-random-disconnect.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/internet-random-disconnect.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/windows-update-force-shutdown.html</guid>
     <pubDate>Tue, 15 Sep 2026 15:00:00 GMT</pubDate>
     <description>나가야 하는데 화면은 "업데이트 구성 중 30%". 강제 종료하면 큰일 나는지는 게시판 단골 질문입니다. 업데이트의 어느 단계냐에 따라 답이 갈립니다 — 위험한 구간과 무방한 구간, 이미 꺼버렸을 때의 복구 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>USB 허브에 외장하드 꽂아도 되나 — 허브는 전기를 나눠 쓰는 멀티탭입니다</title>
-    <link>https://specfit.kr/posts/usb-hub-power.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/usb-hub-power.html</guid>
-    <pubDate>Mon, 14 Sep 2026 15:00:00 GMT</pubDate>
-    <description>USB 허브에 꽂은 외장하드가 인식이 안 되거나 끊기는 건 게시판 단골 하소연입니다. 허브는 포트 하나의 전력을 나눠 쓰는 구조라, 꽂아도 되는 기기와 직결해야 하는 기기가 갈립니다 — 무전원·유전원의 차이와 판정 기준을 정리했습니다.</description>
   </item>
 </channel>
 </rss>

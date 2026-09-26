@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>144Hz 모니터인데 60Hz만 잡힐 때 — 목록에 없는 숫자는 길이 못 실어온 겁니다 | 스펙핏</title>
+<meta name="description" content="고주사율 모니터를 샀는데 윈도우 설정에는 60Hz만 보이는 사연이 게시판에 꾸준합니다. 설정 목록은 지금 연결된 길로 실어올 수 있는 주사율만 보여주기 때문 — 설정 위치부터 케이블·포트·모니터 메뉴·드라이버까지, 잃어버린 144를 찾는 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/monitor-144hz-not-working.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="144Hz 모니터인데 60Hz만 잡힐 때 — 목록에 없는 숫자는 길이 못 실어온 겁니다 | 스펙핏">
+<meta property="og:description" content="고주사율 모니터를 샀는데 윈도우 설정에는 60Hz만 보이는 사연이 게시판에 꾸준합니다. 설정 목록은 지금 연결된 길로 실어올 수 있는 주사율만 보여주기 때문 — 설정 위치부터 케이블·포트·모니터 메뉴·드라이버까지, 잃어버린 144를 찾는 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/monitor-144hz-not-working.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"144Hz 모니터인데 60Hz만 잡힐 때 — 목록에 없는 숫자는 길이 못 실어온 겁니다","description":"고주사율 모니터를 샀는데 윈도우 설정에는 60Hz만 보이는 사연이 게시판에 꾸준합니다. 설정 목록은 지금 연결된 길로 실어올 수 있는 주사율만 보여주기 때문 — 설정 위치부터 케이블·포트·모니터 메뉴·드라이버까지, 잃어버린 144를 찾는 순서를 정리했습니다.","datePublished":"2026-09-26","dateModified":"2026-09-26","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/monitor-144hz-not-working.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"144Hz 모니터인데 60Hz만 잡힐 때 — 목록에 없는 숫자는 길이 못 실어온 겁니다","item":"https://specfit.kr/posts/monitor-144hz-not-working.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>144Hz 모니터인데 60Hz만 잡힐 때 — 목록에 없는 숫자는 길이 못 실어온 겁니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-26">2026년 9월 26일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>큰맘 먹고 144Hz 모니터를 샀는데, 윈도우 설정의 주사율 목록에
+<strong>60Hz밖에 없습니다.</strong> 모니터가 불량인가 싶지만 — 게시판에 같은
+사연이 몇 년째 쌓여 있는 걸 보면, 대부분 다른 이야기입니다.</p>
+<p>핵심은 이겁니다. <strong>그 목록은 모니터의 능력이 아니라, 지금 연결된
+길이 실어올 수 있는 조합을 보여줍니다.</strong> 그래픽카드 단자 → 케이블
+→ 모니터 포트로 이어지는 길 어딘가가 고해상도+고주사율 조합을
+못 싣는 상태면, 모니터가 144Hz짜리여도 목록에는 60만 남습니다.
+그러니 순서는 — 설정을 먼저 확인하고, 목록에 없으면 길을
+봅니다.</p>
+<h2 id="0단계-설정부터-이미-목록에-있다면">0단계 — 설정부터 (이미 목록에 있다면)</h2>
+<p>의외로 많은 경우가 여기서 끝납니다. 디스플레이 설정 → <strong>고급
+디스플레이</strong>(위치·명칭은 윈도우 버전에 따라 조금 다릅니다)에서
+주사율 항목을 열어 보세요. <strong>144가 목록에 있는데 60으로 선택돼
+있었다면</strong> — 고르면 끝입니다. 모니터는 처음부터 멀쩡했고,
+윈도우가 기본값을 60으로 잡아뒀을 뿐입니다. 듀얼 모니터라면
+설정 화면 상단에서 <strong>어느 모니터를 보고 있는지</strong>부터 확인하고요.</p>
+<p>목록에 144가 없다면 — 아래로.</p>
+<h2 id="1단계-케이블과-단자-길의-체급">1단계 — 케이블과 단자: 길의 체급</h2>
+<p>가장 흔한 범인입니다. 고해상도+고주사율 조합은 <a href="/posts/dp-vs-hdmi-coding.html">케이블 대역폭
+이야기</a> 그대로 <strong>요구 대역폭이
+높아서</strong>, 구형 단자(DVI류)나 오래된 HDMI 버전 조합으로는 못
+싣는 경우가 많습니다.</p>
+<ul>
+<li><strong>DP(DisplayPort) 케이블로 연결돼 있는지</strong>부터 — 게이밍
+모니터 세계에서 DP가 무난한 기본값인 이유가 이것입니다.
+모니터에 딸려 온 케이블이 있다면 그걸 쓰는 게 규격 미달
+변수를 줄입니다</li>
+<li><strong>HDMI로 연결했다면</strong> — 모니터에 따라 <strong>HDMI 포트는 낮은
+주사율까지만 지원하는 제품</strong>이 실제로 있습니다(포트별 지원이
+다른 설계). 모니터 사양표의 포트별 주사율 표기를 확인하고,
+DP로 바꿔 꽂아 보는 것이 가장 빠른 격리입니다</li>
+<li>케이블을 바꿨다면 <strong>양끝을 끝까지</strong> — 접촉 반쯤 걸친 상태의
+변수도 여기서 같이 사라집니다</li>
+</ul>
+<h2 id="2단계-모니터-메뉴-제-능력을-잠가둔-제품들">2단계 — 모니터 메뉴: 제 능력을 잠가둔 제품들</h2>
+<p>모니터 자체 메뉴(OSD)에 <strong>고주사율을 열어 주는 스위치</strong>가 있는
+제품들이 있습니다 — DP 버전 설정(<a href="/posts/dual-monitor-one-blank.html">한쪽만 안 나올 때 글에서 본
+그 항목</a>)이 낮은 버전으로
+잡혀 있으면 대역폭이 막혀 60까지만 열리고, 제품에 따라 오버클럭
+·고주사율 활성화라는 이름의 항목이 따로 있기도 합니다. 내 모니터
+모델명 + &quot;144Hz 설정&quot;으로 검색하면 그 제품 사용자들의 정리가
+나오는 영역입니다.</p>
+<h2 id="3단계-드라이버-목록을-만드는-쪽">3단계 — 드라이버: 목록을 만드는 쪽</h2>
+<p>그래픽 드라이버가 제대로 안 깔린 상태(장치 관리자에 기본
+디스플레이 어댑터로 잡혀 있는 상태)면 선택지 자체가 제한됩니다 —
+<a href="/posts/gpu-not-detected.html">카드 인식 판정의 드라이버 층</a>
+그대로, 제조사 드라이버를 설치·갱신하면 목록이 살아나는
+경우입니다. 새 조립·윈도우 재설치 직후의 60Hz 고정은 대부분
+이 갈래입니다.</p>
+<p>여기까지로 대부분 찾습니다. 남는 변형 둘 — <strong>노트북에서 외부
+모니터로</strong> 쓰는 경우는 노트북 포트가 길의 체급을 정하니 <a href="/posts/laptop-dual-monitor-output.html">출력
+상한 이야기</a>가 먼저고,
+144를 잡고 나서 <strong>그래서 뭐가 좋아지나</strong>가 궁금해졌다면
+<a href="/posts/high-refresh-rate-coding.html">고주사율의 실제 체감 판정</a>
+이 그 답입니다. 잡았는데도 게임이 60처럼 끊긴다면 — 그건 설정이
+아니라 <a href="/posts/game-stutter-fps.html">프레임 쪽 판정</a>이고요.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">144Hz</span> <span class="tag">주사율설정</span> <span class="tag">모니터설정</span> <span class="tag">DP케이블</span> <span class="tag">고주사율</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/hdr-washed-out.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">HDR을 켰더니 화면이 물 빠져 보일 때 — 고장이 아니라 무대가 바뀐 겁니다</span>
+        <span class="card-desc">윈도우에서 HDR을 켜는 순간 바탕화면과 브라우저가 뿌옇고 물 빠진 색이 되는 증상은 게시판 단골입니다. HDR 모드에서 일반 화면은 변환을 거쳐 표시되는 손님이 되기 때문인데 — 슬라이더 하나로 잡는 처방과 내 모니터가 켤 가치가 있는 급인지 판정까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-yellow-tint.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">화면이 누렇게 변했을 때 — &quot;갑자기&quot;라면 십중팔구 고장이 아닙니다</span>
+        <span class="card-desc">모니터 화면이 어느 날 누렇게, 종이색처럼 변해서 고장을 의심하게 됩니다. 갑자기 변했는지 서서히 변했는지가 첫 갈림길입니다 — 갑자기라면 야간 모드·리더 모드·색온도 같은 설정 갈래가 대부분이라, 용의자를 끄는 순서와 서서히 갈래의 판정까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/game-wrong-monitor.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">게임이 자꾸 보조 모니터에서 열릴 때 — 윈도우의 &quot;주 모니터&quot;부터 잡으면 됩니다</span>
+        <span class="card-desc">듀얼 모니터에서 게임을 켰더니 옆의 보조 화면에서 전체화면으로 열리는 증상은 게시판 단골 질문입니다. 전체화면 게임 대부분이 윈도우의 &quot;주 디스플레이&quot;를 따르기 때문입니다 — 주 모니터 설정과 창모드 이동, 게임별 예외까지 손잡이 세 개를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
