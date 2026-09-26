@@ -875,6 +875,7 @@ export const figures = {
   'boot-three-segments': bootThreeSegments,
   'recording-pipeline': recordingPipeline,
   'disconnect-two-cuts': disconnectTwoCuts,
+  'refresh-path-gate': refreshPathGate,
 };
 
 /**
@@ -3292,5 +3293,34 @@ function disconnectTwoCuts() {
     '순단의 두 번 가르기 — 범위, 그다음 층',
     W, 240, b,
     '내 기기만이면 기기 쪽, 온 집이면 핑으로 공유기 앞뒤를 가릅니다 — 후보가 두셋으로 줄어듭니다.'
+  );
+}
+
+/**
+ * 주사율 목록 = 길의 최저 체급 — 세 관문(단자→케이블→모니터 포트).
+ * monitor-144hz-not-working "목록은 길이 실어온 조합" 고정.
+ */
+function refreshPathGate() {
+  const W = 640;
+  const gate = (x, head, sub, color) => {
+    let s = rect(x, 52, 180, 26, color, { r: 8 });
+    s += t(x + 90, 69, head, { anchor: 'middle', size: 11.5, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 96 + i * 16, ln, { size: 9.8, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '설정 목록은 모니터의 능력이 아니라, 이 길의 최저 체급입니다', { weight: 600, size: 13 });
+  b += gate(24, '① 카드 단자', ['DP가 무난한 기본값', '구형 단자는 상한이 낮음'], COLOR.fit);
+  b += '<line x1="204" y1="65" x2="228" y2="65" stroke="var(--line)" stroke-width="2"/>';
+  b += gate(228, '② 케이블', ['규격 미달이 흔한 범인', '동봉 케이블이 안전한 출발'], COLOR.accent);
+  b += '<line x1="408" y1="65" x2="432" y2="65" stroke="var(--line)" stroke-width="2"/>';
+  b += gate(432, '③ 모니터 포트', ['포트별 지원이 다른 제품 존재', 'OSD의 DP 버전·활성 스위치'], COLOR.over);
+  b += t(24, 152, '셋 중 하나라도 144를 못 실으면 → 목록에는 60만 남습니다 (+ 드라이버가 목록을 만드는 쪽)', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '잃어버린 144를 찾는 세 관문',
+    W, 170, b,
+    '카드 단자 → 케이블 → 모니터 포트 — 가장 약한 관문이 주사율 목록의 상한을 정합니다.'
   );
 }
