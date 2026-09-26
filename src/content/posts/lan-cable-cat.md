@@ -2,7 +2,7 @@
 title: 랜선 아무거나 꽂아도 되나 — 피복의 CAT 숫자가 답입니다
 description: 서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복에 인쇄된 CAT 숫자로 판단됩니다. 규격별 속도 상한, 내 연결이 몇으로 잡혔는지 확인하는 법, 100Mbps로 떨어지는 흔한 원인을 정리했습니다.
 date: 2026-09-01
-updated: 2026-09-05
+updated: 2026-09-26
 category: network
 tags: [랜선, CAT6, 기가인터넷, 이더넷, 홈네트워크]
 ---
@@ -171,5 +171,7 @@ UTP CAT.5E 24AWG 4PRS ...   ← 이 케이블은 CAT5e
 집 안 연결의 다음 갈림길은
 [메시 와이파이의 백홀](/posts/mesh-wifi-backhaul.html)이고, 무선 쪽의
 같은 구조는 [공유기 세대 판정](/posts/wifi7-router-upgrade.html)에 있습니다.
+(케이블 접촉·노화가 의심되는 **간헐 끊김 증상**은
+[순단 격리 판정](/posts/internet-random-disconnect.html)에서 자리를 잡아줍니다.)
 
 표기나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

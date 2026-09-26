@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인터넷이 툭 끊겼다 돌아올 때 — 범위와 층, 두 번만 자르면 됩니다 | 스펙핏</title>
+<meta name="description" content="잘 되던 인터넷이 하루 몇 번씩 몇 초에서 몇 분간 끊겼다 저절로 돌아오는 순단은 원인 후보가 많아 미궁이 되기 쉽습니다. 끊기는 범위(내 기기만인가 온 집인가)와 끊긴 층(공유기 앞인가 뒤인가), 두 번의 가르기로 용의자를 좁히는 격리 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/internet-random-disconnect.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="인터넷이 툭 끊겼다 돌아올 때 — 범위와 층, 두 번만 자르면 됩니다 | 스펙핏">
+<meta property="og:description" content="잘 되던 인터넷이 하루 몇 번씩 몇 초에서 몇 분간 끊겼다 저절로 돌아오는 순단은 원인 후보가 많아 미궁이 되기 쉽습니다. 끊기는 범위(내 기기만인가 온 집인가)와 끊긴 층(공유기 앞인가 뒤인가), 두 번의 가르기로 용의자를 좁히는 격리 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/internet-random-disconnect.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"인터넷이 툭 끊겼다 돌아올 때 — 범위와 층, 두 번만 자르면 됩니다","description":"잘 되던 인터넷이 하루 몇 번씩 몇 초에서 몇 분간 끊겼다 저절로 돌아오는 순단은 원인 후보가 많아 미궁이 되기 쉽습니다. 끊기는 범위(내 기기만인가 온 집인가)와 끊긴 층(공유기 앞인가 뒤인가), 두 번의 가르기로 용의자를 좁히는 격리 순서를 정리했습니다.","datePublished":"2026-09-26","dateModified":"2026-09-26","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/internet-random-disconnect.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"인터넷이 툭 끊겼다 돌아올 때 — 범위와 층, 두 번만 자르면 됩니다","item":"https://specfit.kr/posts/internet-random-disconnect.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>인터넷이 툭 끊겼다 돌아올 때 — 범위와 층, 두 번만 자르면 됩니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-26">2026년 9월 26일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>멀쩡하던 인터넷이 <strong>하루 몇 번씩 툭 끊겼다가, 몇 초~몇 분 뒤
+저절로 돌아옵니다.</strong> 통화가 끊기고 게임이 튕기는데, 확인하러
+가면 이미 멀쩡해서 — 통신사에 전화해도 &quot;지금은 정상&quot;이라는
+답만 돌아오는, 그 미궁의 증상입니다.</p>
+<p>미궁이 되는 이유는 후보가 많아서가 아니라 <strong>한 번에 다 의심해서</strong>
+입니다. 두 번만 자르면 후보는 두셋으로 줄어듭니다 — <strong>① 끊길 때
+누가 같이 끊기나(범위), ② 어디까지는 살아 있나(층).</strong></p>
+<h2 id="첫-번째-가르기-내-기기만인가-온-집인가">첫 번째 가르기 — 내 기기만인가, 온 집인가</h2>
+<p>다음 끊김이 왔을 때 딱 하나만 확인하세요 — <strong>같은 공유기를 쓰는
+다른 기기(폰 와이파이·가족 컴퓨터)도 같이 끊겼는가.</strong></p>
+<ul>
+<li><strong>온 집이 같이 끊긴다</strong> → 내 컴퓨터는 무죄입니다. 용의자는
+공유기와 그 바깥(회선)으로 좁혀집니다 — 아래 두 번째
+가르기로 갑니다</li>
+<li><strong>내 기기만 끊긴다</strong> → 공유기·회선은 무죄. 내 기기와 공유기
+사이(케이블·포트·랜카드·전파)가 수사 범위입니다</li>
+</ul>
+<p>폰을 데이터 말고 <strong>와이파이로</strong> 붙여 두는 게 요령입니다 — 데이터
+로 되는 건 비교가 안 되니까요.</p>
+<h2 id="두-번째-가르기-공유기-앞인가-뒤인가-온-집-갈래">두 번째 가르기 — 공유기 앞인가 뒤인가 (온 집 갈래)</h2>
+<p>온 집이 끊기는 경우, 남은 질문은 <strong>공유기 자신인가, 그 바깥
+(회선)인가</strong>입니다. 도구는 핑 — 컴퓨터에서 <strong>공유기 주소와 외부
+주소(포털 등)로 연속 핑을 띄워 두고</strong> 끊김 순간을 기다립니다
+(공유기 주소는 제품 라벨·설명서에 있고, 연속으로 보내는 옵션은
+검색하면 바로 나오는 기본 명령입니다).</p>
+<ul>
+<li><strong>공유기 핑은 계속 오는데 외부만 끊긴다</strong> → 집 안은 멀쩡,
+<strong>회선 쪽</strong>입니다. 끊긴 시각을 며칠 기록해서 통신사에
+전달하는 게 다음 수 — <a href="/posts/internet-slow-at-night.html">밤마다 느려지는 증상 글</a>
+의 &quot;말이 통하게 하는 기록 요령&quot;이 여기서도 그대로 씁니다.
+공유기를 빼고 모뎀(단자)에 컴퓨터를 직결해 재현되는지 보는
+실험도 회선 쪽을 확정하는 강한 격리입니다</li>
+<li><strong>공유기 핑부터 무응답</strong> → 공유기 자신의 갈래입니다. 재부팅
+으로 한동안 낫다가 재발한다면 <a href="/posts/router-lifespan.html">노후·과부하의 전형</a>
+이고, 특히 <strong>게임·스트리밍처럼 부하가 걸릴 때만</strong> 끊긴다면
+일이 몰릴 때 주저앉는 정황이라 같은 갈래에 무게가 실립니다 —
+<a href="/posts/router-reboot.html">재부팅 관리</a>로 버틸지 교체할지의
+저울은 그 글들에 있습니다</li>
+</ul>
+<h2 id="내-기기만-끊기는-갈래-기기와-공유기-사이">내 기기만 끊기는 갈래 — 기기와 공유기 사이</h2>
+<p><strong>유선이라면</strong> 순서는 셋입니다. 랜선 양끝을 다시 꽂고(접촉),
+공유기의 <strong>다른 포트</strong>로 옮겨 보고(포트 격리), 여분이 있다면
+<a href="/posts/lan-cable-cat.html">케이블 자체를 교체</a>해 봅니다 — 접촉
+노화는 순단의 단골이라 이 셋으로 끝나는 경우가 많습니다. 하나
+더 — 장치 관리자에서 랜카드(이더넷 어댑터)의 <strong>전원 관리 탭에
+&quot;전원을 끌 수 있음&quot; 항목이 켜져 있다면 꺼 보세요.</strong> 절전이
+네트워크를 잠깐씩 재우는, 잘 알려진 함정입니다.</p>
+<p><strong>무선이라면</strong> 전파의 문제가 얹힙니다 — 거리·벽·간섭으로 순단이
+생기는 구조는 <a href="/posts/desktop-wifi-vs-lan.html">유선 vs 와이파이</a>
+와 <a href="/posts/router-device-count.html">기기 수·혼잡 이야기</a>에 정리돼
+있고, 가능하다면 <strong>유선으로 며칠 써 보는 것</strong>이 무선 변수를
+통째로 자르는 격리입니다.</p>
+<p>정리하면 — <strong>범위(누가 같이 끊기나) → 층(공유기 앞뒤 핑)</strong> 두
+번의 가르기로 회선/공유기/내 기기 중 하나가 남고, 갈래별 처방은
+접촉·전원 관리·기록·저울로 이어집니다. 연결이 끊기는 게 아니라
+<strong>항상 느린</strong> 거라면 <a href="/posts/internet-download-speed.html">속도 판정</a>
+쪽이고, 아예 <strong>안 붙는</strong> 거라면 <a href="/posts/laptop-wifi-not-connecting.html">연결 불가 판정</a>
+이라는 이웃 증상입니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">인터넷끊김</span> <span class="tag">순단</span> <span class="tag">공유기</span> <span class="tag">랜선</span> <span class="tag">핑테스트</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/gamepad-not-working.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">게임패드를 꽂았는데 게임이 몰라볼 때 — 패드와 게임이 다른 언어를 쓰고 있어서입니다</span>
+        <span class="card-desc">윈도우는 패드를 인식하는데 정작 게임 안에서는 무반응인 증상은 게시판 단골입니다. 어느 층에서 끊겼는지부터 가르고, 게임과 패드의 입력 규격이 어긋나는 구조와 스팀의 통역 기능, 이중 인식의 함정까지 — 판정 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mouse-double-click.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다</span>
+        <span class="card-desc">마우스를 한 번 클릭했는데 창이 두 개 열리고, 드래그하던 파일이 중간에 떨어집니다. 버튼 밑 스위치의 접점 노화가 만드는 채터링 증상입니다 — 진짜 고장인지 가르는 판별, 당장 쓸 수 있는 완화, 근본 해결의 저울을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/modem-direct-connection.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">공유기 없이 모뎀에 컴퓨터 직결 — 됩니다, 공유기가 해주던 세 가지 일만 알면요</span>
+        <span class="card-desc">컴퓨터 한 대뿐인데 공유기가 꼭 필요한지, 모뎀에 직결하면 더 빠른지 궁금해하는 질문이 꾸준합니다. 직결은 표준 구성이라 됩니다 — 다만 공유기가 조용히 해주던 나눠 쓰기·문지기·내부망 세 가지 일이 사라진다는 것만 알면, 판정은 간단합니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

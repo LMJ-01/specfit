@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>인터넷이 툭 끊겼다 돌아올 때 — 범위와 층, 두 번만 자르면 됩니다</title>
+    <link>https://specfit.kr/posts/internet-random-disconnect.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/internet-random-disconnect.html</guid>
+    <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
+    <description>잘 되던 인터넷이 하루 몇 번씩 몇 초에서 몇 분간 끊겼다 저절로 돌아오는 순단은 원인 후보가 많아 미궁이 되기 쉽습니다. 끊기는 범위(내 기기만인가 온 집인가)와 끊긴 층(공유기 앞인가 뒤인가), 두 번의 가르기로 용의자를 좁히는 격리 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>HDR을 켰더니 화면이 물 빠져 보일 때 — 고장이 아니라 무대가 바뀐 겁니다</title>
     <link>https://specfit.kr/posts/hdr-washed-out.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/hdr-washed-out.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/usb-hub-power.html</guid>
     <pubDate>Mon, 14 Sep 2026 15:00:00 GMT</pubDate>
     <description>USB 허브에 꽂은 외장하드가 인식이 안 되거나 끊기는 건 게시판 단골 하소연입니다. 허브는 포트 하나의 전력을 나눠 쓰는 구조라, 꽂아도 되는 기기와 직결해야 하는 기기가 갈립니다 — 무전원·유전원의 차이와 판정 기준을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>게임 화면이 가로로 찢어져 보일 때 — 고장이 아니라 박자가 어긋난 겁니다</title>
-    <link>https://specfit.kr/posts/screen-tearing.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/screen-tearing.html</guid>
-    <pubDate>Sun, 13 Sep 2026 15:00:00 GMT</pubDate>
-    <description>게임 중 화면이 가로선으로 어긋나 찢어져 보이는 티어링은 게시판 단골 하소연입니다. 그래픽카드가 미는 박자와 모니터가 그리는 박자가 어긋나면 한 화면에 두 장면이 섞이는 것 — 부품 무죄 판정과 수직동기·가변주사율 처방 사다리를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
