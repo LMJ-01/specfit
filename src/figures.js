@@ -879,6 +879,7 @@ export const figures = {
   'power-path-ladder': powerPathLadder,
   'wake-rollcall': wakeRollcall,
   'ping-spike-zones': pingSpikeZones,
+  'ram-detect-fork': ramDetectFork,
 };
 
 /**
@@ -3415,5 +3416,30 @@ function pingSpikeZones() {
     '게임 핑 튐 — 구간별 용의자',
     W, 190, b,
     '핑은 컴퓨터 안, 집 안, 집 밖 세 구간을 지나고, 튀는 정황(어느 게임·어느 시간·유선 여부)이 어느 구간인지 알려줍니다.'
+  );
+}
+
+function ramDetectFork() {
+  const W = 640;
+  const box = (x, y, w, h, color, head, sub, headFill) => {
+    let s = rect(x, y, w, 24, color, { r: 7 });
+    s += t(x + w / 2, y + 16, head, { anchor: 'middle', size: 10.5, weight: 600, fill: headFill || '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 8, y + 42 + i * 15, ln, { size: 9.4, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '먼저 물을 것: 어느 숫자가 절반인가', { weight: 600, size: 13 });
+  b += rect(200, 40, 240, 24, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(320, 56, '작업 관리자 → 메모리', { anchor: 'middle', size: 10.5, weight: 600, fill: COLOR.text });
+  b += t(170, 84, '"설치된 RAM"부터 절반이면 ↙', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += t(470, 84, '↘ 설치는 다 잡히는데 "사용 가능"만 적으면', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += box(24, 100, 290, 96, COLOR.over, '하드웨어 층 — 슬롯·접촉·모듈', ['한 장씩 · 슬롯 바꿔 꽂는 격리 실험', '재장착·단자 확인 (조심스럽게)', '바이오스 초기화·업데이트가 마지막 수']);
+  b += box(330, 100, 286, 96, COLOR.accent, '예약 층 — 윈도우가 잡아둠', ['하드웨어 예약: 내장그래픽 공유 몫', 'msconfig "최대 메모리" 체크 함정', '수 GB 예약은 정상 범위인 경우']);
+  return figure(
+    '램 인식 판정 — 숫자 두 개의 갈림',
+    W, 212, b,
+    '설치된 RAM 자체가 모자라면 하드웨어 층(슬롯·접촉·모듈), 설치는 다 잡히는데 사용 가능만 적으면 예약 층입니다.'
   );
 }

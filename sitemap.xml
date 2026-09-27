@@ -13,6 +13,7 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/ram-not-detected.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-ping-spike.html</loc><lastmod>2026-09-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-random-disconnect.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-144hz-not-working.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
@@ -119,7 +120,7 @@
   <url><loc>https://specfit.kr/posts/dual-boot-vs-wsl.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/modular-psu.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/router-reboot.html</loc><lastmod>2026-09-08</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/mixed-ram-capacity.html</loc><lastmod>2026-09-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/mixed-ram-capacity.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/old-laptop-uses.html</loc><lastmod>2026-09-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/apartment-lan-panel.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/case-fan-setup.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
@@ -159,7 +160,7 @@
   <url><loc>https://specfit.kr/posts/laptop-charger-watt-pd.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/nvme-heatsink.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ollama-context-length.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/ram-dual-channel-check.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/ram-dual-channel-check.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/external-ssd-dev.html</loc><lastmod>2026-09-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-screen-size.html</loc><lastmod>2026-09-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-xmp-expo.html</loc><lastmod>2026-09-18</lastmod><priority>0.8</priority></url>

@@ -2,7 +2,7 @@
 title: 내 컴퓨터가 듀얼 채널인지 확인하는 법 — CPU-Z 표기 읽기
 description: 램을 두 장 꽂았다고 듀얼 채널이 되는 게 아닙니다. 지금 듀얼로 도는지 확인하는 세 가지 방법과, DDR5에서 CPU-Z 표기가 헷갈리는 이유, 아니었을 때 고치는 법을 정리했습니다.
 date: 2026-08-21
-updated: 2026-09-05
+updated: 2026-09-28
 category: memory
 tags: [듀얼채널, 램, CPU-Z, 메모리대역폭, DDR5]
 affiliate: true
@@ -159,6 +159,7 @@ CPU-Z·HWiNFO 모두 노트북에서도 그대로 동작합니다. 다만 얇은
 
 램 용량 자체가 고민이라면 [램 16GB vs 32GB](/posts/ram-16gb-vs-32gb.html)부터,
 같은 32GB 를 몇 장으로 만들지는 [16×2 vs 32×1](/posts/ram-16x2-vs-32x1.html)에서
-가르세요.
+가르세요. 듀얼이 문제가 아니라 **용량 자체가 모자라게 잡힌다**면
+[램 인식 판정](/posts/ram-not-detected.html)이 먼저입니다.
 
 표기나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
