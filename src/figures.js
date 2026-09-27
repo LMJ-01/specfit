@@ -876,6 +876,7 @@ export const figures = {
   'recording-pipeline': recordingPipeline,
   'disconnect-two-cuts': disconnectTwoCuts,
   'refresh-path-gate': refreshPathGate,
+  'power-path-ladder': powerPathLadder,
 };
 
 /**
@@ -3322,5 +3323,42 @@ function refreshPathGate() {
     '잃어버린 144를 찾는 세 관문',
     W, 170, b,
     '카드 단자 → 케이블 → 모니터 포트 — 가장 약한 관문이 주사율 목록의 상한을 정합니다.'
+  );
+}
+
+/**
+ * 완전 무반응 — 전기 길 바깥→안 격리 사다리.
+ * pc-no-power "바깥에서 안으로 자릅니다" 고정.
+ */
+function powerPathLadder() {
+  const W = 640;
+  const step = (x, y, w, label, color, fill) => {
+    let s = rect(x, y, w, 24, color, { r: 7, stroke: COLOR.line });
+    s += t(x + w / 2, y + 16, label, { anchor: 'middle', size: 10.5, weight: 600, fill: fill || '#fff' });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '전기가 오는 길 — 바깥의 허무한 범인부터 자릅니다', { weight: 600, size: 13 });
+  b += step(24, 44, 108, '벽 콘센트', COLOR.soft, COLOR.text);
+  b += '<line x1="132" y1="56" x2="152" y2="56" stroke="var(--line)" stroke-width="2"/>';
+  b += step(152, 44, 108, '멀티탭', COLOR.fit);
+  b += '<line x1="260" y1="56" x2="280" y2="56" stroke="var(--line)" stroke-width="2"/>';
+  b += step(280, 44, 108, '전원 케이블', COLOR.fit);
+  b += '<line x1="388" y1="56" x2="408" y2="56" stroke="var(--line)" stroke-width="2"/>';
+  b += step(408, 44, 100, '뒷면 스위치', COLOR.fit);
+  b += '<line x1="508" y1="56" x2="528" y2="56" stroke="var(--line)" stroke-width="2"/>';
+  b += step(528, 44, 88, '파워·버튼', COLOR.over);
+  const notes = [
+    ['벽 직결로 멀티탭 통째 격리 · 다른 기기로 콘센트 생존 확인', 64],
+    ['케이블 양끝 재체결 · 여분(모니터용과 같은 규격)으로 교체 실험', 84],
+    ['0/1 스위치가 0으로 밀린 사고 — 청소·이사 뒤의 단골', 104],
+    ['경계 의식: 케이블 뽑고 버튼 수 초 길게(방전) → 재연결', 124],
+    ['남으면 안쪽 — 간헐=버튼 배선 / 상시=파워 (분해 금물, 교차 장착·점검)', 144],
+  ];
+  notes.forEach(([ln, y]) => { b += t(24, y + 26, '· ' + ln, { size: 10.2, fill: COLOR.mute }); });
+  return figure(
+    '완전 무반응의 격리 사다리',
+    W, 190, b,
+    '드라이버를 잡기 전에 끝나는 경우가 많은 순서 — 바깥부터 안쪽으로.'
   );
 }
