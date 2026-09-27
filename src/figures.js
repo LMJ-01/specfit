@@ -881,6 +881,7 @@ export const figures = {
   'ping-spike-zones': pingSpikeZones,
   'ram-detect-fork': ramDetectFork,
   'cursor-three-motions': cursorThreeMotions,
+  'usb-visibility-ladder': usbVisibilityLadder,
 };
 
 /**
@@ -3465,5 +3466,30 @@ function cursorThreeMotions() {
     '저절로 움직이는 커서 — 모양 3갈래',
     W, 190, b,
     '잘게 떨리면 표면·센서, 휙 건너뛰면 무선·간섭, 목적 있게 움직이면 이중 입력을 배제한 뒤 보안 점검 순서입니다.'
+  );
+}
+
+function usbVisibilityLadder() {
+  const W = 640;
+  const stage = (x, w, color, head, sub, headFill) => {
+    let s = rect(x, 78, w, 26, color, { r: 8 });
+    s += t(x + w / 2, 95, head, { anchor: 'middle', size: 10.5, weight: 600, fill: headFill || '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 4, 122 + i * 15, ln, { size: 9.2, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, 'USB가 화면에 뜨기까지 지나는 층', { weight: 600, size: 13 });
+  b += t(24, 48, '"뚜둥" 연결음 = 여기까지 통과 ─────┐', { size: 10.5, fill: COLOR.accent, weight: 600 });
+  b += stage(24, 142, COLOR.soft, '① 물리·전원', ['포트 · 케이블 · 허브 전원', '소리도 안 나면 이 층', '→ 포트·케이블 격리'], COLOR.text);
+  b += stage(176, 142, COLOR.fit, '② 감지 (연결음)', ['윈도우가 "꽂혔다" 인지', '소리 반복 = 접촉·전원', '→ 뒷면 직결·허브 제거']);
+  b += stage(328, 142, COLOR.over, '③ 드라이버', ['장치 관리자 노란 표시', '"알 수 없는 장치" 갈래', '→ 제거 후 재연결']);
+  b += stage(480, 136, COLOR.accent, '④ 표시 (문자)', ['디스크 관리에서 확인', '문자 미할당 = 단골', '→ 문자 할당 (포맷 금지)']);
+  b += t(24, 186, '소리는 나는데 안 보인다 = ①·②는 무죄 — ③·④에서만 찾으면 됩니다', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    'USB 표시 사다리 — 연결음의 의미',
+    W, 198, b,
+    '연결음은 물리·전원과 감지 층을 통과했다는 신호라, 소리는 나는데 안 보이면 드라이버·표시 층에서만 범인을 찾으면 됩니다.'
   );
 }
