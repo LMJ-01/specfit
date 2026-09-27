@@ -880,6 +880,7 @@ export const figures = {
   'wake-rollcall': wakeRollcall,
   'ping-spike-zones': pingSpikeZones,
   'ram-detect-fork': ramDetectFork,
+  'cursor-three-motions': cursorThreeMotions,
 };
 
 /**
@@ -3441,5 +3442,28 @@ function ramDetectFork() {
     '램 인식 판정 — 숫자 두 개의 갈림',
     W, 212, b,
     '설치된 RAM 자체가 모자라면 하드웨어 층(슬롯·접촉·모듈), 설치는 다 잡히는데 사용 가능만 적으면 예약 층입니다.'
+  );
+}
+
+function cursorThreeMotions() {
+  const W = 640;
+  const col = (x, w, color, head, sub) => {
+    let s = rect(x, 56, w, 26, color, { r: 8 });
+    s += t(x + w / 2, 73, head, { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 100 + i * 16, ln, { size: 9.6, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '움직임의 모양이 용의자를 고릅니다', { weight: 600, size: 13 });
+  b += col(24, 190, COLOR.fit, '잘게 떨림', ['표면·센서 갈래', '유리·반사 표면, 센서 이물', '→ 패드 깔기 + 센서 확인']);
+  b += col(222, 190, COLOR.over, '휙 건너뜀', ['무선·간섭 갈래', '배터리 저하 · 동글 거리', '→ 무선 끊김 판정 순서로']);
+  b += col(420, 196, COLOR.accent, '조종당하듯 움직임', ['이중 입력부터 배제', '터치패드 · 남은 수신기 · 펜', '→ 다 껐는데도면 보안 점검']);
+  b += t(24, 172, '공통 첫 수: 다른 표면 + 다른 마우스로 맞바꾸기 — 마우스 죄인지부터 확정', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '저절로 움직이는 커서 — 모양 3갈래',
+    W, 190, b,
+    '잘게 떨리면 표면·센서, 휙 건너뛰면 무선·간섭, 목적 있게 움직이면 이중 입력을 배제한 뒤 보안 점검 순서입니다.'
   );
 }

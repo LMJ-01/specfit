@@ -13,6 +13,13 @@
     <description>램을 추가했는데 용량이 그대로거나, 32GB를 꽂았는데 16GB만 잡히는 증상은 커뮤니티 질문 게시판의 단골입니다. 그런데 "설치된 RAM"이 모자란 것과 "사용 가능"만 적은 것은 완전히 다른 문제라 — 숫자 두 개를 가르는 것부터가 판정의 시작입니다. 층별 격리 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>마우스 커서가 저절로 움직일 때 — 해킹 걱정 전에 움직임의 모양부터 봅니다</title>
+    <link>https://specfit.kr/posts/mouse-cursor-moving.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mouse-cursor-moving.html</guid>
+    <pubDate>Sun, 27 Sep 2026 15:00:00 GMT</pubDate>
+    <description>손을 안 댔는데 커서가 떨리거나 저절로 움직이면 해킹부터 의심하게 되지만, 대부분의 범인은 훨씬 시시합니다. 잘게 떨리는지, 휙 건너뛰는지, 조종당하듯 움직이는지 — 움직임의 모양 세 갈래로 표면·센서, 무선, 이중 입력을 가르는 판정 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>인터넷은 멀쩡한데 게임 핑만 튈 때 — 속도가 아니라 변동의 문제입니다</title>
     <link>https://specfit.kr/posts/game-ping-spike.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/game-ping-spike.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/triple-monitor-setup.html</guid>
     <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
     <description>내 컴퓨터에 모니터를 3대까지 달 수 있는지는 게시판에 꾸준히 올라오는 질문입니다. 그래픽카드 뒷면 포트 수를 세는 게 시작이지만 그게 전부는 아닙니다 — 동시 출력 수 확인법과 포트가 모자랄 때의 우회로 세 가지를 순서대로 정리했습니다.</description>
-  </item>
-  <item>
-    <title>컴퓨터 시계가 자꾸 틀릴 때 — 틀리는 모양이 범인을 말해줍니다</title>
-    <link>https://specfit.kr/posts/pc-clock-wrong.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-clock-wrong.html</guid>
-    <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
-    <description>컴퓨터 시간이 몇 분씩 어긋나거나, 껐다 켜면 몇 년 전으로 돌아가거나, 정확히 몇 시간 단위로 틀어지는 증상은 게시판 단골입니다. 셋은 범인이 전부 다릅니다 — 동기화·코인 배터리·시간대라는 세 갈래를 틀리는 모양으로 가르는 판정을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
