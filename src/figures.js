@@ -877,6 +877,7 @@ export const figures = {
   'disconnect-two-cuts': disconnectTwoCuts,
   'refresh-path-gate': refreshPathGate,
   'power-path-ladder': powerPathLadder,
+  'wake-rollcall': wakeRollcall,
 };
 
 /**
@@ -3360,5 +3361,32 @@ function powerPathLadder() {
     '완전 무반응의 격리 사다리',
     W, 190, b,
     '드라이버를 잡기 전에 끝나는 경우가 많은 순서 — 바깥부터 안쪽으로.'
+  );
+}
+
+function wakeRollcall() {
+  const W = 640;
+  const dev = (x, label, ok) => {
+    let s = rect(x, 58, 128, 30, ok ? COLOR.fit : COLOR.over, { r: 8 });
+    s += t(x + 64, 77, `${label} ${ok ? '✓' : '✗'}`, { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '절전 복귀 = 장치들의 점호 — 하나가 늦잠 자면 그 장치만 없는 아침', { weight: 600, size: 12.5 });
+  b += t(24, 46, '복귀 신호', { size: 10, fill: COLOR.mute });
+  b += dev(24, 'CPU·시스템', true);
+  b += dev(178, '화면', true);
+  b += dev(332, '네트워크', true);
+  b += dev(486, '오디오 (늦잠)', false);
+  b += t(24, 112, '늦잠 잔 장치만 다시 깨우면 됩니다 — 재부팅은 과잉 처방', { size: 11, weight: 600, fill: COLOR.text });
+  const steps = ['① 기본 출력 장치 재확인', '② 경로 물리 리셋 (모니터 껐다 켜기 · USB 재연결)', '③ 장치 관리자: 사용 안 함 → 사용 (재점호)', '④ Windows Audio 서비스 재시작'];
+  steps.forEach((ln, i) => {
+    b += t(36, 134 + i * 18, ln, { size: 10.5, fill: COLOR.mute });
+  });
+  b += t(24, 216, '자주 재발하면: USB 전원 관리 해제 + 드라이버 갱신, 또는 절전 대신 "디스플레이 끄기만"', { size: 10, fill: COLOR.mute });
+  return figure(
+    '절전 복귀 점호 — 늦잠 잔 장치 깨우기',
+    W, 228, b,
+    '복귀는 스위치 하나가 아니라 장치별 점호라, 재부팅으로 돌아오는 증상은 늦잠 잔 장치 하나만 깨우면 됩니다.'
   );
 }
