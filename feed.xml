@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>인터넷은 멀쩡한데 게임 핑만 튈 때 — 속도가 아니라 변동의 문제입니다</title>
+    <link>https://specfit.kr/posts/game-ping-spike.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/game-ping-spike.html</guid>
+    <pubDate>Sat, 26 Sep 2026 15:00:00 GMT</pubDate>
+    <description>속도 측정은 잘 나오고 핑 테스트도 낮은데 게임에서만 순간순간 핑이 튀는 증상은 축을 잘못 재고 있는 경우입니다. 반응 시간은 평균이 아니라 변동이 문제라서 — 튀는 정황(어느 게임·어느 시간·유선 여부)으로 컴퓨터 안, 집 안, 집 밖을 가르는 판정 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>144Hz 모니터인데 60Hz만 잡힐 때 — 목록에 없는 숫자는 길이 못 실어온 겁니다</title>
     <link>https://specfit.kr/posts/monitor-144hz-not-working.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-144hz-not-working.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/game-wrong-monitor.html</guid>
     <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
     <description>듀얼 모니터에서 게임을 켰더니 옆의 보조 화면에서 전체화면으로 열리는 증상은 게시판 단골 질문입니다. 전체화면 게임 대부분이 윈도우의 "주 디스플레이"를 따르기 때문입니다 — 주 모니터 설정과 창모드 이동, 게임별 예외까지 손잡이 세 개를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>윈도우 업데이트 중 꺼도 되나 — 위험한 순간은 딱 한 구간입니다</title>
-    <link>https://specfit.kr/posts/windows-update-force-shutdown.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/windows-update-force-shutdown.html</guid>
-    <pubDate>Tue, 15 Sep 2026 15:00:00 GMT</pubDate>
-    <description>나가야 하는데 화면은 "업데이트 구성 중 30%". 강제 종료하면 큰일 나는지는 게시판 단골 질문입니다. 업데이트의 어느 단계냐에 따라 답이 갈립니다 — 위험한 구간과 무방한 구간, 이미 꺼버렸을 때의 복구 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

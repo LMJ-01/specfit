@@ -878,6 +878,7 @@ export const figures = {
   'refresh-path-gate': refreshPathGate,
   'power-path-ladder': powerPathLadder,
   'wake-rollcall': wakeRollcall,
+  'ping-spike-zones': pingSpikeZones,
 };
 
 /**
@@ -3388,5 +3389,31 @@ function wakeRollcall() {
     '절전 복귀 점호 — 늦잠 잔 장치 깨우기',
     W, 228, b,
     '복귀는 스위치 하나가 아니라 장치별 점호라, 재부팅으로 돌아오는 증상은 늦잠 잔 장치 하나만 깨우면 됩니다.'
+  );
+}
+
+function pingSpikeZones() {
+  const W = 640;
+  const zone = (x, w, color, head, sub) => {
+    let s = rect(x, 64, w, 26, color, { r: 8 });
+    s += t(x + w / 2, 81, head, { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 108 + i * 16, ln, { size: 9.6, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '핑이 지나는 세 구간 — 튀는 정황이 구간을 고릅니다', { weight: 600, size: 13 });
+  b += t(24, 50, '내 컴퓨터', { size: 10, fill: COLOR.mute });
+  b += t(240, 50, '집 안', { size: 10, fill: COLOR.mute });
+  b += t(430, 50, '집 밖', { size: 10, fill: COLOR.mute });
+  b += zone(24, 190, COLOR.accent, '① 컴퓨터 안', ['백그라운드 다운로드·업데이트', '런처·동기화가 몰래 받는 중', '→ 게임만 켠 상태와 비교']);
+  b += zone(222, 190, COLOR.over, '② 집 안 (무선·혼잡)', ['와이파이 간섭·거리 = 변동', '다른 기기·업로드가 길 점유', '→ 유선 직결이 격리 실험']);
+  b += zone(420, 196, COLOR.fit, '③ 집 밖 (경로·시간대)', ['특정 게임만 = 그 서버 경로', '저녁만 = 혼잡 시간대 정황', '→ 기록 들고 문의가 처방']);
+  b += t(24, 172, '판정 도구: 게임 내 핑 표시 + 공유기·외부 주소 연속 핑 — 언제·어디까지 튀는지 기록', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '게임 핑 튐 — 구간별 용의자',
+    W, 190, b,
+    '핑은 컴퓨터 안, 집 안, 집 밖 세 구간을 지나고, 튀는 정황(어느 게임·어느 시간·유선 여부)이 어느 구간인지 알려줍니다.'
   );
 }
