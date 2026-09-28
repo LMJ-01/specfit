@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>USB 안전 제거, 꼭 해야 하나 — 습관 논쟁이 아니라 설정 하나의 문제입니다</title>
+    <link>https://specfit.kr/posts/usb-safe-removal.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/usb-safe-removal.html</guid>
+    <pubDate>Sun, 27 Sep 2026 15:00:00 GMT</pubDate>
+    <description>USB와 외장하드를 안전 제거 없이 뽑아도 되는지는 커뮤니티의 오랜 논쟁거리입니다. 답은 습관이 아니라 내 디스크의 쓰기 캐시 정책에 달려 있습니다 — 빠른 제거면 전송 중만 피하면 되고, 캐시를 켰다면 안전 제거가 필수인 이유를 구조로 정리했습니다.</description>
+  </item>
+  <item>
     <title>램이 절반만 인식될 때 — 어느 숫자가 모자란지부터 봅니다</title>
     <link>https://specfit.kr/posts/ram-not-detected.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/ram-not-detected.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/front-usb-not-working.html</guid>
     <pubDate>Fri, 18 Sep 2026 15:00:00 GMT</pubDate>
     <description>본체 뒤 USB는 멀쩡한데 앞 포트만 인식이 안 되거나 끊기는 증상은 게시판 단골 질문입니다. 뒷면은 메인보드 직결, 전면은 케이스 케이블을 한 번 거치는 구조라 용의자가 다릅니다 — 갈래별 판정 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>켜자마자 꺼졌다가 다시 켜지는 컴퓨터 — 한 번이면 정상, 반복이면 사다리입니다</title>
-    <link>https://specfit.kr/posts/pc-turns-off-then-on.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-turns-off-then-on.html</guid>
-    <pubDate>Thu, 17 Sep 2026 15:00:00 GMT</pubDate>
-    <description>전원 버튼을 눌렀는데 잠깐 돌다 꺼지고, 잠시 뒤 스스로 다시 켜져 정상 부팅되는 증상은 게시판 단골 질문입니다. 한 번 꺼졌다 켜지는 것과 무한히 반복되는 것은 다른 이야기입니다 — 정상인 경우의 정체와, 반복될 때의 진단 순서를 갈라 정리했습니다.</description>
   </item>
 </channel>
 </rss>

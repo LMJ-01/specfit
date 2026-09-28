@@ -2,7 +2,7 @@
 title: 외장하드를 연결하면 컴퓨터가 멈출 때 — 멈춤의 모양이 갈래를 알려줍니다
 description: 외장하드만 꽂으면 탐색기가 멈추고 컴퓨터가 버벅이는 증상은 디스크 손상부터 USB 간섭, 절전, 썸네일 생성까지 원인이 다양합니다. 언제 어떻게 멈추는지가 갈래를 알려주고, 안에 중요한 데이터가 있다면 순서를 지키는 것이 데이터를 지킵니다.
 date: 2026-09-06
-updated: 2026-09-15
+updated: 2026-09-28
 category: memory
 tags: [외장하드, 탐색기멈춤, 배드섹터, USB간섭, 백업]
 ---
@@ -182,6 +182,7 @@ tags: [외장하드, 탐색기멈춤, 배드섹터, USB간섭, 백업]
 정리했습니다.)
 
 저장장치 이웃 글들 — [소리만 나고 안 보일 때](/posts/usb-not-showing.html) ·
+[안전 제거 논쟁의 답(쓰기 캐시)](/posts/usb-safe-removal.html) ·
 [백업 전략](/posts/dev-backup-strategy.html) ·
 [NAS vs 외장하드](/posts/nas-vs-external-hdd.html) ·
 [USB 3.0 간섭(무선 끊김)](/posts/wireless-mouse-lag.html)과 이어집니다.

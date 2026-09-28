@@ -885,6 +885,7 @@ export const figures = {
   'echo-direction': echoDirection,
   'gpu-detect-depth': gpuDetectDepth,
   'wifi-elimination': wifiElimination,
+  'write-cache-tradeoff': writeCacheTradeoff,
 };
 
 /**
@@ -3573,5 +3574,27 @@ function wifiElimination() {
     '와이파이 소거 판정 — 폰이 증인',
     W, 216, b,
     '폰이 같은 와이파이를 잘 쓴다는 사실이 회선·공유기를 소거해 주고, 남는 용의자는 노트북 층과 대역 함정뿐입니다.'
+  );
+}
+
+function writeCacheTradeoff() {
+  const W = 640;
+  const panel = (x, color, head, sub) => {
+    let s = rect(x, 56, 290, 26, color, { r: 8 });
+    s += t(x + 145, 73, head, { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 8, 100 + i * 16, ln, { size: 9.6, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '내 디스크의 정책이 답을 정합니다 (장치 관리자 → 디스크 → 정책)', { weight: 600, size: 12.5 });
+  b += panel(24, COLOR.fit, '빠른 제거 (요즘 기본값)', ['쓰기 캐시 없이 바로바로 기록', '속도는 양보, 뽑기는 관대', '전송 중만 아니면 그냥 뽑아도', '문제 확률 낮음 (버전에 따라)']);
+  b += panel(326, COLOR.over, '향상된 성능 (캐시 사용)', ['모아뒀다 쓰는 만큼 빠름', '화면의 "복사 완료"를 믿으면 안 됨', '→ 안전 제거가 마지막 기록을', '   마무리하는 필수 절차']);
+  b += t(24, 186, '공통 예외: 전송 중(LED 깜빡임·복사 창)에는 어느 쪽이든 뽑지 않기 · 외장 HDD는 회전 부품이라 안전 제거 권장', { size: 10, fill: COLOR.mute });
+  return figure(
+    '안전 제거 논쟁 — 쓰기 캐시가 가른다',
+    W, 198, b,
+    '빠른 제거 정책이면 전송 중만 피하면 되고, 향상된 성능(캐시)이면 안전 제거가 마지막 기록을 마무리하는 필수 절차입니다.'
   );
 }
