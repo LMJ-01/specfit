@@ -887,6 +887,7 @@ export const figures = {
   'wifi-elimination': wifiElimination,
   'write-cache-tradeoff': writeCacheTradeoff,
   'bios-lost-road': biosLostRoad,
+  'wrong-monitor-handles': wrongMonitorHandles,
 };
 
 /**
@@ -3623,5 +3624,30 @@ function biosLostRoad() {
     '바이오스로 빠질 때 — 길 잃음 판정',
     W, 198, b,
     '바이오스에 내 디스크가 보이면 길 안내(부팅 순서·부트로더) 문제라 데이터는 대개 무사하고, 안 보이면 물리 갈래부터입니다.'
+  );
+}
+
+function wrongMonitorHandles() {
+  const W = 640;
+  const handle = (x, w, color, head, sub) => {
+    let s = rect(x, 78, w, 26, color, { r: 8 });
+    s += t(x + w / 2, 95, head, { anchor: 'middle', size: 10.5, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 122 + i * 15, ln, { size: 9.4, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '전체화면 게임은 윈도우의 "주 디스플레이"를 따라갑니다', { weight: 600, size: 12.5 });
+  b += rect(24, 40, 180, 26, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(114, 57, '게임 → 주 모니터로', { anchor: 'middle', size: 10.5, weight: 600, fill: COLOR.text });
+  b += t(220, 57, '→ 그래서 손잡이는 게임이 아니라 윈도우 쪽부터', { size: 10.5, fill: COLOR.mute });
+  b += handle(24, 190, COLOR.fit, '① 주 모니터 변경 (근본)', ['디스플레이 설정 →', '"주 모니터로 만들기"', '새 창 기본 위치도 따라옴']);
+  b += handle(226, 190, COLOR.accent, '② 창모드 전환 (당장)', ['Alt+Enter 류로 창모드 →', '원하는 화면으로 끌고 가기', '→ 다시 전체화면']);
+  b += handle(428, 188, COLOR.over, '③ 게임 내 선택 (예외)', ['특정 게임만 엉뚱하면', '그 게임의 디스플레이', '선택 옵션이 우선']);
+  return figure(
+    '게임이 엉뚱한 모니터에 — 손잡이 셋',
+    W, 198, b,
+    '전체화면 게임은 주 디스플레이를 따르므로 주 모니터 변경이 근본 처방이고, 창모드 전환과 게임 내 선택이 보조 손잡이입니다.'
   );
 }
