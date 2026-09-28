@@ -884,6 +884,7 @@ export const figures = {
   'usb-visibility-ladder': usbVisibilityLadder,
   'echo-direction': echoDirection,
   'gpu-detect-depth': gpuDetectDepth,
+  'wifi-elimination': wifiElimination,
 };
 
 /**
@@ -3541,5 +3542,36 @@ function gpuDetectDepth() {
     '그래픽카드 인식 — 보이는 깊이 4단',
     W, 188, b,
     '장치 관리자에 어디까지 보이는지가 층을 고릅니다 — 흔적도 없으면 하드웨어, 이름을 모르면 드라이버, 잡혔는데 안 쓰면 선택의 문제입니다.'
+  );
+}
+
+function wifiElimination() {
+  const W = 640;
+  const chip = (x, y, w, label, ok) => {
+    let s = rect(x, y, w, 24, ok ? COLOR.fit : COLOR.over, { r: 8 });
+    s += t(x + w / 2, y + 16, label, { anchor: 'middle', size: 10.5, weight: 600, fill: '#fff' });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '"폰은 되는데" — 그 한마디가 지워 주는 용의자들', { weight: 600, size: 13 });
+  b += t(24, 52, '증거: 같은 와이파이에 폰이 멀쩡히 붙어 잘 씀', { size: 10.5, fill: COLOR.mute });
+  b += chip(24, 66, 130, '통신사 회선 무죄', true);
+  b += chip(168, 66, 130, '공유기 광역 무죄', true);
+  b += chip(312, 66, 150, '동네 인터넷 장애 무죄', true);
+  b += t(24, 116, '남는 용의자 — 노트북 쪽 층 + 대역 함정', { size: 11.5, weight: 600, fill: COLOR.text });
+  const rows = [
+    ['목록에 아예 안 뜸', '대역 함정(5GHz 도달·이름 합침) · 무선 스위치 · 드라이버'],
+    ['붙는데 "인터넷 없음"', '연결 층 통과 — IP·DNS 층, 네트워크 재설정이 정공법'],
+    ['쓰다 보면 끊겼다 붙음', '절전 갈래 — 어댑터 전원 관리 해제'],
+  ];
+  rows.forEach((r, i) => {
+    b += t(36, 140 + i * 18, r[0], { size: 10, weight: 600, fill: COLOR.accent });
+    b += t(210, 140 + i * 18, r[1], { size: 9.8, fill: COLOR.mute });
+  });
+  b += t(24, 204, '심화: 폰 핫스팟에 노트북을 붙여 보면 — 붙으면 노트북 무죄, 안 붙으면 노트북 확정', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '와이파이 소거 판정 — 폰이 증인',
+    W, 216, b,
+    '폰이 같은 와이파이를 잘 쓴다는 사실이 회선·공유기를 소거해 주고, 남는 용의자는 노트북 층과 대역 함정뿐입니다.'
   );
 }
