@@ -883,6 +883,7 @@ export const figures = {
   'cursor-three-motions': cursorThreeMotions,
   'usb-visibility-ladder': usbVisibilityLadder,
   'echo-direction': echoDirection,
+  'gpu-detect-depth': gpuDetectDepth,
 };
 
 /**
@@ -3514,5 +3515,31 @@ function echoDirection() {
     '에코 방향 판정 — 누구 쪽에서 새나',
     W, 192, b,
     '내 목소리가 나에게 울려 들리면 상대 쪽 유출, 상대가 울린다고 하면 내 쪽 유출입니다 — 새는 쪽이 헤드셋을 쓰는 것이 구조적 해결입니다.'
+  );
+}
+
+function gpuDetectDepth() {
+  const W = 640;
+  const step = (x, w, color, head, sub, headFill) => {
+    let s = rect(x, 70, w, 24, color, { r: 7 });
+    s += t(x + w / 2, 86, head, { anchor: 'middle', size: 10, weight: 600, fill: headFill || '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 4, 112 + i * 15, ln, { size: 9.2, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '첫 질문: 장치 관리자에 어디까지 보이는가', { weight: 600, size: 13 });
+  b += t(24, 48, '얕음 ◀', { size: 10, fill: COLOR.mute });
+  b += t(616, 48, '▶ 깊음', { anchor: 'end', size: 10, fill: COLOR.mute });
+  b += step(24, 142, COLOR.over, '흔적도 없음', ['하드웨어 층', '보조 전원 · 재장착 ·', '슬롯 · 바이오스 순서']);
+  b += step(176, 142, COLOR.accent, '"알 수 없는 장치"', ['드라이버 층', '존재는 보임 — 제거 후', '재설치가 정석']);
+  b += step(328, 142, COLOR.fit, '잡혔는데 안 씀', ['선택 층', '케이블 꽂은 위치 ·', 'GPU 선택 설정']);
+  b += step(480, 136, COLOR.soft, '됐다 안 됐다', ['간헐 = 물리 정황', '접촉 · 보조 전원 쪽', '무게 — 재장착부터'], COLOR.text);
+  b += t(24, 176, '보이는 깊이가 깊을수록 범인은 소프트웨어 쪽 — 흔적도 없으면 윈도우는 무죄입니다', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '그래픽카드 인식 — 보이는 깊이 4단',
+    W, 188, b,
+    '장치 관리자에 어디까지 보이는지가 층을 고릅니다 — 흔적도 없으면 하드웨어, 이름을 모르면 드라이버, 잡혔는데 안 쓰면 선택의 문제입니다.'
   );
 }
