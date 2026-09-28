@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>검은 화면에 마우스 커서만 보일 때 — 그 커서가 사건의 증인입니다</title>
+    <link>https://specfit.kr/posts/black-screen-cursor.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/black-screen-cursor.html</guid>
+    <pubDate>Mon, 28 Sep 2026 15:00:00 GMT</pubDate>
+    <description>부팅했는데 검은 화면에 커서만 덩그러니 있는 증상은 겁부터 나지만, 커서가 움직인다는 사실 자체가 절반의 진단입니다. 화면·그래픽·윈도우 핵심은 살아 있고 바탕화면을 그리는 담당자만 출근을 안 한 상태 — 기다리기, 탐색기 재출근, 반복 시 갈래까지 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>USB 안전 제거, 꼭 해야 하나 — 습관 논쟁이 아니라 설정 하나의 문제입니다</title>
     <link>https://specfit.kr/posts/usb-safe-removal.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/usb-safe-removal.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-on-bed.html</guid>
     <pubDate>Fri, 18 Sep 2026 15:00:00 GMT</pubDate>
     <description>침대나 이불 위에서 노트북을 쓰면 고장 난다는 말에 걱정이 됩니다. 반은 과장이고 반은 사실입니다 — 바닥의 숨구멍이 막히면 무슨 일이 생기는지, 실제 위험은 어느 축인지, 침대에서 괜찮게 쓰는 조건 셋을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>전면 USB만 안 될 때 — 앞 포트는 연장선 너머에 있습니다</title>
-    <link>https://specfit.kr/posts/front-usb-not-working.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/front-usb-not-working.html</guid>
-    <pubDate>Fri, 18 Sep 2026 15:00:00 GMT</pubDate>
-    <description>본체 뒤 USB는 멀쩡한데 앞 포트만 인식이 안 되거나 끊기는 증상은 게시판 단골 질문입니다. 뒷면은 메인보드 직결, 전면은 케이스 케이블을 한 번 거치는 구조라 용의자가 다릅니다 — 갈래별 판정 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

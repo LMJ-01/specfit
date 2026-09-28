@@ -2,6 +2,7 @@
 title: 바탕화면 아이콘이 다 사라졌을 때 — 사라진 범위가 갈래를 알려줍니다
 description: 어느 날 바탕화면이 텅 비어 있으면 파일이 다 날아간 줄 알고 심장이 내려앉습니다. 그런데 아이콘만 사라진 건지, 파일도 사라진 건지, 작업표시줄까지 사라진 건지 — 사라진 범위에 따라 원인이 완전히 다르고, 대부분은 1분짜리 설정 문제입니다.
 date: 2026-09-06
+updated: 2026-09-29
 category: monitor
 tags: [바탕화면아이콘, 아이콘사라짐, 바탕화면표시, OneDrive, 탐색기]
 ---
@@ -153,6 +154,7 @@ tags: [바탕화면아이콘, 아이콘사라짐, 바탕화면표시, OneDrive, 
    [백업](/posts/dev-backup-strategy.html)입니다
 
 화면 표시의 이웃 판정들 — [절전 후 창·아이콘 몰림](/posts/monitor-sleep-window-move.html) ·
+[검은 화면에 커서만(같은 담당자의 더 큰 결근)](/posts/black-screen-cursor.html) ·
 [오래 켜두면 느려짐(탐색기 층 반복 시)](/posts/pc-slow-until-reboot.html) ·
 [백업 전략](/posts/dev-backup-strategy.html)과 이어집니다.
 

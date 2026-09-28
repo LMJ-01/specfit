@@ -888,6 +888,7 @@ export const figures = {
   'write-cache-tradeoff': writeCacheTradeoff,
   'bios-lost-road': biosLostRoad,
   'wrong-monitor-handles': wrongMonitorHandles,
+  'cursor-alive-clue': cursorAliveClue,
 };
 
 /**
@@ -3649,5 +3650,36 @@ function wrongMonitorHandles() {
     '게임이 엉뚱한 모니터에 — 손잡이 셋',
     W, 198, b,
     '전체화면 게임은 주 디스플레이를 따르므로 주 모니터 변경이 근본 처방이고, 창모드 전환과 게임 내 선택이 보조 손잡이입니다.'
+  );
+}
+
+function cursorAliveClue() {
+  const W = 640;
+  const chip = (x, y, w, label, ok) => {
+    let s = rect(x, y, w, 24, ok ? COLOR.fit : COLOR.over, { r: 8 });
+    s += t(x + w / 2, y + 16, `${label} ${ok ? '✓' : '✗'}`, { anchor: 'middle', size: 10.5, weight: 600, fill: '#fff' });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '커서가 보이고 움직인다 — 그것만으로 확정되는 것들', { weight: 600, size: 13 });
+  b += chip(24, 44, 138, '화면 신호·케이블', true);
+  b += chip(176, 44, 130, '그래픽 출력', true);
+  b += chip(320, 44, 138, '윈도우 핵심 가동', true);
+  b += chip(472, 44, 144, '바탕화면(셸) 출근', false);
+  b += t(24, 96, '남은 용의자는 셸(탐색기) 하나 — 처방도 그 순서입니다', { size: 11.5, weight: 600, fill: COLOR.text });
+  const rows = [
+    ['① 몇 분 기다리기', '업데이트 뒤 첫 부팅·느린 디스크는 출근이 늦습니다'],
+    ['② 탐색기 재출근', 'Ctrl+Shift+Esc → 새 작업 실행 → explorer 입력'],
+    ['③ 매번 반복이면', '그래픽 드라이버·시작 프로그램 충돌 — 안전 모드 실험'],
+  ];
+  rows.forEach((r, i) => {
+    b += t(36, 120 + i * 18, r[0], { size: 10.5, weight: 600, fill: COLOR.accent });
+    b += t(190, 120 + i * 18, r[1], { size: 9.8, fill: COLOR.mute });
+  });
+  b += t(24, 184, '커서조차 없는 완전 검정은 이 글이 아니라 부팅 릴레이(신호 없음) 판정입니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '검은 화면 + 커서 — 커서가 증인',
+    W, 196, b,
+    '커서가 움직인다는 것만으로 신호·그래픽·윈도우 핵심은 무죄가 되고, 남은 용의자는 바탕화면을 그리는 셸 하나입니다.'
   );
 }
