@@ -886,6 +886,7 @@ export const figures = {
   'gpu-detect-depth': gpuDetectDepth,
   'wifi-elimination': wifiElimination,
   'write-cache-tradeoff': writeCacheTradeoff,
+  'bios-lost-road': biosLostRoad,
 };
 
 /**
@@ -3596,5 +3597,31 @@ function writeCacheTradeoff() {
     '안전 제거 논쟁 — 쓰기 캐시가 가른다',
     W, 198, b,
     '빠른 제거 정책이면 전송 중만 피하면 되고, 향상된 성능(캐시)이면 안전 제거가 마지막 기록을 마무리하는 필수 절차입니다.'
+  );
+}
+
+function biosLostRoad() {
+  const W = 640;
+  const box = (x, y, w, color, head, sub, headFill) => {
+    let s = rect(x, y, w, 24, color, { r: 7 });
+    s += t(x + w / 2, y + 16, head, { anchor: 'middle', size: 10.5, weight: 600, fill: headFill || '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, y + 42 + i * 15, ln, { size: 9.4, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '바이오스 화면 = 고장이 아니라 "어디로 가야 하죠?"', { weight: 600, size: 13 });
+  b += rect(200, 40, 240, 24, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(320, 56, '바이오스에서 내 디스크가 보이나?', { anchor: 'middle', size: 10.5, weight: 600, fill: COLOR.text });
+  b += t(150, 86, '안 보임 ↙', { anchor: 'middle', size: 10.5, fill: COLOR.mute });
+  b += t(490, 86, '↘ 보임', { anchor: 'middle', size: 10.5, fill: COLOR.mute });
+  b += box(24, 98, 290, COLOR.over, '물리 갈래 — 짐이 사라짐', ['케이블 양끝 재체결 · 재장착', '다른 포트 실험 → 그래도 없으면', '디스크 자신 갈래 (데이터 우선)']);
+  b += box(330, 98, 286, COLOR.fit, '길 안내 갈래 — 짐은 무사', ['부팅 순서 1순위 = 윈도우 디스크', '부팅 항목(부트로더) 복구 갈래', '→ 파일은 대개 무사합니다']);
+  b += t(24, 186, '매번 반복 + 시계·설정까지 초기화 = 코인 배터리(CMOS) 소모 — 제3의 갈래', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '바이오스로 빠질 때 — 길 잃음 판정',
+    W, 198, b,
+    '바이오스에 내 디스크가 보이면 길 안내(부팅 순서·부트로더) 문제라 데이터는 대개 무사하고, 안 보이면 물리 갈래부터입니다.'
   );
 }
