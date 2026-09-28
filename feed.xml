@@ -20,6 +20,13 @@
     <description>손을 안 댔는데 커서가 떨리거나 저절로 움직이면 해킹부터 의심하게 되지만, 대부분의 범인은 훨씬 시시합니다. 잘게 떨리는지, 휙 건너뛰는지, 조종당하듯 움직이는지 — 움직임의 모양 세 갈래로 표면·센서, 무선, 이중 입력을 가르는 판정 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>통화할 때 소리가 울릴 때 — 울림의 방향이 새는 곳을 가리킵니다</title>
+    <link>https://specfit.kr/posts/mic-echo.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mic-echo.html</guid>
+    <pubDate>Sun, 27 Sep 2026 15:00:00 GMT</pubDate>
+    <description>디스코드나 화상회의에서 목소리가 메아리처럼 울리는 증상은 마이크 탓으로 보이지만, 판정의 핵심은 방향입니다. 내 목소리가 나에게 울리면 상대 쪽에서, 상대가 울린다고 하면 내 쪽에서 새는 것 — 반직관적인 방향 판정과 새는 곳을 막는 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>인터넷은 멀쩡한데 게임 핑만 튈 때 — 속도가 아니라 변동의 문제입니다</title>
     <link>https://specfit.kr/posts/game-ping-spike.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/game-ping-spike.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-turns-off-then-on.html</guid>
     <pubDate>Thu, 17 Sep 2026 15:00:00 GMT</pubDate>
     <description>전원 버튼을 눌렀는데 잠깐 돌다 꺼지고, 잠시 뒤 스스로 다시 켜져 정상 부팅되는 증상은 게시판 단골 질문입니다. 한 번 꺼졌다 켜지는 것과 무한히 반복되는 것은 다른 이야기입니다 — 정상인 경우의 정체와, 반복될 때의 진단 순서를 갈라 정리했습니다.</description>
-  </item>
-  <item>
-    <title>모니터 3대 연결, 되는지 확인하는 법 — 포트 수만 세면 반만 맞습니다</title>
-    <link>https://specfit.kr/posts/triple-monitor-setup.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/triple-monitor-setup.html</guid>
-    <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
-    <description>내 컴퓨터에 모니터를 3대까지 달 수 있는지는 게시판에 꾸준히 올라오는 질문입니다. 그래픽카드 뒷면 포트 수를 세는 게 시작이지만 그게 전부는 아닙니다 — 동시 출력 수 확인법과 포트가 모자랄 때의 우회로 세 가지를 순서대로 정리했습니다.</description>
   </item>
 </channel>
 </rss>

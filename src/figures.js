@@ -882,6 +882,7 @@ export const figures = {
   'ram-detect-fork': ramDetectFork,
   'cursor-three-motions': cursorThreeMotions,
   'usb-visibility-ladder': usbVisibilityLadder,
+  'echo-direction': echoDirection,
 };
 
 /**
@@ -3491,5 +3492,27 @@ function usbVisibilityLadder() {
     'USB 표시 사다리 — 연결음의 의미',
     W, 198, b,
     '연결음은 물리·전원과 감지 층을 통과했다는 신호라, 소리는 나는데 안 보이면 드라이버·표시 층에서만 범인을 찾으면 됩니다.'
+  );
+}
+
+function echoDirection() {
+  const W = 640;
+  const panel = (x, color, head, sub) => {
+    let s = rect(x, 56, 290, 26, color, { r: 8 });
+    s += t(x + 145, 73, head, { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 8, 100 + i * 16, ln, { size: 9.6, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '울림의 방향이 새는 곳을 가리킵니다 (반직관 주의)', { weight: 600, size: 13 });
+  b += panel(24, COLOR.over, '내 귀에 내 목소리가 울림', ['새는 곳: 상대 쪽', '상대의 스피커 소리가', '상대의 마이크로 되들어감', '→ 상대가 헤드셋을 쓰면 해결']);
+  b += panel(326, COLOR.accent, '상대가 "네 소리 울려"라고 함', ['새는 곳: 내 쪽', '내 스피커 소리가', '내 마이크로 되들어감', '→ 내가 헤드셋을 쓰면 해결']);
+  b += t(24, 180, '공통 원리: 에코 = 스피커 소리가 마이크로 되들어가는 유출 — 유출이 폭주하면 하울링(삐—)', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '에코 방향 판정 — 누구 쪽에서 새나',
+    W, 192, b,
+    '내 목소리가 나에게 울려 들리면 상대 쪽 유출, 상대가 울린다고 하면 내 쪽 유출입니다 — 새는 쪽이 헤드셋을 쓰는 것이 구조적 해결입니다.'
   );
 }
