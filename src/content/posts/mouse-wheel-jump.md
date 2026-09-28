@@ -2,7 +2,7 @@
 title: 마우스 휠이 튀거나 반대로 갈 때 — "항상"과 "가끔"이 다른 문제입니다
 description: 스크롤을 내리는데 화면이 위로 확 튀는 증상과, 방향이 아예 반대로 뒤집힌 증상은 원인이 완전히 다릅니다. 항상 반대면 설정이고, 가끔 튀면 휠의 부품 노화입니다. 두 갈래의 판정과 처방, 응급처치의 한계까지 정리했습니다.
 date: 2026-09-06
-updated: 2026-09-21
+updated: 2026-09-28
 category: network
 tags: [마우스휠, 휠튐, 스크롤반전, 인코더, 마우스수리]
 ---
@@ -140,6 +140,7 @@ tags: [마우스휠, 휠튐, 스크롤반전, 인코더, 마우스수리]
    잦아지는 방향입니다
 
 주변기기 이웃 판정들 — [무선 마우스 끊김](/posts/wireless-mouse-lag.html) ·
+[커서가 저절로 움직이는 증상](/posts/mouse-cursor-moving.html) ·
 [키보드 특정 키(채터링 포함)](/posts/keyboard-some-keys-dead.html) ·
 [격리 진단의 원형](/posts/dual-monitor-one-blank.html)과 이어집니다.
 
