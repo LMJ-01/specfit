@@ -2,7 +2,7 @@
 title: 절전에서 깨면 소리가 안 날 때 — 점호에 늦은 장치를 다시 깨우면 됩니다
 description: 절전 복귀 후 스피커가 침묵하는데 재부팅하면 돌아오는 증상은 오디오 경로의 어느 장치가 깨어나는 점호에 늦은 상태입니다. 재부팅 없이 그 장치만 다시 깨우는 방법과, 소리가 나오는 경로별 예방 스위치를 정리했습니다.
 date: 2026-09-06
-updated: 2026-09-27
+updated: 2026-09-28
 category: monitor
 tags: [절전모드, 소리안남, 오디오장치, USB절전, 모니터스피커]
 ---
@@ -141,9 +141,10 @@ tags: [절전모드, 소리안남, 오디오장치, USB절전, 모니터스피�
 5. 자주 재발하면 절전 대신 **디스플레이 끄기 운용**이라는 절충이
    있습니다
 
-소리 4부작의 이웃들 — [잡음(지지직)](/posts/pc-speaker-noise.html) ·
+소리 가족의 이웃들 — [잡음(지지직)](/posts/pc-speaker-noise.html) ·
 [블루투스 끊김](/posts/bluetooth-earbuds-stutter.html) ·
-[특정 앱만 조용(배선)](/posts/app-no-sound.html), 그리고
+[특정 앱만 조용(배선)](/posts/app-no-sound.html) ·
+[통화 울림(에코)](/posts/mic-echo.html), 그리고
 [절전 복귀의 형제 증상(창 몰림)](/posts/monitor-sleep-window-move.html)과 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
