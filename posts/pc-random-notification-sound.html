@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아무것도 안 했는데 알림음이 날 때 — 소리에도 지문이 있습니다 | 스펙핏</title>
+<meta name="description" content="컴퓨터에서 정체 모를 띠링, 뚜둥 소리가 간헐적으로 나면 해킹인가 고장인가 불안해집니다. 소리는 반드시 범인이 있고, 잡는 도구는 윈도우 안에 이미 있습니다 — 음소거 실험으로 안팎을 가르고, 소리의 종류(연결음·알림음·경고음)별로 범인을 지목하는 수사 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/pc-random-notification-sound.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="아무것도 안 했는데 알림음이 날 때 — 소리에도 지문이 있습니다 | 스펙핏">
+<meta property="og:description" content="컴퓨터에서 정체 모를 띠링, 뚜둥 소리가 간헐적으로 나면 해킹인가 고장인가 불안해집니다. 소리는 반드시 범인이 있고, 잡는 도구는 윈도우 안에 이미 있습니다 — 음소거 실험으로 안팎을 가르고, 소리의 종류(연결음·알림음·경고음)별로 범인을 지목하는 수사 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/pc-random-notification-sound.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"아무것도 안 했는데 알림음이 날 때 — 소리에도 지문이 있습니다","description":"컴퓨터에서 정체 모를 띠링, 뚜둥 소리가 간헐적으로 나면 해킹인가 고장인가 불안해집니다. 소리는 반드시 범인이 있고, 잡는 도구는 윈도우 안에 이미 있습니다 — 음소거 실험으로 안팎을 가르고, 소리의 종류(연결음·알림음·경고음)별로 범인을 지목하는 수사 순서를 정리했습니다.","datePublished":"2026-09-29","dateModified":"2026-09-29","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/pc-random-notification-sound.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"아무것도 안 했는데 알림음이 날 때 — 소리에도 지문이 있습니다","item":"https://specfit.kr/posts/pc-random-notification-sound.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>아무것도 안 했는데 알림음이 날 때 — 소리에도 지문이 있습니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-29">2026년 9월 29일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>조용히 웹서핑을 하는데 <strong>&quot;띠링.&quot;</strong> 화면엔 아무것도 없습니다.
+몇 분 뒤 또 <strong>&quot;뚜둥.&quot;</strong> 뭘 누른 적도, 뭘 꽂은 적도 없는데요.
+검색창에 증상을 넣으면 해킹 걱정부터 고장 진단까지 쏟아지는,
+정체를 모르니 더 불안한 증상입니다.</p>
+<p>먼저 안심 하나 — <strong>소리에는 반드시 출처가 있고</strong>, 그 출처를
+지목하는 도구가 윈도우 안에 이미 들어 있습니다. 수사는 두
+단계면 됩니다: 소리가 <strong>윈도우 안에서 나는지 밖에서 나는지</strong>
+가르고, 안이라면 <strong>소리의 지문(종류)</strong>으로 범인을 좁힙니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 200" width="640" height="200" role="img" aria-label="유령 소리 수사 — 음소거 실험과 소리 3종">
+<title>유령 소리 수사 — 음소거 실험과 소리 3종</title>
+<text x="24" y="26" fill="var(--fg)" font-size="13" font-weight="600">첫 실험: 윈도우 볼륨을 음소거하고 기다린다</text><rect x="200" y="40" width="240" height="24" fill="var(--bg-soft)" rx="8" stroke="var(--border)"/><text x="320" y="56" fill="var(--fg)" font-size="10.5" font-weight="600" text-anchor="middle">음소거해도 소리가 나는가?</text><text x="150" y="82" fill="var(--fg-muted)" font-size="10" text-anchor="middle">안 남 = 윈도우 소리 ↙</text><text x="500" y="82" fill="var(--fg-muted)" font-size="10" text-anchor="middle">↘ 그래도 남 = 윈도우 밖</text><rect x="24" y="96" width="190" height="24" fill="var(--fig-fit)" rx="7"/><text x="119" y="112" fill="#fff" font-size="10.5" font-weight="600" text-anchor="middle">뚜둥·뚱 (연결·해제음)</text><text x="30" y="138" fill="var(--fg-muted)" font-size="9.4">어떤 장치가 붙었다 떨어짐</text><text x="30" y="153" fill="var(--fg-muted)" font-size="9.4">장치 관리자 열어두고 관찰</text><text x="30" y="168" fill="var(--fg-muted)" font-size="9.4">→ USB 하나씩 빼기 격리</text><rect x="226" y="96" width="190" height="24" fill="var(--accent)" rx="7"/><text x="321" y="112" fill="#fff" font-size="10.5" font-weight="600" text-anchor="middle">띠링 (알림음)</text><text x="232" y="138" fill="var(--fg-muted)" font-size="9.4">볼륨 믹서 열어두고 소리</text><text x="232" y="153" fill="var(--fg-muted)" font-size="9.4">순간 움직이는 게이지 = 범인</text><text x="232" y="168" fill="var(--fg-muted)" font-size="9.4">→ 알림 센터 이력·사이트 알림</text><rect x="428" y="96" width="188" height="24" fill="var(--fig-over)" rx="7"/><text x="522" y="112" fill="#fff" font-size="10.5" font-weight="600" text-anchor="middle">삐— (기기 경고음)</text><text x="434" y="138" fill="var(--fg-muted)" font-size="9.4">본체 비프 · UPS 배터리 ·</text><text x="434" y="153" fill="var(--fg-muted)" font-size="9.4">모니터 등 기기 자체 소리</text><text x="434" y="168" fill="var(--fg-muted)" font-size="9.4">→ 기기별 하나씩 끄기 격리</text>
+</svg>
+<figcaption>음소거로 윈도우 안팎을 가른 뒤, 연결음이면 장치 격리, 알림음이면 볼륨 믹서 관찰, 경고음이면 기기별 격리입니다.</figcaption>
+</figure>
+<p>첫 실험은 간단합니다 — <strong>윈도우 볼륨을 음소거해 두고 기다리세요.</strong>
+그래도 소리가 난다면 윈도우가 낸 소리가 아닙니다(본체·주변
+기기의 자체 스피커 쪽). 음소거 중엔 조용하다면 윈도우 소리이고,
+아래 지문 수사로 갑니다.</p>
+<h2 id="뚜둥뚱-장치가-붙었다-떨어지는-소리">뚜둥·뚱 — 장치가 붙었다 떨어지는 소리</h2>
+<p>USB를 꽂을 때 나는 그 연결음(과 뽑을 때의 해제음)이 <strong>아무것도
+안 만졌는데 반복</strong>된다면, 어떤 장치가 접촉 불량·전원 문제로
+<strong>전기적으로 붙었다 떨어지기를 반복</strong>하는 중입니다. 범인 찾기는
+관찰과 격리로:</p>
+<ul>
+<li><strong>장치 관리자를 열어 두고</strong> 소리가 나는 순간을 기다리세요 —
+목록이 깜빡 갱신되며 항목이 사라졌다 나타나는 것이 보이면
+그 장치가 범인입니다</li>
+<li>안 보이면 <strong>하나씩 빼기</strong> — 키보드·마우스·허브·외장 기기를
+하나씩 빼고 지켜보는 고전 격리입니다. 케이스 전면 포트에 꽂힌
+것부터가 요령이고(<a href="/posts/front-usb-not-working.html">앞면 단자의 사정</a>),
+다 뺐는데도 반복되면 내장 장치(카드 리더 등)나 케이블 쪽
+갈래라 <a href="/posts/usb-not-showing.html">연결음 반복의 접촉·전원 판정</a>
+이 이어집니다</li>
+</ul>
+<h2 id="띠링-알림음이면-범인은-앱입니다">띠링 — 알림음이면 범인은 앱입니다</h2>
+<p>윈도우 알림음이라면 <strong>어느 앱이 울렸는지</strong>가 문제일 뿐입니다.
+두 가지 도구가 즉답을 줍니다:</p>
+<ul>
+<li><strong>알림 센터부터</strong>(Win+N) — 방금 울린 알림이 이력에 남아 있는
+경우가 많습니다. 여기 있다면 수사 끝, 그 앱의 알림을 끄면
+됩니다</li>
+<li><strong>이력에 없는 소리라면 볼륨 믹서 잠복</strong> — 소리 설정의 볼륨
+믹서를 열어 두고 기다리세요. 소리가 나는 순간 <strong>게이지가
+움직이는 앱이 범인</strong>입니다. 실시간 지목이라 이력 없는 소리에도
+통합니다. 단골은 브라우저입니다 — 언젠가 &quot;알림 허용&quot;을 눌러 둔
+사이트가 조용히 울리는 경우로, 브라우저 설정의 사이트 알림
+목록에서 정리하면 됩니다</li>
+</ul>
+<p>참고로 소리만으로 해킹을 의심할 근거는 되지 않습니다 — 알림음은
+말 그대로 알림이고, 출처를 지목해 끄는 것이 정답입니다.</p>
+<h2 id="삐-윈도우-밖-기계의-목소리">삐— — 윈도우 밖, 기계의 목소리</h2>
+<p>음소거해도 나는 소리라면 어느 <strong>기계가 직접</strong> 내는 소리입니다.</p>
+<ul>
+<li><strong>본체 안에서 나는 삐—</strong> — 부팅 중이라면 보드의
+<a href="/posts/pc-boot-no-display.html">비프 신호</a> 갈래이고, 사용 중
+간헐적이라면 보드·파워 쪽 경고일 수 있어 소리 나는 순간의
+상황(부하·온도)을 메모해 점검 문의에 들고 가는 것이 순서입니다</li>
+<li><strong>책상 어딘가의 삐—</strong> — 의외로 흔한 범인이
+<a href="/posts/desktop-ups.html">UPS(무정전 전원 장치)</a>의 배터리·전원
+경고음입니다. 모니터·공유기·외장하드 독 등 자체 스피커가 있는
+기기들도 후보라, <strong>기기를 하나씩 꺼 보는</strong> 격리가 그대로
+통합니다</li>
+</ul>
+<p>정리하면 — <strong>음소거 실험으로 안팎부터</strong>, 안이면 <strong>연결음(장치
+관리자 관찰·하나씩 빼기) vs 알림음(알림 센터·볼륨 믹서 잠복)</strong>,
+밖이면 <strong>기기별 격리</strong>입니다. 유령의 정체는 대부분 사이트 알림
+아니면 접촉 불량 — 수사 도구는 전부 공짜입니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">알림음</span> <span class="tag">띠링소리</span> <span class="tag">연결음반복</span> <span class="tag">볼륨믹서</span> <span class="tag">유령소리</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mic-echo.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">통화할 때 소리가 울릴 때 — 울림의 방향이 새는 곳을 가리킵니다</span>
+        <span class="card-desc">디스코드나 화상회의에서 목소리가 메아리처럼 울리는 증상은 마이크 탓으로 보이지만, 판정의 핵심은 방향입니다. 내 목소리가 나에게 울리면 상대 쪽에서, 상대가 울린다고 하면 내 쪽에서 새는 것 — 반직관적인 방향 판정과 새는 곳을 막는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-144hz-not-working.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">144Hz 모니터인데 60Hz만 잡힐 때 — 목록에 없는 숫자는 길이 못 실어온 겁니다</span>
+        <span class="card-desc">고주사율 모니터를 샀는데 윈도우 설정에는 60Hz만 보이는 사연이 게시판에 꾸준합니다. 설정 목록은 지금 연결된 길로 실어올 수 있는 주사율만 보여주기 때문 — 설정 위치부터 케이블·포트·모니터 메뉴·드라이버까지, 잃어버린 144를 찾는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/hdr-washed-out.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">HDR을 켰더니 화면이 물 빠져 보일 때 — 고장이 아니라 무대가 바뀐 겁니다</span>
+        <span class="card-desc">윈도우에서 HDR을 켜는 순간 바탕화면과 브라우저가 뿌옇고 물 빠진 색이 되는 증상은 게시판 단골입니다. HDR 모드에서 일반 화면은 변환을 거쳐 표시되는 손님이 되기 때문인데 — 슬라이더 하나로 잡는 처방과 내 모니터가 켤 가치가 있는 급인지 판정까지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

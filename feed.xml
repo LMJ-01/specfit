@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>아무것도 안 했는데 알림음이 날 때 — 소리에도 지문이 있습니다</title>
+    <link>https://specfit.kr/posts/pc-random-notification-sound.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-random-notification-sound.html</guid>
+    <pubDate>Mon, 28 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터에서 정체 모를 띠링, 뚜둥 소리가 간헐적으로 나면 해킹인가 고장인가 불안해집니다. 소리는 반드시 범인이 있고, 잡는 도구는 윈도우 안에 이미 있습니다 — 음소거 실험으로 안팎을 가르고, 소리의 종류(연결음·알림음·경고음)별로 범인을 지목하는 수사 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>컴퓨터 새로 맞출 때 옛 부품 재사용 — 짐마다 통과할 관문이 다릅니다</title>
     <link>https://specfit.kr/posts/pc-parts-reuse.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-parts-reuse.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-freeze-sound-loop.html</guid>
     <pubDate>Sat, 19 Sep 2026 15:00:00 GMT</pubDate>
     <description>게임이나 작업 중 화면이 정지하고 소리가 드르륵 끊겨 반복되는 프리징은 게시판 단골 증상입니다. 그 드르륵이 무엇인지 알면 갈래가 보입니다 — 멈추는 때와 복귀 여부로 가르는 판정, 드라이버·저장장치·램·온도 네 갈래를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>게임하다 갑자기 "신호 없음" — 본체가 살아 있다면 용의자는 셋뿐입니다</title>
-    <link>https://specfit.kr/posts/monitor-no-signal-gaming.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-no-signal-gaming.html</guid>
-    <pubDate>Fri, 18 Sep 2026 15:00:00 GMT</pubDate>
-    <description>게임 중 화면이 툭 꺼지고 모니터에 신호 없음이 뜨는데 본체 팬은 계속 돌고 게임 소리도 들립니다. 전원이 나간 게 아니라 화면 신호 계통만 끊긴 증상이라 용의자가 좁혀집니다 — 복귀 여부로 가르는 판정과 격리 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

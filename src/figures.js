@@ -893,6 +893,7 @@ export const figures = {
   'icons-three-forks': iconsThreeForks,
   'front-usb-path': frontUsbPath,
   'coil-whine-signature': coilWhineSignature,
+  'sound-fingerprint': soundFingerprint,
 };
 
 /**
@@ -3803,5 +3804,31 @@ function coilWhineSignature() {
     '코일노이즈 판별 — 소리의 지문',
     W, 208, b,
     '부하를 따라 오르내리는 가늘고 높은 소리는 코일노이즈(고장 아님)이고, 부하와 무관한 드르륵·딸깍은 점검 대상입니다.'
+  );
+}
+
+function soundFingerprint() {
+  const W = 640;
+  const box = (x, w, color, head, sub, headFill) => {
+    let s = rect(x, 96, w, 24, color, { r: 7 });
+    s += t(x + w / 2, 112, head, { anchor: 'middle', size: 10.5, weight: 600, fill: headFill || '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 138 + i * 15, ln, { size: 9.4, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '첫 실험: 윈도우 볼륨을 음소거하고 기다린다', { weight: 600, size: 13 });
+  b += rect(200, 40, 240, 24, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(320, 56, '음소거해도 소리가 나는가?', { anchor: 'middle', size: 10.5, weight: 600, fill: COLOR.text });
+  b += t(150, 82, '안 남 = 윈도우 소리 ↙', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += t(500, 82, '↘ 그래도 남 = 윈도우 밖', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += box(24, 190, COLOR.fit, '뚜둥·뚱 (연결·해제음)', ['어떤 장치가 붙었다 떨어짐', '장치 관리자 열어두고 관찰', '→ USB 하나씩 빼기 격리']);
+  b += box(226, 190, COLOR.accent, '띠링 (알림음)', ['볼륨 믹서 열어두고 소리', '순간 움직이는 게이지 = 범인', '→ 알림 센터 이력·사이트 알림']);
+  b += box(428, 188, COLOR.over, '삐— (기기 경고음)', ['본체 비프 · UPS 배터리 ·', '모니터 등 기기 자체 소리', '→ 기기별 하나씩 끄기 격리']);
+  return figure(
+    '유령 소리 수사 — 음소거 실험과 소리 3종',
+    W, 200, b,
+    '음소거로 윈도우 안팎을 가른 뒤, 연결음이면 장치 격리, 알림음이면 볼륨 믹서 관찰, 경고음이면 기기별 격리입니다.'
   );
 }
