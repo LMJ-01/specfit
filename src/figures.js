@@ -890,6 +890,7 @@ export const figures = {
   'wrong-monitor-handles': wrongMonitorHandles,
   'cursor-alive-clue': cursorAliveClue,
   'reuse-moving-tiers': reuseMovingTiers,
+  'icons-three-forks': iconsThreeForks,
 };
 
 /**
@@ -3705,5 +3706,32 @@ function reuseMovingTiers() {
     '부품 재사용 — 이사 관문 3종',
     W, 190, b,
     '모니터·케이스·저장장치는 대체로 그냥 이사 가고, 램·쿨러는 규격 관문을, 파워는 나이 관문까지 통과해야 합니다.'
+  );
+}
+
+function iconsThreeForks() {
+  const W = 640;
+  const fork = (x, w, color, head, sub, headFill) => {
+    let s = rect(x, 96, w, 24, color, { r: 7 });
+    s += t(x + w / 2, 112, head, { anchor: 'middle', size: 10.5, weight: 600, fill: headFill || '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 138 + i * 15, ln, { size: 9.4, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '판정 1분: 탐색기의 "바탕 화면" 폴더부터', { weight: 600, size: 13 });
+  b += rect(200, 40, 240, 24, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(320, 56, '폴더 안에 파일이 있는가?', { anchor: 'middle', size: 10.5, weight: 600, fill: COLOR.text });
+  b += t(130, 82, '있다(실물 무사) ↙', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += t(320, 82, '↓ 비어 있다', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += t(508, 82, '↘ 작업표시줄도 없다', { anchor: 'middle', size: 10, fill: COLOR.mute });
+  b += fork(24, 190, COLOR.fit, '① 표시 스위치', ['우클릭 → 보기 →', '"바탕 화면 아이콘 표시"', '체크 하나로 끝나는 갈래']);
+  b += fork(226, 190, COLOR.accent, '② 위치·계정', ['바탕화면 폴더가 이사감', '(원드라이브·다른 계정)', '→ 실물 위치부터 추적']);
+  b += fork(428, 188, COLOR.over, '③ 탐색기 층', ['그리는 담당자가 결근', '→ 작업 관리자에서', '   탐색기 다시 시작']);
+  return figure(
+    '아이콘 실종 — 폴더 판정과 세 갈래',
+    W, 200, b,
+    '바탕 화면 폴더에 파일이 있으면 표시 스위치, 비어 있으면 위치·계정, 작업표시줄까지 없으면 탐색기 층입니다.'
   );
 }
