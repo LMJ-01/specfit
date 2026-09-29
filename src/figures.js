@@ -892,6 +892,7 @@ export const figures = {
   'reuse-moving-tiers': reuseMovingTiers,
   'icons-three-forks': iconsThreeForks,
   'front-usb-path': frontUsbPath,
+  'coil-whine-signature': coilWhineSignature,
 };
 
 /**
@@ -3769,5 +3770,38 @@ function frontUsbPath() {
     '전면 USB — 길이 하나 더 있는 구조',
     W, 214, b,
     '앞면 포트는 보드 헤더와 내부 케이블을 거치는 별도의 길이라, 뒷면에서 되는 기기가 앞면에서만 안 되면 그 길 위의 고리가 용의자입니다.'
+  );
+}
+
+function coilWhineSignature() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '소리의 지문 — 부하를 따라가는가', { weight: 600, size: 13 });
+  b += t(24, 50, '부하(프레임)', { size: 9.5, fill: COLOR.mute });
+  b += rect(110, 40, 200, 14, COLOR.soft, { r: 4, stroke: COLOR.line });
+  b += rect(110, 40, 60, 14, COLOR.accent, { r: 4 });
+  b += rect(230, 40, 80, 14, COLOR.accent, { r: 4 });
+  b += t(330, 51, '← 메뉴·로딩 순간 치솟음', { size: 9.5, fill: COLOR.mute });
+  b += t(24, 76, '코일노이즈', { size: 9.5, weight: 600, fill: COLOR.fit });
+  b += rect(110, 66, 60, 14, COLOR.fit, { r: 4 });
+  b += rect(230, 66, 80, 14, COLOR.fit, { r: 4 });
+  b += t(330, 77, '부하와 같이 오르내리는 가는 소리 = 고장 아님', { size: 9.5, fill: COLOR.mute });
+  b += t(24, 102, '고장 소리', { size: 9.5, weight: 600, fill: COLOR.over });
+  b += rect(110, 92, 200, 14, COLOR.over, { r: 4 });
+  b += t(330, 103, '부하 무관하게 계속 — 드르륵·딸깍은 팬·이물 점검 대상', { size: 9.5, fill: COLOR.mute });
+  const rows = [
+    ['가늘고 높은 소리, 장면 따라 톤 변화', '코일노이즈 — 성능·수명 무관'],
+    ['드르륵·갈림·딸깍 (부하 무관)', '팬 베어링·케이블 간섭·이물 — 점검'],
+    ['스피커·헤드폰의 지지직', '카드가 아니라 오디오 경로 갈래'],
+  ];
+  rows.forEach((r, i) => {
+    b += t(36, 132 + i * 18, r[0], { size: 10, weight: 600, fill: COLOR.accent });
+    b += t(290, 132 + i * 18, r[1], { size: 9.8, fill: COLOR.mute });
+  });
+  b += t(24, 196, '처방 1순위는 프레임 제한 — 부하의 출렁임을 줄이면 소리도 잦아드는 경우가 많습니다', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '코일노이즈 판별 — 소리의 지문',
+    W, 208, b,
+    '부하를 따라 오르내리는 가늘고 높은 소리는 코일노이즈(고장 아님)이고, 부하와 무관한 드르륵·딸깍은 점검 대상입니다.'
   );
 }
