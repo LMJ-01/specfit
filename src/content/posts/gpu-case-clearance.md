@@ -2,6 +2,7 @@
 title: 그래픽카드가 케이스에 안 들어가요 — 사기 전 확인은 세 치수입니다
 description: 케이스 스펙의 호환 길이만 믿고 샀다가 안 들어가는 사고가 실제로 흔합니다. 길이·두께(슬롯 수)·전원 커넥터 공간 세 치수를 확인하는 법과, 허용치에 딱 맞는 조합이 왜 위험한지 정리했습니다.
 date: 2026-09-04
+updated: 2026-09-29
 category: gpu
 tags: [그래픽카드길이, 케이스호환, GPU장착, 조립PC, 슬롯]
 ---
@@ -146,6 +147,7 @@ tags: [그래픽카드길이, 케이스호환, GPU장착, 조립PC, 슬롯]
 
 카드 교체의 나머지 숙제들 — [파워 용량](/posts/gpu-psu-wattage.html) ·
 [처짐·지지대](/posts/gpu-sag-support.html) ·
-[케이스 기류](/posts/case-fan-setup.html)와 이어집니다.
+[케이스 기류](/posts/case-fan-setup.html) ·
+[다른 부품 재사용 판정](/posts/pc-parts-reuse.html)과 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
