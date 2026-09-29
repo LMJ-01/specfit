@@ -889,6 +889,7 @@ export const figures = {
   'bios-lost-road': biosLostRoad,
   'wrong-monitor-handles': wrongMonitorHandles,
   'cursor-alive-clue': cursorAliveClue,
+  'reuse-moving-tiers': reuseMovingTiers,
 };
 
 /**
@@ -3681,5 +3682,28 @@ function cursorAliveClue() {
     '검은 화면 + 커서 — 커서가 증인',
     W, 196, b,
     '커서가 움직인다는 것만으로 신호·그래픽·윈도우 핵심은 무죄가 되고, 남은 용의자는 바탕화면을 그리는 셸 하나입니다.'
+  );
+}
+
+function reuseMovingTiers() {
+  const W = 640;
+  const tier = (x, w, color, head, sub, headFill) => {
+    let s = rect(x, 56, w, 26, color, { r: 8 });
+    s += t(x + w / 2, 73, head, { anchor: 'middle', size: 10.5, weight: 600, fill: headFill || '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 100 + i * 16, ln, { size: 9.6, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '업그레이드 이사 — 짐마다 통과해야 할 관문이 다릅니다', { weight: 600, size: 13 });
+  b += tier(24, 190, COLOR.fit, '그냥 가는 짐', ['모니터 · 키보드 · 마우스', '케이스(치수만) · 저장장치', '그래픽카드(커넥터 확인)']);
+  b += tier(226, 190, COLOR.accent, '규격 관문', ['램: DDR 세대는 보드가 정함', '쿨러: 소켓 브래킷 (제품에 따라)', '케이스: 폼팩터 · GPU 길이']);
+  b += tier(428, 188, COLOR.over, '나이 관문', ['파워: 용량+커넥터+연식 3중', '소모 부품(팬)은 연식이 판정', '→ 애매하면 새로 (보험 성격)']);
+  b += t(24, 172, '공통 주의: OS 디스크 이사는 별도 판정 · 내보내는 저장장치는 개인정보 정리부터', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '부품 재사용 — 이사 관문 3종',
+    W, 190, b,
+    '모니터·케이스·저장장치는 대체로 그냥 이사 가고, 램·쿨러는 규격 관문을, 파워는 나이 관문까지 통과해야 합니다.'
   );
 }

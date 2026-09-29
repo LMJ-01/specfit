@@ -2,6 +2,7 @@
 title: CPU·메인보드 교체하면 윈도우 다시 깔아야 하나 — 요즘은 원칙이 바뀌었습니다
 description: 보드를 바꾸면 윈도우를 재설치해야 한다는 관습이 아직 돌아다닙니다. 요즘 윈도우는 하드웨어 교체에 관대해서, CPU만 바꾸면 그대로 쓰고 보드 교체도 대개 부팅됩니다. 남는 숙제는 라이선스와 드라이버 — 판정 기준을 정리했습니다.
 date: 2026-09-04
+updated: 2026-09-29
 category: gpu
 tags: [메인보드교체, CPU교체, 윈도우재설치, 정품인증, 업그레이드]
 ---
@@ -150,6 +151,7 @@ tags: [메인보드교체, CPU교체, 윈도우재설치, 정품인증, 업그�
 5. 어느 길이든 **백업이 공통 전제**입니다
 
 업그레이드의 이웃 판정들 — [병목(무엇을 바꿀지)](/posts/cpu-gpu-bottleneck.html) ·
+[부품 재사용 관문 3종](/posts/pc-parts-reuse.html) ·
 [케이스 치수](/posts/gpu-case-clearance.html) ·
 [클린설치 판정](/posts/ssd-migration-vs-clean-install.html)과
 이어집니다.
