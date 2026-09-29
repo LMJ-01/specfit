@@ -891,6 +891,7 @@ export const figures = {
   'cursor-alive-clue': cursorAliveClue,
   'reuse-moving-tiers': reuseMovingTiers,
   'icons-three-forks': iconsThreeForks,
+  'front-usb-path': frontUsbPath,
 };
 
 /**
@@ -3733,5 +3734,40 @@ function iconsThreeForks() {
     '아이콘 실종 — 폴더 판정과 세 갈래',
     W, 200, b,
     '바탕 화면 폴더에 파일이 있으면 표시 스위치, 비어 있으면 위치·계정, 작업표시줄까지 없으면 탐색기 층입니다.'
+  );
+}
+
+function frontUsbPath() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '뒷면과 앞면은 길이 다릅니다 — 앞면에만 중간 고리 둘', { weight: 600, size: 13 });
+  b += t(24, 52, '뒷면 포트', { size: 10.5, weight: 600, fill: COLOR.fit });
+  b += rect(100, 40, 130, 24, COLOR.fit, { r: 7 });
+  b += t(165, 56, '메인보드 직결', { anchor: 'middle', size: 10.5, weight: 600, fill: '#fff' });
+  b += t(240, 56, '→ 탈 날 자리가 거의 없음', { size: 10, fill: COLOR.mute });
+  b += t(24, 96, '앞면 포트', { size: 10.5, weight: 600, fill: COLOR.over });
+  const chain = [['보드 헤더', COLOR.accent], ['내부 케이블', COLOR.over], ['케이스 앞면 기판', COLOR.over], ['포트', COLOR.accent]];
+  let x = 100;
+  chain.forEach(([label, color], i) => {
+    const w = 118;
+    b += rect(x, 84, w, 24, color, { r: 7 });
+    b += t(x + w / 2, 100, label, { anchor: 'middle', size: 10, weight: 600, fill: '#fff' });
+    if (i < chain.length - 1) b += t(x + w + 6, 100, '→', { size: 11, fill: COLOR.mute });
+    x += w + 22;
+  });
+  const rows = [
+    ['조립·청소·이사 뒤부터', '헤더에서 케이블이 빠졌거나 덜 꽂힘 — 단골'],
+    ['특정 기기(외장하드)만', '전력 갈래 — 앞면 급전의 한계'],
+    ['오래 쓴 케이스에서 서서히', '포트 자체의 노후(헐거움) 갈래'],
+  ];
+  rows.forEach((r, i) => {
+    b += t(36, 138 + i * 18, r[0], { size: 10, weight: 600, fill: COLOR.accent });
+    b += t(230, 138 + i * 18, r[1], { size: 9.8, fill: COLOR.mute });
+  });
+  b += t(24, 202, '격리 1분: 같은 기기를 뒷면에 — 되면 기기·윈도우 무죄, 범인은 앞면 길 위에', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '전면 USB — 길이 하나 더 있는 구조',
+    W, 214, b,
+    '앞면 포트는 보드 헤더와 내부 케이블을 거치는 별도의 길이라, 뒷면에서 되는 기기가 앞면에서만 안 되면 그 길 위의 고리가 용의자입니다.'
   );
 }
