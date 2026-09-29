@@ -894,6 +894,7 @@ export const figures = {
   'front-usb-path': frontUsbPath,
   'coil-whine-signature': coilWhineSignature,
   'sound-fingerprint': soundFingerprint,
+  'focus-thief': focusThief,
 };
 
 /**
@@ -3830,5 +3831,30 @@ function soundFingerprint() {
     '유령 소리 수사 — 음소거 실험과 소리 3종',
     W, 200, b,
     '음소거로 윈도우 안팎을 가른 뒤, 연결음이면 장치 격리, 알림음이면 볼륨 믹서 관찰, 경고음이면 기기별 격리입니다.'
+  );
+}
+
+function focusThief() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, '게임이 저절로 내려감 = 누가 앞자리(포커스)를 훔친 것', { weight: 600, size: 12.5 });
+  b += rect(24, 42, 170, 28, COLOR.fit, { r: 8 });
+  b += t(109, 60, '전체화면 게임', { anchor: 'middle', size: 11, weight: 600, fill: '#fff' });
+  b += t(210, 60, '← 자리를 뺏기면 비켜서는 게 표준 동작 (크래시 아님)', { size: 10, fill: COLOR.mute });
+  b += t(24, 100, '용의자 수배 전단', { size: 11.5, weight: 600, fill: COLOR.text });
+  const rows = [
+    ['튕긴 직후 새 창·알림이 보임', '그놈이 범인 — 그 앱의 알림·팝업을 잠재우기'],
+    ['특정 시간대·주기적', '예약된 백그라운드 작업(업데이트·검사) 정황'],
+    ['단서가 안 보임', '방해 금지(집중 지원) 켜고 게임 — 초인종 일괄 차단'],
+  ];
+  rows.forEach((r, i) => {
+    b += t(36, 124 + i * 18, r[0], { size: 10, weight: 600, fill: COLOR.accent });
+    b += t(250, 124 + i * 18, r[1], { size: 9.8, fill: COLOR.mute });
+  });
+  b += t(24, 188, '우회로: 테두리 없는 창 모드 — 자리를 뺏겨도 화면이 무너지지 않는 구조', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '포커스 도둑 수사 — 저절로 내려가는 게임',
+    W, 200, b,
+    '게임이 살아 있는 채 내려갔다면 크래시가 아니라 포커스를 뺏긴 것 — 직후 화면의 단서, 주기성, 방해 금지 순서로 범인을 좁힙니다.'
   );
 }
