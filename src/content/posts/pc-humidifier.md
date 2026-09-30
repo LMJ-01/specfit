@@ -2,7 +2,7 @@
 title: 컴퓨터 옆에 가습기 둬도 되나 — 종류와 방향만 알면 겁낼 일이 아닙니다
 description: 겨울마다 컴퓨터 옆에 가습기를 둬도 되는지 묻는 글이 올라옵니다. 판정의 절반은 가습기 종류입니다 — 찬 안개를 뿜는 초음파식과 수증기를 내는 가열·기화식은 다른 물건이라서요. 안전한 배치 기준과 하얀 가루의 정체까지 정리했습니다.
 date: 2026-09-08
-updated: 2026-09-09
+updated: 2026-09-30
 category: gpu
 tags: [가습기, 컴퓨터배치, 습도관리, 백분현상, 데스크셋업]
 ---
@@ -152,6 +152,7 @@ tags: [가습기, 컴퓨터배치, 습도관리, 백분현상, 데스크셋업]
 배치·환경의 이웃 판정들 — [먼지 청소와 배치](/posts/pc-dust-cleaning.html) ·
 [책상 위냐 아래냐](/posts/pc-on-desk.html) ·
 [물 쏟은 노트북 응급 대처](/posts/laptop-water-spill.html) ·
-[컴퓨터와 방의 열 관계](/posts/pc-heats-room.html)와 이어집니다.
+[컴퓨터와 방의 열 관계](/posts/pc-heats-room.html) ·
+[겨울 아침에 안 켜지는 컴퓨터](/posts/pc-cold-boot-issue.html)와 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
