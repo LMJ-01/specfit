@@ -896,6 +896,7 @@ export const figures = {
   'sound-fingerprint': soundFingerprint,
   'focus-thief': focusThief,
   'cold-boot-ladder': coldBootLadder,
+  'gamepad-two-languages': gamepadTwoLanguages,
 };
 
 /**
@@ -3880,5 +3881,39 @@ function coldBootLadder() {
     '추위 타는 컴퓨터 — 세 갈래',
     W, 190, b,
     '방이 데워지면 켜지는 패턴은 저온 정황, 찬 기기를 들인 직후는 결로 경보, 해마다 반복·심화되면 노화 신호입니다.'
+  );
+}
+
+function gamepadTwoLanguages() {
+  const W = 640;
+  const pill = (x, y, w, label, color) => {
+    let s = rect(x, y, w, 26, color, { r: 8 });
+    s += t(x + w / 2, y + 17, label, { anchor: 'middle', size: 10.5, weight: 600, fill: '#fff' });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '연결은 멀쩡한데 대화가 안 된다 — 입력 규격이 둘이라서', { weight: 600, size: 13 });
+  b += t(24, 56, '패드', { size: 10.5, weight: 600, fill: COLOR.text });
+  b += pill(80, 40, 150, '최신 표준 (XInput)', COLOR.fit);
+  b += pill(80, 72, 150, '옛 방식 (DirectInput)', COLOR.over);
+  b += t(410, 56, '게임', { size: 10.5, weight: 600, fill: COLOR.text });
+  b += pill(460, 40, 156, '최신 표준만 앎', COLOR.fit);
+  b += pill(460, 72, 156, '옛 방식만 앎', COLOR.over);
+  b += t(345, 58, '↔ 같은 말 = 됨', { anchor: 'middle', size: 10, fill: COLOR.fit, weight: 600 });
+  b += t(345, 90, '↔ 다른 말 = 무반응', { anchor: 'middle', size: 10, fill: COLOR.over, weight: 600 });
+  b += t(24, 128, '판정 순서', { size: 11.5, weight: 600, fill: COLOR.text });
+  const rows = [
+    ['① 윈도우 컨트롤러 설정에서 입력이 보이나', '안 보이면 연결 층(케이블·포트·유선 격리)부터'],
+    ['② 보이는데 게임만 무반응', '규격 불일치 — 스팀이면 통역 기능을 켜고/끄고 양방향 실험'],
+    ['③ 다른 입력 장치가 꽂혀 있나', '게임이 엉뚱한 장치를 1번으로 잡는 함정 — 문제 패드만 남기기'],
+  ];
+  rows.forEach((r, i) => {
+    b += t(36, 150 + i * 18, r[0], { size: 10, weight: 600, fill: COLOR.accent });
+    b += t(292, 150 + i * 18, r[1], { size: 9.6, fill: COLOR.mute });
+  });
+  return figure(
+    '패드 인식 — 두 개의 언어',
+    W, 212, b,
+    '윈도우가 패드를 보는데 게임만 무반응이면 대부분 패드와 게임이 서로 다른 입력 규격을 쓰는 경우라, 통역(변환) 쪽에서 풀어야 합니다.'
   );
 }
