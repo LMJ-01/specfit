@@ -13,14 +13,15 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/motherboard-debug-led.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-cold-boot-issue.html</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/pc-power-led-blinking.html</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-power-led-blinking.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/black-screen-cursor.html</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-parts-reuse.html</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-random-notification-sound.html</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mic-echo.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-cursor-moving.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/ram-not-detected.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/ram-not-detected.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/usb-safe-removal.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-ping-spike.html</loc><lastmod>2026-09-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-random-disconnect.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
@@ -97,7 +98,7 @@
   <url><loc>https://specfit.kr/posts/internet-download-speed.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-water-spill.html</loc><lastmod>2026-09-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-always-on.html</loc><lastmod>2026-09-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/pc-boot-no-display.html</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-boot-no-display.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-case-open.html</loc><lastmod>2026-09-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-shutdown-during-game.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-speaker-noise.html</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>

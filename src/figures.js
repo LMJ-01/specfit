@@ -900,6 +900,7 @@ export const figures = {
   'led-blink-rhythm': ledBlinkRhythm,
   'hdr-guest-stage': hdrGuestStage,
   'app-audio-ledger': appAudioLedger,
+  'debug-led-relay': debugLedRelay,
 };
 
 /**
@@ -4005,5 +4006,28 @@ function appAudioLedger() {
     '특정 앱만 무음 — 앱별 장부',
     W, 178, b,
     '윈도우는 앱마다 볼륨과 출력 장치를 따로 기억하므로, 한 앱만 조용하면 그 앱의 장부(음소거·0 볼륨·다른 출력 장치)부터 확인합니다.'
+  );
+}
+
+function debugLedRelay() {
+  const W = 640;
+  const names = ['CPU', 'DRAM', 'VGA', 'BOOT'];
+  const sub = ['보조 전원선·장착·바이오스', '재장착·한 장씩·CMOS', '보조 전원·장착·격리', '부팅 장치·순서·윈도우'];
+  let b = '';
+  b += t(24, 26, '부팅 점검은 릴레이 — 불이 잠깐 켜졌다 꺼지면 통과, 켜진 채 남으면 그 단계에서 멈춘 것', { weight: 600, size: 12.5 });
+  names.forEach((n, i) => {
+    const x = 24 + i * 152;
+    const stuck = i === 1;
+    b += rect(x, 44, 136, 54, stuck ? COLOR.over : COLOR.soft, { r: 8, stroke: stuck ? COLOR.over : COLOR.line });
+    b += t(x + 68, 66, n, { anchor: 'middle', size: 13, weight: 700, fill: stuck ? '#fff' : COLOR.text });
+    b += t(x + 68, 86, stuck ? '켜진 채 남음 — 여기서 멈춤' : (i < 1 ? '켜졌다 꺼짐 — 통과' : '아직 차례 아님'), { anchor: 'middle', size: 9.6, fill: stuck ? '#fff' : COLOR.mute });
+    if (i < 3) b += t(x + 144, 76, '→', { anchor: 'middle', size: 13, fill: COLOR.mute });
+    b += t(x + 68, 118, sub[i], { anchor: 'middle', size: 9.6, fill: COLOR.mute });
+  });
+  b += t(24, 150, '읽는 법은 하나 — 몇 초 뒤에도 꺼지지 않는 불이 멈춘 단계. 앞 단계는 이미 통과했다는 뜻이 같이 들어 있습니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '메인보드 표시등 — 남아 있는 불이 멈춘 단계',
+    W, 162, b,
+    '메인보드의 네 표시등(CPU·DRAM·VGA·BOOT)은 점검 순서대로 잠깐씩 켜졌다 꺼지고, 막힌 단계의 불만 켜진 채 남습니다. 남은 불이 곧 갈래 판정입니다.'
   );
 }

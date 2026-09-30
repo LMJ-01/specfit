@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>메인보드 빨간불(CPU·DRAM·VGA·BOOT)이 켜진 채 멈출 때 — 어느 불에서 멈췄는지가 답입니다</title>
+    <link>https://specfit.kr/posts/motherboard-debug-led.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/motherboard-debug-led.html</guid>
+    <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
+    <description>부팅이 안 되는데 메인보드 구석의 작은 불(CPU·DRAM·VGA·BOOT) 하나가 켜진 채 멈춰 있다면, 그 불은 고장 경보가 아니라 "여기서 막혔다"는 위치 표시입니다. 네 불이 켜지는 순서와 각 불이 뜻하는 갈래, 불별로 먼저 볼 것 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다</title>
     <link>https://specfit.kr/posts/pc-power-led-blinking.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-power-led-blinking.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-yellow-tint.html</guid>
     <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
     <description>모니터 화면이 어느 날 누렇게, 종이색처럼 변해서 고장을 의심하게 됩니다. 갑자기 변했는지 서서히 변했는지가 첫 갈림길입니다 — 갑자기라면 야간 모드·리더 모드·색온도 같은 설정 갈래가 대부분이라, 용의자를 끄는 순서와 서서히 갈래의 판정까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>전체 화면이냐 테두리 없는 창이냐 — 고르는 기준은 성능이 아니라 생활 패턴입니다</title>
-    <link>https://specfit.kr/posts/game-fullscreen-borderless.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/game-fullscreen-borderless.html</guid>
-    <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
-    <description>게임 그래픽 설정의 화면 모드 세 가지 중 뭘 골라야 하는지는 커뮤니티 단골 논쟁입니다. 두 모드가 구조적으로 뭐가 다른지, 알트탭·듀얼 모니터·티어링이 각 모드에서 왜 다르게 동작하는지 — 내 사용 패턴으로 답이 나오는 선택 기준을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
