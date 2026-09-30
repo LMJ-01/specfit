@@ -895,6 +895,7 @@ export const figures = {
   'coil-whine-signature': coilWhineSignature,
   'sound-fingerprint': soundFingerprint,
   'focus-thief': focusThief,
+  'cold-boot-ladder': coldBootLadder,
 };
 
 /**
@@ -3856,5 +3857,28 @@ function focusThief() {
     '포커스 도둑 수사 — 저절로 내려가는 게임',
     W, 200, b,
     '게임이 살아 있는 채 내려갔다면 크래시가 아니라 포커스를 뺏긴 것 — 직후 화면의 단서, 주기성, 방해 금지 순서로 범인을 좁힙니다.'
+  );
+}
+
+function coldBootLadder() {
+  const W = 640;
+  const box = (x, w, color, head, sub, headFill) => {
+    let s = rect(x, 56, w, 26, color, { r: 8 });
+    s += t(x + w / 2, 73, head, { anchor: 'middle', size: 10.5, weight: 600, fill: headFill || '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 100 + i * 16, ln, { size: 9.5, fill: COLOR.mute });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '추위 정황 판정 — 언제 되고 언제 안 되나', { weight: 600, size: 13 });
+  b += box(24, 190, COLOR.fit, '저온 정황 (추위 탓)', ['추운 아침·첫 부팅만 실패', '방이 데워지면 멀쩡히 켜짐', '→ 실온 회복 후 재시도가 처방']);
+  b += box(226, 190, COLOR.over, '결로 경보 (진짜 위험)', ['찬 기기를 따뜻한 방에 들임', '(겨울 택배·이동 직후)', '→ 몇 시간 실온 적응 후 전원']);
+  b += box(428, 188, COLOR.accent, '노화 신호 (반복되면)', ['추위가 드러낸 약한 고리', '파워 출력·CMOS 배터리 갈래', '→ 해마다 심해지면 점검']);
+  b += t(24, 172, '비권장: 히터·드라이어 급가열 — 온도 차는 결로의 재료입니다. 자연스러운 실온 회복이 안전한 길', { size: 10, fill: COLOR.mute });
+  return figure(
+    '추위 타는 컴퓨터 — 세 갈래',
+    W, 190, b,
+    '방이 데워지면 켜지는 패턴은 저온 정황, 찬 기기를 들인 직후는 결로 경보, 해마다 반복·심화되면 노화 신호입니다.'
   );
 }

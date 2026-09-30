@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>추운 방에서 컴퓨터가 안 켜질 때 — 컴퓨터도 추위를 탑니다 | 스펙핏</title>
+<meta name="description" content="겨울 아침 차가운 방에서 컴퓨터가 안 켜지거나 켜졌다 꺼지기를 반복하다, 방이 데워지면 멀쩡해지는 증상은 커뮤니티의 계절 단골입니다. 저온이 부품에 주는 부담과 판정 프레임, 급가열이 오히려 위험한 이유(결로), 해마다 심해질 때의 노화 신호까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/pc-cold-boot-issue.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="추운 방에서 컴퓨터가 안 켜질 때 — 컴퓨터도 추위를 탑니다 | 스펙핏">
+<meta property="og:description" content="겨울 아침 차가운 방에서 컴퓨터가 안 켜지거나 켜졌다 꺼지기를 반복하다, 방이 데워지면 멀쩡해지는 증상은 커뮤니티의 계절 단골입니다. 저온이 부품에 주는 부담과 판정 프레임, 급가열이 오히려 위험한 이유(결로), 해마다 심해질 때의 노화 신호까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/pc-cold-boot-issue.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"추운 방에서 컴퓨터가 안 켜질 때 — 컴퓨터도 추위를 탑니다","description":"겨울 아침 차가운 방에서 컴퓨터가 안 켜지거나 켜졌다 꺼지기를 반복하다, 방이 데워지면 멀쩡해지는 증상은 커뮤니티의 계절 단골입니다. 저온이 부품에 주는 부담과 판정 프레임, 급가열이 오히려 위험한 이유(결로), 해마다 심해질 때의 노화 신호까지 정리했습니다.","datePublished":"2026-09-30","dateModified":"2026-09-30","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/pc-cold-boot-issue.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"추운 방에서 컴퓨터가 안 켜질 때 — 컴퓨터도 추위를 탑니다","item":"https://specfit.kr/posts/pc-cold-boot-issue.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>추운 방에서 컴퓨터가 안 켜질 때 — 컴퓨터도 추위를 탑니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-30">2026년 9월 30일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>한파가 온 겨울 아침, 차가운 방에서 전원 버튼을 눌렀는데 <strong>반응이
+없거나, 켜졌다 꺼지기를 몇 번 반복</strong>합니다. 그런데 보일러가 돌고
+방이 데워진 뒤엔 아무 일 없었다는 듯 켜지죠. &quot;컴퓨터도 추위를
+타나?&quot; — 커뮤니티에 겨울마다 올라오는 질문이고, 답은 <strong>어느
+정도는 그렇다</strong>입니다.</p>
+<p>전자 부품에도 동작하기 편한 온도 범위가 있습니다. 특히 파워
+안의 콘덴서류는 <strong>저온에서 특성이 떨어지는 경향</strong>이 있어 전원
+출력의 여유가 줄고, 금속은 추우면 수축해 아슬아슬하던 접촉이
+떨어지기도 하며, 하드디스크는 차가울 때 첫 회전이 버겁습니다.
+그래서 평소엔 문제없던 컴퓨터가 <strong>약한 고리부터</strong> 겨울 아침에
+말썽을 부리는 겁니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 190" width="640" height="190" role="img" aria-label="추위 타는 컴퓨터 — 세 갈래">
+<title>추위 타는 컴퓨터 — 세 갈래</title>
+<text x="24" y="26" fill="var(--fg)" font-size="13" font-weight="600">추위 정황 판정 — 언제 되고 언제 안 되나</text><rect x="24" y="56" width="190" height="26" fill="var(--fig-fit)" rx="8"/><text x="119" y="73" fill="#fff" font-size="10.5" font-weight="600" text-anchor="middle">저온 정황 (추위 탓)</text><text x="30" y="100" fill="var(--fg-muted)" font-size="9.5">추운 아침·첫 부팅만 실패</text><text x="30" y="116" fill="var(--fg-muted)" font-size="9.5">방이 데워지면 멀쩡히 켜짐</text><text x="30" y="132" fill="var(--fg-muted)" font-size="9.5">→ 실온 회복 후 재시도가 처방</text><rect x="226" y="56" width="190" height="26" fill="var(--fig-over)" rx="8"/><text x="321" y="73" fill="#fff" font-size="10.5" font-weight="600" text-anchor="middle">결로 경보 (진짜 위험)</text><text x="232" y="100" fill="var(--fg-muted)" font-size="9.5">찬 기기를 따뜻한 방에 들임</text><text x="232" y="116" fill="var(--fg-muted)" font-size="9.5">(겨울 택배·이동 직후)</text><text x="232" y="132" fill="var(--fg-muted)" font-size="9.5">→ 몇 시간 실온 적응 후 전원</text><rect x="428" y="56" width="188" height="26" fill="var(--accent)" rx="8"/><text x="522" y="73" fill="#fff" font-size="10.5" font-weight="600" text-anchor="middle">노화 신호 (반복되면)</text><text x="434" y="100" fill="var(--fg-muted)" font-size="9.5">추위가 드러낸 약한 고리</text><text x="434" y="116" fill="var(--fg-muted)" font-size="9.5">파워 출력·CMOS 배터리 갈래</text><text x="434" y="132" fill="var(--fg-muted)" font-size="9.5">→ 해마다 심해지면 점검</text><text x="24" y="172" fill="var(--fg-muted)" font-size="10">비권장: 히터·드라이어 급가열 — 온도 차는 결로의 재료입니다. 자연스러운 실온 회복이 안전한 길</text>
+</svg>
+<figcaption>방이 데워지면 켜지는 패턴은 저온 정황, 찬 기기를 들인 직후는 결로 경보, 해마다 반복·심화되면 노화 신호입니다.</figcaption>
+</figure>
+<h2 id="저온-정황-방이-데워지면-켜진다가-판정선입니다">저온 정황 — &quot;방이 데워지면 켜진다&quot;가 판정선입니다</h2>
+<p><strong>추운 첫 부팅만 실패하고, 실온이 되면 멀쩡히 켜져 하루 종일
+문제없다</strong> — 이 패턴이면 저온 정황으로 판정해도 됩니다. 처방도
+같은 결입니다: 서두르지 말고 <strong>방이 자연스럽게 데워진 뒤</strong> 다시
+켜는 것. 몇십 분의 문제이고, 켜진 뒤엔 컴퓨터 스스로 열을 내니
+반복 걱정도 없습니다.</p>
+<p>인터넷에는 히터나 드라이어로 본체를 데워 살렸다는 무용담이
+있지만 — <strong>급가열은 권하지 않습니다.</strong> 급격한 온도 차는 아래서
+말할 결로의 재료이고, 국소 과열의 위험도 있습니다. 자연스러운
+실온 회복이 느려 보여도 안전한 길입니다.</p>
+<h2 id="결로-경보-추위보다-무서운-건-온도-차입니다">결로 경보 — 추위보다 무서운 건 온도 차입니다</h2>
+<p>정작 겨울의 진짜 위험은 추위 자체가 아니라 <strong>찬 기기를 따뜻한
+방에 들이는 순간</strong>입니다. 안경을 쓰고 실내에 들어오면 김이 서리
+듯, 차가운 금속 표면은 따뜻하고 습한 공기를 만나면 <strong>물방울을
+만듭니다(결로).</strong> 그 상태로 전원을 넣으면 물과 전기가 만나는
+구도가 되고요.</p>
+<p>그래서 <strong>겨울 택배로 온 부품·본체, 차 트렁크에 몇 시간 있던
+노트북은 바로 켜지 말고 몇 시간 실온에 적응</strong>시키는 것이
+순서입니다 — <a href="/posts/pc-moving-day.html">본체 이사 글의 그 원칙</a>
+과 같은 이야기고, 상자째 두면 온도가 더 천천히 올라 안전
+마진이 커집니다.</p>
+<h2 id="노화-신호-해마다-심해지면-추위는-예고편입니다">노화 신호 — 해마다 심해지면 추위는 예고편입니다</h2>
+<p>작년엔 없던 증상이 올해 생겼거나, 실온 회복 후에도 <strong>켜졌다
+꺼지기를 반복</strong>한다면 — 추위가 원인이라기보다 <strong>추위가 약한
+고리를 드러낸 것</strong>에 가깝습니다. 단골 용의자 둘:</p>
+<ul>
+<li><strong>파워</strong> — 저온에서 먼저 티가 나는 <a href="/posts/psu-lifespan.html">노화의 신호들</a>
+이 있는지, 켜졌다 꺼짐 반복이라면
+<a href="/posts/pc-turns-off-then-on.html">그 증상의 판정</a>부터</li>
+<li><strong>코인 배터리(CMOS)</strong> — 추운 날 부팅마다 <a href="/posts/pc-clock-wrong.html">시계가 초기화</a>
+돼 있다면 약해진 배터리가 저온에서 먼저 백기를 든 정황입니다</li>
+</ul>
+<p>계절 무관하게 <strong>항상 완전 무반응</strong>이라면 이 글이 아니라
+<a href="/posts/pc-no-power.html">전기 길 판정</a>이 먼저고요. 참고로 안
+쓰는 컴퓨터를 추운 방에 <strong>꺼둔 채 보관</strong>하는 것 자체는 대체로
+관대한 문제라(<a href="/posts/pc-long-storage.html">장기 보관 글</a>의
+영역), 관건은 언제나 <strong>켜는 순간의 온도와 온도 차</strong>입니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">겨울컴퓨터</span> <span class="tag">부팅안됨</span> <span class="tag">결로</span> <span class="tag">저온부팅</span> <span class="tag">파워서플라이</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/pc-parts-reuse.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">컴퓨터 새로 맞출 때 옛 부품 재사용 — 짐마다 통과할 관문이 다릅니다</span>
+        <span class="card-desc">새 견적을 짜면서 쓰던 부품 중 뭘 가져가도 되는지는 견적 게시판의 단골 질문입니다. 답은 부품마다 다른 관문에 있습니다 — 그냥 이사 가는 짐, 규격(세대)을 통과해야 하는 짐, 나이까지 따져야 하는 짐. 부품별 판정과 내보내는 짐의 개인정보 정리까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ram-not-detected.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램이 절반만 인식될 때 — 어느 숫자가 모자란지부터 봅니다</span>
+        <span class="card-desc">램을 추가했는데 용량이 그대로거나, 32GB를 꽂았는데 16GB만 잡히는 증상은 커뮤니티 질문 게시판의 단골입니다. 그런데 &quot;설치된 RAM&quot;이 모자란 것과 &quot;사용 가능&quot;만 적은 것은 완전히 다른 문제라 — 숫자 두 개를 가르는 것부터가 판정의 시작입니다. 층별 격리 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/usb-safe-removal.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">USB 안전 제거, 꼭 해야 하나 — 습관 논쟁이 아니라 설정 하나의 문제입니다</span>
+        <span class="card-desc">USB와 외장하드를 안전 제거 없이 뽑아도 되는지는 커뮤니티의 오랜 논쟁거리입니다. 답은 습관이 아니라 내 디스크의 쓰기 캐시 정책에 달려 있습니다 — 빠른 제거면 전송 중만 피하면 되고, 캐시를 켰다면 안전 제거가 필수인 이유를 구조로 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
