@@ -898,6 +898,7 @@ export const figures = {
   'cold-boot-ladder': coldBootLadder,
   'gamepad-two-languages': gamepadTwoLanguages,
   'led-blink-rhythm': ledBlinkRhythm,
+  'hdr-guest-stage': hdrGuestStage,
 };
 
 /**
@@ -3947,5 +3948,32 @@ function ledBlinkRhythm() {
     '전원 LED 깜빡임 — 리듬 판정',
     W, 202, b,
     '본체 LED가 숨쉬듯 천천히 깜빡이면 절전 표시, 켜지려다 꺼지기를 반복하며 깜빡이면 전원 공급 실패, 모니터 램프만 깜빡이면 신호 대기입니다.'
+  );
+}
+
+function hdrGuestStage() {
+  const W = 640;
+  let b = '';
+  b += t(24, 26, 'HDR을 켜면 무대가 바뀌고, 일반 화면은 "손님"이 됩니다', { weight: 600, size: 13 });
+  b += rect(24, 44, 592, 34, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(40, 66, 'HDR 무대', { size: 11, weight: 600, fill: COLOR.text });
+  b += rect(130, 50, 150, 22, COLOR.fit, { r: 6 });
+  b += t(205, 65, 'HDR 영상·게임 (원주민)', { anchor: 'middle', size: 9.8, weight: 600, fill: '#fff' });
+  b += rect(300, 50, 300, 22, COLOR.over, { r: 6 });
+  b += t(450, 65, '바탕화면·브라우저·문서 (SDR 손님 — 변환을 거쳐 얹힘)', { anchor: 'middle', size: 9.6, weight: 600, fill: '#fff' });
+  b += t(24, 104, '변환 기준값이 모니터와 안 맞으면 → 손님들이 전부 창백(물 빠짐)', { size: 10.5, fill: COLOR.mute });
+  const rows = [
+    ['① SDR 콘텐츠 밝기 슬라이더', '물 빠져 보이지 않는 지점까지 올리기 — 정공법'],
+    ['② 켤 가치 판정', '모니터가 HDR 무대급(밝기·명암 여유)인지부터'],
+    ['③ 상시가 아니라 스위치', 'HDR 콘텐츠 볼 때만 켜는 운용이 현실적 절충'],
+  ];
+  rows.forEach((r, i) => {
+    b += t(36, 132 + i * 18, r[0], { size: 10, weight: 600, fill: COLOR.accent });
+    b += t(250, 132 + i * 18, r[1], { size: 9.8, fill: COLOR.mute });
+  });
+  return figure(
+    'HDR 물빠짐 — 무대와 손님',
+    W, 196, b,
+    'HDR을 켜면 일반(SDR) 화면은 변환을 거쳐 얹히는 손님이 되고, 그 기준값이 안 맞으면 물 빠져 보입니다 — 슬라이더로 기준값부터 맞춥니다.'
   );
 }
