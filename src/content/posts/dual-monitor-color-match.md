@@ -2,7 +2,7 @@
 title: 듀얼 모니터 색감이 달라요 — 완전 일치는 목표가 아닙니다
 description: 모니터 두 대의 색이 다른 것은 고장이 아니라 패널이 다른 물건이라는 뜻입니다. 왜 완전히 같아질 수 없는지, 현실적으로 어디까지 맞추는지, 색이 중요한 작업은 어떻게 배치로 푸는지 정리했습니다.
 date: 2026-09-04
-updated: 2026-09-22
+updated: 2026-09-30
 category: monitor
 tags: [듀얼모니터, 색감차이, 색맞추기, 캘리브레이션, 모니터설정]
 ---
@@ -156,6 +156,8 @@ tags: [듀얼모니터, 색감차이, 색맞추기, 캘리브레이션, 모니�
 
 듀얼 구성의 다른 판정들 — [듀얼 vs 큰 한 대](/posts/dual-monitor-vs-single.html) ·
 [해상도 혼용](/posts/monitor-mixed-resolution.html) ·
-[표면 처리](/posts/glare-vs-matte-display.html)와 이어집니다.
+[표면 처리](/posts/glare-vs-matte-display.html)와 이어집니다. (한쪽만
+HDR을 켠 뒤로 그 화면이 **유독 물 빠져 보인다면** 패널 차이가
+아니라 [HDR 변환 기준값 문제](/posts/hdr-washed-out.html)입니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
