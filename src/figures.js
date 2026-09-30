@@ -897,6 +897,7 @@ export const figures = {
   'focus-thief': focusThief,
   'cold-boot-ladder': coldBootLadder,
   'gamepad-two-languages': gamepadTwoLanguages,
+  'led-blink-rhythm': ledBlinkRhythm,
 };
 
 /**
@@ -3915,5 +3916,36 @@ function gamepadTwoLanguages() {
     '패드 인식 — 두 개의 언어',
     W, 212, b,
     '윈도우가 패드를 보는데 게임만 무반응이면 대부분 패드와 게임이 서로 다른 입력 규격을 쓰는 경우라, 통역(변환) 쪽에서 풀어야 합니다.'
+  );
+}
+
+function ledBlinkRhythm() {
+  const W = 640;
+  const col = (x, w, color, head, sub) => {
+    let s = rect(x, 72, w, 26, color, { r: 8 });
+    s += t(x + w / 2, 89, head, { anchor: 'middle', size: 10.5, weight: 600, fill: '#fff' });
+    sub.forEach((ln, i) => {
+      s += t(x + 6, 116 + i * 16, ln, { size: 9.5, fill: COLOR.mute });
+    });
+    return s;
+  };
+  const wave = (x, y, pts, color) => {
+    let s = '';
+    pts.forEach(([dx, h]) => { s += rect(x + dx, y + 14 - h, 8, h, color, { r: 2 }); });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '깜빡임의 리듬과 위치가 뜻을 정합니다', { weight: 600, size: 13 });
+  b += wave(60, 36, [[0, 4], [12, 8], [24, 12], [36, 8], [48, 4], [60, 8], [72, 12], [84, 8]], COLOR.fit);
+  b += wave(262, 36, [[0, 12], [18, 12], [36, 12], [54, 12], [72, 12], [90, 12]], COLOR.over);
+  b += wave(466, 36, [[0, 12], [30, 12], [60, 12], [90, 12]], COLOR.accent);
+  b += col(24, 190, COLOR.fit, '천천히 숨쉬듯 (본체)', ['절전(대기) 상태 표시 — 정상', '키보드·마우스·전원 버튼으로', '깨우면 끝 (보드에 따라 다름)']);
+  b += col(226, 190, COLOR.over, '켜려다 꺼짐 반복 (본체)', ['팬이 멈칫하고 LED만 깜빡', '전원 공급 시도가 실패하는 중', '→ 방전 리셋 · 파워 · 접촉']);
+  b += col(428, 188, COLOR.accent, '모니터 램프만 깜빡', ['본체가 아니라 모니터 쪽 표시', '"신호를 기다리는 중"', '→ 케이블 · 입력 소스 · 부팅']);
+  b += t(24, 190, '먼저 확인: 깜빡이는 게 본체 불인가, 모니터 불인가 — 여기서 갈래가 반으로 줄어듭니다', { size: 10.5, fill: COLOR.mute });
+  return figure(
+    '전원 LED 깜빡임 — 리듬 판정',
+    W, 202, b,
+    '본체 LED가 숨쉬듯 천천히 깜빡이면 절전 표시, 켜지려다 꺼지기를 반복하며 깜빡이면 전원 공급 실패, 모니터 램프만 깜빡이면 신호 대기입니다.'
   );
 }

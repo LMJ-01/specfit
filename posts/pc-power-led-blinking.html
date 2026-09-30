@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다 | 스펙핏</title>
+<meta name="description" content="컴퓨터 본체의 전원 불빛이 깜빡이면 고장인지 절전인지 헷갈립니다. 깜빡임은 리듬과 위치에 따라 뜻이 다릅니다 — 숨쉬듯 천천히면 절전 표시, 켜지려다 꺼지기를 반복하며 깜빡이면 전원 공급 실패, 모니터 램프만 깜빡이면 신호 대기. 리듬별 판정과 다음 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/pc-power-led-blinking.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다 | 스펙핏">
+<meta property="og:description" content="컴퓨터 본체의 전원 불빛이 깜빡이면 고장인지 절전인지 헷갈립니다. 깜빡임은 리듬과 위치에 따라 뜻이 다릅니다 — 숨쉬듯 천천히면 절전 표시, 켜지려다 꺼지기를 반복하며 깜빡이면 전원 공급 실패, 모니터 램프만 깜빡이면 신호 대기. 리듬별 판정과 다음 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/pc-power-led-blinking.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다","description":"컴퓨터 본체의 전원 불빛이 깜빡이면 고장인지 절전인지 헷갈립니다. 깜빡임은 리듬과 위치에 따라 뜻이 다릅니다 — 숨쉬듯 천천히면 절전 표시, 켜지려다 꺼지기를 반복하며 깜빡이면 전원 공급 실패, 모니터 램프만 깜빡이면 신호 대기. 리듬별 판정과 다음 순서를 정리했습니다.","datePublished":"2026-09-30","dateModified":"2026-09-30","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/pc-power-led-blinking.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다","item":"https://specfit.kr/posts/pc-power-led-blinking.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-09-30">2026년 9월 30일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>전원 버튼 옆의 작은 불빛이 <strong>깜빡, 깜빡</strong> — 화면은 꺼져 있고
+컴퓨터가 켜진 건지 꺼진 건지도 애매합니다. 고장 신호인지 그냥
+쉬는 중인지 몰라 불안해지는 장면인데, 사실 이 불빛은 꽤 많은
+말을 하고 있습니다. <strong>깜빡임의 위치와 리듬</strong>을 읽으면 됩니다.</p>
+<p>먼저 위치부터 — <strong>깜빡이는 게 본체 불인가, 모니터 불인가.</strong>
+모니터 전원 램프가 깜빡이는 건 대부분 모니터 쪽 표시라서, 본체와
+다른 갈래입니다. 이 한 번의 구분으로 갈래가 절반이 됩니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 202" width="640" height="202" role="img" aria-label="전원 LED 깜빡임 — 리듬 판정">
+<title>전원 LED 깜빡임 — 리듬 판정</title>
+<text x="24" y="26" fill="var(--fg)" font-size="13" font-weight="600">깜빡임의 리듬과 위치가 뜻을 정합니다</text><rect x="60" y="46" width="8" height="4" fill="var(--fig-fit)" rx="2"/><rect x="72" y="42" width="8" height="8" fill="var(--fig-fit)" rx="2"/><rect x="84" y="38" width="8" height="12" fill="var(--fig-fit)" rx="2"/><rect x="96" y="42" width="8" height="8" fill="var(--fig-fit)" rx="2"/><rect x="108" y="46" width="8" height="4" fill="var(--fig-fit)" rx="2"/><rect x="120" y="42" width="8" height="8" fill="var(--fig-fit)" rx="2"/><rect x="132" y="38" width="8" height="12" fill="var(--fig-fit)" rx="2"/><rect x="144" y="42" width="8" height="8" fill="var(--fig-fit)" rx="2"/><rect x="262" y="38" width="8" height="12" fill="var(--fig-over)" rx="2"/><rect x="280" y="38" width="8" height="12" fill="var(--fig-over)" rx="2"/><rect x="298" y="38" width="8" height="12" fill="var(--fig-over)" rx="2"/><rect x="316" y="38" width="8" height="12" fill="var(--fig-over)" rx="2"/><rect x="334" y="38" width="8" height="12" fill="var(--fig-over)" rx="2"/><rect x="352" y="38" width="8" height="12" fill="var(--fig-over)" rx="2"/><rect x="466" y="38" width="8" height="12" fill="var(--accent)" rx="2"/><rect x="496" y="38" width="8" height="12" fill="var(--accent)" rx="2"/><rect x="526" y="38" width="8" height="12" fill="var(--accent)" rx="2"/><rect x="556" y="38" width="8" height="12" fill="var(--accent)" rx="2"/><rect x="24" y="72" width="190" height="26" fill="var(--fig-fit)" rx="8"/><text x="119" y="89" fill="#fff" font-size="10.5" font-weight="600" text-anchor="middle">천천히 숨쉬듯 (본체)</text><text x="30" y="116" fill="var(--fg-muted)" font-size="9.5">절전(대기) 상태 표시 — 정상</text><text x="30" y="132" fill="var(--fg-muted)" font-size="9.5">키보드·마우스·전원 버튼으로</text><text x="30" y="148" fill="var(--fg-muted)" font-size="9.5">깨우면 끝 (보드에 따라 다름)</text><rect x="226" y="72" width="190" height="26" fill="var(--fig-over)" rx="8"/><text x="321" y="89" fill="#fff" font-size="10.5" font-weight="600" text-anchor="middle">켜려다 꺼짐 반복 (본체)</text><text x="232" y="116" fill="var(--fg-muted)" font-size="9.5">팬이 멈칫하고 LED만 깜빡</text><text x="232" y="132" fill="var(--fg-muted)" font-size="9.5">전원 공급 시도가 실패하는 중</text><text x="232" y="148" fill="var(--fg-muted)" font-size="9.5">→ 방전 리셋 · 파워 · 접촉</text><rect x="428" y="72" width="188" height="26" fill="var(--accent)" rx="8"/><text x="522" y="89" fill="#fff" font-size="10.5" font-weight="600" text-anchor="middle">모니터 램프만 깜빡</text><text x="434" y="116" fill="var(--fg-muted)" font-size="9.5">본체가 아니라 모니터 쪽 표시</text><text x="434" y="132" fill="var(--fg-muted)" font-size="9.5">"신호를 기다리는 중"</text><text x="434" y="148" fill="var(--fg-muted)" font-size="9.5">→ 케이블 · 입력 소스 · 부팅</text><text x="24" y="190" fill="var(--fg-muted)" font-size="10.5">먼저 확인: 깜빡이는 게 본체 불인가, 모니터 불인가 — 여기서 갈래가 반으로 줄어듭니다</text>
+</svg>
+<figcaption>본체 LED가 숨쉬듯 천천히 깜빡이면 절전 표시, 켜지려다 꺼지기를 반복하며 깜빡이면 전원 공급 실패, 모니터 램프만 깜빡이면 신호 대기입니다.</figcaption>
+</figure>
+<h2 id="숨쉬듯-천천히-절전-중이라는-인사입니다">숨쉬듯 천천히 — 절전 중이라는 인사입니다</h2>
+<p>본체 불빛이 <strong>천천히 밝아졌다 어두워지기를 반복</strong>하거나 느긋한
+간격으로 깜빡인다면, 많은 경우 컴퓨터가 <strong>절전(대기) 상태</strong>라는
+표시입니다. 꺼진 게 아니라 잠든 것이고, 키보드·마우스를 움직이거나
+전원 버튼을 짧게 누르면 깨어납니다. 이 표시 방식은 보드와 케이스
+배선에 따라 달라서, 어떤 컴퓨터는 절전 때 불이 아예 꺼지기도
+합니다 — 내 컴퓨터가 평소 절전 때 어떻게 보이는지 한 번 알아 두면
+다음부터 헷갈리지 않습니다.</p>
+<p>깨웠는데 불빛만 바뀌고 <strong>화면이 안 돌아온다면</strong> 절전 복귀 쪽
+문제라, <a href="/posts/no-sound-after-sleep.html">절전에서 깬 뒤 생기는 일들</a>
+과 <a href="/posts/pc-boot-no-display.html">모니터 신호 갈래</a>가 이어받습니다.
+반대로 끈 적 없는데 자꾸 절전에 들어가거나 혼자 깨어난다면 그건
+<a href="/posts/pc-turns-on-by-itself.html">깨우는 신호의 문제</a>입니다.</p>
+<h2 id="켜지려다-꺼지며-깜빡-전원-공급이-실패하는-중입니다">켜지려다 꺼지며 깜빡 — 전원 공급이 실패하는 중입니다</h2>
+<p>전원 버튼을 눌렀더니 <strong>팬이 멈칫 돌다 서고, 불빛이 짧게 깜빡이기를
+반복</strong>합니다. 이 패턴은 절전과 완전히 다른 신호입니다 — 전원을
+넣으려는 시도가 <strong>보호 동작에 걸려 매번 되돌아오는</strong> 정황이거든요.
+어딘가 전기가 새거나(단락), 공급이 모자라거나, 접촉이 불안한
+경우에 보이는 모습입니다.</p>
+<p>순서는 공짜 격리부터입니다:</p>
+<ul>
+<li><strong>방전 리셋</strong> — 전원 케이블을 뽑고 전원 버튼을 몇 초 길게 누른
+뒤 다시 꽂아 켜 보세요. 순간적인 전기 이상으로 보호 회로가 잠긴
+상태라면 이걸로 풀리는 경우가 적지 않습니다 —
+<a href="/posts/pc-no-power.html">완전 무반응 글의 경계 단계</a>와 같은
+절차입니다</li>
+<li><strong>최근에 만진 것부터</strong> — 청소·조립·부품 교체 뒤에 생겼다면
+그때 움직인 부품(램·그래픽카드 장착, 케이블)이 1순위 용의자고,
+<a href="/posts/pc-wont-boot-after-cleaning.html">청소 후 안 켜질 때의 사다리</a>
+가 그 순서입니다</li>
+<li><strong>그래도 반복된다면</strong> — 파워 쪽 무게가 커집니다.
+<a href="/posts/psu-lifespan.html">파워 노화의 신호들</a>을 확인하고,
+익숙하지 않다면 여기서 점검을 맡기는 것이 정직한 다음 수입니다.
+<strong>파워는 케이블을 뽑아도 내부에 전기가 남는 부품이라 분해는
+금물</strong>입니다</li>
+</ul>
+<h2 id="모니터-램프만-깜빡-본체는-무죄일-수-있습니다">모니터 램프만 깜빡 — 본체는 무죄일 수 있습니다</h2>
+<p>본체 불빛은 멀쩡히 켜져 있는데 <strong>모니터 램프만 깜빡인다면</strong>, 대개
+모니터가 &quot;신호를 기다리는 중&quot;이라는 표시입니다(제품에 따라 표시
+방식은 다릅니다). 이 경우 볼 곳은 본체의 전원이 아니라 화면으로
+가는 길 — 케이블 재체결, 모니터의 입력 소스 선택, 그리고 컴퓨터가
+실제로 부팅까지 가는지입니다. 그 순서는
+<a href="/posts/pc-boot-no-display.html">팬은 도는데 화면이 안 나올 때</a>의
+릴레이 판정이 그대로 받아 줍니다.</p>
+<p>마지막으로 헷갈리기 쉬운 것 하나 — 요즘 케이스·부품의 <strong>RGB
+조명이 일부러 깜빡이거나 숨쉬는 효과</strong>로 설정돼 있을 수 있습니다.
+전원 표시등과 조명은 다른 불이라, 조명 효과 설정을 확인하면 괜한
+걱정 하나가 사라집니다. 불빛조차 <strong>전혀 없는</strong> 완전 무반응이라면
+그때는 <a href="/posts/pc-no-power.html">전기 길을 바깥부터 자르는 판정</a>
+으로 가세요.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">전원LED</span> <span class="tag">깜빡임</span> <span class="tag">절전모드</span> <span class="tag">컴퓨터안켜짐</span> <span class="tag">모니터램프</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/pc-cold-boot-issue.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">추운 방에서 컴퓨터가 안 켜질 때 — 컴퓨터도 추위를 탑니다</span>
+        <span class="card-desc">겨울 아침 차가운 방에서 컴퓨터가 안 켜지거나 켜졌다 꺼지기를 반복하다, 방이 데워지면 멀쩡해지는 증상은 커뮤니티의 계절 단골입니다. 저온이 부품에 주는 부담과 판정 프레임, 급가열이 오히려 위험한 이유(결로), 해마다 심해질 때의 노화 신호까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/pc-parts-reuse.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">컴퓨터 새로 맞출 때 옛 부품 재사용 — 짐마다 통과할 관문이 다릅니다</span>
+        <span class="card-desc">새 견적을 짜면서 쓰던 부품 중 뭘 가져가도 되는지는 견적 게시판의 단골 질문입니다. 답은 부품마다 다른 관문에 있습니다 — 그냥 이사 가는 짐, 규격(세대)을 통과해야 하는 짐, 나이까지 따져야 하는 짐. 부품별 판정과 내보내는 짐의 개인정보 정리까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/ram-not-detected.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">램이 절반만 인식될 때 — 어느 숫자가 모자란지부터 봅니다</span>
+        <span class="card-desc">램을 추가했는데 용량이 그대로거나, 32GB를 꽂았는데 16GB만 잡히는 증상은 커뮤니티 질문 게시판의 단골입니다. 그런데 &quot;설치된 RAM&quot;이 모자란 것과 &quot;사용 가능&quot;만 적은 것은 완전히 다른 문제라 — 숫자 두 개를 가르는 것부터가 판정의 시작입니다. 층별 격리 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

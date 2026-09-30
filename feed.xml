@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다</title>
+    <link>https://specfit.kr/posts/pc-power-led-blinking.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/pc-power-led-blinking.html</guid>
+    <pubDate>Tue, 29 Sep 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터 본체의 전원 불빛이 깜빡이면 고장인지 절전인지 헷갈립니다. 깜빡임은 리듬과 위치에 따라 뜻이 다릅니다 — 숨쉬듯 천천히면 절전 표시, 켜지려다 꺼지기를 반복하며 깜빡이면 전원 공급 실패, 모니터 램프만 깜빡이면 신호 대기. 리듬별 판정과 다음 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>추운 방에서 컴퓨터가 안 켜질 때 — 컴퓨터도 추위를 탑니다</title>
     <link>https://specfit.kr/posts/pc-cold-boot-issue.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-cold-boot-issue.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/game-fullscreen-borderless.html</guid>
     <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
     <description>게임 그래픽 설정의 화면 모드 세 가지 중 뭘 골라야 하는지는 커뮤니티 단골 논쟁입니다. 두 모드가 구조적으로 뭐가 다른지, 알트탭·듀얼 모니터·티어링이 각 모드에서 왜 다르게 동작하는지 — 내 사용 패턴으로 답이 나오는 선택 기준을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>한 번 눌렀는데 더블클릭이 될 때 — 접점의 노화는 되돌아가지 않습니다</title>
-    <link>https://specfit.kr/posts/mouse-double-click.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/mouse-double-click.html</guid>
-    <pubDate>Sun, 20 Sep 2026 15:00:00 GMT</pubDate>
-    <description>마우스를 한 번 클릭했는데 창이 두 개 열리고, 드래그하던 파일이 중간에 떨어집니다. 버튼 밑 스위치의 접점 노화가 만드는 채터링 증상입니다 — 진짜 고장인지 가르는 판별, 당장 쓸 수 있는 완화, 근본 해결의 저울을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
