@@ -902,6 +902,7 @@ export const figures = {
   'app-audio-ledger': appAudioLedger,
   'debug-led-relay': debugLedRelay,
   'blackout-two-lanes': blackoutTwoLanes,
+  'bandwidth-lanes': bandwidthLanes,
 };
 
 /**
@@ -4059,5 +4060,34 @@ function blackoutTwoLanes() {
     '모니터 1초 꺼짐 — 전원 갈래와 신호 갈래',
     W, 216, b,
     '모니터가 잠깐 꺼졌다 켜질 때 전원 표시등이 같이 꺼졌으면 전원 갈래, 켜진 채였으면 신호 갈래입니다. 용의자 순서가 갈래마다 다릅니다.'
+  );
+}
+
+function bandwidthLanes() {
+  const W = 640;
+  const x0 = 150, full = 456, max = 42.6;
+  const bar = (y, label, val, fill, note) => {
+    const w = Math.max(6, Math.round(full * val / max));
+    let s = t(x0 - 10, y + 15, label, { anchor: 'end', size: 10, weight: 600, fill: COLOR.text });
+    s += rect(x0, y, w, 20, fill, { r: 4 });
+    s += t(x0 + w + 8, y + 15, note, { size: 9.6, fill: COLOR.mute });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '필요한 양(화면) vs 실어 나를 수 있는 양(단자 실효값) — 단위 Gbps', { weight: 600, size: 12.5 });
+  b += t(24, 46, '화면이 요구하는 양', { size: 9.6, fill: COLOR.mute });
+  b += bar(52, 'FHD 60Hz', 3.2, COLOR.fit, '3.2');
+  b += bar(78, 'QHD 60Hz', 5.6, COLOR.fit, '5.6');
+  b += bar(104, '4K 60Hz', 12.5, COLOR.accent, '12.5 — HDMI 2.0 안에 겨우');
+  b += bar(130, '4K 120Hz', 25.1, COLOR.over, '25.1 — DP 1.4도 빠듯');
+  b += t(24, 172, '단자가 실어 나를 수 있는 양', { size: 9.6, fill: COLOR.mute });
+  b += bar(178, 'HDMI 2.0', 14.4, COLOR.soft, '14.4');
+  b += bar(204, 'DP 1.4', 25.92, COLOR.soft, '25.9');
+  b += bar(230, 'HDMI 2.1', 42.6, COLOR.soft, '42.6');
+  b += t(24, 272, '막대가 단자 막대보다 길면 그 조합은 못 나갑니다 — QHD까지는 어디든 여유, 4K부터 단자를 봅니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    'DP vs HDMI — 필요한 양과 실어 나르는 양',
+    W, 284, b,
+    '화면이 요구하는 대역폭(해상도×주사율)과 단자 실효 대역폭을 같은 자로 나란히 둔 그림. 4K 60Hz가 HDMI 2.0 안에 겨우 들어가고, 4K 120Hz는 DP 1.4도 빠듯합니다.'
   );
 }

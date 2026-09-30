@@ -2,7 +2,7 @@
 title: DP와 HDMI — 코딩용 모니터에 뭘 꽂아야 하나
 description: 코딩은 60Hz면 되기 때문에 대부분 아무 단자나 됩니다. 막히는 건 4K부터입니다. 필요한 대역폭을 직접 계산해서 어디서 걸리는지 정리했습니다.
 date: 2026-08-17
-updated: 2026-09-26
+updated: 2026-10-01
 category: monitor
 tags: [DisplayPort, HDMI, 모니터케이블, 대역폭, 코딩용모니터]
 affiliate: true
@@ -45,6 +45,8 @@ affiliate: true
 
 **QHD까지는 고민할 필요가 없습니다.** 4K부터 단자를 봐야 하고,
 그 위로는 케이블까지 가려야 합니다.
+
+{{FIG:bandwidth-lanes}}
 
 ## 1. 필요한 대역폭은 계산됩니다
 
