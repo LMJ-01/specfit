@@ -899,6 +899,7 @@ export const figures = {
   'gamepad-two-languages': gamepadTwoLanguages,
   'led-blink-rhythm': ledBlinkRhythm,
   'hdr-guest-stage': hdrGuestStage,
+  'app-audio-ledger': appAudioLedger,
 };
 
 /**
@@ -3975,5 +3976,34 @@ function hdrGuestStage() {
     'HDR 물빠짐 — 무대와 손님',
     W, 196, b,
     'HDR을 켜면 일반(SDR) 화면은 변환을 거쳐 얹히는 손님이 되고, 그 기준값이 안 맞으면 물 빠져 보입니다 — 슬라이더로 기준값부터 맞춥니다.'
+  );
+}
+
+function appAudioLedger() {
+  const W = 640;
+  const row = (y, app, vol, dev, ok) => {
+    let s = rect(24, y, 150, 24, COLOR.soft, { r: 6, stroke: COLOR.line });
+    s += t(99, y + 16, app, { anchor: 'middle', size: 10, weight: 600, fill: COLOR.text });
+    s += t(186, y + 16, '→', { size: 11, fill: COLOR.mute });
+    s += rect(204, y, 130, 24, ok ? COLOR.fit : COLOR.over, { r: 6 });
+    s += t(269, y + 16, vol, { anchor: 'middle', size: 10, weight: 600, fill: '#fff' });
+    s += t(346, y + 16, '→', { size: 11, fill: COLOR.mute });
+    s += rect(364, y, 252, 24, ok ? COLOR.fit : COLOR.over, { r: 6 });
+    s += t(490, y + 16, dev, { anchor: 'middle', size: 10, weight: 600, fill: '#fff' });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '윈도우는 앱마다 따로 장부를 씁니다 — 볼륨 한 칸, 나갈 문 한 칸', { weight: 600, size: 12.5 });
+  b += t(99, 50, '앱', { anchor: 'middle', size: 9.8, fill: COLOR.mute });
+  b += t(269, 50, '앱별 볼륨(믹서)', { anchor: 'middle', size: 9.8, fill: COLOR.mute });
+  b += t(490, 50, '앱별 출력 장치', { anchor: 'middle', size: 9.8, fill: COLOR.mute });
+  b += row(58, '브라우저', '80', '기본 장치 (스피커) — 들림', true);
+  b += row(88, '음악 앱', '60', '기본 장치 (스피커) — 들림', true);
+  b += row(118, '게임', '0 또는 음소거?', '뽑아 둔 헤드셋? — 조용', false);
+  b += t(24, 166, '한 앱만 조용하면 고장이 아니라 그 앱의 장부 한 줄 — 볼륨 믹서 → 앱별 출력 장치 → 게임 내 설정 순서로 엽니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '특정 앱만 무음 — 앱별 장부',
+    W, 178, b,
+    '윈도우는 앱마다 볼륨과 출력 장치를 따로 기억하므로, 한 앱만 조용하면 그 앱의 장부(음소거·0 볼륨·다른 출력 장치)부터 확인합니다.'
   );
 }
