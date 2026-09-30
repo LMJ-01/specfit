@@ -13,6 +13,13 @@
     <description>부팅이 안 되는데 메인보드 구석의 작은 불(CPU·DRAM·VGA·BOOT) 하나가 켜진 채 멈춰 있다면, 그 불은 고장 경보가 아니라 "여기서 막혔다"는 위치 표시입니다. 네 불이 켜지는 순서와 각 불이 뜻하는 갈래, 불별로 먼저 볼 것 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>모니터가 1초 꺼졌다 켜질 때 — 전원 불이 꺼졌는지, 신호만 놓쳤는지부터 봅니다</title>
+    <link>https://specfit.kr/posts/monitor-blackout-briefly.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/monitor-blackout-briefly.html</guid>
+    <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
+    <description>쓰다 보면 모니터가 한 번씩 1초쯤 까맣게 꺼졌다가 돌아오는 증상은 게시판 단골 질문입니다. 같은 증상처럼 보여도 전원이 끊긴 것과 신호를 놓친 것은 다른 사건이고, 전원 불빛과 복귀 장면이 그걸 갈라 줍니다. 갈래별 판정 순서와 정상인 깜빡임까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다</title>
     <link>https://specfit.kr/posts/pc-power-led-blinking.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-power-led-blinking.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-slow-boot.html</guid>
     <pubDate>Tue, 22 Sep 2026 15:00:00 GMT</pubDate>
     <description>전원을 누르고 바탕화면이 쓸 만해질 때까지 한참 걸리는 증상은 원인 후보가 너무 많아 헤매기 쉽습니다. 부팅을 세 구간(로고 전·로고에서 로그인·로그인 뒤)으로 자르면 구간마다 용의자가 다릅니다 — 시계로 재는 판정과 구간별 처방을 정리했습니다.</description>
-  </item>
-  <item>
-    <title>화면이 누렇게 변했을 때 — "갑자기"라면 십중팔구 고장이 아닙니다</title>
-    <link>https://specfit.kr/posts/monitor-yellow-tint.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-yellow-tint.html</guid>
-    <pubDate>Mon, 21 Sep 2026 15:00:00 GMT</pubDate>
-    <description>모니터 화면이 어느 날 누렇게, 종이색처럼 변해서 고장을 의심하게 됩니다. 갑자기 변했는지 서서히 변했는지가 첫 갈림길입니다 — 갑자기라면 야간 모드·리더 모드·색온도 같은 설정 갈래가 대부분이라, 용의자를 끄는 순서와 서서히 갈래의 판정까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>

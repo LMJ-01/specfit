@@ -901,6 +901,7 @@ export const figures = {
   'hdr-guest-stage': hdrGuestStage,
   'app-audio-ledger': appAudioLedger,
   'debug-led-relay': debugLedRelay,
+  'blackout-two-lanes': blackoutTwoLanes,
 };
 
 /**
@@ -4029,5 +4030,34 @@ function debugLedRelay() {
     '메인보드 표시등 — 남아 있는 불이 멈춘 단계',
     W, 162, b,
     '메인보드의 네 표시등(CPU·DRAM·VGA·BOOT)은 점검 순서대로 잠깐씩 켜졌다 꺼지고, 막힌 단계의 불만 켜진 채 남습니다. 남은 불이 곧 갈래 판정입니다.'
+  );
+}
+
+function blackoutTwoLanes() {
+  const W = 640;
+  const lane = (y, fill, led, scene, verdict, chain) => {
+    let s = rect(24, y, 120, 58, fill, { r: 8 });
+    s += t(84, y + 25, led, { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+    s += t(84, y + 43, scene, { anchor: 'middle', size: 9.4, fill: '#fff' });
+    s += t(158, y + 33, '→', { size: 13, fill: COLOR.mute });
+    s += rect(176, y, 128, 58, COLOR.soft, { r: 8, stroke: COLOR.line });
+    s += t(240, y + 34, verdict, { anchor: 'middle', size: 11, weight: 700, fill: COLOR.text });
+    s += t(318, y + 33, '→', { size: 13, fill: COLOR.mute });
+    s += rect(336, y, 280, 58, COLOR.soft, { r: 8, stroke: COLOR.line });
+    s += t(476, y + 34, chain, { anchor: 'middle', size: 9.8, fill: COLOR.text });
+    return s;
+  };
+  let b = '';
+  b += t(24, 26, '꺼지는 1초 동안 — 모니터 전원 표시등이 어땠나', { weight: 600, size: 12.5 });
+  b += t(84, 46, '표시등 · 복귀 장면', { anchor: 'middle', size: 9.6, fill: COLOR.mute });
+  b += t(240, 46, '판정', { anchor: 'middle', size: 9.6, fill: COLOR.mute });
+  b += t(476, 46, '용의자 순서', { anchor: 'middle', size: 9.6, fill: COLOR.mute });
+  b += lane(54, COLOR.over, '표시등 꺼짐', '로고·시작 화면 다시 뜸', '전원 갈래', '전원선·어댑터 → 콘센트·멀티탭 → 모니터 자체');
+  b += lane(122, COLOR.fit, '표시등 그대로', '"신호 없음" 스침 → 복귀', '신호 갈래', '케이블(접촉·체급) → 포트 → 드라이버 → 중간 장치');
+  b += t(24, 204, 'HDR 켜고 끌 때·게임 시작 순간에만 1~2초 꺼지는 건 모드 전환 — 정상이라 사다리를 탈 필요가 없습니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '모니터 1초 꺼짐 — 전원 갈래와 신호 갈래',
+    W, 216, b,
+    '모니터가 잠깐 꺼졌다 켜질 때 전원 표시등이 같이 꺼졌으면 전원 갈래, 켜진 채였으면 신호 갈래입니다. 용의자 순서가 갈래마다 다릅니다.'
   );
 }
