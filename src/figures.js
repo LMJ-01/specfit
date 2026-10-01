@@ -908,6 +908,7 @@ export const figures = {
   'busy-cursor-loop': busyCursorLoop,
   'migrate-vs-clean': migrateVsClean,
   'fan-report-fork': fanReportFork,
+  'boot-fan-rollcall': bootFanRollcall,
 };
 
 /**
@@ -4228,5 +4229,34 @@ function fanReportFork() {
     'CPU Fan Error — 회전 보고가 끊긴 세 갈래',
     W, 208, b,
     'CPU Fan Error는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다. 팬이 실제로 도는지 보면 연결·수명 / 자리 착오 / 저속 세 갈래로 갈립니다.'
+  );
+}
+
+function bootFanRollcall() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '켤 때의 "위잉" — 제어가 잡히기 전 몇 초의 전속 점호', { weight: 600, size: 12.5 });
+  b += t(24, 46, '시간 →', { size: 9.6, fill: COLOR.mute });
+  b += rect(24, 54, 150, 34, COLOR.over, { r: 6 });
+  b += t(99, 69, '0~몇 초 · 전속', { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+  b += t(99, 83, '보드가 아직 제어 전 — 큰 소리', { anchor: 'middle', size: 9.2, fill: '#fff' });
+  b += t(186, 74, '→', { size: 13, fill: COLOR.mute });
+  b += rect(204, 54, 150, 34, COLOR.accent, { r: 6 });
+  b += t(279, 69, '제어 잡힘', { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+  b += t(279, 83, '온도 읽고 회전수 내림', { anchor: 'middle', size: 9.2, fill: '#fff' });
+  b += t(366, 74, '→', { size: 13, fill: COLOR.mute });
+  b += rect(384, 54, 232, 34, COLOR.fit, { r: 6 });
+  b += t(500, 69, '조용 = 정상', { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+  b += t(500, 83, '점호가 끝난 평소 회전수', { anchor: 'middle', size: 9.2, fill: '#fff' });
+  b += t(24, 118, '판정 대상은 점호 뒤에 남는 것', { size: 10, weight: 600, fill: COLOR.text });
+  b += rect(24, 128, 290, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(169, 147, '① 조용해지지 않고 계속 크다 — 온도·먼지·제어 설정', { anchor: 'middle', size: 9.6, fill: COLOR.text });
+  b += rect(326, 128, 290, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(471, 147, '② 소리의 결이 다르다 — 베어링·간섭·진동', { anchor: 'middle', size: 9.6, fill: COLOR.text });
+  b += t(24, 180, '몇 초 뒤 조용해지는 위잉은 고장이 아니라 점호 — 켤 때 CPU Fan Error가 뜨는 건 점호가 아니라 회전 보고 부재의 별개 사건', { size: 10, fill: COLOR.mute });
+  return figure(
+    '켤 때 팬소리 — 점호 타임라인',
+    W, 192, b,
+    '전원 직후 몇 초는 보드가 팬을 제어하기 전이라 전속으로 돌며 큰 소리가 나고, 제어가 잡히면 조용해집니다. 판정 대상은 점호 뒤에도 남는 소음과 결이 다른 소리입니다.'
   );
 }
