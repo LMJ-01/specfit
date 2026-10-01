@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>스피커를 켜고 끌 때 "퍽" 소리가 날 때 — 전기가 들어오고 나가는 순간이 소리로 새는 겁니다</title>
+    <link>https://specfit.kr/posts/speaker-pop-on-power.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/speaker-pop-on-power.html</guid>
+    <pubDate>Thu, 01 Oct 2026 15:00:00 GMT</pubDate>
+    <description>컴퓨터나 스피커를 켜고 끌 때마다 "퍽" 하고 터지는 소리는 게시판 단골 질문입니다. 대개 고장이 아니라 전원이 들어오고 나가는 순간의 전압 변화가 스피커로 그대로 나간 것이고, "언제 나는가"에 따라 순서 문제·절전 문제·노화 문제로 갈립니다. 판정과 줄이는 방법을 정리했습니다.</description>
+  </item>
+  <item>
     <title>메인보드 빨간불(CPU·DRAM·VGA·BOOT)이 켜진 채 멈출 때 — 어느 불에서 멈췄는지가 답입니다</title>
     <link>https://specfit.kr/posts/motherboard-debug-led.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/motherboard-debug-led.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/cpu-temp-normal.html</guid>
     <pubDate>Thu, 24 Sep 2026 15:00:00 GMT</pubDate>
     <description>게임 중 CPU가 80도를 넘는 걸 보고 검색하면 답변이 60도부터 95도까지 제각각이라 더 불안해집니다. 몇 도가 정상인지는 제품·쿨러마다 달라 한 숫자로 답할 수 없고, 판정은 온도의 거동으로 합니다 — 평형·성능 유지·추세 세 기준과 개선 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>전원 버튼을 눌러도 완전 무반응일 때 — 전기의 길을 바깥에서 안으로 자릅니다</title>
-    <link>https://specfit.kr/posts/pc-no-power.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-no-power.html</guid>
-    <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
-    <description>버튼을 눌러도 팬도 불도 소리도 없는 완전 무반응은 전기가 어딘가에서 끊겼다는 뜻입니다. 벽 콘센트부터 본체 안까지 전기가 지나는 길은 정해져 있어서, 바깥에서 안쪽으로 하나씩 자르면 공짜 격리만으로 용의자가 두셋으로 좁혀집니다.</description>
   </item>
 </channel>
 </rss>

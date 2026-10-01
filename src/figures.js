@@ -910,6 +910,7 @@ export const figures = {
   'fan-report-fork': fanReportFork,
   'boot-fan-rollcall': bootFanRollcall,
   'wake-signal-sources': wakeSignalSources,
+  'pop-moment-map': popMomentMap,
 };
 
 /**
@@ -4284,5 +4285,29 @@ function wakeSignalSources() {
     '혼자 켜지는 컴퓨터 — 깨우는 신호의 출처',
     W, 192, b,
     '컴퓨터를 깨우는 신호는 입력 장치·네트워크·예약 작업·빠른 시작(바이오스) 네 갈래로 정해져 있고, 누가 깨웠는지는 장부에 남습니다. 출처별로 끄는 자리가 다릅니다.'
+  );
+}
+
+function popMomentMap() {
+  const W = 640;
+  const row = (y, fill, when, verdict, act, dark) => {
+    let s = rect(24, y, 176, 30, fill, { r: 6, stroke: dark ? fill : COLOR.line });
+    s += t(112, y + 19, when, { anchor: 'middle', size: 10, weight: 700, fill: dark ? '#fff' : COLOR.text });
+    s += t(212, y + 19, '→', { size: 12, fill: COLOR.mute });
+    s += t(230, y + 19, verdict, { size: 10, weight: 600, fill: COLOR.text });
+    s += t(400, y + 19, act, { size: 9.6, fill: COLOR.mute });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '퍽 = 전기가 들어오고 나가는 순간이 소리로 새는 것 — 판정은 "언제 나는가"', { weight: 600, size: 12.5 });
+  b += row(42, COLOR.fit, '켜고 끌 때 한 번씩', '구조 — 대개 정상', '소스→앰프 순서, 끌 땐 역순, 볼륨 ↓', true);
+  b += row(80, COLOR.accent, '절전 들어가고 나올 때', '장치 전원 관리', '사운드·USB 장치 절전 끄기', true);
+  b += row(118, COLOR.accent, '재생 시작마다 툭', '외장 장치의 잠', '자동 대기 끄기 · 무음 유지', true);
+  b += row(156, COLOR.over, '수시로 · 점점 크게', '접촉 · 노화', '케이블·단자 교체 실험 → 점검', true);
+  b += t(24, 206, '위 셋은 전원 상태가 바뀌는 순간에만 납니다 — 때와 무관하게 난다면 구조가 아니라 부품 쪽입니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '스피커 퍽 소리 — 언제 나는가로 가르기',
+    W, 218, b,
+    '켜고 끌 때의 퍽은 전압 변화가 증폭된 구조적인 소리라 순서와 볼륨으로 줄이고, 절전·재생 시작마다 난다면 장치의 잠, 때와 무관하면 접촉·노화 갈래입니다.'
   );
 }

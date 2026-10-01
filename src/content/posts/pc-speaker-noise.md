@@ -2,7 +2,7 @@
 title: 스피커에서 지지직 소리가 날 때 — 노이즈가 나는 "때"가 범인을 알려줍니다
 description: 컴퓨터 스피커나 이어폰에서 지지직, 웅, 쏴아 하는 잡음이 나면 원인 후보가 많아 헤매기 쉽습니다. 그런데 잡음이 언제 나는지가 갈래를 알려줍니다. 증상별 판정과 해결 사다리, 구조적으로 끝내는 방법까지 정리했습니다.
 date: 2026-09-05
-updated: 2026-09-30
+updated: 2026-10-02
 category: monitor
 tags: [스피커노이즈, 지지직, 화이트노이즈, 접지, 오디오]
 ---
@@ -165,5 +165,7 @@ tags: [스피커노이즈, 지지직, 화이트노이즈, 접지, 오디오]
 [정체 모를 알림음 추적](/posts/pc-random-notification-sound.html) ·
 [무선 주변기기 끊김](/posts/wireless-mouse-lag.html) ·
 [격리 진단의 원형](/posts/dual-monitor-one-blank.html)과 이어집니다.
+(사용 중 잡음이 아니라 **켜고 끌 때만 "퍽"** 하는 소리는 별개
+구조라 [그 글의 판정](/posts/speaker-pop-on-power.html)이 따로 있습니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
