@@ -906,6 +906,7 @@ export const figures = {
   'click-dead-fork': clickDeadFork,
   'zero-fan-threshold': zeroFanThreshold,
   'busy-cursor-loop': busyCursorLoop,
+  'migrate-vs-clean': migrateVsClean,
 };
 
 /**
@@ -4178,5 +4179,29 @@ function busyCursorLoop() {
     '로딩 원 깜빡임 — 반복 시작의 흔적',
     W, 184, b,
     '커서 옆 로딩 원은 앱이 시작될 때 뜨는 표시라, 규칙적으로 깜빡이면 어떤 작업이 짧은 주기로 반복 시작되는 것입니다. 작업 관리자·장치 관리자·클린 부팅 순서로 범인을 좁힙니다.'
+  );
+}
+
+function migrateVsClean() {
+  const W = 640;
+  const box = (x, y, w, h, fill, lines, dark) => {
+    let s = rect(x, y, w, h, fill, { r: 8, stroke: dark ? fill : COLOR.line });
+    lines.forEach((l, i) => {
+      s += t(x + w / 2, y + 19 + i * 15, l, { anchor: 'middle', size: i === 0 ? 10.5 : 9.4, weight: i === 0 ? 700 : 400, fill: dark ? '#fff' : (i === 0 ? COLOR.text : COLOR.mute) });
+    });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '복사는 다 같이 갑니다 — 옮길 가치가 있는 상태인지가 갈림길', { weight: 600, size: 12.5 });
+  b += box(24, 40, 170, 78, COLOR.soft, ['옛 SSD', '윈도우 · 프로그램 · 설정', '+ 쌓인 찌꺼기 · 숨은 문제'], false);
+  b += t(212, 66, '마이그레이션 →', { size: 9.6, weight: 600, fill: COLOR.fit });
+  b += t(212, 104, '클린설치 →', { size: 9.6, weight: 600, fill: COLOR.accent });
+  b += box(316, 40, 300, 34, COLOR.fit, ['새 SSD = 옛 집 그대로 (문제도 같이 이사)'], true);
+  b += box(316, 84, 300, 34, COLOR.accent, ['새 SSD = 빈 윈도우 + 백업에서 자료만'], true);
+  b += t(24, 146, '멀쩡하고 새것에 가까우면 위, 느려졌거나 문제가 있던 시스템이면 아래 — 어느 쪽이든 백업 먼저, 원본은 성공 확인 전까지 보존', { size: 10, fill: COLOR.mute });
+  return figure(
+    '마이그레이션 vs 클린설치 — 무엇이 따라가나',
+    W, 158, b,
+    '마이그레이션은 옛 시스템을 문제까지 통째로 새 SSD에 복사하고, 클린설치는 빈 윈도우에 백업한 자료만 옮깁니다. 옮길 가치가 있는 상태인지가 선택 기준입니다.'
   );
 }
