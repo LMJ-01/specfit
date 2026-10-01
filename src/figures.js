@@ -909,6 +909,7 @@ export const figures = {
   'migrate-vs-clean': migrateVsClean,
   'fan-report-fork': fanReportFork,
   'boot-fan-rollcall': bootFanRollcall,
+  'wake-signal-sources': wakeSignalSources,
 };
 
 /**
@@ -4258,5 +4259,30 @@ function bootFanRollcall() {
     '켤 때 팬소리 — 점호 타임라인',
     W, 192, b,
     '전원 직후 몇 초는 보드가 팬을 제어하기 전이라 전속으로 돌며 큰 소리가 나고, 제어가 잡히면 조용해집니다. 판정 대상은 점호 뒤에도 남는 소음과 결이 다른 소리입니다.'
+  );
+}
+
+function wakeSignalSources() {
+  const W = 640;
+  const src = (x, y, fill, l1, l2) => {
+    let s = rect(x, y, 140, 50, fill, { r: 8 });
+    s += t(x + 70, y + 20, l1, { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+    s += t(x + 70, y + 38, l2, { anchor: 'middle', size: 9.2, fill: '#fff' });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '유령이 아니라 신호 — 잠든 컴퓨터를 깨우는 출처는 네 갈래로 정해져 있습니다', { weight: 600, size: 12.5 });
+  b += src(24, 44, COLOR.fit, '① 입력 장치', '마우스·키보드 깨우기 허용');
+  b += src(178, 44, COLOR.fit, '② 네트워크', 'WOL · 매직 패킷');
+  b += src(332, 44, COLOR.accent, '③ 예약', '유지 관리·업데이트 작업');
+  b += src(486, 44, COLOR.over, '④ 빠른 시작·바이오스', '종료였는데도 켜짐');
+  [94, 248, 402, 556].forEach(x => { b += t(x, 112, '↓', { anchor: 'middle', size: 13, fill: COLOR.mute }); });
+  b += rect(24, 122, 592, 34, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(320, 143, '잠든 컴퓨터 — 깨운 출처는 장부(이벤트 기록·전원 명령)에 남습니다', { anchor: 'middle', size: 10.5, weight: 700, fill: COLOR.text });
+  b += t(24, 180, '끄는 자리도 출처별로 다릅니다 — ① 장치 관리자 전원 관리 ② 네트워크 어댑터 WOL ③ 작업 스케줄러·전원 옵션 깨우기 타이머 ④ 빠른 시작 끄기·바이오스 전원 항목', { size: 9.8, fill: COLOR.mute });
+  return figure(
+    '혼자 켜지는 컴퓨터 — 깨우는 신호의 출처',
+    W, 192, b,
+    '컴퓨터를 깨우는 신호는 입력 장치·네트워크·예약 작업·빠른 시작(바이오스) 네 갈래로 정해져 있고, 누가 깨웠는지는 장부에 남습니다. 출처별로 끄는 자리가 다릅니다.'
   );
 }
