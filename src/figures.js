@@ -904,6 +904,7 @@ export const figures = {
   'blackout-two-lanes': blackoutTwoLanes,
   'bandwidth-lanes': bandwidthLanes,
   'click-dead-fork': clickDeadFork,
+  'zero-fan-threshold': zeroFanThreshold,
 };
 
 /**
@@ -4119,5 +4120,30 @@ function clickDeadFork() {
     '클릭만 죽었을 때 — 막힌 층 가르기',
     W, 244, b,
     '커서가 살아 있으면 전체 멈춤이 아닙니다. Ctrl+Alt+Del과 작업 관리자 두 단축키의 반응으로 앱·마우스·탐색기·반쯤 멈춤 중 어느 층이 막혔는지 갈립니다.'
+  );
+}
+
+function zeroFanThreshold() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '제로팬 — 부하가 임계를 넘을 때만 팬이 돕니다 (임계값은 제품에 따라 다름)', { weight: 600, size: 12.5 });
+  b += t(24, 48, '부하 · 온도 →', { size: 9.6, fill: COLOR.mute });
+  b += rect(24, 56, 300, 34, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(174, 71, '저부하 — 웹서핑·문서·대기', { anchor: 'middle', size: 10.5, weight: 700, fill: COLOR.text });
+  b += t(174, 85, '팬 정지 = 정상 (방열판만으로 처리)', { anchor: 'middle', size: 9.4, fill: COLOR.mute });
+  b += rect(326, 50, 3, 46, COLOR.accent);
+  b += t(327, 112, '임계', { anchor: 'middle', size: 9.6, weight: 600, fill: COLOR.accent });
+  b += rect(332, 56, 284, 34, COLOR.fit, { r: 6 });
+  b += t(474, 71, '고부하 — 게임·렌더링', { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+  b += t(474, 85, '팬 회전 = 정상', { anchor: 'middle', size: 9.4, fill: '#fff' });
+  b += rect(332, 128, 284, 34, COLOR.over, { r: 6 });
+  b += t(474, 143, '고부하인데도 정지', { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+  b += t(474, 157, '문제 신호 — 확인 절차로', { anchor: 'middle', size: 9.4, fill: '#fff' });
+  b += t(24, 143, '판정은 한 가지 — 고부하를 걸었을 때', { size: 10, weight: 600, fill: COLOR.text });
+  b += t(24, 159, '도는지 안 도는지. 파워도 그래픽카드도 같은 논리입니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '제로팬 — 임계 아래 정지, 위에서 회전',
+    W, 176, b,
+    '제로팬 설계는 저부하·저온에서 팬을 일부러 멈추고 임계를 넘을 때만 돌립니다. 저부하 정지는 정상, 고부하에서도 정지면 문제 신호입니다.'
   );
 }
