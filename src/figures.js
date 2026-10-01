@@ -905,6 +905,7 @@ export const figures = {
   'bandwidth-lanes': bandwidthLanes,
   'click-dead-fork': clickDeadFork,
   'zero-fan-threshold': zeroFanThreshold,
+  'busy-cursor-loop': busyCursorLoop,
 };
 
 /**
@@ -4145,5 +4146,37 @@ function zeroFanThreshold() {
     '제로팬 — 임계 아래 정지, 위에서 회전',
     W, 176, b,
     '제로팬 설계는 저부하·저온에서 팬을 일부러 멈추고 임계를 넘을 때만 돌립니다. 저부하 정지는 정상, 고부하에서도 정지면 문제 신호입니다.'
+  );
+}
+
+function busyCursorLoop() {
+  const W = 640;
+  const step = (x, y, w, fill, l1, l2, dark) => {
+    let s = rect(x, y, w, 46, fill, { r: 8, stroke: dark ? fill : COLOR.line });
+    s += t(x + w / 2, y + 19, l1, { anchor: 'middle', size: 10.5, weight: 700, fill: dark ? '#fff' : COLOR.text });
+    s += t(x + w / 2, y + 36, l2, { anchor: 'middle', size: 9.2, fill: dark ? '#fff' : COLOR.mute });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '로딩 원 = "무언가 시작되는 중" — 규칙적으로 깜빡이면 뒤에서 같은 시작이 되풀이되는 것', { weight: 600, size: 12.5 });
+  const xs = [24, 176, 328, 480];
+  const lab = ['시작', '원 켜짐', '끝남', '원 꺼짐'];
+  xs.forEach((x, i) => {
+    b += rect(x, 46, 126, 28, i % 2 === 0 ? COLOR.soft : COLOR.accent, { r: 6, stroke: i % 2 === 0 ? COLOR.line : COLOR.accent });
+    b += t(x + 63, 64, lab[i], { anchor: 'middle', size: 10, weight: 600, fill: i % 2 === 0 ? COLOR.text : '#fff' });
+    if (i < 3) b += t(x + 139, 64, '→', { anchor: 'middle', size: 12, fill: COLOR.mute });
+  });
+  b += t(606, 64, '↺ 1~2초', { anchor: 'end', size: 9.4, fill: COLOR.over, weight: 600 });
+  b += t(24, 96, '수사 순서 — 되풀이하는 놈을 찾습니다', { size: 10, weight: 600, fill: COLOR.text });
+  b += step(24, 106, 186, COLOR.fit, '① 작업 관리자', '박자 맞춰 들썩이는 앱', true);
+  b += t(222, 133, '→', { anchor: 'middle', size: 12, fill: COLOR.mute });
+  b += step(234, 106, 186, COLOR.fit, '② 장치 관리자', '스스로 새로고침 = 장치 반복 연결', true);
+  b += t(432, 133, '→', { anchor: 'middle', size: 12, fill: COLOR.mute });
+  b += step(444, 106, 172, COLOR.soft, '③ 클린 부팅', '시작 프로그램 통째 격리', false);
+  b += t(24, 172, '불규칙하게, 뭔가 할 때만 뜨는 원은 실제 작업의 바쁨 표시라 대개 정상입니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '로딩 원 깜빡임 — 반복 시작의 흔적',
+    W, 184, b,
+    '커서 옆 로딩 원은 앱이 시작될 때 뜨는 표시라, 규칙적으로 깜빡이면 어떤 작업이 짧은 주기로 반복 시작되는 것입니다. 작업 관리자·장치 관리자·클린 부팅 순서로 범인을 좁힙니다.'
   );
 }

@@ -27,6 +27,13 @@
     <description>마우스 포인터는 멀쩡히 움직이는데 아무것도 눌리지 않는 증상은 게시판에 꾸준히 올라옵니다. 커서가 움직인다는 사실 자체가 단서입니다 — 컴퓨터 전체가 멈춘 게 아니라 입력·앱·탐색기 중 한 층이 막힌 것이라, 키보드 두 번으로 어느 층인지 가르는 판정과 갈래별 처방을 정리했습니다.</description>
   </item>
   <item>
+    <title>커서 옆 로딩 원이 계속 깜빡일 때 — 누군가 뒤에서 같은 일을 되풀이하고 있습니다</title>
+    <link>https://specfit.kr/posts/cursor-busy-flicker.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/cursor-busy-flicker.html</guid>
+    <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
+    <description>마우스 커서 옆의 파란 로딩 원이 1~2초마다 깜빡이며 사라지지 않는 증상은 질문 게시판 단골입니다. 그 원은 "지금 뭔가 시작되는 중"이라는 표시라, 계속 깜빡인다는 건 뒤에서 어떤 작업이 짧은 주기로 되풀이되고 있다는 뜻입니다. 범인을 좁히는 관찰 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다</title>
     <link>https://specfit.kr/posts/pc-power-led-blinking.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-power-led-blinking.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/gamepad-not-working.html</guid>
     <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
     <description>윈도우는 패드를 인식하는데 정작 게임 안에서는 무반응인 증상은 게시판 단골입니다. 어느 층에서 끊겼는지부터 가르고, 게임과 패드의 입력 규격이 어긋나는 구조와 스팀의 통역 기능, 이중 인식의 함정까지 — 판정 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>녹화만 켜면 게임이 버벅일 때 — 압축을 누가 하느냐의 문제입니다</title>
-    <link>https://specfit.kr/posts/game-recording-fps-drop.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/game-recording-fps-drop.html</guid>
-    <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
-    <description>게임은 잘 돌아가는데 녹화나 방송을 켜는 순간 프레임이 뚝 떨어지는 증상은 게시판 단골입니다. 녹화는 받아서·압축해서·저장하는 세 단계이고, 프레임을 깎는 주범은 대개 압축 단계의 담당자 선택입니다 — 판정과 처방 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

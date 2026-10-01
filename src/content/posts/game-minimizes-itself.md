@@ -2,7 +2,7 @@
 title: 게임 중 갑자기 바탕화면으로 튕겨 나올 때 — 꺼진 게 아니라 누가 끼어든 겁니다
 description: 게임을 하다가 알트탭을 누른 것도 아닌데 갑자기 바탕화면이나 다른 창으로 튕겨 나오는 증상은 게시판 단골 질문입니다. 게임이 살아 있다면 크래시가 아니라 포커스를 빼앗긴 것 — 끼어든 범인을 찾는 순서와 방해 금지·화면 모드 우회까지 정리했습니다.
 date: 2026-09-07
-updated: 2026-09-30
+updated: 2026-10-01
 category: gpu
 tags: [게임튕김, 바탕화면전환, 포커스, 전체화면, 알림설정]
 ---
@@ -146,6 +146,8 @@ tags: [게임튕김, 바탕화면전환, 포커스, 전체화면, 알림설정]
 
 게임 증상의 이웃 판정들 — [게임 중 꺼짐(전원)](/posts/pc-shutdown-during-game.html) ·
 [끊김·프레임 판정](/posts/game-stutter-fps.html) ·
-[마우스 이탈과 화면 모드](/posts/dual-monitor-mouse-escape.html)와 이어집니다.
+[마우스 이탈과 화면 모드](/posts/dual-monitor-mouse-escape.html) ·
+[커서 옆 로딩 원 깜빡임(같은 끼어들기의 평상시 얼굴)](/posts/cursor-busy-flicker.html)과
+이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
