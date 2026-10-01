@@ -13,11 +13,12 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/cursor-moves-no-click.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-blackout-briefly.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/motherboard-debug-led.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-cold-boot-issue.html</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-power-led-blinking.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/black-screen-cursor.html</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/black-screen-cursor.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-parts-reuse.html</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-random-notification-sound.html</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mic-echo.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
@@ -36,7 +37,7 @@
   <url><loc>https://specfit.kr/posts/game-fullscreen-borderless.html</loc><lastmod>2026-09-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-yellow-tint.html</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-double-click.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/pc-freeze-sound-loop.html</loc><lastmod>2026-09-20</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-freeze-sound-loop.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/front-usb-not-working.html</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-on-bed.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-no-signal-gaming.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
@@ -77,7 +78,7 @@
   <url><loc>https://specfit.kr/posts/app-no-sound.html</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/bluetooth-earbuds-stutter.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/boot-into-bios.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/desktop-icons-missing.html</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/desktop-icons-missing.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/external-hdd-freeze.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-not-detected.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/keyboard-some-keys-dead.html</loc><lastmod>2026-09-27</lastmod><priority>0.8</priority></url>

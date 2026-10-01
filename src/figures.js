@@ -903,6 +903,7 @@ export const figures = {
   'debug-led-relay': debugLedRelay,
   'blackout-two-lanes': blackoutTwoLanes,
   'bandwidth-lanes': bandwidthLanes,
+  'click-dead-fork': clickDeadFork,
 };
 
 /**
@@ -4089,5 +4090,34 @@ function bandwidthLanes() {
     'DP vs HDMI — 필요한 양과 실어 나르는 양',
     W, 284, b,
     '화면이 요구하는 대역폭(해상도×주사율)과 단자 실효 대역폭을 같은 자로 나란히 둔 그림. 4K 60Hz가 HDMI 2.0 안에 겨우 들어가고, 4K 120Hz는 DP 1.4도 빠듯합니다.'
+  );
+}
+
+function clickDeadFork() {
+  const W = 640;
+  const box = (x, y, w, h, fill, l1, l2, dark) => {
+    let s = rect(x, y, w, h, fill, { r: 8, stroke: dark ? fill : COLOR.line });
+    s += t(x + w / 2, y + (l2 ? 20 : h / 2 + 4), l1, { anchor: 'middle', size: 10.5, weight: 700, fill: dark ? '#fff' : COLOR.text });
+    if (l2) s += t(x + w / 2, y + 37, l2, { anchor: 'middle', size: 9.4, fill: dark ? '#fff' : COLOR.mute });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '커서는 움직인다 = 전체 고장이 아니다 — 키보드 두 번으로 막힌 층을 가릅니다', { weight: 600, size: 12.5 });
+  b += box(24, 40, 200, 46, COLOR.soft, 'Ctrl + Alt + Del', '파란 화면이 뜨나?', false);
+  b += t(236, 60, '안 뜸 →', { size: 9.6, fill: COLOR.mute });
+  b += box(290, 40, 326, 46, COLOR.over, '④ 반쯤 얼어붙은 중', '느려지다 멈춤 — 반복이면 저장장치·램 사다리', true);
+  b += t(124, 106, '뜸 ↓', { anchor: 'middle', size: 9.6, fill: COLOR.mute });
+  b += box(24, 116, 200, 46, COLOR.soft, 'Ctrl + Shift + Esc', '작업 관리자 안에서 클릭이 되나?', false);
+  b += t(236, 128, '된다 →', { size: 9.6, fill: COLOR.mute });
+  b += box(290, 108, 326, 30, COLOR.fit, '① 앱이 입력을 삼킴 — Alt+Tab·응답 없음 끝내기', null, true);
+  b += t(236, 160, '안 된다 →', { size: 9.6, fill: COLOR.mute });
+  b += box(290, 144, 326, 30, COLOR.accent, '② 마우스 클릭 신호 — 포트·다른 마우스·무선', null, true);
+  b += t(236, 196, '작업표시줄만 →', { size: 9.6, fill: COLOR.mute });
+  b += box(290, 180, 326, 30, COLOR.fit, '③ 탐색기 멈춤 — 탐색기 다시 시작', null, true);
+  b += t(24, 232, '마우스를 거치지 않고 시스템에 직접 말을 거는 두 단축키라, 마우스가 범인인지 아닌지가 여기서 갈립니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '클릭만 죽었을 때 — 막힌 층 가르기',
+    W, 244, b,
+    '커서가 살아 있으면 전체 멈춤이 아닙니다. Ctrl+Alt+Del과 작업 관리자 두 단축키의 반응으로 앱·마우스·탐색기·반쯤 멈춤 중 어느 층이 막혔는지 갈립니다.'
   );
 }

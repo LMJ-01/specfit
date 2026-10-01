@@ -20,6 +20,13 @@
     <description>쓰다 보면 모니터가 한 번씩 1초쯤 까맣게 꺼졌다가 돌아오는 증상은 게시판 단골 질문입니다. 같은 증상처럼 보여도 전원이 끊긴 것과 신호를 놓친 것은 다른 사건이고, 전원 불빛과 복귀 장면이 그걸 갈라 줍니다. 갈래별 판정 순서와 정상인 깜빡임까지 정리했습니다.</description>
   </item>
   <item>
+    <title>커서는 움직이는데 클릭이 안 먹힐 때 — 커서가 살아 있다는 건 컴퓨터가 죽지 않았다는 뜻입니다</title>
+    <link>https://specfit.kr/posts/cursor-moves-no-click.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/cursor-moves-no-click.html</guid>
+    <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
+    <description>마우스 포인터는 멀쩡히 움직이는데 아무것도 눌리지 않는 증상은 게시판에 꾸준히 올라옵니다. 커서가 움직인다는 사실 자체가 단서입니다 — 컴퓨터 전체가 멈춘 게 아니라 입력·앱·탐색기 중 한 층이 막힌 것이라, 키보드 두 번으로 어느 층인지 가르는 판정과 갈래별 처방을 정리했습니다.</description>
+  </item>
+  <item>
     <title>본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다</title>
     <link>https://specfit.kr/posts/pc-power-led-blinking.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-power-led-blinking.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/game-recording-fps-drop.html</guid>
     <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
     <description>게임은 잘 돌아가는데 녹화나 방송을 켜는 순간 프레임이 뚝 떨어지는 증상은 게시판 단골입니다. 녹화는 받아서·압축해서·저장하는 세 단계이고, 프레임을 깎는 주범은 대개 압축 단계의 담당자 선택입니다 — 판정과 처방 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>부팅이 오래 걸릴 때 — 어느 구간에서 머무는지가 범인을 알려줍니다</title>
-    <link>https://specfit.kr/posts/pc-slow-boot.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-slow-boot.html</guid>
-    <pubDate>Tue, 22 Sep 2026 15:00:00 GMT</pubDate>
-    <description>전원을 누르고 바탕화면이 쓸 만해질 때까지 한참 걸리는 증상은 원인 후보가 너무 많아 헤매기 쉽습니다. 부팅을 세 구간(로고 전·로고에서 로그인·로그인 뒤)으로 자르면 구간마다 용의자가 다릅니다 — 시계로 재는 판정과 구간별 처방을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
