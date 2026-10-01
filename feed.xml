@@ -34,6 +34,13 @@
     <description>마우스 커서 옆의 파란 로딩 원이 1~2초마다 깜빡이며 사라지지 않는 증상은 질문 게시판 단골입니다. 그 원은 "지금 뭔가 시작되는 중"이라는 표시라, 계속 깜빡인다는 건 뒤에서 어떤 작업이 짧은 주기로 되풀이되고 있다는 뜻입니다. 범인을 좁히는 관찰 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>켤 때마다 CPU Fan Error가 뜨고 F1을 눌러야 할 때 — 보드가 못 들은 건 팬의 "회전 보고"입니다</title>
+    <link>https://specfit.kr/posts/cpu-fan-error-boot.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/cpu-fan-error-boot.html</guid>
+    <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
+    <description>부팅마다 CPU Fan Error가 뜨고 F1을 눌러야 하는 증상은 게시판 단골입니다. 이 메시지는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다 — 안 도는지, 다른 자리에 꽂혔는지, 너무 느린지 세 갈래로 가르는 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>본체 전원 LED가 깜빡일 때 — 깜빡임의 리듬이 뜻을 말해줍니다</title>
     <link>https://specfit.kr/posts/pc-power-led-blinking.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-power-led-blinking.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-no-power.html</guid>
     <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
     <description>버튼을 눌러도 팬도 불도 소리도 없는 완전 무반응은 전기가 어딘가에서 끊겼다는 뜻입니다. 벽 콘센트부터 본체 안까지 전기가 지나는 길은 정해져 있어서, 바깥에서 안쪽으로 하나씩 자르면 공짜 격리만으로 용의자가 두셋으로 좁혀집니다.</description>
-  </item>
-  <item>
-    <title>게임패드를 꽂았는데 게임이 몰라볼 때 — 패드와 게임이 다른 언어를 쓰고 있어서입니다</title>
-    <link>https://specfit.kr/posts/gamepad-not-working.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/gamepad-not-working.html</guid>
-    <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
-    <description>윈도우는 패드를 인식하는데 정작 게임 안에서는 무반응인 증상은 게시판 단골입니다. 어느 층에서 끊겼는지부터 가르고, 게임과 패드의 입력 규격이 어긋나는 구조와 스팀의 통역 기능, 이중 인식의 함정까지 — 판정 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

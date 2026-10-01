@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>켤 때마다 CPU Fan Error가 뜨고 F1을 눌러야 할 때 — 보드가 못 들은 건 팬의 &quot;회전 보고&quot;입니다 | 스펙핏</title>
+<meta name="description" content="부팅마다 CPU Fan Error가 뜨고 F1을 눌러야 하는 증상은 게시판 단골입니다. 이 메시지는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다 — 안 도는지, 다른 자리에 꽂혔는지, 너무 느린지 세 갈래로 가르는 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/cpu-fan-error-boot.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="켤 때마다 CPU Fan Error가 뜨고 F1을 눌러야 할 때 — 보드가 못 들은 건 팬의 &quot;회전 보고&quot;입니다 | 스펙핏">
+<meta property="og:description" content="부팅마다 CPU Fan Error가 뜨고 F1을 눌러야 하는 증상은 게시판 단골입니다. 이 메시지는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다 — 안 도는지, 다른 자리에 꽂혔는지, 너무 느린지 세 갈래로 가르는 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/cpu-fan-error-boot.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"켤 때마다 CPU Fan Error가 뜨고 F1을 눌러야 할 때 — 보드가 못 들은 건 팬의 \"회전 보고\"입니다","description":"부팅마다 CPU Fan Error가 뜨고 F1을 눌러야 하는 증상은 게시판 단골입니다. 이 메시지는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다 — 안 도는지, 다른 자리에 꽂혔는지, 너무 느린지 세 갈래로 가르는 순서를 정리했습니다.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/cpu-fan-error-boot.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"켤 때마다 CPU Fan Error가 뜨고 F1을 눌러야 할 때 — 보드가 못 들은 건 팬의 \"회전 보고\"입니다","item":"https://specfit.kr/posts/cpu-fan-error-boot.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/memory.html">메모리·스토리지</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>켤 때마다 CPU Fan Error가 뜨고 F1을 눌러야 할 때 — 보드가 못 들은 건 팬의 &quot;회전 보고&quot;입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-10-01">2026년 10월 1일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>전원을 켜면 검은 화면에 <strong>&quot;CPU Fan Error! Press F1 to Run SETUP&quot;</strong>
+한 줄이 뜨고, F1을 눌러 바이오스에 들어갔다 나와야 윈도우가
+켜집니다. 매일 아침 같은 의식을 치르다 보면 &quot;CPU 팬이 고장났나,
+CPU가 타는 건 아닌가&quot; 걱정이 올라오죠. 게시판에도 첫 조립 직후,
+쿨러를 바꾼 직후, 수랭을 단 직후에 같은 질문이 꾸준히 올라옵니다.</p>
+<p>메시지를 정확히 읽으면 걱정의 절반이 빠집니다. 이 문장은 <strong>&quot;팬이
+고장났다&quot;는 판정이 아니라, &quot;CPU 팬 자리에서 회전 보고를 못
+받았다&quot;는 보고</strong>입니다. 메인보드에는 CPU 쿨러 팬을 꽂으라고 정해
+둔 커넥터가 있고, 보드는 켤 때 <strong>그 자리에서 팬이 몇 바퀴 도는지
+신호를 듣습니다.</strong> 그 신호가 없거나 기준보다 느리면 &quot;CPU를 식힐
+팬이 안 도는 것 같다&quot;며 멈춰 서서 F1을 기다리는 거고요 — CPU를
+지키려는 안전장치가 작동한 것이지, 결과가 확정된 게 아닙니다.
+그래서 질문은 &quot;팬이 고장났나&quot;가 아니라 <strong>&quot;보드가 왜 보고를 못
+들었나&quot;</strong>이고, 답은 세 갈래 중 하나입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 208" width="640" height="208" role="img" aria-label="CPU Fan Error — 회전 보고가 끊긴 세 갈래">
+<title>CPU Fan Error — 회전 보고가 끊긴 세 갈래</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">메시지 = "CPU 팬 자리에서 회전 보고를 못 받았다" — 팬이 도는지 눈으로 보면 갈래가 갈립니다</text><rect x="24" y="42" width="180" height="46" fill="var(--bg-soft)" rx="8" stroke="var(--border)"/><text x="114" y="62" fill="var(--fg)" font-size="10.5" font-weight="700" text-anchor="middle">케이스 열고 전원</text><text x="114" y="79" fill="var(--fg-muted)" font-size="9.4" text-anchor="middle">CPU 쿨러 팬이 도나?</text><text x="216" y="58" fill="var(--fg-muted)" font-size="9.6">안 돈다 →</text><rect x="290" y="42" width="326" height="46" fill="var(--fig-over)" rx="8" stroke="var(--fig-over)"/><text x="453" y="62" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">① 보드 말이 맞음</text><text x="453" y="79" fill="#fff" font-size="9.4" text-anchor="middle">커넥터 재장착 → 팬 수명(교체) — 감시 끄지 말 것</text><text x="216" y="112" fill="var(--fg-muted)" font-size="9.6">잘 돈다 →</text><rect x="290" y="96" width="326" height="34" fill="var(--fig-fit)" rx="8" stroke="var(--fig-fit)"/><text x="453" y="117" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">② 다른 자리에 꽂힘 — CPU 팬 표기 자리로 (수랭은 펌프 자리 확인)</text><rect x="290" y="138" width="326" height="34" fill="var(--accent)" rx="8" stroke="var(--accent)"/><text x="453" y="159" fill="#fff" font-size="10.5" font-weight="700" text-anchor="middle">③ 너무 느려 못 들음 — 바이오스 하한값·팬 곡선 조정</text><text x="24" y="196" fill="var(--fg-muted)" font-size="10">감시 끄기는 팬 없는 구성(패시브·펌프 별도 감시)에서만 — 공랭에서 끄면 진짜 정지를 못 잡습니다</text>
+</svg>
+<figcaption>CPU Fan Error는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다. 팬이 실제로 도는지 보면 연결·수명 / 자리 착오 / 저속 세 갈래로 갈립니다.</figcaption>
+</figure>
+<h2 id="눈으로-1분-팬이-실제로-돌고-있나">눈으로 1분 — 팬이 실제로 돌고 있나</h2>
+<p>케이스 옆판을 열고(또는 투명창으로) 전원을 켠 뒤 <strong>CPU 쿨러의
+팬이 도는지</strong>만 봅니다. 이 한 번의 관찰로 갈래가 둘로 갈립니다.</p>
+<ul>
+<li><strong>안 돈다</strong> — 보드 말이 맞습니다. 갈래 ①</li>
+<li><strong>잘 돈다</strong> — 보드가 못 들은 쪽입니다. 갈래 ② 또는 ③</li>
+</ul>
+<p>수랭(일체형)이라면 라디에이터의 팬과 <strong>펌프</strong>를 따로 봅니다 —
+펌프는 돌아가는 게 눈에 잘 안 보이니, 물 흐르는 미세한 진동이나
+소프트웨어의 펌프 회전수로 확인합니다.</p>
+<h2 id="갈래-정말-안-돈다-연결과-팬의-수명">갈래 ① — 정말 안 돈다: 연결과 팬의 수명</h2>
+<p>팬이 멈춰 있다면 먼저 <strong>커넥터</strong>입니다. 쿨러 팬의 가는 케이블이
+보드의 CPU 팬 자리에 <strong>끝까지</strong> 꽂혔는지 — 핀이 반쯤 걸치면 전원은
+가는데 신호선만 안 닿거나, 아예 전원도 안 가는 경우가 있습니다.
+빼서 다시 꽂고 켜 봅니다. 조립·청소·쿨러 교체 직후라면 여기서
+끝나는 경우가 대부분이고, <a href="/posts/pc-wont-boot-after-cleaning.html">청소 뒤 안 켜질 때의 재장착
+사다리</a>와 같은 논리입니다.</p>
+<p>다시 꽂아도 안 돌면 팬 자체입니다. 손으로 살짝 돌려 뻑뻑하거나,
+몇 년 쓴 쿨러라면 베어링 수명이 끝난 쪽이고 — 이 경우는 메시지가
+맞게 일한 것이라 <strong>감시를 끄지 말고 팬(또는 쿨러)을 바꿔야</strong>
+합니다. 그 사이 윈도우로 들어가 쓰는 건 CPU 온도를 보면서
+짧게만 — <a href="/posts/cpu-temp-normal.html">온도를 읽는 기준</a>은 그 글에
+있습니다.</p>
+<h2 id="갈래-잘-도는데-다른-자리에-꽂혀-있다">갈래 ② — 잘 도는데: 다른 자리에 꽂혀 있다</h2>
+<p>팬은 멀쩡히 도는데 메시지가 뜬다면, 가장 흔한 정체는 <strong>자리
+착오</strong>입니다. 보드에는 팬 커넥터가 여러 개 있고 — CPU 팬 자리,
+보조 자리, 케이스 팬 자리, 펌프 자리 — 생김새가 거의 같습니다.
+쿨러 팬을 <strong>케이스 팬 자리에 꽂으면 팬은 잘 돌지만 보드는 &quot;CPU
+팬 자리&quot;만 듣고 있어서</strong> 보고가 없다고 판단합니다. 보드 위 작은
+글씨(CPU_FAN 비슷한 표기)를 찾아 그 자리로 옮기면 끝입니다.</p>
+<p><strong>수랭</strong>은 이 혼동이 한 겹 더 있습니다. 일체형 수랭은 보통
+<strong>펌프를 CPU 팬 자리에, 라디에이터 팬을 다른 자리에</strong> 꽂는
+구성이 많은데(구성은 제품마다 달라 설명서를 봐야 합니다), 그러면
+보드가 듣는 건 펌프의 회전수가 됩니다. 펌프를 다른 자리에 꽂고
+CPU 팬 자리를 비워 두면 메시지가 뜨고, 반대로 제대로 꽂았는데
+펌프 회전수가 보드의 기준보다 낮게 보고되면 갈래 ③이 됩니다.</p>
+<h2 id="갈래-잘-도는데-너무-느려서-못-들었다">갈래 ③ — 잘 도는데: 너무 느려서 못 들었다</h2>
+<p>제대로 꽂혀 있고 잘 도는데도 뜬다면, 팬이 <strong>보드의 하한선보다
+느리게</strong> 돌아서입니다. 저소음을 내세우는 팬이나 저온에서 아주
+천천히 도는 설정은 켜는 순간 회전수가 하한 아래라, 보드가 &quot;안
+도는 것&quot;으로 읽습니다. <a href="/posts/psu-zero-fan.html">파워·그래픽카드가 저부하에서 팬을 일부러
+멈추는 것</a>과 같은 오해의 구조이고 —
+처방은 바이오스의 팬 설정에서 <strong>CPU 팬 하한값을 낮추거나</strong>,
+팬 곡선의 저온 구간 회전수를 조금 올리는 것입니다(메뉴 이름과
+위치는 보드마다 다릅니다).</p>
+<p><strong>감시 자체를 끄는 설정</strong>(또는 &quot;오류 시 F1 대기&quot; 끄기)도 있습니다.
+다만 이건 <strong>팬이 없는 구성</strong> — 팬 없는 방열판만 쓰는 조용한 PC,
+펌프를 따로 감시하는 수랭 — 에서 쓰라고 있는 선택지입니다. 공랭
+쿨러에서 메시지가 귀찮다고 끄면, 언젠가 팬이 <strong>진짜로</strong> 멈춘 날
+보드가 알려주지 못합니다. 갈래 ①·②를 지나고도 남는 저속 팬이라면
+감시를 끄기보다 하한값을 조정하는 쪽이 안전합니다.</p>
+<h2 id="정황으로-좁히기">정황으로 좁히기</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>언제부터</th><th>무게가 실리는 갈래</th></tr></thead>
+<tbody>
+<tr><td>첫 조립·쿨러 교체 직후</td><td>② 자리 착오 — 보드의 CPU 팬 표기부터</td></tr>
+<tr><td>수랭을 단 직후</td><td>② 펌프·팬 자리 — 제품 설명서의 배선대로인지</td></tr>
+<tr><td>청소·이사 뒤</td><td>① 커넥터 덜 꽂힘 — 재장착</td></tr>
+<tr><td>아무것도 안 했는데 어느 날부터</td><td>① 팬 수명 또는 ③ 온도가 낮은 계절의 저속</td></tr>
+<tr><td>추운 아침에만</td><td>③ 저온 저속 — 하한값·팬 곡선</td></tr>
+<tr><td>팬 없는 구성(패시브·펌프 별도 감시)</td><td>감시 끄기가 정답인 유일한 경우</td></tr>
+</tbody>
+</table></div>
+<p>정리하면 — 이 메시지는 <strong>&quot;CPU 팬 자리에서 회전 보고를 못 받았다&quot;</strong>
+는 뜻이고, 눈으로 팬이 도는지 한 번 보면 <strong>안 돔(연결·수명) / 돎
+(자리 착오·너무 느림)</strong>으로 갈립니다. 보드가 글자 대신 <strong>불빛</strong>으로
+말하는 쪽은 <a href="/posts/motherboard-debug-led.html">표시등 읽기</a>, 켤 때
+<strong>몇 초만 팬이 크게 도는</strong> 건 고장이 아니라
+<a href="/posts/pc-fan-loud-at-boot.html">점호</a>이고, 메시지 없이 <strong>매번
+바이오스 화면만</strong> 뜨는 건 <a href="/posts/boot-into-bios.html">부팅 디스크를 못 찾은 다른
+사건</a>입니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">CPUFanError</span> <span class="tag">부팅오류</span> <span class="tag">CPU팬</span> <span class="tag">팬헤더</span> <span class="tag">바이오스설정</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/cursor-moves-no-click.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">커서는 움직이는데 클릭이 안 먹힐 때 — 커서가 살아 있다는 건 컴퓨터가 죽지 않았다는 뜻입니다</span>
+        <span class="card-desc">마우스 포인터는 멀쩡히 움직이는데 아무것도 눌리지 않는 증상은 게시판에 꾸준히 올라옵니다. 커서가 움직인다는 사실 자체가 단서입니다 — 컴퓨터 전체가 멈춘 게 아니라 입력·앱·탐색기 중 한 층이 막힌 것이라, 키보드 두 번으로 어느 층인지 가르는 판정과 갈래별 처방을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/motherboard-debug-led.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">메인보드 빨간불(CPU·DRAM·VGA·BOOT)이 켜진 채 멈출 때 — 어느 불에서 멈췄는지가 답입니다</span>
+        <span class="card-desc">부팅이 안 되는데 메인보드 구석의 작은 불(CPU·DRAM·VGA·BOOT) 하나가 켜진 채 멈춰 있다면, 그 불은 고장 경보가 아니라 &quot;여기서 막혔다&quot;는 위치 표시입니다. 네 불이 켜지는 순서와 각 불이 뜻하는 갈래, 불별로 먼저 볼 것 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/pc-cold-boot-issue.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">추운 방에서 컴퓨터가 안 켜질 때 — 컴퓨터도 추위를 탑니다</span>
+        <span class="card-desc">겨울 아침 차가운 방에서 컴퓨터가 안 켜지거나 켜졌다 꺼지기를 반복하다, 방이 데워지면 멀쩡해지는 증상은 커뮤니티의 계절 단골입니다. 저온이 부품에 주는 부담과 판정 프레임, 급가열이 오히려 위험한 이유(결로), 해마다 심해질 때의 노화 신호까지 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

@@ -907,6 +907,7 @@ export const figures = {
   'zero-fan-threshold': zeroFanThreshold,
   'busy-cursor-loop': busyCursorLoop,
   'migrate-vs-clean': migrateVsClean,
+  'fan-report-fork': fanReportFork,
 };
 
 /**
@@ -4203,5 +4204,29 @@ function migrateVsClean() {
     '마이그레이션 vs 클린설치 — 무엇이 따라가나',
     W, 158, b,
     '마이그레이션은 옛 시스템을 문제까지 통째로 새 SSD에 복사하고, 클린설치는 빈 윈도우에 백업한 자료만 옮깁니다. 옮길 가치가 있는 상태인지가 선택 기준입니다.'
+  );
+}
+
+function fanReportFork() {
+  const W = 640;
+  const box = (x, y, w, h, fill, l1, l2, dark) => {
+    let s = rect(x, y, w, h, fill, { r: 8, stroke: dark ? fill : COLOR.line });
+    s += t(x + w / 2, y + (l2 ? 20 : h / 2 + 4), l1, { anchor: 'middle', size: 10.5, weight: 700, fill: dark ? '#fff' : COLOR.text });
+    if (l2) s += t(x + w / 2, y + 37, l2, { anchor: 'middle', size: 9.4, fill: dark ? '#fff' : COLOR.mute });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '메시지 = "CPU 팬 자리에서 회전 보고를 못 받았다" — 팬이 도는지 눈으로 보면 갈래가 갈립니다', { weight: 600, size: 12.5 });
+  b += box(24, 42, 180, 46, COLOR.soft, '케이스 열고 전원', 'CPU 쿨러 팬이 도나?', false);
+  b += t(216, 58, '안 돈다 →', { size: 9.6, fill: COLOR.mute });
+  b += box(290, 42, 326, 46, COLOR.over, '① 보드 말이 맞음', '커넥터 재장착 → 팬 수명(교체) — 감시 끄지 말 것', true);
+  b += t(216, 112, '잘 돈다 →', { size: 9.6, fill: COLOR.mute });
+  b += box(290, 96, 326, 34, COLOR.fit, '② 다른 자리에 꽂힘 — CPU 팬 표기 자리로 (수랭은 펌프 자리 확인)', null, true);
+  b += box(290, 138, 326, 34, COLOR.accent, '③ 너무 느려 못 들음 — 바이오스 하한값·팬 곡선 조정', null, true);
+  b += t(24, 196, '감시 끄기는 팬 없는 구성(패시브·펌프 별도 감시)에서만 — 공랭에서 끄면 진짜 정지를 못 잡습니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    'CPU Fan Error — 회전 보고가 끊긴 세 갈래',
+    W, 208, b,
+    'CPU Fan Error는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다. 팬이 실제로 도는지 보면 연결·수명 / 자리 착오 / 저속 세 갈래로 갈립니다.'
   );
 }
