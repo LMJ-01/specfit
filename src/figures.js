@@ -916,6 +916,7 @@ export const figures = {
   'click-when-where': clickWhenWhere,
   'beep-pattern-read': beepPatternRead,
   'phone-rf-leak': phoneRfLeak,
+  'wireless-lag-ladder': wirelessLagLadder,
 };
 
 /**
@@ -4463,5 +4464,36 @@ function phoneRfLeak() {
     '휴대폰 전파가 스피커 소리로 새는 길',
     W, 196, b,
     '휴대폰이 기지국과 교신하는 전파가 스피커 앰프의 입력단과 케이블에 유도되어 증폭되면 "두두둑" 소리가 됩니다. 거리·케이블·디지털 경로 순서로 줄입니다.'
+  );
+}
+
+function wirelessLagLadder() {
+  const W = 640;
+  const step = (x, fill, num, l1, l2, dark) => {
+    let s = rect(x, 44, 144, 64, fill, { r: 8, stroke: dark ? fill : COLOR.line });
+    s += t(x + 72, 64, num, { anchor: 'middle', size: 10.5, weight: 700, fill: dark ? '#fff' : COLOR.text });
+    s += t(x + 72, 81, l1, { anchor: 'middle', size: 9.4, fill: dark ? '#fff' : COLOR.mute });
+    s += t(x + 72, 97, l2, { anchor: 'middle', size: 9.4, fill: dark ? '#fff' : COLOR.mute });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '무선 마우스 끊김 — 공짜 실험부터, 싼 순서대로', { weight: 600, size: 12.5 });
+  b += step(24, COLOR.fit, '① 배터리', '새 건전지·완충 뒤 비교', '다 닳기 전에 먼저 옴', true);
+  b += t(176, 80, '→', { size: 12, fill: COLOR.mute });
+  b += step(190, COLOR.fit, '② 전파 길', '동글을 앞·가까이로', '책상 뒤 금속·거리 치우기', true);
+  b += t(342, 80, '→', { size: 12, fill: COLOR.mute });
+  b += step(356, COLOR.accent, '③ 옆자리 USB 3.0', '파란 포트 옆이면 옮기기', '2.4GHz와 부딪히는 조합', true);
+  b += t(508, 80, '→', { size: 12, fill: COLOR.mute });
+  b += rect(522, 44, 94, 64, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(569, 64, '④ 격리', { anchor: 'middle', size: 10.5, weight: 700, fill: COLOR.text });
+  b += t(569, 81, '다른 PC·', { anchor: 'middle', size: 9.4, fill: COLOR.mute });
+  b += t(569, 97, '다른 마우스', { anchor: 'middle', size: 9.4, fill: COLOR.mute });
+  b += rect(24, 124, 592, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(320, 143, '⑤ 소프트웨어 — USB 선택적 절전 끄기 · 수신기 드라이버 · 전원 관리 "끌 수 있음" 해제', { anchor: 'middle', size: 9.8, weight: 600, fill: COLOR.text });
+  b += t(24, 178, '격리에서 "다른 컴퓨터에서는 멀쩡"이면 컴퓨터 쪽(③·⑤), "어디서나 끊김"이면 마우스 쪽(①·수명)입니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '무선 마우스 끊김 — 진단 사다리',
+    W, 190, b,
+    '무선 마우스가 끊길 때는 배터리 → 동글의 전파 길 → 옆자리 USB 3.0 간섭 → 격리 → 소프트웨어(절전·드라이버) 순서로 봅니다. 공짜 실험이 앞에 옵니다.'
   );
 }
