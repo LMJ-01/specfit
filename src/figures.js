@@ -914,6 +914,7 @@ export const figures = {
   'monitor-whine-probe': monitorWhineProbe,
   'shutdown-stall-ladder': shutdownStallLadder,
   'click-when-where': clickWhenWhere,
+  'beep-pattern-read': beepPatternRead,
 };
 
 /**
@@ -4403,5 +4404,33 @@ function clickWhenWhere() {
     '본체 딸깍 — 때와 출처로 가르기',
     W, 312, b,
     '켜고 끌 때 한 번은 스위치 소리, 사용 중 하드디스크 쪽 반복은 백업이 먼저인 경고, 부하 때 틱틱은 팬 간섭, 온도 변할 때 한두 번은 열팽창음입니다.'
+  );
+}
+
+function beepPatternRead() {
+  const W = 640;
+  const dot = (x, y, w, fill) => rect(x, y, w, 14, fill, { r: 3 });
+  const row = (y, fill, beeps, label, verdict, dark) => {
+    let s = '';
+    let x = 24;
+    beeps.forEach(len => { s += dot(x, y + 8, len, fill); x += len + 8; });
+    if (!beeps.length) s += t(24, y + 19, '(소리 없음)', { size: 9.6, fill: COLOR.mute });
+    s += t(170, y + 19, label, { size: 10, weight: 600, fill: COLOR.text });
+    s += rect(356, y, 260, 30, dark ? fill : COLOR.soft, { r: 6, stroke: dark ? fill : COLOR.line });
+    s += t(486, y + 19, verdict, { anchor: 'middle', size: 10, weight: 600, fill: dark ? '#fff' : COLOR.text });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '켤 때의 삐 — 횟수와 길이, 그리고 그 뒤 부팅이 되느냐로 읽습니다', { weight: 600, size: 12.5 });
+  b += row(40, COLOR.fit, [16], '짧게 한 번 → 정상 부팅', '점검 통과 보고 — 정상', true);
+  b += row(80, COLOR.fit, [], '소리 없음 → 정상 부팅', '스피커 없는 구성 — 정상', true);
+  b += row(120, COLOR.over, [16, 16, 16], '반복 → 화면 안 뜸', '멈춘 단계 — 설명서 비프 표 대조', true);
+  b += row(160, COLOR.over, [40, 16, 16], '길게·짧게 섞임 → 화면 안 뜸', '같은 멈춤 — 패턴은 보드마다 다름', true);
+  b += row(200, COLOR.accent, [16], '켠 뒤 한참 뒤, 사용 중', '점검 소리 아님 — 유령 소리 수사', true);
+  b += t(24, 250, '한 번이냐 아니냐 + 그 뒤 부팅이 되느냐 — 이 둘이면 패턴표를 외울 필요가 없습니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '켤 때 삐 — 패턴 읽기',
+    W, 262, b,
+    '켤 때 짧은 삐 한 번은 메인보드의 자체 점검 통과 보고라 정상이고, 소리가 없는 것도 정상입니다. 반복음과 화면 안 뜸이 함께일 때만 멈춘 단계를 말하는 신호입니다.'
   );
 }

@@ -27,6 +27,13 @@
     <description>조용한 방에서 모니터 쪽에서 가늘게 "지잉" 또는 "삐" 하는 고주파음이 들리는 증상은 게시판 단골 질문입니다. 대개 전원부나 백라이트 구동부의 진동음이라 고장은 아니지만, 밝기를 움직였을 때 소리가 따라 변하는지와 꺼도 나는지로 출처가 갈립니다. 판정과 줄이는 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>컴퓨터 켤 때 "삐" 한 번 나는 소리 — 고장 경보가 아니라 "점검 통과" 보고입니다</title>
+    <link>https://specfit.kr/posts/boot-beep-once.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/boot-beep-once.html</guid>
+    <pubDate>Thu, 01 Oct 2026 15:00:00 GMT</pubDate>
+    <description>전원을 켤 때마다 본체에서 짧게 "삐" 한 번 나는 소리가 고장 신호인지 묻는 질문은 게시판 단골입니다. 짧은 한 번은 메인보드가 자체 점검을 마쳤다고 알리는 소리라 정상이고, 횟수와 길이가 달라질 때만 뜻이 바뀝니다. 패턴 읽는 법과 갑자기 나기 시작한 이유를 정리했습니다.</description>
+  </item>
+  <item>
     <title>메인보드 빨간불(CPU·DRAM·VGA·BOOT)이 켜진 채 멈출 때 — 어느 불에서 멈췄는지가 답입니다</title>
     <link>https://specfit.kr/posts/motherboard-debug-led.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/motherboard-debug-led.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-144hz-not-working.html</guid>
     <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
     <description>고주사율 모니터를 샀는데 윈도우 설정에는 60Hz만 보이는 사연이 게시판에 꾸준합니다. 설정 목록은 지금 연결된 길로 실어올 수 있는 주사율만 보여주기 때문 — 설정 위치부터 케이블·포트·모니터 메뉴·드라이버까지, 잃어버린 144를 찾는 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>인터넷이 툭 끊겼다 돌아올 때 — 범위와 층, 두 번만 자르면 됩니다</title>
-    <link>https://specfit.kr/posts/internet-random-disconnect.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/internet-random-disconnect.html</guid>
-    <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
-    <description>잘 되던 인터넷이 하루 몇 번씩 몇 초에서 몇 분간 끊겼다 저절로 돌아오는 순단은 원인 후보가 많아 미궁이 되기 쉽습니다. 끊기는 범위(내 기기만인가 온 집인가)와 끊긴 층(공유기 앞인가 뒤인가), 두 번의 가르기로 용의자를 좁히는 격리 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

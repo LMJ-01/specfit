@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"메인보드 빨간불(CPU·DRAM·VGA·BOOT)이 켜진 채 멈출 때 — 어느 불에서 멈췄는지가 답입니다","description":"부팅이 안 되는데 메인보드 구석의 작은 불(CPU·DRAM·VGA·BOOT) 하나가 켜진 채 멈춰 있다면, 그 불은 고장 경보가 아니라 \"여기서 막혔다\"는 위치 표시입니다. 네 불이 켜지는 순서와 각 불이 뜻하는 갈래, 불별로 먼저 볼 것 순서를 정리했습니다.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/motherboard-debug-led.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"메인보드 빨간불(CPU·DRAM·VGA·BOOT)이 켜진 채 멈출 때 — 어느 불에서 멈췄는지가 답입니다","description":"부팅이 안 되는데 메인보드 구석의 작은 불(CPU·DRAM·VGA·BOOT) 하나가 켜진 채 멈춰 있다면, 그 불은 고장 경보가 아니라 \"여기서 막혔다\"는 위치 표시입니다. 네 불이 켜지는 순서와 각 불이 뜻하는 갈래, 불별로 먼저 볼 것 순서를 정리했습니다.","datePublished":"2026-10-01","dateModified":"2026-10-02","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/motherboard-debug-led.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"메인보드 빨간불(CPU·DRAM·VGA·BOOT)이 켜진 채 멈출 때 — 어느 불에서 멈췄는지가 답입니다","item":"https://specfit.kr/posts/motherboard-debug-led.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>메인보드 빨간불(CPU·DRAM·VGA·BOOT)이 켜진 채 멈출 때 — 어느 불에서 멈췄는지가 답입니다</h1>
     <p class="post-meta">
       <time datetime="2026-10-01">2026년 10월 1일</time>
-      <span class="updated">· 2026년 10월 1일 갱신</span>
+      <span class="updated">· 2026년 10월 2일 갱신</span>
     </p>
   </header>
 
@@ -167,7 +167,8 @@ F1을 기다리는 건 부팅 점검이 아니라 <a href="/posts/cpu-fan-error-
 별개 보고</a>입니다</li>
 <li><strong>불 대신 두 자리 숫자</strong>가 뜨는 보드 — 같은 정보를 더 잘게 쪼갠
 코드입니다. 뜻은 보드마다 달라 설명서 대조가 정석이고, 비프음이
-나는 보드는 같은 정보의 소리판입니다</li>
+나는 보드는 같은 정보의 소리판입니다 — <a href="/posts/boot-beep-once.html">켤 때 삐 한 번</a>
+은 그 소리판의 &quot;전부 통과&quot; 보고이고요</li>
 </ul>
 <h2 id="정리">정리</h2>
 <ol>
@@ -194,6 +195,13 @@ F1을 기다리는 건 부팅 점검이 아니라 <a href="/posts/cpu-fan-error-
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/boot-beep-once.html">
+        <span class="card-cat">메모리·스토리지</span>
+        <span class="card-title">컴퓨터 켤 때 &quot;삐&quot; 한 번 나는 소리 — 고장 경보가 아니라 &quot;점검 통과&quot; 보고입니다</span>
+        <span class="card-desc">전원을 켤 때마다 본체에서 짧게 &quot;삐&quot; 한 번 나는 소리가 고장 신호인지 묻는 질문은 게시판 단골입니다. 짧은 한 번은 메인보드가 자체 점검을 마쳤다고 알리는 소리라 정상이고, 횟수와 길이가 달라질 때만 뜻이 바뀝니다. 패턴 읽는 법과 갑자기 나기 시작한 이유를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/pc-fans-run-after-shutdown.html">
         <span class="card-cat">메모리·스토리지</span>
         <span class="card-title">종료했는데 팬이 계속 돌 때 — 화면이 꺼진 것과 컴퓨터가 꺼진 것은 다른 사건입니다</span>
@@ -205,13 +213,6 @@ F1을 기다리는 건 부팅 점검이 아니라 <a href="/posts/cpu-fan-error-
         <span class="card-cat">메모리·스토리지</span>
         <span class="card-title">켤 때마다 CPU Fan Error가 뜨고 F1을 눌러야 할 때 — 보드가 못 들은 건 팬의 &quot;회전 보고&quot;입니다</span>
         <span class="card-desc">부팅마다 CPU Fan Error가 뜨고 F1을 눌러야 하는 증상은 게시판 단골입니다. 이 메시지는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다 — 안 도는지, 다른 자리에 꽂혔는지, 너무 느린지 세 갈래로 가르는 순서를 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/cursor-moves-no-click.html">
-        <span class="card-cat">메모리·스토리지</span>
-        <span class="card-title">커서는 움직이는데 클릭이 안 먹힐 때 — 커서가 살아 있다는 건 컴퓨터가 죽지 않았다는 뜻입니다</span>
-        <span class="card-desc">마우스 포인터는 멀쩡히 움직이는데 아무것도 눌리지 않는 증상은 게시판에 꾸준히 올라옵니다. 커서가 움직인다는 사실 자체가 단서입니다 — 컴퓨터 전체가 멈춘 게 아니라 입력·앱·탐색기 중 한 층이 막힌 것이라, 키보드 두 번으로 어느 층인지 가르는 판정과 갈래별 처방을 정리했습니다.</span>
       </a>
     </li>
   </ul>
