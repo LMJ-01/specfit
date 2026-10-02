@@ -13,6 +13,13 @@
     <description>컴퓨터나 스피커를 켜고 끌 때마다 "퍽" 하고 터지는 소리는 게시판 단골 질문입니다. 대개 고장이 아니라 전원이 들어오고 나가는 순간의 전압 변화가 스피커로 그대로 나간 것이고, "언제 나는가"에 따라 순서 문제·절전 문제·노화 문제로 갈립니다. 판정과 줄이는 방법을 정리했습니다.</description>
   </item>
   <item>
+    <title>휴대폰을 스피커 옆에 두면 "두두둑" 소리가 날 때 — 앰프가 전파를 소리로 번역한 겁니다</title>
+    <link>https://specfit.kr/posts/speaker-phone-interference.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/speaker-phone-interference.html</guid>
+    <pubDate>Thu, 01 Oct 2026 15:00:00 GMT</pubDate>
+    <description>스피커 가까이에 휴대폰을 두면 가끔 "두두둑·지지직" 하고 터지는 소리는 게시판 단골 질문입니다. 고장이 아니라 휴대폰이 기지국과 교신하는 순간의 전파가 스피커 앰프에 들어와 소리로 바뀐 것이고, 거리 하나로 판정이 끝납니다. 왜 그런지와 줄이는 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>종료했는데 팬이 계속 돌 때 — 화면이 꺼진 것과 컴퓨터가 꺼진 것은 다른 사건입니다</title>
     <link>https://specfit.kr/posts/pc-fans-run-after-shutdown.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/pc-fans-run-after-shutdown.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/game-ping-spike.html</guid>
     <pubDate>Sat, 26 Sep 2026 15:00:00 GMT</pubDate>
     <description>속도 측정은 잘 나오고 핑 테스트도 낮은데 게임에서만 순간순간 핑이 튀는 증상은 축을 잘못 재고 있는 경우입니다. 반응 시간은 평균이 아니라 변동이 문제라서 — 튀는 정황(어느 게임·어느 시간·유선 여부)으로 컴퓨터 안, 집 안, 집 밖을 가르는 판정 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>144Hz 모니터인데 60Hz만 잡힐 때 — 목록에 없는 숫자는 길이 못 실어온 겁니다</title>
-    <link>https://specfit.kr/posts/monitor-144hz-not-working.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-144hz-not-working.html</guid>
-    <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
-    <description>고주사율 모니터를 샀는데 윈도우 설정에는 60Hz만 보이는 사연이 게시판에 꾸준합니다. 설정 목록은 지금 연결된 길로 실어올 수 있는 주사율만 보여주기 때문 — 설정 위치부터 케이블·포트·모니터 메뉴·드라이버까지, 잃어버린 144를 찾는 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

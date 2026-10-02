@@ -915,6 +915,7 @@ export const figures = {
   'shutdown-stall-ladder': shutdownStallLadder,
   'click-when-where': clickWhenWhere,
   'beep-pattern-read': beepPatternRead,
+  'phone-rf-leak': phoneRfLeak,
 };
 
 /**
@@ -4432,5 +4433,35 @@ function beepPatternRead() {
     '켤 때 삐 — 패턴 읽기',
     W, 262, b,
     '켤 때 짧은 삐 한 번은 메인보드의 자체 점검 통과 보고라 정상이고, 소리가 없는 것도 정상입니다. 반복음과 화면 안 뜸이 함께일 때만 멈춘 단계를 말하는 신호입니다.'
+  );
+}
+
+function phoneRfLeak() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '앰프는 입력에 들어온 전기 변화를 가리지 않고 증폭합니다 — 음악도, 전파도', { weight: 600, size: 12.5 });
+  b += rect(24, 46, 110, 50, COLOR.over, { r: 8 });
+  b += t(79, 66, '휴대폰', { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+  b += t(79, 84, '기지국과 교신 중', { anchor: 'middle', size: 9.2, fill: '#fff' });
+  b += t(160, 60, '))) 전파', { size: 10, fill: COLOR.over, weight: 600 });
+  b += t(160, 84, '케이블·입력단에 유도', { size: 9.2, fill: COLOR.mute });
+  b += rect(290, 46, 150, 50, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(365, 66, '앰프 입력단', { anchor: 'middle', size: 10.5, weight: 700, fill: COLOR.text });
+  b += t(365, 84, '안테나처럼 받아들임', { anchor: 'middle', size: 9.2, fill: COLOR.mute });
+  b += t(455, 74, '→ 증폭 →', { size: 10, fill: COLOR.mute });
+  b += rect(528, 46, 88, 50, COLOR.accent, { r: 8 });
+  b += t(572, 66, '스피커', { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+  b += t(572, 84, '"두두둑"', { anchor: 'middle', size: 9.2, fill: '#fff' });
+  b += t(24, 124, '줄이는 순서', { size: 10, weight: 600, fill: COLOR.text });
+  const steps = ['① 거리 — 팔 길이 이상, 스피커 뒤쪽 피하기', '② 케이블 — 짧게, 전원선과 떼어 배선', '③ 경로 — 블루투스·USB·광으로 디지털화'];
+  steps.forEach((s, i) => {
+    b += rect(24 + i * 200, 132, 190, 30, i === 2 ? COLOR.fit : COLOR.soft, { r: 6, stroke: i === 2 ? COLOR.fit : COLOR.line });
+    b += t(119 + i * 200, 151, s, { anchor: 'middle', size: 9.4, weight: 600, fill: i === 2 ? '#fff' : COLOR.text });
+  });
+  b += t(24, 184, '판정은 1분 — 휴대폰을 멀리 두거나 비행기 모드로 두고 사라지면 확정, 그대로면 다른 잡음', { size: 10, fill: COLOR.mute });
+  return figure(
+    '휴대폰 전파가 스피커 소리로 새는 길',
+    W, 196, b,
+    '휴대폰이 기지국과 교신하는 전파가 스피커 앰프의 입력단과 케이블에 유도되어 증폭되면 "두두둑" 소리가 됩니다. 거리·케이블·디지털 경로 순서로 줄입니다.'
   );
 }
