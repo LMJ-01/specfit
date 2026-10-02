@@ -911,6 +911,7 @@ export const figures = {
   'boot-fan-rollcall': bootFanRollcall,
   'wake-signal-sources': wakeSignalSources,
   'pop-moment-map': popMomentMap,
+  'monitor-whine-probe': monitorWhineProbe,
 };
 
 /**
@@ -4309,5 +4310,31 @@ function popMomentMap() {
     '스피커 퍽 소리 — 언제 나는가로 가르기',
     W, 218, b,
     '켜고 끌 때의 퍽은 전압 변화가 증폭된 구조적인 소리라 순서와 볼륨으로 줄이고, 절전·재생 시작마다 난다면 장치의 잠, 때와 무관하면 접촉·노화 갈래입니다.'
+  );
+}
+
+function monitorWhineProbe() {
+  const W = 640;
+  const probe = (x, fill, l1, l2, l3) => {
+    let s = rect(x, 44, 186, 44, COLOR.soft, { r: 8, stroke: COLOR.line });
+    s += t(x + 93, 62, l1, { anchor: 'middle', size: 10.5, weight: 700, fill: COLOR.text });
+    s += t(x + 93, 79, l2, { anchor: 'middle', size: 9.2, fill: COLOR.mute });
+    s += t(x + 93, 104, '↓', { anchor: 'middle', size: 13, fill: COLOR.mute });
+    s += rect(x, 112, 186, 44, fill, { r: 8 });
+    const parts = l3.split('|');
+    s += t(x + 93, 130, parts[0], { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+    s += t(x + 93, 147, parts[1], { anchor: 'middle', size: 9.2, fill: '#fff' });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '고주파음은 전원부·백라이트 구동부의 진동음 — 세 동작으로 출처가 갈립니다', { weight: 600, size: 12.5 });
+  b += probe(24, COLOR.fit, '① 밝기를 올렸다 내렸다', '소리가 따라 변하나?', '백라이트 구동부|조용한 밝기 구간에서 쓰기');
+  b += probe(227, COLOR.accent, '② 어댑터·본체 뒤에 귀', '어디서 나나?', '전원부 코일|콘센트 바꾸기 · 어댑터 멀리');
+  b += probe(430, COLOR.over, '③ 모니터를 꺼 본다', '꺼도 나나?', '대기 전원부|멀티탭 스위치로 끊기');
+  b += t(24, 184, '점검 신호는 따로 — 몇 주 새 커짐 · 화면 깜빡임 동반 · 어댑터 과열 · 한 음으로 고정된 큰 "삐"', { size: 10, fill: COLOR.mute });
+  return figure(
+    '모니터 고주파음 — 세 동작으로 출처 가르기',
+    W, 196, b,
+    '모니터 고주파음은 밝기를 움직여 변하면 백라이트 구동부, 변하지 않고 어댑터·본체 뒤에서 나면 전원부, 꺼도 나면 대기 전원부입니다. 출처마다 줄이는 방법이 다릅니다.'
   );
 }
