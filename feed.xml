@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>키보드 키캡이 반질반질 번들거릴 때 — 닦이는 번들거림과 안 닦이는 번들거림은 다른 것입니다</title>
+    <link>https://specfit.kr/posts/keycap-shine.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/keycap-shine.html</guid>
+    <pubDate>Fri, 02 Oct 2026 15:00:00 GMT</pubDate>
+    <description>자주 쓰는 키만 반질반질 윤이 나고 기름진 것처럼 번들거리는 현상은 키보드 게시판 단골 질문입니다. 같은 번들거림이라도 손기름이 묻은 것과 표면이 닳아 매끈해진 것은 전혀 다른 일이고, 닦아 보면 1분 만에 갈립니다. 어느 쪽인지 가르는 법과 각각의 처방을 정리했습니다.</description>
+  </item>
+  <item>
     <title>그래픽카드 백플레이트가 손 대기 뜨거울 때 — 손의 온도계와 부품의 온도계는 눈금이 다릅니다</title>
     <link>https://specfit.kr/posts/gpu-backplate-hot.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-backplate-hot.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/mouse-cursor-moving.html</guid>
     <pubDate>Sun, 27 Sep 2026 15:00:00 GMT</pubDate>
     <description>손을 안 댔는데 커서가 떨리거나 저절로 움직이면 해킹부터 의심하게 되지만, 대부분의 범인은 훨씬 시시합니다. 잘게 떨리는지, 휙 건너뛰는지, 조종당하듯 움직이는지 — 움직임의 모양 세 갈래로 표면·센서, 무선, 이중 입력을 가르는 판정 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>통화할 때 소리가 울릴 때 — 울림의 방향이 새는 곳을 가리킵니다</title>
-    <link>https://specfit.kr/posts/mic-echo.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/mic-echo.html</guid>
-    <pubDate>Sun, 27 Sep 2026 15:00:00 GMT</pubDate>
-    <description>디스코드나 화상회의에서 목소리가 메아리처럼 울리는 증상은 마이크 탓으로 보이지만, 판정의 핵심은 방향입니다. 내 목소리가 나에게 울리면 상대 쪽에서, 상대가 울린다고 하면 내 쪽에서 새는 것 — 반직관적인 방향 판정과 새는 곳을 막는 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

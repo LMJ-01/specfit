@@ -2,6 +2,7 @@
 title: 노트북 키스킨, 써도 되나 — 내 키보드가 통풍구인지부터 확인합니다
 description: 노트북 키스킨을 두고 발열 때문에 쓰지 말라는 쪽과 잘만 쓴다는 쪽이 갈립니다. 둘 다 맞습니다 — 키보드 면이 열의 통로인 설계와 아닌 설계가 있어서요. 내 노트북이 어느 쪽인지 확인하는 법과, 키스킨의 값어치가 있는 경우를 정리했습니다.
 date: 2026-09-12
+updated: 2026-10-03
 category: laptop
 tags: [키스킨, 노트북발열, 키보드커버, 노트북관리, 노트북액세서리]
 ---
@@ -144,6 +145,7 @@ tags: [키스킨, 노트북발열, 키보드커버, 노트북관리, 노트북�
 노트북 관리의 이웃 판정들 — [물 쏟은 날의 응급 대처](/posts/laptop-water-spill.html) ·
 [키보드 면과 열의 관계](/posts/laptop-clamshell-mode.html) ·
 [팬 소리 읽는 법](/posts/laptop-fan-noise.html) ·
-[특정 키만 안 눌릴 때](/posts/keyboard-some-keys-dead.html)와 이어집니다.
+[특정 키만 안 눌릴 때](/posts/keyboard-some-keys-dead.html) ·
+[키캡 번들거림(때인가 마모인가)](/posts/keycap-shine.html)과 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

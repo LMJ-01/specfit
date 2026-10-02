@@ -919,6 +919,7 @@ export const figures = {
   'wireless-lag-ladder': wirelessLagLadder,
   'touch-vs-sensor': touchVsSensor,
   'resonance-two-culprits': resonanceTwoCulprits,
+  'shine-two-kinds': shineTwoKinds,
 };
 
 /**
@@ -4555,5 +4556,29 @@ function resonanceTwoCulprits() {
     '웅웅 떨림 — 진동원과 확성판',
     W, 212, b,
     '웅웅 소리는 작은 진동을 만드는 부품과 그것을 키우는 케이스 철판이 함께 냅니다. 옆판을 손으로 눌러 잦아들면 공진 갈래, 그대로면 진동원 갈래입니다.'
+  );
+}
+
+function shineTwoKinds() {
+  const W = 640;
+  const col = (x, fill, title, l1, l2, verdict) => {
+    let s = rect(x, 44, 290, 56, fill, { r: 8 });
+    s += t(x + 145, 65, title, { anchor: 'middle', size: 11, weight: 700, fill: '#fff' });
+    s += t(x + 145, 83, l1, { anchor: 'middle', size: 9.4, fill: '#fff' });
+    s += t(x + 145, 118, '↓ 닦아 보면', { anchor: 'middle', size: 9.6, fill: COLOR.mute });
+    s += rect(x, 128, 290, 48, COLOR.soft, { r: 8, stroke: COLOR.line });
+    s += t(x + 145, 148, l2, { anchor: 'middle', size: 10, weight: 700, fill: COLOR.text });
+    s += t(x + 145, 166, verdict, { anchor: 'middle', size: 9.4, fill: COLOR.mute });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '같은 번들거림, 다른 두 가지 — 때인가 마모인가', { weight: 600, size: 12.5 });
+  b += col(24, COLOR.accent, '손기름이 쌓임', '피지·땀이 표면에 얇게 발려 반사', '윤이 사라짐 → 때', '닦고, 손 씻기·간식 분리로 늦추기');
+  b += col(326, COLOR.over, '표면이 닳음', '미세 요철이 갈려 거울처럼 매끈', '그대로 반질 → 마모', '고장 아님 — 그대로 쓰거나 키캡 교체');
+  b += t(24, 200, '조금 나아지고 남는다면 둘이 겹친 것 — 오래 쓴 키보드가 대개 여기입니다. 알코올·강한 세제는 각인·코팅에 따라 손상될 수 있어 물부터', { size: 10, fill: COLOR.mute });
+  return figure(
+    '키캡 번들거림 — 닦이는 것과 안 닦이는 것',
+    W, 212, b,
+    '번들거림은 손기름이 쌓인 것과 표면이 닳은 것 두 가지가 같은 모습으로 나타납니다. 닦아서 사라지면 때, 그대로면 마모이며 처방이 다릅니다.'
   );
 }

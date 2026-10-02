@@ -2,7 +2,7 @@
 title: 키보드 특정 키만 안 눌릴 때 — 어느 키들이 같이 죽었는지가 단서입니다
 description: 키보드에서 몇 개의 키만 반응이 없으면 교체해야 하나 싶지만, 소프트웨어 층이 범인인 경우도 많습니다. 화면 키보드와 외부 키보드로 층을 가르는 격리 진단, 그리고 죽은 키들의 배치가 알려주는 것까지 — 판정 순서를 정리했습니다.
 date: 2026-09-06
-updated: 2026-09-27
+updated: 2026-10-03
 category: laptop
 tags: [키보드고장, 키안눌림, 필터키, 키보드매트릭스, 노트북키보드]
 ---
@@ -159,6 +159,7 @@ tags: [키보드고장, 키안눌림, 필터키, 키보드매트릭스, 노트�
 
 이웃 판정들 — [물 쏟은 뒤의 판정](/posts/laptop-water-spill.html) ·
 [격리 진단의 원형](/posts/dual-monitor-one-blank.html) ·
-[노트북 수명 계산](/posts/laptop-lifespan.html)과 이어집니다.
+[노트북 수명 계산](/posts/laptop-lifespan.html) ·
+[키캡이 반질반질해질 때(표면의 일)](/posts/keycap-shine.html)와 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
