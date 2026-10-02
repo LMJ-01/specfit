@@ -147,6 +147,7 @@ tags: [팬소음, 부팅소음, 풀스핀, 팬커브, 컴퓨터소리]
 [쿨러 소음 판정](/posts/cpu-stock-cooler.html) ·
 [미니PC 소음](/posts/mini-pc-noise.html) ·
 [먼지 청소 신호](/posts/pc-dust-cleaning.html) ·
-[켤 때 CPU Fan Error가 뜨는 경우(점호가 아니라 보고 부재)](/posts/cpu-fan-error-boot.html)와 이어집니다.
+[켤 때 CPU Fan Error가 뜨는 경우(점호가 아니라 보고 부재)](/posts/cpu-fan-error-boot.html) ·
+[끌 때 팬이 계속 도는 경우(종료 절차의 멈춤)](/posts/pc-fans-run-after-shutdown.html)와 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

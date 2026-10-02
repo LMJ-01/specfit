@@ -912,6 +912,7 @@ export const figures = {
   'wake-signal-sources': wakeSignalSources,
   'pop-moment-map': popMomentMap,
   'monitor-whine-probe': monitorWhineProbe,
+  'shutdown-stall-ladder': shutdownStallLadder,
 };
 
 /**
@@ -4336,5 +4337,33 @@ function monitorWhineProbe() {
     '모니터 고주파음 — 세 동작으로 출처 가르기',
     W, 196, b,
     '모니터 고주파음은 밝기를 움직여 변하면 백라이트 구동부, 변하지 않고 어댑터·본체 뒤에서 나면 전원부, 꺼도 나면 대기 전원부입니다. 출처마다 줄이는 방법이 다릅니다.'
+  );
+}
+
+function shutdownStallLadder() {
+  const W = 640;
+  const steps = ['화면 끔', '앱·서비스 종료', '메모리 저장(빠른 시작)', '"전원 끊어" 신호'];
+  let b = '';
+  b += t(24, 24, '종료는 화면이 꺼진 뒤에도 이어집니다 — 팬이 돈다 = 마지막 신호가 아직 안 갔다', { weight: 600, size: 12.5 });
+  steps.forEach((s, i) => {
+    const x = 24 + i * 150;
+    b += rect(x, 42, 136, 34, i === 3 ? COLOR.fit : COLOR.soft, { r: 6, stroke: i === 3 ? COLOR.fit : COLOR.line });
+    b += t(x + 68, 63, s, { anchor: 'middle', size: 9.8, weight: 600, fill: i === 3 ? '#fff' : COLOR.text });
+    if (i < 3) b += t(x + 143, 63, '→', { anchor: 'middle', size: 12, fill: COLOR.mute });
+  });
+  b += t(24, 100, '전원 표시등으로 층을 가릅니다', { size: 10, weight: 600, fill: COLOR.text });
+  b += rect(24, 110, 290, 58, COLOR.accent, { r: 8 });
+  b += t(169, 130, '표시등 켜진 채 팬만 돈다', { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+  b += t(169, 147, '① 윈도우가 걸림', { anchor: 'middle', size: 9.6, fill: '#fff' });
+  b += t(169, 161, '빠른 시작 → 앱·드라이버 → USB 장치', { anchor: 'middle', size: 9.2, fill: '#fff' });
+  b += rect(326, 110, 290, 58, COLOR.over, { r: 8 });
+  b += t(471, 130, '표시등 꺼졌는데 팬만 돈다', { anchor: 'middle', size: 10.5, weight: 700, fill: '#fff' });
+  b += t(471, 147, '② 보드가 돌림', { anchor: 'middle', size: 9.6, fill: '#fff' });
+  b += t(471, 161, '종료 후 팬 설정 → 차단 신호(점검)', { anchor: 'middle', size: 9.2, fill: '#fff' });
+  b += t(24, 192, '화면 꺼진 뒤 몇 초~수십 초의 팬은 저장 작업 중인 정상 — 저장장치 불빛이 조용해진 뒤에만 전원 버튼을 길게 누릅니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '종료 후 팬 — 절차의 어디서 멈췄나',
+    W, 204, b,
+    '종료는 화면이 꺼진 뒤에도 앱 종료·메모리 저장·전원 차단 신호 순으로 이어집니다. 전원 표시등이 켜진 채면 윈도우가 걸린 것, 꺼졌는데 팬만 돌면 보드 쪽입니다.'
   );
 }
