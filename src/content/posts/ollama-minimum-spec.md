@@ -2,7 +2,7 @@
 title: Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나
 description: 로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.
 date: 2026-08-13
-updated: 2026-09-17
+updated: 2026-10-03
 category: gpu
 tags: [Ollama, 로컬LLM, VRAM, 그래픽카드]
 affiliate: false
@@ -24,7 +24,8 @@ affiliate: false
 ## 바로 확인하기
 
 그래픽카드를 고르면 어떤 모델이 돌아가는지 표시됩니다.
-컨텍스트 길이를 바꿔보면 판정이 달라지는 것도 볼 수 있습니다.
+컨텍스트 길이를 바꿔보면 판정이 달라지는 것도 볼 수 있습니다
+([컨텍스트가 VRAM을 먹는 구조](/posts/ollama-context-length.html)는 따로 정리했습니다).
 
 {{VRAM_TOOL}}
 
