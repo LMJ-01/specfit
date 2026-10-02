@@ -917,6 +917,7 @@ export const figures = {
   'beep-pattern-read': beepPatternRead,
   'phone-rf-leak': phoneRfLeak,
   'wireless-lag-ladder': wirelessLagLadder,
+  'touch-vs-sensor': touchVsSensor,
 };
 
 /**
@@ -4495,5 +4496,34 @@ function wirelessLagLadder() {
     '무선 마우스 끊김 — 진단 사다리',
     W, 190, b,
     '무선 마우스가 끊길 때는 배터리 → 동글의 전파 길 → 옆자리 USB 3.0 간섭 → 격리 → 소프트웨어(절전·드라이버) 순서로 봅니다. 공짜 실험이 앞에 옵니다.'
+  );
+}
+
+function touchVsSensor() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '손의 온도계와 부품의 온도계는 눈금이 다릅니다', { weight: 600, size: 12.5 });
+  b += t(24, 50, '손이 느끼는 것', { size: 9.6, fill: COLOR.mute });
+  b += rect(24, 56, 592, 22, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += rect(24, 56, 120, 22, COLOR.fit, { r: 6 });
+  b += rect(144, 56, 110, 22, COLOR.accent, { r: 0 });
+  b += rect(254, 56, 362, 22, COLOR.over, { r: 6 });
+  b += t(84, 71, '미지근', { anchor: 'middle', size: 9.6, weight: 600, fill: '#fff' });
+  b += t(199, 71, '따뜻', { anchor: 'middle', size: 9.6, weight: 600, fill: '#fff' });
+  b += t(435, 71, '"앗" — 오래 못 댐', { anchor: 'middle', size: 9.6, weight: 600, fill: '#fff' });
+  b += t(24, 104, '부품이 느끼는 것 (센서 눈금)', { size: 9.6, fill: COLOR.mute });
+  b += rect(24, 110, 592, 22, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += rect(24, 110, 440, 22, COLOR.fit, { r: 6 });
+  b += rect(464, 110, 100, 22, COLOR.accent, { r: 0 });
+  b += rect(564, 110, 52, 22, COLOR.over, { r: 6 });
+  b += t(244, 125, '평범한 동작 범위 — 평형이면 정상', { anchor: 'middle', size: 9.6, weight: 600, fill: '#fff' });
+  b += t(514, 125, '높음', { anchor: 'middle', size: 9.6, weight: 600, fill: '#fff' });
+  b += t(590, 125, '한계', { anchor: 'middle', size: 9.6, weight: 600, fill: '#fff' });
+  b += t(24, 158, '손이 "앗" 하는 구간 대부분이 부품에겐 평범한 범위 안 — 그래서 판정은 센서(GPU·핫스팟·메모리 온도)로 합니다', { size: 10, fill: COLOR.mute });
+  b += t(24, 176, '예외는 뒷판이 아니라 전원 케이블·커넥터가 뜨거울 때 — 열이 빠져나오는 게 아니라 만들어지는 것이라 별개 경고', { size: 10, fill: COLOR.over });
+  return figure(
+    '백플레이트 뜨거움 — 손 vs 센서',
+    W, 188, b,
+    '손은 체온보다 조금만 높아도 뜨겁다고 느끼지만 부품의 정상 동작 범위는 그보다 훨씬 넓습니다. 뒷판이 뜨거운 건 대개 열이 빠져나오는 설계의 흔적이고, 판정은 센서 숫자로 합니다.'
   );
 }
