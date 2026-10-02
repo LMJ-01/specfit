@@ -918,6 +918,7 @@ export const figures = {
   'phone-rf-leak': phoneRfLeak,
   'wireless-lag-ladder': wirelessLagLadder,
   'touch-vs-sensor': touchVsSensor,
+  'resonance-two-culprits': resonanceTwoCulprits,
 };
 
 /**
@@ -4525,5 +4526,34 @@ function touchVsSensor() {
     '백플레이트 뜨거움 — 손 vs 센서',
     W, 188, b,
     '손은 체온보다 조금만 높아도 뜨겁다고 느끼지만 부품의 정상 동작 범위는 그보다 훨씬 넓습니다. 뒷판이 뜨거운 건 대개 열이 빠져나오는 설계의 흔적이고, 판정은 센서 숫자로 합니다.'
+  );
+}
+
+function resonanceTwoCulprits() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '웅웅 소리엔 범인이 둘 — 떨게 만드는 것과, 그걸 키우는 것', { weight: 600, size: 12.5 });
+  b += rect(24, 44, 190, 64, COLOR.accent, { r: 8 });
+  b += t(119, 66, '진동원', { anchor: 'middle', size: 11, weight: 700, fill: '#fff' });
+  b += t(119, 84, '팬 · 하드디스크 · 파워 팬', { anchor: 'middle', size: 9.4, fill: '#fff' });
+  b += t(119, 99, '작은 떨림을 만듦', { anchor: 'middle', size: 9.4, fill: '#fff' });
+  b += t(232, 80, '→ 전달 →', { size: 10.5, fill: COLOR.mute });
+  b += rect(306, 44, 190, 64, COLOR.over, { r: 8 });
+  b += t(401, 66, '확성판', { anchor: 'middle', size: 11, weight: 700, fill: '#fff' });
+  b += t(401, 84, '케이스 옆판 · 뚜껑 · 베이', { anchor: 'middle', size: 9.4, fill: '#fff' });
+  b += t(401, 99, '넓은 철판이 소리로 키움', { anchor: 'middle', size: 9.4, fill: '#fff' });
+  b += t(514, 80, '→', { size: 12, fill: COLOR.mute });
+  b += rect(532, 44, 84, 64, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(574, 80, '웅웅~', { anchor: 'middle', size: 11, weight: 700, fill: COLOR.text });
+  b += t(24, 136, '판정은 손바닥 하나 — 옆판을 손으로 누르거나 가볍게 두드려 봅니다', { size: 10, weight: 600, fill: COLOR.text });
+  b += rect(24, 146, 290, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(169, 165, '누르면 잦아듦 → 공진 갈래: 조이고·떼고·깔기', { anchor: 'middle', size: 9.6, fill: COLOR.text });
+  b += rect(326, 146, 290, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(471, 165, '눌러도 그대로 → 진동원 갈래: 누가 떠는지 하나씩', { anchor: 'middle', size: 9.6, fill: COLOR.text });
+  b += t(24, 200, '때리면 멈췄다 재발하는 건 공진의 지문 — 임시방편 말고 나사·접점을 손봅니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '웅웅 떨림 — 진동원과 확성판',
+    W, 212, b,
+    '웅웅 소리는 작은 진동을 만드는 부품과 그것을 키우는 케이스 철판이 함께 냅니다. 옆판을 손으로 눌러 잦아들면 공진 갈래, 그대로면 진동원 갈래입니다.'
   );
 }
