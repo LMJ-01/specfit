@@ -913,6 +913,7 @@ export const figures = {
   'pop-moment-map': popMomentMap,
   'monitor-whine-probe': monitorWhineProbe,
   'shutdown-stall-ladder': shutdownStallLadder,
+  'click-when-where': clickWhenWhere,
 };
 
 /**
@@ -4365,5 +4366,42 @@ function shutdownStallLadder() {
     '종료 후 팬 — 절차의 어디서 멈췄나',
     W, 204, b,
     '종료는 화면이 꺼진 뒤에도 앱 종료·메모리 저장·전원 차단 신호 순으로 이어집니다. 전원 표시등이 켜진 채면 윈도우가 걸린 것, 꺼졌는데 팬만 돌면 보드 쪽입니다.'
+  );
+}
+
+function clickWhenWhere() {
+  const W = 640;
+  const cell = (x, y, w, fill, l1, l2, dark) => {
+    let s = rect(x, y, w, 50, fill, { r: 8, stroke: dark ? fill : COLOR.line });
+    s += t(x + w / 2, y + 21, l1, { anchor: 'middle', size: 10.5, weight: 700, fill: dark ? '#fff' : COLOR.text });
+    s += t(x + w / 2, y + 39, l2, { anchor: 'middle', size: 9.2, fill: dark ? '#fff' : COLOR.mute });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '딸깍이 다 같은 딸깍이 아닙니다 — 언제, 어디서 나는가로 넷으로 갈립니다', { weight: 600, size: 12.5 });
+  b += t(24, 48, '언제', { size: 9.6, fill: COLOR.mute });
+  b += t(176, 48, '어디서', { size: 9.6, fill: COLOR.mute });
+  b += t(328, 48, '판정', { size: 9.6, fill: COLOR.mute });
+  const rows = [
+    ['켜거나 끌 때 한 번', '파워·보드 쪽', '정상 — 스위치(릴레이)의 인사', COLOR.fit],
+    ['사용 중 반복, 읽기 느려짐', '하드디스크 쪽', '⚠ 경고 — 백업부터', COLOR.over],
+    ['부하 걸 때 틱틱', '팬 근처', '간섭 — 케이블·먼지', COLOR.accent],
+    ['식거나 데워질 때 한두 번', '케이스 판', '무해 — 열팽창음', COLOR.soft],
+  ];
+  rows.forEach((r, i) => {
+    const y = 56 + i * 58;
+    const dark = r[3] !== COLOR.soft;
+    b += cell(24, y, 140, r[3], r[0].split(', ')[0], r[0].split(', ')[1] || '', dark);
+    b += t(170, y + 29, '+', { size: 12, fill: COLOR.mute });
+    b += cell(184, y, 130, r[3], r[1], '', dark);
+    b += t(320, y + 29, '→', { size: 12, fill: COLOR.mute });
+    b += rect(336, y, 280, 50, COLOR.soft, { r: 8, stroke: COLOR.line });
+    b += t(476, y + 30, r[2], { anchor: 'middle', size: 10.5, weight: 600, fill: COLOR.text });
+  });
+  b += t(24, 300, 'SSD만 있는 구성이면 하드디스크 갈래는 제외 — 팬·릴레이·열팽창 중에서 찾습니다', { size: 10, fill: COLOR.mute });
+  return figure(
+    '본체 딸깍 — 때와 출처로 가르기',
+    W, 312, b,
+    '켜고 끌 때 한 번은 스위치 소리, 사용 중 하드디스크 쪽 반복은 백업이 먼저인 경고, 부하 때 틱틱은 팬 간섭, 온도 변할 때 한두 번은 열팽창음입니다.'
   );
 }
