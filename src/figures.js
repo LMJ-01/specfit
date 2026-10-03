@@ -924,6 +924,7 @@ export const figures = {
   'palmrest-three-wears': palmrestThreeWears,
   'wobble-lever': wobbleLever,
   'sag-cantilever': sagCantilever,
+  'bag-sleep-depth': bagSleepDepth,
 };
 
 /**
@@ -4699,5 +4700,41 @@ function sagCantilever() {
     '그래픽카드 처짐 — 외팔보 구조와 받치는 기준',
     W, 194, b,
     '카드는 브래킷과 슬롯 두 점에만 고정된 외팔보라 길고 무거울수록 반대쪽 끝이 처집니다. 처짐 자체는 성능과 무관하고, 지지대는 카드가 수평이 되는 높이에서 받치되 위로 밀어 올리지 않는 것이 기준입니다.'
+  );
+}
+
+/** laptop-hot-in-bag — 얕은 잠·깊은 잠과 가방 환경 */
+function bagSleepDepth() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '덮개를 닫은 뒤 — 어떤 잠이냐에 따라 가방 안 결과가 갈립니다', { weight: 600, size: 12.5 });
+  // 얕은 잠
+  b += rect(24, 40, 190, 118, COLOR.soft, { r: 8, stroke: COLOR.over });
+  b += t(119, 60, '절전(수면) — 얕은 잠', { anchor: 'middle', size: 10, weight: 600, fill: COLOR.over });
+  b += t(119, 78, '전원 살아 있음 · 깨우기 신호에 반응', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  b += t(119, 96, '예약 작업 · 주변기기 · 네트워크', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  b += rect(44, 108, 150, 36, COLOR.over, { r: 5 });
+  b += t(119, 123, '가방 안에서 깨어남', { anchor: 'middle', size: 9.4, weight: 600, fill: '#fff' });
+  b += t(119, 137, '흡배기 막힘 → 후끈 + 방전', { anchor: 'middle', size: 8.8, fill: '#fff' });
+  // 깊은 잠
+  b += rect(226, 40, 190, 118, COLOR.soft, { r: 8, stroke: COLOR.fit });
+  b += t(321, 60, '최대 절전·종료 — 깊은 잠', { anchor: 'middle', size: 10, weight: 600, fill: COLOR.fit });
+  b += t(321, 78, '작업 저장 후 전원 차단', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  b += t(321, 96, '깨우기 신호에 반응 없음', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  b += rect(246, 108, 150, 36, COLOR.fit, { r: 5 });
+  b += t(321, 123, '가방 안에서 못 깨어남', { anchor: 'middle', size: 9.4, weight: 600, fill: '#fff' });
+  b += t(321, 137, '열었을 때 작업은 그대로', { anchor: 'middle', size: 8.8, fill: '#fff' });
+  // 넣기 전 3초
+  b += rect(428, 40, 188, 118, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(522, 60, '넣기 전 3초 확인', { anchor: 'middle', size: 10, weight: 600, fill: COLOR.text });
+  b += t(522, 80, '① 팬 소리가 멎었나', { anchor: 'middle', size: 9, fill: COLOR.text });
+  b += t(522, 98, '② 전원 표시등이 절전 표시로', { anchor: 'middle', size: 9, fill: COLOR.text });
+  b += t(522, 116, '   (깜빡임·소등 — 제품마다 다름)', { anchor: 'middle', size: 8.4, fill: COLOR.mute });
+  b += t(522, 140, '닫은 직후 잠깐 도는 건 정상', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  b += t(24, 180, '역할 분담 — 책상 위 잠깐은 절전, 가방에 넣고 이동할 땐 깊은 잠(최대 절전 또는 종료)', { size: 9.4, fill: COLOR.mute });
+  return figure(
+    '가방 속 발열 — 얕은 잠과 깊은 잠',
+    W, 194, b,
+    '절전은 전원이 살아 있어 깨우기 신호에 반응하는 얕은 잠이라 가방 안에서 깨어나 발열·방전으로 이어질 수 있습니다. 최대 절전이나 종료는 전원이 차단된 깊은 잠이라 가방에서 깨어나지 않고, 넣기 전 팬과 표시등을 확인하는 3초가 습관의 핵심입니다.'
   );
 }
