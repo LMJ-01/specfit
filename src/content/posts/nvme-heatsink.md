@@ -2,7 +2,7 @@
 title: NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다
 description: 모두에게 필요한 건 아닙니다. Gen3면 대개 불필요하고 Gen5면 사실상 필수입니다. 내 SSD가 실제로 스로틀링을 겪는지 확인하는 법과, 달 때 조심할 것을 정리했습니다.
 date: 2026-08-22
-updated: 2026-09-17
+updated: 2026-10-03
 category: memory
 tags: [NVMe, SSD방열판, 스로틀링, M.2, 발열]
 affiliate: true
@@ -141,6 +141,8 @@ M.2 방열판이 붙어 나옵니다. 그거면 대개 충분하고, 따로 살 
 되고, 단다면 보드 기본 방열판 먼저·이중 장착 금지·라벨은 떼지
 않기 — 그게 전부입니다. SSD 수명이 걱정이라면 그건 온도가 아니라
 쓰기 총량 문제입니다 — [SSD 수명, TBW 읽는
-법](/posts/ssd-tbw-lifespan.html)에 있습니다.
+법](/posts/ssd-tbw-lifespan.html)에 있습니다. 같은 "방열판 달아야
+하나" 질문의 이웃이 [램 방열판 판정](/posts/ram-heatsink-needed.html)이고,
+결론의 구조도 같습니다 — 효과는 있지만 필요한 사람이 따로 있습니다.
 
 수치나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
