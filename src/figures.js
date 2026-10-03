@@ -923,6 +923,7 @@ export const figures = {
   'keyboard-face-two-kinds': keyboardFaceTwoKinds,
   'palmrest-three-wears': palmrestThreeWears,
   'wobble-lever': wobbleLever,
+  'sag-cantilever': sagCantilever,
 };
 
 /**
@@ -4662,5 +4663,41 @@ function wobbleLever() {
     '모니터 흔들림 — 지렛대 구조',
     W, 194, b,
     '타이핑 진동은 책상 상판을 타고 스탠드·암을 따라 올라가며, 지렛대가 길수록 모니터 끝의 흔들림이 커집니다. 책상에 손을 올려 보고 모니터만 밀어 보면 책상 갈래와 거치 갈래가 갈립니다.'
+  );
+}
+
+/** gpu-sag-support — 외팔보 구조와 "수평으로 받치기" 기준 */
+function sagCantilever() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '카드는 한쪽 끝의 두 점(브래킷·슬롯)에만 매달린 외팔보', { weight: 600, size: 12.5 });
+  // 가벼운 2팬 — 수평
+  b += t(24, 52, '가벼운 2팬', { size: 9.6, weight: 600, fill: COLOR.fit });
+  b += rect(28, 58, 7, 46, COLOR.text, { r: 1 });
+  b += t(31, 116, '브래킷', { anchor: 'middle', size: 8.4, fill: COLOR.mute });
+  b += rect(35, 70, 150, 10, COLOR.fit, { r: 2 });
+  b += rect(40, 80, 44, 7, COLOR.accent, { r: 1 });
+  b += t(62, 97, '슬롯', { anchor: 'middle', size: 8.4, fill: COLOR.mute });
+  b += t(195, 79, '수평 유지 — 지지대 불필요', { size: 9.4, fill: COLOR.mute });
+  // 무거운 3팬 — 끝이 처짐
+  b += t(24, 134, '길고 무거운 3팬', { size: 9.6, weight: 600, fill: COLOR.over });
+  b += rect(28, 140, 7, 46, COLOR.text, { r: 1 });
+  b += `<path d="M35 150 L150 150 Q230 150 290 172 L290 183 Q230 161 150 160 L35 160 Z" fill="${COLOR.over}"/>`;
+  b += rect(40, 160, 44, 7, COLOR.accent, { r: 1 });
+  b += t(200, 142, '끝이 처짐 → 판단 대상', { size: 9.4, fill: COLOR.over });
+  b += t(100, 180, '무게가 슬롯 한 점을 수년간 누름', { size: 8.8, fill: COLOR.mute });
+  // 오른쪽 — 설치 기준
+  b += t(340, 52, '지지대 설치 기준', { size: 10, weight: 600, fill: COLOR.text });
+  b += rect(340, 62, 276, 44, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(478, 80, '✓ 카드가 수평이 되는 높이에서 받친다', { anchor: 'middle', size: 9.4, weight: 600, fill: COLOR.fit });
+  b += t(478, 97, '이미 굳은 변형은 지금 높이에서 그대로', { anchor: 'middle', size: 9, fill: COLOR.mute });
+  b += rect(340, 114, 276, 44, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(478, 132, '✗ 끝을 위로 밀어 올린다', { anchor: 'middle', size: 9.4, weight: 600, fill: COLOR.over });
+  b += t(478, 149, '반대 방향 응력 — 처짐과 같은 부담', { anchor: 'middle', size: 9, fill: COLOR.mute });
+  b += t(340, 180, '처짐 자체로 성능은 안 떨어짐 — 위험은 수년의 슬롯·기판 부담', { size: 9.2, fill: COLOR.mute });
+  return figure(
+    '그래픽카드 처짐 — 외팔보 구조와 받치는 기준',
+    W, 194, b,
+    '카드는 브래킷과 슬롯 두 점에만 고정된 외팔보라 길고 무거울수록 반대쪽 끝이 처집니다. 처짐 자체는 성능과 무관하고, 지지대는 카드가 수평이 되는 높이에서 받치되 위로 밀어 올리지 않는 것이 기준입니다.'
   );
 }
