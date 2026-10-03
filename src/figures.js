@@ -920,6 +920,7 @@ export const figures = {
   'touch-vs-sensor': touchVsSensor,
   'resonance-two-culprits': resonanceTwoCulprits,
   'shine-two-kinds': shineTwoKinds,
+  'keyboard-face-two-kinds': keyboardFaceTwoKinds,
 };
 
 /**
@@ -4580,5 +4581,29 @@ function shineTwoKinds() {
     '키캡 번들거림 — 닦이는 것과 안 닦이는 것',
     W, 212, b,
     '번들거림은 손기름이 쌓인 것과 표면이 닳은 것 두 가지가 같은 모습으로 나타납니다. 닦아서 사라지면 때, 그대로면 마모이며 처방이 다릅니다.'
+  );
+}
+
+function keyboardFaceTwoKinds() {
+  const W = 640;
+  const panel = (x, fill, title, l1, l2, l3) => {
+    let s = rect(x, 44, 290, 72, fill, { r: 8 });
+    s += t(x + 145, 65, title, { anchor: 'middle', size: 11, weight: 700, fill: '#fff' });
+    s += t(x + 145, 84, l1, { anchor: 'middle', size: 9.4, fill: '#fff' });
+    s += t(x + 145, 101, l2, { anchor: 'middle', size: 9.4, fill: '#fff' });
+    s += t(x + 145, 134, '↓ 키스킨을 덮으면', { anchor: 'middle', size: 9.6, fill: COLOR.mute });
+    s += rect(x, 144, 290, 34, COLOR.soft, { r: 8, stroke: COLOR.line });
+    s += t(x + 145, 165, l3, { anchor: 'middle', size: 10, weight: 600, fill: COLOR.text });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '키스킨의 답은 노트북마다 다릅니다 — 키보드 면이 통로인가, 막혀 있는가', { weight: 600, size: 12.5 });
+  b += panel(24, COLOR.over, '통로형', '키 틈새로 공기를 빨아들이거나 열을 흘림', '얇은 고성능·게이밍 노트북에서 흔함', '통풍구에 이불 — 발열·팬 소음 ↑');
+  b += panel(326, COLOR.fit, '밀폐형', '키보드 아래가 막혀 공기가 거의 안 드나듦', '"몇 년째 잘만 쓴다"의 주인공들', '열 경로 그대로 — 덮어도 무방');
+  b += t(24, 204, '5분 판정 — 부하를 건 뒤 키보드 면에 손바닥: 틈새로 따뜻한 기운·미세한 바람이 느껴지면 통로형, 판만 미지근하면 밀폐형', { size: 10, fill: COLOR.mute });
+  return figure(
+    '키보드 면 — 통로형과 밀폐형',
+    W, 216, b,
+    '노트북 키보드 면은 설계에 따라 공기가 드나드는 통로형과 막힌 밀폐형으로 갈립니다. 통로형에 키스킨을 덮으면 발열과 팬 소음이 늘 수 있고, 판정은 부하를 건 뒤 손바닥으로 합니다.'
   );
 }
