@@ -921,6 +921,7 @@ export const figures = {
   'resonance-two-culprits': resonanceTwoCulprits,
   'shine-two-kinds': shineTwoKinds,
   'keyboard-face-two-kinds': keyboardFaceTwoKinds,
+  'palmrest-three-wears': palmrestThreeWears,
 };
 
 /**
@@ -4605,5 +4606,31 @@ function keyboardFaceTwoKinds() {
     '키보드 면 — 통로형과 밀폐형',
     W, 216, b,
     '노트북 키보드 면은 설계에 따라 공기가 드나드는 통로형과 막힌 밀폐형으로 갈립니다. 통로형에 키스킨을 덮으면 발열과 팬 소음이 늘 수 있고, 판정은 부하를 건 뒤 손바닥으로 합니다.'
+  );
+}
+
+function palmrestThreeWears() {
+  const W = 640;
+  const col = (x, fill, title, cause, back, act) => {
+    let s = rect(x, 44, 190, 62, fill, { r: 8 });
+    s += t(x + 95, 65, title, { anchor: 'middle', size: 11, weight: 700, fill: '#fff' });
+    s += t(x + 95, 84, cause, { anchor: 'middle', size: 9.2, fill: '#fff' });
+    s += t(x + 95, 99, back, { anchor: 'middle', size: 9.2, fill: '#fff' });
+    s += rect(x, 116, 190, 46, COLOR.soft, { r: 8, stroke: COLOR.line });
+    const parts = act.split('|');
+    s += t(x + 95, 135, parts[0], { anchor: 'middle', size: 9.6, weight: 600, fill: COLOR.text });
+    s += t(x + 95, 152, parts[1], { anchor: 'middle', size: 9.2, fill: COLOR.mute });
+    return s;
+  };
+  let b = '';
+  b += t(24, 24, '같은 자리, 다른 세 가지 — 물기 짠 천으로 닦아 보면 1분 안에 갈립니다', { weight: 600, size: 12.5 });
+  b += col(24, COLOR.accent, '변색', '땀·피지가 표면과 반응', '초기엔 닦임 · 오래되면 남음', '늦추기|손 씻기 · 보호시트 · 손목 받침');
+  b += col(225, COLOR.over, '벗겨짐', '코팅·도장이 마찰·이물로 떨어짐', '되돌릴 수 없음 · 기능 무관', '그대로 또는 덮기|번짐만 막기');
+  b += col(426, COLOR.fit, '끈적임', '부드러운 코팅이 시간·열로 열화', '닦아도 재발 · 진행형', '닦기 → 덮기|알코올은 신중히, 제거는 마지막');
+  b += t(24, 190, '셋 다 외관의 일 — 노트북의 수명·성능과는 무관합니다. 알코올은 코팅을 더 녹일 수 있어 물 → 순한 세제 순서로', { size: 10, fill: COLOR.mute });
+  return figure(
+    '팜레스트 변색·벗겨짐·끈적임 — 세 가지 다른 일',
+    W, 202, b,
+    '손목 자리의 변색은 땀의 흔적, 벗겨짐은 코팅이 떠난 것, 끈적임은 코팅이 늙는 중입니다. 닦아 보면 1분 안에 갈리고, 때만 되돌릴 수 있으며 셋 다 성능·수명과 무관합니다.'
   );
 }

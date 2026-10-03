@@ -148,6 +148,7 @@ tags: [키스킨, 노트북발열, 키보드커버, 노트북관리, 노트북�
 [키보드 면과 열의 관계](/posts/laptop-clamshell-mode.html) ·
 [팬 소리 읽는 법](/posts/laptop-fan-noise.html) ·
 [특정 키만 안 눌릴 때](/posts/keyboard-some-keys-dead.html) ·
-[키캡 번들거림(때인가 마모인가)](/posts/keycap-shine.html)과 이어집니다.
+[키캡 번들거림(때인가 마모인가)](/posts/keycap-shine.html) ·
+[손목 자리 변색·끈적임(키보드 면이 아닌 자리의 덮개)](/posts/laptop-palmrest-wear.html)과 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
