@@ -926,6 +926,7 @@ export const figures = {
   'sag-cantilever': sagCantilever,
   'bag-sleep-depth': bagSleepDepth,
   'smell-order-fork': smellOrderFork,
+  'yellow-sudden-slow': yellowSuddenSlow,
 };
 
 /**
@@ -4767,5 +4768,38 @@ function smellOrderFork() {
     '타는 냄새 — 차단 먼저, 판정은 끈 뒤',
     W, 200, b,
     '냄새가 나는 중에는 종료와 콘센트 분리가 먼저이고, 판정은 끈 상태에서 냄새의 종류로 가릅니다. 매캐한 탄내는 원인 특정 전 재가동 금지, 새 제품 냄새는 옅어지는 방향 확인, 먼지 데움은 청소 신호, 마찰 냄새는 팬 주변 확인입니다.'
+  );
+}
+
+/** monitor-yellow-tint — 갑자기(설정) vs 서서히(노화) */
+function yellowSuddenSlow() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '화면이 누렇다 — 첫 질문은 "갑자기인가, 서서히인가"', { weight: 600, size: 12.5 });
+  // 갑자기
+  b += rect(24, 40, 368, 150, COLOR.soft, { r: 8, stroke: COLOR.fit });
+  b += t(208, 60, '갑자기 (어제와 오늘이 다름) → 설정·모드 갈래', { anchor: 'middle', size: 10, weight: 600, fill: COLOR.fit });
+  b += rect(40, 70, 336, 22, COLOR.fit, { r: 4 });
+  b += t(208, 85, '① 윈도우 야간 모드 — "저녁만 되면" = 예약의 지문', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += rect(40, 98, 336, 22, COLOR.fit, { r: 4 });
+  b += t(208, 113, '② 모니터 OSD — 리더·독서 모드, 색온도 \'따뜻하게\'', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += rect(40, 126, 336, 22, COLOR.fit, { r: 4 });
+  b += t(208, 141, '③ 윈도우 색 필터 · HDR 조합', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += t(208, 166, '격리: 스크린샷을 폰에서 열어 정상이면 → 설정·모니터 쪽', { anchor: 'middle', size: 8.8, fill: COLOR.text });
+  b += t(208, 181, '두 대 중 한쪽만 누렇다면 → 그 모니터의 OSD', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  // 서서히
+  b += rect(404, 40, 212, 150, COLOR.soft, { r: 8, stroke: COLOR.over });
+  b += t(510, 60, '서서히 (몇 달·몇 년) → 노화 갈래', { anchor: 'middle', size: 10, weight: 600, fill: COLOR.over });
+  b += t(510, 84, '백라이트가 나이 듦', { anchor: 'middle', size: 9.2, weight: 600, fill: COLOR.text });
+  b += t(510, 100, '어두워지며 누레지는 방향', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  b += t(510, 116, '새 화면 옆에 두면 보임', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  b += rect(420, 128, 180, 22, COLOR.over, { r: 4 });
+  b += t(510, 143, '되돌리는 설정 없음 → 교체 저울', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += t(510, 170, '색이 아니라 줄·깜빡임이면', { anchor: 'middle', size: 8.6, fill: COLOR.mute });
+  b += t(510, 183, '고장 신호 — 케이블 격리부터', { anchor: 'middle', size: 8.6, fill: COLOR.mute });
+  return figure(
+    '누런 화면 — 갑자기면 설정, 서서히면 노화',
+    W, 200, b,
+    '어제와 오늘이 다를 만큼 갑자기 누레졌다면 야간 모드, 모니터 리더 모드와 색온도, 색 필터와 HDR 순으로 설정을 끄고, 스크린샷을 다른 기기에서 열어 정상이면 설정 갈래로 확정합니다. 몇 달에 걸쳐 서서히 바랬다면 백라이트 노화라 되돌리는 설정이 없고 교체를 저울질합니다.'
   );
 }
