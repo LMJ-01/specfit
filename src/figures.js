@@ -922,6 +922,7 @@ export const figures = {
   'shine-two-kinds': shineTwoKinds,
   'keyboard-face-two-kinds': keyboardFaceTwoKinds,
   'palmrest-three-wears': palmrestThreeWears,
+  'wobble-lever': wobbleLever,
 };
 
 /**
@@ -4632,5 +4633,34 @@ function palmrestThreeWears() {
     '팜레스트 변색·벗겨짐·끈적임 — 세 가지 다른 일',
     W, 202, b,
     '손목 자리의 변색은 땀의 흔적, 벗겨짐은 코팅이 떠난 것, 끈적임은 코팅이 늙는 중입니다. 닦아 보면 1분 안에 갈리고, 때만 되돌릴 수 있으며 셋 다 성능·수명과 무관합니다.'
+  );
+}
+
+function wobbleLever() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '떨리는 건 책상, 모니터는 그걸 확대해 보여주는 지렛대 끝', { weight: 600, size: 12.5 });
+  b += rect(24, 150, 300, 14, COLOR.soft, { r: 3, stroke: COLOR.line });
+  b += t(174, 182, '책상 상판 — 타이핑 진동이 퍼짐', { anchor: 'middle', size: 9.6, fill: COLOR.mute });
+  b += rect(150, 90, 6, 60, COLOR.accent);
+  b += rect(120, 60, 66, 34, COLOR.accent, { r: 4 });
+  b += t(153, 81, '짧은 스탠드', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += t(153, 48, '↔ 작게', { anchor: 'middle', size: 9.4, fill: COLOR.accent });
+  b += rect(260, 56, 6, 94, COLOR.over);
+  b += rect(230, 26, 66, 34, COLOR.over, { r: 4 });
+  b += t(263, 47, '긴 암', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += t(263, 16, '↔↔ 크게', { anchor: 'middle', size: 9.4, fill: COLOR.over });
+  b += t(344, 56, '손 두 번으로 가르기', { size: 10, weight: 600, fill: COLOR.text });
+  b += rect(344, 66, 272, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(480, 82, '① 책상에 손바닥 → 떨림이 느껴짐', { anchor: 'middle', size: 9.4, weight: 600, fill: COLOR.text });
+  b += t(480, 98, '책상 갈래: 다리 수평 → 볼트 → 벽 밀착', { anchor: 'middle', size: 9, fill: COLOR.mute });
+  b += rect(344, 114, 272, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(480, 130, '② 모니터만 살짝 밀기 → 흐느적·유격', { anchor: 'middle', size: 9.4, weight: 600, fill: COLOR.text });
+  b += t(480, 146, '거치 갈래: 클램프·관절 짧게·넓은 받침', { anchor: 'middle', size: 9, fill: COLOR.mute });
+  b += t(344, 178, '둘 다라면 책상부터 — 원인을 두고 확대경만 손보면 남습니다', { size: 9.6, fill: COLOR.mute });
+  return figure(
+    '모니터 흔들림 — 지렛대 구조',
+    W, 194, b,
+    '타이핑 진동은 책상 상판을 타고 스탠드·암을 따라 올라가며, 지렛대가 길수록 모니터 끝의 흔들림이 커집니다. 책상에 손을 올려 보고 모니터만 밀어 보면 책상 갈래와 거치 갈래가 갈립니다.'
   );
 }

@@ -155,5 +155,7 @@ HDD가 진동원이었다면 확실한 처방이 맞습니다 — 회전 부품�
 [스피커 잡음(전기음)](/posts/pc-speaker-noise.html) ·
 [딸깍 소리의 경고](/posts/pc-clicking-noise.html) ·
 [고주파 코일 노이즈](/posts/gpu-coil-whine.html)와 이어집니다.
+(본체 진동이 책상을 타고 **모니터를 흔드는** 쪽은
+[지렛대 판정](/posts/monitor-wobble-typing.html)입니다.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

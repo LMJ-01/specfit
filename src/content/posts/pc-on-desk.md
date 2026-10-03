@@ -2,6 +2,7 @@
 title: 본체는 책상 위인가 아래인가 — 취향 문제 같지만 축별로 실익이 갈립니다
 description: 컴퓨터 본체를 책상 위에 올릴지 아래에 둘지는 커뮤니티 설문까지 있는 단골 논쟁입니다. 정답은 없지만 축별 실익은 분명합니다 — 먼지와 무선은 위가 유리하고, 소음과 공간은 아래가 유리합니다. 발열은 어느 쪽이든 막힘만 피하면 됩니다.
 date: 2026-09-06
+updated: 2026-10-03
 category: gpu
 tags: [본체위치, 책상배치, 먼지관리, 컴퓨터소음, 데스크셋업]
 ---
@@ -150,6 +151,7 @@ tags: [본체위치, 책상배치, 먼지관리, 컴퓨터소음, 데스크셋�
 배치 클러스터의 이웃들 — [본체 눕혀서 쓰기](/posts/pc-case-horizontal.html) ·
 [케이스 기류의 원칙](/posts/case-fan-setup.html) ·
 [먼지 청소 신호](/posts/pc-dust-cleaning.html) ·
-[무선 동글의 전파 길](/posts/wireless-mouse-lag.html)과 이어집니다.
+[무선 동글의 전파 길](/posts/wireless-mouse-lag.html) ·
+[타이핑할 때 모니터가 흔들리는 책상](/posts/monitor-wobble-typing.html)과 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
