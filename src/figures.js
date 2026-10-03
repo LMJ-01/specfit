@@ -925,6 +925,7 @@ export const figures = {
   'wobble-lever': wobbleLever,
   'sag-cantilever': sagCantilever,
   'bag-sleep-depth': bagSleepDepth,
+  'smell-order-fork': smellOrderFork,
 };
 
 /**
@@ -4736,5 +4737,35 @@ function bagSleepDepth() {
     '가방 속 발열 — 얕은 잠과 깊은 잠',
     W, 194, b,
     '절전은 전원이 살아 있어 깨우기 신호에 반응하는 얕은 잠이라 가방 안에서 깨어나 발열·방전으로 이어질 수 있습니다. 최대 절전이나 종료는 전원이 차단된 깊은 잠이라 가방에서 깨어나지 않고, 넣기 전 팬과 표시등을 확인하는 3초가 습관의 핵심입니다.'
+  );
+}
+
+/** pc-burning-smell — 차단이 먼저, 판정은 끈 뒤 */
+function smellOrderFork() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '타는 냄새 — 이 증상만은 진단보다 차단이 먼저', { weight: 600, size: 12.5 });
+  b += rect(24, 36, 592, 30, COLOR.over, { r: 6 });
+  b += t(320, 55, '① 종료  →  콘센트(멀티탭) 분리  →  환기        — 판정은 그다음, 켠 채로 하는 판정은 늦을 수 있음', { anchor: 'middle', size: 9.6, weight: 600, fill: '#fff' });
+  b += t(24, 86, '② 끈 상태에서 냄새의 종류와 위치로 가르기', { size: 10, weight: 600, fill: COLOR.text });
+  const cols = [
+    ['매캐한 탄내·플라스틱', '전기 부품 손상 정황', '원인 특정 전 재가동 금지', COLOR.over, '#fff'],
+    ['새 제품의 옅은 냄새', '조립·교체 직후 며칠', '옅어지는 방향이면 정상 범위', COLOR.fit, '#fff'],
+    ['먼지 데워지는 냄새', '히터 첫 가동 같은', '청소 신호 — 청소 후 재확인', COLOR.soft, COLOR.text],
+    ['고무·마찰 + 팬 소리 변화', '케이블·이물이 날개에', '팬 주변 눈으로 확인', COLOR.soft, COLOR.text],
+  ];
+  cols.forEach((c, i) => {
+    const x = 24 + i * 148;
+    b += rect(x, 94, 140, 62, c[3], { r: 6, stroke: COLOR.line });
+    b += t(x + 70, 112, c[0], { anchor: 'middle', size: 9.2, weight: 600, fill: c[4] });
+    b += t(x + 70, 128, c[1], { anchor: 'middle', size: 8.4, fill: c[4] });
+    b += t(x + 70, 146, c[2], { anchor: 'middle', size: 8.6, weight: 600, fill: c[4] });
+  });
+  b += t(24, 176, '③ 원인을 찾아 제거했을 때만 곁에서 지켜보며 재가동 — 원인 모른 채 사라진 냄새는 해결이 아니라 유보', { size: 9.4, fill: COLOR.mute });
+  b += t(24, 190, '"작동은 잘 된다"는 판정 기준이 아님 — 부품은 완전히 죽기 전까지 겉으로는 멀쩡히 일하는 경우가 많음', { size: 8.8, fill: COLOR.mute });
+  return figure(
+    '타는 냄새 — 차단 먼저, 판정은 끈 뒤',
+    W, 200, b,
+    '냄새가 나는 중에는 종료와 콘센트 분리가 먼저이고, 판정은 끈 상태에서 냄새의 종류로 가릅니다. 매캐한 탄내는 원인 특정 전 재가동 금지, 새 제품 냄새는 옅어지는 방향 확인, 먼지 데움은 청소 신호, 마찰 냄새는 팬 주변 확인입니다.'
   );
 }
