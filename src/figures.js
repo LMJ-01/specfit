@@ -927,6 +927,7 @@ export const figures = {
   'bag-sleep-depth': bagSleepDepth,
   'smell-order-fork': smellOrderFork,
   'yellow-sudden-slow': yellowSuddenSlow,
+  'stabilizer-wire': stabilizerWire,
 };
 
 /**
@@ -4801,5 +4802,45 @@ function yellowSuddenSlow() {
     '누런 화면 — 갑자기면 설정, 서서히면 노화',
     W, 200, b,
     '어제와 오늘이 다를 만큼 갑자기 누레졌다면 야간 모드, 모니터 리더 모드와 색온도, 색 필터와 HDR 순으로 설정을 끄고, 스크린샷을 다른 기기에서 열어 정상이면 설정 갈래로 확정합니다. 몇 달에 걸쳐 서서히 바랬다면 백라이트 노화라 되돌리는 설정이 없고 교체를 저울질합니다.'
+  );
+}
+
+/** spacebar-rattle — 긴 키 아래 철심 구조와 세 질문 */
+function stabilizerWire() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '긴 키에만 있는 부품 — 소리를 내는 건 스위치가 아니라 철심', { weight: 600, size: 12.5 });
+  // 긴 키 단면
+  b += rect(24, 46, 300, 22, COLOR.text, { r: 5 });
+  b += t(174, 61, '스페이스바 키캡', { anchor: 'middle', size: 9.4, weight: 600, fill: '#fff' });
+  b += rect(160, 72, 28, 30, COLOR.accent, { r: 3 });
+  b += t(174, 114, '스위치(가운데)', { anchor: 'middle', size: 8.4, fill: COLOR.mute });
+  b += rect(48, 72, 16, 30, COLOR.over, { r: 3 });
+  b += rect(284, 72, 16, 30, COLOR.over, { r: 3 });
+  b += rect(56, 100, 236, 4, COLOR.over, { r: 2 });
+  b += rect(56, 100, 4, 14, COLOR.over);
+  b += rect(288, 100, 4, 14, COLOR.over);
+  b += t(56, 128, '양쪽 기둥 + 철심(와이어) = 스테빌라이저', { size: 8.8, weight: 600, fill: COLOR.over });
+  b += t(56, 142, '한쪽만 눌러도 기울지 않게 양끝을 같이 내림', { size: 8.4, fill: COLOR.mute });
+  b += t(24, 166, '유격: 철심이 기둥 안에서 놀면 달그락·쇳소리 (윤활로 안 고쳐짐)', { size: 8.8, fill: COLOR.text });
+  b += t(24, 182, '마찰: 철심이 마른 채 긁히면 뻑뻑·찍찍 (윤활이 정답)', { size: 8.8, fill: COLOR.text });
+  // 세 질문
+  b += t(344, 50, '세 질문으로 가르기', { size: 10, weight: 600, fill: COLOR.text });
+  const q = [
+    ['① 어느 키', '긴 키만 → 철심 / 모든 키 → 스위치·책상 울림'],
+    ['② 어디 눌렀나', '양끝 → 유격 / 어디서나 뻑뻑 → 마찰'],
+    ['③ 언제', '뗄 때 한 번 더 → 유격 / 누르는 동안 끌림 → 마찰'],
+  ];
+  q.forEach((r, i) => {
+    const y = 60 + i * 40;
+    b += rect(344, y, 272, 34, COLOR.soft, { r: 6, stroke: COLOR.line });
+    b += t(354, y + 14, r[0], { size: 9.2, weight: 600, fill: COLOR.text });
+    b += t(354, y + 27, r[1], { size: 8.4, fill: COLOR.mute });
+  });
+  b += t(344, 186, '순서: 긴 키 확인 → 키캡 빼서 결합 확인 → 그다음 윤활', { size: 8.8, weight: 600, fill: COLOR.fit });
+  return figure(
+    '긴 키 소리 — 철심 구조와 세 질문',
+    W, 196, b,
+    '스페이스바·엔터 같은 긴 키에는 양끝을 같이 내리는 철심과 기둥(스테빌라이저)이 들어 있어 이 키들만 소리가 다릅니다. 긴 키만인지, 양끝을 눌렀을 때인지, 뗄 때인지로 유격과 마찰을 가르고, 결합 확인 뒤에 윤활하는 순서입니다.'
   );
 }
