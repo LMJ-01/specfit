@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>그래픽카드 팬 세 개 중 하나만 안 돌 때 — 쉬는 건지 죽은 건지는 부하가 가립니다 | 스펙핏</title>
+<meta name="description" content="그래픽카드 팬 세 개 중 하나만 멈춰 있거나 그 팬만 소리가 다른 증상은 게시판 단골 질문입니다. 저부하에서 쉬는 설계, 팬을 묶음으로 제어하는 구조, 베어링·모터 고장은 겉모습이 같아도 부하를 걸면 갈립니다. 손가락 판정과 처방 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/gpu-one-fan-dead.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="그래픽카드 팬 세 개 중 하나만 안 돌 때 — 쉬는 건지 죽은 건지는 부하가 가립니다 | 스펙핏">
+<meta property="og:description" content="그래픽카드 팬 세 개 중 하나만 멈춰 있거나 그 팬만 소리가 다른 증상은 게시판 단골 질문입니다. 저부하에서 쉬는 설계, 팬을 묶음으로 제어하는 구조, 베어링·모터 고장은 겉모습이 같아도 부하를 걸면 갈립니다. 손가락 판정과 처방 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/gpu-one-fan-dead.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드 팬 세 개 중 하나만 안 돌 때 — 쉬는 건지 죽은 건지는 부하가 가립니다","description":"그래픽카드 팬 세 개 중 하나만 멈춰 있거나 그 팬만 소리가 다른 증상은 게시판 단골 질문입니다. 저부하에서 쉬는 설계, 팬을 묶음으로 제어하는 구조, 베어링·모터 고장은 겉모습이 같아도 부하를 걸면 갈립니다. 손가락 판정과 처방 순서를 정리했습니다.","datePublished":"2026-10-05","dateModified":"2026-10-05","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/gpu-one-fan-dead.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"그래픽카드 팬 세 개 중 하나만 안 돌 때 — 쉬는 건지 죽은 건지는 부하가 가립니다","item":"https://specfit.kr/posts/gpu-one-fan-dead.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>그래픽카드 팬 세 개 중 하나만 안 돌 때 — 쉬는 건지 죽은 건지는 부하가 가립니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-10-05">2026년 10월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>옆판 너머로 그래픽카드를 보니 <strong>팬 세 개 중 하나가 서 있습니다.</strong>
+또는 둘은 조용한데 하나만 드르륵거립니다. 게시판 질문 제목은 둘로
+갈립니다 — &quot;가운데 팬만 안 도는데 고장인가요&quot;와 &quot;팬 하나 죽은 것
+같은데 그냥 써도 되나요&quot;. 답은 둘 다 <strong>&quot;부하를 걸어 보면
+갈린다&quot;</strong>입니다.</p>
+<p>겉모습은 같아도 속사정은 셋입니다. <strong>쉬는 것</strong> — 요즘 카드는
+온도가 낮을 때 팬을 세우는 기능이 흔하고, 제품에 따라 팬을 <strong>두
+묶음으로 나눠</strong> 한 묶음만 먼저 돌리기도 합니다. <strong>베어링이 늙은
+것</strong> — 축이 뻑뻑해져 늦게 돌거나 갈리는 소리를 냅니다. <strong>모터나
+배선이 죽은 것</strong> — 돌라는 신호는 가는데 돌지 않습니다. 세 경우의
+처방이 전부 다르니, 먼저 어느 쪽인지부터입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 200" width="640" height="200" role="img" aria-label="팬 하나만 멈춤 — 부하와 손가락으로 가르기">
+<title>팬 하나만 멈춤 — 부하와 손가락으로 가르기</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">팬 세 개 중 하나만 서 있다 — 쉬는 건지 죽은 건지는 부하가 가름</text><rect x="24" y="40" width="276" height="52" fill="var(--bg-soft)" rx="8" stroke="var(--border)"/><circle cx="70" cy="66" r="19" fill="var(--fig-fit)"/><circle cx="70" cy="66" r="6" fill="var(--bg-soft)"/><text x="70" y="104" fill="var(--fig-fit)" font-size="8.6" font-weight="600" text-anchor="middle">돎</text><circle cx="162" cy="66" r="19" fill="var(--fig-over)"/><circle cx="162" cy="66" r="6" fill="var(--bg-soft)"/><text x="162" y="104" fill="var(--fig-over)" font-size="8.6" font-weight="600" text-anchor="middle">멈춤</text><circle cx="254" cy="66" r="19" fill="var(--fig-fit)"/><circle cx="254" cy="66" r="6" fill="var(--bg-soft)"/><text x="254" y="104" fill="var(--fig-fit)" font-size="8.6" font-weight="600" text-anchor="middle">돎</text><text x="24" y="126" fill="var(--fg)" font-size="9.6" font-weight="600">① 부하 걸기 — 온도가 오를 때 셋 다 도는가</text><rect x="24" y="134" width="134" height="26" fill="var(--fig-fit)" rx="5"/><text x="91" y="151" fill="#fff" font-size="8.4" font-weight="600" text-anchor="middle">셋 다 돈다 → 설계(쉬던 것)</text><rect x="166" y="134" width="134" height="26" fill="var(--fig-over)" rx="5"/><text x="233" y="151" fill="#fff" font-size="8.4" font-weight="600" text-anchor="middle">끝내 침묵 → ②로</text><text x="24" y="180" fill="var(--fg-muted)" font-size="8.4">전원·콘센트 분리 후에만 손가락 판정 — 도는 팬에 손 금지</text><text x="324" y="50" fill="var(--fg)" font-size="9.6" font-weight="600">② 손가락 판정 — 멈춘 팬을 살짝 튕겨 본다</text><rect x="324" y="58" width="292" height="44" fill="var(--bg-soft)" rx="6" stroke="var(--fig-over)"/><text x="334" y="76" fill="var(--fig-over)" font-size="9" font-weight="600">뻑뻑 · 금방 멈춤 · 걸림 · 갈리는 소리</text><text x="334" y="93" fill="var(--fg-muted)" font-size="8.2">베어링 노화 — 점점 나빠지는 방향, 청소로 돌아오면 먼지</text><rect x="324" y="110" width="292" height="44" fill="var(--bg-soft)" rx="6" stroke="var(--fig-over)"/><text x="334" y="128" fill="var(--fig-over)" font-size="9" font-weight="600">가볍게 잘 도는데 부하에서는 안 돌았다</text><text x="334" y="145" fill="var(--fg-muted)" font-size="8.2">모터·배선 — 한 묶음 통째면 커넥터, 하나만이면 모터</text><text x="324" y="174" fill="var(--fg)" font-size="8.6" font-weight="600">어느 갈래든 보증 AS 먼저 → 팬 교체 vs 카드 교체 저울</text><text x="324" y="190" fill="var(--fg-muted)" font-size="8.2">하나 죽은 채 쓰면 평형 온도가 오름 — 온도를 보며 당분간만</text>
+</svg>
+<figcaption>팬 하나만 서 있어도 부하에서 셋 다 돌면 저부하에 쉬는 설계이고, 끝내 침묵하면 전원을 끄고 손끝으로 튕겨 뻑뻑하면 베어링 노화, 가볍게 도는데 안 돌았다면 모터나 배선입니다. 어느 갈래든 보증 AS가 먼저이고 팬 교체와 카드 교체를 저울질합니다.</figcaption>
+</figure>
+<h2 id="판정-두-단계-부하-그리고-손가락">판정 두 단계 — 부하, 그리고 손가락</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>단계</th><th>하는 것</th><th>읽는 법</th></tr></thead>
+<tbody>
+<tr><td><strong>① 부하 걸기</strong></td><td>게임이나 벤치마크로 온도를 올리고 팬을 본다</td><td>온도가 오르자 <strong>셋 다 돈다</strong> → 쉬는 것(설계). 그 팬이 <strong>끝내 침묵</strong> → 아래 ②로</td></tr>
+<tr><td></td><td>그 팬만 <strong>늦게 출발</strong>하거나 갈리는 소리</td><td>베어링 갈래 정황</td></tr>
+<tr><td><strong>② 손가락 판정</strong> (전원·콘센트 분리 후)</td><td>멈춘 팬을 손끝으로 살짝 튕겨 본다</td><td><strong>뻑뻑하고 금방 멈춤·걸리는 느낌</strong> → 베어링 노화</td></tr>
+<tr><td></td><td></td><td><strong>가볍게 잘 도는데</strong> 부하에서는 안 돌았다 → 모터·배선 갈래</td></tr>
+<tr><td></td><td>팬 주변을 눈으로 본다</td><td>케이블·이물이 날개에 닿아 있으면 그게 범인 — <a href="/posts/pc-clicking-noise.html">딸깍·틱틱 소리 글</a>의 간섭 갈래</td></tr>
+</tbody>
+</table></div>
+<p>손가락 판정은 <strong>반드시 전원을 끄고 콘센트까지 뽑은 뒤</strong>입니다.
+도는 팬에 손을 넣지 않고, 도는 팬을 손으로 세우지도 않습니다 —
+날개도 손가락도 상합니다.</p>
+<h2 id="쉬는-것-설계라면-고장이-아닙니다">쉬는 것 — 설계라면 고장이 아닙니다</h2>
+<p>온도가 낮을 때 팬을 세워 소음을 없애는 기능은 요즘 카드의
+표준이라, <strong>셋 다 서 있는</strong> 장면은 <a href="/posts/gpu-temp-normal.html">온도 거동 글</a>
+이 정리한 대로 정상입니다. 헷갈리는 건 <strong>하나만 서 있는</strong> 장면인데,
+제품에 따라 팬을 두 묶음(예컨대 양쪽과 가운데)으로 나눠 <strong>묶음마다
+다른 온도에서 깨우는</strong> 설계가 있어서, 저부하에서는 한 묶음만 도는
+모습이 나옵니다. 그래서 판정 ①이 전부입니다 — <strong>부하에서 셋 다
+돌면</strong> 그 카드는 그렇게 설계된 것이고, 손볼 게 없습니다.</p>
+<h2 id="베어링-갈래-늙은-것은-되돌아가지-않습니다">베어링 갈래 — 늙은 것은 되돌아가지 않습니다</h2>
+<p>부하에서 그 팬만 <strong>늦게 출발</strong>하거나, 돌면서 <strong>드르륵·갈리는
+소리</strong>를 내거나, 손끝으로 튕겼을 때 <strong>뻑뻑하게 금방 멈춘다</strong>면
+축의 베어링이 늙은 쪽입니다. <a href="/posts/pc-fan-loud-at-boot.html">켤 때 팬 소리 글</a>
+에서 &quot;소리의 결이 다르면 물리 갈래&quot;라고 한 그 결입니다. 먼지가
+축에 끼어 그런 경우는 청소로 돌아오기도 하지만, 베어링 자체가
+닳은 것은 <strong>점점 나빠지는 방향</strong>이라 — 늦게 출발하던 팬이 어느
+날 출발하지 않게 됩니다.</p>
+<h2 id="모터배선-갈래-신호는-가는데-돌지-않습니다">모터·배선 갈래 — 신호는 가는데 돌지 않습니다</h2>
+<p>손으로는 가볍게 잘 도는데 부하에서 끝내 침묵한다면 팬 모터나 그
+팬으로 가는 배선·커넥터 쪽입니다. 묶음으로 제어되는 카드에서
+<strong>한 묶음이 통째로</strong> 안 돌면 커넥터가 빠졌거나 헐거워진 정황이고
+(청소·이사 뒤라면 더), 묶음 안에서 <strong>하나만</strong> 안 돌면 그 팬 모터
+자체입니다. 어느 쪽이든 손으로 돌려 살아나는 종류가 아닙니다.</p>
+<h2 id="하나-죽은-채-쓰면">하나 죽은 채 쓰면</h2>
+<p>바로 멈추는 일은 아닙니다 — 나머지 팬이 더 돌면서 어느 정도
+보상합니다. 다만 같은 부하에서 <strong>온도가 전보다 높게 평형</strong>을
+잡고, 더운 날·긴 게임에서는 <a href="/posts/gpu-temp-normal.html">온도가 평형에 못 오르는 모양</a>
+으로 번질 수 있습니다. 그래서 &quot;그냥 써도 되나&quot;의 답은 <strong>온도를
+보면서라면 당분간은</strong>, 그리고 <strong>고치는 쪽으로 가는 길 위에서</strong>
+입니다. 뜨거운 날의 평형 온도가 전보다 눈에 띄게 올랐다면 그때가
+기한입니다.</p>
+<h2 id="처방-순서">처방 순서</h2>
+<p>정리하면 — 부하를 걸어 <strong>셋 다 돌면 설계</strong>라 끝이고, 그 팬만
+남으면 전원을 끄고 손가락으로 <strong>뻑뻑한지 가벼운지</strong>를 가릅니다.
+뻑뻑하면 베어링, 가벼운데 안 돌면 모터·배선입니다. 어느 갈래든
+<strong>보증이 남았다면 AS가 먼저</strong>이고, 지났다면 팬만 바꾸는 수리가
+있습니다 — 호환되는 팬을 찾아 분해·교체하는 작업이라 커뮤니티에
+정리가 많지만 손이 가는 일이고, 카드의 나이와 값에 따라 <strong>카드
+교체가 계산에 맞는</strong> 경우도 흔합니다. 중고로 넘길 생각이라면
+<a href="/posts/used-gpu-check.html">중고 그래픽카드 확인표</a>의 &quot;팬&quot; 행이
+상대방이 볼 자리이고요.</p>
+<p>노트북이라면 같은 질문이 <a href="/posts/laptop-fan-noise.html">노트북 팬 소리 글</a>
+의 &quot;두 개 중 한쪽만 돈다&quot; 항목이고, 결론 구조도 같습니다 —
+저부하에서 한쪽만 도는 설계가 있고, 고부하에서도 침묵하면 점검입니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">그래픽카드팬</span> <span class="tag">팬하나안돎</span> <span class="tag">제로팬</span> <span class="tag">팬베어링</span> <span class="tag">그래픽카드소음</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/gpu-backplate-hot.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 백플레이트가 손 대기 뜨거울 때 — 손의 온도계와 부품의 온도계는 눈금이 다릅니다</span>
+        <span class="card-desc">게임을 하다 그래픽카드 뒷판(백플레이트)에 손을 댔더니 깜짝 놀랄 만큼 뜨거워서 고장인지 묻는 질문은 게시판 단골입니다. 뒷판이 뜨거운 건 열이 거기로 빠져나오고 있다는 설계의 신호인 경우가 대부분이고, 판단은 손이 아니라 센서로 합니다. 정상과 경고를 가르는 기준을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/cpu-temp-normal.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">게임 중 CPU 온도, 몇 도까지 괜찮나 — 답이 갈리는 이유부터가 힌트입니다</span>
+        <span class="card-desc">게임 중 CPU가 80도를 넘는 걸 보고 검색하면 답변이 60도부터 95도까지 제각각이라 더 불안해집니다. 몇 도가 정상인지는 제품·쿨러마다 달라 한 숫자로 답할 수 없고, 판정은 온도의 거동으로 합니다 — 평형·성능 유지·추세 세 기준과 개선 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/game-recording-fps-drop.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">녹화만 켜면 게임이 버벅일 때 — 압축을 누가 하느냐의 문제입니다</span>
+        <span class="card-desc">게임은 잘 돌아가는데 녹화나 방송을 켜는 순간 프레임이 뚝 떨어지는 증상은 게시판 단골입니다. 녹화는 받아서·압축해서·저장하는 세 단계이고, 프레임을 깎는 주범은 대개 압축 단계의 담당자 선택입니다 — 판정과 처방 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

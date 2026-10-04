@@ -933,6 +933,7 @@ export const figures = {
   'power-cut-ladder': powerCutLadder,
   'router-reboot-rule': routerRebootRule,
   'case-panel-probe': casePanelProbe,
+  'one-fan-triage': oneFanTriage,
 };
 
 /**
@@ -5026,5 +5027,40 @@ function casePanelProbe() {
     '옆판 열기 — 기류 길과 5분 진단',
     W, 212, b,
     '닫힌 케이스는 앞 흡기에서 뒤 배기로 이어지는 설계된 기류 길로 부품을 식히고, 옆판을 열면 큰 발열원은 시원해질 수 있어도 그 길에 기대던 자리는 오를 수 있습니다. 부하를 건 채 열어 온도가 뚝 떨어지면 기류 문제가 확정이고 답은 기류 고치기, 차이가 없으면 기류는 무죄입니다.'
+  );
+}
+
+/** gpu-one-fan-dead — 팬 하나만 멈춤: 설계·베어링·모터 세 갈래 */
+function oneFanTriage() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '팬 세 개 중 하나만 서 있다 — 쉬는 건지 죽은 건지는 부하가 가름', { weight: 600, size: 12.5 });
+  // 카드 그림
+  b += rect(24, 40, 276, 52, COLOR.soft, { r: 8, stroke: COLOR.line });
+  [[70, COLOR.fit, '돎'], [162, COLOR.over, '멈춤'], [254, COLOR.fit, '돎']].forEach(([cx, c, l]) => {
+    b += `<circle cx="${cx}" cy="66" r="19" fill="${c}"/>`;
+    b += `<circle cx="${cx}" cy="66" r="6" fill="${COLOR.soft}"/>`;
+    b += t(cx, 104, l, { anchor: 'middle', size: 8.6, weight: 600, fill: c });
+  });
+  b += t(24, 126, '① 부하 걸기 — 온도가 오를 때 셋 다 도는가', { size: 9.6, weight: 600, fill: COLOR.text });
+  b += rect(24, 134, 134, 26, COLOR.fit, { r: 5 });
+  b += t(91, 151, '셋 다 돈다 → 설계(쉬던 것)', { anchor: 'middle', size: 8.4, weight: 600, fill: '#fff' });
+  b += rect(166, 134, 134, 26, COLOR.over, { r: 5 });
+  b += t(233, 151, '끝내 침묵 → ②로', { anchor: 'middle', size: 8.4, weight: 600, fill: '#fff' });
+  b += t(24, 180, '전원·콘센트 분리 후에만 손가락 판정 — 도는 팬에 손 금지', { size: 8.4, fill: COLOR.mute });
+  // 오른쳑 ② 손가락 판정
+  b += t(324, 50, '② 손가락 판정 — 멈춘 팬을 살짝 튕겨 본다', { size: 9.6, weight: 600, fill: COLOR.text });
+  b += rect(324, 58, 292, 44, COLOR.soft, { r: 6, stroke: COLOR.over });
+  b += t(334, 76, '뻑뻑 · 금방 멈춤 · 걸림 · 갈리는 소리', { size: 9, weight: 600, fill: COLOR.over });
+  b += t(334, 93, '베어링 노화 — 점점 나빠지는 방향, 청소로 돌아오면 먼지', { size: 8.2, fill: COLOR.mute });
+  b += rect(324, 110, 292, 44, COLOR.soft, { r: 6, stroke: COLOR.over });
+  b += t(334, 128, '가볍게 잘 도는데 부하에서는 안 돌았다', { size: 9, weight: 600, fill: COLOR.over });
+  b += t(334, 145, '모터·배선 — 한 묶음 통째면 커넥터, 하나만이면 모터', { size: 8.2, fill: COLOR.mute });
+  b += t(324, 174, '어느 갈래든 보증 AS 먼저 → 팬 교체 vs 카드 교체 저울', { size: 8.6, weight: 600, fill: COLOR.text });
+  b += t(324, 190, '하나 죽은 채 쓰면 평형 온도가 오름 — 온도를 보며 당분간만', { size: 8.2, fill: COLOR.mute });
+  return figure(
+    '팬 하나만 멈춤 — 부하와 손가락으로 가르기',
+    W, 200, b,
+    '팬 하나만 서 있어도 부하에서 셋 다 돌면 저부하에 쉬는 설계이고, 끝내 침묵하면 전원을 끄고 손끝으로 튕겨 뻑뻑하면 베어링 노화, 가볍게 도는데 안 돌았다면 모터나 배선입니다. 어느 갈래든 보증 AS가 먼저이고 팬 교체와 카드 교체를 저울질합니다.'
   );
 }
