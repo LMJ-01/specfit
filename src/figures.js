@@ -929,6 +929,7 @@ export const figures = {
   'yellow-sudden-slow': yellowSuddenSlow,
   'stabilizer-wire': stabilizerWire,
   'wheel-always-sometimes': wheelAlwaysSometimes,
+  'charger-watt-budget': chargerWattBudget,
 };
 
 /**
@@ -4875,5 +4876,35 @@ function wheelAlwaysSometimes() {
     '휠 이상 — 항상이면 설정, 가끔이면 부품',
     W, 196, b,
     '방향이 항상 일정하게 반대라면 부품이 그렇게 고장 날 수 없어 마우스 설정이나 제조사 유틸의 방향 옵션을 보는 설정 갈래이고, 가끔 확 튀거나 한두 칸 역행하면 인코더 접점 노화라 재부팅으로 낫지 않고 점점 잦아지는 부품 갈래입니다.'
+  );
+}
+
+/** laptop-charger-watt-pd — 공급 vs 소비 예산과 20V 단계 */
+function chargerWattBudget() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '낮은 와트 충전기 — 공급과 소비의 산수, 그리고 20V 단계', { weight: 600, size: 12.5 });
+  const scale = 2.6; // px per W
+  const rows = [
+    ['큰 충전기 100W', 100, COLOR.fit, '필요한 만큼만 꺼내 씀 — 안전'],
+    ['정격 65W', 65, COLOR.fit, '기준'],
+    ['조금 낮은 45W', 45, COLOR.over, '부하 60W 소비 → 배터리에서 15W 보충 (쓰는 중 방전)'],
+    ['폰 충전기 20W', 20, COLOR.over, '20V 단계 없음 → 협상 결렬 → 거부하는 노트북 많음'],
+  ];
+  rows.forEach((r, i) => {
+    const y = 44 + i * 30;
+    b += t(24, y + 14, r[0], { size: 9, weight: 600, fill: COLOR.text });
+    b += rect(130, y + 2, r[1] * scale, 18, r[2], { r: 3 });
+    b += t(136 + r[1] * scale, y + 15, r[3], { size: 8.6, fill: COLOR.mute });
+  });
+  // 소비선
+  b += rect(130 + 60 * scale, 40, 2, 124, COLOR.text);
+  b += t(132 + 60 * scale, 176, '부하 시 소비 60W', { anchor: 'middle', size: 8.4, fill: COLOR.text });
+  b += rect(24, 184, 592, 1, COLOR.line);
+  b += t(24, 198, '케이블: 60W까지 기본 3A / 60W 초과는 5A(E-marker) 케이블 — 100W 충전기 + 3A 케이블 = 60W로 깎임', { size: 8.6, fill: COLOR.mute });
+  return figure(
+    '충전기 와트 — 공급과 소비의 예산',
+    W, 206, b,
+    '큰 충전기는 기기가 필요한 만큼만 꺼내 쓰므로 안전하고, 조금 낮은 충전기는 부하 때 소비가 공급을 넘어 배터리에서 모자란 몫을 꺼내 씁니다. 폰 충전기가 안 되는 이유는 와트보다 20V 단계가 없어 협상이 결렬되기 때문이고, 60W를 넘기려면 케이블도 5A 지원이어야 합니다.'
   );
 }
