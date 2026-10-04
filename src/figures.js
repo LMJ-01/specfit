@@ -928,6 +928,7 @@ export const figures = {
   'smell-order-fork': smellOrderFork,
   'yellow-sudden-slow': yellowSuddenSlow,
   'stabilizer-wire': stabilizerWire,
+  'wheel-always-sometimes': wheelAlwaysSometimes,
 };
 
 /**
@@ -4842,5 +4843,37 @@ function stabilizerWire() {
     '긴 키 소리 — 철심 구조와 세 질문',
     W, 196, b,
     '스페이스바·엔터 같은 긴 키에는 양끝을 같이 내리는 철심과 기둥(스테빌라이저)이 들어 있어 이 키들만 소리가 다릅니다. 긴 키만인지, 양끝을 눌렀을 때인지, 뗄 때인지로 유격과 마찰을 가르고, 결합 확인 뒤에 윤활하는 순서입니다.'
+  );
+}
+
+/** mouse-wheel-jump — 항상 반대(설정) vs 가끔 튐(인코더) */
+function wheelAlwaysSometimes() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '휠이 이상하다 — 가르는 질문은 하나, "항상인가 가끔인가"', { weight: 600, size: 12.5 });
+  // 항상
+  b += rect(24, 40, 290, 150, COLOR.soft, { r: 8, stroke: COLOR.fit });
+  b += t(169, 60, '항상 · 일정하게 반대 → 설정 갈래', { anchor: 'middle', size: 10, weight: 600, fill: COLOR.fit });
+  b += t(169, 80, '부품이 이렇게 고장 날 방법은 없음', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  b += rect(40, 90, 258, 24, COLOR.fit, { r: 4 });
+  b += t(169, 106, '윈도우 마우스 설정 — 스크롤 방향', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += rect(40, 120, 258, 24, COLOR.fit, { r: 4 });
+  b += t(169, 136, '제조사 유틸 — 프로필·방향 옵션', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += t(169, 162, '터치패드 방향과 마우스 방향은 따로', { anchor: 'middle', size: 8.6, fill: COLOR.mute });
+  b += t(169, 180, '1분이면 끝 — 재부팅 불필요', { anchor: 'middle', size: 8.8, weight: 600, fill: COLOR.fit });
+  // 가끔
+  b += rect(326, 40, 290, 150, COLOR.soft, { r: 8, stroke: COLOR.over });
+  b += t(471, 60, '가끔 · 확 튐 · 한두 칸 역행 → 부품 갈래', { anchor: 'middle', size: 10, weight: 600, fill: COLOR.over });
+  b += t(471, 80, '인코더(회전을 세는 부품)의 오염·산화', { anchor: 'middle', size: 8.8, fill: COLOR.mute });
+  b += rect(342, 90, 258, 24, COLOR.over, { r: 4 });
+  b += t(471, 106, '점점 잦아짐 — 접점 노화는 되돌아가지 않음', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += rect(342, 120, 258, 24, COLOR.over, { r: 4 });
+  b += t(471, 136, '재부팅·드라이버 재설치로는 안 나음', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += t(471, 162, '격리 → 틈새 청소 → 휠 굴리기(임시) → AS·수리 vs 교체', { anchor: 'middle', size: 8.4, fill: COLOR.mute });
+  b += t(471, 180, '다른 컴퓨터에서도 튀면 마우스 확정', { anchor: 'middle', size: 8.8, weight: 600, fill: COLOR.over });
+  return figure(
+    '휠 이상 — 항상이면 설정, 가끔이면 부품',
+    W, 196, b,
+    '방향이 항상 일정하게 반대라면 부품이 그렇게 고장 날 수 없어 마우스 설정이나 제조사 유틸의 방향 옵션을 보는 설정 갈래이고, 가끔 확 튀거나 한두 칸 역행하면 인코더 접점 노화라 재부팅으로 낫지 않고 점점 잦아지는 부품 갈래입니다.'
   );
 }
