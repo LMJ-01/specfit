@@ -931,6 +931,7 @@ export const figures = {
   'wheel-always-sometimes': wheelAlwaysSometimes,
   'charger-watt-budget': chargerWattBudget,
   'power-cut-ladder': powerCutLadder,
+  'router-reboot-rule': routerRebootRule,
 };
 
 /**
@@ -4947,5 +4948,45 @@ function powerCutLadder() {
     '정전 뒤 — 피해 후보와 다시 켜는 순서',
     W, 212, b,
     '한 번의 강제 차단으로 부품이 상하는 일은 드물고 피해 후보는 저장 중이던 데이터입니다. HDD가 쓰던 중이거나 윈도우 업데이트 중이었다면 확인이 필요하고, 다시 켤 때는 전기 상태 확인 뒤 그냥 켜고, 디스크 점검이 돌면 기다렸다가 작업 파일을 열어 보는 순서입니다.'
+  );
+}
+
+/** router-reboot — 달력이 아니라 증상, 재발이면 원인 사다리 */
+function routerRebootRule() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '공유기 재부팅 — 달력이 아니라 증상이 기준', { weight: 600, size: 12.5 });
+  // 왼쪽: 쌓이는 것 → 재부팅 = 청소
+  b += t(24, 50, '몇 달씩 안 끄는 작은 컴퓨터에 쌓이는 것', { size: 9.6, weight: 600, fill: COLOR.text });
+  ['연결 기록', '어질러진 메모리', '넘어간 오류 잔여물'].forEach((x, i) => {
+    b += rect(24 + i * 92, 58, 86, 24, COLOR.soft, { r: 5, stroke: COLOR.line });
+    b += t(67 + i * 92, 74, x, { anchor: 'middle', size: 8.6, fill: COLOR.text });
+  });
+  b += t(24, 102, '쌓이는 속도는 제품·펌웨어마다 큰 편차 → "모두 매달"은 성립하지 않음', { size: 8.6, fill: COLOR.mute });
+  // 판정 두 갈래
+  b += rect(24, 112, 134, 74, COLOR.soft, { r: 6, stroke: COLOR.fit });
+  b += t(91, 130, '증상 없음', { anchor: 'middle', size: 9.4, weight: 600, fill: COLOR.fit });
+  b += t(91, 148, '재부팅 숙제 없음', { anchor: 'middle', size: 8.6, fill: COLOR.text });
+  b += t(91, 164, '멀쩡한 기기 껐다 켜서', { anchor: 'middle', size: 7.8, fill: COLOR.mute });
+  b += t(91, 176, '얻는 건 거의 없음', { anchor: 'middle', size: 7.8, fill: COLOR.mute });
+  b += rect(166, 112, 134, 74, COLOR.fit, { r: 6 });
+  b += t(233, 130, '쓰다 보면 느려짐', { anchor: 'middle', size: 9.4, weight: 600, fill: '#fff' });
+  b += t(233, 148, '→ 재부팅이 처방', { anchor: 'middle', size: 8.6, fill: '#fff' });
+  b += t(233, 164, '자동 재부팅 스케줄로', { anchor: 'middle', size: 7.8, fill: '#fff' });
+  b += t(233, 176, '손을 떼기 (안 쓰는 시간대)', { anchor: 'middle', size: 7.8, fill: '#fff' });
+  // 오른쪽: 재발 사다리
+  b += t(324, 50, '약발이 짧아지면 — 원인은 따로', { size: 9.6, weight: 600, fill: COLOR.over });
+  const steps = [['① 펌웨어', '노화 증상의 상당수는 이미 고쳐진 결함'], ['② 발열', '장식장·장비 위 — 트인 자리로'], ['③ 기기 수', '스마트홈 수십 대면 급이 부하를 못 받음'], ['④ 노후', '연식이 아니라 신호로 교체 판단']];
+  steps.forEach((r, i) => {
+    const y = 58 + i * 32;
+    b += rect(324, y, 292, 26, i === 3 ? COLOR.over : COLOR.soft, { r: 5, stroke: COLOR.line });
+    b += t(334, y + 11, r[0], { size: 9, weight: 600, fill: i === 3 ? '#fff' : COLOR.text });
+    b += t(334, y + 22, r[1], { size: 7.8, fill: i === 3 ? '#fff' : COLOR.mute });
+  });
+  b += t(324, 200, '재부팅 ≠ 초기화 — 리셋 구멍은 설정을 날림', { size: 8.8, weight: 600, fill: COLOR.over });
+  return figure(
+    '공유기 재부팅 — 증상 기준과 재발 사다리',
+    W, 208, b,
+    '오래 켜둔 공유기에는 연결 기록과 메모리 잔여물이 쌓이지만 속도는 제품마다 달라, 증상이 없으면 재부팅 숙제가 없고 쓰다 보면 느려지는 집은 자동 재부팅으로 손을 뗍니다. 약발이 짧아지면 펌웨어, 발열, 기기 수, 노후 순으로 원인을 따로 봅니다.'
   );
 }
