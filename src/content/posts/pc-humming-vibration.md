@@ -2,7 +2,7 @@
 title: 본체에서 웅웅 떨리는 소리가 날 때 — 소리를 내는 것과 울리는 것은 다른 부품입니다
 description: 컴퓨터에서 웅웅·지잉 하는 떨림 소리가 나고, 본체를 손으로 누르면 잦아드는 증상은 게시판 단골입니다. 그 소리엔 범인이 둘입니다 — 진동을 만드는 부품과, 그걸 확성하는 케이스 철판. 둘을 가르는 판정과 각각의 처방을 정리했습니다.
 date: 2026-09-13
-updated: 2026-10-03
+updated: 2026-10-04
 category: gpu
 tags: [본체소음, 공진음, 웅웅소리, 케이스떨림, 진동소음]
 ---
@@ -156,6 +156,7 @@ HDD가 진동원이었다면 확실한 처방이 맞습니다 — 회전 부품�
 [딸깍 소리의 경고](/posts/pc-clicking-noise.html) ·
 [고주파 코일 노이즈](/posts/gpu-coil-whine.html)와 이어집니다.
 (본체 진동이 책상을 타고 **모니터를 흔드는** 쪽은
-[지렛대 판정](/posts/monitor-wobble-typing.html)입니다.)
+[지렛대 판정](/posts/monitor-wobble-typing.html)입니다. 본체가 아니라
+**키보드의 긴 키만** 소리가 다르다면 [철심의 일](/posts/spacebar-rattle.html)이고요.)
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
