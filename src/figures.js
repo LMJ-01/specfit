@@ -930,6 +930,7 @@ export const figures = {
   'stabilizer-wire': stabilizerWire,
   'wheel-always-sometimes': wheelAlwaysSometimes,
   'charger-watt-budget': chargerWattBudget,
+  'power-cut-ladder': powerCutLadder,
 };
 
 /**
@@ -4906,5 +4907,45 @@ function chargerWattBudget() {
     '충전기 와트 — 공급과 소비의 예산',
     W, 206, b,
     '큰 충전기는 기기가 필요한 만큼만 꺼내 쓰므로 안전하고, 조금 낮은 충전기는 부하 때 소비가 공급을 넘어 배터리에서 모자란 몫을 꺼내 씁니다. 폰 충전기가 안 되는 이유는 와트보다 20V 단계가 없어 협상이 결렬되기 때문이고, 60W를 넘기려면 케이블도 5A 지원이어야 합니다.'
+  );
+}
+
+/** pc-power-cut — 피해 후보는 부품이 아니라 데이터, 다시 켜는 순서 */
+function powerCutLadder() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '정전으로 툭 꺼졌다 — 부품은 퇴근했을 뿐, 확인할 곳은 파일', { weight: 600, size: 12.5 });
+  // 왼쪽: 피해 후보
+  b += t(24, 50, '피해 후보', { size: 10, weight: 600, fill: COLOR.text });
+  b += rect(24, 58, 276, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(34, 77, '부품 — 보호 설계, 한 번의 차단은 드문 피해', { size: 9, fill: COLOR.mute });
+  b += rect(24, 94, 276, 30, COLOR.over, { r: 6 });
+  b += t(34, 113, '데이터 — 저장 안 한 작업 · 쓰기 중이던 파일', { size: 9, weight: 600, fill: '#fff' });
+  b += t(24, 142, '조심할 두 장면', { size: 10, weight: 600, fill: COLOR.text });
+  b += rect(24, 150, 134, 40, COLOR.soft, { r: 6, stroke: COLOR.over });
+  b += t(91, 166, 'HDD가 쓰던 중', { anchor: 'middle', size: 9, weight: 600, fill: COLOR.over });
+  b += t(91, 181, '파일 열림 확인 → 딸깍 반복이면 백업', { anchor: 'middle', size: 7.8, fill: COLOR.mute });
+  b += rect(166, 150, 134, 40, COLOR.soft, { r: 6, stroke: COLOR.over });
+  b += t(233, 166, '윈도우 업데이트 중', { anchor: 'middle', size: 9, weight: 600, fill: COLOR.over });
+  b += t(233, 181, '복구 절차 돌면 기다리기', { anchor: 'middle', size: 7.8, fill: COLOR.mute });
+  // 오른쪽: 다시 켜는 순서
+  b += t(324, 50, '다시 켜는 순서', { size: 10, weight: 600, fill: COLOR.text });
+  const steps = [
+    ['① 전기부터', '차단기 · 멀티탭 · 복전 직후 깜빡이면 몇 분 대기'],
+    ['② 그냥 켠다', '특별한 의식 불필요'],
+    ['③ 디스크 점검이 돌면 기다린다', '강제 종료 뒤 정상 동작 — 중간에 끄지 않기'],
+    ['④ 작업 파일을 열어 본다', '자동 저장본 제안 — 온전하면 상황 종료'],
+  ];
+  steps.forEach((r, i) => {
+    const y = 58 + i * 34;
+    b += rect(324, y, 292, 28, i === 2 ? COLOR.fit : COLOR.soft, { r: 5, stroke: COLOR.line });
+    b += t(334, y + 12, r[0], { size: 9, weight: 600, fill: i === 2 ? '#fff' : COLOR.text });
+    b += t(334, y + 24, r[1], { size: 7.8, fill: i === 2 ? '#fff' : COLOR.mute });
+  });
+  b += t(324, 204, '반복되면 환경 문제 — UPS·전기 점검의 시점', { size: 8.8, fill: COLOR.mute });
+  return figure(
+    '정전 뒤 — 피해 후보와 다시 켜는 순서',
+    W, 212, b,
+    '한 번의 강제 차단으로 부품이 상하는 일은 드물고 피해 후보는 저장 중이던 데이터입니다. HDD가 쓰던 중이거나 윈도우 업데이트 중이었다면 확인이 필요하고, 다시 켤 때는 전기 상태 확인 뒤 그냥 켜고, 디스크 점검이 돌면 기다렸다가 작업 파일을 열어 보는 순서입니다.'
   );
 }
