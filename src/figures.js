@@ -932,6 +932,7 @@ export const figures = {
   'charger-watt-budget': chargerWattBudget,
   'power-cut-ladder': powerCutLadder,
   'router-reboot-rule': routerRebootRule,
+  'case-panel-probe': casePanelProbe,
 };
 
 /**
@@ -4988,5 +4989,42 @@ function routerRebootRule() {
     '공유기 재부팅 — 증상 기준과 재발 사다리',
     W, 208, b,
     '오래 켜둔 공유기에는 연결 기록과 메모리 잔여물이 쌓이지만 속도는 제품마다 달라, 증상이 없으면 재부팅 숙제가 없고 쓰다 보면 느려지는 집은 자동 재부팅으로 손을 뗍니다. 약발이 짧아지면 펌웨어, 발열, 기기 수, 노후 순으로 원인을 따로 봅니다.'
+  );
+}
+
+/** pc-case-open — 설계된 기류 길 vs 옆판 개방, 5분 진단 */
+function casePanelProbe() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '옆판 열기 — 결과가 아니라 정보가 값어치', { weight: 600, size: 12.5 });
+  // 닫힌 케이스: 설계된 길
+  b += t(24, 50, '닫힌 케이스 — 설계된 기류 길', { size: 9.6, weight: 600, fill: COLOR.fit });
+  b += rect(24, 58, 276, 70, COLOR.soft, { r: 6, stroke: COLOR.fit });
+  b += t(40, 80, '앞 흡기(필터)', { size: 8.6, fill: COLOR.text });
+  b += rect(112, 72, 60, 12, COLOR.fit, { r: 3 });
+  b += t(142, 81, '→', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += t(180, 80, '부품들 지나', { size: 8.6, fill: COLOR.text });
+  b += rect(236, 72, 52, 12, COLOR.fit, { r: 3 });
+  b += t(262, 81, '뒤 배기', { anchor: 'middle', size: 8, weight: 600, fill: '#fff' });
+  b += t(40, 104, '전원부·M.2 방열판 주변도 지나가는 바람에 식음', { size: 8.4, fill: COLOR.mute });
+  b += t(40, 118, '소음 한 겹 차단 · 먼지는 필터 경유 · 사고 확률 ≈ 0', { size: 8.4, fill: COLOR.mute });
+  // 열린 케이스
+  b += t(324, 50, '옆판 개방 — 길이 무너짐', { size: 9.6, weight: 600, fill: COLOR.over });
+  b += rect(324, 58, 292, 70, COLOR.soft, { r: 6, stroke: COLOR.over });
+  b += t(340, 80, '큰 발열원(GPU·CPU)은 옆으로 바로 빠져 시원해질 수 있음', { size: 8.4, fill: COLOR.text });
+  b += t(340, 96, '경로에 기대던 자리는 바람이 약해져 오히려 오를 수 있음', { size: 8.4, fill: COLOR.over });
+  b += t(340, 118, '대가: 먼지 필터 우회 · 소음 그대로 · 액체·이물 사고의 문', { size: 8.4, fill: COLOR.mute });
+  // 5분 진단
+  b += t(24, 152, '5분 진단 — 부하 건 채로 옆판을 열어 본다', { size: 10, weight: 600, fill: COLOR.text });
+  b += rect(24, 160, 290, 40, COLOR.fit, { r: 6 });
+  b += t(169, 176, '온도가 뚝 떨어짐 → 기류 문제 확정', { anchor: 'middle', size: 9.2, weight: 600, fill: '#fff' });
+  b += t(169, 192, '답은 열어두기가 아니라 팬 방향·청소·흡배기 보강', { anchor: 'middle', size: 8.2, fill: '#fff' });
+  b += rect(326, 160, 290, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(471, 176, '별 차이 없음 → 기류는 무죄', { anchor: 'middle', size: 9.2, weight: 600, fill: COLOR.text });
+  b += t(471, 192, '먼지·서멀·팬 커브 등 다른 갈래로', { anchor: 'middle', size: 8.2, fill: COLOR.mute });
+  return figure(
+    '옆판 열기 — 기류 길과 5분 진단',
+    W, 212, b,
+    '닫힌 케이스는 앞 흡기에서 뒤 배기로 이어지는 설계된 기류 길로 부품을 식히고, 옆판을 열면 큰 발열원은 시원해질 수 있어도 그 길에 기대던 자리는 오를 수 있습니다. 부하를 건 채 열어 온도가 뚝 떨어지면 기류 문제가 확정이고 답은 기류 고치기, 차이가 없으면 기류는 무죄입니다.'
   );
 }
