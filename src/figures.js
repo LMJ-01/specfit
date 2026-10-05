@@ -935,6 +935,7 @@ export const figures = {
   'case-panel-probe': casePanelProbe,
   'one-fan-triage': oneFanTriage,
   'psu-signal-clock': psuSignalClock,
+  'fan-led-two-wires': fanLedTwoWires,
 };
 
 /**
@@ -5099,5 +5100,39 @@ function psuSignalClock() {
     '파워 수명 — 신호 넷과 보증 배팅',
     W, 206, b,
     '파워는 커패시터가 열과 시간에 열화되며 늙고, 보증 기간이 제조사가 거는 수명 배팅이라 미리 가늠하는 지표가 됩니다. 교체는 연식이 아니라 간헐적 안 켜짐, 부하 중 꺼짐, 이상음과 탄내, 팬 갈리는 소리라는 신호로 판단하고, 멀쩡하면 업그레이드나 상시 가동 전환 때가 자연스러운 교체 시점입니다.'
+  );
+}
+
+/** fan-rgb-one-dead — 모터 선과 LED 선은 다른 선, 하나/전부/색만 갈래 */
+function fanLedTwoWires() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'RGB 팬 — 날개를 돌리는 선과 불을 켜는 선은 따로 간다', { weight: 600, size: 12.5 });
+  // 팬 + 두 선
+  b += `<circle cx="70" cy="86" r="30" fill="${COLOR.soft}" stroke="${COLOR.line}"/>`;
+  b += `<circle cx="70" cy="86" r="9" fill="${COLOR.text}"/>`;
+  b += rect(100, 70, 120, 6, COLOR.fit, { r: 3 });
+  b += t(226, 76, '모터 선 → 팬 헤더 (돈다/안 돈다)', { size: 8.8, weight: 600, fill: COLOR.fit });
+  b += rect(100, 98, 120, 6, COLOR.over, { r: 3 });
+  b += t(226, 104, 'LED 선 → RGB 허브·헤더 (켜진다/안 켜진다)', { size: 8.8, weight: 600, fill: COLOR.over });
+  b += t(24, 134, '팬이 돌아도 불은 꺼질 수 있고, 불이 꺼져도 팬은 멀쩡 — 모터는 잊고 LED 선만 따라간다', { size: 8.6, fill: COLOR.mute });
+  // 갈래 3
+  const cols = [
+    ['하나만 꺼짐', '그 팬 커넥터 → 허브 포트 → 자리 맞바꾸기', '팬을 따라가면 LED 불량(교체 사유)', COLOR.over],
+    ['전부 꺼짐', '허브 별도 전원 → 보드 헤더 → 제어 모드', '팬 하나하나 볼 이유 없음', COLOR.text],
+    ['색만 다름·깜빡', '접촉 → 체인 순서 → 채널·프로필', '버튼 제어와 소프트웨어 동시 켜짐 확인', COLOR.text],
+  ];
+  cols.forEach((c, i) => {
+    const x = 24 + i * 198;
+    b += rect(x, 146, 190, 50, COLOR.soft, { r: 6, stroke: COLOR.line });
+    b += t(x + 95, 162, c[0], { anchor: 'middle', size: 9.2, weight: 600, fill: c[3] });
+    b += t(x + 95, 177, c[1], { anchor: 'middle', size: 7.8, fill: COLOR.text });
+    b += t(x + 95, 190, c[2], { anchor: 'middle', size: 7.6, fill: COLOR.mute });
+  });
+  b += t(24, 214, '꽂기 전: 핀 3개·5V 와 핀 4개·12V 는 다른 규격 — 섞어 꽂으면 LED 손상 가능', { size: 8.8, weight: 600, fill: COLOR.over });
+  return figure(
+    'RGB 팬 — 두 가닥 선과 세 갈래',
+    W, 224, b,
+    'RGB 팬은 날개를 돌리는 모터 선과 불을 켜는 LED 선이 따로라 팬이 돌아도 불은 꺼질 수 있습니다. 하나만 꺼지면 커넥터와 허브 포트, 자리 맞바꾸기로 팬 불량을 가르고, 전부 꺼지면 허브 전원과 제어 모드, 색만 다르면 데이터 접촉과 채널을 봅니다. 5V 3핀과 12V 4핀은 섞어 꽂지 않습니다.'
   );
 }

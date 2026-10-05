@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>케이스 팬 RGB 하나만 안 켜질 때 — 팬이 도는 선과 불이 켜지는 선은 다른 선입니다 | 스펙핏</title>
+<meta name="description" content="케이스 팬 여러 개 중 하나만 불이 안 들어오거나 색이 다르게 나오는 증상은 게시판 단골 질문입니다. 팬을 돌리는 선과 LED를 켜는 선이 따로라서 팬이 돌아도 불은 꺼질 수 있고, 하나만인지 전부인지·색만 다른지로 갈래가 갈립니다. 격리 순서와 전압 주의를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/fan-rgb-one-dead.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="케이스 팬 RGB 하나만 안 켜질 때 — 팬이 도는 선과 불이 켜지는 선은 다른 선입니다 | 스펙핏">
+<meta property="og:description" content="케이스 팬 여러 개 중 하나만 불이 안 들어오거나 색이 다르게 나오는 증상은 게시판 단골 질문입니다. 팬을 돌리는 선과 LED를 켜는 선이 따로라서 팬이 돌아도 불은 꺼질 수 있고, 하나만인지 전부인지·색만 다른지로 갈래가 갈립니다. 격리 순서와 전압 주의를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/fan-rgb-one-dead.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"케이스 팬 RGB 하나만 안 켜질 때 — 팬이 도는 선과 불이 켜지는 선은 다른 선입니다","description":"케이스 팬 여러 개 중 하나만 불이 안 들어오거나 색이 다르게 나오는 증상은 게시판 단골 질문입니다. 팬을 돌리는 선과 LED를 켜는 선이 따로라서 팬이 돌아도 불은 꺼질 수 있고, 하나만인지 전부인지·색만 다른지로 갈래가 갈립니다. 격리 순서와 전압 주의를 정리했습니다.","datePublished":"2026-10-05","dateModified":"2026-10-05","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/fan-rgb-one-dead.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"케이스 팬 RGB 하나만 안 켜질 때 — 팬이 도는 선과 불이 켜지는 선은 다른 선입니다","item":"https://specfit.kr/posts/fan-rgb-one-dead.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>케이스 팬 RGB 하나만 안 켜질 때 — 팬이 도는 선과 불이 켜지는 선은 다른 선입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-10-05">2026년 10월 5일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>팬 네 개가 다 도는데 <strong>불은 세 개만 켜집니다.</strong> 또는 하나만
+색이 다르고, 하나만 깜빡입니다. 게시판에는 &quot;RGB 팬 하나만 안
+켜지는데 불량인가요&quot;, &quot;팬은 도는데 불이 안 들어와요&quot;가 매주
+올라오고 — 첫 문장이 이미 답의 절반입니다. <strong>팬은 돈다</strong>는 것.</p>
+<p>RGB 팬에는 선이 <strong>두 가닥</strong> 들어갑니다. 날개를 돌리는 <strong>모터
+선</strong>(보드나 허브의 팬 헤더로)과 불을 켜는 <strong>LED 선</strong>(RGB 허브나
+보드의 RGB 헤더로). 둘은 전기도 따로, 길도 따로라 — 팬이 멀쩡히
+도는 것과 불이 켜지는 것은 <strong>서로 아무 관계가 없습니다.</strong> 팬이
+도니 전원은 들어온다고 안심할 수도, 불이 안 켜지니 팬이 고장
+났다고 걱정할 수도 없는 이유입니다. 그래서 이 증상은 모터 쪽을
+완전히 잊고 <strong>LED 선만</strong> 따라가면 됩니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 224" width="640" height="224" role="img" aria-label="RGB 팬 — 두 가닥 선과 세 갈래">
+<title>RGB 팬 — 두 가닥 선과 세 갈래</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">RGB 팬 — 날개를 돌리는 선과 불을 켜는 선은 따로 간다</text><circle cx="70" cy="86" r="30" fill="var(--bg-soft)" stroke="var(--border)"/><circle cx="70" cy="86" r="9" fill="var(--fg)"/><rect x="100" y="70" width="120" height="6" fill="var(--fig-fit)" rx="3"/><text x="226" y="76" fill="var(--fig-fit)" font-size="8.8" font-weight="600">모터 선 → 팬 헤더 (돈다/안 돈다)</text><rect x="100" y="98" width="120" height="6" fill="var(--fig-over)" rx="3"/><text x="226" y="104" fill="var(--fig-over)" font-size="8.8" font-weight="600">LED 선 → RGB 허브·헤더 (켜진다/안 켜진다)</text><text x="24" y="134" fill="var(--fg-muted)" font-size="8.6">팬이 돌아도 불은 꺼질 수 있고, 불이 꺼져도 팬은 멀쩡 — 모터는 잊고 LED 선만 따라간다</text><rect x="24" y="146" width="190" height="50" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="119" y="162" fill="var(--fig-over)" font-size="9.2" font-weight="600" text-anchor="middle">하나만 꺼짐</text><text x="119" y="177" fill="var(--fg)" font-size="7.8" text-anchor="middle">그 팬 커넥터 → 허브 포트 → 자리 맞바꾸기</text><text x="119" y="190" fill="var(--fg-muted)" font-size="7.6" text-anchor="middle">팬을 따라가면 LED 불량(교체 사유)</text><rect x="222" y="146" width="190" height="50" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="317" y="162" fill="var(--fg)" font-size="9.2" font-weight="600" text-anchor="middle">전부 꺼짐</text><text x="317" y="177" fill="var(--fg)" font-size="7.8" text-anchor="middle">허브 별도 전원 → 보드 헤더 → 제어 모드</text><text x="317" y="190" fill="var(--fg-muted)" font-size="7.6" text-anchor="middle">팬 하나하나 볼 이유 없음</text><rect x="420" y="146" width="190" height="50" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="515" y="162" fill="var(--fg)" font-size="9.2" font-weight="600" text-anchor="middle">색만 다름·깜빡</text><text x="515" y="177" fill="var(--fg)" font-size="7.8" text-anchor="middle">접촉 → 체인 순서 → 채널·프로필</text><text x="515" y="190" fill="var(--fg-muted)" font-size="7.6" text-anchor="middle">버튼 제어와 소프트웨어 동시 켜짐 확인</text><text x="24" y="214" fill="var(--fig-over)" font-size="8.8" font-weight="600">꽂기 전: 핀 3개·5V 와 핀 4개·12V 는 다른 규격 — 섞어 꽂으면 LED 손상 가능</text>
+</svg>
+<figcaption>RGB 팬은 날개를 돌리는 모터 선과 불을 켜는 LED 선이 따로라 팬이 돌아도 불은 꺼질 수 있습니다. 하나만 꺼지면 커넥터와 허브 포트, 자리 맞바꾸기로 팬 불량을 가르고, 전부 꺼지면 허브 전원과 제어 모드, 색만 다르면 데이터 접촉과 채널을 봅니다. 5V 3핀과 12V 4핀은 섞어 꽂지 않습니다.</figcaption>
+</figure>
+<h2 id="어느-모양인가-갈래표">어느 모양인가 — 갈래표</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>모양</th><th>어디를 보나</th></tr></thead>
+<tbody>
+<tr><td><strong>하나만</strong> 안 켜짐</td><td>그 팬의 <strong>LED 커넥터</strong>(허브 쪽·팬 쪽 양끝) → 허브의 <strong>그 포트</strong> → 그 팬의 <strong>LED 자체</strong></td></tr>
+<tr><td><strong>전부</strong> 안 켜짐</td><td>허브의 <strong>별도 전원</strong>(SATA 등) → 허브와 보드 헤더 사이 → 제어 <strong>모드</strong>(버튼/소프트웨어)</td></tr>
+<tr><td>하나만 <strong>색이 다름·깜빡임</strong></td><td>그 팬으로 가는 <strong>데이터 신호</strong>(접촉·순서) → 다른 <strong>채널·프로필</strong>에 묶임 → 규격 혼용</td></tr>
+<tr><td>팬도 안 돌고 불도 안 켜짐</td><td>둘 다면 공통 전원 쪽 — 팬이 안 도는 것 자체는 <a href="/posts/gpu-one-fan-dead.html">그 팬 하나의 판정</a>과 같은 결</td></tr>
+</tbody>
+</table></div>
+<p>표에서 보듯 <strong>하나만</strong>과 <strong>전부</strong>는 보는 곳이 완전히 다릅니다.
+전부가 꺼졌다면 팬 하나하나를 볼 이유가 없고, 하나만 꺼졌다면
+허브 전원을 의심할 이유가 없습니다.</p>
+<h2 id="하나만-꺼졌을-때-자리-바꾸기로-가릅니다">하나만 꺼졌을 때 — 자리 바꾸기로 가릅니다</h2>
+<p>손이 가는 순서는 <strong>격리</strong>입니다. 전원을 끄고 콘센트까지 뽑은 뒤:</p>
+<p><strong>첫째, 그 팬의 LED 커넥터를 양끝에서 뺐다 꽂습니다.</strong> 허브 쪽
+포트에 꽂힌 끝과(팬에서 나온 LED 선이 허브에 들어가는 자리),
+제품에 따라 팬 쪽에도 탈착되는 끝이 있으면 그쪽도요. 조립·청소·
+이사 뒤라면 여기서 끝나는 경우가 가장 흔합니다.</p>
+<p><strong>둘째, 허브의 다른 포트로 옮겨 봅니다.</strong> 켜지면 <strong>포트</strong>가
+범인이고(허브 불량 또는 그 포트만 죽음), 여전히 안 켜지면 팬
+쪽입니다.</p>
+<p><strong>셋째, 멀쩡한 팬과 자리를 맞바꿉니다.</strong> 안 켜지던 팬을 켜지던
+팬 자리에 꽂고, 반대로도. 증상이 <strong>팬을 따라가면</strong> 그 팬의 LED
+불량이고, <strong>자리를 따라가면</strong> 허브·배선입니다. <a href="/posts/dual-monitor-one-blank.html">모니터 한쪽 안
+나올 때의 맞바꾸기</a>와 똑같은
+논리입니다.</p>
+<p>팬을 따라갔다면 — 모터는 멀쩡해도 <strong>LED 불량은 교체 사유가 되는
+경우가 많습니다</strong>(보증·유통사 정책에 따라 다릅니다). 팬이 도니까
+그냥 쓰라는 답도 틀리진 않지만, 보증 기간 안이라면 교환부터
+물어보는 게 순서입니다.</p>
+<h2 id="색만-다르거나-깜빡일-때">색만 다르거나 깜빡일 때</h2>
+<p>불은 켜지는데 그 팬만 <strong>색이 다르거나 깜빡이거나 한 박자 늦게</strong>
+따라온다면 LED에 가는 <strong>데이터</strong>가 흔들리는 쪽입니다. 커넥터
+접촉이 불량하거나, 체인(팬에서 팬으로 이어 꽂는 구성)의 <strong>순서
+중간</strong>에서 신호가 꼬이거나, 제어 소프트웨어에서 그 팬만 <strong>다른
+채널·프로필</strong>에 묶인 경우입니다. 접촉부터 보고, 체인이면 그 팬을
+체인의 맨 앞으로 옮겨 봤을 때 멀쩡해지는지가 단서이고, 소프트웨어
+쪽은 <strong>케이스 버튼 제어와 보드 소프트웨어 제어가 동시에 켜져
+있지 않은지</strong>를 봅니다 — 둘이 서로 다른 명령을 보내면 일부
+팬만 엉뚱하게 나오는 모습이 됩니다.</p>
+<h2 id="전압-주의-꽂기-전에-핀과-숫자를-봅니다">전압 주의 — 꽂기 전에 핀과 숫자를 봅니다</h2>
+<p>RGB 헤더에는 <strong>두 규격</strong>이 있습니다. 핀 3개짜리(가운데 하나가
+빈 자리인 모양이 흔함)에 <strong>5V</strong>가 적힌 쪽과, 핀 4개짜리에
+<strong>12V</strong>가 적힌 쪽. 겉보기는 비슷하지만 <strong>섞어 꽂으면 LED가 상할
+수 있고</strong>, 특히 5V짜리 팬을 12V 헤더에 꽂는 쪽이 위험합니다.
+팬 LED 선의 핀 수와 보드·허브 헤더 옆의 전압 표기를 맞추는 것이
+전부이고, 안 맞으면 변환 없이 꽂지 않습니다. &quot;새로 산 팬 하나만
+안 켜진다&quot;의 적지 않은 비율이 이 자리에서 나옵니다.</p>
+<p>정리하면 — <strong>팬이 도는지는 잊고 LED 선만 봅니다.</strong> 하나만이면
+커넥터 → 포트 → 자리 맞바꾸기로 팬 불량인지 가르고, 전부면 허브
+전원과 모드, 색만 다르면 데이터·채널입니다. 그리고 꽂기 전엔
+5V와 12V를 봅니다. 불이 아니라 <strong>팬 자체가 서 있다</strong>면 그건
+LED 선이 아니라 모터 선의 일이라 <a href="/posts/gpu-one-fan-dead.html">팬 하나만 멈춤 판정</a>
+으로, 케이스 조명과 <strong>전원 표시등 깜빡임을 헷갈리는</strong> 경우는
+<a href="/posts/pc-power-led-blinking.html">표시등 판정 글</a>이 갈라 둔
+자리입니다. 팬을 몇 개 어디에 둘지는 <a href="/posts/case-fan-setup.html">흡배기 구성</a>
+의 영역이고요.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">팬RGB</span> <span class="tag">ARGB</span> <span class="tag">RGB안켜짐</span> <span class="tag">케이스팬</span> <span class="tag">RGB허브</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/gpu-one-fan-dead.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 팬 세 개 중 하나만 안 돌 때 — 쉬는 건지 죽은 건지는 부하가 가립니다</span>
+        <span class="card-desc">그래픽카드 팬 세 개 중 하나만 멈춰 있거나 그 팬만 소리가 다른 증상은 게시판 단골 질문입니다. 저부하에서 쉬는 설계, 팬을 묶음으로 제어하는 구조, 베어링·모터 고장은 겉모습이 같아도 부하를 걸면 갈립니다. 손가락 판정과 처방 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/gpu-backplate-hot.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 백플레이트가 손 대기 뜨거울 때 — 손의 온도계와 부품의 온도계는 눈금이 다릅니다</span>
+        <span class="card-desc">게임을 하다 그래픽카드 뒷판(백플레이트)에 손을 댔더니 깜짝 놀랄 만큼 뜨거워서 고장인지 묻는 질문은 게시판 단골입니다. 뒷판이 뜨거운 건 열이 거기로 빠져나오고 있다는 설계의 신호인 경우가 대부분이고, 판단은 손이 아니라 센서로 합니다. 정상과 경고를 가르는 기준을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/cpu-temp-normal.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">게임 중 CPU 온도, 몇 도까지 괜찮나 — 답이 갈리는 이유부터가 힌트입니다</span>
+        <span class="card-desc">게임 중 CPU가 80도를 넘는 걸 보고 검색하면 답변이 60도부터 95도까지 제각각이라 더 불안해집니다. 몇 도가 정상인지는 제품·쿨러마다 달라 한 숫자로 답할 수 없고, 판정은 온도의 거동으로 합니다 — 평형·성능 유지·추세 세 기준과 개선 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

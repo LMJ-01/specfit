@@ -13,6 +13,13 @@
     <description>그래픽카드 팬 세 개 중 하나만 멈춰 있거나 그 팬만 소리가 다른 증상은 게시판 단골 질문입니다. 저부하에서 쉬는 설계, 팬을 묶음으로 제어하는 구조, 베어링·모터 고장은 겉모습이 같아도 부하를 걸면 갈립니다. 손가락 판정과 처방 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>케이스 팬 RGB 하나만 안 켜질 때 — 팬이 도는 선과 불이 켜지는 선은 다른 선입니다</title>
+    <link>https://specfit.kr/posts/fan-rgb-one-dead.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/fan-rgb-one-dead.html</guid>
+    <pubDate>Sun, 04 Oct 2026 15:00:00 GMT</pubDate>
+    <description>케이스 팬 여러 개 중 하나만 불이 안 들어오거나 색이 다르게 나오는 증상은 게시판 단골 질문입니다. 팬을 돌리는 선과 LED를 켜는 선이 따로라서 팬이 돌아도 불은 꺼질 수 있고, 하나만인지 전부인지·색만 다른지로 갈래가 갈립니다. 격리 순서와 전압 주의를 정리했습니다.</description>
+  </item>
+  <item>
     <title>스페이스바·엔터만 소리가 다를 때 — 스위치가 아니라 철심의 소리입니다</title>
     <link>https://specfit.kr/posts/spacebar-rattle.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/spacebar-rattle.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-random-notification-sound.html</guid>
     <pubDate>Mon, 28 Sep 2026 15:00:00 GMT</pubDate>
     <description>컴퓨터에서 정체 모를 띠링, 뚜둥 소리가 간헐적으로 나면 해킹인가 고장인가 불안해집니다. 소리는 반드시 범인이 있고, 잡는 도구는 윈도우 안에 이미 있습니다 — 음소거 실험으로 안팎을 가르고, 소리의 종류(연결음·알림음·경고음)별로 범인을 지목하는 수사 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>컴퓨터 새로 맞출 때 옛 부품 재사용 — 짐마다 통과할 관문이 다릅니다</title>
-    <link>https://specfit.kr/posts/pc-parts-reuse.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-parts-reuse.html</guid>
-    <pubDate>Mon, 28 Sep 2026 15:00:00 GMT</pubDate>
-    <description>새 견적을 짜면서 쓰던 부품 중 뭘 가져가도 되는지는 견적 게시판의 단골 질문입니다. 답은 부품마다 다른 관문에 있습니다 — 그냥 이사 가는 짐, 규격(세대)을 통과해야 하는 짐, 나이까지 따져야 하는 짐. 부품별 판정과 내보내는 짐의 개인정보 정리까지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
