@@ -940,6 +940,7 @@ export const figures = {
   'moving-weak-spot': movingWeakSpot,
   'paste-where-matters': pasteWhereMatters,
   'screw-stop-vs-force': screwStopVsForce,
+  'fan-direction-check': fanDirectionCheck,
 };
 
 /**
@@ -5288,3 +5289,49 @@ function screwStopVsForce() {
     '쿨러 고정 나사는 더 돌아가지 않는 지점이 설계 압력이라 거기서 멈추면 되고 그 뒤에 힘을 더 주는 것이 보드 휨과 접촉 불량을 부릅니다. 대각선으로 조금씩 번갈아 조이고, 판정은 보드 모양이 아니라 램 인식과 부팅이 흔들리는지, 온도가 오르는지로 합니다.'
   );
 }
+
+function fanDirectionCheck() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '팬 방향 확인 — 단서 셋, 그다음이 흐름', { weight: 600, size: 12.5 });
+  // 왼쪽: 팬 단면 모식도 (프레임 + 살 + 바람 화살표)
+  b += rect(24, 44, 150, 150, COLOR.soft, { r: 10, stroke: COLOR.line });
+  b += '<circle cx="99" cy="119" r="58" fill="none" stroke="' + COLOR.line + '" stroke-width="1.2"/>';
+  b += '<circle cx="99" cy="119" r="14" fill="' + COLOR.line + '"/>';
+  b += '<path d="M99 105 L99 62 M99 133 L99 176 M85 119 L42 119 M113 119 L156 119" stroke="' + COLOR.mute + '" stroke-width="2"/>';
+  b += t(99, 48, '뒷면(살이 있는 면)', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  b += '<path d="M186 100 L226 100 M216 92 L226 100 L216 108" fill="none" stroke="' + COLOR.fit + '" stroke-width="2.2"/>';
+  b += t(206, 124, '바람', { size: 8.4, weight: 600, fill: COLOR.fit, anchor: 'middle' });
+  b += t(206, 136, '나가는 쪽', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  // 가운데: 단서 셋
+  b += t(250, 56, '단서 셋', { size: 9.6, weight: 600, fill: COLOR.text });
+  const clues = [
+    ['① 프레임 옆면 화살표', '하나는 회전, 하나는 바람 방향'],
+    ['② 살(지지대)이 있는 면', '= 바람이 나가는 면 · 날개 오목면 방향'],
+    ['③ 켜고 티슈 대보기', '가장 확실 — 도는 날개에 손 금지'],
+  ];
+  clues.forEach((c, i) => {
+    const y = 66 + i * 42;
+    b += rect(250, y, 176, 36, COLOR.soft, { r: 5, stroke: COLOR.line });
+    b += t(258, y + 14, c[0], { size: 8.6, weight: 600, fill: COLOR.text });
+    b += t(258, y + 27, c[1], { size: 7.4, fill: COLOR.mute });
+  });
+  // 오른쪽: 케이스 흐름
+  b += t(446, 56, '흐름 — 앞·아래 흡기, 뒤·위 배기', { size: 9.6, weight: 600, fill: COLOR.text });
+  b += rect(446, 68, 170, 110, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += '<path d="M452 123 L492 123 M484 116 L492 123 L484 130" fill="none" stroke="' + COLOR.fit + '" stroke-width="2"/>';
+  b += t(472, 108, '앞 흡기', { size: 7.6, fill: COLOR.fit, anchor: 'middle' });
+  b += '<path d="M570 123 L610 123 M602 116 L610 123 L602 130" fill="none" stroke="' + COLOR.fit + '" stroke-width="2"/>';
+  b += t(590, 108, '뒤 배기', { size: 7.6, fill: COLOR.fit, anchor: 'middle' });
+  b += '<path d="M531 100 L531 76 M524 84 L531 76 L538 84" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.6"/>';
+  b += t(531, 150, '뒤 팬이 안쪽을 향하면', { size: 7.6, weight: 600, fill: COLOR.over, anchor: 'middle' });
+  b += t(531, 163, '더운 공기가 안에서 맴돎 → 방향부터', { size: 7.2, fill: COLOR.over, anchor: 'middle' });
+  b += t(24, 212, '순서: 먼지 청소 → 팬 방향 점검 → 그다음이 추가 구매 (공짜인 둘이 먼저)', { size: 8.4, weight: 600, fill: COLOR.text });
+  return figure(
+    '케이스 팬 방향 확인',
+    W, 224,
+    b,
+    '팬 방향은 프레임 옆면 화살표, 살이 있는 면이 바람 나가는 쪽이라는 구조, 켜고 티슈를 대보는 확인 세 단서로 가립니다. 앞·아래에서 들어와 뒤·위로 나가는 흐름이 기본이고, 거꾸로 달린 팬 하나가 더운 공기를 안에서 맴돌게 하니 추가 구매보다 방향 점검이 먼저입니다.'
+  );
+}
+
