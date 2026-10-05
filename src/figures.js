@@ -937,6 +937,7 @@ export const figures = {
   'psu-signal-clock': psuSignalClock,
   'fan-led-two-wires': fanLedTwoWires,
   'dust-signal-three': dustSignalThree,
+  'moving-weak-spot': movingWeakSpot,
 };
 
 /**
@@ -5168,5 +5169,44 @@ function dustSignalThree() {
     '먼지 청소 — 신호 셋과 순서',
     W, 210, b,
     '먼지는 열의 통로를 막아 컴퓨터가 팬을 더 돌리게 만들므로 청소 시점은 달력이 아니라 같은 작업인데 시끄러워짐, 온도 추세 상승, 필터에 보이는 먼지라는 신호 셋으로 판단합니다. 순서는 전원 분리, 필터, 바람으로 바깥 방향, 팬은 잡아 두기이며 진공 직접 흡입과 물은 피합니다.'
+  );
+}
+
+/** pc-moving-day — 급소 하나(매달린 카드)와 포장·도착 순서 */
+function movingWeakSpot() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '이사 운송 — 급소는 하나, 슬롯에 매달린 무거운 그래픽카드', { weight: 600, size: 12.5 });
+  // 왼쪽: 본체 단면 — 매달린 카드
+  b += rect(24, 40, 276, 118, COLOR.soft, { r: 8, stroke: COLOR.line });
+  b += t(40, 58, '세워 실으면', { size: 8.8, weight: 600, fill: COLOR.text });
+  b += rect(40, 66, 8, 70, COLOR.text, { r: 1 });
+  b += rect(48, 92, 120, 9, COLOR.over, { r: 2 });
+  b += t(172, 100, '← 가로로 매달림 → 덜컹임이 슬롯에', { size: 7.8, fill: COLOR.over });
+  b += rect(52, 101, 30, 6, COLOR.accent, { r: 1 });
+  b += t(40, 150, '램·SSD·보드는 나사로 고정 — 운송에 둔감', { size: 8.2, fill: COLOR.mute });
+  b += rect(184, 110, 104, 40, COLOR.fit, { r: 6 });
+  b += t(236, 126, '분리가 정석', { anchor: 'middle', size: 9, weight: 600, fill: '#fff' });
+  b += t(236, 141, '차선: 아래를 받쳐 매달림 제거', { anchor: 'middle', size: 7.4, fill: '#fff' });
+  // 오른쪽: 순서
+  b += t(324, 50, '포장 → 도착 순서', { size: 9.6, weight: 600, fill: COLOR.text });
+  const steps = [
+    ['① 선부터 사진', '재연결이 기억력 싸움 → 사진 대조'],
+    ['② 원박스 또는 꽉 찬 완충', '안에서 놀지 않게 — 밑면·모서리'],
+    ['③ 눕히면 메인보드 쪽이 바닥', '부품이 매달리지 않고 얹히는 자세'],
+    ['④ 차에서는 좌석에, 위에 짐 없이', '트렁크 바닥보다 완충되는 자리'],
+    ['⑤ 도착 후 꽂힘 확인 → 부팅', '이사 직후 증상 대부분은 덜 꽂힘'],
+  ];
+  steps.forEach((r, i) => {
+    const y = 58 + i * 28;
+    b += rect(324, y, 292, 24, i === 4 ? COLOR.fit : COLOR.soft, { r: 5, stroke: COLOR.line });
+    b += t(332, y + 10, r[0], { size: 8.6, weight: 600, fill: i === 4 ? '#fff' : COLOR.text });
+    b += t(332, y + 20, r[1], { size: 7.4, fill: i === 4 ? '#fff' : COLOR.mute });
+  });
+  b += t(24, 184, '겨울: 찬 차에서 실내로 들어온 직후 바로 켜지 않기(결로) · 택배는 분리가 필수 쪽, 무거운 공랭 쿨러도 고려', { size: 8.2, fill: COLOR.mute });
+  return figure(
+    '이사 운송 — 급소 하나와 순서',
+    W, 200, b,
+    '운송에서 진짜 취약한 곳은 슬롯에 가로로 매달린 무거운 그래픽카드 하나라 분리가 정석이고 차선은 아래를 받쳐 매달림을 없애는 것입니다. 포장은 선 사진, 원박스나 꽉 찬 완충, 눕히면 메인보드 쪽이 바닥, 차에서는 좌석 순이고 도착 후에는 꽂힘 확인 뒤 부팅합니다.'
   );
 }
