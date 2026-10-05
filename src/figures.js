@@ -939,6 +939,7 @@ export const figures = {
   'dust-signal-three': dustSignalThree,
   'moving-weak-spot': movingWeakSpot,
   'paste-where-matters': pasteWhereMatters,
+  'screw-stop-vs-force': screwStopVsForce,
 };
 
 /**
@@ -5249,5 +5250,41 @@ function pasteWhereMatters() {
     '서멀 삐져나옴 — 자리별 판정',
     W, 198, b,
     '쿨러 압력이 서멀을 얇게 펴고 남는 몫을 옆으로 밀어내므로 삐져나온 양은 온도에 거의 영향이 없고, 흔히 쓰는 서멀은 전기가 통하지 않습니다. 뚜껑 옆면과 보드 표면은 무해하고 소켓 핀과 슬롯 접점만 조심하며, 다시 바를지는 온도가 평형에 오르는지로 정합니다.'
+  );
+}
+
+/** cooler-screw-torque — 끝까지 vs 힘껏, 증상으로 판정 */
+function screwStopVsForce() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '쿨러 나사 — "끝까지"는 설계 압력, "힘껏"이 문제', { weight: 600, size: 12.5 });
+  // 왼쪽: 나사 두 상태
+  b += rect(24, 40, 290, 60, COLOR.soft, { r: 6, stroke: COLOR.fit });
+  b += t(40, 58, '끝까지 — 더 돌아가지 않는 지점에서 멈춤', { size: 9, weight: 600, fill: COLOR.fit });
+  b += t(40, 74, '스프링·멈춤 턱이 설계 압력을 잡아 줌', { size: 8.2, fill: COLOR.mute });
+  b += t(40, 90, '보드가 살짝 휘어 보여도 백플레이트가 받치는 범위', { size: 8.2, fill: COLOR.mute });
+  b += rect(24, 108, 290, 60, COLOR.soft, { r: 6, stroke: COLOR.over });
+  b += t(40, 126, '힘껏 — 멈춘 뒤 드라이버에 힘을 더 줌', { size: 9, weight: 600, fill: COLOR.over });
+  b += t(40, 142, '보드 휨 → 소켓·슬롯 접촉이 흔들림', { size: 8.2, fill: COLOR.mute });
+  b += t(40, 158, '한쪽만 먼저 끝까지 → 비대칭 압력', { size: 8.2, fill: COLOR.mute });
+  b += t(24, 186, '순서: 대각선으로 조금씩 번갈아 → 네 귀퉁이 모두 멈추는 지점 → 흔들어 유격 확인', { size: 8.4, weight: 600, fill: COLOR.text });
+  // 오른쪽: 증상 판정
+  b += t(334, 50, '판정은 보드 모양이 아니라 증상', { size: 9.6, weight: 600, fill: COLOR.text });
+  const rows = [
+    ['부팅·온도·인식 전부 정상', '흔한 모습 — 손볼 것 없음', COLOR.fit],
+    ['램 인식 들쭉날쭉 · 부팅 불안정', '과조임 — 네 나사 같은 양씩 조금 풀기', COLOR.over],
+    ['온도 높음 · 쿨러 흔들면 유격', '덜 조임·비대칭 — 다시 장착', COLOR.over],
+  ];
+  rows.forEach((r, i) => {
+    const y = 58 + i * 40;
+    b += rect(334, y, 282, 34, COLOR.soft, { r: 5, stroke: r[2] });
+    b += t(344, y + 14, r[0], { size: 8.8, weight: 600, fill: r[2] });
+    b += t(344, y + 27, r[1], { size: 7.8, fill: COLOR.mute });
+  });
+  b += t(334, 186, '뗐다 다시 달면 서멀은 새로 — 전원·콘센트 분리 후', { size: 8.2, fill: COLOR.mute });
+  return figure(
+    '쿨러 나사 — 끝까지와 힘껏',
+    W, 198, b,
+    '쿨러 고정 나사는 더 돌아가지 않는 지점이 설계 압력이라 거기서 멈추면 되고 그 뒤에 힘을 더 주는 것이 보드 휨과 접촉 불량을 부릅니다. 대각선으로 조금씩 번갈아 조이고, 판정은 보드 모양이 아니라 램 인식과 부팅이 흔들리는지, 온도가 오르는지로 합니다.'
   );
 }
