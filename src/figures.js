@@ -934,6 +934,7 @@ export const figures = {
   'router-reboot-rule': routerRebootRule,
   'case-panel-probe': casePanelProbe,
   'one-fan-triage': oneFanTriage,
+  'psu-signal-clock': psuSignalClock,
 };
 
 /**
@@ -5062,5 +5063,41 @@ function oneFanTriage() {
     '팬 하나만 멈춤 — 부하와 손가락으로 가르기',
     W, 200, b,
     '팬 하나만 서 있어도 부하에서 셋 다 돌면 저부하에 쉬는 설계이고, 끝내 침묵하면 전원을 끄고 손끝으로 튕겨 뻑뻑하면 베어링 노화, 가볍게 도는데 안 돌았다면 모터나 배선입니다. 어느 갈래든 보증 AS가 먼저이고 팬 교체와 카드 교체를 저울질합니다.'
+  );
+}
+
+/** psu-lifespan — 연식이 아니라 신호, 보증은 배팅, 자연 교체 시점 */
+function psuSignalClock() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '파워 수명 — 연식이 아니라 신호로 판단', { weight: 600, size: 12.5 });
+  // 왼쪽: 늙는 경로 + 보증
+  b += t(24, 50, '어떻게 늙나', { size: 9.6, weight: 600, fill: COLOR.text });
+  b += rect(24, 58, 276, 44, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(34, 76, '커패시터 열화 — 열 × 시간', { size: 9, weight: 600, fill: COLOR.text });
+  b += t(34, 92, '꽉 채운 부하·통풍 나쁜 케이스가 빨리 늙게 함', { size: 8.2, fill: COLOR.mute });
+  b += t(24, 124, '미리 가늠하는 지표', { size: 9.6, weight: 600, fill: COLOR.text });
+  b += rect(24, 132, 276, 44, COLOR.fit, { r: 6 });
+  b += t(34, 150, '보증 기간 = 제조사가 거는 수명 배팅', { size: 9, weight: 600, fill: '#fff' });
+  b += t(34, 166, '같은 용량, 보증 3년과 10년은 다른 물건 — 단 보장은 아님', { size: 8.2, fill: '#fff' });
+  b += t(24, 196, '멀쩡하면 그대로 — 업그레이드·상시 가동 전환이 자연스러운 교체 시점', { size: 8.4, fill: COLOR.mute });
+  // 오른쪽: 신호 4
+  b += t(324, 50, '진짜 교체 신호 — 연식과 무관', { size: 9.6, weight: 600, fill: COLOR.over });
+  const sig = [
+    ['① 간헐적으로 안 켜짐', '몇 번 눌러야 · 어떤 날만'],
+    ['② 부하 중 꺼짐·재부팅', '파워는 용의자 중 하나 — 꺼진 모양으로 갈래'],
+    ['③ 이상음·탄내', '즉시 사용 중단 — 코일노이즈는 신호 아님'],
+    ['④ 팬 갈리는 소리', '청소로 안 되면 신호 — 안 도는 건 기능 먼저'],
+  ];
+  sig.forEach((r, i) => {
+    const y = 58 + i * 34;
+    b += rect(324, y, 292, 28, i === 2 ? COLOR.over : COLOR.soft, { r: 5, stroke: COLOR.line });
+    b += t(334, y + 12, r[0], { size: 9, weight: 600, fill: i === 2 ? '#fff' : COLOR.text });
+    b += t(334, y + 24, r[1], { size: 7.8, fill: i === 2 ? '#fff' : COLOR.mute });
+  });
+  return figure(
+    '파워 수명 — 신호 넷과 보증 배팅',
+    W, 206, b,
+    '파워는 커패시터가 열과 시간에 열화되며 늙고, 보증 기간이 제조사가 거는 수명 배팅이라 미리 가늠하는 지표가 됩니다. 교체는 연식이 아니라 간헐적 안 켜짐, 부하 중 꺼짐, 이상음과 탄내, 팬 갈리는 소리라는 신호로 판단하고, 멀쩡하면 업그레이드나 상시 가동 전환 때가 자연스러운 교체 시점입니다.'
   );
 }
