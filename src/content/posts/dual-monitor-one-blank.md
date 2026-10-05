@@ -2,7 +2,7 @@
 title: 듀얼 모니터 한쪽만 안 나올 때 — 맞바꾸기 한 번이면 범인이 갈립니다
 description: 잘 쓰던 듀얼 모니터에서 한쪽만 화면이 안 나오는 일은 흔한데, 원인 후보가 많아 헤매기 쉽습니다. 케이블 맞바꾸기 한 번으로 범인의 절반이 갈리고, 증상 세 갈래로 나머지가 갈립니다. 진단 순서를 정리했습니다.
 date: 2026-09-05
-updated: 2026-10-01
+updated: 2026-10-05
 category: monitor
 tags: [듀얼모니터, 화면안나옴, 신호없음, 모니터인식, 케이블]
 ---
@@ -139,6 +139,8 @@ tags: [듀얼모니터, 화면안나옴, 신호없음, 모니터인식, 케이�
 듀얼 모니터의 이웃 글들 — [듀얼 구성의 효용](/posts/dual-monitor-vs-single.html) ·
 [DP vs HDMI 대역폭](/posts/dp-vs-hdmi-coding.html) ·
 [노트북 출력 상한](/posts/laptop-dual-monitor-output.html)과 이어집니다.
+(이 글의 **맞바꾸기 격리**를 그대로 쓰는 다른 자리로는
+[RGB 팬 하나만 안 켜질 때](/posts/fan-rgb-one-dead.html)가 있습니다.)
 
 (한쪽이 아니라 **양쪽 다, 부팅부터** 안 나온다면 다른 증상입니다 —
 [팬은 도는데 화면이 안 나올 때](/posts/pc-boot-no-display.html)로 가세요.)
