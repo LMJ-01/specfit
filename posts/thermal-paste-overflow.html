@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서멀이 삐져나왔는데 괜찮나 — 양이 아니라 &quot;어디에 묻었나&quot;가 판정입니다 | 스펙핏</title>
+<meta name="description" content="쿨러를 조이고 보니 서멀이 옆으로 삐져나왔거나 메인보드에 묻어 걱정되는 사연은 조립 게시판 단골 질문입니다. 흔히 쓰는 서멀은 전기가 통하지 않아 묻은 양보다 묻은 자리가 기준이고, 온도가 정상이면 다시 바를 이유도 없습니다. 자리별 판정과 닦는 법, 예외를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/thermal-paste-overflow.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="서멀이 삐져나왔는데 괜찮나 — 양이 아니라 &quot;어디에 묻었나&quot;가 판정입니다 | 스펙핏">
+<meta property="og:description" content="쿨러를 조이고 보니 서멀이 옆으로 삐져나왔거나 메인보드에 묻어 걱정되는 사연은 조립 게시판 단골 질문입니다. 흔히 쓰는 서멀은 전기가 통하지 않아 묻은 양보다 묻은 자리가 기준이고, 온도가 정상이면 다시 바를 이유도 없습니다. 자리별 판정과 닦는 법, 예외를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/thermal-paste-overflow.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"서멀이 삐져나왔는데 괜찮나 — 양이 아니라 \"어디에 묻었나\"가 판정입니다","description":"쿨러를 조이고 보니 서멀이 옆으로 삐져나왔거나 메인보드에 묻어 걱정되는 사연은 조립 게시판 단골 질문입니다. 흔히 쓰는 서멀은 전기가 통하지 않아 묻은 양보다 묻은 자리가 기준이고, 온도가 정상이면 다시 바를 이유도 없습니다. 자리별 판정과 닦는 법, 예외를 정리했습니다.","datePublished":"2026-10-06","dateModified":"2026-10-06","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/thermal-paste-overflow.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"서멀이 삐져나왔는데 괜찮나 — 양이 아니라 \"어디에 묻었나\"가 판정입니다","item":"https://specfit.kr/posts/thermal-paste-overflow.html"}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>서멀이 삐져나왔는데 괜찮나 — 양이 아니라 &quot;어디에 묻었나&quot;가 판정입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-10-06">2026년 10월 6일</time>
+      
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>쿨러를 조이고 옆을 들여다보니 <strong>서멀이 삐져나와 있습니다.</strong> 어떤
+사람은 메인보드 위에 한 방울 떨어뜨렸고, 어떤 사람은 소켓 쪽으로
+흘러 들어간 것 같아 식은땀이 납니다. 게시판에는 &quot;너무 많이 발랐는데
+괜찮나요&quot;, &quot;닦아야 하나요&quot;, &quot;다시 발라야 하나요&quot;가 조립 시즌마다
+올라옵니다.</p>
+<p>안심할 것부터 — <strong>흔히 쓰는 서멀은 전기가 통하지 않습니다.</strong>
+실리콘이나 세라믹 계열의 보통 제품은 보드에 조금 묻어도 쇼트를
+내지 않고, 옆으로 삐져나온 양은 <strong>온도에도 거의 영향이 없습니다.</strong>
+쿨러를 조이는 압력이 서멀을 얇게 펴면서 남는 몫을 밀어낸 것뿐이라,
+&quot;많이 발랐다&quot;는 대개 <strong>&quot;밀려난 게 보인다&quot;</strong>는 뜻입니다. 그래서
+판정의 기준은 <strong>양이 아니라 자리</strong> — 어디에 묻었느냐입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 198" width="640" height="198" role="img" aria-label="서멀 삐져나옴 — 자리별 판정">
+<title>서멀 삐져나옴 — 자리별 판정</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">서멀 삐져나옴 — 양이 아니라 "어디에 묻었나"</text><rect x="60" y="48" width="200" height="22" fill="var(--fg)" rx="3"/><text x="160" y="63" fill="#fff" font-size="8.6" font-weight="600" text-anchor="middle">쿨러 바닥</text><rect x="72" y="70" width="176" height="6" fill="var(--fig-fit)" rx="4"/><rect x="52" y="70" width="20" height="6" fill="var(--fig-over)" rx="2"/><rect x="248" y="70" width="20" height="6" fill="var(--fig-over)" rx="2"/><rect x="80" y="76" width="160" height="20" fill="var(--bg-soft)" rx="3" stroke="var(--border)"/><text x="160" y="90" fill="var(--fg)" font-size="8.6" text-anchor="middle">CPU 뚜껑</text><rect x="40" y="96" width="240" height="14" fill="var(--bg-soft)" rx="2" stroke="var(--border)"/><text x="160" y="106" fill="var(--fg-muted)" font-size="7.8" text-anchor="middle">소켓 · 핀</text><text x="24" y="128" fill="var(--fg-muted)" font-size="8.4">압력이 서멀을 얇게 펴고 남는 몫을 옆으로 밀어냄 — 삐져나온 건 "밀려난 몫"</text><text x="24" y="144" fill="var(--fg-muted)" font-size="8.4">흔히 쓰는 서멀은 전기가 통하지 않음 (액체금속·전도성 제품은 예외)</text><rect x="324" y="48" width="292" height="30" fill="var(--bg-soft)" rx="5" stroke="var(--fig-fit)"/><text x="334" y="60" fill="var(--fig-fit)" font-size="8.8" font-weight="600">뚜껑 옆면 · 바닥 가장자리</text><text x="334" y="72" fill="var(--fg-muted)" font-size="7.8">무해 — 그대로 두거나 미관상 닦기</text><rect x="324" y="84" width="292" height="30" fill="var(--bg-soft)" rx="5" stroke="var(--fig-fit)"/><text x="334" y="96" fill="var(--fig-fit)" font-size="8.8" font-weight="600">보드 표면 한두 방울</text><text x="334" y="108" fill="var(--fg-muted)" font-size="7.8">보통 서멀이면 무해 — 먼지 붙기 전에 닦기</text><rect x="324" y="120" width="292" height="30" fill="var(--bg-soft)" rx="5" stroke="var(--fig-over)"/><text x="334" y="132" fill="var(--fig-over)" font-size="8.8" font-weight="600">소켓 안 · 핀 사이 · 슬롯 접점</text><text x="334" y="144" fill="var(--fg-muted)" font-size="7.8">접촉 방해 가능 — 핀은 손대지 않기, 점검 쪽</text><rect x="324" y="160" width="292" height="28" fill="var(--fig-fit)" rx="5"/><text x="470" y="172" fill="#fff" font-size="8.8" font-weight="600" text-anchor="middle">다시 발라야 하나 → 온도가 평형이면 아니오</text><text x="470" y="184" fill="#fff" font-size="7.6" text-anchor="middle">쿨러를 뗐다 다시 달 때만 새로 바름</text><text x="24" y="184" fill="var(--fg)" font-size="8.4" font-weight="600">닦기: 전원·콘센트 분리 → 알코올 + 면봉 → 굳은 건 긁지 않기</text>
+</svg>
+<figcaption>쿨러 압력이 서멀을 얇게 펴고 남는 몫을 옆으로 밀어내므로 삐져나온 양은 온도에 거의 영향이 없고, 흔히 쓰는 서멀은 전기가 통하지 않습니다. 뚜껑 옆면과 보드 표면은 무해하고 소켓 핀과 슬롯 접점만 조심하며, 다시 바를지는 온도가 평형에 오르는지로 정합니다.</figcaption>
+</figure>
+<h2 id="어디에-묻었나-자리별-판정">어디에 묻었나 — 자리별 판정</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>묻은 자리</th><th>판정</th><th>할 것</th></tr></thead>
+<tbody>
+<tr><td>CPU 뚜껑(히트스프레더) <strong>옆면</strong>, 쿨러 바닥 <strong>가장자리</strong></td><td>무해 — 밀려난 몫입니다</td><td>그대로 두거나, 보기 싫으면 닦습니다</td></tr>
+<tr><td>메인보드 <strong>표면</strong>(부품 위·기판) 한두 방울</td><td>보통 서멀이면 무해</td><td>먼지가 들러붙는 자리라 <strong>마르기 전에</strong> 닦아 두는 게 깔끔합니다</td></tr>
+<tr><td><strong>소켓 안·핀 사이</strong>, 램·PCIe <strong>슬롯 접점</strong></td><td>접촉을 방해할 수 있는 자리</td><td>겉에 묻은 건 닦되, <strong>핀은 건드리지 않습니다</strong> — 핀 사이로 들어갔다면 점검 쪽</td></tr>
+<tr><td>전도성 제품(액체금속 등)이 어디든 묻음</td><td>예외 — 쇼트 가능</td><td><strong>켜기 전에</strong> 전부 닦아 냅니다(아래)</td></tr>
+</tbody>
+</table></div>
+<p>표의 첫 두 줄이 질문의 대부분입니다. 무해한 자리이고, 닦는 이유는
+안전이 아니라 <strong>미관과 먼지</strong>입니다.</p>
+<h2 id="닦는-법-알코올-면봉-전원-분리">닦는 법 — 알코올, 면봉, 전원 분리</h2>
+<p>닦기로 했다면 순서는 짧습니다. <strong>전원을 끄고 콘센트를 뽑은 뒤</strong>,
+이소프로필 알코올을 묻힌 <strong>면봉이나 극세사 천</strong>으로 묻은 자리만
+살살 걷어냅니다. 물티슈는 닦이긴 해도 잔여물이 남는 쪽이라 알코올이
+정석이고, 이미 <strong>굳은 서멀은 억지로 긁지 않습니다</strong> — 부품 표면과
+기판 위 작은 소자가 더 약합니다. 소켓 핀 근처는 면봉이 핀을 건드려
+휘게 할 수 있어, <strong>핀 자체에는 손을 대지 않는</strong> 것이 원칙입니다.
+핀 사이로 들어간 것 같다면 자가 처리보다 점검을 받는 쪽이 싸게
+끝나는 경우가 많습니다.</p>
+<h2 id="다시-발라야-하나-온도가-답입니다">다시 발라야 하나 — 온도가 답입니다</h2>
+<p>&quot;너무 많이 발랐으니 다시 발라야 하나&quot;의 답은 <strong>아니오</strong>인 경우가
+대부분입니다. 밀려난 몫이 보일 정도면 접촉면에는 충분히 깔린 것이고,
+확인은 눈이 아니라 <strong>온도</strong>로 합니다 — 켜서 부하를 걸었을 때
+<a href="/posts/cpu-temp-normal.html">온도가 평형에 오르고 유지되면</a> 양은
+문제가 없습니다. 반대로 <strong>모자라게</strong> 발랐을 때가 진짜 문제라, 코어
+일부가 쿨러에 닿지 못해 온도가 계속 오르는 모양이 나옵니다. 흔히
+&quot;콩알 하나&quot; 정도를 가운데에 놓고 쿨러 압력에 맡기라는 통설이 있고,
+바르는 모양(점·선·X자)의 우열은 커뮤니티의 긴 논쟁이라 여기서는
+&quot;압력이 펴 준다&quot;까지만 적습니다.</p>
+<p>한 가지만 기억하면 됩니다 — <strong>쿨러를 한 번 뗐다가 다시 달면 그때는
+새로 바릅니다.</strong> 떼는 순간 서멀 층에 공기가 들어가서, 이미 펴진
+서멀을 그대로 다시 누르는 건 처음 바른 것만 못합니다.</p>
+<h2 id="예외-전기가-통하는-서멀">예외 — 전기가 통하는 서멀</h2>
+<p>액체금속 계열이나 &quot;전도성&quot;이라고 적힌 제품은 이 글의 안심이
+적용되지 않습니다. 보드나 소켓 주변에 묻으면 <strong>쇼트를 낼 수 있어
+켜기 전에 전부 닦아 내야</strong> 하고, 알루미늄 쿨러 바닥과는 반응하는
+문제까지 있어 애초에 일반 조립에서 쓸 물건이 아닙니다. 내가 쓴
+제품이 어느 쪽인지 모르겠다면 포장의 표기부터 보는 게 순서입니다.</p>
+<p>정리하면 — 보통 서멀은 <strong>묻은 양이 아니라 묻은 자리</strong>로 판정하고,
+옆면·가장자리·보드 표면은 무해(닦는 건 미관), 소켓·슬롯 접점만
+조심하며, 다시 바를지는 <strong>온도</strong>가 정합니다. 조립을 마쳤는데
+<strong>아예 안 켜진다</strong>면 서멀이 아니라 <a href="/posts/pc-wont-boot-after-cleaning.html">조립 후 안 켜짐 사다리</a>
+의 풀린 접촉 쪽이 먼저이고, 몇 년 쓴 컴퓨터에서 <strong>다시 바를 때가
+됐는지</strong>는 <a href="/posts/pc-dust-cleaning.html">먼지 청소 글의 그 조건</a>
+(청소로 안 풀리는 온도 추세)이 기준입니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">서멀구리스</span> <span class="tag">서멀삐져나옴</span> <span class="tag">CPU조립</span> <span class="tag">서멀양</span> <span class="tag">쿨러장착</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/fan-rgb-one-dead.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">케이스 팬 RGB 하나만 안 켜질 때 — 팬이 도는 선과 불이 켜지는 선은 다른 선입니다</span>
+        <span class="card-desc">케이스 팬 여러 개 중 하나만 불이 안 들어오거나 색이 다르게 나오는 증상은 게시판 단골 질문입니다. 팬을 돌리는 선과 LED를 켜는 선이 따로라서 팬이 돌아도 불은 꺼질 수 있고, 하나만인지 전부인지·색만 다른지로 갈래가 갈립니다. 격리 순서와 전압 주의를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/gpu-one-fan-dead.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 팬 세 개 중 하나만 안 돌 때 — 쉬는 건지 죽은 건지는 부하가 가립니다</span>
+        <span class="card-desc">그래픽카드 팬 세 개 중 하나만 멈춰 있거나 그 팬만 소리가 다른 증상은 게시판 단골 질문입니다. 저부하에서 쉬는 설계, 팬을 묶음으로 제어하는 구조, 베어링·모터 고장은 겉모습이 같아도 부하를 걸면 갈립니다. 손가락 판정과 처방 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/gpu-backplate-hot.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">그래픽카드 백플레이트가 손 대기 뜨거울 때 — 손의 온도계와 부품의 온도계는 눈금이 다릅니다</span>
+        <span class="card-desc">게임을 하다 그래픽카드 뒷판(백플레이트)에 손을 댔더니 깜짝 놀랄 만큼 뜨거워서 고장인지 묻는 질문은 게시판 단골입니다. 뒷판이 뜨거운 건 열이 거기로 빠져나오고 있다는 설계의 신호인 경우가 대부분이고, 판단은 손이 아니라 센서로 합니다. 정상과 경고를 가르는 기준을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

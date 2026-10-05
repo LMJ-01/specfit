@@ -2,7 +2,7 @@
 title: 청소했더니 컴퓨터가 안 켜질 때 — 범인은 먼지가 아니라 움직인 것들입니다
 description: 큰맘 먹고 본체를 청소했는데 컴퓨터가 안 켜지는 사연이 게시판에 꾸준합니다. 대부분 부품이 죽은 게 아니라 청소 중에 무언가 풀리거나 덜 꽂힌 것 — 스위치·케이블·램·그래픽카드 순서의 점검 사다리와 증상별 갈래를 정리했습니다.
 date: 2026-09-11
-updated: 2026-10-01
+updated: 2026-10-06
 category: memory
 tags: [청소후부팅안됨, 램재장착, 접촉불량, 컴퓨터청소, 부팅문제]
 ---
@@ -155,6 +155,7 @@ tags: [청소후부팅안됨, 램재장착, 접촉불량, 컴퓨터청소, 부�
 부팅 사고의 이웃 판정들 — [청소 기본기와 신호](/posts/pc-dust-cleaning.html) ·
 [화면 안 나옴의 층 판정](/posts/pc-boot-no-display.html) ·
 [내부 작업 전 방전](/posts/pc-static-shock.html) ·
+[쿨러를 다시 달며 서멀이 삐져나왔을 때](/posts/thermal-paste-overflow.html) ·
 [부팅 점호의 정상 범위](/posts/pc-fan-loud-at-boot.html)와 이어집니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.

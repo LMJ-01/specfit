@@ -938,6 +938,7 @@ export const figures = {
   'fan-led-two-wires': fanLedTwoWires,
   'dust-signal-three': dustSignalThree,
   'moving-weak-spot': movingWeakSpot,
+  'paste-where-matters': pasteWhereMatters,
 };
 
 /**
@@ -5208,5 +5209,45 @@ function movingWeakSpot() {
     '이사 운송 — 급소 하나와 순서',
     W, 200, b,
     '운송에서 진짜 취약한 곳은 슬롯에 가로로 매달린 무거운 그래픽카드 하나라 분리가 정석이고 차선은 아래를 받쳐 매달림을 없애는 것입니다. 포장은 선 사진, 원박스나 꽉 찬 완충, 눕히면 메인보드 쪽이 바닥, 차에서는 좌석 순이고 도착 후에는 꽂힘 확인 뒤 부팅합니다.'
+  );
+}
+
+/** thermal-paste-overflow — 양이 아니라 자리, 온도로 확인 */
+function pasteWhereMatters() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '서멀 삐져나옴 — 양이 아니라 "어디에 묻었나"', { weight: 600, size: 12.5 });
+  // 단면: 쿨러 바닥 / 서멀 / CPU 뚜껑 / 소켓
+  b += rect(60, 48, 200, 22, COLOR.text, { r: 3 });
+  b += t(160, 63, '쿨러 바닥', { anchor: 'middle', size: 8.6, weight: 600, fill: '#fff' });
+  b += rect(72, 70, 176, 6, COLOR.fit);
+  b += rect(52, 70, 20, 6, COLOR.over, { r: 2 });
+  b += rect(248, 70, 20, 6, COLOR.over, { r: 2 });
+  b += rect(80, 76, 160, 20, COLOR.soft, { r: 3, stroke: COLOR.line });
+  b += t(160, 90, 'CPU 뚜껑', { anchor: 'middle', size: 8.6, fill: COLOR.text });
+  b += rect(40, 96, 240, 14, COLOR.soft, { r: 2, stroke: COLOR.line });
+  b += t(160, 106, '소켓 · 핀', { anchor: 'middle', size: 7.8, fill: COLOR.mute });
+  b += t(24, 128, '압력이 서멀을 얇게 펴고 남는 몫을 옆으로 밀어냄 — 삐져나온 건 "밀려난 몫"', { size: 8.4, fill: COLOR.mute });
+  b += t(24, 144, '흔히 쓰는 서멀은 전기가 통하지 않음 (액체금속·전도성 제품은 예외)', { size: 8.4, fill: COLOR.mute });
+  // 자리별 판정
+  const rows = [
+    ['뚜껑 옆면 · 바닥 가장자리', '무해 — 그대로 두거나 미관상 닦기', COLOR.fit],
+    ['보드 표면 한두 방울', '보통 서멀이면 무해 — 먼지 붙기 전에 닦기', COLOR.fit],
+    ['소켓 안 · 핀 사이 · 슬롯 접점', '접촉 방해 가능 — 핀은 손대지 않기, 점검 쪽', COLOR.over],
+  ];
+  rows.forEach((r, i) => {
+    const y = 48 + i * 36;
+    b += rect(324, y, 292, 30, COLOR.soft, { r: 5, stroke: r[2] });
+    b += t(334, y + 12, r[0], { size: 8.8, weight: 600, fill: r[2] });
+    b += t(334, y + 24, r[1], { size: 7.8, fill: COLOR.mute });
+  });
+  b += rect(324, 160, 292, 28, COLOR.fit, { r: 5 });
+  b += t(470, 172, '다시 발라야 하나 → 온도가 평형이면 아니오', { anchor: 'middle', size: 8.8, weight: 600, fill: '#fff' });
+  b += t(470, 184, '쿨러를 뗐다 다시 달 때만 새로 바름', { anchor: 'middle', size: 7.6, fill: '#fff' });
+  b += t(24, 184, '닦기: 전원·콘센트 분리 → 알코올 + 면봉 → 굳은 건 긁지 않기', { size: 8.4, weight: 600, fill: COLOR.text });
+  return figure(
+    '서멀 삐져나옴 — 자리별 판정',
+    W, 198, b,
+    '쿨러 압력이 서멀을 얇게 펴고 남는 몫을 옆으로 밀어내므로 삐져나온 양은 온도에 거의 영향이 없고, 흔히 쓰는 서멀은 전기가 통하지 않습니다. 뚜껑 옆면과 보드 표면은 무해하고 소켓 핀과 슬롯 접점만 조심하며, 다시 바를지는 온도가 평형에 오르는지로 정합니다.'
   );
 }

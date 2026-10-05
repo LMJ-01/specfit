@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>서멀이 삐져나왔는데 괜찮나 — 양이 아니라 "어디에 묻었나"가 판정입니다</title>
+    <link>https://specfit.kr/posts/thermal-paste-overflow.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/thermal-paste-overflow.html</guid>
+    <pubDate>Mon, 05 Oct 2026 15:00:00 GMT</pubDate>
+    <description>쿨러를 조이고 보니 서멀이 옆으로 삐져나왔거나 메인보드에 묻어 걱정되는 사연은 조립 게시판 단골 질문입니다. 흔히 쓰는 서멀은 전기가 통하지 않아 묻은 양보다 묻은 자리가 기준이고, 온도가 정상이면 다시 바를 이유도 없습니다. 자리별 판정과 닦는 법, 예외를 정리했습니다.</description>
+  </item>
+  <item>
     <title>그래픽카드 팬 세 개 중 하나만 안 돌 때 — 쉬는 건지 죽은 건지는 부하가 가립니다</title>
     <link>https://specfit.kr/posts/gpu-one-fan-dead.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-one-fan-dead.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-cold-boot-issue.html</guid>
     <pubDate>Tue, 29 Sep 2026 15:00:00 GMT</pubDate>
     <description>겨울 아침 차가운 방에서 컴퓨터가 안 켜지거나 켜졌다 꺼지기를 반복하다, 방이 데워지면 멀쩡해지는 증상은 커뮤니티의 계절 단골입니다. 저온이 부품에 주는 부담과 판정 프레임, 급가열이 오히려 위험한 이유(결로), 해마다 심해질 때의 노화 신호까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>아무것도 안 했는데 알림음이 날 때 — 소리에도 지문이 있습니다</title>
-    <link>https://specfit.kr/posts/pc-random-notification-sound.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-random-notification-sound.html</guid>
-    <pubDate>Mon, 28 Sep 2026 15:00:00 GMT</pubDate>
-    <description>컴퓨터에서 정체 모를 띠링, 뚜둥 소리가 간헐적으로 나면 해킹인가 고장인가 불안해집니다. 소리는 반드시 범인이 있고, 잡는 도구는 윈도우 안에 이미 있습니다 — 음소거 실험으로 안팎을 가르고, 소리의 종류(연결음·알림음·경고음)별로 범인을 지목하는 수사 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
