@@ -936,6 +936,7 @@ export const figures = {
   'one-fan-triage': oneFanTriage,
   'psu-signal-clock': psuSignalClock,
   'fan-led-two-wires': fanLedTwoWires,
+  'dust-signal-three': dustSignalThree,
 };
 
 /**
@@ -5134,5 +5135,38 @@ function fanLedTwoWires() {
     'RGB 팬 — 두 가닥 선과 세 갈래',
     W, 224, b,
     'RGB 팬은 날개를 돌리는 모터 선과 불을 켜는 LED 선이 따로라 팬이 돌아도 불은 꺼질 수 있습니다. 하나만 꺼지면 커넥터와 허브 포트, 자리 맞바꾸기로 팬 불량을 가르고, 전부 꺼지면 허브 전원과 제어 모드, 색만 다르면 데이터 접촉과 채널을 봅니다. 5V 3핀과 12V 4핀은 섞어 꽂지 않습니다.'
+  );
+}
+
+/** pc-dust-cleaning — 신호 셋 → 순서·안전 수칙 → 배치 */
+function dustSignalThree() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '먼지 청소 — 달력이 아니라 신호 셋', { weight: 600, size: 12.5 });
+  // 메커니즘
+  b += rect(24, 36, 592, 22, COLOR.soft, { r: 5, stroke: COLOR.line });
+  b += t(320, 51, '먼지가 방열핀·필터를 막음 → 같은 열의 배출 효율 ↓ → 컴퓨터는 팬을 더 돌려 메꿈 → 소음·온도로 신호', { anchor: 'middle', size: 8.6, fill: COLOR.text });
+  // 신호 3
+  const sig = [['① 같은 작업인데 시끄러움', '제일 먼저 오는 신호'], ['② 같은 부하인데 온도 추세 ↑', '추세 변화 1순위 용의자'], ['③ 필터·통풍구에 먼지가 보임', '열어 볼 것도 없는 신호']];
+  sig.forEach((r, i) => {
+    const x = 24 + i * 198;
+    b += rect(x, 68, 190, 40, COLOR.over, { r: 6 });
+    b += t(x + 95, 85, r[0], { anchor: 'middle', size: 8.8, weight: 600, fill: '#fff' });
+    b += t(x + 95, 100, r[1], { anchor: 'middle', size: 7.8, fill: '#fff' });
+  });
+  b += t(24, 124, '셋 다 없으면 안 열어도 됨 — 냄새가 신호면 순서가 다름(전원 차단 먼저)', { size: 8.4, fill: COLOR.mute });
+  // 순서·안전
+  b += t(24, 146, '청소 순서와 안전 수칙', { size: 9.6, weight: 600, fill: COLOR.text });
+  const steps = ['전원·케이블 분리', '필터부터', '바람으로 바깥 방향', '팬은 잡아 두고', '진공 직접 흡입·물 ✗'];
+  steps.forEach((x, i) => {
+    const px = 24 + i * 119;
+    b += rect(px, 154, 112, 26, i === 4 ? COLOR.soft : COLOR.fit, { r: 5, stroke: COLOR.line });
+    b += t(px + 56, 171, x, { anchor: 'middle', size: 8.2, weight: 600, fill: i === 4 ? COLOR.over : '#fff' });
+  });
+  b += t(24, 200, '덜 쌓이게: 바닥에서 올리고, 흡기를 약간 우세하게 잡아 필터 쪽으로만 들어오게 — 배치가 절반', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '먼지 청소 — 신호 셋과 순서',
+    W, 210, b,
+    '먼지는 열의 통로를 막아 컴퓨터가 팬을 더 돌리게 만들므로 청소 시점은 달력이 아니라 같은 작업인데 시끄러워짐, 온도 추세 상승, 필터에 보이는 먼지라는 신호 셋으로 판단합니다. 순서는 전원 분리, 필터, 바람으로 바깥 방향, 팬은 잡아 두기이며 진공 직접 흡입과 물은 피합니다.'
   );
 }
