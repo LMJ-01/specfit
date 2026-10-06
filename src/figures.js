@@ -944,6 +944,7 @@ export const figures = {
   'psu-check-order': psuCheckOrder,
   'boost-vs-sustained': boostVsSustained,
   'tbw-which-first': tbwWhichFirst,
+  'fan-curve-floor': fanCurveFloor,
 };
 
 /**
@@ -5457,6 +5458,49 @@ function tbwWhichFirst() {
     'TBW와 보증 기간, 무엇이 먼저 오나',
     W, 208, b,
     'SSD 보증은 기간과 TBW 중 먼저 닿는 쪽에서 끝납니다. 1TB TLC 600TBW 기준으로 하루 5GB면 약 329년, 30GB면 약 55년, 100GB를 써도 약 16년이 걸려 5년 보증 기간이 훨씬 먼저 옵니다. 조심할 것은 QLC 소용량, 빈 공간 부족, 그리고 닳기 전에 용량이 먼저 차는 경우입니다.'
+  );
+}
+
+function fanCurveFloor() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '켤 때 돌다 멈추는 케이스 팬 — 점호 뒤에 보드의 지시가 옵니다', { weight: 600, size: 12.5 });
+  // 왼쪽: 시간축 — 켤 때 전속 → 제어 잡힘 → 지시대로
+  b += t(24, 52, '켜는 순간부터', { size: 9, weight: 600, fill: COLOR.text });
+  b += rect(24, 62, 96, 44, COLOR.soft, { r: 6, stroke: COLOR.accent });
+  b += t(72, 80, '몇 초: 전속', { size: 8.6, weight: 600, fill: COLOR.accent, anchor: 'middle' });
+  b += t(72, 96, '제어 전 점호', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  b += '<path d="M122 84 L138 84 M132 79 L138 84 L132 89" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.6"/>';
+  b += rect(140, 62, 96, 44, COLOR.soft, { r: 6, stroke: COLOR.fit });
+  b += t(188, 80, '보드가 넘겨받음', { size: 8.6, weight: 600, fill: COLOR.fit, anchor: 'middle' });
+  b += t(188, 96, '곡선대로 지시', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  b += t(24, 126, '→ 켤 때 돌았다면 팬·선은 살아 있음', { size: 8, weight: 600, fill: COLOR.text });
+  // 판정 박스
+  b += rect(24, 138, 212, 56, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(34, 156, '부하 걸면 다시 돈다 → 저온 정지(정상)', { size: 8, weight: 600, fill: COLOR.fit });
+  b += t(34, 172, '끝까지 안 돈다 → 곡선 하한·제어 방식', { size: 8, weight: 600, fill: COLOR.over });
+  b += t(34, 187, '켤 때도 안 돈다 → 연결·팬 수명', { size: 7.6, fill: COLOR.mute });
+  // 오른쪽: 팬 곡선 그래프
+  const gx = 280, gy = 190, gw = 320, gh = 130;
+  b += '<path d="M' + gx + ' ' + (gy - gh) + ' L' + gx + ' ' + gy + ' L' + (gx + gw) + ' ' + gy + '" fill="none" stroke="' + COLOR.line + '" stroke-width="1.2"/>';
+  b += t(gx + gw, gy + 14, '온도 →', { size: 7.6, fill: COLOR.mute, anchor: 'end' });
+  b += t(gx - 4, gy - gh + 6, '지시 속도', { size: 7.6, fill: COLOR.mute, anchor: 'end' });
+  // 최소 시동선
+  const floorY = gy - 46;
+  b += rect(gx + 1, floorY, gw - 1, gy - floorY - 1, COLOR.soft, { r: 0 });
+  b += '<path d="M' + gx + ' ' + floorY + ' L' + (gx + gw) + ' ' + floorY + '" stroke="' + COLOR.over + '" stroke-width="1.6" stroke-dasharray="5 3"/>';
+  b += t(gx + 6, floorY + 12, '- - 이 팬이 돌기 시작하는 최소 속도', { size: 7.6, weight: 600, fill: COLOR.over });
+  b += t(gx + 70, gy - 14, '이 아래 지시 = 팬은 섬', { size: 7.6, fill: COLOR.over, anchor: 'middle' });
+  // 낮은 곡선 (문제)
+  b += '<path d="M' + gx + ' ' + (gy - 22) + ' L' + (gx + 150) + ' ' + (gy - 22) + ' L' + (gx + 300) + ' ' + (gy - 120) + '" fill="none" stroke="' + COLOR.over + '" stroke-width="2.2"/>';
+  // 올린 곡선 (처방)
+  b += '<path d="M' + gx + ' ' + (gy - 60) + ' L' + (gx + 150) + ' ' + (gy - 60) + ' L' + (gx + 300) + ' ' + (gy - 124) + '" fill="none" stroke="' + COLOR.fit + '" stroke-width="2.2" stroke-dasharray="6 3"/>';
+  b += t(gx + 10, gy - gh + 12, '처방: 저온 구간을 시동선 위로 → 멈추지 않음', { size: 7.6, weight: 600, fill: COLOR.fit });
+  b += t(gx, 212, '갈래 ③: 4핀=신호(PWM)·3핀=전압(DC) — 헤더 설정이 핀 수와 맞는지도 확인', { size: 7.8, fill: COLOR.mute });
+  return figure(
+    '팬 곡선과 최소 시동선',
+    W, 222, b,
+    '켤 때 몇 초간의 전속은 메인보드가 팬 제어를 넘겨받기 전의 점호이고, 그 뒤에는 보드의 곡선이 속도를 지시합니다. 저온 구간 지시가 팬이 돌기 시작하는 최소 속도보다 낮으면 팬은 서 버리므로, 부하에서 다시 도는지로 가른 뒤 곡선의 저온 구간을 올리거나 제어 방식을 핀 수에 맞춥니다.'
   );
 }
 
