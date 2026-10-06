@@ -945,6 +945,7 @@ export const figures = {
   'boost-vs-sustained': boostVsSustained,
   'tbw-which-first': tbwWhichFirst,
   'fan-curve-floor': fanCurveFloor,
+  'psu-loss-hours': psuLossHours,
 };
 
 /**
@@ -5501,6 +5502,44 @@ function fanCurveFloor() {
     '팬 곡선과 최소 시동선',
     W, 222, b,
     '켤 때 몇 초간의 전속은 메인보드가 팬 제어를 넘겨받기 전의 점호이고, 그 뒤에는 보드의 곡선이 속도를 지시합니다. 저온 구간 지시가 팬이 돌기 시작하는 최소 속도보다 낮으면 팬은 서 버리므로, 부하에서 다시 도는지로 가른 뒤 곡선의 저온 구간을 올리거나 제어 방식을 핀 수에 맞춥니다.'
+  );
+}
+
+function psuLossHours() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '80PLUS 등급 차이 = 버리는 열의 차이 × 켜 둔 시간', { weight: 600, size: 12.5 });
+  // 왼쪽: 부품 400W 순간의 벽 전력
+  b += t(24, 52, '부품이 400W를 쓰는 순간(고부하)', { size: 9, weight: 600, fill: COLOR.text });
+  const scale = 0.4; // px per W
+  const rows = [['브론즈(85%)', 471, COLOR.over], ['골드(90%)', 444, COLOR.fit]];
+  rows.forEach((r, i) => {
+    const y = 64 + i * 34;
+    b += t(24, y + 15, r[0], { size: 8.4, fill: COLOR.text });
+    b += rect(104, y + 3, 400 * scale, 18, COLOR.soft, { r: 3, stroke: COLOR.line });
+    b += rect(104 + 400 * scale, y + 3, (r[1] - 400) * scale, 18, r[2], { r: 0 });
+    b += t(104 + r[1] * scale + 6, y + 16, '벽에서 ' + r[1] + 'W', { size: 8.2, weight: 600, fill: r[2] });
+  });
+  b += t(104 + 200 * scale, 140, '부품 몫 400W', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  b += t(24, 162, '차이 약 26W — 손실은 열이 되고, 이게 등급의 전부', { size: 8.4, weight: 600, fill: COLOR.text });
+  b += t(24, 180, '가벼운 작업(부품 60W 안팎)이면 차이는 약 4W', { size: 8, fill: COLOR.mute });
+  // 오른쪽: 하루 고부하 시간별 월 절감
+  b += t(380, 52, '하루 고부하 시간별 월 절감(400W 기준)', { size: 9, weight: 600, fill: COLOR.text });
+  const bars = [['2시간', 1.6], ['8시간', 6.3], ['24시간', 18.8]];
+  const bx = 430, bmax = 170, kmax = 18.8;
+  bars.forEach((r, i) => {
+    const y = 66 + i * 32;
+    b += t(bx - 8, y + 14, r[0], { size: 8.4, fill: COLOR.text, anchor: 'end' });
+    const w = Math.max(4, bmax * r[1] / kmax);
+    b += rect(bx, y + 2, w, 18, i === 2 ? COLOR.fit : COLOR.accent, { r: 3 });
+    b += t(bx + w + 6 > 600 ? bx + w - 6 : bx + w + 6, y + 15, '약 ' + r[1] + ' kWh', { size: 8, weight: 600, fill: bx + w + 6 > 600 ? COLOR.soft : COLOR.text, anchor: bx + w + 6 > 600 ? 'end' : 'start' });
+  });
+  b += t(380, 180, '회수 기간 = 웃돈 ÷ (월 절감 × 우리 집 단가)', { size: 8, fill: COLOR.mute });
+  b += t(24, 204, '골드 값어치는 등급표가 아니라 "켜 두는 시간"이 정합니다 — 상시 가동·고부하일수록 커집니다.', { size: 8.4, weight: 600, fill: COLOR.text });
+  return figure(
+    '등급 차이와 켜 둔 시간',
+    W, 216, b,
+    '부품이 400W를 쓰는 순간 브론즈는 벽에서 약 471W, 골드는 약 444W를 끌어와 차이는 약 26W이고 이 손실은 열이 됩니다. 이 차이가 하루 2시간이면 월 약 1.6kWh, 8시간이면 약 6.3kWh, 24시간이면 약 18.8kWh로 커지므로 골드의 값어치는 켜 두는 시간이 정합니다.'
   );
 }
 
