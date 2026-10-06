@@ -941,6 +941,7 @@ export const figures = {
   'paste-where-matters': pasteWhereMatters,
   'screw-stop-vs-force': screwStopVsForce,
   'fan-direction-check': fanDirectionCheck,
+  'psu-check-order': psuCheckOrder,
 };
 
 /**
@@ -5332,6 +5333,40 @@ function fanDirectionCheck() {
     W, 224,
     b,
     '팬 방향은 프레임 옆면 화살표, 살이 있는 면이 바람 나가는 쪽이라는 구조, 켜고 티슈를 대보는 확인 세 단서로 가립니다. 앞·아래에서 들어와 뒤·위로 나가는 흐름이 기본이고, 거꾸로 달린 팬 하나가 더운 공기를 안에서 맴돌게 하니 추가 구매보다 방향 점검이 먼저입니다.'
+  );
+}
+
+function psuCheckOrder() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '그래픽카드 파워 — 확인 셋, 순서대로 (W는 마지막)', { weight: 600, size: 12.5 });
+  const gates = [
+    ['① 커넥터', '12V-2x6(12VHPWR) 단자가 파워에 있나', '없으면 W와 무관하게 못 꽂음 · 어댑터는 차선', COLOR.over],
+    ['② 규격', 'ATX 3.1(최소 3.0) 표기', '순간 부하 설계 — 옛 파워는 게임 중 꺼짐', COLOR.accent],
+    ['③ 용량', '(카드 TDP + CPU + 80W) × 1.3', '부하 50~80% 구간이 효율·소음의 자리', COLOR.fit],
+  ];
+  gates.forEach((g, i) => {
+    const x = 24 + i * 204;
+    b += rect(x, 44, 188, 92, COLOR.soft, { r: 6, stroke: g[3] });
+    b += t(x + 12, 64, g[0], { size: 11, weight: 700, fill: g[3] });
+    b += t(x + 12, 84, g[1], { size: 8.4, weight: 600, fill: COLOR.text });
+    b += t(x + 12, 102, g[2], { size: 7.6, fill: COLOR.mute });
+    if (i < 2) b += '<path d="M' + (x + 190) + ' 90 L' + (x + 202) + ' 90 M' + (x + 197) + ' 85 L' + (x + 202) + ' 90 L' + (x + 197) + ' 95" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.6"/>';
+  });
+  b += t(24, 124, '', { size: 7 });
+  // 아래: 부하 구간 띠
+  b += t(24, 162, '파워 용량 대비 부하', { size: 9, weight: 600, fill: COLOR.text });
+  b += rect(150, 150, 466, 18, COLOR.soft, { r: 4, stroke: COLOR.line });
+  b += rect(150 + 466 * 0.5, 150, 466 * 0.3, 18, COLOR.fit, { r: 0 });
+  b += t(150 + 466 * 0.65, 163, '50~80% — 효율 좋고 조용', { size: 7.8, weight: 600, fill: COLOR.soft, anchor: 'middle' });
+  b += t(150 + 466 * 0.9, 163, '꽉 채움 → 발열·소음', { size: 7.4, fill: COLOR.over, anchor: 'middle' });
+  b += t(150, 180, '0%', { size: 7, fill: COLOR.mute });
+  b += t(616, 180, '100%', { size: 7, fill: COLOR.mute, anchor: 'end' });
+  b += t(24, 202, 'W만 맞추고 사면 상자를 열고 나서 커넥터가 없다는 걸 압니다 — 순서가 전부입니다.', { size: 8.4, weight: 600, fill: COLOR.text });
+  return figure(
+    '파워 확인 순서 — 커넥터·규격·용량',
+    W, 214, b,
+    '그래픽카드용 파워는 와트보다 커넥터가 먼저 막습니다. 12V-2x6 단자가 있는지, ATX 3.1 규격인지 확인한 뒤에 카드 TDP와 CPU, 나머지 부품을 더해 1.3배 한 용량을 고르면 부하가 효율 좋은 50~80% 구간에 들어옵니다.'
   );
 }
 
