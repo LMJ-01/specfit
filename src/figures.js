@@ -942,6 +942,7 @@ export const figures = {
   'screw-stop-vs-force': screwStopVsForce,
   'fan-direction-check': fanDirectionCheck,
   'psu-check-order': psuCheckOrder,
+  'boost-vs-sustained': boostVsSustained,
 };
 
 /**
@@ -5367,6 +5368,47 @@ function psuCheckOrder() {
     '파워 확인 순서 — 커넥터·규격·용량',
     W, 214, b,
     '그래픽카드용 파워는 와트보다 커넥터가 먼저 막습니다. 12V-2x6 단자가 있는지, ATX 3.1 규격인지 확인한 뒤에 카드 TDP와 CPU, 나머지 부품을 더해 1.3배 한 용량을 고르면 부하가 효율 좋은 50~80% 구간에 들어옵니다.'
+  );
+}
+
+function boostVsSustained() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '부스트 구간과 지속 구간 — 벤치마크가 재는 곳, 실사용이 사는 곳', { weight: 600, size: 12.5 });
+  // 왼쪽 그래프: 시간 축, 속도(전력) 곡선 + 온도 곡선
+  const x0 = 40, y0 = 190, gw = 330, gh = 120;
+  b += '<path d="M' + x0 + ' ' + (y0 - gh) + ' L' + x0 + ' ' + y0 + ' L' + (x0 + gw) + ' ' + y0 + '" fill="none" stroke="' + COLOR.line + '" stroke-width="1.2"/>';
+  b += t(x0 + gw, y0 + 14, '시간 →', { size: 7.6, fill: COLOR.mute, anchor: 'end' });
+  b += t(x0 - 4, y0 - gh + 4, '속도', { size: 7.6, fill: COLOR.mute, anchor: 'end' });
+  // 부스트 구간 음영
+  b += rect(x0 + 1, y0 - gh, 70, gh, COLOR.soft, { r: 0 });
+  b += t(x0 + 36, y0 - gh + 14, '부스트', { size: 8, weight: 600, fill: COLOR.accent, anchor: 'middle' });
+  b += t(x0 + 36, y0 - gh + 26, '(짧음)', { size: 7, fill: COLOR.mute, anchor: 'middle' });
+  // 두꺼운 노트북 곡선 (높은 지속)
+  b += '<path d="M' + (x0 + 2) + ' ' + (y0 - 100) + ' L' + (x0 + 70) + ' ' + (y0 - 100) + ' C' + (x0 + 100) + ' ' + (y0 - 100) + ' ' + (x0 + 110) + ' ' + (y0 - 62) + ' ' + (x0 + 140) + ' ' + (y0 - 62) + ' L' + (x0 + gw - 4) + ' ' + (y0 - 62) + '" fill="none" stroke="' + COLOR.fit + '" stroke-width="2.4"/>';
+  // 얇은 노트북 곡선 (낮은 지속)
+  b += '<path d="M' + (x0 + 2) + ' ' + (y0 - 100) + ' L' + (x0 + 70) + ' ' + (y0 - 100) + ' C' + (x0 + 90) + ' ' + (y0 - 100) + ' ' + (x0 + 95) + ' ' + (y0 - 34) + ' ' + (x0 + 120) + ' ' + (y0 - 34) + ' L' + (x0 + gw - 4) + ' ' + (y0 - 34) + '" fill="none" stroke="' + COLOR.over + '" stroke-width="2.4" stroke-dasharray="5 3"/>';
+  b += t(x0 + gw - 8, y0 - 68, '두꺼운·냉각 여유 → 지속 성능 높음', { size: 7.6, weight: 600, fill: COLOR.fit, anchor: 'end' });
+  b += t(x0 + gw - 8, y0 - 22, '얇은 → 상한에 빨리 닿아 더 낮춤', { size: 7.6, weight: 600, fill: COLOR.over, anchor: 'end' });
+  b += t(x0 + 200, y0 - 108, '같은 칩, 같은 이름', { size: 7.4, fill: COLOR.mute, anchor: 'middle' });
+  // 오른쪽: 구간별 작업
+  b += t(400, 60, '어느 구간에 사는 작업인가', { size: 9.6, weight: 600, fill: COLOR.text });
+  const rows = [
+    ['앞쪽(부스트)', '저장 후 빌드 · 편집 · 자동완성', COLOR.accent],
+    ['뒤쪽(지속)', '전체 빌드 · 에뮬레이터 상시', COLOR.fit],
+    ['뒤쪽(지속)', '로컬 LLM — 몇 분씩 연속 계산', COLOR.over],
+  ];
+  rows.forEach((r, i) => {
+    const y = 70 + i * 38;
+    b += rect(400, y, 216, 32, COLOR.soft, { r: 5, stroke: r[2] });
+    b += t(410, y + 13, r[0], { size: 8.2, weight: 600, fill: r[2] });
+    b += t(410, y + 25, r[1], { size: 7.4, fill: COLOR.mute });
+  });
+  b += t(400, 198, '벤치마크 점수는 앞쪽을 재고, 개발·추론 체감은 뒤쪽이 정합니다', { size: 7.8, weight: 600, fill: COLOR.text });
+  return figure(
+    '부스트 구간 vs 지속 구간',
+    W, 212, b,
+    '칩은 처음 짧은 동안만 높은 전력으로 빠르게 돌다가 열이 쌓이면 상한에 닿아 속도를 낮춥니다. 얇은 노트북은 열을 버릴 공간이 적어 같은 칩이라도 지속 구간이 더 낮게 자리 잡고, 전체 빌드나 로컬 LLM처럼 몇 분씩 이어지는 작업은 그 뒤쪽 구간에서 체감이 정해집니다.'
   );
 }
 
