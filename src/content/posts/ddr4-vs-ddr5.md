@@ -2,7 +2,7 @@
 title: DDR4와 DDR5 차이 — 고를 수 있는 게 아닙니다
 description: DDR4와 DDR5는 슬롯이 달라 물리적으로 안 바뀝니다. 메인보드가 정하는 것이라 고민할 일이 아닙니다. 성능 차이와 DDR4 단종 상황을 정리했습니다.
 date: 2026-08-16
-updated: 2026-09-29
+updated: 2026-10-06
 category: memory
 tags: [DDR4, DDR5, 램, 메모리, 개발용PC]
 affiliate: true
@@ -129,6 +129,8 @@ GPU 없이 CPU 로만     →  DDR5 가 확실히 유리
 **다만 그 1.75배도 그래픽카드 앞에서는 작습니다.** 보급형 신품 그래픽카드(RTX 5060)가 448 GB/s인데, DDR5-5600은 89.6 GB/s입니다. **5배 차이입니다.**
 
 → **DDR5로 바꾸려고 메인보드와 CPU까지 교체할 정도의 이득은 아닙니다.**
+(그래도 보드·CPU를 갈기로 했다면 [윈도우를 다시 깔아야 하는지](/posts/cpu-mobo-swap-windows.html)는
+요즘 기준이 달라서, 그 글의 판정이 먼저입니다.)
    그 돈이면 그래픽카드를 보는 게 낫습니다.
 
 자세한 계산은 [그래픽카드 없이 로컬 LLM](/posts/local-llm-without-gpu.html)에 있습니다.
