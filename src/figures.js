@@ -946,6 +946,7 @@ export const figures = {
   'tbw-which-first': tbwWhichFirst,
   'fan-curve-floor': fanCurveFloor,
   'psu-loss-hours': psuLossHours,
+  'm2-shape-vs-lane': m2ShapeVsLane,
 };
 
 /**
@@ -5540,6 +5541,45 @@ function psuLossHours() {
     '등급 차이와 켜 둔 시간',
     W, 216, b,
     '부품이 400W를 쓰는 순간 브론즈는 벽에서 약 471W, 골드는 약 444W를 끌어와 차이는 약 26W이고 이 손실은 열이 됩니다. 이 차이가 하루 2시간이면 월 약 1.6kWh, 8시간이면 약 6.3kWh, 24시간이면 약 18.8kWh로 커지므로 골드의 값어치는 켜 두는 시간이 정합니다.'
+  );
+}
+
+function m2ShapeVsLane() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'M.2는 생김새 — 속도를 정하는 건 안의 방식(SATA / NVMe)', { weight: 600, size: 12.5 });
+  // 왼쪽: 같은 막대 두 개
+  const stick = (x, y, label, color) => {
+    let o = rect(x, y, 150, 30, COLOR.soft, { r: 4, stroke: color });
+    for (let k = 0; k < 4; k++) o += rect(x + 30 + k * 26, y + 8, 18, 14, COLOR.line, { r: 2 });
+    o += t(x + 75, y + 46, label, { size: 8.4, weight: 600, fill: color, anchor: 'middle' });
+    return o;
+  };
+  b += stick(24, 48, '겉: M.2  /  안: SATA', COLOR.over);
+  b += stick(24, 110, '겉: M.2  /  안: NVMe', COLOR.fit);
+  b += t(24, 176, '겉모양으론 구별 어려움 — 표기·속도로', { size: 8, fill: COLOR.mute });
+  // 오른쪽: 표기된 순차 읽기 막대
+  b += t(214, 52, '표기된 순차 읽기(MB/s) → 정체', { size: 9, weight: 600, fill: COLOR.text });
+  const rows = [
+    ['SATA', 550, '약 550 — 규격 한계', COLOR.over],
+    ['NVMe Gen3', 3500, '3,000~3,500', COLOR.accent],
+    ['NVMe Gen4', 7000, '6,000~7,000', COLOR.accent],
+    ['NVMe Gen5', 12000, '12,000 이상', COLOR.fit],
+  ];
+  const x0 = 290, wmax = 260;
+  rows.forEach((r, i) => {
+    const y = 62 + i * 28;
+    b += t(x0 - 8, y + 14, r[0], { size: 8.2, fill: COLOR.text, anchor: 'end' });
+    const w = Math.max(6, wmax * r[1] / 12000);
+    b += rect(x0, y + 2, w, 18, r[3], { r: 3 });
+    const inside = w > 120;
+    b += t(inside ? x0 + w - 6 : x0 + w + 6, y + 15, r[2], { size: 7.8, weight: 600, fill: inside ? COLOR.soft : COLOR.text, anchor: inside ? 'end' : 'start' });
+  });
+  b += t(214, 186, '"550"이 보이면 SATA — 개발 작업 체감 차이는 숫자보다 작습니다', { size: 8, weight: 600, fill: COLOR.text });
+  return figure(
+    'M.2 모양과 SATA·NVMe',
+    W, 198, b,
+    'M.2는 SSD의 생김새를 가리키는 이름이라 그 안에 SATA 방식이 들어 있을 수도 NVMe 방식이 들어 있을 수도 있습니다. 표기된 순차 읽기가 약 550MB/s면 SATA, 3,000MB/s대 이상이면 NVMe이고 세대에 따라 더 올라가지만, 개발 작업에서 느끼는 차이는 숫자 차이보다 작습니다.'
   );
 }
 

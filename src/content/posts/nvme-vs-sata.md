@@ -2,7 +2,7 @@
 title: NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배
 description: M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생김새가 같은데 속도가 6배 차이나고, 슬롯이 안 받는 경우도 있습니다. 사기 전에 확인할 것을 정리했습니다.
 date: 2026-08-16
-updated: 2026-09-17
+updated: 2026-10-07
 category: memory
 tags: [NVMe, SATA, SSD, M.2, 개발용PC]
 affiliate: true
@@ -68,6 +68,8 @@ SATA / NVMe  =  실제로 데이터가 오가는 방식
 | 12,000 MB/s 이상 | NVMe (Gen5) |
 
 **550이라는 숫자가 보이면 SATA입니다.** SATA는 규격 한계가 거기라 더 못 올라갑니다.
+
+{{FIG:m2-shape-vs-lane}}
 
 ## 2. 내 컴퓨터가 뭘 받는지부터
 
