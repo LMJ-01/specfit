@@ -943,6 +943,7 @@ export const figures = {
   'fan-direction-check': fanDirectionCheck,
   'psu-check-order': psuCheckOrder,
   'boost-vs-sustained': boostVsSustained,
+  'tbw-which-first': tbwWhichFirst,
 };
 
 /**
@@ -5409,6 +5410,53 @@ function boostVsSustained() {
     '부스트 구간 vs 지속 구간',
     W, 212, b,
     '칩은 처음 짧은 동안만 높은 전력으로 빠르게 돌다가 열이 쌓이면 상한에 닿아 속도를 낮춥니다. 얇은 노트북은 열을 버릴 공간이 적어 같은 칩이라도 지속 구간이 더 낮게 자리 잡고, 전체 빌드나 로컬 LLM처럼 몇 분씩 이어지는 작업은 그 뒤쪽 구간에서 체감이 정해집니다.'
+  );
+}
+
+function tbwWhichFirst() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'SSD 보증은 "기간 또는 TBW 중 먼저" — 개발용이면 거의 늘 기간이 먼저', { weight: 600, size: 12.5 });
+  // 로그 눈금: 1년~1000년
+  const x0 = 120, span = 300;
+  const X = (y) => x0 + span * Math.log10(y) / 3;
+  b += t(24, 52, '1TB TLC(600TBW) 기준, 하루 쓰기량별 TBW 도달까지', { size: 8.6, fill: COLOR.mute });
+  [1, 10, 100, 1000].forEach((y) => {
+    b += '<path d="M' + X(y) + ' 64 L' + X(y) + ' 160" stroke="' + COLOR.line + '" stroke-width="0.8" stroke-dasharray="2 3"/>';
+    b += t(X(y), 174, y + '년', { size: 7.4, fill: COLOR.mute, anchor: 'middle' });
+  });
+  const rows = [
+    ['5 GB/일 · 웹 개발', 329],
+    ['30 GB/일 · 도커·빌드', 55],
+    ['100 GB/일 · 모델 받고 지움', 16],
+  ];
+  rows.forEach((r, i) => {
+    const y = 72 + i * 28;
+    b += t(x0 - 8, y + 13, r[0], { size: 8, fill: COLOR.text, anchor: 'end' });
+    b += rect(x0, y + 2, X(r[1]) - x0, 16, COLOR.fit, { r: 3 });
+    b += t(X(r[1]) + 6, y + 14, '약 ' + r[1] + '년', { size: 8, weight: 600, fill: COLOR.fit });
+  });
+  // 보증 5년 선
+  b += '<path d="M' + X(5) + ' 62 L' + X(5) + ' 160" stroke="' + COLOR.over + '" stroke-width="2"/>';
+  b += t(X(5), 60, '보증 5년', { size: 8, weight: 700, fill: COLOR.over, anchor: 'middle' });
+  b += t(24, 196, '로그 눈금 — 막대가 보증선을 넘으면 기간 보증이 먼저 끝납니다(제품마다 TBW 다름, 사양표 확인)', { size: 7.8, fill: COLOR.mute });
+  // 오른쪽: 그래도 조심할 조합
+  b += t(456, 60, '그래도 조심할 조합', { size: 9.6, weight: 600, fill: COLOR.text });
+  const cautions = [
+    ['QLC + 작은 용량', 'TBW가 같은 용량 TLC의 절반 정도'],
+    ['빈 공간이 없음', '실제 쓰기량이 늘어남 — 여유를 둘 것'],
+    ['대개 용량이 먼저 참', '닳기 전에 꽉 차는 쪽이 흔함'],
+  ];
+  cautions.forEach((c, i) => {
+    const y = 70 + i * 40;
+    b += rect(456, y, 160, 34, COLOR.soft, { r: 5, stroke: COLOR.line });
+    b += t(464, y + 14, c[0], { size: 8.4, weight: 600, fill: COLOR.text });
+    b += t(464, y + 27, c[1], { size: 7, fill: COLOR.mute });
+  });
+  return figure(
+    'TBW와 보증 기간, 무엇이 먼저 오나',
+    W, 208, b,
+    'SSD 보증은 기간과 TBW 중 먼저 닿는 쪽에서 끝납니다. 1TB TLC 600TBW 기준으로 하루 5GB면 약 329년, 30GB면 약 55년, 100GB를 써도 약 16년이 걸려 5년 보증 기간이 훨씬 먼저 옵니다. 조심할 것은 QLC 소용량, 빈 공간 부족, 그리고 닳기 전에 용량이 먼저 차는 경우입니다.'
   );
 }
 
