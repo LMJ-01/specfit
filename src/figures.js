@@ -947,6 +947,7 @@ export const figures = {
   'fan-curve-floor': fanCurveFloor,
   'psu-loss-hours': psuLossHours,
   'm2-shape-vs-lane': m2ShapeVsLane,
+  'monitor-three-states': monitorThreeStates,
 };
 
 /**
@@ -5580,6 +5581,35 @@ function m2ShapeVsLane() {
     'M.2 모양과 SATA·NVMe',
     W, 198, b,
     'M.2는 SSD의 생김새를 가리키는 이름이라 그 안에 SATA 방식이 들어 있을 수도 NVMe 방식이 들어 있을 수도 있습니다. 표기된 순차 읽기가 약 550MB/s면 SATA, 3,000MB/s대 이상이면 NVMe이고 세대에 따라 더 올라가지만, 개발 작업에서 느끼는 차이는 숫자 차이보다 작습니다.'
+  );
+}
+
+function monitorThreeStates() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '모니터의 세 상태 — 수명을 쓰는 건 "화면을 켜 둔 시간"', { weight: 600, size: 12.5 });
+  const cols = [
+    ['표시 중', COLOR.over, ['백라이트 켜짐', '수명을 쓰는 상태', '전기: 정상 소비'], '일하는 시간'],
+    ['절전 / 버튼으로 끔', COLOR.fit, ['백라이트 꺼짐', '사실상 쉬는 상태', '전기: 극히 적음(신호 대기)'], '둘의 수명 차이는 거의 없음'],
+    ['멀티탭 차단', COLOR.accent, ['완전히 꺼짐', 'LCD는 무해', '대기 전력도 0'], 'OLED는 예외 — 케어가 못 돎'],
+  ];
+  cols.forEach((c, i) => {
+    const x = 24 + i * 202;
+    b += rect(x, 40, 188, 30, c[1], { r: 6 });
+    b += t(x + 94, 60, c[0], { size: 10, weight: 700, fill: COLOR.soft, anchor: 'middle' });
+    b += rect(x, 74, 188, 84, COLOR.soft, { r: 6, stroke: c[1] });
+    c[2].forEach((line, j) => {
+      b += t(x + 12, 96 + j * 22, line, { size: 8.6, weight: j === 1 ? 600 : 400, fill: j === 1 ? c[1] : COLOR.text });
+    });
+    b += t(x + 94, 176, c[3], { size: 8, weight: 600, fill: COLOR.mute, anchor: 'middle' });
+  });
+  b += '<path d="M214 115 L224 115 M219 110 L224 115 L219 120" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.4"/>';
+  b += '<path d="M416 115 L426 115 M421 110 L426 115 L421 120" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.4"/>';
+  b += t(24, 200, '매일 버튼으로 끄면 아끼는 건 미미한 대기 전력 — 대신 버튼 접점을 매일 씁니다', { size: 8.4, weight: 600, fill: COLOR.text });
+  return figure(
+    '모니터의 세 상태',
+    W, 212, b,
+    '모니터 수명을 쓰는 것은 백라이트가 켜진 채 화면을 표시하는 시간이라, 컴퓨터가 꺼져 절전에 들어간 상태와 버튼으로 끈 상태는 수명 면에서 거의 같습니다. 멀티탭으로 전원을 끊는 것은 일반 모니터에는 무해하지만, OLED는 대기 전원으로 패널 케어를 돌리는 제품이 많아 예외입니다.'
   );
 }
 
