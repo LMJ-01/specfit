@@ -2,7 +2,7 @@
 title: 램 XMP·EXPO — 안 켜면 산 속도가 안 나옵니다
 description: DDR5-6000을 사도 기본 설정으로는 4800으로 돕니다. 대역폭으로 20% 손해입니다. 어디서 체감되고 어디서는 상관없는지, 노트북은 왜 해당이 없는지 계산해서 갈랐습니다.
 date: 2026-08-20
-updated: 2026-09-18
+updated: 2026-10-08
 category: memory
 tags: [XMP, EXPO, 램클럭, 메모리대역폭, JEDEC]
 affiliate: true
@@ -104,6 +104,8 @@ affiliate: true
 | **DDR4-3200** | **34.1 GB/s** | **51.2 GB/s** | **+50%** |
 
 **DDR4 쪽이 손해가 더 큽니다.** 기본값(2133)과 표기값(3200)의 간격이 넓기 때문입니다.
+
+{{FIG:xmp-off-on}}
 
 바꿔 말하면 이렇습니다.
 

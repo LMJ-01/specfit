@@ -952,6 +952,7 @@ export const figures = {
   'ram-notch-key': ramNotchKey,
   'ram-overflow-16': ramOverflow16,
   'hub-under-router': hubUnderRouter,
+  'xmp-off-on': xmpOffOn,
 };
 
 /**
@@ -5752,6 +5753,34 @@ function hubUnderRouter() {
     '공유기 하나, 그 아래 허브',
     W, 210, b,
     '집에 인터넷 회선이 하나면 공유기는 하나로 충분하고, 포트가 모자랄 때는 공유기 아래에 스위칭허브를 붙여야 허브 아래 기기까지 같은 네트워크가 됩니다. 공유기 아래 공유기를 그대로 붙이면 관리자가 둘인 구조가 되어 문제가 생길 수 있어, 남는 공유기는 AP 모드로 바꿔 씁니다. 허브는 포트 수와 기가 등급만 보면 됩니다.'
+  );
+}
+
+function xmpOffOn() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'XMP·EXPO를 안 켜면 — 산 램이 기본 속도(JEDEC)로 돕니다', { weight: 600, size: 12.5 });
+  b += t(24, 46, '두 장(듀얼 채널) 대역폭 GB/s · 대역폭 = 클럭 × 8바이트 × 장수', { size: 8.4, fill: COLOR.mute });
+  const x0 = 130, scale = 3.6; // px per GB/s
+  const rows = [
+    ['DDR5-5600', 76.8, 89.6, '+17%'],
+    ['DDR5-6000', 76.8, 96.0, '+25%'],
+    ['DDR4-3200', 34.1, 51.2, '+50%'],
+  ];
+  rows.forEach((r, i) => {
+    const y = 60 + i * 44;
+    b += t(x0 - 10, y + 22, r[0], { size: 9, weight: 700, fill: COLOR.text, anchor: 'end' });
+    b += rect(x0, y + 2, r[1] * scale, 16, COLOR.line, { r: 2 });
+    b += t(x0 + r[1] * scale + 6, y + 14, '안 켬 ' + r[1], { size: 7.8, fill: COLOR.mute });
+    b += rect(x0, y + 20, r[2] * scale, 16, COLOR.fit, { r: 2 });
+    b += t(x0 + r[2] * scale + 6, y + 32, '켬 ' + r[2] + ' (' + r[3] + ')', { size: 7.8, weight: 600, fill: COLOR.fit });
+  });
+  b += rect(24, 196, 592, 22, COLOR.soft, { r: 5, stroke: COLOR.line });
+  b += t(36, 211, 'DDR4 쪽 손해가 큼(기본 2133과 표기 3200의 간격) · 체감은 CPU로 넘어가는 작업에서만 · 노트북은 대개 설정 없음', { size: 7.8, fill: COLOR.text });
+  return figure(
+    'XMP 안 켰을 때와 켰을 때',
+    W, 228, b,
+    '램은 기본으로 업계 표준 속도(DDR5 4800, DDR4 2133)로 돌고, 상자에 적힌 속도는 XMP·EXPO 프로필을 켜야 나옵니다. 두 장 기준으로 DDR5-6000은 약 76.8에서 96.0GB/s로 25%, DDR4-3200은 약 34.1에서 51.2GB/s로 50% 오르지만, 체감은 CPU로 넘어가는 작업에서 주로 납니다.'
   );
 }
 
