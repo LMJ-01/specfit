@@ -948,6 +948,7 @@ export const figures = {
   'psu-loss-hours': psuLossHours,
   'm2-shape-vs-lane': m2ShapeVsLane,
   'monitor-three-states': monitorThreeStates,
+  'quant-fit-16gb': quantFit16gb,
 };
 
 /**
@@ -5610,6 +5611,37 @@ function monitorThreeStates() {
     '모니터의 세 상태',
     W, 212, b,
     '모니터 수명을 쓰는 것은 백라이트가 켜진 채 화면을 표시하는 시간이라, 컴퓨터가 꺼져 절전에 들어간 상태와 버튼으로 끈 상태는 수명 면에서 거의 같습니다. 멀티탭으로 전원을 끊는 것은 일반 모니터에는 무해하지만, OLED는 대기 전원으로 패널 케어를 돌리는 제품이 많아 예외입니다.'
+  );
+}
+
+function quantFit16gb() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '16GB 카드라면 — "작은 모델을 Q8로"보다 "큰 모델을 Q4로"', { weight: 600, size: 12.5 });
+  const x0 = 150, scale = 20; // px per GB
+  const limit = 16;
+  b += t(24, 50, '필요 메모리(GB) · ollama 배포 파일 실측 기준', { size: 8.4, fill: COLOR.mute });
+  const rows = [
+    ['14B · Q4', 10.6, '여유', COLOR.fit],
+    ['14B · Q5', 12.1, '들어감', COLOR.fit],
+    ['22B · Q4', 15.7, '빠듯, 대체로 이쪽', COLOR.accent],
+    ['14B · Q8', 17.0, '안 들어감', COLOR.over],
+  ];
+  rows.forEach((r, i) => {
+    const y = 60 + i * 30;
+    b += t(x0 - 8, y + 14, r[0], { size: 8.6, weight: 600, fill: COLOR.text, anchor: 'end' });
+    b += rect(x0, y + 2, r[1] * scale, 18, r[3], { r: 3 });
+    b += t(x0 + limit * scale + 12, y + 15, '약 ' + r[1] + 'GB · ' + r[2], { size: 8, weight: 600, fill: r[3] });
+  });
+  const lx = x0 + limit * scale;
+  b += '<path d="M' + lx + ' 56 L' + lx + ' 182" stroke="' + COLOR.text + '" stroke-width="1.6" stroke-dasharray="5 3"/>';
+  b += t(lx, 194, 'VRAM 16GB', { size: 8, weight: 700, fill: COLOR.text, anchor: 'middle' });
+  // 오른쪽 아래: 양자화 사다리
+  b += t(24, 214, '양자화 사다리:  Q2·Q3 품질 저하 체감  ·  Q4 균형점  ·  Q5 여유 있으면  ·  Q8 용량 대비 이득 작음', { size: 8, fill: COLOR.mute });
+  return figure(
+    '같은 16GB, 무엇을 올리나',
+    W, 226, b,
+    '14B 모델은 Q4로 약 10.6GB, Q5로 약 12.1GB, Q8로 약 17.0GB가 필요해 16GB 카드에서는 Q8이 들어가지 않습니다. 같은 16GB라면 22B 모델을 Q4로 올리는 쪽이 약 15.7GB로 빠듯하게 들어가고, 더 큰 모델의 이득이 정밀도 차이보다 커서 대체로 낫습니다. Q4 아래로 내리는 것은 권하지 않습니다.'
   );
 }
 
