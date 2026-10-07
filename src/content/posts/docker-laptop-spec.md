@@ -2,7 +2,7 @@
 title: 도커 돌리는 노트북 사양 — 램 16GB로 되나
 description: 도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.
 date: 2026-08-16
-updated: 2026-08-17
+updated: 2026-10-07
 category: laptop
 tags: [도커, Docker, 개발용노트북, 램, WSL2]
 affiliate: true
@@ -48,6 +48,7 @@ affiliate: true
 **리눅스에서는 컨테이너가 그냥 프로세스입니다.** 쓰는 만큼만 램을 먹습니다.
 
 **윈도우에서는 다릅니다.** 도커가 WSL2라는 리눅스 환경 위에서 돌기 때문에, 그 리눅스가 먼저 램을 잡습니다.
+(WSL2와 리눅스 듀얼 부팅 중 무엇을 고를지는 [듀얼 부팅 vs WSL](/posts/dual-boot-vs-wsl.html)에 따로 있습니다.)
 
 ```
 윈도우
