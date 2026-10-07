@@ -2,7 +2,7 @@
 title: 램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점
 description: 32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.
 date: 2026-08-15
-updated: 2026-10-05
+updated: 2026-10-07
 category: memory
 tags: [RAM, 메모리, 로컬LLM, 개발용PC, DDR5]
 affiliate: true
@@ -79,6 +79,8 @@ Q4 양자화, A4 두세 장 분량 기준입니다.
 - **+14.2GB** (5060으로 32B) → 16GB로는 안 됩니다
 
 **"32GB 사세요"가 맞는 경우는 세 번째입니다.** 첫 번째에는 돈 낭비입니다.
+
+{{FIG:ram-overflow-16}}
 
 ## 로컬 LLM 말고, 개발 작업만 봐도
 

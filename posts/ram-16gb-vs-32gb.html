@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점","description":"32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-10-05","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ram-16gb-vs-32gb.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점","description":"32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 필요한 램은 GPU가 정합니다. VRAM을 넘긴 만큼이 시스템 램으로 넘어오기 때문입니다. 계산해서 정리했습니다.","datePublished":"2026-08-15","dateModified":"2026-10-07","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ram-16gb-vs-32gb.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점","item":"https://specfit.kr/posts/ram-16gb-vs-32gb.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>램 16GB vs 32GB — 로컬 LLM과 개발에서 갈리는 지점</h1>
     <p class="post-meta">
       <time datetime="2026-08-15">2026년 8월 15일</time>
-      <span class="updated">· 2026년 10월 5일 갱신</span>
+      <span class="updated">· 2026년 10월 7일 갱신</span>
     </p>
   </header>
 
@@ -210,6 +210,13 @@
 <li><strong>+14.2GB</strong> (5060으로 32B) → 16GB로는 안 됩니다</li>
 </ul>
 <p><strong>&quot;32GB 사세요&quot;가 맞는 경우는 세 번째입니다.</strong> 첫 번째에는 돈 낭비입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 226" width="640" height="226" role="img" aria-label="16GB에 얹히는 넘침">
+<title>16GB에 얹히는 넘침</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">16GB 시스템 램 — 기본 몫 위에 "VRAM을 넘친 만큼"이 얹힙니다</text><text x="24" y="46" fill="var(--fg-muted)" font-size="8.4">8GB 카드(예: 5060)로 Q4 모델을 돌릴 때</text><text x="162" y="76" fill="var(--fg)" font-size="8.4" font-weight="600" text-anchor="end">14B (넘침 +2.6GB)</text><rect x="170" y="64" width="98" height="20" fill="var(--bg-soft)" rx="3" stroke="var(--border)"/><text x="219" y="78" fill="var(--fg-muted)" font-size="7.6" text-anchor="middle">OS·앱 6~8</text><rect x="268" y="64" width="36.4" height="20" fill="var(--fig-fit)" rx="0"/><text x="486" y="78" fill="var(--fig-fit)" font-size="8" font-weight="600">16GB로 됩니다</text><text x="162" y="116" fill="var(--fg)" font-size="8.4" font-weight="600" text-anchor="end">22B (넘침 +7.7GB)</text><rect x="170" y="104" width="98" height="20" fill="var(--bg-soft)" rx="3" stroke="var(--border)"/><text x="219" y="118" fill="var(--fg-muted)" font-size="7.6" text-anchor="middle">OS·앱 6~8</text><rect x="268" y="104" width="107.8" height="20" fill="var(--accent)" rx="0"/><text x="486" y="118" fill="var(--accent)" font-size="8" font-weight="600">빠듯 — 다른 프로그램 닫기</text><text x="162" y="156" fill="var(--fg)" font-size="8.4" font-weight="600" text-anchor="end">32B (넘침 +14.2GB)</text><rect x="170" y="144" width="98" height="20" fill="var(--bg-soft)" rx="3" stroke="var(--border)"/><text x="219" y="158" fill="var(--fg-muted)" font-size="7.6" text-anchor="middle">OS·앱 6~8</text><rect x="268" y="144" width="198.79999999999998" height="20" fill="var(--fig-over)" rx="0"/><text x="486" y="158" fill="var(--fig-over)" font-size="8" font-weight="600">16GB로는 안 됨 → 32GB</text><path d="M394 56 L394 186" stroke="var(--fg)" stroke-width="1.6" stroke-dasharray="5 3"/><text x="394" y="198" fill="var(--fg)" font-size="8" font-weight="700" text-anchor="middle">16GB</text><text x="24" y="216" fill="var(--fg-muted)" font-size="8.2">넘친 양 = 모델이 필요한 메모리 − 내 VRAM — 그래서 램 요구량은 GPU가 정합니다</text>
+</svg>
+<figcaption>16GB 시스템에서는 윈도우와 쓰던 프로그램이 6~8GB를 먼저 쓰고, 그 위에 모델이 VRAM을 넘친 만큼이 얹힙니다. 8GB 카드로 14B를 돌리면 약 2.6GB가 넘쳐 16GB로 되고, 22B는 약 7.7GB로 빠듯하며, 32B는 약 14.2GB가 넘쳐 16GB로는 안 되는 경우라 그때가 32GB를 살 자리입니다.</figcaption>
+</figure>
 <h2 id="로컬-llm-말고-개발-작업만-봐도">로컬 LLM 말고, 개발 작업만 봐도</h2>
 <p>램을 먹는 건 LLM만이 아닙니다. 16GB가 실제로 터지는 순간들입니다.</p>
 <ul>

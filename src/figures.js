@@ -950,6 +950,7 @@ export const figures = {
   'monitor-three-states': monitorThreeStates,
   'quant-fit-16gb': quantFit16gb,
   'ram-notch-key': ramNotchKey,
+  'ram-overflow-16': ramOverflow16,
 };
 
 /**
@@ -5681,6 +5682,38 @@ function ramNotchKey() {
     '램의 홈과 슬롯의 턱',
     W, 214, b,
     '데스크톱 램은 가운데에서 비켜난 홈이 슬롯의 턱과 맞물릴 때만 끝까지 들어가고 양쪽 걸쇠가 잠깁니다. 거꾸로 밀면 홈이 반대편에 와서 턱에 걸리므로 대개 반쯤에서 멈추고, 판정은 그 상태로 전원을 넣었는지에 따라 살펴보고 다시 꽂기, 켜 보고 한 장씩 격리하기, 타는 냄새가 나면 즉시 차단으로 갈립니다.'
+  );
+}
+
+function ramOverflow16() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '16GB 시스템 램 — 기본 몫 위에 "VRAM을 넘친 만큼"이 얹힙니다', { weight: 600, size: 12.5 });
+  b += t(24, 46, '8GB 카드(예: 5060)로 Q4 모델을 돌릴 때', { size: 8.4, fill: COLOR.mute });
+  const x0 = 170, scale = 14; // px per GB
+  const base = 7; // 6~8GB 의 가운데
+  const rows = [
+    ['14B (넘침 +2.6GB)', 2.6, '16GB로 됩니다', COLOR.fit],
+    ['22B (넘침 +7.7GB)', 7.7, '빠듯 — 다른 프로그램 닫기', COLOR.accent],
+    ['32B (넘침 +14.2GB)', 14.2, '16GB로는 안 됨 → 32GB', COLOR.over],
+  ];
+  rows.forEach((r, i) => {
+    const y = 60 + i * 40;
+    b += t(x0 - 8, y + 16, r[0], { size: 8.4, weight: 600, fill: COLOR.text, anchor: 'end' });
+    b += rect(x0, y + 4, base * scale, 20, COLOR.soft, { r: 3, stroke: COLOR.line });
+    b += t(x0 + base * scale / 2, y + 18, 'OS·앱 6~8', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+    const w = Math.min(r[1], 22 - base) * scale;
+    b += rect(x0 + base * scale, y + 4, w, 20, r[3], { r: 0 });
+    b += t(x0 + 22 * scale + 8, y + 18, r[2], { size: 8, weight: 600, fill: r[3] });
+  });
+  const lx = x0 + 16 * scale;
+  b += '<path d="M' + lx + ' 56 L' + lx + ' 186" stroke="' + COLOR.text + '" stroke-width="1.6" stroke-dasharray="5 3"/>';
+  b += t(lx, 198, '16GB', { size: 8, weight: 700, fill: COLOR.text, anchor: 'middle' });
+  b += t(24, 216, '넘친 양 = 모델이 필요한 메모리 − 내 VRAM — 그래서 램 요구량은 GPU가 정합니다', { size: 8.2, fill: COLOR.mute });
+  return figure(
+    '16GB에 얹히는 넘침',
+    W, 226, b,
+    '16GB 시스템에서는 윈도우와 쓰던 프로그램이 6~8GB를 먼저 쓰고, 그 위에 모델이 VRAM을 넘친 만큼이 얹힙니다. 8GB 카드로 14B를 돌리면 약 2.6GB가 넘쳐 16GB로 되고, 22B는 약 7.7GB로 빠듯하며, 32B는 약 14.2GB가 넘쳐 16GB로는 안 되는 경우라 그때가 32GB를 살 자리입니다.'
   );
 }
 
