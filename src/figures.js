@@ -951,6 +951,7 @@ export const figures = {
   'quant-fit-16gb': quantFit16gb,
   'ram-notch-key': ramNotchKey,
   'ram-overflow-16': ramOverflow16,
+  'hub-under-router': hubUnderRouter,
 };
 
 /**
@@ -5714,6 +5715,43 @@ function ramOverflow16() {
     '16GB에 얹히는 넘침',
     W, 226, b,
     '16GB 시스템에서는 윈도우와 쓰던 프로그램이 6~8GB를 먼저 쓰고, 그 위에 모델이 VRAM을 넘친 만큼이 얹힙니다. 8GB 카드로 14B를 돌리면 약 2.6GB가 넘쳐 16GB로 되고, 22B는 약 7.7GB로 빠듯하며, 32B는 약 14.2GB가 넘쳐 16GB로는 안 되는 경우라 그때가 32GB를 살 자리입니다.'
+  );
+}
+
+function hubUnderRouter() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '포트가 모자랄 때 — 공유기는 하나, 그 아래로 허브', { weight: 600, size: 12.5 });
+  const box = (x, y, w, label, c) => rect(x, y, w, 26, COLOR.soft, { r: 5, stroke: c }) + t(x + w / 2, y + 17, label, { size: 8.6, weight: 600, fill: c, anchor: 'middle' });
+  const arrowR = (x1, x2, y) => '<path d="M' + x1 + ' ' + y + ' L' + x2 + ' ' + y + ' M' + (x2 - 5) + ' ' + (y - 4) + ' L' + x2 + ' ' + y + ' L' + (x2 - 5) + ' ' + (y + 4) + '" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.4"/>';
+  // 왼쪽: 바른 순서
+  b += t(24, 50, '바른 순서 — 전부 한 식구', { size: 9.4, weight: 700, fill: COLOR.fit });
+  b += box(24, 62, 60, '인터넷', COLOR.mute);
+  b += arrowR(86, 100, 75);
+  b += box(102, 62, 64, '공유기', COLOR.fit);
+  b += arrowR(168, 182, 75);
+  b += box(184, 62, 72, '스위칭허브', COLOR.fit);
+  b += arrowR(258, 272, 75);
+  b += box(274, 62, 40, '기기', COLOR.mute);
+  b += '<path d="M134 90 L134 108 L182 108" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.4"/>';
+  b += box(184, 96, 72, '공유기 직결', COLOR.mute);
+  b += t(24, 140, '주소는 공유기가 나눠 줌 → 허브 아래 기기도 같은 네트워크', { size: 7.8, fill: COLOR.mute });
+  // 오른쪽: 공유기 아래 공유기
+  b += t(340, 50, '공유기 아래 공유기 — 관리자가 둘', { size: 9.4, weight: 700, fill: COLOR.over });
+  b += box(340, 62, 64, '공유기', COLOR.over);
+  b += arrowR(406, 420, 75);
+  b += box(422, 62, 64, '공유기', COLOR.over);
+  b += t(494, 79, '이중 NAT', { size: 8.2, weight: 600, fill: COLOR.over });
+  b += t(340, 108, '기기끼리 서로 못 보거나 일부 기능이 꼬일 수 있음', { size: 7.8, fill: COLOR.mute });
+  b += t(340, 126, '남는 공유기는 AP(브리지) 모드 → "와이파이 나오는 허브"', { size: 7.8, weight: 600, fill: COLOR.fit });
+  // 아래: 고를 때 두 가지
+  b += rect(24, 152, 592, 46, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 170, '허브 고를 때 ① 포트 수 = 기기 수 + 여유 한둘 (공유기로 가는 선도 한 칸)', { size: 8.4, weight: 600, fill: COLOR.text });
+  b += t(36, 188, '② 등급 = 기가(1G) 기본 · 10/100 구형은 지나는 기기 전부를 100Mbps에 가둠', { size: 8.4, weight: 600, fill: COLOR.text });
+  return figure(
+    '공유기 하나, 그 아래 허브',
+    W, 210, b,
+    '집에 인터넷 회선이 하나면 공유기는 하나로 충분하고, 포트가 모자랄 때는 공유기 아래에 스위칭허브를 붙여야 허브 아래 기기까지 같은 네트워크가 됩니다. 공유기 아래 공유기를 그대로 붙이면 관리자가 둘인 구조가 되어 문제가 생길 수 있어, 남는 공유기는 AP 모드로 바꿔 씁니다. 허브는 포트 수와 기가 등급만 보면 됩니다.'
   );
 }
 
