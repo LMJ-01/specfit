@@ -953,6 +953,7 @@ export const figures = {
   'ram-overflow-16': ramOverflow16,
   'hub-under-router': hubUnderRouter,
   'xmp-off-on': xmpOffOn,
+  'psu-cap-ceiling': psuCapCeiling,
 };
 
 /**
@@ -5781,6 +5782,45 @@ function xmpOffOn() {
     'XMP 안 켰을 때와 켰을 때',
     W, 228, b,
     '램은 기본으로 업계 표준 속도(DDR5 4800, DDR4 2133)로 돌고, 상자에 적힌 속도는 XMP·EXPO 프로필을 켜야 나옵니다. 두 장 기준으로 DDR5-6000은 약 76.8에서 96.0GB/s로 25%, DDR4-3200은 약 34.1에서 51.2GB/s로 50% 오르지만, 체감은 CPU로 넘어가는 작업에서 주로 납니다.'
+  );
+}
+
+function psuCapCeiling() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '파워 용량은 "천장" — 실제로 나가는 전기는 부품과 부하가 정합니다', { weight: 600, size: 12.5 });
+  const col = (x, label, capH) => {
+    const base = 190;
+    let o = rect(x, base - capH, 90, capH, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 45, base - capH - 6, label, { size: 8.6, weight: 700, fill: COLOR.text, anchor: 'middle' });
+    // 같은 부품·같은 일 → 같은 높이
+    o += rect(x + 1, base - 30, 88, 29, COLOR.fit, { r: 0 });
+    o += t(x + 45, base - 12, '웹서핑', { size: 7.6, weight: 600, fill: COLOR.soft, anchor: 'middle' });
+    o += '<path d="M' + x + ' ' + (base - 78) + ' L' + (x + 90) + ' ' + (base - 78) + '" stroke="' + COLOR.over + '" stroke-width="1.6" stroke-dasharray="4 3"/>';
+    return o;
+  };
+  b += col(40, '500W 파워', 120);
+  b += col(170, '1000W 파워', 140);
+  b += t(300, 116, '— 게임 중(같은 높이)', { size: 7.8, weight: 600, fill: COLOR.over });
+  b += t(300, 166, '— 웹서핑(같은 높이)', { size: 7.8, weight: 600, fill: COLOR.fit });
+  b += t(40, 206, '같은 부품이 같은 일을 하면 끌어 쓰는 전기는 사실상 같음', { size: 8, fill: COLOR.mute });
+  // 오른쪽: 정하는 것 셋
+  b += t(430, 56, '전기 사용을 정하는 것', { size: 9.6, weight: 600, fill: COLOR.text });
+  const rows = [
+    ['① 부품 구성', '그래픽카드가 가장 큰 몫', COLOR.text],
+    ['② 그 순간의 부하', '게임 시간이 대부분을 정함', COLOR.text],
+    ['③ 효율(낭비 몫)', '용량이 몇 % 끼어드는 유일한 자리', COLOR.mute],
+  ];
+  rows.forEach((r, i) => {
+    const y = 66 + i * 42;
+    b += rect(430, y, 186, 36, COLOR.soft, { r: 5, stroke: COLOR.line });
+    b += t(440, y + 15, r[0], { size: 8.8, weight: 600, fill: r[2] });
+    b += t(440, y + 28, r[1], { size: 7.6, fill: COLOR.mute });
+  });
+  return figure(
+    '용량은 천장, 소비는 부품',
+    W, 218, b,
+    '파워의 용량은 꺼내 쓸 수 있는 상한일 뿐이라, 같은 부품이 같은 일을 하면 500W 파워든 1000W 파워든 벽에서 끌어 쓰는 전기는 사실상 같습니다. 전기 사용은 부품 구성과 그 순간의 부하가 정하고, 용량은 효율이라는 낭비의 비율에만 몇 % 수준으로 끼어듭니다.'
   );
 }
 
