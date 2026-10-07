@@ -949,6 +949,7 @@ export const figures = {
   'm2-shape-vs-lane': m2ShapeVsLane,
   'monitor-three-states': monitorThreeStates,
   'quant-fit-16gb': quantFit16gb,
+  'ram-notch-key': ramNotchKey,
 };
 
 /**
@@ -5642,6 +5643,44 @@ function quantFit16gb() {
     '같은 16GB, 무엇을 올리나',
     W, 226, b,
     '14B 모델은 Q4로 약 10.6GB, Q5로 약 12.1GB, Q8로 약 17.0GB가 필요해 16GB 카드에서는 Q8이 들어가지 않습니다. 같은 16GB라면 22B 모델을 Q4로 올리는 쪽이 약 15.7GB로 빠듯하게 들어가고, 더 큰 모델의 이득이 정밀도 차이보다 커서 대체로 낫습니다. Q4 아래로 내리는 것은 권하지 않습니다.'
+  );
+}
+
+function ramNotchKey() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '램의 홈과 슬롯의 턱 — 방향이 틀리면 대개 끝까지 안 들어갑니다', { weight: 600, size: 12.5 });
+  const scene = (x, label, notchX, keyX, ok) => {
+    const c = ok ? COLOR.fit : COLOR.over;
+    let o = t(x + 120, 50, label, { size: 9.4, weight: 700, fill: c, anchor: 'middle' });
+    // 램 모듈
+    const ry = ok ? 70 : 58;
+    o += rect(x, ry, 240, 40, COLOR.soft, { r: 3, stroke: c });
+    for (let k = 0; k < 4; k++) o += rect(x + 18 + k * 56, ry + 8, 36, 16, COLOR.line, { r: 2 });
+    // 홈(노치): 아랫변의 빈칸
+    o += rect(x + notchX, ry + 32, 10, 9, COLOR.soft, { r: 0 });
+    o += '<path d="M' + (x + notchX) + ' ' + (ry + 40) + ' L' + (x + notchX) + ' ' + (ry + 32) + ' L' + (x + notchX + 10) + ' ' + (ry + 32) + ' L' + (x + notchX + 10) + ' ' + (ry + 40) + '" fill="none" stroke="' + c + '" stroke-width="1.2"/>';
+    // 슬롯
+    o += rect(x - 6, 112, 252, 22, COLOR.soft, { r: 3, stroke: COLOR.line });
+    o += rect(x + keyX, 104, 8, 10, COLOR.text, { r: 1 });
+    o += t(x + keyX + 4, 148, '턱', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+    o += t(x + notchX + 5, ry - 4, '홈', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+    return o;
+  };
+  // 바른 방향: 홈과 턱이 같은 자리
+  b += scene(24, '바른 방향 — 홈과 턱이 맞물려 끝까지, 걸쇠 딸깍', 98, 99, true);
+  // 거꾸로: 홈이 반대편으로 가서 턱에 걸림
+  b += scene(352, '거꾸로 — 홈이 반대편, 턱에 걸려 반쯤에서 멈춤', 132, 99, false);
+  // 판정 띠
+  b += rect(24, 160, 592, 44, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 178, '전원 안 넣음 → 살펴보고 다시 꽂기', { size: 8.4, weight: 600, fill: COLOR.fit });
+  b += t(236, 178, '전원 넣음 → 켜 보고 한 장씩 격리', { size: 8.4, weight: 600, fill: COLOR.accent });
+  b += t(436, 178, '타는 냄새 → 즉시 전원 차단', { size: 8.4, weight: 600, fill: COLOR.over });
+  b += t(36, 196, '힘이 많이 든다는 것 자체가 방향이 틀렸다는 신호 — 방향이 맞으면 적은 힘으로 들어갑니다', { size: 7.8, fill: COLOR.mute });
+  return figure(
+    '램의 홈과 슬롯의 턱',
+    W, 214, b,
+    '데스크톱 램은 가운데에서 비켜난 홈이 슬롯의 턱과 맞물릴 때만 끝까지 들어가고 양쪽 걸쇠가 잠깁니다. 거꾸로 밀면 홈이 반대편에 와서 턱에 걸리므로 대개 반쯤에서 멈추고, 판정은 그 상태로 전원을 넣었는지에 따라 살펴보고 다시 꽂기, 켜 보고 한 장씩 격리하기, 타는 냄새가 나면 즉시 차단으로 갈립니다.'
   );
 }
 

@@ -2,7 +2,7 @@
 title: DDR4와 DDR5 차이 — 고를 수 있는 게 아닙니다
 description: DDR4와 DDR5는 슬롯이 달라 물리적으로 안 바뀝니다. 메인보드가 정하는 것이라 고민할 일이 아닙니다. 성능 차이와 DDR4 단종 상황을 정리했습니다.
 date: 2026-08-16
-updated: 2026-10-06
+updated: 2026-10-07
 category: memory
 tags: [DDR4, DDR5, 램, 메모리, 개발용PC]
 affiliate: true
@@ -40,6 +40,7 @@ affiliate: true
 가장 먼저 알아야 할 것이고, 이걸로 고민의 90%가 끝납니다.
 
 **DDR4와 DDR5는 슬롯의 홈 위치가 다릅니다.** 억지로 꽂으면 안 들어가고, 힘을 주면 부러집니다.
+(같은 규격인데 방향을 거꾸로 밀어 넣었던 경우의 판정은 [램을 거꾸로 꽂았다면](/posts/ram-inserted-backwards.html)에 있습니다.)
 
 ```
 메인보드가 DDR4 →  DDR4 만 꽂힙니다
