@@ -954,6 +954,7 @@ export const figures = {
   'hub-under-router': hubUnderRouter,
   'xmp-off-on': xmpOffOn,
   'psu-cap-ceiling': psuCapCeiling,
+  'evening-in-out': eveningInOut,
 };
 
 /**
@@ -5824,3 +5825,39 @@ function psuCapCeiling() {
   );
 }
 
+function eveningInOut() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '저녁 느림 — 유선 직결 한 번으로 집 안과 집 밖을 가릅니다', { weight: 600, size: 12.5 });
+  const box = (x, y, w, label, c) => rect(x, y, w, 26, COLOR.soft, { r: 5, stroke: c }) + t(x + w / 2, y + 17, label, { size: 8.6, weight: 600, fill: c, anchor: 'middle' });
+  const arrowR = (x1, x2, y) => '<path d="M' + x1 + ' ' + y + ' L' + x2 + ' ' + y + ' M' + (x2 - 5) + ' ' + (y - 4) + ' L' + x2 + ' ' + y + ' L' + (x2 - 5) + ' ' + (y + 4) + '" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.4"/>';
+  // 경로
+  b += box(24, 66, 130, '공용 구간 (동네가 나눠 씀)', COLOR.over);
+  b += arrowR(156, 172, 79);
+  b += box(174, 66, 90, '집 단자·모뎀', COLOR.mute);
+  b += arrowR(266, 282, 79);
+  b += box(284, 66, 70, '공유기', COLOR.fit);
+  b += '<path d="M354 79 L376 79 L376 61 L398 61" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.4"/>';
+  b += '<path d="M376 79 L376 97 L398 97" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.4" stroke-dasharray="4 3"/>';
+  b += box(400, 48, 110, 'PC 유선 직결', COLOR.fit);
+  b += box(400, 84, 110, '와이파이 기기', COLOR.fit);
+  b += t(518, 65, '← 측정은 여기서', { size: 7.8, weight: 600, fill: COLOR.text });
+  b += t(518, 101, '이웃 전파도 저녁에 붐빔', { size: 7.6, fill: COLOR.mute });
+  // 구역 괄호
+  const bracket = (x1, x2, y, label, c) => '<path d="M' + x1 + ' ' + (y - 6) + ' L' + x1 + ' ' + y + ' L' + x2 + ' ' + y + ' L' + x2 + ' ' + (y - 6) + '" fill="none" stroke="' + c + '" stroke-width="1.4"/>' + t((x1 + x2) / 2, y + 14, label, { size: 8.6, weight: 700, fill: c, anchor: 'middle' });
+  b += bracket(24, 154, 128, '집 밖', COLOR.over);
+  b += bracket(284, 510, 128, '집 안', COLOR.fit);
+  // 결과
+  b += rect(24, 156, 290, 46, COLOR.soft, { r: 6, stroke: COLOR.over });
+  b += t(36, 174, '유선 직결도 저녁마다 뚝 → 집 밖', { size: 8.8, weight: 700, fill: COLOR.over });
+  b += t(36, 192, '날짜·시각·측정값 며칠 치를 들고 점검 요청', { size: 7.8, fill: COLOR.text });
+  b += rect(326, 156, 290, 46, COLOR.soft, { r: 6, stroke: COLOR.fit });
+  b += t(338, 174, '유선은 멀쩡, 와이파이만 느림 → 집 안', { size: 8.8, weight: 700, fill: COLOR.fit });
+  b += t(338, 192, '5GHz로 옮기기 · 채널 바꾸기가 처방', { size: 7.8, fill: COLOR.text });
+  b += t(24, 226, '판정은 하나 — 유선 직결로 같은 조건에서 낮에 한 번, 저녁에 한 번 재서 비교', { size: 8.2, weight: 600, fill: COLOR.mute });
+  return figure(
+    '저녁 느림의 집 안과 집 밖',
+    W, 240, b,
+    '저녁마다 느려지는 인터넷은 집 밖의 공용 구간이 붐비는 경우와 집 안의 와이파이가 붐비는 경우로 나뉩니다. 공유기에 유선으로 직결한 PC로 낮과 저녁에 한 번씩 재서, 유선도 저녁마다 떨어지면 집 밖, 유선은 멀쩡하고 와이파이만 느리면 집 안으로 봅니다.'
+  );
+}
