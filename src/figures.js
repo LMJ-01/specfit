@@ -956,6 +956,7 @@ export const figures = {
   'psu-cap-ceiling': psuCapCeiling,
   'evening-in-out': eveningInOut,
   'mist-vs-vapor': mistVsVapor,
+  'desk-top-or-under': deskTopOrUnder,
 };
 
 /**
@@ -5904,5 +5905,56 @@ function mistVsVapor() {
     '초음파식 안개와 가열식 수증기',
     W, 262, b,
     '초음파식 가습기가 내보내는 찬 안개는 미세한 물방울이라 가까운 표면에 내려앉아 적시므로, 컴퓨터는 안개가 닿는 범위 밖에 두고 분사 방향을 반대로 돌립니다. 가열식이나 기화식은 기체에 가까운 수증기를 내보내 여유가 크지만, 토출구를 컴퓨터에 바로 향하게 두지는 않는 것이 원칙입니다.'
+  );
+}
+
+function deskTopOrUnder() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '본체는 책상 위인가 아래인가 — 축마다 이기는 쪽이 다릅니다', { weight: 600, size: 12.5 });
+  // 왼쪽 스케치
+  b += rect(40, 98, 200, 6, COLOR.line, { r: 2 });
+  b += '<path d="M48 104 L48 190 M232 104 L232 190" stroke="' + COLOR.mute + '" stroke-width="2"/>';
+  b += '<path d="M24 190 L260 190" stroke="' + COLOR.mute + '" stroke-width="1.4"/>';
+  b += rect(128, 60, 64, 34, COLOR.soft, { r: 3, stroke: COLOR.mute });
+  b += '<path d="M160 94 L160 98" stroke="' + COLOR.mute + '" stroke-width="2"/>';
+  b += rect(62, 56, 34, 42, COLOR.soft, { r: 3, stroke: COLOR.fit });
+  b += t(79, 50, '위', { size: 9, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+  b += rect(180, 140, 34, 50, COLOR.soft, { r: 3, stroke: COLOR.accent });
+  b += t(197, 134, '아래', { size: 9, weight: 700, fill: COLOR.accent, anchor: 'middle' });
+  [[70, 186], [86, 187], [104, 185], [122, 187], [140, 186], [158, 187], [226, 186], [244, 187]].forEach(([x, y]) => {
+    b += '<circle cx="' + x + '" cy="' + y + '" r="1.6" fill="' + COLOR.mute + '"/>';
+  });
+  b += t(110, 178, '바닥 = 먼지의 1층', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  // 오른쪽 점수판
+  const cU = 474, cD = 566;
+  b += t(296, 54, '내게 아까운 것', { size: 8.4, weight: 600, fill: COLOR.mute });
+  b += t(cU, 54, '위', { size: 9, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+  b += t(cD, 54, '아래', { size: 9, weight: 700, fill: COLOR.accent, anchor: 'middle' });
+  const rows = [
+    ['먼지 (청소 주기)', 'U'],
+    ['소음 (귀의 평화)', 'D'],
+    ['무선 (동글·블루투스)', 'U'],
+    ['책상 공간', 'D'],
+    ['발열', 'X'],
+  ];
+  rows.forEach((r, i) => {
+    const y = 66 + i * 28;
+    b += '<path d="M290 ' + (y + 26) + ' L616 ' + (y + 26) + '" stroke="' + COLOR.line + '" stroke-width="1"/>';
+    b += t(296, y + 17, r[0], { size: 8.8, weight: 600, fill: COLOR.text });
+    if (r[1] === 'X') {
+      b += rect(cU - 40, y + 5, cD - cU + 80, 16, COLOR.soft, { r: 8, stroke: COLOR.line });
+      b += t((cU + cD) / 2, y + 16.5, '무승부 — 막힘만 피하면 됨', { size: 7.8, fill: COLOR.mute, anchor: 'middle' });
+    } else {
+      const c = r[1] === 'U' ? cU : cD, col = r[1] === 'U' ? COLOR.fit : COLOR.accent;
+      b += rect(c - 26, y + 5, 52, 16, col, { r: 8 });
+      b += t(c, y + 16.5, '유리', { size: 8, weight: 700, fill: '#fff', anchor: 'middle' });
+    }
+  });
+  b += t(24, 218, '정답은 없음 — 내게 제일 아까운 축 하나로 고르면 됩니다', { size: 8.4, weight: 600, fill: COLOR.mute });
+  return figure(
+    '책상 위와 아래의 축별 승패',
+    W, 232, b,
+    '본체를 책상 위에 두면 먼지와 무선 연결에서 유리하고, 책상 아래에 두면 소음과 책상 공간에서 유리합니다. 발열은 어느 쪽이든 흡기와 배기가 막히지 않으면 차이가 없어서, 자신에게 가장 아까운 축 하나를 기준으로 고르면 됩니다.'
   );
 }
