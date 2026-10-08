@@ -957,6 +957,7 @@ export const figures = {
   'evening-in-out': eveningInOut,
   'mist-vs-vapor': mistVsVapor,
   'desk-top-or-under': deskTopOrUnder,
+  'router-three-limits': routerThreeLimits,
 };
 
 /**
@@ -5956,5 +5957,43 @@ function deskTopOrUnder() {
     '책상 위와 아래의 축별 승패',
     W, 232, b,
     '본체를 책상 위에 두면 먼지와 무선 연결에서 유리하고, 책상 아래에 두면 소음과 책상 공간에서 유리합니다. 발열은 어느 쪽이든 흡기와 배기가 막히지 않으면 차이가 없어서, 자신에게 가장 아까운 축 하나를 기준으로 고르면 됩니다.'
+  );
+}
+
+function routerThreeLimits() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '공유기 기기 수의 한계는 셋 — 대수가 아니라 동시 통신량이 정합니다', { weight: 600, size: 12.5 });
+  const cards = [
+    ['① 최대 접속 수', '문 앞 명단의 한계', '새 기기만 연결 거부', '안 쓰는 기기 정리', COLOR.mute],
+    ['② 처리 체급', '공유기 두뇌(칩·램)의 한계', '전체 느림 · 주기적으로 뻗음', '재부팅은 진통제, 근본은 체급', COLOR.over],
+    ['③ 전파 혼잡', '같은 도로를 나눠 쓰는 한계', '동시에 쓸 때만 느림', '유선·5GHz로 나눠 태우기', COLOR.fit],
+  ];
+  cards.forEach((c, i) => {
+    const x = 24 + i * 202;
+    b += rect(x, 40, 188, 104, COLOR.soft, { r: 6, stroke: c[4] });
+    b += t(x + 12, 60, c[0], { size: 9.6, weight: 700, fill: c[4] });
+    b += t(x + 12, 76, c[1], { size: 7.8, fill: COLOR.mute });
+    b += t(x + 12, 100, '증상 ' + c[2], { size: 8, weight: 600, fill: COLOR.text });
+    b += t(x + 12, 122, '처방 ' + c[3], { size: 8, fill: COLOR.text });
+  });
+  // 아래: 잠든 30대 vs 활발한 10대
+  b += t(24, 172, '잠든 30대', { size: 9, weight: 700, fill: COLOR.fit });
+  for (let i = 0; i < 30; i++) {
+    const x = 30 + (i % 15) * 16, y = 188 + Math.floor(i / 15) * 16;
+    const on = i === 4 || i === 18 || i === 26;
+    b += '<circle cx="' + x + '" cy="' + y + '" r="4" fill="' + (on ? COLOR.fit : 'none') + '" stroke="' + COLOR.fit + '" stroke-width="1"/>';
+  }
+  b += t(24, 232, '대부분 대기 상태 — 도로를 거의 안 씀 → 가볍습니다', { size: 7.8, fill: COLOR.text });
+  b += t(340, 172, '동시에 통신하는 10대', { size: 9, weight: 700, fill: COLOR.over });
+  for (let i = 0; i < 10; i++) {
+    const x = 350 + (i % 10) * 26, y = 196;
+    b += '<circle cx="' + x + '" cy="' + y + '" r="7" fill="' + COLOR.over + '"/>';
+  }
+  b += t(340, 232, '영상·게임·회의가 겹침 → 10대여도 무겁습니다', { size: 7.8, fill: COLOR.text });
+  return figure(
+    '공유기 한계 세 가지',
+    W, 246, b,
+    '공유기의 한계는 최대 접속 수, 처리 체급, 전파 혼잡 세 가지로 나뉩니다. 접속 수에 닿으면 새 기기만 연결이 안 되고, 체급이 모자라면 전체가 느려지거나 뻗으며, 전파가 붐비면 동시에 쓸 때만 느려집니다. 대기 상태인 기기 30대보다 동시에 영상과 게임을 하는 10대가 더 무겁습니다.'
   );
 }
