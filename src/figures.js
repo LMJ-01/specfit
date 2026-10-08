@@ -958,6 +958,7 @@ export const figures = {
   'mist-vs-vapor': mistVsVapor,
   'desk-top-or-under': deskTopOrUnder,
   'router-three-limits': routerThreeLimits,
+  'clamshell-airflow': clamshellAirflow,
 };
 
 /**
@@ -5995,5 +5996,50 @@ function routerThreeLimits() {
     '공유기 한계 세 가지',
     W, 246, b,
     '공유기의 한계는 최대 접속 수, 처리 체급, 전파 혼잡 세 가지로 나뉩니다. 접속 수에 닿으면 새 기기만 연결이 안 되고, 체급이 모자라면 전체가 느려지거나 뻗으며, 전파가 붐비면 동시에 쓸 때만 느려집니다. 대기 상태인 기기 30대보다 동시에 영상과 게임을 하는 10대가 더 무겁습니다.'
+  );
+}
+
+function clamshellAirflow() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '덮개를 닫으면 열길이 어떻게 바뀌나 — 눕힘과 세움의 차이', { weight: 600, size: 12.5 });
+  const up = (x, y1, y2, c) => '<path d="M' + x + ' ' + y1 + ' L' + x + ' ' + y2 + ' M' + (x - 3) + ' ' + (y2 + 4) + ' L' + x + ' ' + y2 + ' L' + (x + 3) + ' ' + (y2 + 4) + '" fill="none" stroke="' + c + '" stroke-width="1.4"/>';
+  const right = (x1, x2, y, c) => '<path d="M' + x1 + ' ' + y + ' L' + x2 + ' ' + y + ' M' + (x2 - 4) + ' ' + (y - 3) + ' L' + x2 + ' ' + y + ' L' + (x2 - 4) + ' ' + (y + 3) + '" fill="none" stroke="' + c + '" stroke-width="1.4"/>';
+  const panels = [
+    ['열고 사용 — 기본', '바닥 흡기 → 힌지 배기 + 키보드 면', COLOR.fit],
+    ['닫고 눕힘 — 부하에 따라', '가벼운 작업은 대개 OK · 고부하는 열고', COLOR.over],
+    ['수직 거치대 — 절충', '닫아도 양면이 공기에 노출', COLOR.fit],
+  ];
+  panels.forEach((p, i) => {
+    const x = 24 + i * 202;
+    b += rect(x, 40, 188, 164, COLOR.soft, { r: 6, stroke: COLOR.line });
+    if (i < 2) {
+      b += rect(x + 30, 130, 120, 10, COLOR.line, { r: 2, stroke: COLOR.mute });
+      b += up(x + 60, 158, 144, COLOR.fit) + up(x + 100, 158, 144, COLOR.fit);
+      b += right(x + 152, x + 176, 135, COLOR.over);
+    }
+    if (i === 0) {
+      b += '<path d="M' + (x + 150) + ' 130 L' + (x + 172) + ' 70" stroke="' + COLOR.mute + '" stroke-width="3" stroke-linecap="round"/>';
+      b += up(x + 80, 124, 108, COLOR.mute) + up(x + 112, 124, 108, COLOR.mute);
+    }
+    if (i === 1) {
+      b += rect(x + 30, 123, 120, 7, COLOR.soft, { r: 2, stroke: COLOR.over });
+      b += t(x + 90, 114, '키보드 면 덮임 · 열이 갇힘', { size: 7.6, weight: 600, fill: COLOR.over, anchor: 'middle' });
+    }
+    if (i === 2) {
+      b += rect(x + 64, 148, 60, 5, COLOR.mute, { r: 2 });
+      b += rect(x + 86, 70, 8, 78, COLOR.line, { r: 2, stroke: COLOR.mute });
+      b += rect(x + 94, 70, 8, 78, COLOR.line, { r: 2, stroke: COLOR.mute });
+      b += up(x + 72, 140, 88, COLOR.fit) + up(x + 116, 140, 88, COLOR.fit);
+    }
+    b += t(x + 10, 182, p[0], { size: 9, weight: 700, fill: p[2] });
+    b += t(x + 10, 198, p[1], { size: 7.6, fill: COLOR.text });
+  });
+  b += rect(24, 214, 592, 24, COLOR.soft, { r: 5, stroke: COLOR.line });
+  b += t(36, 230, '확인법: 닫은 채 부하를 건 뒤 스로틀링(성능 깎임)이 오는지 보기 · 열길 설계는 제품에 따라 다릅니다', { size: 7.8, fill: COLOR.text });
+  return figure(
+    '노트북 덮개를 닫을 때의 열길',
+    W, 248, b,
+    '노트북은 대개 바닥으로 공기를 빨아들이고 힌지 쪽으로 내보내며, 키보드 면도 열을 흘리는 통로 일부입니다. 덮개를 닫고 눕히면 키보드 면이 덮여 열이 갇히기 쉬워 고부하에서 불리하고, 수직 거치대에 세우면 닫아도 양면이 공기에 노출되어 절충이 됩니다.'
   );
 }
