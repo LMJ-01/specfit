@@ -955,6 +955,7 @@ export const figures = {
   'xmp-off-on': xmpOffOn,
   'psu-cap-ceiling': psuCapCeiling,
   'evening-in-out': eveningInOut,
+  'mist-vs-vapor': mistVsVapor,
 };
 
 /**
@@ -5859,5 +5860,49 @@ function eveningInOut() {
     '저녁 느림의 집 안과 집 밖',
     W, 240, b,
     '저녁마다 느려지는 인터넷은 집 밖의 공용 구간이 붐비는 경우와 집 안의 와이파이가 붐비는 경우로 나뉩니다. 공유기에 유선으로 직결한 PC로 낮과 저녁에 한 번씩 재서, 유선도 저녁마다 떨어지면 집 밖, 유선은 멀쩡하고 와이파이만 느리면 집 안으로 봅니다.'
+  );
+}
+
+function mistVsVapor() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '가습기 옆 컴퓨터 — 겁낼 것은 습기가 아니라 물방울입니다', { weight: 600, size: 12.5 });
+  b += '<path d="M324 40 L324 204" stroke="' + COLOR.line + '" stroke-width="1"/>';
+  // 왼쪽: 초음파식
+  b += t(24, 52, '초음파식 — 찬 안개 = 미세한 물방울', { size: 9.4, weight: 700, fill: COLOR.over });
+  b += rect(40, 140, 36, 46, COLOR.soft, { r: 5, stroke: COLOR.over });
+  b += t(58, 200, '가습기', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  b += '<path d="M76 98 L200 98 L200 188 L76 188" fill="none" stroke="' + COLOR.over + '" stroke-width="1.2" stroke-dasharray="4 3"/>';
+  b += t(200, 92, '안개 사정권', { size: 8, weight: 600, fill: COLOR.over, anchor: 'end' });
+  for (let i = 0; i <= 10; i++) {
+    const x = 82 + i * 9, y = 134 - i * (10 - i) * 1.1;
+    b += '<circle cx="' + x + '" cy="' + y.toFixed(1) + '" r="2.2" fill="' + COLOR.over + '" opacity="0.75"/>';
+  }
+  [[176, 146], [184, 158], [170, 166], [180, 176], [190, 170]].forEach(([x, y]) => {
+    b += '<circle cx="' + x + '" cy="' + y + '" r="2" fill="' + COLOR.over + '" opacity="0.55"/>';
+  });
+  b += t(138, 182, '내려앉아 젖음', { size: 7.6, fill: COLOR.over, anchor: 'middle' });
+  b += rect(236, 132, 44, 54, COLOR.soft, { r: 4, stroke: COLOR.fit });
+  b += t(258, 163, '본체', { size: 8, weight: 600, fill: COLOR.fit, anchor: 'middle' });
+  b += t(258, 124, '✓ 사정권 밖', { size: 8, weight: 600, fill: COLOR.fit, anchor: 'middle' });
+  b += t(24, 216, '분사 방향은 컴퓨터 반대쪽 · 본체 흡기 앞은 피하기', { size: 7.8, fill: COLOR.text });
+  // 오른쪽: 가열식·기화식
+  b += t(340, 52, '가열식·기화식 — 수증기, 기체에 가까움', { size: 9.4, weight: 700, fill: COLOR.fit });
+  b += rect(356, 140, 36, 46, COLOR.soft, { r: 5, stroke: COLOR.fit });
+  b += t(374, 200, '가습기', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  [[366, 0.75], [374, 0.55], [382, 0.35]].forEach(([x, o]) => {
+    b += '<path d="M' + x + ' 136 q 6 -10 0 -20 q -6 -10 0 -20 q 6 -10 0 -20" fill="none" stroke="' + COLOR.fit + '" stroke-width="1.4" opacity="' + o + '"/>';
+  });
+  b += t(416, 104, '공기 중에 퍼져 사라짐', { size: 8.2, weight: 600, fill: COLOR.text });
+  b += t(416, 126, '주변을 적시는 성질이 약해 여유가 큼', { size: 7.8, fill: COLOR.text });
+  b += t(416, 146, '그래도 토출구 직분사는 피하는 게 원칙', { size: 7.8, fill: COLOR.text });
+  b += t(340, 216, '사람에게 쾌적한 습도 = 기기에도 안전한 범위', { size: 7.8, fill: COLOR.text });
+  // 아래
+  b += rect(24, 228, 592, 24, COLOR.soft, { r: 5, stroke: COLOR.line });
+  b += t(36, 244, '구분법: 토출구의 하얀 김이 눈에 보이는데 차갑다면 초음파식 · 창문에 물이 맺히면 위치보다 가동을 줄일 때', { size: 7.8, fill: COLOR.text });
+  return figure(
+    '초음파식 안개와 가열식 수증기',
+    W, 262, b,
+    '초음파식 가습기가 내보내는 찬 안개는 미세한 물방울이라 가까운 표면에 내려앉아 적시므로, 컴퓨터는 안개가 닿는 범위 밖에 두고 분사 방향을 반대로 돌립니다. 가열식이나 기화식은 기체에 가까운 수증기를 내보내 여유가 크지만, 토출구를 컴퓨터에 바로 향하게 두지는 않는 것이 원칙입니다.'
   );
 }
