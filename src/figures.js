@@ -959,6 +959,7 @@ export const figures = {
   'desk-top-or-under': deskTopOrUnder,
   'router-three-limits': routerThreeLimits,
   'clamshell-airflow': clamshellAirflow,
+  'ram-two-lanes': ramTwoLanes,
 };
 
 /**
@@ -6041,5 +6042,47 @@ function clamshellAirflow() {
     '노트북 덮개를 닫을 때의 열길',
     W, 248, b,
     '노트북은 대개 바닥으로 공기를 빨아들이고 힌지 쪽으로 내보내며, 키보드 면도 열을 흘리는 통로 일부입니다. 덮개를 닫고 눕히면 키보드 면이 덮여 열이 갇히기 쉬워 고부하에서 불리하고, 수직 거치대에 세우면 닫아도 양면이 공기에 노출되어 절충이 됩니다.'
+  );
+}
+
+function ramTwoLanes() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '같은 32GB, 길의 수가 다릅니다 — 두 장은 길 둘, 한 장은 길 하나', { weight: 600, size: 12.5 });
+  const panel = (x, two) => {
+    let o = '';
+    const c = two ? COLOR.fit : COLOR.accent;
+    o += rect(x, 40, 290, 128, COLOR.soft, { r: 6, stroke: COLOR.line });
+    o += t(x + 12, 60, two ? '16GB × 2 — 길 두 개' : '32GB × 1 — 길 하나', { size: 9.6, weight: 700, fill: c });
+    o += rect(x + 16, 78, 64, 56, COLOR.soft, { r: 4, stroke: COLOR.mute });
+    o += t(x + 48, 110, 'CPU', { size: 9, weight: 700, fill: COLOR.text, anchor: 'middle' });
+    // A 채널
+    o += '<path d="M' + (x + 80) + ' 92 L' + (x + 196) + ' 92" stroke="' + c + '" stroke-width="5"/>';
+    o += t(x + 138, 86, 'A 채널', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+    o += rect(x + 198, 84, 76, 16, c, { r: 3 });
+    o += t(x + 236, 96, two ? '16GB' : '32GB', { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+    // B 채널
+    if (two) {
+      o += '<path d="M' + (x + 80) + ' 120 L' + (x + 196) + ' 120" stroke="' + c + '" stroke-width="5"/>';
+      o += rect(x + 198, 112, 76, 16, c, { r: 3 });
+      o += t(x + 236, 124, '16GB', { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+    } else {
+      o += '<path d="M' + (x + 80) + ' 120 L' + (x + 196) + ' 120" stroke="' + COLOR.line + '" stroke-width="2" stroke-dasharray="5 4"/>';
+      o += rect(x + 198, 112, 76, 16, 'none', { r: 3, stroke: COLOR.mute });
+      o += t(x + 236, 124, '빈 슬롯', { size: 8, fill: COLOR.mute, anchor: 'middle' });
+    }
+    o += t(x + 138, 114, 'B 채널', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+    o += t(x + 12, 156, two ? '대역폭 2배(듀얼 채널) — 지금 빠름' : '지금은 절반 대역폭 · 빈 슬롯은 나중의 증설 자리', { size: 8, weight: 600, fill: COLOR.text });
+    return o;
+  };
+  b += panel(24, true) + panel(326, false);
+  b += t(24, 192, '차이가 체감되는 곳:', { size: 8.4, weight: 700, fill: COLOR.text });
+  b += t(130, 192, '일반 작업 — 작음', { size: 8.2, fill: COLOR.mute });
+  b += t(250, 192, '내장그래픽 — 큼', { size: 8.2, weight: 600, fill: COLOR.over });
+  b += t(366, 192, 'CPU로 돌리는 로컬 LLM — 큼', { size: 8.2, weight: 600, fill: COLOR.over });
+  return figure(
+    '두 장과 한 장의 채널 차이',
+    W, 206, b,
+    '16GB 두 장을 규정 슬롯에 꽂으면 CPU와 램 사이의 길이 둘인 듀얼 채널이 되어 대역폭이 두 배가 됩니다. 32GB 한 장은 길 하나만 써서 지금은 대역폭이 절반이지만, 빈 슬롯을 나중 증설 자리로 남깁니다. 차이는 일반 작업에서는 작고, 내장그래픽과 CPU로 돌리는 로컬 LLM에서 큽니다.'
   );
 }
