@@ -961,6 +961,7 @@ export const figures = {
   'clamshell-airflow': clamshellAirflow,
   'ram-two-lanes': ramTwoLanes,
   'ssd-label-vs-windows': ssdLabelVsWindows,
+  'usbc-hub-chain': usbcHubChain,
 };
 
 /**
@@ -6115,5 +6116,35 @@ function ssdLabelVsWindows() {
     '상자 용량과 윈도우 표시',
     W, 214, b,
     '제조사는 1TB를 1000의 세제곱 단위로 나눈 10진수로 표기하고, 윈도우는 같은 바이트를 1024의 세제곱으로 나눠 표시해서 1TB가 약 931GB로 보입니다. 용량이 사라진 것이 아니라 단위가 다른 것이고, 복구용 숨은 파티션이 몇 GB를 더 차지합니다.'
+  );
+}
+
+function usbcHubChain() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '노트북 → 허브 → 모니터 — 사슬의 고리마다 확인할 것이 하나씩', { weight: 600, size: 12.5 });
+  const arrowR = (x1, x2, y) => '<path d="M' + x1 + ' ' + y + ' L' + x2 + ' ' + y + ' M' + (x2 - 5) + ' ' + (y - 4) + ' L' + x2 + ' ' + y + ' L' + (x2 - 5) + ' ' + (y + 4) + '" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.4"/>';
+  const nodes = [
+    ['노트북 USB-C 포트', ['화면 내보내는 포트인가', 'DP·번개 표시 확인']],
+    ['허브·독', ['방식이 무엇인가', 'MST·DisplayLink·썬더볼트']],
+    ['케이블', ['해상도·주사율을', '감당하는 규격인가']],
+    ['모니터', ['입력 소스가', '그 단자로 잡혔나']],
+  ];
+  nodes.forEach((n, i) => {
+    const x = 24 + i * 152;
+    b += rect(x, 44, 132, 30, COLOR.soft, { r: 5, stroke: i === 1 ? COLOR.accent : COLOR.mute });
+    b += t(x + 66, 63, n[0], { size: 8.8, weight: 700, fill: i === 1 ? COLOR.accent : COLOR.text, anchor: 'middle' });
+    if (i < 3) b += arrowR(x + 134, x + 150, 59);
+    b += t(x + 4, 94, n[1][0], { size: 8, weight: 600, fill: COLOR.text });
+    b += t(x + 4, 110, n[1][1], { size: 7.6, fill: COLOR.mute });
+  });
+  b += rect(24, 128, 592, 62, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 146, '깜빡이거나 꺼졌다 켜지면 — 고리를 하나씩 빼서 비교', { size: 9, weight: 700, fill: COLOR.over });
+  b += t(36, 164, '① 허브 빼고 노트북에 직결 → 멀쩡하면 허브 쪽   ② 케이블만 바꿔 보기 → 규격·접촉 쪽', { size: 8, fill: COLOR.text });
+  b += t(36, 180, '③ 둘 다 아니면 그래픽 드라이버 갱신 · 다른 노트북·모니터에서 재현되는지 확인', { size: 8, fill: COLOR.text });
+  return figure(
+    'USB-C 허브 연결의 고리',
+    W, 202, b,
+    '노트북 USB-C로 모니터를 연결하는 경로는 노트북 포트, 허브나 독, 케이블, 모니터 네 고리로 이어지고, 고리마다 확인할 것이 하나씩 있습니다. 화면이 깜빡이거나 꺼졌다 켜지면 허브를 빼고 직결해 보고, 케이블만 바꿔 보는 식으로 고리를 하나씩 빼서 비교합니다.'
   );
 }
