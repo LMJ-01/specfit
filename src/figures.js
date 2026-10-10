@@ -960,6 +960,7 @@ export const figures = {
   'router-three-limits': routerThreeLimits,
   'clamshell-airflow': clamshellAirflow,
   'ram-two-lanes': ramTwoLanes,
+  'ssd-label-vs-windows': ssdLabelVsWindows,
 };
 
 /**
@@ -6084,5 +6085,35 @@ function ramTwoLanes() {
     '두 장과 한 장의 채널 차이',
     W, 206, b,
     '16GB 두 장을 규정 슬롯에 꽂으면 CPU와 램 사이의 길이 둘인 듀얼 채널이 되어 대역폭이 두 배가 됩니다. 32GB 한 장은 길 하나만 써서 지금은 대역폭이 절반이지만, 빈 슬롯을 나중 증설 자리로 남깁니다. 차이는 일반 작업에서는 작고, 내장그래픽과 CPU로 돌리는 로컬 LLM에서 큽니다.'
+  );
+}
+
+function ssdLabelVsWindows() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '1TB가 931GB로 보이는 이유 — 같은 바이트를 다른 자로 잽니다', { weight: 600, size: 12.5 });
+  const x0 = 150, full = 440;
+  b += t(x0 - 10, 62, '상자(제조사)', { size: 9, weight: 700, fill: COLOR.text, anchor: 'end' });
+  b += rect(x0, 48, full, 20, COLOR.fit, { r: 3 });
+  b += t(x0 + full / 2, 62, '1,000,000,000,000 바이트 ÷ 1000³ = 1000GB', { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += t(x0 - 10, 96, '윈도우', { size: 9, weight: 700, fill: COLOR.text, anchor: 'end' });
+  b += rect(x0, 82, full, 20, COLOR.accent, { r: 3 });
+  b += t(x0 + full / 2, 96, '같은 바이트 ÷ 1024³ = 약 931GB', { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += t(x0, 120, '막대 길이가 같은 이유: 사라진 공간이 아니라 자의 눈금이 다른 것', { size: 8, fill: COLOR.mute });
+  // 표
+  const rows = [['500GB', '약 465GB'], ['1TB', '약 931GB'], ['2TB', '약 1862GB'], ['4TB', '약 3725GB']];
+  b += t(24, 146, '상자 표기', { size: 8.4, weight: 700, fill: COLOR.mute });
+  b += t(24, 164, '윈도우 표시', { size: 8.4, weight: 700, fill: COLOR.mute });
+  rows.forEach((r, i) => {
+    const x = 150 + i * 116;
+    b += t(x, 146, r[0], { size: 9, weight: 700, fill: COLOR.fit });
+    b += t(x, 164, r[1], { size: 9, weight: 700, fill: COLOR.accent });
+  });
+  b += rect(24, 180, 592, 24, COLOR.soft, { r: 5, stroke: COLOR.line });
+  b += t(36, 196, '여기서 조금 더 줄어드는 건 정상 · 복구·부팅용 숨은 파티션이 몇 GB를 씀 · 크게 모자라면 디스크 관리에서 할당 안 된 공간 확인', { size: 7.6, fill: COLOR.text });
+  return figure(
+    '상자 용량과 윈도우 표시',
+    W, 214, b,
+    '제조사는 1TB를 1000의 세제곱 단위로 나눈 10진수로 표기하고, 윈도우는 같은 바이트를 1024의 세제곱으로 나눠 표시해서 1TB가 약 931GB로 보입니다. 용량이 사라진 것이 아니라 단위가 다른 것이고, 복구용 숨은 파티션이 몇 GB를 더 차지합니다.'
   );
 }

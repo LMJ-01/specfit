@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 SSD 교체 — 램과 달리 이건 바꿀 수 있습니다","description":"노트북에서 램은 대개 못 늘리지만 SSD는 바꿀 수 있는 경우가 많습니다. 슬롯 확인법, 규격 고르는 법, 교체 전에 알아둘 것을 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-10-07","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-ssd-upgrade.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 SSD 교체 — 램과 달리 이건 바꿀 수 있습니다","description":"노트북에서 램은 대개 못 늘리지만 SSD는 바꿀 수 있는 경우가 많습니다. 슬롯 확인법, 규격 고르는 법, 교체 전에 알아둘 것을 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-10-10","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-ssd-upgrade.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"노트북 SSD 교체 — 램과 달리 이건 바꿀 수 있습니다","item":"https://specfit.kr/posts/laptop-ssd-upgrade.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>노트북 SSD 교체 — 램과 달리 이건 바꿀 수 있습니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-16">2026년 8월 16일</time>
-      <span class="updated">· 2026년 10월 7일 갱신</span>
+      <span class="updated">· 2026년 10월 10일 갱신</span>
     </p>
   </header>
 
@@ -217,6 +217,20 @@ SATA만 받기도 합니다) → <strong>보증이 깨지는가</strong>(제조�
 <p><strong>뒷판이 안 열리면</strong> 숨은 나사가 고무 발 아래에 있는 경우가
 많습니다. 무리하게 벌리면 걸쇠가 부러지니, 내 모델의 분해 영상을
 한 번 보고 하시는 게 안전합니다.</p>
+<p><strong>새 1TB가 931GB로 보이는 건</strong> 정상입니다. 상자는 1000 단위로,
+윈도우는 같은 바이트를 1024 단위로 나눠 보여 주기 때문이라 — 빠진
+공간이 아니라 자의 눈금이 다른 것입니다. 인터넷 요금제의 메가와
+다운로드 창의 MB가 <a href="/posts/internet-download-speed.html">8배 다르게 보이는 착시</a>와
+같은 종류의 함정이고요. 여기에 복구용 숨은 파티션이 몇 GB를 더
+씁니다. 그보다 크게 모자라면 디스크 관리에서 <strong>할당되지 않은
+공간</strong>이 남아 있는지 보세요.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 214" width="640" height="214" role="img" aria-label="상자 용량과 윈도우 표시">
+<title>상자 용량과 윈도우 표시</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">1TB가 931GB로 보이는 이유 — 같은 바이트를 다른 자로 잽니다</text><text x="140" y="62" fill="var(--fg)" font-size="9" font-weight="700" text-anchor="end">상자(제조사)</text><rect x="150" y="48" width="440" height="20" fill="var(--fig-fit)" rx="3"/><text x="370" y="62" fill="#fff" font-size="8.4" font-weight="700" text-anchor="middle">1,000,000,000,000 바이트 ÷ 1000³ = 1000GB</text><text x="140" y="96" fill="var(--fg)" font-size="9" font-weight="700" text-anchor="end">윈도우</text><rect x="150" y="82" width="440" height="20" fill="var(--accent)" rx="3"/><text x="370" y="96" fill="#fff" font-size="8.4" font-weight="700" text-anchor="middle">같은 바이트 ÷ 1024³ = 약 931GB</text><text x="150" y="120" fill="var(--fg-muted)" font-size="8">막대 길이가 같은 이유: 사라진 공간이 아니라 자의 눈금이 다른 것</text><text x="24" y="146" fill="var(--fg-muted)" font-size="8.4" font-weight="700">상자 표기</text><text x="24" y="164" fill="var(--fg-muted)" font-size="8.4" font-weight="700">윈도우 표시</text><text x="150" y="146" fill="var(--fig-fit)" font-size="9" font-weight="700">500GB</text><text x="150" y="164" fill="var(--accent)" font-size="9" font-weight="700">약 465GB</text><text x="266" y="146" fill="var(--fig-fit)" font-size="9" font-weight="700">1TB</text><text x="266" y="164" fill="var(--accent)" font-size="9" font-weight="700">약 931GB</text><text x="382" y="146" fill="var(--fig-fit)" font-size="9" font-weight="700">2TB</text><text x="382" y="164" fill="var(--accent)" font-size="9" font-weight="700">약 1862GB</text><text x="498" y="146" fill="var(--fig-fit)" font-size="9" font-weight="700">4TB</text><text x="498" y="164" fill="var(--accent)" font-size="9" font-weight="700">약 3725GB</text><rect x="24" y="180" width="592" height="24" fill="var(--bg-soft)" rx="5" stroke="var(--border)"/><text x="36" y="196" fill="var(--fg)" font-size="7.6">여기서 조금 더 줄어드는 건 정상 · 복구·부팅용 숨은 파티션이 몇 GB를 씀 · 크게 모자라면 디스크 관리에서 할당 안 된 공간 확인</text>
+</svg>
+<figcaption>제조사는 1TB를 1000의 세제곱 단위로 나눈 10진수로 표기하고, 윈도우는 같은 바이트를 1024의 세제곱으로 나눠 표시해서 1TB가 약 931GB로 보입니다. 용량이 사라진 것이 아니라 단위가 다른 것이고, 복구용 숨은 파티션이 몇 GB를 더 차지합니다.</figcaption>
+</figure>
 <p>노트북에서 바꿀 수 있는 건 사실상 SSD 하나이고, 순서는 슬롯
 개수부터, 길이 규격이 다르면 안 들어가고, 슬롯 1개면 재설치보다
 복제가 빠르고, 노트북에 Gen5는 열이 안 빠져 권하지 않고, 로컬
