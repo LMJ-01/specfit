@@ -962,6 +962,7 @@ export const figures = {
   'ram-two-lanes': ramTwoLanes,
   'ssd-label-vs-windows': ssdLabelVsWindows,
   'usbc-hub-chain': usbcHubChain,
+  'speed-units-gates': speedUnitsGates,
 };
 
 /**
@@ -6146,5 +6147,37 @@ function usbcHubChain() {
     'USB-C 허브 연결의 고리',
     W, 202, b,
     '노트북 USB-C로 모니터를 연결하는 경로는 노트북 포트, 허브나 독, 케이블, 모니터 네 고리로 이어지고, 고리마다 확인할 것이 하나씩 있습니다. 화면이 깜빡이거나 꺼졌다 켜지면 허브를 빼고 직결해 보고, 케이블만 바꿔 보는 식으로 고리를 하나씩 빼서 비교합니다.'
+  );
+}
+
+function speedUnitsGates() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '다운로드 속도 읽는 법 — 먼저 ÷ 8, 그다음 제일 좁은 관문', { weight: 600, size: 12.5 });
+  // 위: 단위 환산
+  b += rect(24, 40, 190, 34, COLOR.soft, { r: 5, stroke: COLOR.mute });
+  b += t(119, 55, '통신사 500메가', { size: 9, weight: 700, fill: COLOR.text, anchor: 'middle' });
+  b += t(119, 68, '= 500Mbps (비트)', { size: 7.8, fill: COLOR.mute, anchor: 'middle' });
+  b += t(250, 62, '÷ 8', { size: 13, weight: 700, fill: COLOR.accent, anchor: 'middle' });
+  b += rect(286, 40, 230, 34, COLOR.soft, { r: 5, stroke: COLOR.fit });
+  b += t(401, 55, '62.5MB/s (바이트)', { size: 9, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+  b += t(401, 68, '= 다운로드 창의 만점', { size: 7.8, fill: COLOR.mute, anchor: 'middle' });
+  b += t(528, 62, '60MB/s대면 정상', { size: 8, weight: 600, fill: COLOR.fit });
+  // 아래: 관문 파이프
+  b += t(24, 102, '진짜 느릴 때 — 속도는 경로에서 제일 좁은 관문을 따라갑니다 (예시)', { size: 8.8, weight: 700, fill: COLOR.text });
+  const mid = 150;
+  const segs = [['회선 500M', 34, COLOR.mute], ['공유기 포트 1G', 50, COLOR.mute], ['낡은 랜선 100M', 10, COLOR.over], ['PC 랜카드 1G', 50, COLOR.mute]];
+  segs.forEach((g, i) => {
+    const x = 24 + i * 120;
+    b += rect(x, mid - g[1] / 2, 112, g[1], g[2] === COLOR.over ? COLOR.over : COLOR.line, { r: 2, stroke: g[2] });
+    b += t(x + 56, 194, g[0], { size: 8, weight: g[2] === COLOR.over ? 700 : 600, fill: g[2] === COLOR.over ? COLOR.over : COLOR.text, anchor: 'middle' });
+  });
+  b += t(508, 140, '결과', { size: 8.4, weight: 700, fill: COLOR.over });
+  b += t(508, 156, '100Mbps ÷ 8', { size: 8.4, fill: COLOR.text });
+  b += t(508, 172, '≈ 12.5MB/s', { size: 9, weight: 700, fill: COLOR.over });
+  return figure(
+    '속도 단위와 관문',
+    W, 206, b,
+    '통신사의 500메가는 초당 비트 단위라 8로 나누면 초당 62.5MB가 다운로드 창의 만점입니다. 환산해도 한참 모자라면 경로에서 가장 좁은 관문이 속도를 정하는데, 예를 들어 낡은 랜선이 100Mbps에 묶여 있으면 회선과 공유기가 빨라도 초당 12.5MB 언저리에 머뭅니다.'
   );
 }
