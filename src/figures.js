@@ -963,6 +963,7 @@ export const figures = {
   'ssd-label-vs-windows': ssdLabelVsWindows,
   'usbc-hub-chain': usbcHubChain,
   'speed-units-gates': speedUnitsGates,
+  'dedicated-vs-shared': dedicatedVsShared,
 };
 
 /**
@@ -6179,5 +6180,33 @@ function speedUnitsGates() {
     '속도 단위와 관문',
     W, 206, b,
     '통신사의 500메가는 초당 비트 단위라 8로 나누면 초당 62.5MB가 다운로드 창의 만점입니다. 환산해도 한참 모자라면 경로에서 가장 좁은 관문이 속도를 정하는데, 예를 들어 낡은 랜선이 100Mbps에 묶여 있으면 회선과 공유기가 빨라도 초당 12.5MB 언저리에 머뭅니다.'
+  );
+}
+
+function dedicatedVsShared() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '작업 관리자의 GPU 메모리 두 줄 — 전용은 카드 몫, 공유는 빌릴 수 있는 한도', { weight: 600, size: 12.5 });
+  const x0 = 140, sc = 26; // px per GB
+  // 전용
+  b += t(x0 - 10, 62, '전용 GPU 메모리', { size: 9, weight: 700, fill: COLOR.text, anchor: 'end' });
+  b += rect(x0, 48, 8 * sc, 20, COLOR.fit, { r: 3 });
+  b += t(x0 + 4 * sc, 62, '그래픽카드의 VRAM 8GB', { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += t(x0 + 8 * sc + 8, 62, '빠름 · 모델은 여기 다 들어가야 제 속도', { size: 8, fill: COLOR.fit });
+  // 램
+  b += t(x0 - 10, 110, '시스템 램', { size: 9, weight: 700, fill: COLOR.text, anchor: 'end' });
+  b += rect(x0, 96, 16 * sc, 20, COLOR.line, { r: 3, stroke: COLOR.mute });
+  b += t(x0 + 8, 110, '16GB', { size: 8.4, weight: 700, fill: COLOR.text });
+  b += '<path d="M' + (x0 + 8 * sc) + ' 90 L' + (x0 + 16 * sc) + ' 90 L' + (x0 + 16 * sc) + ' 122 L' + (x0 + 8 * sc) + ' 122 Z" fill="none" stroke="' + COLOR.accent + '" stroke-width="1.6" stroke-dasharray="5 3"/>';
+  b += t(x0 + 12 * sc, 110, '공유 GPU 메모리 한도 ≈ 램의 절반', { size: 8.2, weight: 700, fill: COLOR.accent, anchor: 'middle' });
+  b += t(x0 + 12 * sc, 138, '미리 떼어 둔 게 아니라 VRAM이 넘칠 때 빌리는 한도', { size: 7.8, fill: COLOR.accent, anchor: 'middle' });
+  // 아래
+  b += rect(24, 152, 592, 42, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 169, '평소에는 다른 프로그램이 그 램을 그대로 씀 → "램을 뺏겼다"가 아님', { size: 8.2, fill: COLOR.text });
+  b += t(36, 185, '공유 쪽 사용량이 오르기 시작하면 VRAM이 넘친 신호 → 로컬 LLM은 그 순간부터 크게 느려짐', { size: 8.2, weight: 600, fill: COLOR.over });
+  return figure(
+    '전용 GPU 메모리와 공유 GPU 메모리',
+    W, 204, b,
+    '작업 관리자의 전용 GPU 메모리는 그래픽카드에 달린 VRAM이고, 공유 GPU 메모리는 VRAM이 모자랄 때 시스템 램에서 빌려 쓸 수 있는 한도로 보통 램의 절반 정도로 표시됩니다. 미리 떼어 둔 공간이 아니라 평소에는 다른 프로그램이 쓰며, 공유 쪽 사용량이 오르면 VRAM이 넘쳤다는 신호라 로컬 LLM은 크게 느려집니다.'
   );
 }
