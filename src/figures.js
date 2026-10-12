@@ -964,6 +964,7 @@ export const figures = {
   'usbc-hub-chain': usbcHubChain,
   'speed-units-gates': speedUnitsGates,
   'dedicated-vs-shared': dedicatedVsShared,
+  'battery-hours-60wh': batteryHours60wh,
 };
 
 /**
@@ -6208,5 +6209,36 @@ function dedicatedVsShared() {
     '전용 GPU 메모리와 공유 GPU 메모리',
     W, 204, b,
     '작업 관리자의 전용 GPU 메모리는 그래픽카드에 달린 VRAM이고, 공유 GPU 메모리는 VRAM이 모자랄 때 시스템 램에서 빌려 쓸 수 있는 한도로 보통 램의 절반 정도로 표시됩니다. 미리 떼어 둔 공간이 아니라 평소에는 다른 프로그램이 쓰며, 공유 쪽 사용량이 오르면 VRAM이 넘쳤다는 신호라 로컬 LLM은 크게 느려집니다.'
+  );
+}
+
+function batteryHours60wh() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '60Wh 배터리는 몇 시간 가나 — Wh ÷ 그 작업의 소비 전력', { weight: 600, size: 12.5 });
+  const x0 = 196, sc = 62; // px per hour
+  b += t(x0, 46, '0', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  [1, 2, 3, 4, 5, 6].forEach((h) => {
+    b += '<path d="M' + (x0 + h * sc) + ' 52 L' + (x0 + h * sc) + ' 172" stroke="' + COLOR.line + '" stroke-width="1"/>';
+    b += t(x0 + h * sc, 46, h + '시간', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+  });
+  const rows = [
+    ['문서·코드 편집 (10~15W)', 4, 6, '4~6시간', COLOR.fit],
+    ['브라우저 + 개발 서버 (15~25W)', 2.4, 4, '약 2.5~4시간', COLOR.fit],
+    ['빌드를 자주 (30~50W)', 1.2, 2, '1.2~2시간', COLOR.accent],
+    ['로컬 LLM·전용 GPU (80W+)', 0, 0.75, '45분 미만', COLOR.over],
+  ];
+  rows.forEach((r, i) => {
+    const y = 60 + i * 28;
+    b += t(x0 - 8, y + 13, r[0], { size: 8.2, weight: 600, fill: COLOR.text, anchor: 'end' });
+    b += rect(x0, y + 2, r[1] * sc, 16, COLOR.line, { r: 2 });
+    b += rect(x0 + r[1] * sc, y + 2, (r[2] - r[1]) * sc, 16, r[4], { r: 2 });
+    b += t(x0 + r[2] * sc + 6, y + 14, r[3], { size: 8.2, weight: 700, fill: r[4] });
+  });
+  b += t(x0, 190, '진한 구간 = 작업에 따른 범위 · 화면 밝기·백그라운드·외부 장치가 더해지면 왼쪽으로 줄어듭니다', { size: 7.8, fill: COLOR.mute });
+  return figure(
+    '60Wh 배터리의 작업별 시간',
+    W, 200, b,
+    '배터리 시간은 와트시를 그 작업의 소비 전력으로 나눈 값이라, 같은 60Wh라도 문서 편집은 4~6시간, 브라우저와 개발 서버는 약 2.5~4시간, 잦은 빌드는 1.2~2시간, 전용 그래픽카드로 돌리는 로컬 LLM은 45분 미만으로 크게 달라집니다.'
   );
 }
