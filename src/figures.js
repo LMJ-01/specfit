@@ -965,6 +965,7 @@ export const figures = {
   'speed-units-gates': speedUnitsGates,
   'dedicated-vs-shared': dedicatedVsShared,
   'battery-hours-60wh': batteryHours60wh,
+  'screen-line-where': screenLineWhere,
 };
 
 /**
@@ -6240,5 +6241,32 @@ function batteryHours60wh() {
     '60Wh 배터리의 작업별 시간',
     W, 200, b,
     '배터리 시간은 와트시를 그 작업의 소비 전력으로 나눈 값이라, 같은 60Wh라도 문서 편집은 4~6시간, 브라우저와 개발 서버는 약 2.5~4시간, 잦은 빌드는 1.2~2시간, 전용 그래픽카드로 돌리는 로컬 LLM은 45분 미만으로 크게 달라집니다.'
+  );
+}
+
+function screenLineWhere() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '화면에 줄이 생기면 — 어디서 생긴 줄인지 두 번의 시험으로 가릅니다', { weight: 600, size: 12.5 });
+  const arrowR = (x1, x2, y) => '<path d="M' + x1 + ' ' + y + ' L' + x2 + ' ' + y + ' M' + (x2 - 5) + ' ' + (y - 4) + ' L' + x2 + ' ' + y + ' L' + (x2 - 5) + ' ' + (y + 4) + '" fill="none" stroke="' + COLOR.mute + '" stroke-width="1.4"/>';
+  const rows = [
+    ['스크린샷에도 줄이 찍힌다', '그래픽카드·드라이버', '신호를 만들기 전에 생긴 줄 → 드라이버 갱신, 다른 출력 단자', COLOR.accent],
+    ['스크린샷엔 없고, 케이블을 만지거나 바꾸면 달라진다', '케이블·단자', '다른 케이블·다른 포트로 맞바꾸기', COLOR.fit],
+    ['스크린샷엔 없고, 케이블을 바꿔도 같은 자리', '모니터 패널', '모니터 자체 메뉴 위로도 줄이 지나가면 확정', COLOR.over],
+  ];
+  rows.forEach((r, i) => {
+    const y = 44 + i * 50;
+    b += rect(24, y, 258, 40, COLOR.soft, { r: 5, stroke: COLOR.line });
+    b += t(36, y + 24, r[0], { size: 8.4, weight: 600, fill: COLOR.text });
+    b += arrowR(286, 310, y + 20);
+    b += rect(314, y, 302, 40, COLOR.soft, { r: 5, stroke: r[3] });
+    b += t(326, y + 17, r[1], { size: 9.2, weight: 700, fill: r[3] });
+    b += t(326, y + 32, r[2], { size: 7.8, fill: COLOR.text });
+  });
+  b += t(24, 210, '스크린샷은 컴퓨터 안의 그림을 찍습니다 — 거기 없으면 줄은 선이나 모니터에서 생긴 것', { size: 8, fill: COLOR.mute });
+  return figure(
+    '화면 줄의 출처 가르기',
+    W, 220, b,
+    '화면에 줄이 생기면 먼저 스크린샷을 찍어 봅니다. 스크린샷에도 줄이 있으면 그래픽카드나 드라이버 쪽이고, 스크린샷에는 없는데 케이블을 만지거나 바꾸면 달라지면 케이블과 단자 쪽, 케이블을 바꿔도 같은 자리에 남고 모니터 자체 메뉴 위로도 지나가면 모니터 패널 쪽입니다.'
   );
 }
