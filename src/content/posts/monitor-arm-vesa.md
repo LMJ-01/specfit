@@ -2,7 +2,7 @@
 title: 모니터 암 — VESA만 맞으면 되는 게 아닙니다
 description: 나사 구멍 간격이 맞아도 안 되는 경우가 세 가지 있습니다. 하중 하한, 책상 두께, 나사 길이입니다. 사기 전에 재야 하는 숫자를 정리했습니다.
 date: 2026-08-18
-updated: 2026-10-03
+updated: 2026-10-14
 category: monitor
 tags: [모니터암, VESA, 듀얼모니터, 세로모니터, 코딩용모니터]
 affiliate: true
@@ -127,6 +127,8 @@ affiliate: true
 > 24인치 세로 모니터는 특히 조심하세요. 3kg 대라 **하한에 걸리기 쉽습니다.**
 > [세로 모니터 글](/posts/vertical-monitor-coding.html)에서 24인치를 권했으니
 > 여기서 같이 짚어둡니다.
+
+{{FIG:arm-load-window}}
 
 ## 3. 책상 — 암보다 책상이 먼저 걸립니다
 

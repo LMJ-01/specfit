@@ -967,6 +967,7 @@ export const figures = {
   'battery-hours-60wh': batteryHours60wh,
   'screen-line-where': screenLineWhere,
   'always-on-decide': alwaysOnDecide,
+  'arm-load-window': armLoadWindow,
 };
 
 /**
@@ -6299,5 +6300,40 @@ function alwaysOnDecide() {
     '켜둘지 끌지 정하는 질문',
     W, 216, b,
     '컴퓨터를 24시간 켜둘지는 수명이 아니라 켜둔 동안 일을 하는지로 정합니다. 서버나 원격 접속, 밤샘 다운로드처럼 일을 하면 켜두고 통풍, 먼지, 정전 대비를 관리하며, 일을 하지 않으면 끄거나 절전으로 두는데 그 이득은 수명보다 전기와 소음, 발열입니다.'
+  );
+}
+
+function armLoadWindow() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '모니터암 하중 범위 — 넘쳐도, 모자라도, 끝에 딱 붙어도 탈이 납니다', { weight: 600, size: 12.5 });
+  const x0 = 60, sc = 44; // px per kg, 0~12kg
+  const X = (kg) => x0 + kg * sc;
+  // 축
+  b += '<path d="M' + X(0) + ' 112 L' + X(12) + ' 112" stroke="' + COLOR.mute + '" stroke-width="1"/>';
+  [0, 2, 4, 6, 8, 10, 12].forEach((k) => { b += t(X(k), 126, k + 'kg', { size: 7.6, fill: COLOR.mute, anchor: 'middle' }); });
+  // 예시 암 범위 2~9kg
+  b += rect(X(0), 84, X(2) - X(0), 24, COLOR.soft, { r: 3, stroke: COLOR.accent });
+  b += t((X(0) + X(2)) / 2, 100, '튀어 오름', { size: 8, weight: 700, fill: COLOR.accent, anchor: 'middle' });
+  b += rect(X(2), 84, X(8) - X(2), 24, COLOR.fit, { r: 3 });
+  b += t((X(2) + X(8)) / 2, 100, '정상 — 범위 안에 여유', { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += rect(X(8), 84, X(9) - X(8), 24, COLOR.soft, { r: 3, stroke: COLOR.over });
+  b += t((X(8) + X(9)) / 2, 78, '처짐', { size: 8, weight: 700, fill: COLOR.over, anchor: 'middle' });
+  b += rect(X(9), 84, X(12) - X(9), 24, COLOR.over, { r: 3 });
+  b += t((X(9) + X(12)) / 2, 100, '내려앉음', { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += t(X(0), 58, '예시: 하중 범위 2~9kg 짜리 암 (실제 범위는 제품 표기 확인)', { size: 8.2, weight: 600, fill: COLOR.text });
+  // 모니터 무게
+  const mons = [['24인치', 3, 4], ['27인치', 4, 7], ['32인치', 6, 10]];
+  mons.forEach((m, i) => {
+    const y = 144 + i * 20;
+    b += t(x0 - 8, y + 10, m[0], { size: 8, weight: 600, fill: COLOR.text, anchor: 'end' });
+    b += rect(X(m[1]), y + 2, X(m[2]) - X(m[1]), 10, COLOR.line, { r: 2, stroke: COLOR.mute });
+    b += t(X(m[2]) + 6, y + 11, m[1] + '~' + m[2] + 'kg (스탠드 제외)', { size: 7.6, fill: COLOR.mute });
+  });
+  b += t(24, 214, '내 모니터 무게가 범위 가운데쯤 오는 암이 오래 갑니다 — 32인치는 상한이 높은 제품으로', { size: 8, fill: COLOR.text });
+  return figure(
+    '모니터암 하중 범위',
+    W, 224, b,
+    '가스 스프링 모니터암은 하중 범위 안에서만 제자리를 지킵니다. 모니터가 범위보다 가벼우면 위로 튀어 오르고, 상한에 딱 맞으면 시간이 지나며 처지며, 상한을 넘으면 내려앉습니다. 24인치는 대략 3~4kg, 27인치는 4~7kg, 32인치는 6~10kg이라 무게가 범위 가운데에 오는 암을 고르는 것이 좋습니다.'
   );
 }
