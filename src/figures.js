@@ -966,6 +966,7 @@ export const figures = {
   'dedicated-vs-shared': dedicatedVsShared,
   'battery-hours-60wh': batteryHours60wh,
   'screen-line-where': screenLineWhere,
+  'always-on-decide': alwaysOnDecide,
 };
 
 /**
@@ -6268,5 +6269,35 @@ function screenLineWhere() {
     '화면 줄의 출처 가르기',
     W, 220, b,
     '화면에 줄이 생기면 먼저 스크린샷을 찍어 봅니다. 스크린샷에도 줄이 있으면 그래픽카드나 드라이버 쪽이고, 스크린샷에는 없는데 케이블을 만지거나 바꾸면 달라지면 케이블과 단자 쪽, 케이블을 바꿔도 같은 자리에 남고 모니터 자체 메뉴 위로도 지나가면 모니터 패널 쪽입니다.'
+  );
+}
+
+function alwaysOnDecide() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '24시간 켜둘까 — 수명이 아니라 켜둠이 일을 하는지로 정합니다', { weight: 600, size: 12.5 });
+  const line = (x1, y1, x2, y2) => '<path d="M' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y2 + '" stroke="' + COLOR.mute + '" stroke-width="1.4" fill="none"/>';
+  b += rect(220, 40, 200, 32, COLOR.soft, { r: 6, stroke: COLOR.accent });
+  b += t(320, 61, '켜둔 동안 일을 하나?', { size: 9.6, weight: 700, fill: COLOR.accent, anchor: 'middle' });
+  b += line(270, 72, 160, 96) + line(370, 72, 480, 96);
+  b += t(186, 82, '예', { size: 8.6, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+  b += t(462, 82, '아니오', { size: 8.6, weight: 700, fill: COLOR.mute, anchor: 'middle' });
+  // 왼쪽
+  b += rect(24, 98, 286, 88, COLOR.soft, { r: 6, stroke: COLOR.fit });
+  b += t(36, 118, '켜두기 — 서버·원격 접속·밤샘 다운로드', { size: 9, weight: 700, fill: COLOR.fit });
+  b += t(36, 140, '관리 목록: 통풍 · 먼지 청소 · 정전 대비', { size: 8.2, fill: COLOR.text });
+  b += t(36, 158, '절전이 일을 끊지 않게 설정 확인', { size: 8.2, fill: COLOR.text });
+  b += t(36, 176, '관리되면 수명을 좌우할 크기 아님', { size: 7.8, fill: COLOR.mute });
+  // 오른쪽
+  b += rect(330, 98, 286, 88, COLOR.soft, { r: 6, stroke: COLOR.mute });
+  b += t(342, 118, '끄거나 절전', { size: 9, weight: 700, fill: COLOR.text });
+  b += t(342, 140, '이득은 수명이 아니라 전기 · 소음 · 발열', { size: 8.2, fill: COLOR.text });
+  b += t(342, 158, '자주 껐다 켜도 해롭다고 못 박을 수 없음', { size: 8.2, fill: COLOR.text });
+  b += t(342, 176, '잠깐 자리 비움이면 절전이 중간값', { size: 7.8, fill: COLOR.mute });
+  b += t(24, 206, '켜둠(열 누적)과 껐다 켬(온도 변화) 둘 다 스트레스지만, 관리되면 어느 쪽도 결정적이지 않습니다', { size: 7.8, fill: COLOR.mute });
+  return figure(
+    '켜둘지 끌지 정하는 질문',
+    W, 216, b,
+    '컴퓨터를 24시간 켜둘지는 수명이 아니라 켜둔 동안 일을 하는지로 정합니다. 서버나 원격 접속, 밤샘 다운로드처럼 일을 하면 켜두고 통풍, 먼지, 정전 대비를 관리하며, 일을 하지 않으면 끄거나 절전으로 두는데 그 이득은 수명보다 전기와 소음, 발열입니다.'
   );
 }
