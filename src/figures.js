@@ -969,6 +969,7 @@ export const figures = {
   'always-on-decide': alwaysOnDecide,
   'arm-load-window': armLoadWindow,
   'model-load-external': modelLoadExternal,
+  'game-load-timeline': gameLoadTimeline,
 };
 
 /**
@@ -6365,5 +6366,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function gameLoadTimeline() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '게임을 SSD에 깔면 — 줄어드는 건 기다림, 프레임은 그대로', { weight: 600, size: 12.5 });
+  const x0 = 96;
+  const row = (y, label, l1, l2, c) => {
+    let o = t(x0 - 10, y + 15, label, { size: 9, weight: 700, fill: COLOR.text, anchor: 'end' });
+    let x = x0;
+    o += rect(x, y + 2, l1, 20, c, { r: 3 }); o += t(x + l1 / 2, y + 16, '로딩', { size: 8, weight: 700, fill: '#fff', anchor: 'middle' }); x += l1 + 4;
+    o += rect(x, y + 2, 240, 20, COLOR.soft, { r: 3, stroke: COLOR.line }); o += t(x + 120, y + 16, '플레이 — 프레임은 GPU·CPU 몫', { size: 8, fill: COLOR.text, anchor: 'middle' }); x += 244;
+    o += rect(x, y + 2, l2, 20, c, { r: 3 }); o += t(x + l2 / 2, y + 16, '맵 로딩', { size: 7.6, weight: 700, fill: '#fff', anchor: 'middle' }); x += l2 + 4;
+    o += rect(x, y + 2, 616 - x, 20, COLOR.soft, { r: 3, stroke: COLOR.line });
+    return o;
+  };
+  b += row(44, 'SSD', 40, 46, COLOR.fit);
+  b += row(76, 'HDD', 120, 120, COLOR.mute);
+  b += t(x0, 118, '같은 장면의 플레이 구간은 길이도 속도도 같고, 달라지는 건 로딩 칸의 길이뿐', { size: 8, fill: COLOR.mute });
+  // 예외
+  b += rect(24, 132, 592, 56, COLOR.soft, { r: 6, stroke: COLOR.over });
+  b += t(36, 150, '예외 — 플레이 중에도 계속 읽는 오픈월드 일부', { size: 9, weight: 700, fill: COLOR.over });
+  for (let i = 0; i < 14; i++) { b += rect(40 + i * 40, 160, 6, 14, COLOR.over, { r: 1 }); }
+  b += t(36, 200, '작은 읽기가 플레이 내내 끼어들어 HDD에서는 끊김·늦게 뜨는 풍경(팝인)이 생길 수 있음 → 이런 게임만 SSD로', { size: 7.8, fill: COLOR.text });
+  return figure(
+    '게임 설치 위치와 로딩',
+    W, 212, b,
+    '게임을 SSD에 설치하면 실행과 맵 로딩처럼 기다리는 구간이 짧아지지만, 플레이 중의 프레임은 그래픽카드와 CPU가 정하므로 HDD와 같습니다. 다만 플레이 중에도 계속 데이터를 읽는 일부 오픈월드 게임은 HDD에서 끊김이나 늦게 뜨는 풍경이 생길 수 있어, 이런 게임은 SSD에 두는 편이 낫습니다.'
   );
 }
