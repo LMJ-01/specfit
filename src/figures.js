@@ -968,6 +968,7 @@ export const figures = {
   'screen-line-where': screenLineWhere,
   'always-on-decide': alwaysOnDecide,
   'arm-load-window': armLoadWindow,
+  'model-load-external': modelLoadExternal,
 };
 
 /**
@@ -6335,5 +6336,34 @@ function armLoadWindow() {
     '모니터암 하중 범위',
     W, 224, b,
     '가스 스프링 모니터암은 하중 범위 안에서만 제자리를 지킵니다. 모니터가 범위보다 가벼우면 위로 튀어 오르고, 상한에 딱 맞으면 시간이 지나며 처지며, 상한을 넘으면 내려앉습니다. 24인치는 대략 3~4kg, 27인치는 4~7kg, 32인치는 6~10kg이라 무게가 범위 가운데에 오는 암을 고르는 것이 좋습니다.'
+  );
+}
+
+function modelLoadExternal() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '외장 SSD에 둔 모델 — 느려지는 건 처음 읽어 올리는 몇 초~몇십 초뿐', { weight: 600, size: 12.5 });
+  const x0 = 150, sc = 10.5; // px per second
+  const groups = [
+    ['7~8B (4.7GB)', [['내장 NVMe', 0.7, '약 0.7초', COLOR.fit], ['외장 10Gbps', 5, '약 5초', COLOR.accent], ['외장 5Gbps', 9, '약 9초', COLOR.mute]]],
+    ['32B (20GB)', [['내장 NVMe', 2.9, '약 2.9초', COLOR.fit], ['외장 10Gbps', 20, '약 20초', COLOR.accent], ['외장 5Gbps', 40, '약 40초', COLOR.mute]]],
+  ];
+  let y = 44;
+  groups.forEach((g) => {
+    b += t(24, y + 12, g[0], { size: 9, weight: 700, fill: COLOR.text });
+    g[1].forEach((r, i) => {
+      const yy = y + 18 + i * 18;
+      b += t(x0 - 8, yy + 11, r[0], { size: 8, fill: COLOR.mute, anchor: 'end' });
+      b += rect(x0, yy + 2, Math.max(r[1] * sc, 3), 12, r[3], { r: 2 });
+      b += t(x0 + Math.max(r[1] * sc, 3) + 6, yy + 12, r[2], { size: 8, weight: 600, fill: r[3] });
+    });
+    y += 82;
+  });
+  b += rect(24, 210, 592, 24, COLOR.soft, { r: 5, stroke: COLOR.line });
+  b += t(36, 226, '모델이 VRAM에 올라간 뒤의 생성 속도는 셋 다 같음 · 로딩 시간 ≈ 파일 크기 ÷ 초당 전송량 (이론값)', { size: 7.8, fill: COLOR.text });
+  return figure(
+    '모델 로딩 시간 — 내장과 외장',
+    W, 244, b,
+    '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
   );
 }

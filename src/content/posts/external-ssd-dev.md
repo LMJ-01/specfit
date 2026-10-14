@@ -2,7 +2,7 @@
 title: 개발용 외장 SSD — USB 규격이 상한을 정합니다
 description: 외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.
 date: 2026-08-20
-updated: 2026-09-28
+updated: 2026-10-14
 category: memory
 tags: [외장SSD, USB, NVMe, 로컬LLM, 개발용PC]
 affiliate: true
@@ -126,6 +126,8 @@ SSD → (한 번) → VRAM → 이후 연산은 전부 여기서
 {{VRAM_TOOL}}
 
 **어느 모델을 쓸지부터 정하시면** 위 표에서 그 줄만 보시면 됩니다.
+
+{{FIG:model-load-external}}
 
 ## 4. 케이스가 규격을 깎습니다
 
