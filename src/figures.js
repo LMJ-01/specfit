@@ -970,6 +970,7 @@ export const figures = {
   'arm-load-window': armLoadWindow,
   'model-load-external': modelLoadExternal,
   'game-load-timeline': gameLoadTimeline,
+  'sleep-window-evac': sleepWindowEvac,
 };
 
 /**
@@ -6366,6 +6367,42 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function sleepWindowEvac() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '절전 복귀 후 창 몰림 — "꺼짐"이 "뽑힘"으로 보이는 순간', { weight: 600, size: 12.5 });
+  const mon = (x, y, alive) => alive
+    ? rect(x, y, 82, 52, COLOR.soft, { r: 3, stroke: COLOR.line })
+    : `<rect x="${x}" y="${y}" width="82" height="52" fill="none" rx="3" stroke="${COLOR.line}" stroke-dasharray="4 3"/>`;
+  const win = (x, y, label, c) => rect(x, y, 30, 20, c, { r: 2 }) + t(x + 15, y + 14, label, { size: 8, weight: 700, fill: '#fff', anchor: 'middle' });
+  const panel = (px, head, sub, m2alive, bOnLeft, m2note) => {
+    let o = t(px, 52, head, { size: 9.5, weight: 700 });
+    o += t(px, 66, sub, { size: 8, fill: COLOR.mute });
+    o += mon(px, 80, true);
+    o += mon(px + 92, 80, m2alive);
+    o += t(px + 41, 146, '화면 1', { size: 8, fill: COLOR.mute, anchor: 'middle' });
+    o += t(px + 133, 146, '화면 2', { size: 8, fill: COLOR.mute, anchor: 'middle' });
+    o += win(px + 8, 88, 'A', COLOR.fit);
+    if (bOnLeft) o += win(px + 44, 104, 'B', COLOR.accent);
+    else o += win(px + 100, 88, 'B', COLOR.accent);
+    if (m2note) o += t(px + 133, 110, m2note, { size: 8, weight: 700, fill: COLOR.over, anchor: 'middle' });
+    return o;
+  };
+  b += panel(24, '① 평소', '창 A는 화면 1, B는 화면 2', true, false, '');
+  b += panel(232, '② 모니터 꺼짐', '윈도우: "화면 2가 뽑혔다"', false, true, '없음');
+  b += panel(440, '③ 복귀', '화면 2는 돌아왔지만 B는 이사 끝', true, true, '빈 화면');
+  b += `<path d="M206 106 L226 106" stroke="${COLOR.mute}" stroke-width="2"/><path d="M220 101 L226 106 L220 111" fill="none" stroke="${COLOR.mute}" stroke-width="2"/>`;
+  b += `<path d="M414 106 L434 106" stroke="${COLOR.mute}" stroke-width="2"/><path d="M428 101 L434 106 L428 111" fill="none" stroke="${COLOR.mute}" stroke-width="2"/>`;
+  b += rect(24, 162, 592, 46, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 180, '완화 ① 절전 시간 = 디스플레이 끄기 시간 → ②의 "화면만 사라진 구간"을 없앰', { size: 8.6, fill: COLOR.text });
+  b += t(36, 198, '완화 ② "모니터 연결 기준 창 위치 기억" 켜기 → ③에서 B를 원래 화면으로 되돌림(버전에 따라 있음)', { size: 8.6, fill: COLOR.text });
+  return figure(
+    '절전 복귀 후 창 몰림의 구조',
+    W, 220, b,
+    '모니터가 꺼질 때 연결이 끊긴 것처럼 알리면, 윈도우는 그 화면이 사라졌다고 보고 창을 남은 화면으로 옮깁니다. 모니터가 돌아와도 창은 이미 옮겨진 뒤라 한쪽에 몰려 보입니다. 절전 시간과 디스플레이 끄기 시간을 같게 하거나 창 위치 기억 옵션을 켜면 완화됩니다.'
   );
 }
 
