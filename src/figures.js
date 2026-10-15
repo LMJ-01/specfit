@@ -971,6 +971,7 @@ export const figures = {
   'model-load-external': modelLoadExternal,
   'game-load-timeline': gameLoadTimeline,
   'sleep-window-evac': sleepWindowEvac,
+  'laptop-code-lines': laptopCodeLines,
 };
 
 /**
@@ -6367,6 +6368,35 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function laptopCodeLines() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '한 화면의 코드 줄 수 — 선명함(PPI)이 아니라 배율 뒤의 작업 영역이 정합니다', { weight: 600, size: 12 });
+  const rows = [
+    ['13.6" 2560×1664', 43, 225, '200%', COLOR.over],
+    ['14" 2880×1800', 47, 243, '200%', COLOR.over],
+    ['14" 1920×1200', 50, 162, '125%', COLOR.mute],
+    ['15.6" 1920×1080', 56, 141, '100%', COLOR.mute],
+    ['16" 2560×1600', 67, 189, '125%', COLOR.fit],
+  ];
+  const x0 = 150, k = 4.8;
+  b += t(x0, 46, '코드 줄 (14px · 줄 높이 19px)', { size: 8, fill: COLOR.mute });
+  b += t(616, 46, 'PPI · 흔한 배율', { size: 8, fill: COLOR.mute, anchor: 'end' });
+  rows.forEach(([label, n, ppi, scale, c], i) => {
+    const y = 56 + i * 30;
+    b += t(x0 - 10, y + 15, label, { size: 9, weight: 700, anchor: 'end' });
+    b += rect(x0, y + 2, n * k, 20, c, { r: 3 });
+    b += t(x0 + n * k - 8, y + 16, `${n}줄`, { size: 9, weight: 700, fill: '#fff', anchor: 'end' });
+    b += t(616, y + 16, `${ppi} · ${scale}`, { size: 9, fill: ppi >= 220 ? COLOR.over : COLOR.text, weight: ppi >= 220 ? 700 : 400, anchor: 'end' });
+  });
+  b += t(x0, 218, 'PPI가 가장 높은 위 두 줄이 코드는 가장 적게 보임 — 200% 배율이면 작업 영역이 가로·세로 각각 절반', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '노트북 화면 크기별 코드 줄 수',
+    W, 230, b,
+    '같은 글꼴 기준으로 한 화면에 들어가는 코드 줄 수입니다. 13.6인치와 14인치 고해상도는 화면이 가장 선명하지만 보통 200% 배율로 쓰기 때문에 작업 영역이 좁아 코드가 가장 적게 보입니다. 16인치 2560×1600을 125%로 쓰면 가장 많이 보입니다.'
   );
 }
 
