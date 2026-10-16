@@ -972,6 +972,7 @@ export const figures = {
   'game-load-timeline': gameLoadTimeline,
   'sleep-window-evac': sleepWindowEvac,
   'laptop-code-lines': laptopCodeLines,
+  'lifespan-reset-or-not': lifespanResetOrNot,
 };
 
 /**
@@ -6368,6 +6369,39 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function lifespanResetOrNot() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '노트북 "수명"의 정체 — 되돌릴 수 있는 노화와 없는 신호', { weight: 600, size: 12.5 });
+  const rows = [
+    ['배터리', '충전 반복으로 닳음', '교체·거치로 리셋', COLOR.fit],
+    ['램·SSD (교체형)', '요즘 기준으로 모자라짐', '업그레이드로 연장', COLOR.fit],
+    ['램 (온보드)', '요즘 기준으로 모자라짐', '산 그대로가 끝', COLOR.over],
+    ['냉각', '먼지·굳은 써멀', '청소·재도포로 리셋', COLOR.fit],
+  ];
+  rows.forEach(([part, why, fix, c], i) => {
+    const y = 42 + i * 34;
+    b += rect(24, y, 112, 26, COLOR.soft, { r: 4, stroke: COLOR.line });
+    b += t(80, y + 17, part, { size: 9, weight: 700, anchor: 'middle' });
+    b += t(146, y + 17, why, { size: 8.6, fill: COLOR.mute });
+    b += `<path d="M262 ${y + 13} L284 ${y + 13}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M279 ${y + 9} L284 ${y + 13} L279 ${y + 17}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    b += rect(292, y, 120, 26, c, { r: 4 });
+    b += t(352, y + 17, fix, { size: 8.6, weight: 700, fill: '#fff', anchor: 'middle' });
+  });
+  // 진짜 교체 신호
+  b += rect(432, 42, 184, 128, COLOR.soft, { r: 6, stroke: COLOR.over });
+  b += t(444, 60, '관리로 안 되는 진짜 신호', { size: 9.5, weight: 700, fill: COLOR.over });
+  ['① OS·보안 업데이트 종료', '② 수리비 > 잔존 가치', '③ 온보드 램의 한계', '④ 필요 자체가 바뀜'].forEach((s2, i) => {
+    b += t(444, 82 + i * 22, s2, { size: 8.8, fill: COLOR.text });
+  });
+  b += t(24, 192, '초록 칸이 많을수록 "오래돼서 느리다"는 대개 관리·용량 문제 — 교체 전에 되돌릴 수 있는 것부터', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '노트북 부품별로 되돌릴 수 있는 노화',
+    W, 204, b,
+    '배터리와 냉각은 교체나 청소로 되돌릴 수 있고, 램과 SSD는 교체가 되는 모델이면 업그레이드로 늘릴 수 있습니다. 온보드 램은 산 그대로가 끝입니다. 관리로 해결되지 않는 진짜 교체 신호는 OS 지원 종료, 수리비가 잔존 가치를 넘을 때, 온보드 램의 한계, 필요 자체가 바뀌었을 때입니다.'
   );
 }
 
