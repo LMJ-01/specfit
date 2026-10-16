@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다","description":"카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.","datePublished":"2026-08-18","dateModified":"2026-10-08","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/gpu-psu-wattage.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다","description":"카드별 TDP로 필요 용량을 계산했습니다. 다만 용량이 충분해도 12V-2x6 커넥터가 없으면 못 꽂습니다. 로컬 LLM은 게임과 부하가 달라 기준도 다릅니다.","datePublished":"2026-08-18","dateModified":"2026-10-16","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/gpu-psu-wattage.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다","item":"https://specfit.kr/posts/gpu-psu-wattage.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>그래픽카드 파워 용량 — W보다 커넥터가 먼저 막습니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-18">2026년 8월 18일</time>
-      <span class="updated">· 2026년 10월 8일 갱신</span>
+      <span class="updated">· 2026년 10월 16일 갱신</span>
     </p>
   </header>
 
@@ -112,7 +112,11 @@ W만 맞추면, 상자를 열고 나서 알게 됩니다.</p>
 본인 CPU의 전력 표기(TDP·PBP)를 넣어 다시 계산하시는 게 정확합니다.</p>
 <pre><code>예) 5070 + CPU 65W 저전력 구성
     (250 + 65 + 80) × 1.3 = 514W  →  550W</code></pre>
-<p><strong>같은 카드인데 CPU에 따라 한 단계 달라집니다.</strong></p>
+<p><strong>같은 카드인데 CPU에 따라 한 단계 달라집니다.</strong>
+반대로 카드 쪽에서 한 단계가 갈리는 대표 갈림길이 5070 Ti와 5080
+(60W 차이)인데, 로컬 LLM 용도라면 그 60W가 결과를 바꾸지 못하는
+경우가 많습니다 — <a href="/posts/rtx5070ti-vs-5080.html">5070 Ti vs 5080</a>
+에서 판정합니다.</p>
 <h2 id="2-커넥터-여기가-먼저-막힙니다">2. ⚠️ 커넥터 — 여기가 먼저 막힙니다</h2>
 <p>최근 상급 카드는 <strong>12V-2x6</strong> 이라는 전용 커넥터를 씁니다.
 예전 8핀(PCIe 6+2) 여러 개를 꽂던 방식과 다릅니다.</p>
@@ -279,7 +283,8 @@ W만 맞추면, 상자를 열고 나서 알게 됩니다.</p>
 꺼지는</strong> 이상해 보이는 증상도 가능합니다 — LLM은 오래 켜두는
 작업이라 파워가 뜨거운 상태로 계속 가고, 보호 회로는 온도에도
 반응합니다. 케이스 통풍과 파워 나이를 함께 보세요.</p>
-<p>8핀이 둘인 카드에 <strong>끝이 두 갈래인 케이블 한 가닥</strong>을 꽂아도
+<p>8핀이 둘인 카드에 <strong>끝이 두 갈래인 케이블 한 가닥</strong>(흔히 &quot;돼지꼬리&quot;·
+피그테일이라고 부르는 선)을 꽂아도
 되는지는 단골 질문인데, 동봉 케이블이면 대개 동작하고 고전력
 카드일수록 가닥을 나누는 쪽이 여유입니다 —
 <a href="/posts/modular-psu.html">모듈러 케이블 글의 FAQ</a>에 정리했습니다.</p>
