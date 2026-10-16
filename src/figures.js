@@ -973,6 +973,7 @@ export const figures = {
   'sleep-window-evac': sleepWindowEvac,
   'laptop-code-lines': laptopCodeLines,
   'lifespan-reset-or-not': lifespanResetOrNot,
+  'ssd-heat-short-vs-long': ssdHeatShortVsLong,
 };
 
 /**
@@ -6369,6 +6370,46 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function ssdHeatShortVsLong() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'SSD 열은 "얼마나 오래 쉬지 못하나"로 쌓입니다', { weight: 600, size: 12.5 });
+  const panel = (px, head, sub, pts, c, note, label) => {
+    let o = rect(px, 38, 286, 132, COLOR.soft, { r: 6, stroke: COLOR.line });
+    o += t(px + 12, 56, head, { size: 9.5, weight: 700 });
+    o += t(px + 12, 70, sub, { size: 8, fill: COLOR.mute });
+    o += rect(px + 10, 80, 266, 14, COLOR.over, { r: 2 });
+    if (label) o += t(px + 270, 91, '제한 구간 (대개 70~80도대, 모델마다 다름)', { size: 7.4, weight: 700, fill: '#fff', anchor: 'end' });
+    o += `<polyline points="${pts.map(([x, y]) => `${px + x},${y}`).join(' ')}" fill="none" stroke="${c}" stroke-width="2.4"/>`;
+    o += t(px + 12, 162, note, { size: 8.2, fill: COLOR.text });
+    return o;
+  };
+  const saw = [];
+  for (let i = 0; i <= 12; i++) saw.push([14 + i * 21, i % 2 ? 128 : 144]);
+  b += panel(24, '짧은 읽기·쓰기의 반복', '부팅·앱 실행·npm install·빌드', saw, COLOR.fit, '일하고 쉬기를 반복 → 열이 쌓이기 전에 식음', true);
+  b += panel(330, '연속 대용량', '수십 GB 복사·모델 파일 여러 개 받기', [[14, 146], [60, 130], [110, 112], [160, 98], [200, 90], [230, 88], [276, 88]], COLOR.over, '쉬지 못함 → 제한 구간 도달 → 속도를 스스로 낮춤');
+  b += t(330 + 214, 128, '제한 구간 도달 → 속도 하락', { size: 8, weight: 700, fill: COLOR.over, anchor: 'middle' });
+  // 세대
+  const gens = [
+    ['Gen3', '대개 불필요', COLOR.fit],
+    ['Gen4', '가벼운 사용 불필요 · 보드 방열판이면 대개 충분', COLOR.mute],
+    ['Gen5', '방열판 전제 — 사실상 필수', COLOR.over],
+  ];
+  let x = 24;
+  const ws = [130, 300, 158];
+  gens.forEach(([g, d, c], i) => {
+    b += rect(x, 182, ws[i], 26, c, { r: 4 });
+    b += t(x + 10, 199, g, { size: 9, weight: 700, fill: '#fff' });
+    b += t(x + 46, 199, d, { size: 8.2, fill: '#fff' });
+    x += ws[i] + 4;
+  });
+  return figure(
+    'SSD 발열이 쌓이는 조건',
+    W, 218, b,
+    '부팅이나 빌드처럼 짧은 읽기·쓰기는 중간중간 쉬기 때문에 열이 쌓이기 전에 식습니다. 수십 GB를 연속으로 복사하면 컨트롤러가 쉬지 못해 온도가 제한 구간에 닿고, SSD가 스스로 속도를 낮춥니다. 방열판 필요성은 세대에 따라 Gen3는 대개 불필요, Gen4는 보드 방열판이면 대개 충분, Gen5는 사실상 필수입니다.'
   );
 }
 

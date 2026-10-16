@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다","description":"모두에게 필요한 건 아닙니다. Gen3면 대개 불필요하고 Gen5면 사실상 필수입니다. 내 SSD가 실제로 스로틀링을 겪는지 확인하는 법과, 달 때 조심할 것을 정리했습니다.","datePublished":"2026-08-22","dateModified":"2026-10-03","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/nvme-heatsink.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다","description":"모두에게 필요한 건 아닙니다. Gen3면 대개 불필요하고 Gen5면 사실상 필수입니다. 내 SSD가 실제로 스로틀링을 겪는지 확인하는 법과, 달 때 조심할 것을 정리했습니다.","datePublished":"2026-08-22","dateModified":"2026-10-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/nvme-heatsink.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다","item":"https://specfit.kr/posts/nvme-heatsink.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>NVMe SSD 방열판, 필요한가 — 세대와 작업으로 갈립니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-22">2026년 8월 22일</time>
-      <span class="updated">· 2026년 10월 3일 갱신</span>
+      <span class="updated">· 2026년 10월 17일 갱신</span>
     </p>
   </header>
 
@@ -90,6 +90,13 @@
 <p>중요한 건 <strong>열이 쌓이는 조건</strong>입니다.</p>
 <pre><code>짧은 읽기·쓰기 (부팅, 앱 실행, 저장)   →  열이 쌓이기 전에 끝남
 수십 GB 연속 복사, 대용량 다운로드      →  컨트롤러가 쉬지 못함 → 온도 상승</code></pre>
+<figure class="fig">
+<svg viewBox="0 0 640 218" width="640" height="218" role="img" aria-label="SSD 발열이 쌓이는 조건">
+<title>SSD 발열이 쌓이는 조건</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">SSD 열은 "얼마나 오래 쉬지 못하나"로 쌓입니다</text><rect x="24" y="38" width="286" height="132" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="56" fill="var(--fg)" font-size="9.5" font-weight="700">짧은 읽기·쓰기의 반복</text><text x="36" y="70" fill="var(--fg-muted)" font-size="8">부팅·앱 실행·npm install·빌드</text><rect x="34" y="80" width="266" height="14" fill="var(--fig-over)" rx="2"/><text x="294" y="91" fill="#fff" font-size="7.4" font-weight="700" text-anchor="end">제한 구간 (대개 70~80도대, 모델마다 다름)</text><polyline points="38,144 59,128 80,144 101,128 122,144 143,128 164,144 185,128 206,144 227,128 248,144 269,128 290,144" fill="none" stroke="var(--fig-fit)" stroke-width="2.4"/><text x="36" y="162" fill="var(--fg)" font-size="8.2">일하고 쉬기를 반복 → 열이 쌓이기 전에 식음</text><rect x="330" y="38" width="286" height="132" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="342" y="56" fill="var(--fg)" font-size="9.5" font-weight="700">연속 대용량</text><text x="342" y="70" fill="var(--fg-muted)" font-size="8">수십 GB 복사·모델 파일 여러 개 받기</text><rect x="340" y="80" width="266" height="14" fill="var(--fig-over)" rx="2"/><polyline points="344,146 390,130 440,112 490,98 530,90 560,88 606,88" fill="none" stroke="var(--fig-over)" stroke-width="2.4"/><text x="342" y="162" fill="var(--fg)" font-size="8.2">쉬지 못함 → 제한 구간 도달 → 속도를 스스로 낮춤</text><text x="544" y="128" fill="var(--fig-over)" font-size="8" font-weight="700" text-anchor="middle">제한 구간 도달 → 속도 하락</text><rect x="24" y="182" width="130" height="26" fill="var(--fig-fit)" rx="4"/><text x="34" y="199" fill="#fff" font-size="9" font-weight="700">Gen3</text><text x="70" y="199" fill="#fff" font-size="8.2">대개 불필요</text><rect x="158" y="182" width="300" height="26" fill="var(--fg-muted)" rx="4"/><text x="168" y="199" fill="#fff" font-size="9" font-weight="700">Gen4</text><text x="204" y="199" fill="#fff" font-size="8.2">가벼운 사용 불필요 · 보드 방열판이면 대개 충분</text><rect x="462" y="182" width="158" height="26" fill="var(--fig-over)" rx="4"/><text x="472" y="199" fill="#fff" font-size="9" font-weight="700">Gen5</text><text x="508" y="199" fill="#fff" font-size="8.2">방열판 전제 — 사실상 필수</text>
+</svg>
+<figcaption>부팅이나 빌드처럼 짧은 읽기·쓰기는 중간중간 쉬기 때문에 열이 쌓이기 전에 식습니다. 수십 GB를 연속으로 복사하면 컨트롤러가 쉬지 못해 온도가 제한 구간에 닿고, SSD가 스스로 속도를 낮춥니다. 방열판 필요성은 세대에 따라 Gen3는 대개 불필요, Gen4는 보드 방열판이면 대개 충분, Gen5는 사실상 필수입니다.</figcaption>
+</figure>
 <h2 id="스로틀링-에러가-아니라-느려집니다">스로틀링 — 에러가 아니라 느려집니다</h2>
 <p>온도가 한계에 가까워지면 SSD는 <strong>손상을 막으려고 스스로 속도를 낮춥니다.</strong>
 이게 스로틀링입니다.</p>
