@@ -975,6 +975,7 @@ export const figures = {
   'lifespan-reset-or-not': lifespanResetOrNot,
   'ssd-heat-short-vs-long': ssdHeatShortVsLong,
   'ram-heatsink-airflow': ramHeatsinkAirflow,
+  'used-gpu-load-curve': usedGpuLoadCurve,
 };
 
 /**
@@ -6371,6 +6372,32 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function usedGpuLoadCurve() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '중고 그래픽카드 부하 테스트 — 몇 분 뒤 곡선의 모양을 봅니다', { weight: 600, size: 12.5 });
+  const panel = (px, head, tempPts, clockPts, c, note1, note2) => {
+    let o = rect(px, 38, 286, 150, COLOR.soft, { r: 6, stroke: COLOR.line });
+    o += t(px + 12, 56, head, { size: 9.5, weight: 700, fill: c });
+    o += `<line x1="${px + 14}" y1="160" x2="${px + 276}" y2="160" stroke="${COLOR.line}"/>`;
+    o += t(px + 14, 174, '부하 시작', { size: 7.6, fill: COLOR.mute });
+    o += t(px + 276, 174, '몇 분 뒤', { size: 7.6, fill: COLOR.mute, anchor: 'end' });
+    o += `<polyline points="${tempPts.map(([x, y]) => `${px + x},${y}`).join(' ')}" fill="none" stroke="${c}" stroke-width="2.4"/>`;
+    o += `<polyline points="${clockPts.map(([x, y]) => `${px + x},${y}`).join(' ')}" fill="none" stroke="${COLOR.mute}" stroke-width="1.8" stroke-dasharray="5 4"/>`;
+    o += t(px + 12, 72, note1, { size: 8, weight: 700, fill: c });
+    o += t(px + 12, 86, note2, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += panel(24, '정상', [[14, 150], [50, 128], [90, 112], [130, 104], [170, 101], [276, 100]], [[14, 132], [276, 132]], COLOR.fit, '온도: 오르다가 어느 선에서 멈춤', '클럭(점선): 높게 유지');
+  b += panel(330, '의심 — 서멀·팬 노후', [[14, 150], [60, 126], [110, 106], [160, 92], [210, 82], [276, 72]], [[14, 132], [150, 132], [175, 140], [200, 136], [225, 146], [250, 142], [276, 152]], COLOR.over, '온도: 계속 오르기만 함', '클럭(점선): 온도와 함께 뚝뚝 떨어짐');
+  b += t(24, 206, '실선 = 온도 · 점선 = 클럭(사용률) — 정확한 온도 한계는 모델마다 다르니 숫자보다 "멈추느냐"를 봅니다', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '중고 그래픽카드 부하 테스트 곡선',
+    W, 216, b,
+    '부하를 걸고 몇 분 지켜보면, 정상 카드는 온도가 오르다가 어느 선에서 멈추고 클럭도 높게 유지됩니다. 서멀이나 팬이 노후한 카드는 온도가 계속 오르기만 하고, 클럭이 온도와 함께 떨어집니다. 온도 한계는 모델마다 달라 숫자보다 곡선이 멈추는지를 보는 편이 정확합니다.'
   );
 }
 
