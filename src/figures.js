@@ -974,6 +974,7 @@ export const figures = {
   'laptop-code-lines': laptopCodeLines,
   'lifespan-reset-or-not': lifespanResetOrNot,
   'ssd-heat-short-vs-long': ssdHeatShortVsLong,
+  'ram-heatsink-airflow': ramHeatsinkAirflow,
 };
 
 /**
@@ -6370,6 +6371,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function ramHeatsinkAirflow() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '램 열을 치우는 건 방열판이 아니라 지나가는 공기', { weight: 600, size: 12.5 });
+  const cx = [210, 430], cy = [62, 128];
+  b += t(cx[0] + 100, 50, '방열판 없음 (민짜)', { size: 9, weight: 700, anchor: 'middle' });
+  b += t(cx[1] + 100, 50, '방열판 후부착', { size: 9, weight: 700, anchor: 'middle' });
+  b += t(196, cy[0] + 30, '케이스 기류 약함', { size: 9, weight: 700, anchor: 'end' });
+  b += t(196, cy[1] + 30, '케이스 기류 좋음', { size: 9, weight: 700, anchor: 'end' });
+  const cell = (x, y, head, sub, c) => {
+    let o = rect(x, y, 200, 56, c, { r: 6 });
+    o += t(x + 100, y + 24, head, { size: 9.5, weight: 700, fill: '#fff', anchor: 'middle' });
+    o += t(x + 100, y + 42, sub, { size: 8.2, fill: '#fff', anchor: 'middle' });
+    return o;
+  };
+  b += cell(cx[0], cy[0], '열이 제자리에 머묾', '바람이 없으니 갈 곳이 없음', COLOR.over);
+  b += cell(cx[1], cy[0], '넓게 펴졌지만 여전히 머묾', '"효과가 없진 않은데 크지도 않다"', COLOR.over);
+  b += cell(cx[0], cy[1], '바람으로 충분히 식음', '정격 순정램은 이렇게 설계됨', COLOR.fit);
+  b += cell(cx[1], cy[1], '차이가 작음', '이미 바람이 일을 하고 있음', COLOR.mute);
+  b += t(24, 210, '→ 램 온도가 걱정이면 방열판 쇼핑보다 케이스 팬 배치·먼지 청소가 먼저 (세로로 내려가는 쪽이 효과가 큼)', { size: 8.6, fill: COLOR.text });
+  return figure(
+    '램 방열판과 케이스 기류',
+    W, 222, b,
+    '방열판은 열을 넓게 펴 줄 뿐이고, 최종적으로 열을 치우는 것은 케이스 안을 지나가는 공기입니다. 기류가 약하면 방열판을 붙여도 열이 머물고, 기류가 좋으면 방열판 없는 순정램도 충분히 식습니다. 그래서 램 온도가 걱정될 때는 케이스 팬 배치와 먼지 청소가 먼저입니다.'
   );
 }
 
