@@ -976,6 +976,7 @@ export const figures = {
   'ssd-heat-short-vs-long': ssdHeatShortVsLong,
   'ram-heatsink-airflow': ramHeatsinkAirflow,
   'used-gpu-load-curve': usedGpuLoadCurve,
+  'last-year-laptop-flow': lastYearLaptopFlow,
 };
 
 /**
@@ -6372,6 +6373,42 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function lastYearLaptopFlow() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '작년 모델 판정 — 연식이 아니라 순서대로 세 관문', { weight: 600, size: 12.5 });
+  const box = (x, y, w, h, head, sub, c, fg) => {
+    let o = rect(x, y, w, h, c, { r: 6, stroke: c === COLOR.soft ? COLOR.line : undefined });
+    o += t(x + w / 2, y + 20, head, { size: 9.5, weight: 700, fill: fg, anchor: 'middle' });
+    if (sub) o += t(x + w / 2, y + 36, sub, { size: 8, fill: fg === '#fff' ? '#fff' : COLOR.mute, anchor: 'middle' });
+    return o;
+  };
+  const arrow = (x1, y1, x2, y2) => `<path d="M${x1} ${y1} L${x2} ${y2}" stroke="${COLOR.mute}" stroke-width="1.6"/><circle cx="${x2}" cy="${y2}" r="2.6" fill="${COLOR.mute}"/>`;
+  b += box(24, 42, 176, 46, '① 사양 기준 충족?', '램·화면·SSD — 연도를 안 탐', COLOR.soft, COLOR.text);
+  b += box(232, 42, 176, 46, '② 구형 신품 확인 셋', '제조일(배터리)·보증 시작·규격', COLOR.soft, COLOR.text);
+  b += box(440, 42, 176, 46, '③ 새 세대 규격 변화가', '내 용도에 실질인가?', COLOR.soft, COLOR.text);
+  b += arrow(200, 65, 228, 65) + arrow(408, 65, 436, 65);
+  b += t(214, 58, '예', { size: 8, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+  b += t(422, 58, '통과', { size: 8, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+  b += arrow(112, 88, 112, 116);
+  b += t(120, 106, '아니오', { size: 8, weight: 700, fill: COLOR.over });
+  b += box(24, 120, 176, 40, '거름 — 연식과 무관', null, COLOR.over, '#fff');
+  b += arrow(320, 88, 320, 116);
+  b += t(328, 106, '개봉 후', { size: 8, weight: 700, fill: COLOR.mute });
+  b += box(232, 120, 176, 40, '배터리 리포트 · 구매 증빙 보관', null, COLOR.mute, '#fff');
+  b += arrow(490, 88, 490, 116) + arrow(566, 88, 566, 116);
+  b += t(482, 106, '아니오', { size: 8, weight: 700, fill: COLOR.fit, anchor: 'end' });
+  b += t(574, 106, '예', { size: 8, weight: 700, fill: COLOR.accent });
+  b += box(440, 120, 96, 40, '작년 모델 OK', null, COLOR.fit, '#fff');
+  b += box(540, 120, 76, 40, '최신 쪽', null, COLOR.accent, '#fff');
+  b += t(24, 184, '전시품·리퍼는 이 흐름 밖 — 신품이 아니라 중고에 준해 확인하는 물건', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '작년 노트북 판정 흐름',
+    W, 196, b,
+    '작년 모델은 먼저 램·화면·SSD 사양 기준을 충족하는지로 거르고, 통과하면 제조일·보증 시작 시점·규격 세대를 확인합니다. 마지막으로 새 세대의 규격 변화가 내 용도에 실질적일 때만 최신 모델 쪽이 낫습니다. 전시품과 리퍼는 중고에 준해 따로 확인합니다.'
   );
 }
 
