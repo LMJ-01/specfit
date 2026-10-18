@@ -977,6 +977,7 @@ export const figures = {
   'ram-heatsink-airflow': ramHeatsinkAirflow,
   'used-gpu-load-curve': usedGpuLoadCurve,
   'last-year-laptop-flow': lastYearLaptopFlow,
+  'usb-port-power-class': usbPortPowerClass,
 };
 
 /**
@@ -6373,6 +6374,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function usbPortPowerClass() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'PC USB 포트로 폰 충전이 느린 이유 — 전원의 체급이 다릅니다', { weight: 600, size: 12.5 });
+  const x0 = 170, k = 6; // 1W = 6px (눈금은 대략)
+  b += `<line x1="${x0}" y1="40" x2="${x0}" y2="150" stroke="${COLOR.line}"/>`;
+  const row = (y, label, sub, from, to, c, txt) => {
+    let o = t(x0 - 10, y + 14, label, { size: 9, weight: 700, anchor: 'end' });
+    o += t(x0 - 10, y + 27, sub, { size: 7.6, fill: COLOR.mute, anchor: 'end' });
+    o += rect(x0, y + 2, to * k, 22, c, { r: 3 });
+    o += t(x0 + to * k + 8, y + 17, txt, { size: 8.6, weight: 700, fill: c === COLOR.soft ? COLOR.text : c });
+    return o;
+  };
+  b += rect(x0, 46, 2.5 * k, 22, COLOR.mute, { r: 2 });
+  b += t(x0 - 10, 60, '구형 규격 포트', { size: 9, weight: 700, anchor: 'end' });
+  b += t(x0 + 2.5 * k + 8, 61, '약 2.5W', { size: 8.6, weight: 700, fill: COLOR.mute });
+  b += row(76, '이후 규격 포트', '보드·포트에 따라', 2.5, 9, COLOR.mute, '한 자릿수 W대');
+  b += row(112, '전용 고속 충전기', '폰·충전기 조합에 따라', 15, 65, COLOR.fit, '수십 W');
+  b += rect(24, 160, 592, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 177, '→ PC 포트는 "자리 지킴·비상용" 체급 — 느린 건 고장이 아니라 설계', { size: 8.8, weight: 700 });
+  b += t(36, 192, '막대 길이는 체급 비교용 개략 — 정확한 값은 포트 규격·보드·충전기마다 다릅니다', { size: 8, fill: COLOR.mute });
+  return figure(
+    'USB 포트와 충전기의 전력 체급',
+    W, 210, b,
+    '컴퓨터의 USB 포트는 구형 규격 기준 약 2.5W, 이후 규격도 한 자릿수 W 수준을 곁들여 주는 정도라, 수십 W를 내는 전용 고속 충전기와는 체급이 다릅니다. 그래서 PC 포트 충전은 느린 것이 정상이고, 자리를 지키며 조금씩 채우는 용도로 맞습니다.'
   );
 }
 
