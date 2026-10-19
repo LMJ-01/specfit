@@ -978,6 +978,7 @@ export const figures = {
   'used-gpu-load-curve': usedGpuLoadCurve,
   'last-year-laptop-flow': lastYearLaptopFlow,
   'usb-port-power-class': usbPortPowerClass,
+  'glare-matte-reflect': glareMatteReflect,
 };
 
 /**
@@ -6374,6 +6375,45 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function glareMatteReflect() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '같은 창문 빛이 두 코팅에서 — 상으로 맺히나, 흩어지나', { weight: 600, size: 12.5 });
+  const panel = (px, head, sub, scatter, c, note) => {
+    let o = rect(px, 38, 286, 150, COLOR.soft, { r: 6, stroke: COLOR.line });
+    o += t(px + 12, 56, head, { size: 9.5, weight: 700, fill: c });
+    o += t(px + 12, 70, sub, { size: 8, fill: COLOR.mute });
+    // 창문
+    o += rect(px + 20, 88, 40, 30, '#fff', { r: 2, stroke: COLOR.line });
+    o += `<line x1="${px + 40}" y1="88" x2="${px + 40}" y2="118" stroke="${COLOR.line}"/><line x1="${px + 20}" y1="103" x2="${px + 60}" y2="103" stroke="${COLOR.line}"/>`;
+    o += t(px + 40, 132, '창문·조명', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+    // 화면 표면
+    o += rect(px + 236, 80, 10, 90, c, { r: 2 });
+    o += t(px + 241, 180, '화면', { size: 7.6, fill: COLOR.mute, anchor: 'middle' });
+    // 입사광
+    o += `<path d="M${px + 62} 100 L${px + 234} 120" stroke="${COLOR.accent}" stroke-width="2"/>`;
+    if (!scatter) {
+      o += `<path d="M${px + 234} 122 L${px + 120} 156" stroke="${COLOR.accent}" stroke-width="2"/>`;
+      o += t(px + 112, 166, '그대로 반사 → 상이 맺힘', { size: 8, weight: 700, fill: COLOR.accent, anchor: 'end' });
+    } else {
+      [[150, 92], [140, 120], [150, 150], [180, 160], [170, 80]].forEach(([x, y]) => {
+        o += `<path d="M${px + 234} 122 L${px + x} ${y}" stroke="${COLOR.accent}" stroke-width="1.2" opacity="0.55"/>`;
+      });
+      o += t(px + 132, 176, '흩어짐 → 뿌옇게 뭉개짐', { size: 8, weight: 700, fill: COLOR.accent, anchor: 'end' });
+    }
+    o += t(px + 12, 84, note, { size: 7.8, fill: COLOR.text });
+    return o;
+  };
+  b += panel(24, '글레어(광택)', '검정 깊고 색 또렷', false, COLOR.over, '');
+  b += panel(330, '논글레어(무광)', '아주 약간 뿌연 인상 (코팅마다 다름)', true, COLOR.fit, '');
+  b += t(24, 206, '다크 테마처럼 화면이 어두울수록 반사가 잘 보임 → 코드와 반사상 사이 "초점 경쟁" — 판정 기준은 패널이 아니라 방', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '글레어와 논글레어의 반사',
+    W, 216, b,
+    '글레어 화면은 표면이 매끈해 창문이나 조명 빛이 그대로 반사되어 상으로 맺힙니다. 논글레어 화면은 표면이 미세하게 거칠어 반사가 흩어지므로 비침이 뿌옇게 뭉개집니다. 다크 테마처럼 화면이 어두울수록 반사가 잘 보이기 때문에, 어느 코팅이 맞는지는 방의 빛 조건이 정합니다.'
   );
 }
 
