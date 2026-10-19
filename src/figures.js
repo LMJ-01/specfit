@@ -979,6 +979,7 @@ export const figures = {
   'last-year-laptop-flow': lastYearLaptopFlow,
   'usb-port-power-class': usbPortPowerClass,
   'glare-matte-reflect': glareMatteReflect,
+  'turn-off-two-paths': turnOffTwoPaths,
 };
 
 /**
@@ -6375,6 +6376,47 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function turnOffTwoPaths() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '보조 모니터를 끄는 두 경로 — 윈도우에게 어떻게 보이나', { weight: 600, size: 12.5 });
+  const box = (x, y, w, txt, sub, c, fg) => {
+    let o = rect(x, y, w, 46, c, { r: 6, stroke: c === COLOR.soft ? COLOR.line : undefined });
+    o += t(x + w / 2, y + 20, txt, { size: 9, weight: 700, fill: fg, anchor: 'middle' });
+    if (sub) o += t(x + w / 2, y + 35, sub, { size: 7.8, fill: fg === '#fff' ? '#fff' : COLOR.mute, anchor: 'middle' });
+    return o;
+  };
+  const arr = (x, y) => `<path d="M${x} ${y} L${x + 14} ${y}" stroke="${COLOR.mute}" stroke-width="1.8"/><path d="M${x + 9} ${y - 4} L${x + 14} ${y} L${x + 9} ${y + 4}" fill="none" stroke="${COLOR.mute}" stroke-width="1.8"/>`;
+  const row = (y, head, c, cells) => {
+    let o = t(24, y - 6, head, { size: 9, weight: 700, fill: c });
+    let x = 24;
+    cells.forEach(([w, txt, sub, cc, fg], i) => {
+      o += box(x, y, w, txt, sub, cc, fg);
+      if (i < cells.length - 1) o += arr(x + w + 2, y + 23);
+      x += w + 20;
+    });
+    return o;
+  };
+  b += row(52, '모니터 전원 버튼으로 끄기', COLOR.over, [
+    [130, '전원 버튼', '모니터 쪽에서 뚝', COLOR.soft, COLOR.text],
+    [150, '"화면이 사라졌다"', '연결 방식에 따라 (DP 계열 흔함)', COLOR.over, '#fff'],
+    [130, '창 대피', '메인까지 바뀌기도', COLOR.over, '#fff'],
+    [122, '켤 때 손으로 복구', '창 위치 되돌리기', COLOR.mute, '#fff'],
+  ]);
+  b += row(132, '디스플레이 설정에서 끄기 (정답 경로)', COLOR.fit, [
+    [130, '"1에만 표시"', '다중 디스플레이 항목', COLOR.soft, COLOR.text],
+    [150, '윈도우가 알고 정리', '갑작스런 실종이 아님', COLOR.fit, '#fff'],
+    [130, '신호 끊긴 모니터', '스스로 절전으로', COLOR.fit, '#fff'],
+    [122, '"확장"으로 복귀', '배치는 대개 기억', COLOR.fit, '#fff'],
+  ]);
+  b += t(24, 200, '단축키 Win+P가 같은 전환의 지름길 — 메뉴 구성은 모니터 조합에 따라 다르게 보일 수 있음', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '보조 모니터를 끄는 두 경로',
+    W, 210, b,
+    '모니터 전원 버튼으로 끄면 연결 방식에 따라 윈도우가 화면이 사라진 것으로 보고 창을 옮기거나 메인 모니터를 바꿀 수 있습니다. 디스플레이 설정에서 "1에만 표시"를 고르면 윈도우가 알고 정리하므로, 신호가 끊긴 모니터는 스스로 절전으로 들어가고 "확장"으로 되돌리면 배치가 대개 그대로 돌아옵니다.'
   );
 }
 
