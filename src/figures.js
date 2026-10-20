@@ -980,6 +980,7 @@ export const figures = {
   'usb-port-power-class': usbPortPowerClass,
   'glare-matte-reflect': glareMatteReflect,
   'turn-off-two-paths': turnOffTwoPaths,
+  'mini-pc-heat-verdict': miniPcHeatVerdict,
 };
 
 /**
@@ -6376,6 +6377,39 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function miniPcHeatVerdict() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '미니PC가 뜨거울 때 — 온도가 아니라 "같이 나타나는 증상"으로', { weight: 600, size: 12.5 });
+  const rows = [
+    ['뜨겁다 + 동작은 멀쩡', '대개 정상 — 작은 몸의 기본값', COLOR.fit],
+    ['뜨겁다 + 느려짐·팬 최대 지속', '열이 처리 용량을 넘는 신호 → 아래 순서로 점검', COLOR.mute],
+    ['뜨겁다 + 저절로 꺼짐', '보호 동작 — 방치 말고 배치·청소부터 바로', COLOR.over],
+  ];
+  rows.forEach(([a, v, c], i) => {
+    const y = 40 + i * 34;
+    b += rect(24, y, 210, 26, COLOR.soft, { r: 4, stroke: COLOR.line });
+    b += t(36, y + 17, a, { size: 9, weight: 700 });
+    b += `<path d="M238 ${y + 13} L256 ${y + 13}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M251 ${y + 9} L256 ${y + 13} L251 ${y + 17}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    b += rect(262, y, 354, 26, c, { r: 4 });
+    b += t(274, y + 17, v, { size: 8.8, weight: 700, fill: '#fff' });
+  });
+  b += t(24, 162, '처방 순서', { size: 9.5, weight: 700 });
+  const steps = [['① 배치', '갇힌 자리 탈출 · 사방 틈'], ['② 먼지', '작은 통풍구 하나가 소중'], ['③ 부하', '체급 넘는 용도면 기대치 조정']];
+  steps.forEach(([h, sub], i) => {
+    const x = 24 + i * 200;
+    b += rect(x, 170, 184, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+    b += t(x + 92, 186, h, { size: 9.5, weight: 700, anchor: 'middle' });
+    b += t(x + 92, 201, sub, { size: 8, fill: COLOR.mute, anchor: 'middle' });
+    if (i < 2) b += `<path d="M${x + 186} 190 L${x + 198} 190" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+  });
+  return figure(
+    '미니PC 발열 판정',
+    W, 222, b,
+    '미니PC가 만지면 뜨거워도 동작이 멀쩡하면 대개 정상입니다. 뜨거우면서 느려지거나 팬이 계속 최대로 돌면 열이 처리 용량을 넘는 신호이고, 저절로 꺼지면 보호 동작이라 바로 손봐야 합니다. 점검은 배치, 먼지, 부하 순서로 합니다.'
   );
 }
 
