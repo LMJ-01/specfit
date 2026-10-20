@@ -2,7 +2,7 @@
 title: 켤 때마다 CPU Fan Error가 뜨고 F1을 눌러야 할 때 — 보드가 못 들은 건 팬의 "회전 보고"입니다
 description: 부팅마다 CPU Fan Error가 뜨고 F1을 눌러야 하는 증상은 게시판 단골입니다. 이 메시지는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다 — 안 도는지, 다른 자리에 꽂혔는지, 너무 느린지 세 갈래로 가르는 순서를 정리했습니다.
 date: 2026-10-01
-updated: 2026-10-06
+updated: 2026-10-20
 category: memory
 tags: [CPUFanError, 부팅오류, CPU팬, 팬헤더, 바이오스설정]
 ---
@@ -139,6 +139,8 @@ CPU 팬 자리를 비워 두면 메시지가 뜨고, 반대로 제대로 꽂았�
 **몇 초만 팬이 크게 도는** 건 고장이 아니라
 [점호](/posts/pc-fan-loud-at-boot.html)이고, 메시지 없이 **매번
 바이오스 화면만** 뜨는 건 [부팅 디스크를 못 찾은 다른
-사건](/posts/boot-into-bios.html)입니다.
+사건](/posts/boot-into-bios.html)입니다. 같은 "Press F1" 형식으로 팬 대신
+**"Overclocking Failed"**가 뜬다면 팬이 아니라 메모리 프로필 쪽 —
+[XMP/EXPO 글의 FAQ](/posts/ram-xmp-expo.html)입니다.
 
 기준이나 동작이 실제와 다르면 [알려주세요](/contact.html). 확인 후 갱신합니다.
