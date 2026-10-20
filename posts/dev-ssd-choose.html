@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다","description":"PCIe 5.0은 Gen4의 두 배 속도지만 개발 작업에서는 체감이 거의 없습니다. 대신 DRAM 유무와 TLC/QLC가 실제로 갈리는 지점입니다.","datePublished":"2026-08-15","dateModified":"2026-09-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dev-ssd-choose.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다","description":"PCIe 5.0은 Gen4의 두 배 속도지만 개발 작업에서는 체감이 거의 없습니다. 대신 DRAM 유무와 TLC/QLC가 실제로 갈리는 지점입니다.","datePublished":"2026-08-15","dateModified":"2026-10-21","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/dev-ssd-choose.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다","item":"https://specfit.kr/posts/dev-ssd-choose.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-15">2026년 8월 15일</time>
-      <span class="updated">· 2026년 9월 17일 갱신</span>
+      <span class="updated">· 2026년 10월 21일 갱신</span>
     </p>
   </header>
 
@@ -82,6 +82,13 @@ PCIe 5.0 제품이 14,000 MB/s를 넘어가니 Gen4의 두 배입니다.</p>
 유무</strong>(지속 성능), 그다음이 <strong>TLC냐 QLC냐</strong>(수명·쓰기 안정성)
 순입니다. 그래서 답도 짧습니다 — <strong>Gen4 TLC + DRAM 있는 1TB
 이상</strong>이면 개발용으로 충분합니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 208" width="640" height="208" role="img" aria-label="개발용 SSD 고르는 중요도 순서">
+<title>개발용 SSD 고르는 중요도 순서</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">개발용 SSD — 스펙표 글자 크기와 실제 중요도는 반대 순서</text><text x="140" y="59" fill="var(--fg)" font-size="9.5" font-weight="700" text-anchor="end">용량</text><rect x="150" y="44" width="280" height="24" fill="var(--fig-fit)" rx="3"/><text x="440" y="60" fill="var(--fg)" font-size="8.4">가장 중요 — 로컬 LLM 겸용이면 1TB 이상</text><text x="140" y="95" fill="var(--fg)" font-size="9.5" font-weight="700" text-anchor="end">DRAM 유무</text><rect x="150" y="80" width="210" height="24" fill="var(--fig-fit)" rx="3"/><text x="370" y="96" fill="var(--fg)" font-size="8.4">오래 쓰거나 가득 찰 때의 지속 성능</text><text x="140" y="131" fill="var(--fg)" font-size="9.5" font-weight="700" text-anchor="end">TLC / QLC</text><rect x="150" y="116" width="140" height="24" fill="var(--fg-muted)" rx="3"/><text x="300" y="132" fill="var(--fg)" font-size="8.4">수명 · 쓰기 안정성</text><text x="140" y="167" fill="var(--fg)" font-size="9.5" font-weight="700" text-anchor="end">순차 속도 · Gen5</text><rect x="150" y="152" width="70" height="24" fill="var(--fig-over)" rx="3"/><text x="230" y="168" fill="var(--fg)" font-size="8.4">큰 파일 복사에서만 — 개발 체감 거의 없음</text><text x="150" y="196" fill="var(--fg-muted)" font-size="8.2">막대 = 개발 작업에서 체감되는 중요도 (순서 비교용) · 결론: Gen4 TLC + DRAM 있는 1TB 이상이면 충분</text>
+</svg>
+<figcaption>개발용 SSD는 용량이 가장 중요하고, 그다음이 DRAM 유무, TLC와 QLC 순입니다. 스펙표에 크게 적힌 순차 속도와 Gen5는 큰 파일을 복사할 때만 차이가 나서 개발 체감은 거의 없습니다. Gen4 TLC에 DRAM이 있는 1TB 이상이면 충분합니다.</figcaption>
+</figure>
 <h2 id="왜-gen5가-체감이-안-되나">왜 Gen5가 체감이 안 되나</h2>
 <p><strong>개발 작업은 큰 파일을 통째로 읽는 일이 드뭅니다.</strong></p>
 <div class="table-wrap"><table>
@@ -189,6 +196,12 @@ LLM 모델을 쌓다 보면 이 선을 쉽게 넘깁니다. 그리고 <strong>�
 두는 것도 가능</strong> — 생성 속도는 그대로고 로딩만 느려지니, 자주 쓰는
 모델은 내장에 보관용은 외장에 두는 식이 무난합니다
 (<a href="/posts/external-ssd-dev.html">규격별 상한 계산</a>은 따로 있습니다).</p>
+<p>제조사 프로그램이 <strong>펌웨어 업데이트</strong>를 권하면 — 지금 멀쩡히 돈다면
+급하게 올릴 일은 아니고, 업데이트 공지에 고치는 증상이 내 쪽 이야기일 때
+올리면 됩니다. 대부분의 업데이트는 데이터를 지우지 않지만 드물게 지우는
+종류가 있어 공지에 그렇게 적히는 편이니, <strong><a href="/posts/dev-backup-strategy.html">백업</a>
+먼저 · 제조사 공식 도구로 · 진행 중 전원 유지</strong>가 순서입니다. 정식 배포가
+아닌 테스트판 펌웨어는 피하세요.</p>
 <p>스펙표를 다시 보면 이제 다르게 읽힐 겁니다 — Gen5 숫자는 개발
 체감이 거의 없고 발열이라는 대가만 확실하며, 갈리는 건 DRAM 유무와
 TLC, 그리고 로컬 LLM을 겸하면 1TB 이상(모델 하나 최대 43GB)이라는

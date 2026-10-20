@@ -981,6 +981,7 @@ export const figures = {
   'glare-matte-reflect': glareMatteReflect,
   'turn-off-two-paths': turnOffTwoPaths,
   'mini-pc-heat-verdict': miniPcHeatVerdict,
+  'dev-ssd-priority': devSsdPriority,
 };
 
 /**
@@ -6377,6 +6378,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function devSsdPriority() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '개발용 SSD — 스펙표 글자 크기와 실제 중요도는 반대 순서', { weight: 600, size: 12.5 });
+  const rows = [
+    ['용량', '가장 중요 — 로컬 LLM 겸용이면 1TB 이상', 4, COLOR.fit],
+    ['DRAM 유무', '오래 쓰거나 가득 찰 때의 지속 성능', 3, COLOR.fit],
+    ['TLC / QLC', '수명 · 쓰기 안정성', 2, COLOR.mute],
+    ['순차 속도 · Gen5', '큰 파일 복사에서만 — 개발 체감 거의 없음', 1, COLOR.over],
+  ];
+  const x0 = 150, unit = 70;
+  rows.forEach(([k, d, n, c], i) => {
+    const y = 42 + i * 36;
+    b += t(x0 - 10, y + 17, k, { size: 9.5, weight: 700, anchor: 'end' });
+    b += rect(x0, y + 2, n * unit, 24, c, { r: 3 });
+    b += t(x0 + n * unit + 10, y + 18, d, { size: 8.4, fill: COLOR.text });
+  });
+  b += t(x0, 196, '막대 = 개발 작업에서 체감되는 중요도 (순서 비교용) · 결론: Gen4 TLC + DRAM 있는 1TB 이상이면 충분', { size: 8.2, fill: COLOR.mute });
+  return figure(
+    '개발용 SSD 고르는 중요도 순서',
+    W, 208, b,
+    '개발용 SSD는 용량이 가장 중요하고, 그다음이 DRAM 유무, TLC와 QLC 순입니다. 스펙표에 크게 적힌 순차 속도와 Gen5는 큰 파일을 복사할 때만 차이가 나서 개발 체감은 거의 없습니다. Gen4 TLC에 DRAM이 있는 1TB 이상이면 충분합니다.'
   );
 }
 
