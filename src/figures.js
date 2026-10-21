@@ -982,6 +982,7 @@ export const figures = {
   'turn-off-two-paths': turnOffTwoPaths,
   'mini-pc-heat-verdict': miniPcHeatVerdict,
   'dev-ssd-priority': devSsdPriority,
+  'wsl-vs-dualboot': wslVsDualboot,
 };
 
 /**
@@ -6378,6 +6379,43 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function wslVsDualboot() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'WSL2와 듀얼부팅 — "한 화면에 같이"냐 "재부팅으로 하나씩"이냐', { weight: 600, size: 12.5 });
+  // WSL
+  b += rect(24, 40, 286, 150, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 58, 'WSL2', { size: 10, weight: 700, fill: COLOR.fit });
+  b += rect(40, 68, 254, 88, '#fff', { r: 4, stroke: COLOR.line });
+  b += t(52, 84, '윈도우', { size: 8.6, weight: 700, fill: COLOR.mute });
+  b += rect(52, 92, 108, 52, COLOR.mute, { r: 4 });
+  b += t(106, 116, '윈도우 앱', { size: 8.6, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += t(106, 130, '(IDE·브라우저)', { size: 7.6, fill: '#fff', anchor: 'middle' });
+  b += rect(174, 92, 108, 52, COLOR.fit, { r: 4 });
+  b += t(228, 116, '리눅스 커널', { size: 8.6, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += t(228, 130, '터미널·도커·CUDA', { size: 7.6, fill: '#fff', anchor: 'middle' });
+  b += t(36, 176, '부팅 전환 없음 — 동시에 씀', { size: 8.6, weight: 700, fill: COLOR.fit });
+  // 듀얼부팅
+  b += rect(330, 40, 286, 150, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(342, 58, '듀얼부팅', { size: 10, weight: 700, fill: COLOR.over });
+  b += rect(346, 72, 80, 30, COLOR.soft, { r: 4, stroke: COLOR.line });
+  b += t(386, 91, '부팅 메뉴', { size: 8.4, weight: 700, anchor: 'middle' });
+  b += `<path d="M426 80 L456 74" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M426 94 L456 112" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+  b += rect(458, 62, 140, 26, COLOR.mute, { r: 4 });
+  b += t(528, 79, '윈도우만', { size: 8.6, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += rect(458, 100, 140, 26, COLOR.over, { r: 4 });
+  b += t(528, 117, '리눅스만', { size: 8.6, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += t(346, 146, 'SSD를 두 OS가 나눠 가짐', { size: 8, fill: COLOR.mute });
+  b += rect(346, 152, 120, 10, COLOR.mute, { r: 2 }) + rect(468, 152, 130, 10, COLOR.over, { r: 2 });
+  b += t(342, 182, '전환 = 재부팅 · 부트로더 관리 필요', { size: 8.6, weight: 700, fill: COLOR.over });
+  b += t(24, 206, '듀얼부팅(또는 별도 기기 단독 설치)이 맞는 자리: 하드웨어 직접 제어 · USB 장치 직결이 일상 · 리눅스 데스크톱 자체가 목적', { size: 8.2, fill: COLOR.text });
+  return figure(
+    'WSL2와 듀얼부팅의 구조',
+    W, 216, b,
+    'WSL2는 윈도우 안에서 리눅스 커널을 함께 돌려, 윈도우 앱과 리눅스 터미널·도커를 한 화면에서 동시에 씁니다. 듀얼부팅은 부팅할 때 하나를 골라 그 OS만 쓰고, 바꾸려면 재부팅해야 하며 SSD도 나눠 갖습니다. 하드웨어 직접 제어, USB 장치 직결, 리눅스 데스크톱 자체가 목적일 때만 듀얼부팅이나 별도 기기 단독 설치가 맞습니다.'
   );
 }
 
