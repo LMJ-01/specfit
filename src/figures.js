@@ -983,6 +983,7 @@ export const figures = {
   'mini-pc-heat-verdict': miniPcHeatVerdict,
   'dev-ssd-priority': devSsdPriority,
   'wsl-vs-dualboot': wslVsDualboot,
+  'igpu-dual-gates': igpuDualGates,
 };
 
 /**
@@ -6379,6 +6380,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function igpuDualGates() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '그래픽카드 없이 모니터 두 대 — 관문은 셋, 성능은 마지막', { weight: 600, size: 12.5 });
+  const gate = (x, head, q, yes, no, cNo) => {
+    let o = rect(x, 40, 184, 54, COLOR.soft, { r: 6, stroke: COLOR.line });
+    o += t(x + 92, 60, head, { size: 9.5, weight: 700, anchor: 'middle' });
+    o += t(x + 92, 78, q, { size: 8.2, fill: COLOR.mute, anchor: 'middle' });
+    o += `<path d="M${x + 46} 94 L${x + 46} 110 M${x + 138} 94 L${x + 138} 110" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 112, 90, 44, COLOR.fit, { r: 4 });
+    o += rect(x + 94, 112, 90, 44, cNo, { r: 4 });
+    yes.forEach((ln, i) => { o += t(x + 45, 130 + i * 13, ln, { size: 8, weight: 700, fill: '#fff', anchor: 'middle' }); });
+    no.forEach((ln, i) => { o += t(x + 139, 130 + i * 13, ln, { size: 8, weight: 700, fill: '#fff', anchor: 'middle' }); });
+    return o;
+  };
+  b += gate(24, '① 내장그래픽이 있나', '인텔 F 모델은 없음', ['있음', '→ ②로'], ['없음', '→ 출력 불가'], COLOR.over);
+  b += gate(228, '② 보드 뒷면 영상 단자', 'HDMI·DP 등이 2개 이상?', ['2개 이상', '→ ③으로'], ['1개', '→ 우회로 검토'], COLOR.mute);
+  b += gate(432, '③ 무엇에 쓰나', '코딩·사무·영상 시청?', ['예', '→ 충분'], ['게임·LLM', '→ 연산 문제'], COLOR.mute);
+  b += `<path d="M210 67 L226 67" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M414 67 L430 67" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+  b += t(24, 180, '③의 "연산 문제"는 화면 두 대를 띄우는 것과 별개 — 출력 수는 ①·②가 정합니다', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '내장그래픽 듀얼 모니터 확인 순서',
+    W, 192, b,
+    '그래픽카드 없이 모니터 두 대를 쓰려면 먼저 CPU에 내장그래픽이 있는지(인텔 F 모델은 없음), 다음으로 메인보드 뒷면 영상 단자가 2개 이상인지 확인합니다. 코딩·사무·영상 시청이라면 성능은 충분하고, 게임이나 로컬 LLM은 출력이 아니라 연산 성능의 문제라 별개입니다.'
   );
 }
 
