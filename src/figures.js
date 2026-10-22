@@ -985,6 +985,7 @@ export const figures = {
   'wsl-vs-dualboot': wslVsDualboot,
   'igpu-dual-gates': igpuDualGates,
   'hotspot-background-eaters': hotspotBackgroundEaters,
+  'tablet-signal-path': tabletSignalPath,
 };
 
 /**
@@ -6381,6 +6382,41 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function tabletSignalPath() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '태블릿 보조 화면이 늦는 이유 — 중간에 소프트웨어 단계가 낀다', { weight: 600, size: 12.5 });
+  const box = (x, y, w, txt, c, fg) => rect(x, y, w, 30, c, { r: 4, stroke: c === COLOR.soft ? COLOR.line : undefined }) + t(x + w / 2, y + 19, txt, { size: 8.6, weight: 700, fill: fg, anchor: 'middle' });
+  const arr = (x, y) => `<path d="M${x} ${y} L${x + 12} ${y}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 7} ${y - 4} L${x + 12} ${y} L${x + 7} ${y + 4}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+  // 모니터
+  b += t(24, 52, '일반 모니터', { size: 9.5, weight: 700, fill: COLOR.fit });
+  b += box(24, 60, 90, 'PC', COLOR.soft, COLOR.text);
+  b += arr(118, 75);
+  b += box(134, 60, 180, '케이블로 영상 신호 직접', COLOR.fit, '#fff');
+  b += arr(318, 75);
+  b += box(334, 60, 90, '모니터', COLOR.soft, COLOR.text);
+  b += t(440, 79, '중간 단계 없음', { size: 8.4, weight: 700, fill: COLOR.fit });
+  // 태블릿
+  b += t(24, 118, '태블릿', { size: 9.5, weight: 700, fill: COLOR.over });
+  b += box(24, 126, 70, 'PC', COLOR.soft, COLOR.text);
+  b += arr(98, 141);
+  b += box(114, 126, 100, '화면 압축', COLOR.over, '#fff');
+  b += arr(218, 141);
+  b += box(234, 126, 120, '전송 (유선/무선)', COLOR.over, '#fff');
+  b += arr(358, 141);
+  b += box(374, 126, 110, '앱이 받아 그림', COLOR.over, '#fff');
+  b += arr(488, 141);
+  b += box(504, 126, 112, '태블릿 화면', COLOR.soft, COLOR.text);
+  b += t(114, 174, '↑ 이 세 칸만큼 지연 — 무선이면 와이파이 사정에 따라 흔들림', { size: 8.4, fill: COLOR.over });
+  b += rect(24, 186, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 204, '판정: 눈만 가는 화면(문서·로그·채팅) ✅  ·  커서가 머무는 작업 화면 ⚠️  ·  게임·편집 ❌', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '모니터와 태블릿의 화면 경로',
+    W, 222, b,
+    '일반 모니터는 케이블로 영상 신호를 직접 받지만, 태블릿은 컴퓨터가 화면을 압축해 보내고 태블릿 앱이 받아서 그리는 단계를 거칩니다. 이 단계만큼 지연이 생기고 무선이면 더 흔들려서, 보기만 하는 화면에는 잘 맞고 커서로 일하는 화면이나 게임에는 덜 맞습니다.'
   );
 }
 
