@@ -984,6 +984,7 @@ export const figures = {
   'dev-ssd-priority': devSsdPriority,
   'wsl-vs-dualboot': wslVsDualboot,
   'igpu-dual-gates': igpuDualGates,
+  'hotspot-background-eaters': hotspotBackgroundEaters,
 };
 
 /**
@@ -6380,6 +6381,40 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function hotspotBackgroundEaters() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '핫스팟 데이터 순삭의 정체 — 화면 앞이 아니라 "뒤에서 받는 것들"', { weight: 600, size: 12.5 });
+  const tasks = ['윈도우 업데이트', '게임 런처 패치', '클라우드 동기화'];
+  const style = {
+    run: [COLOR.over, '#fff', null],
+    wait: [COLOR.soft, COLOR.mute, COLOR.line],
+    app: [COLOR.mute, '#fff', null],
+  };
+  const row = (y, who, rule, states, note, c) => {
+    let o = t(24, y + 17, who, { size: 9.5, weight: 700 });
+    o += t(24, y + 31, rule, { size: 7.8, fill: COLOR.mute });
+    tasks.forEach((tk, i) => {
+      const x = 200 + i * 112;
+      const [bg, fg, st] = style[states[i]];
+      o += rect(x, y + 4, 104, 26, bg, { r: 4, stroke: st || undefined });
+      o += t(x + 52, y + 21, tk, { size: 8.2, weight: 700, fill: fg, anchor: 'middle' });
+    });
+    o += t(540, y + 21, note, { size: 8.6, weight: 700, fill: c });
+    return o;
+  };
+  b += row(40, '폰', '"대량은 와이파이일 때만"에 길들여짐', ['wait', 'wait', 'wait'], '미룸', COLOR.fit);
+  b += row(84, '노트북 (기본값)', '핫스팟도 그냥 와이파이로 앎', ['run', 'run', 'run'], '지금 받음', COLOR.over);
+  b += row(128, '노트북 + 종량제 지정', '"데이터 통신 연결" 스위치 켬', ['wait', 'app', 'app'], '윈도우는 미룸', COLOR.fit);
+  b += rect(24, 172, 592, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 191, '회색 칸 = 앱마다 자동 다운로드 끄기가 따로 — 자주 쓰는 런처·클라우드 앱 한둘만 챙기면 됨', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '핫스팟에서 데이터를 먹는 것',
+    W, 212, b,
+    '폰은 대량 다운로드를 와이파이일 때로 미루지만, 노트북은 핫스팟도 일반 와이파이로 알아서 윈도우 업데이트·게임 런처 패치·클라우드 동기화를 바로 받습니다. 그 연결을 종량제(데이터 통신 연결)로 지정하면 윈도우 업데이트 같은 대량 다운로드가 미뤄지고, 게임 런처와 클라우드 앱은 각자 설정에서 자동 다운로드를 따로 끕니다.'
   );
 }
 
