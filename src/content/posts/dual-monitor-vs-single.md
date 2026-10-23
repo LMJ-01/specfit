@@ -2,7 +2,7 @@
 title: 듀얼 모니터 vs 큰 모니터 한 대 — 코딩에서는
 description: 두 대로 넓히면 세로는 그대로입니다. 코드를 더 보고 싶은 건지 참고 자료를 띄우고 싶은 건지에 따라 답이 갈립니다. 픽셀로 계산했습니다.
 date: 2026-08-16
-updated: 2026-10-03
+updated: 2026-10-24
 category: monitor
 tags: [듀얼모니터, 모니터, 코딩용모니터, 해상도, 32인치]
 affiliate: true
@@ -63,6 +63,8 @@ affiliate: true
 **"코드가 더 보였으면"이 목적이라면 듀얼은 답이 아닙니다.** 두 배로 돈을 쓰고 같은 줄 수를 보게 됩니다.
 
 그 경우 답은 [세로 모니터](/posts/vertical-monitor-coding.html)이거나 32" 4K입니다.
+
+{{FIG:dual-vs-single-lines}}
 
 ## 2. 그럼 듀얼은 언제 쓰나 — 동시에 볼 때
 

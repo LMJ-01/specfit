@@ -987,6 +987,7 @@ export const figures = {
   'hotspot-background-eaters': hotspotBackgroundEaters,
   'tablet-signal-path': tabletSignalPath,
   'old-laptop-triage': oldLaptopTriage,
+  'dual-vs-single-lines': dualVsSingleLines,
 };
 
 /**
@@ -6383,6 +6384,32 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function dualVsSingleLines() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '코드 줄 수는 세로 픽셀이 정한다 — 듀얼은 옆으로만 늘어남', { weight: 600, size: 12.5 });
+  const rows = [
+    ['27" QHD 한 대', 75, '세로 1440', COLOR.mute],
+    ['27" QHD 두 대', 75, '세로 1440 ← 그대로', COLOR.over],
+    ['32" 4K 한 대 (125%)', 90, '세로 1728 상당', COLOR.fit],
+    ['27" QHD 세로 한 대', 134, '세로 2560', COLOR.fit],
+  ];
+  const x0 = 170, k = 2.9;
+  rows.forEach(([label, n, sub, c], i) => {
+    const y = 42 + i * 34;
+    b += t(x0 - 10, y + 17, label, { size: 9, weight: 700, anchor: 'end' });
+    b += rect(x0, y + 2, n * k, 24, c, { r: 3 });
+    b += t(x0 + n * k - 8, y + 18, `약 ${n}줄`, { size: 8.6, weight: 700, fill: '#fff', anchor: 'end' });
+    b += t(x0 + n * k + 10, y + 18, sub, { size: 8.2, fill: c === COLOR.over ? COLOR.over : COLOR.mute, weight: c === COLOR.over ? 700 : 400 });
+  });
+  b += t(24, 192, '두 대의 값은 줄 수가 아니라 "동시에 보기"(창 하나당 폭 2560px) — 코드가 더 보이길 원하면 세로가 높은 쪽', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '모니터 구성별 한 화면 코드 줄 수',
+    W, 204, b,
+    '한 화면에 보이는 코드 줄 수는 세로 픽셀이 정해서, 27인치 QHD를 두 대로 늘려도 한 대와 같은 약 75줄입니다. 32인치 4K를 125%로 쓰면 약 90줄, 27인치 QHD를 세로로 세우면 약 134줄로 늘어납니다. 듀얼의 장점은 줄 수가 아니라 여러 창을 넓게 동시에 보는 데 있습니다.'
   );
 }
 
