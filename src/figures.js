@@ -986,6 +986,7 @@ export const figures = {
   'igpu-dual-gates': igpuDualGates,
   'hotspot-background-eaters': hotspotBackgroundEaters,
   'tablet-signal-path': tabletSignalPath,
+  'old-laptop-triage': oldLaptopTriage,
 };
 
 /**
@@ -6382,6 +6383,32 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function oldLaptopTriage() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '은퇴 노트북 30초 판정 — 역할 정하기 전에 몸 상태부터', { weight: 600, size: 12.5 });
+  const rows = [
+    ['배터리가 부풀었나?', '예 → 즉시 사용 중단 · 배터리 분리(또는 서비스센터) — 안전 문제, 예외 없음', COLOR.over, '먼저'],
+    ['램·SSD 교체가 되나?', '예 → 램 증설 + SSD 교체로 쾌적 수명 회복 (HDD 시절 노트북은 SSD 하나로 다른 물건)', COLOR.fit, ''],
+    ['온보드 램이 이미 모자라나?', '예 → 재생보다 부품·처분 계산이 맞음', COLOR.mute, ''],
+  ];
+  rows.forEach(([q, a, c, tag], i) => {
+    const y = 40 + i * 44;
+    b += rect(24, y, 188, 34, COLOR.soft, { r: 6, stroke: COLOR.line });
+    b += t(36, y + 21, q, { size: 9.2, weight: 700 });
+    if (tag) b += t(206, y + 21, tag, { size: 8, weight: 700, fill: COLOR.over, anchor: 'end' });
+    b += `<path d="M214 ${y + 17} L230 ${y + 17}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M225 ${y + 13} L230 ${y + 17} L225 ${y + 21}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    b += rect(236, y, 380, 34, c, { r: 6 });
+    b += t(248, y + 21, a, { size: 8.2, weight: 700, fill: '#fff' });
+  });
+  b += t(24, 186, '통과한 몸 → 자리 정하기: ① 둘째 컴퓨터 · ② 상시 서버 실험 · ③ 부품 장기 · ④ 재생 컴퓨터 · ⑤ 자리 없으면 처분', { size: 8.4, fill: COLOR.text });
+  return figure(
+    '은퇴 노트북 30초 판정',
+    W, 198, b,
+    '은퇴한 노트북은 역할을 정하기 전에 몸 상태부터 봅니다. 배터리가 부풀었으면 다른 판단보다 먼저 사용을 멈추고 배터리를 분리합니다. 램·SSD를 바꿀 수 있으면 업그레이드로 쾌적 수명이 돌아오고, 온보드 램이 이미 모자라면 재생보다 부품이나 처분 쪽이 맞습니다.'
   );
 }
 
