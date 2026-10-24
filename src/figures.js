@@ -988,6 +988,7 @@ export const figures = {
   'tablet-signal-path': tabletSignalPath,
   'old-laptop-triage': oldLaptopTriage,
   'dual-vs-single-lines': dualVsSingleLines,
+  'audio-noise-path': audioNoisePath,
 };
 
 /**
@@ -6384,6 +6385,41 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function audioNoisePath() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '마우스 따라 지지직 — 소리가 "아날로그로 바뀌는 자리"가 어디냐의 차이', { weight: 600, size: 12.5 });
+  const box = (x, y, w, txt, c, fg) => rect(x, y, w, 30, c, { r: 4, stroke: c === COLOR.soft ? COLOR.line : undefined }) + t(x + w / 2, y + 19, txt, { size: 8.6, weight: 700, fill: fg, anchor: 'middle' });
+  const arr = (x, y) => `<path d="M${x} ${y} L${x + 12} ${y}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 7} ${y - 4} L${x + 12} ${y} L${x + 7} ${y + 4}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+  // 내장 단자
+  b += t(24, 52, '내장 단자 (특히 전면)', { size: 9.5, weight: 700, fill: COLOR.over });
+  b += box(24, 60, 96, '소리 데이터', COLOR.soft, COLOR.text);
+  b += arr(124, 75);
+  b += box(140, 60, 170, '메인보드 위에서 변환', COLOR.over, '#fff');
+  b += arr(314, 75);
+  b += box(330, 60, 150, '케이스 안 연장선', COLOR.over, '#fff');
+  b += arr(484, 75);
+  b += box(500, 60, 116, '스피커', COLOR.soft, COLOR.text);
+  b += t(140, 106, '↑ 그래픽·전원 신호가 바쁜 이웃 — 아날로그 구간이 컴퓨터 안을 지나며 잡음이 샘', { size: 8.4, fill: COLOR.over });
+  // 디지털 경로
+  b += t(24, 138, 'USB 스피커·DAC / 모니터 스피커(HDMI·DP)', { size: 9.5, weight: 700, fill: COLOR.fit });
+  b += box(24, 146, 96, '소리 데이터', COLOR.soft, COLOR.text);
+  b += arr(124, 161);
+  b += box(140, 146, 170, '디지털 그대로 케이블로', COLOR.fit, '#fff');
+  b += arr(314, 161);
+  b += box(330, 146, 150, '스피커·모니터 안에서 변환', COLOR.fit, '#fff');
+  b += arr(484, 161);
+  b += box(500, 146, 116, '소리', COLOR.soft, COLOR.text);
+  b += t(140, 192, '↑ 아날로그 구간이 컴퓨터 밖에서 시작 — 내부 간섭 구간을 통째로 우회', { size: 8.4, fill: COLOR.fit });
+  b += rect(24, 204, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 222, '순서: 후면 단자 → 케이블 정리 → 디지털 경로  ·  항상 웅~·볼륨 비례 쏴아는 다른 갈래', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '내장 단자와 디지털 경로의 잡음 구간',
+    W, 240, b,
+    '내장 단자는 메인보드 위에서 소리를 아날로그로 바꾼 뒤 케이스 안을 지나 나가서, 그래픽·전원 신호 같은 이웃 잡음이 섞일 자리가 생깁니다. USB 스피커나 모니터 스피커는 디지털인 채로 컴퓨터를 빠져나가 밖에서 변환하므로 그 구간을 건너뜁니다. 접지 쪽 웅 소리나 볼륨에 비례하는 쏴아는 이 그림과 다른 갈래입니다.'
   );
 }
 
