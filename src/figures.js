@@ -989,6 +989,7 @@ export const figures = {
   'old-laptop-triage': oldLaptopTriage,
   'dual-vs-single-lines': dualVsSingleLines,
   'audio-noise-path': audioNoisePath,
+  'gpu-effective-length': gpuEffectiveLength,
 };
 
 /**
@@ -6385,6 +6386,36 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function gpuEffectiveLength() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '케이스 허용 길이는 조건부 숫자 — 카드는 "실효 길이"와 비교', { weight: 600, size: 12.5 });
+  const lab = (y, a, c) => t(24, y + 17, a, { size: 9.5, weight: 700, fill: c || COLOR.text });
+  // 스펙
+  b += lab(48, '케이스 스펙');
+  b += rect(150, 48, 440, 26, COLOR.soft, { r: 4, stroke: COLOR.line });
+  b += t(370, 65, '허용 길이 (어느 기준인지는 케이스마다 다름)', { size: 8.6, weight: 700, fill: COLOR.mute, anchor: 'middle' });
+  // 실효
+  b += lab(92, '전면 구성 반영', COLOR.fit);
+  b += rect(150, 92, 366, 26, COLOR.fit, { r: 4 });
+  b += t(333, 109, '실효 길이', { size: 8.6, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += rect(520, 92, 70, 26, COLOR.over, { r: 4 });
+  b += t(555, 109, '전면 팬', { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+  // 카드
+  b += lab(136, '그래픽카드');
+  b += rect(150, 136, 350, 26, COLOR.mute, { r: 4 });
+  b += t(325, 153, '카드 실측 길이 (같은 칩도 모델마다 다름)', { size: 8.6, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += `<path d="M518 86 L518 170" stroke="${COLOR.over}" stroke-width="1.4" stroke-dasharray="4 3"/>`;
+  b += t(516, 186, '이 틈이 몇 mm뿐이면 숫자는 통과, 조립은 곡예 ↑', { size: 8.4, fill: COLOR.over, anchor: 'end' });
+  b += rect(24, 200, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 218, '나머지 두 치수: ② 두께(슬롯) — 아래 슬롯·M.2 가림  ·  ③ 전원 커넥터 — 높이 + 케이블 꺾임 여유', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '케이스 허용 길이와 실효 길이',
+    W, 236, b,
+    '케이스 스펙의 허용 길이는 전면 팬이나 라디에이터를 달면 그만큼 줄어드는 조건부 숫자라, 카드 길이는 그 구성을 뺀 실효 길이와 비교해야 합니다. 차이가 몇 mm뿐인 조합은 숫자로는 들어가도 실제 장착은 빠듯해지는 영역입니다. 두께(슬롯 수)와 전원 커넥터 공간은 길이와 별개로 확인합니다.'
   );
 }
 
