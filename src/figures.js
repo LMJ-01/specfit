@@ -991,6 +991,7 @@ export const figures = {
   'audio-noise-path': audioNoisePath,
   'gpu-effective-length': gpuEffectiveLength,
   'resolution-two-sources': resolutionTwoSources,
+  'color-diff-triage': colorDiffTriage,
 };
 
 /**
@@ -6387,6 +6388,30 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function colorDiffTriage() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '두 화면 색이 다르다 — "언제부터, 어떻게"가 정상과 고장을 가른다', { weight: 600, size: 12.5 });
+  const row = (y, sym, sub, verdict, vsub, c) => {
+    let o = rect(24, y, 250, 40, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(36, y + 17, sym, { size: 9.2, weight: 700 });
+    o += t(36, y + 32, sub, { size: 8, fill: COLOR.mute });
+    o += `<path d="M280 ${y + 20} L298 ${y + 20}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M293 ${y + 16} L298 ${y + 20} L293 ${y + 24}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(304, y, 312, 40, c, { r: 4 });
+    o += t(316, y + 17, verdict, { size: 9.2, weight: 700, fill: '#fff' });
+    o += t(316, y + 32, vsub, { size: 8, fill: '#fff' });
+    return o;
+  };
+  b += row(44, '처음부터 조금씩 달랐다', '누런 쪽·퍼런 쪽, 밝기 차이', '정상 — 패널이 다른 물건', '밝기 → 색온도 → OS 미세 보정으로 근접', COLOR.fit);
+  b += row(96, '원래 비슷했는데 한쪽이 누레짐', '어느 날부터, 전체가 따뜻한 톤', '설정·모드 갈래', '야간 모드·색 모드·화면 모드부터 확인', COLOR.mute);
+  b += row(148, '한쪽이 보라·초록빛으로 변함', '한 색이 빠진 듯 부자연스러움', '신호·고장 갈래 — 맞추기 대상 아님', '케이블 재장착 → 모니터 메뉴 색 확인 → 맞바꾸기', COLOR.over);
+  return figure(
+    '듀얼 모니터 색 차이의 세 갈래',
+    W, 200, b,
+    '처음부터 조금씩 다른 색은 패널 차이라 정상이고 눈으로 근접시키는 대상입니다. 원래 비슷했는데 한쪽이 누레졌다면 설정이나 모드 쪽을 먼저 봅니다. 한쪽이 보라색이나 초록빛처럼 한 색이 빠진 듯 변했다면 색 맞추기가 아니라 케이블·신호나 모니터 이상을 가리는 갈래입니다.'
   );
 }
 
