@@ -992,6 +992,7 @@ export const figures = {
   'gpu-effective-length': gpuEffectiveLength,
   'resolution-two-sources': resolutionTwoSources,
   'color-diff-triage': colorDiffTriage,
+  'weakest-link-25g': weakestLink25g,
 };
 
 /**
@@ -6388,6 +6389,38 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function weakestLink25g() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '2.5기가 요금제 — 속도는 경로에서 제일 약한 고리를 따라간다', { weight: 600, size: 12.5 });
+  const names = ['요금제', '통신사 단말', '공유기 WAN', '허브·단자함', '랜카드', '케이블'];
+  const arr = (x, y) => `<path d="M${x} ${y} L${x + 8} ${y}" stroke="${COLOR.mute}" stroke-width="1.4"/><path d="M${x + 4} ${y - 3} L${x + 8} ${y} L${x + 4} ${y + 3}" fill="none" stroke="${COLOR.mute}" stroke-width="1.4"/>`;
+  const row = (y, label, vals, result, rc) => {
+    let o = t(24, y - 6, label, { size: 9.2, weight: 700, fill: rc });
+    vals.forEach((v, i) => {
+      const x = 24 + i * 86;
+      const bad = v === '1G';
+      o += rect(x, y, 74, 34, bad ? COLOR.over : COLOR.fit, { r: 4 });
+      o += t(x + 37, y + 14, names[i], { size: 7.8, weight: 700, fill: '#fff', anchor: 'middle' });
+      o += t(x + 37, y + 27, v, { size: 8.6, weight: 700, fill: '#fff', anchor: 'middle' });
+      if (i < 5) o += arr(x + 76, y + 17);
+    });
+    o += arr(24 + 5 * 86 + 76, y + 17);
+    o += rect(546, y, 70, 34, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(581, y + 21, result, { size: 9, weight: 700, fill: rc, anchor: 'middle' });
+    return o;
+  };
+  b += row(56, '전 구간 2.5G 이상', ['2.5G', '2.5G', '2.5G', '2.5G', '2.5G', 'CAT.5E'], '2.5G', COLOR.fit);
+  b += row(124, '공유기 하나만 1G', ['2.5G', '2.5G', '1G', '2.5G', '2.5G', 'CAT.5E'], '1G', COLOR.over);
+  b += rect(24, 176, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 194, '관문은 케이블보다 장비 — 2.5G 규격은 CAT.5E 배선에서 동작하도록 설계됨 (길이·상태에 따라)', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '2.5기가 경로의 약한 고리',
+    W, 212, b,
+    '2.5기가 요금제는 경로의 출발점 하나를 올린 것이라, 통신사 단말·공유기 WAN·허브·랜카드가 모두 2.5G를 받아줘야 끝까지 옵니다. 이 중 하나라도 1G면 그 지점에서 1G로 깎입니다. 케이블은 CAT.5E도 대개 되는 쪽이라 관문은 주로 장비입니다.'
   );
 }
 
