@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>해상도가 낮게 고정돼 안 바뀔 때 — 컴퓨터가 모니터를 &quot;모르는&quot; 상태입니다 | 스펙핏</title>
+<meta name="description" content="어느 날 화면이 크고 뭉개지더니 해상도 목록에 1024×768 같은 낮은 값만 남는 증상은, 해상도 목록을 채우는 두 경로 중 하나가 끊겼다는 신호입니다. 드라이버 갈래와 모니터 정보 갈래를 가르는 법, 고장이 아닌 배율 착각까지 순서대로 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/resolution-stuck-low.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="해상도가 낮게 고정돼 안 바뀔 때 — 컴퓨터가 모니터를 &quot;모르는&quot; 상태입니다 | 스펙핏">
+<meta property="og:description" content="어느 날 화면이 크고 뭉개지더니 해상도 목록에 1024×768 같은 낮은 값만 남는 증상은, 해상도 목록을 채우는 두 경로 중 하나가 끊겼다는 신호입니다. 드라이버 갈래와 모니터 정보 갈래를 가르는 법, 고장이 아닌 배율 착각까지 순서대로 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/resolution-stuck-low.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"해상도가 낮게 고정돼 안 바뀔 때 — 컴퓨터가 모니터를 \"모르는\" 상태입니다","description":"어느 날 화면이 크고 뭉개지더니 해상도 목록에 1024×768 같은 낮은 값만 남는 증상은, 해상도 목록을 채우는 두 경로 중 하나가 끊겼다는 신호입니다. 드라이버 갈래와 모니터 정보 갈래를 가르는 법, 고장이 아닌 배율 착각까지 순서대로 정리했습니다.","datePublished":"2026-10-25","dateModified":"2026-10-25","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/resolution-stuck-low.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"해상도가 낮게 고정돼 안 바뀔 때 — 컴퓨터가 모니터를 \"모르는\" 상태입니다","item":"https://specfit.kr/posts/resolution-stuck-low.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"4K 모니터인데 목록이 QHD까지만 나와요","acceptedAnswer":{"@type":"Answer","text":"낮게 \"고정\"된 게 아니라 길의 체급이 모자란 경우일 수 있습니다 — 케이블이나 포트 규격이 4K를 감당하지 못하면 그 아래까지만 보입니다. 단자별 한계 계산은 DP와 HDMI 글에 있습니다."}},{"@type":"Question","name":"재부팅할 때마다 다시 낮아져요","acceptedAnswer":{"@type":"Answer","text":"부팅하는 순간 모니터 정보를 못 받는 구성에서 나옵니다 — 모니터가 늦게 깨어나거나, 중간에 KVM·허브가 있는 경우가 흔한 정황입니다. 절전에서 깨면 창이 몰리는 문제와 같은 뿌리(\"모니터가 잠깐 없는 것\")라 처방도 비슷합니다 — 직결해서 재현되는지부터 보세요."}},{"@type":"Question","name":"그래픽 제어판에서 사용자 지정 해상도로 올려도 되나요","acceptedAnswer":{"@type":"Answer","text":"방법은 있지만 원인을 두고 증상만 덮는 쪽입니다. 모니터가 실제로 받는 범위를 넘으면 \"신호 범위 초과\"로 화면이 꺼질 수 있고, 끊긴 경로는 그대로 남습니다. 위 갈래로 원인을 먼저 찾는 게 순서입니다."}},{"@type":"Question","name":"듀얼 모니터 중 한 대만 이래요","acceptedAnswer":{"@type":"Answer","text":"갈래 ②일 가능성이 큽니다 — 드라이버 문제라면 두 대가 같이 이상해야 하니까요. 그 한 대의 케이블·포트·중간 장치를 위 순서대로 보세요. 해상도가 원래 다른 두 대를 섞어 쓰는 데서 오는 불편이라면 해상도 다른 듀얼 모니터 쪽 이야기입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>해상도가 낮게 고정돼 안 바뀔 때 — 컴퓨터가 모니터를 &quot;모르는&quot; 상태입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-10-25">2026년 10월 25일</time>
+      <span class="updated">· 2026년 10월 25일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>어느 날 켰더니 <strong>아이콘이 큼직하고 글씨가 뭉개져</strong> 있습니다. 해상도를
+바꾸려고 설정에 들어가 보면 목록에 1024×768, 800×600 같은 <strong>낮은 값만
+몇 개</strong> 남아 있고, 원래 쓰던 해상도는 보이지도 않습니다.</p>
+<p>모니터가 고장 난 것 같지만 대개는 아닙니다. 이 증상은 <strong>컴퓨터가
+모니터를 제대로 &quot;모르는&quot; 상태</strong>라는 신호이고, 왜 모르게 됐는지는
+두 갈래로 금방 갈립니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>보이는 것</th><th>갈래</th></tr></thead>
+<tbody>
+<tr><td>장치 관리자 → 디스플레이 어댑터에 <strong>&quot;Microsoft 기본 디스플레이 어댑터&quot;</strong></td><td><strong>드라이버 갈래</strong> — 그래픽카드 쪽을 모르는 상태</td></tr>
+<tr><td>그래픽카드 이름은 제대로인데 <strong>목록만 짧음</strong></td><td><strong>모니터 정보 갈래</strong> — 케이블·젠더·KVM 쪽</td></tr>
+<tr><td>해상도는 원래 값인데 <strong>글씨만 큼</strong></td><td>고장이 아니라 <strong>배율 설정</strong></td></tr>
+<tr><td>원격 접속·화면 공유 프로그램을 쓴 <strong>뒤부터</strong></td><td><strong>가상 화면 갈래</strong> — 재부팅·프로그램 확인</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 228" width="640" height="228" role="img" aria-label="해상도 목록이 만들어지는 두 경로">
+<title>해상도 목록이 만들어지는 두 경로</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">해상도 목록은 두 군데서 옵니다 — 하나라도 끊기면 낮은 목록만 남는다</text><rect x="24" y="44" width="290" height="40" fill="var(--fig-fit)" rx="4"/><text x="36" y="61" fill="#fff" font-size="9.4" font-weight="700">① 그래픽 드라이버</text><text x="36" y="76" fill="#fff" font-size="8">컴퓨터가 그래픽카드를 제대로 앎</text><text x="36" y="100" fill="var(--fig-over)" font-size="8.4">끊기면 → "기본 디스플레이 어댑터" — 낮은 해상도 몇 개뿐</text><rect x="24" y="118" width="290" height="40" fill="var(--fig-fit)" rx="4"/><text x="36" y="135" fill="#fff" font-size="9.4" font-weight="700">② 모니터 정보</text><text x="36" y="150" fill="#fff" font-size="8">모니터가 케이블로 "나는 이 해상도까지" 알려줌</text><text x="36" y="174" fill="var(--fig-over)" font-size="8.4">끊기면 → 안전한 낮은 목록 — 케이블·젠더·KVM 의심</text><path d="M318 64 C340 64 340 112 356 112" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M318 138 C340 138 340 112 356 112" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M350 108 L356 112 L350 116" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="360" y="88" width="256" height="48" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="488" y="109" fill="var(--fg)" font-size="9.6" font-weight="700" text-anchor="middle">설정의 해상도 목록</text><text x="488" y="126" fill="var(--fg-muted)" font-size="8.2" text-anchor="middle">둘 다 살아 있어야 권장 해상도가 뜸</text><rect x="24" y="192" width="592" height="28" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="210" fill="var(--fg)" font-size="8.6" font-weight="700">해상도는 맞는데 글씨만 크다면 → 고장이 아니라 배율(125%·150%) 설정입니다</text>
+</svg>
+<figcaption>설정에 뜨는 해상도 목록은 그래픽 드라이버와, 모니터가 케이블로 보내는 자기 정보가 함께 있어야 제대로 채워집니다. 드라이버가 없으면 기본 디스플레이 어댑터로 낮은 해상도 몇 개만 뜨고, 모니터 정보가 중간에서 끊기면 안전한 낮은 목록만 남습니다. 해상도는 맞는데 글씨만 큰 것은 배율 설정 문제입니다.</figcaption>
+</figure>
+<h2 id="해상도-목록은-두-군데서-옵니다">해상도 목록은 두 군데서 옵니다</h2>
+<p>설정에 뜨는 해상도 목록은 컴퓨터가 혼자 정하는 게 아닙니다.</p>
+<ul>
+<li><strong>그래픽 드라이버</strong> — 그래픽카드가 낼 수 있는 해상도를 압니다</li>
+<li><strong>모니터가 보내는 자기 정보</strong> — 모니터는 케이블로 &quot;나는 이 해상도까지
+받는다&quot;는 정보를 컴퓨터에 알려 줍니다. 그래서 처음 꽂아도 권장
+해상도가 알아서 잡히는 겁니다</li>
+</ul>
+<p>둘 중 <strong>하나라도 끊기면</strong> 컴퓨터는 어떤 화면에서도 안전하게 나오는
+낮은 해상도 몇 개만 남겨 둡니다. 낮게 고정되는 증상의 정체가
+이것입니다.</p>
+<h2 id="갈래-드라이버-그래픽카드를-모르는-상태">갈래 ① — 드라이버: 그래픽카드를 모르는 상태</h2>
+<p>장치 관리자의 디스플레이 어댑터에 그래픽카드 이름 대신
+<strong>&quot;Microsoft 기본 디스플레이 어댑터&quot;</strong>가 떠 있다면 이 갈래입니다.
+하드웨어는 연결돼 있는데 정체를 알려 줄 드라이버가 없는 상태라,
+해상도도 기본값 몇 개만 고를 수 있습니다.</p>
+<ol>
+<li>그래픽 제조사(NVIDIA·AMD·인텔)의 드라이버를 받아 설치합니다</li>
+<li><strong>업데이트 직후부터</strong> 이랬다면 그 업데이트가 단서입니다 — 이전
+버전으로 되돌리는 순서는
+<a href="/posts/game-stutter-fps.html">드라이버 업데이트 뒤 끊김 FAQ</a>에
+있습니다</li>
+<li>장치 관리자에 <strong>이름 모를 장치조차 없다면</strong> 드라이버보다 아래
+층의 문제라, <a href="/posts/gpu-not-detected.html">그래픽카드 인식의 층 판정</a>
+으로 가는 게 순서입니다</li>
+</ol>
+<h2 id="갈래-모니터-정보-중간에서-끊긴-상태">갈래 ② — 모니터 정보: 중간에서 끊긴 상태</h2>
+<p>그래픽카드 이름은 멀쩡한데 목록만 짧다면, 모니터의 자기 정보가
+컴퓨터까지 못 온 경우가 많습니다. 길 위의 것들을 하나씩 빼 봅니다:</p>
+<ol>
+<li><strong>케이블을 양쪽 다 다시 꽂기</strong> — 접촉이 어긋나도 그림은 나오는데
+정보만 못 오는 경우가 있습니다</li>
+<li><strong>중간 장치 빼고 직결</strong> — 변환 젠더(특히 VGA로 바꾸는 것), 허브,
+KVM, 연장 케이블을 빼고 컴퓨터와 모니터를 바로 연결해 보세요.
+장치에 따라 모니터 정보를 제대로 못 넘기는 경우가 있습니다.
+KVM을 쓰는 구성이라면 <a href="/posts/monitor-kvm.html">KVM의 한계 항목</a>도
+같이 보세요</li>
+<li><strong>다른 케이블·다른 포트로</strong> — 증상이 케이블을 따라다니면 케이블
+쪽입니다. <a href="/posts/dual-monitor-one-blank.html">한쪽만 안 나올 때의 맞바꾸기</a>와
+같은 방식입니다</li>
+<li><strong>VGA라면 디지털 단자로</strong> — VGA는 아날로그라 이런 정보 전달이
+불안정한 편입니다. HDMI·DP가 있다면 그쪽으로 옮기는 것이
+근본 처방입니다</li>
+</ol>
+<h2 id="갈래-해상도는-맞는데-글씨만-크다면">갈래 ③ — 해상도는 맞는데 글씨만 크다면</h2>
+<p>설정의 해상도가 원래 값(예: 2560×1440)이고 <strong>&quot;권장&quot;</strong>까지 붙어 있는데
+화면이 크게 보인다면, 해상도가 아니라 <strong>배율</strong> 설정입니다. 같은
+디스플레이 설정 화면의 배율(100%·125%·150%)을 확인하세요. 고장이
+아니라 선택의 문제이고, 크기와 배율의 관계는
+<a href="/posts/coding-monitor-resolution.html">코딩 모니터 해상도 글</a>에
+정리했습니다.</p>
+<h2 id="갈래-원격-접속가상-화면-뒤에">갈래 ④ — 원격 접속·가상 화면 뒤에</h2>
+<p>원격 데스크톱으로 이 컴퓨터에 접속했다 나왔거나, 화면 공유·가상
+디스플레이 프로그램을 설치한 뒤부터라면 그 프로그램이 해상도를
+잡아 두고 있는 경우가 있습니다. 동작은 프로그램과 환경에 따라
+다르지만, <strong>재부팅</strong> 한 번과 최근 설치한 프로그램 확인이 먼저입니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="4k-모니터인데-목록이-qhd까지만-나와요">4K 모니터인데 목록이 QHD까지만 나와요</h3>
+<p>낮게 &quot;고정&quot;된 게 아니라 <strong>길의 체급</strong>이 모자란 경우일 수 있습니다 —
+케이블이나 포트 규격이 4K를 감당하지 못하면 그 아래까지만
+보입니다. 단자별 한계 계산은
+<a href="/posts/dp-vs-hdmi-coding.html">DP와 HDMI 글</a>에 있습니다.</p>
+<h3 id="재부팅할-때마다-다시-낮아져요">재부팅할 때마다 다시 낮아져요</h3>
+<p>부팅하는 순간 모니터 정보를 못 받는 구성에서 나옵니다 — 모니터가
+늦게 깨어나거나, 중간에 KVM·허브가 있는 경우가 흔한 정황입니다.
+<a href="/posts/monitor-sleep-window-move.html">절전에서 깨면 창이 몰리는 문제</a>와
+같은 뿌리(&quot;모니터가 잠깐 없는 것&quot;)라 처방도 비슷합니다 — 직결해서
+재현되는지부터 보세요.</p>
+<h3 id="그래픽-제어판에서-사용자-지정-해상도로-올려도-되나요">그래픽 제어판에서 사용자 지정 해상도로 올려도 되나요</h3>
+<p>방법은 있지만 <strong>원인을 두고 증상만 덮는</strong> 쪽입니다. 모니터가 실제로
+받는 범위를 넘으면 &quot;신호 범위 초과&quot;로 화면이 꺼질 수 있고, 끊긴
+경로는 그대로 남습니다. 위 갈래로 원인을 먼저 찾는 게 순서입니다.</p>
+<h3 id="듀얼-모니터-중-한-대만-이래요">듀얼 모니터 중 한 대만 이래요</h3>
+<p>갈래 ②일 가능성이 큽니다 — 드라이버 문제라면 두 대가 같이 이상해야
+하니까요. 그 한 대의 케이블·포트·중간 장치를 위 순서대로 보세요.
+해상도가 원래 다른 두 대를 섞어 쓰는 데서 오는 불편이라면
+<a href="/posts/monitor-mixed-resolution.html">해상도 다른 듀얼 모니터</a> 쪽
+이야기입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>해상도 목록은 <strong>드라이버 + 모니터 정보</strong> 두 경로로 채워집니다 —
+하나라도 끊기면 낮은 목록만 남습니다</li>
+<li><strong>&quot;Microsoft 기본 디스플레이 어댑터&quot;</strong>가 보이면 드라이버 갈래입니다</li>
+<li>그래픽카드 이름이 멀쩡하면 <strong>케이블 → 중간 장치 빼고 직결 → 다른
+케이블·포트 → 디지털 단자</strong> 순서입니다</li>
+<li>해상도가 &quot;권장&quot;인데 글씨만 크면 <strong>배율</strong>입니다 — 고장이 아닙니다</li>
+</ol>
+<p>화면이 아예 안 나오는 경우라면 이 글이 아니라
+<a href="/posts/pc-boot-no-display.html">화면 안 나옴의 층 판정</a>부터이고,
+가끔 1초씩 꺼졌다 켜지는 증상은
+<a href="/posts/monitor-blackout-briefly.html">신호·전원 갈래 판정</a>이 따로 있습니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">해상도변경안됨</span> <span class="tag">해상도고정</span> <span class="tag">기본디스플레이어댑터</span> <span class="tag">모니터케이블</span> <span class="tag">디스플레이배율</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/monitor-wobble-typing.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">타이핑할 때마다 모니터가 흔들릴 때 — 떨리는 건 모니터가 아니라 책상이고, 모니터는 확대경입니다</span>
+        <span class="card-desc">키보드를 치거나 책상에 손을 올릴 때마다 모니터가 흔들리는 증상은 게시판 단골 질문입니다. 흔들리는 건 대개 모니터가 아니라 책상이고, 긴 스탠드나 암이 그 작은 떨림을 눈에 띄게 키우는 구조입니다. 책상 갈래와 거치 갈래를 손으로 가르는 법과 처방 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-high-pitch-noise.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">모니터에서 &quot;지잉·삐&quot; 고주파음이 날 때 — 밝기를 움직여 보면 출처가 갈립니다</span>
+        <span class="card-desc">조용한 방에서 모니터 쪽에서 가늘게 &quot;지잉&quot; 또는 &quot;삐&quot; 하는 고주파음이 들리는 증상은 게시판 단골 질문입니다. 대개 전원부나 백라이트 구동부의 진동음이라 고장은 아니지만, 밝기를 움직였을 때 소리가 따라 변하는지와 꺼도 나는지로 출처가 갈립니다. 판정과 줄이는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/speaker-phone-interference.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">휴대폰을 스피커 옆에 두면 &quot;두두둑&quot; 소리가 날 때 — 앰프가 전파를 소리로 번역한 겁니다</span>
+        <span class="card-desc">스피커 가까이에 휴대폰을 두면 가끔 &quot;두두둑·지지직&quot; 하고 터지는 소리는 게시판 단골 질문입니다. 고장이 아니라 휴대폰이 기지국과 교신하는 순간의 전파가 스피커 앰프에 들어와 소리로 바뀐 것이고, 거리 하나로 판정이 끝납니다. 왜 그런지와 줄이는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

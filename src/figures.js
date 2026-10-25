@@ -990,6 +990,7 @@ export const figures = {
   'dual-vs-single-lines': dualVsSingleLines,
   'audio-noise-path': audioNoisePath,
   'gpu-effective-length': gpuEffectiveLength,
+  'resolution-two-sources': resolutionTwoSources,
 };
 
 /**
@@ -6386,6 +6387,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function resolutionTwoSources() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '해상도 목록은 두 군데서 옵니다 — 하나라도 끊기면 낮은 목록만 남는다', { weight: 600, size: 12.5 });
+  const src = (y, head, sub, fail) => {
+    let o = rect(24, y, 290, 40, COLOR.fit, { r: 4 });
+    o += t(36, y + 17, head, { size: 9.4, weight: 700, fill: '#fff' });
+    o += t(36, y + 32, sub, { size: 8, fill: '#fff' });
+    o += t(36, y + 56, fail, { size: 8.4, fill: COLOR.over });
+    return o;
+  };
+  b += src(44, '① 그래픽 드라이버', '컴퓨터가 그래픽카드를 제대로 앎', '끊기면 → "기본 디스플레이 어댑터" — 낮은 해상도 몇 개뿐');
+  b += src(118, '② 모니터 정보', '모니터가 케이블로 "나는 이 해상도까지" 알려줌', '끊기면 → 안전한 낮은 목록 — 케이블·젠더·KVM 의심');
+  const arr = (y1) => `<path d="M318 ${y1} C340 ${y1} 340 112 356 112" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+  b += arr(64) + arr(138);
+  b += `<path d="M350 108 L356 112 L350 116" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+  b += rect(360, 88, 256, 48, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(488, 109, '설정의 해상도 목록', { size: 9.6, weight: 700, anchor: 'middle' });
+  b += t(488, 126, '둘 다 살아 있어야 권장 해상도가 뜸', { size: 8.2, fill: COLOR.mute, anchor: 'middle' });
+  b += rect(24, 192, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 210, '해상도는 맞는데 글씨만 크다면 → 고장이 아니라 배율(125%·150%) 설정입니다', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '해상도 목록이 만들어지는 두 경로',
+    W, 228, b,
+    '설정에 뜨는 해상도 목록은 그래픽 드라이버와, 모니터가 케이블로 보내는 자기 정보가 함께 있어야 제대로 채워집니다. 드라이버가 없으면 기본 디스플레이 어댑터로 낮은 해상도 몇 개만 뜨고, 모니터 정보가 중간에서 끊기면 안전한 낮은 목록만 남습니다. 해상도는 맞는데 글씨만 큰 것은 배율 설정 문제입니다.'
   );
 }
 

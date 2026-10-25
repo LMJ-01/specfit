@@ -2,7 +2,7 @@
 title: 코딩용 모니터 — 27과 32, QHD와 4K 조합 고르기
 description: 코딩에서 갈리는 건 주사율이나 색재현율이 아니라 해상도와 크기의 조합입니다. 27 QHD·32 QHD·27 4K·32 4K를 PPI로 계산해 어느 조합이 맞는지 정리했습니다.
 date: 2026-08-15
-updated: 2026-10-07
+updated: 2026-10-25
 category: monitor
 tags: [모니터, 코딩용모니터, 4K, QHD, PPI]
 affiliate: true
@@ -24,6 +24,7 @@ affiliate: true
     새 글 대신 이 글에 32" QHD 절과 크기-먼저 절을 더했습니다 (중복 회피 —
     CPU 등급 보강과 같은 선례). 제목·설명도 32 를 포함하게 넓혔습니다
     (URL 은 그대로). 32" QHD = 92 PPI = 24" FHD 와 동일 밀도 — 계산 확인.
+  - 인바운드(2026-10-25): "사기 전에 — 연결도" 절에 resolution-stuck-low 연결.
 -->
 
 코딩용 모니터를 고를 때 리뷰를 보면 주사율, 색재현율, 응답속도가 먼저 나옵니다.
@@ -173,6 +174,10 @@ FHD 대비 1.8배 넓습니다.
 계산은 [DP와 HDMI](/posts/dp-vs-hdmi-coding.html)에,
 노트북에서 케이블 하나로 끝내는 조건은
 [원케이블 연결](/posts/monitor-usb-c-one-cable.html)에 정리했습니다.
+연결했는데 해상도 목록에 **낮은 값만 남아** 원하는 해상도를 고를
+수 없다면, 체급보다 앞의 문제입니다 —
+[해상도가 낮게 고정될 때](/posts/resolution-stuck-low.html)의 두 갈래부터
+보세요.
 
 ## 패널이 OLED 라면
 
