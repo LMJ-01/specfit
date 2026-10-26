@@ -993,6 +993,7 @@ export const figures = {
   'resolution-two-sources': resolutionTwoSources,
   'color-diff-triage': colorDiffTriage,
   'weakest-link-25g': weakestLink25g,
+  'swap-homework': swapHomework,
 };
 
 /**
@@ -6389,6 +6390,35 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function swapHomework() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '무엇을 바꾸느냐에 따라 붙는 숙제 — 재설치보다 인증·드라이버', { weight: 600, size: 12.5 });
+  const cols = ['재설치', '정품 인증', '드라이버'];
+  cols.forEach((c, i) => { b += t(236 + i * 128 + 60, 52, c, { size: 9.4, weight: 700, fill: COLOR.mute, anchor: 'middle' }); });
+  const st = { ok: [COLOR.fit, '#fff'], warn: [COLOR.over, '#fff'], mid: [COLOR.mute, '#fff'] };
+  const row = (y, who, sub, cells) => {
+    let o = t(24, y + 15, who, { size: 9.4, weight: 700 });
+    o += t(24, y + 29, sub, { size: 7.8, fill: COLOR.mute });
+    cells.forEach(([k, txt], i) => {
+      const x = 236 + i * 128;
+      o += rect(x, y, 120, 36, st[k][0], { r: 4 });
+      o += t(x + 60, y + 22, txt, { size: 8.4, weight: 700, fill: st[k][1], anchor: 'middle' });
+    });
+    return o;
+  };
+  b += row(62, 'CPU만 교체', '같은 보드', [['ok', '불필요'], ['ok', '대개 그대로'], ['ok', '대개 그대로']]);
+  b += row(106, '메인보드 교체', '+CPU', [['ok', '대개 부팅됨'], ['warn', '재인증 걸릴 수 있음'], ['warn', '이전 보드 잔재']]);
+  b += row(150, '세대 점프·오래 묵음', '램 규격까지 바뀜', [['mid', '클린설치 쪽'], ['warn', '재인증 걸릴 수 있음'], ['ok', '새로 깔면 해결']]);
+  b += rect(24, 198, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 216, '보드를 바꿀 계획이면 교체 전에 마이크로소프트 계정에 라이선스 연결부터', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    'CPU·보드 교체 때 붙는 숙제',
+    W, 234, b,
+    'CPU만 바꾸면 재설치·인증·드라이버 모두 대개 그대로입니다. 메인보드를 바꾸면 대개 부팅은 되지만 정품 인증이 다시 걸릴 수 있고 이전 보드의 드라이버가 남습니다. 플랫폼 세대를 넘거나 시스템이 오래 묵었다면 클린설치가 계산에 맞는 쪽으로 기웁니다.'
   );
 }
 
