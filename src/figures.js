@@ -994,6 +994,7 @@ export const figures = {
   'color-diff-triage': colorDiffTriage,
   'weakest-link-25g': weakestLink25g,
   'swap-homework': swapHomework,
+  'refresh-where-it-works': refreshWhereItWorks,
 };
 
 /**
@@ -6390,6 +6391,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function refreshWhereItWorks() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '주사율이 일하는 곳 — 화면이 움직일 때뿐', { weight: 600, size: 12.5 });
+  const x0 = 200, full = 300;
+  const rows = [
+    ['코드 읽기·쓰기', '정지 화면', 0.04, '체감 거의 없음', COLOR.mute],
+    ['문서·표', '정지 화면', 0.04, '체감 거의 없음', COLOR.mute],
+    ['스크롤·창 끌기', '움직이는 화면', 0.62, '부드러움 = 쾌적함', COLOR.fit],
+    ['게임', '계속 움직임', 1, '제값을 하는 자리', COLOR.fit],
+  ];
+  rows.forEach(([a, sub, v, note, c], i) => {
+    const y = 44 + i * 40;
+    b += t(24, y + 15, a, { size: 9.4, weight: 700 });
+    b += t(24, y + 28, sub, { size: 7.8, fill: COLOR.mute });
+    b += rect(x0, y + 4, full, 22, COLOR.soft, { r: 4, stroke: COLOR.line });
+    b += rect(x0, y + 4, Math.max(8, full * v), 22, c, { r: 4 });
+    b += t(x0 + full + 12, y + 19, note, { size: 8.6, weight: 700, fill: c });
+  });
+  b += rect(24, 210, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 228, '예산이 갈리면 해상도 먼저 — 글자는 멈춘 화면에서 읽히고, 선명도가 그 품질을 정합니다', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '작업별 고주사율 체감',
+    W, 246, b,
+    '코드나 문서를 읽고 쓰는 동안 화면은 거의 멈춰 있어서 주사율이 일할 자리가 없습니다. 스크롤하거나 창을 끌 때는 부드러움으로 체감되고, 계속 움직이는 게임에서 제값을 합니다. 예산이 갈리면 글자 선명도를 정하는 해상도가 먼저입니다. 막대는 상대적인 체감 정도를 나타낸 개념도입니다.'
   );
 }
 

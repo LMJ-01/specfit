@@ -13,7 +13,7 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
-  <url><loc>https://specfit.kr/posts/resolution-stuck-low.html</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/resolution-stuck-low.html</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-inserted-backwards.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/case-fan-stops-after-boot.html</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/cooler-screw-torque.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
@@ -46,7 +46,7 @@
   <url><loc>https://specfit.kr/posts/usb-safe-removal.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-ping-spike.html</loc><lastmod>2026-09-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-random-disconnect.html</loc><lastmod>2026-10-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/monitor-144hz-not-working.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/monitor-144hz-not-working.html</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/cpu-temp-normal.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/hdr-washed-out.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-recording-fps-drop.html</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
@@ -159,7 +159,7 @@
   <url><loc>https://specfit.kr/posts/diy-nas-vs-prebuilt.html</loc><lastmod>2026-09-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/glare-vs-matte-display.html</loc><lastmod>2026-10-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-coil-whine.html</loc><lastmod>2026-10-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/high-refresh-rate-coding.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/high-refresh-rate-coding.html</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/igpu-dual-monitor.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-2-5g-upgrade.html</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/lan-cable-cat.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
