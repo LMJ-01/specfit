@@ -29,6 +29,7 @@ tags: [해상도변경안됨, 해상도고정, 기본디스플레이어댑터, �
     laptop-slow-on-battery FAQ 와 상호 연결.
   - 교차 연결(2026-10-27): FAQ "4K인데 QHD까지만" ↔ monitor-144hz-not-working
     마무리 문단 상호 연결.
+  - 교차 연결(2026-10-27): 갈래 ③ 끝 ↔ monitor-yellow-tint 셋째 용의자 문단.
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
 -->
 
@@ -107,6 +108,9 @@ tags: [해상도변경안됨, 해상도고정, 기본디스플레이어댑터, �
 아니라 선택의 문제이고, 크기와 배율의 관계는
 [코딩 모니터 해상도 글](/posts/coding-monitor-resolution.html)에
 정리했습니다.
+크기가 아니라 **색이** 갑자기 누렇거나 흑백으로 바뀐 거라면 해상도와
+무관한 설정 갈래라 [화면 색이 바뀌었을 때](/posts/monitor-yellow-tint.html)
+쪽입니다.
 
 ## 갈래 ④ — 원격 접속·가상 화면 뒤에
 
