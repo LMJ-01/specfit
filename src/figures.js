@@ -997,6 +997,7 @@ export const figures = {
   'refresh-where-it-works': refreshWhereItWorks,
   'backup-321': backup321,
   'aquarium-vs-mesh': aquariumVsMesh,
+  'stacked-gaze': stackedGaze,
 };
 
 /**
@@ -6393,6 +6394,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function stackedGaze() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '상하 듀얼 — 정면은 주인공 자리, 위는 "흘깃"의 자리', { weight: 600, size: 12.5 });
+  // 사람(옆모습)
+  b += `<circle cx="90" cy="136" r="16" fill="none" stroke="${COLOR.mute}" stroke-width="2"/>`;
+  b += `<path d="M90 152 L90 196" stroke="${COLOR.mute}" stroke-width="2"/>`;
+  // 모니터(옆에서 본 패널)
+  b += rect(420, 110, 10, 54, COLOR.fit, { r: 2 });
+  b += rect(420, 46, 10, 54, COLOR.over, { r: 2 });
+  b += t(442, 141, '주 모니터 — 정면 눈높이', { size: 9, weight: 700, fill: COLOR.fit });
+  b += t(442, 156, '오래 읽는 작업(코드·문서)', { size: 8, fill: COLOR.mute });
+  b += t(442, 70, '위 모니터 — 고개를 들어야', { size: 9, weight: 700, fill: COLOR.over });
+  b += t(442, 85, '채팅·모니터링처럼 흘깃 보는 것', { size: 8, fill: COLOR.mute });
+  // 시선
+  b += `<path d="M108 136 L416 137" stroke="${COLOR.fit}" stroke-width="2"/>`;
+  b += `<path d="M106 130 L416 74" stroke="${COLOR.over}" stroke-width="2" stroke-dasharray="6 4"/>`;
+  b += t(260, 154, '고개 그대로', { size: 8.4, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+  b += t(130, 64, '위 화면: 고개 들기 — 짧게는 괜찮고, 오래면 목이 값을 치름', { size: 8.4, weight: 700, fill: COLOR.over });
+  b += rect(24, 210, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 228, '판정: 보조가 흘깃 용도면 위로 ✅  ·  보조도 오래 읽는다면 좌우가 기본', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '상하 배치의 시선 각도',
+    W, 246, b,
+    '주 모니터를 정면 눈높이에 두면 고개를 든 채 오래 볼 일이 없습니다. 위 모니터는 고개를 들어야 보이는 자리라 채팅이나 모니터링처럼 짧게 흘깃 보는 용도에 맞고, 문서나 코드처럼 오래 읽는 화면을 위에 두면 목이 그 값을 치릅니다.'
   );
 }
 
