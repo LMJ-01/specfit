@@ -995,6 +995,7 @@ export const figures = {
   'weakest-link-25g': weakestLink25g,
   'swap-homework': swapHomework,
   'refresh-where-it-works': refreshWhereItWorks,
+  'backup-321': backup321,
 };
 
 /**
@@ -6391,6 +6392,26 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function backup321() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '3-2-1 — 사본 셋, 매체 두 종류, 하나는 다른 장소', { weight: 600, size: 12.5 });
+  const box = (x, head, sub, c, fg) => rect(x, 40, 180, 46, c, { r: 6, stroke: c === COLOR.soft ? COLOR.line : undefined }) + t(x + 90, 59, head, { size: 9.4, weight: 700, fill: fg, anchor: 'middle' }) + t(x + 90, 75, sub, { size: 8, fill: fg, anchor: 'middle' });
+  b += box(24, '원본 — 내 컴퓨터', 'SSD · 매일 쓰는 자리', COLOR.soft, COLOR.text);
+  b += box(230, '사본 ① 외장 HDD', '백업할 때만 연결', COLOR.fit, '#fff');
+  b += box(436, '사본 ② 클라우드', '동기화 폴더 하나면 충분', COLOR.fit, '#fff');
+  const span = (y, x1, x2, label, c) => rect(x1, y, x2 - x1, 4, c, { r: 2 }) + t(x1, y + 18, label, { size: 8.6, weight: 700, fill: c });
+  b += span(100, 24, 616, '3 — 사본 셋: 하나가 죽어도 둘이 남습니다', COLOR.fit);
+  b += span(130, 24, 410, '2 — 매체 두 종류: 같은 종류 둘은 같은 이유로 같이 죽을 수 있어서', COLOR.mute);
+  b += span(160, 436, 616, '1 — 다른 장소 하나', COLOR.over);
+  b += t(616, 196, '도난·화재·서지는 한 방에서 일어납니다', { size: 8, fill: COLOR.mute, anchor: 'end' });
+  return figure(
+    '3-2-1 백업 구조',
+    W, 206, b,
+    '원본인 내 컴퓨터에 더해 외장 HDD와 클라우드에 사본을 하나씩 두면 사본 셋, 매체 두 종류, 다른 장소 하나가 한 번에 채워집니다. 외장 HDD는 백업할 때만 연결하고, 클라우드가 다른 장소 역할을 맡습니다.'
   );
 }
 
