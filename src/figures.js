@@ -996,6 +996,7 @@ export const figures = {
   'swap-homework': swapHomework,
   'refresh-where-it-works': refreshWhereItWorks,
   'backup-321': backup321,
+  'aquarium-vs-mesh': aquariumVsMesh,
 };
 
 /**
@@ -6392,6 +6393,45 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function aquariumVsMesh() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '어항 케이스 — 유리가 열을 가두는 게 아니라, 공기가 들어오는 길이 좁아진다', { weight: 600, size: 12.5 });
+  const arr = (x1, y1, x2, y2, c) => {
+    const a = Math.atan2(y2 - y1, x2 - x1), h = 6;
+    const p1 = [x2 - h * Math.cos(a - 0.5), y2 - h * Math.sin(a - 0.5)];
+    const p2 = [x2 - h * Math.cos(a + 0.5), y2 - h * Math.sin(a + 0.5)];
+    return `<path d="M${x1} ${y1} L${x2} ${y2}" stroke="${c}" stroke-width="2"/><path d="M${p1[0].toFixed(1)} ${p1[1].toFixed(1)} L${x2} ${y2} L${p2[0].toFixed(1)} ${p2[1].toFixed(1)}" fill="none" stroke="${c}" stroke-width="2"/>`;
+  };
+  const panel = (x, mesh) => {
+    let o = rect(x + 70, 58, 150, 110, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 145, 117, mesh ? '전면 메쉬' : '전면·측면 유리', { size: 9, weight: 700, fill: COLOR.mute, anchor: 'middle' });
+    // 배기: 뒤·위
+    o += arr(x + 222, 78, x + 256, 78, COLOR.over);
+    o += arr(x + 125, 56, x + 125, 40, COLOR.over);
+    o += arr(x + 175, 56, x + 175, 40, COLOR.over);
+    if (mesh) {
+      [74, 98, 122, 146].forEach((y) => { o += arr(x + 28, y, x + 66, y, COLOR.fit); });
+      o += t(x + 145, 204, '앞면 전체가 흡기 — 차가운 공기가 넓게 들어옴', { size: 8.4, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+    } else {
+      o += `<path d="M${x + 70} 58 L${x + 70} 168" stroke="${COLOR.mute}" stroke-width="5"/>`;
+      o += arr(x + 110, 188, x + 110, 172, COLOR.fit);
+      o += arr(x + 150, 188, x + 150, 172, COLOR.fit);
+      o += t(x + 145, 204, '하단·측면 틈으로만 흡기 — 길이 좁음', { size: 8.4, weight: 700, fill: COLOR.over, anchor: 'middle' });
+    }
+    return o;
+  };
+  b += panel(24, true);
+  b += panel(336, false);
+  b += rect(24, 216, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 234, '차이의 크기는 케이스 설계·팬 구성·그래픽카드 발열에 따라 — 판정은 부하 중 온도로', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '전면 메쉬와 어항 케이스의 흡기 경로',
+    W, 252, b,
+    '전면 메쉬 케이스는 앞면 전체로 차가운 공기를 받지만, 어항 케이스는 앞과 옆이 유리라 하단이나 측면 틈으로만 공기가 들어옵니다. 같은 팬 구성이면 흡기 길이 좁은 쪽이 불리한 편이고, 그 차이가 얼마나 되는지는 케이스 설계와 팬 구성, 그래픽카드 발열에 따라 달라 실제 부하 중 온도로 판정합니다.'
   );
 }
 

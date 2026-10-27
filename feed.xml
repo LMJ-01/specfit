@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>어항 케이스 온도 괜찮나 — 유리가 아니라 "공기가 들어오는 길"을 봅니다</title>
+    <link>https://specfit.kr/posts/aquarium-case-temp.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/aquarium-case-temp.html</guid>
+    <pubDate>Mon, 26 Oct 2026 15:00:00 GMT</pubDate>
+    <description>앞과 옆이 유리로 된 어항 케이스는 예쁜 대신 온도가 걱정됩니다. 차이를 만드는 건 유리 자체가 아니라 흡기 경로와 팬 구성, 그리고 들어갈 부품의 발열입니다. 사기 전에 볼 것, 이미 샀다면 확인과 개선 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>해상도가 낮게 고정돼 안 바뀔 때 — 컴퓨터가 모니터를 "모르는" 상태입니다</title>
     <link>https://specfit.kr/posts/resolution-stuck-low.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/resolution-stuck-low.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-blackout-briefly.html</guid>
     <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
     <description>쓰다 보면 모니터가 한 번씩 1초쯤 까맣게 꺼졌다가 돌아오는 증상은 게시판 단골 질문입니다. 같은 증상처럼 보여도 전원이 끊긴 것과 신호를 놓친 것은 다른 사건이고, 전원 불빛과 복귀 장면이 그걸 갈라 줍니다. 갈래별 판정 순서와 정상인 깜빡임까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>커서는 움직이는데 클릭이 안 먹힐 때 — 커서가 살아 있다는 건 컴퓨터가 죽지 않았다는 뜻입니다</title>
-    <link>https://specfit.kr/posts/cursor-moves-no-click.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/cursor-moves-no-click.html</guid>
-    <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
-    <description>마우스 포인터는 멀쩡히 움직이는데 아무것도 눌리지 않는 증상은 게시판에 꾸준히 올라옵니다. 커서가 움직인다는 사실 자체가 단서입니다 — 컴퓨터 전체가 멈춘 게 아니라 입력·앱·탐색기 중 한 층이 막힌 것이라, 키보드 두 번으로 어느 층인지 가르는 판정과 갈래별 처방을 정리했습니다.</description>
   </item>
 </channel>
 </rss>
