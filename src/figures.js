@@ -1001,6 +1001,7 @@ export const figures = {
   'case-size-gates': caseSizeGates,
   'f-model-flow': fModelFlow,
   'fan-hub-decision': fanHubDecision,
+  'second-screen-load': secondScreenLoad,
 };
 
 /**
@@ -6397,6 +6398,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function secondScreenLoad() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '게임 중 보조 화면 — 꽂는 건 공짜, 프레임을 가져가는 건 "그 위에서 도는 일"', { weight: 600, size: 12.5 });
+  const x0 = 200, full = 280;
+  const rows = [
+    ['그냥 연결만', '아무것도 안 띄움', 0.03, '무시할 수준', COLOR.fit],
+    ['정지 화면', '문서·채팅·공략', 0.06, '사실상 없음', COLOR.fit],
+    ['영상 재생', '유튜브·방송 시청', 0.38, 'GPU 빠듯하면 체감', COLOR.mute],
+    ['녹화·방송', '인코딩이 계속 돎', 0.8, '실질 부하', COLOR.over],
+  ];
+  rows.forEach(([a, sub, v, note, c], i) => {
+    const y = 44 + i * 40;
+    b += t(24, y + 15, a, { size: 9.4, weight: 700 });
+    b += t(24, y + 28, sub, { size: 7.8, fill: COLOR.mute });
+    b += rect(x0, y + 4, full, 22, COLOR.soft, { r: 4, stroke: COLOR.line });
+    b += rect(x0, y + 4, Math.max(8, full * v), 22, c, { r: 4 });
+    b += t(x0 + full + 12, y + 19, note, { size: 8.6, weight: 700, fill: c });
+  });
+  b += rect(24, 210, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 228, 'GPU가 원래 여유로우면 어느 경우든 체감이 작음 — 판정은 보조 화면을 끄고 켠 프레임 비교로', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '보조 화면 내용별 게임 부담',
+    W, 246, b,
+    '모니터를 하나 더 연결하는 것 자체나 정지 화면을 띄워 두는 것은 게임 프레임에 거의 영향이 없습니다. 영상을 재생하면 그래픽카드를 나눠 쓰게 되어 여유가 없을 때 체감되고, 녹화나 방송처럼 인코딩이 계속 도는 작업은 실질 부하입니다. 막대는 상대적인 부담을 나타낸 개념도입니다.'
   );
 }
 
