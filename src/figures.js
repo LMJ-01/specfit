@@ -998,6 +998,7 @@ export const figures = {
   'backup-321': backup321,
   'aquarium-vs-mesh': aquariumVsMesh,
   'stacked-gaze': stackedGaze,
+  'case-size-gates': caseSizeGates,
 };
 
 /**
@@ -6394,6 +6395,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function caseSizeGates() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '미니타워로 되나 — 크기 취향보다 "들어갈 것" 네 가지가 정한다', { weight: 600, size: 12.5 });
+  b += t(296, 52, '미니타워로 대개 OK', { size: 9.2, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+  b += t(500, 52, '미들타워 쪽 / 숫자 확인', { size: 9.2, weight: 700, fill: COLOR.over, anchor: 'middle' });
+  const row = (y, what, ok, big) => {
+    let o = t(24, y + 22, what, { size: 9.4, weight: 700 });
+    o += rect(196, y, 200, 34, COLOR.fit, { r: 4 });
+    o += t(296, y + 21, ok, { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+    o += rect(404, y, 212, 34, COLOR.over, { r: 4 });
+    o += t(510, y + 21, big, { size: 8.4, weight: 700, fill: '#fff', anchor: 'middle' });
+    return o;
+  };
+  b += row(62, '① 메인보드 규격', 'M-ATX · ITX', 'ATX — 미니타워엔 안 들어감');
+  b += row(102, '② 그래픽카드', '중급 · 2~2.5슬롯', '상급 3슬롯·긴 카드');
+  b += row(142, '③ CPU 쿨러', '기본·중형 공랭', '대형 타워 공랭·큰 라디');
+  b += row(182, '④ 저장장치', 'SSD 위주', 'HDD 여러 개');
+  b += rect(24, 226, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 244, '오른쪽이 하나라도 있으면 그 케이스의 허용 숫자부터 — 크기 분류명이 아니라 스펙표로 판정', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '미니타워 판정 네 관문',
+    W, 262, b,
+    '미니타워는 보통 M-ATX 이하 보드를 받는 크기라 ATX 보드면 미들타워가 필요합니다. 그래픽카드·CPU 쿨러·저장장치는 중급 구성이면 대개 들어가고, 상급 3슬롯 카드나 대형 쿨러, 하드디스크 여러 개가 있으면 그 케이스의 허용 치수를 먼저 확인해야 합니다.'
   );
 }
 
