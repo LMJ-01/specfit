@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>케이스 팬 허브 필요한가 — 팬 개수가 아니라 단자 수와 전류 합을 셉니다 | 스펙핏</title>
+<meta name="description" content="케이스 팬을 늘리다 보면 메인보드 팬 단자가 모자라 허브를 사야 하나 고민하게 됩니다. 직결·분배 케이블·데이지 체인·허브 중 무엇이 맞는지는 팬 개수가 아니라 단자 수와 전류 합이 정합니다. 판정 순서와 조명 선 주의점까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/fan-hub-needed.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="케이스 팬 허브 필요한가 — 팬 개수가 아니라 단자 수와 전류 합을 셉니다 | 스펙핏">
+<meta property="og:description" content="케이스 팬을 늘리다 보면 메인보드 팬 단자가 모자라 허브를 사야 하나 고민하게 됩니다. 직결·분배 케이블·데이지 체인·허브 중 무엇이 맞는지는 팬 개수가 아니라 단자 수와 전류 합이 정합니다. 판정 순서와 조명 선 주의점까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/fan-hub-needed.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"케이스 팬 허브 필요한가 — 팬 개수가 아니라 단자 수와 전류 합을 셉니다","description":"케이스 팬을 늘리다 보면 메인보드 팬 단자가 모자라 허브를 사야 하나 고민하게 됩니다. 직결·분배 케이블·데이지 체인·허브 중 무엇이 맞는지는 팬 개수가 아니라 단자 수와 전류 합이 정합니다. 판정 순서와 조명 선 주의점까지 정리했습니다.","datePublished":"2026-10-28","dateModified":"2026-10-28","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/fan-hub-needed.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"케이스 팬 허브 필요한가 — 팬 개수가 아니라 단자 수와 전류 합을 셉니다","item":"https://specfit.kr/posts/fan-hub-needed.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"허브를 쓰면 팬이 더 잘 도나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다 — 허브는 전기를 나눠 주는 길일 뿐이고 팬의 성능을 올리지는 않습니다. 온도 때문에 팬을 늘리는 거라면 개수의 한계효용이 빨리 꺾인다는 점부터 보는 게 좋습니다 — 팬 몇 개가 적당한지."}},{"@type":"Question","name":"허브에 꽂은 팬이 부팅 뒤 멈춰요","acceptedAnswer":{"@type":"Answer","text":"허브가 받는 속도 신호가 낮은 온도에서 팬을 멈추게 설정된 경우가 있습니다 — 고장보다 설정 쪽인 경우가 많아, 케이스 팬이 부팅 뒤 멈출 때의 순서로 보면 됩니다."}},{"@type":"Question","name":"팬을 파워에 바로 꽂는 변환 케이블은요","acceptedAnswer":{"@type":"Answer","text":"전원은 들어가지만 속도 조절이 안 되고 늘 최대로 도는 경우가 많습니다. 소음이 괜찮다면 쓸 수 있는 방법이지만, 조절이 필요한 팬에는 맞지 않습니다."}},{"@type":"Question","name":"작은 케이스라 팬을 많이 못 다는데요","acceptedAnswer":{"@type":"Answer","text":"그럼 허브가 필요할 일도 대개 없습니다 — 미니타워처럼 팬 자리가 적은 케이스는 보드 단자 안에서 끝나는 경우가 많습니다. 케이스 크기 판단은 미니타워로 되는지에 있습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>케이스 팬 허브 필요한가 — 팬 개수가 아니라 단자 수와 전류 합을 셉니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-10-28">2026년 10월 28일</time>
+      <span class="updated">· 2026년 10월 28일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>케이스 팬을 몇 개 더 달려고 보면 금방 막힙니다 — <strong>메인보드에 팬을
+꽂을 자리가 모자랍니다.</strong> 그래서 &quot;팬 허브를 사야 하나요?&quot;가 따라오고,
+답은 &quot;필수&quot;부터 &quot;선 정리용일 뿐&quot;까지 갈립니다.</p>
+<p>갈리는 이유는 단순합니다. 허브가 필요한지는 <strong>팬이 몇 개냐</strong>가 아니라
+<strong>꽂을 단자가 몇 개 남았고, 한 단자에 전기를 얼마나 걸 수 있느냐</strong>가
+정하기 때문입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>내 상황</th><th>판정</th></tr></thead>
+<tbody>
+<tr><td>팬 수가 보드 팬 단자 수 이하</td><td><strong>허브 없이 직결</strong> — 가장 단순하고 팬마다 속도 조절도 따로 됩니다</td></tr>
+<tr><td>한두 개 넘침</td><td><strong>분배(Y) 케이블이나 데이지 체인 팬</strong> — 전류 합이 단자 한도 안이면 충분합니다</td></tr>
+<tr><td>많이 넘침 · 조명 팬이 여럿</td><td><strong>전원을 따로 받는 허브</strong>가 맞는 자리입니다</td></tr>
+<tr><td>조명 선은</td><td>회전 선과 <strong>별개 배선</strong> — 단자 규격(5V·12V)을 따로 맞춥니다</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 232" width="640" height="232" role="img" aria-label="팬 허브가 필요한 경우">
+<title>팬 허브가 필요한 경우</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">팬 허브 필요한가 — 팬 개수가 아니라 "단자 수"와 "전류 합"을 센다</text><rect x="24" y="42" width="260" height="40" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="59" fill="var(--fg)" font-size="9.2" font-weight="700">팬 수 ≤ 보드 팬 단자 수</text><text x="36" y="74" fill="var(--fg-muted)" font-size="8">남는 단자가 있다</text><path d="M290 62 L308 62" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M303 58 L308 62 L303 66" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="314" y="42" width="302" height="40" fill="var(--fig-fit)" rx="4"/><text x="326" y="59" fill="#fff" font-size="9.2" font-weight="700">허브 없이 직결</text><text x="326" y="74" fill="#fff" font-size="8">단자마다 속도를 따로 조절할 수 있음</text><rect x="24" y="92" width="260" height="40" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="109" fill="var(--fg)" font-size="9.2" font-weight="700">한두 개 넘침</text><text x="36" y="124" fill="var(--fg-muted)" font-size="8">팬 전류 합이 단자 한도 안</text><path d="M290 112 L308 112" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M303 108 L308 112 L303 116" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="314" y="92" width="302" height="40" fill="var(--fg-muted)" rx="4"/><text x="326" y="109" fill="#fff" font-size="9.2" font-weight="700">분배(Y) 케이블 · 데이지 체인 팬</text><text x="326" y="124" fill="#fff" font-size="8">묶인 팬은 같은 속도로 돎</text><rect x="24" y="142" width="260" height="40" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="159" fill="var(--fg)" font-size="9.2" font-weight="700">많이 넘침 · 조명까지 여러 개</text><text x="36" y="174" fill="var(--fg-muted)" font-size="8">단자 한 개 전류가 모자람</text><path d="M290 162 L308 162" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M303 158 L308 162 L303 166" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="314" y="142" width="302" height="40" fill="var(--fig-over)" rx="4"/><text x="326" y="159" fill="#fff" font-size="9.2" font-weight="700">전원 따로 받는 허브</text><text x="326" y="174" fill="#fff" font-size="8">보드 단자 부담을 덜어 줌</text><rect x="24" y="196" width="592" height="28" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="214" fill="var(--fg)" font-size="8.6" font-weight="700">조명 선은 회전 선과 별개 — 5V 3핀과 12V 4핀은 섞어 꽂지 말 것</text>
+</svg>
+<figcaption>팬 수가 보드의 팬 단자 수 안이면 허브 없이 직결하는 게 가장 단순하고 팬마다 속도도 따로 조절됩니다. 한두 개 넘치면 전류 합이 단자 한도 안에서 분배 케이블이나 데이지 체인 팬으로 묶을 수 있고, 많이 넘치면 전원을 따로 받는 허브가 보드 단자의 부담을 덜어 줍니다. 조명 선은 회전 선과 별개라 전압 규격을 따로 맞춰야 합니다.</figcaption>
+</figure>
+<h2 id="먼저-셀-것-두-가지">먼저 셀 것 두 가지</h2>
+<p><strong>① 단자 수.</strong> 메인보드에는 CPU 쿨러용 단자 하나와, 케이스 팬용 단자
+(SYS_FAN·CHA_FAN 같은 표기)가 여러 개 있습니다. 개수는 보드마다
+다르니 보드 위 글씨나 매뉴얼에서 셉니다. CPU 쿨러 팬은 반드시 CPU
+쿨러용 단자에 꽂아야 한다는 점은 별개로 지킵니다 — 엉뚱한 데 꽂으면
+부팅 때 경고가 뜹니다(<a href="/posts/cpu-fan-error-boot.html">CPU Fan Error 판정</a>).</p>
+<p><strong>② 전류 합.</strong> 단자 하나가 감당하는 전류에는 한도가 있고, 보드
+매뉴얼에 적혀 있는 경우가 많습니다. 팬 하나가 쓰는 전류는 팬 라벨이나
+스펙의 <strong>A(암페어) 표기</strong>로 나옵니다. 한 단자에 여러 팬을 묶을 거라면
+<strong>그 팬들의 전류 합이 단자 한도 안</strong>이어야 합니다.</p>
+<p>이 두 숫자만 있으면 판정은 표대로 끝납니다.</p>
+<h2 id="묶는-방법-세-가지-무엇이-다른가">묶는 방법 세 가지 — 무엇이 다른가</h2>
+<ul>
+<li><strong>분배(Y) 케이블</strong> — 단자 하나에서 선을 둘로 나눕니다. 싸고 간단하지만
+묶인 팬은 <strong>같은 속도로 돌고</strong>, 보드가 읽는 회전 신호는 대개 그중
+하나뿐입니다. 같은 자리(예: 전면 흡기 두 개)를 묶는 데 맞습니다</li>
+<li><strong>데이지 체인 팬</strong> — 팬끼리 이어 붙여 단자 하나만 쓰는 방식입니다.
+지원하는 팬끼리만 되고, 선 정리가 깔끔해지는 게 장점입니다</li>
+<li><strong>허브</strong> — 여러 팬을 받아 한 단자의 속도 신호로 함께 조절하면서,
+전원은 <strong>파워에서 따로</strong> 받는 구조가 흔합니다(제품에 따라). 보드 단자
+한 개의 전류 한도를 넘는 많은 팬을 다룰 때의 해법입니다</li>
+</ul>
+<p>어느 쪽이든 <strong>묶인 팬은 같은 속도로 돈다</strong>는 점이 공통이라, 흡기와
+배기처럼 따로 조절하고 싶은 팬은 다른 단자로 나누는 게 좋습니다.
+배기가 흡기보다 너무 세지는 등의 균형 문제는
+<a href="/posts/case-fan-setup.html">팬 구성 원칙</a>의 영역입니다.</p>
+<h2 id="조명-선은-다른-이야기입니다">조명 선은 다른 이야기입니다</h2>
+<p>조명(RGB·ARGB) 팬에는 회전용 선과 <strong>조명용 선이 따로</strong> 있습니다. 회전
+쪽 판정은 위와 같고, 조명 쪽은 보드의 조명 단자 수와 규격을 따로
+셉니다. 조명 단자가 모자라 조명 허브를 쓰는 경우가 실제로는 더
+흔합니다. 이때 <strong>5V 3핀과 12V 4핀은 섞어 꽂으면 LED가 상할 수 있어서</strong>,
+꽂기 전에 핀 수와 전압 표기를 맞추는 게 전부입니다 — 자세한 구분은
+<a href="/posts/fan-rgb-one-dead.html">팬 조명 하나만 안 켜질 때의 전압 주의</a>에 있습니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="허브를-쓰면-팬이-더-잘-도나요">허브를 쓰면 팬이 더 잘 도나요</h3>
+<p>아닙니다 — 허브는 전기를 나눠 주는 길일 뿐이고 팬의 성능을 올리지는
+않습니다. 온도 때문에 팬을 늘리는 거라면 개수의 한계효용이 빨리
+꺾인다는 점부터 보는 게 좋습니다 —
+<a href="/posts/case-fan-setup.html">팬 몇 개가 적당한지</a>.</p>
+<h3 id="허브에-꽂은-팬이-부팅-뒤-멈춰요">허브에 꽂은 팬이 부팅 뒤 멈춰요</h3>
+<p>허브가 받는 속도 신호가 낮은 온도에서 팬을 멈추게 설정된 경우가
+있습니다 — 고장보다 설정 쪽인 경우가 많아,
+<a href="/posts/case-fan-stops-after-boot.html">케이스 팬이 부팅 뒤 멈출 때</a>의
+순서로 보면 됩니다.</p>
+<h3 id="팬을-파워에-바로-꽂는-변환-케이블은요">팬을 파워에 바로 꽂는 변환 케이블은요</h3>
+<p>전원은 들어가지만 <strong>속도 조절이 안 되고 늘 최대로</strong> 도는 경우가
+많습니다. 소음이 괜찮다면 쓸 수 있는 방법이지만, 조절이 필요한 팬에는
+맞지 않습니다.</p>
+<h3 id="작은-케이스라-팬을-많이-못-다는데요">작은 케이스라 팬을 많이 못 다는데요</h3>
+<p>그럼 허브가 필요할 일도 대개 없습니다 — 미니타워처럼 팬 자리가 적은
+케이스는 보드 단자 안에서 끝나는 경우가 많습니다. 케이스 크기 판단은
+<a href="/posts/minitower-vs-midtower.html">미니타워로 되는지</a>에 있습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>허브 필요 여부는 팬 개수가 아니라 <strong>단자 수와 전류 합</strong>이 정합니다</li>
+<li>단자가 남으면 <strong>직결</strong>, 한두 개 넘치면 <strong>분배 케이블·데이지 체인</strong>,
+많이 넘치면 <strong>전원 따로 받는 허브</strong>입니다</li>
+<li>묶인 팬은 <strong>같은 속도로 돕니다</strong> — 따로 조절할 팬은 단자를 나눕니다</li>
+<li>조명 선은 <strong>별개 배선</strong>이고, 5V와 12V는 섞어 꽂지 않습니다</li>
+</ol>
+<p>케이스 팬의 이웃 판정들 — <a href="/posts/case-fan-setup.html">팬 구성 원칙</a> ·
+<a href="/posts/case-fan-stops-after-boot.html">부팅 뒤 팬이 멈출 때</a> ·
+<a href="/posts/fan-rgb-one-dead.html">팬 조명 하나만 안 켜질 때</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">팬허브</span> <span class="tag">케이스팬</span> <span class="tag">팬헤더</span> <span class="tag">분배케이블</span> <span class="tag">ARGB</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/minitower-vs-midtower.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">미니타워 케이스 사도 되나 — 크기 취향보다 &quot;들어갈 것&quot; 네 가지가 정합니다</span>
+        <span class="card-desc">책상이 좁아서, 혹은 큰 케이스가 부담스러워서 미니타워를 고민하지만 막상 사려면 망설여집니다. 미니타워로 되는 구성과 미들타워가 필요한 구성을 가르는 네 관문, 그리고 온도·조립·업그레이드에서 치르는 값을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/aquarium-case-temp.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">어항 케이스 온도 괜찮나 — 유리가 아니라 &quot;공기가 들어오는 길&quot;을 봅니다</span>
+        <span class="card-desc">앞과 옆이 유리로 된 어항 케이스는 예쁜 대신 온도가 걱정됩니다. 차이를 만드는 건 유리 자체가 아니라 흡기 경로와 팬 구성, 그리고 들어갈 부품의 발열입니다. 사기 전에 볼 것, 이미 샀다면 확인과 개선 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/case-fan-stops-after-boot.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">케이스 팬이 켤 때만 돌다가 멈출 때 — 고장보다 &quot;누가 멈추라고 했나&quot;를 먼저 봅니다</span>
+        <span class="card-desc">전원을 켜면 케이스 팬이 힘차게 돌다가 몇 초 뒤 멈추고, 컴퓨터는 멀쩡히 켜져 있는 증상은 조립 게시판 단골입니다. 켤 때의 회전은 제어 전의 점호이고, 멈춤은 대개 메인보드 팬 설정이 내린 지시입니다. 부하로 가르는 판정과 세 갈래 처방을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

@@ -1000,6 +1000,7 @@ export const figures = {
   'stacked-gaze': stackedGaze,
   'case-size-gates': caseSizeGates,
   'f-model-flow': fModelFlow,
+  'fan-hub-decision': fanHubDecision,
 };
 
 /**
@@ -6396,6 +6397,32 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function fanHubDecision() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '팬 허브 필요한가 — 팬 개수가 아니라 "단자 수"와 "전류 합"을 센다', { weight: 600, size: 12.5 });
+  const row = (y, cond, sub, ans, asub, c) => {
+    let o = rect(24, y, 260, 40, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(36, y + 17, cond, { size: 9.2, weight: 700 });
+    o += t(36, y + 32, sub, { size: 8, fill: COLOR.mute });
+    o += `<path d="M290 ${y + 20} L308 ${y + 20}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M303 ${y + 16} L308 ${y + 20} L303 ${y + 24}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(314, y, 302, 40, c, { r: 4 });
+    o += t(326, y + 17, ans, { size: 9.2, weight: 700, fill: '#fff' });
+    o += t(326, y + 32, asub, { size: 8, fill: '#fff' });
+    return o;
+  };
+  b += row(42, '팬 수 ≤ 보드 팬 단자 수', '남는 단자가 있다', '허브 없이 직결', '단자마다 속도를 따로 조절할 수 있음', COLOR.fit);
+  b += row(92, '한두 개 넘침', '팬 전류 합이 단자 한도 안', '분배(Y) 케이블 · 데이지 체인 팬', '묶인 팬은 같은 속도로 돎', COLOR.mute);
+  b += row(142, '많이 넘침 · 조명까지 여러 개', '단자 한 개 전류가 모자람', '전원 따로 받는 허브', '보드 단자 부담을 덜어 줌', COLOR.over);
+  b += rect(24, 196, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 214, '조명 선은 회전 선과 별개 — 5V 3핀과 12V 4핀은 섞어 꽂지 말 것', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '팬 허브가 필요한 경우',
+    W, 232, b,
+    '팬 수가 보드의 팬 단자 수 안이면 허브 없이 직결하는 게 가장 단순하고 팬마다 속도도 따로 조절됩니다. 한두 개 넘치면 전류 합이 단자 한도 안에서 분배 케이블이나 데이지 체인 팬으로 묶을 수 있고, 많이 넘치면 전원을 따로 받는 허브가 보드 단자의 부담을 덜어 줍니다. 조명 선은 회전 선과 별개라 전압 규격을 따로 맞춰야 합니다.'
   );
 }
 
