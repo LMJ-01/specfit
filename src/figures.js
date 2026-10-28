@@ -999,6 +999,7 @@ export const figures = {
   'aquarium-vs-mesh': aquariumVsMesh,
   'stacked-gaze': stackedGaze,
   'case-size-gates': caseSizeGates,
+  'f-model-flow': fModelFlow,
 };
 
 /**
@@ -6395,6 +6396,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function fModelFlow() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'F 모델 살까 — 세 질문이면 갈린다', { weight: 600, size: 12.5 });
+  const q = (y, txt) => rect(24, y, 330, 36, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 22, txt, { size: 9, weight: 700 });
+  const yes = (y, txt, c) => `<path d="M358 ${y + 18} L376 ${y + 18}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M371 ${y + 14} L376 ${y + 18} L371 ${y + 22}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(367, y + 11, '예', { size: 8, fill: COLOR.mute, anchor: 'middle' }) + rect(382, y, 234, 36, c, { r: 4 }) + t(394, y + 22, txt, { size: 8.8, weight: 700, fill: '#fff' });
+  const no = (y) => `<path d="M60 ${y} L60 ${y + 14}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M56 ${y + 9} L60 ${y + 14} L64 ${y + 9}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(70, y + 11, '아니오', { size: 8, fill: COLOR.mute });
+  b += q(44, '① 그래픽카드 없이 쓸 가능성이 조금이라도?');
+  b += yes(44, 'F 접기 — 화면 자체가 안 나옴', COLOR.over);
+  b += no(82);
+  b += q(98, '② 영상 편집이 주 용도 + 내장 가속을 쓰는 프로그램?');
+  b += yes(98, '내장 있는 쪽 — 작업에 실익', COLOR.mute);
+  b += no(136);
+  b += q(152, '③ 차액으로 램·SSD·파워 구멍을 메울 수 있나?');
+  b += yes(152, 'F — 아낀 돈이 더 일함', COLOR.fit);
+  b += t(36, 208, '아니오(여유 있음) → 내장 있는 쪽을 보험으로 — 그래픽카드 고장 시 진단·비상 화면', { size: 8.4, weight: 700, fill: COLOR.mute });
+  b += rect(24, 220, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 238, '그래픽카드를 쓰는 조립이면 게임·작업 성능 차이는 없음 — ③은 어느 쪽도 틀리지 않는 선택', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    'F 모델 판단 순서',
+    W, 256, b,
+    '그래픽카드 없이 쓸 가능성이 있으면 F 모델은 화면이 안 나오니 접습니다. 영상 편집이 주 용도이고 쓰는 프로그램이 내장 영상 가속을 활용하면 내장 있는 쪽이 실익이 있습니다. 그 외에는 차액으로 다른 부품을 보강할 수 있으면 F, 여유가 있으면 내장 있는 쪽을 진단용 보험으로 고르는 문제라 어느 쪽도 틀리지 않습니다.'
   );
 }
 
