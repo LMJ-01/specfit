@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나","description":"베어본은 미완성 컴퓨터입니다. 뭐가 빠져 있고 뭘 골라 넣어야 하는지, 완제품과는 언제 갈리는지 정리했습니다. 갖고 있는 램과 SSD를 살릴 수 있는 게 이 방식의 핵심입니다.","datePublished":"2026-08-29","dateModified":"2026-10-03","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/barebone-mini-pc.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나","description":"베어본은 미완성 컴퓨터입니다. 뭐가 빠져 있고 뭘 골라 넣어야 하는지, 완제품과는 언제 갈리는지 정리했습니다. 갖고 있는 램과 SSD를 살릴 수 있는 게 이 방식의 핵심입니다.","datePublished":"2026-08-29","dateModified":"2026-10-30","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/barebone-mini-pc.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나","item":"https://specfit.kr/posts/barebone-mini-pc.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"램은 노트북용을 사면 되나요","acceptedAnswer":{"@type":"Answer","text":"네, 같은 물건입니다. SO-DIMM 이라고 적힌 것을 사면 되고, 규격(DDR4/DDR5)만 내 베어본 사양표와 맞추면 됩니다."}},{"@type":"Question","name":"완제품을 사서 나중에 램만 늘리는 건요","acceptedAnswer":{"@type":"Answer","text":"그것도 좋은 절충입니다. 다만 완제품 중에는 램이 납땜(온보드)이라 못 늘리는 모델이 있으니, 노트북에서 확인하던 그 방법대로 슬롯 여부를 먼저 확인하세요. 베어본은 정의상 슬롯이 열려 있는 물건이라 이 걱정이 없습니다."}},{"@type":"Question","name":"개발용으로는 뭘 얼마나 넣어야 하나요","acceptedAnswer":{"@type":"Answer","text":"램은 개발용 미니PC의 기준 그대로 — 도커·안드로이드면 32GB(16GB 두 장)입니다(에뮬레이터가 램을 먹는 구조는 그 글에). SSD 용량은 개발용 SSD 고르기의 기준대로 1TB 를 권합니다."}},{"@type":"Question","name":"로컬 LLM 용으로 베어본을 맞추면요","acceptedAnswer":{"@type":"Answer","text":"베어본이냐 완제품이냐보다 어느 급이냐가 먼저입니다 — 미니PC 로컬 LLM 판정법의 대역폭 기준으로 급을 확인하고, 일반형 베어본이라면 램 두 장(듀얼 채널)이 그 급에서 할 수 있는 최선입니다."}},{"@type":"Question","name":"AS 는 어떻게 되나요","acceptedAnswer":{"@type":"Answer","text":"본체와 내가 넣은 부품의 보증이 따로 갑니다. 문제가 생기면 어느 쪽인지 갈라 봐야 하는 번거로움이 완제품 대비 단점입니다 — 램·SSD 는 각자 제조사 보증이 있으니 보증서와 영수증을 남겨두세요."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나</h1>
     <p class="post-meta">
       <time datetime="2026-08-29">2026년 8월 29일</time>
-      <span class="updated">· 2026년 10월 3일 갱신</span>
+      <span class="updated">· 2026년 10월 30일 갱신</span>
     </p>
   </header>
 
@@ -90,6 +90,13 @@
 <h2 id="베어본에-빠져-있는-것">베어본에 빠져 있는 것</h2>
 <p>베어본은 <strong>케이스·메인보드·전원</strong>까지만 조립된 반제품입니다.
 채워 넣을 것은 대개 셋입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 242" width="640" height="242" role="img" aria-label="베어본 구성">
+<title>베어본 구성</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">베어본 = 반제품 — 들어 있는 것과 채워 넣을 것</text><rect x="24" y="42" width="230" height="150" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="40" y="64" fill="var(--fg-muted)" font-size="9.6" font-weight="700">들어 있음</text><text x="40" y="90" fill="var(--fg)" font-size="9">· 케이스</text><text x="40" y="112" fill="var(--fg)" font-size="9">· 메인보드</text><text x="40" y="134" fill="var(--fg)" font-size="9">· 전원(어댑터)</text><text x="40" y="156" fill="var(--fg)" font-size="9">· CPU — 온보드형이면</text><path d="M262 117 L284 117" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M279 113 L284 117 L279 121" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="292" y="42" width="324" height="42" fill="var(--fig-fit)" rx="4"/><text x="306" y="60" fill="#fff" font-size="9.4" font-weight="700">① 램</text><text x="306" y="75" fill="#fff" font-size="8">SO-DIMM(짧은 램) · 규격(DDR4/5)·슬롯 수 확인</text><rect x="292" y="96" width="324" height="42" fill="var(--fig-fit)" rx="4"/><text x="306" y="114" fill="#fff" font-size="9.4" font-weight="700">② SSD</text><text x="306" y="129" fill="#fff" font-size="8">대개 M.2 2280 · 슬롯 개수·NVMe 세대</text><rect x="292" y="150" width="324" height="42" fill="var(--fig-fit)" rx="4"/><text x="306" y="168" fill="#fff" font-size="9.4" font-weight="700">③ 운영체제</text><text x="306" y="183" fill="#fff" font-size="8">윈도우 라이선스 값을 총액에 — 리눅스면 0</text><rect x="24" y="206" width="592" height="28" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="224" fill="var(--fig-over)" font-size="8.6" font-weight="700">사기 전 추가 확인: 소켓형이면 CPU·쿨러 높이까지 · 무선(WiFi) 모듈 포함 여부</text>
+</svg>
+<figcaption>베어본 미니PC는 케이스·메인보드·전원까지(온보드형이면 CPU까지) 조립된 반제품이라, 램(SO-DIMM)·SSD(대개 M.2)·운영체제 세 가지를 채워 넣어야 완성됩니다. CPU 소켓형이면 CPU와 쿨러 높이까지, 그리고 무선 모듈 포함 여부를 사기 전에 확인합니다.</figcaption>
+</figure>
 <p><strong>① 램</strong> — 미니PC는 노트북과 같은 <strong>SO-DIMM</strong>(짧은 램)을 씁니다.
 데스크톱용 긴 램은 물리적으로 안 들어갑니다. 확인할 것은
 <a href="/posts/laptop-ram-upgrade.html">노트북 램 업그레이드</a>와 같습니다:

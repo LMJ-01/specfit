@@ -1004,6 +1004,7 @@ export const figures = {
   'second-screen-load': secondScreenLoad,
   'coding-static-areas': codingStaticAreas,
   'cooler-direction': coolerDirection,
+  'barebone-pieces': barebonePieces,
 };
 
 /**
@@ -6400,6 +6401,27 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function barebonePieces() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '베어본 = 반제품 — 들어 있는 것과 채워 넣을 것', { weight: 600, size: 12.5 });
+  b += rect(24, 42, 230, 150, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(40, 64, '들어 있음', { size: 9.6, weight: 700, fill: COLOR.mute });
+  ['케이스', '메인보드', '전원(어댑터)', 'CPU — 온보드형이면'].forEach((x, i) => { b += t(40, 90 + i * 22, '· ' + x, { size: 9, fill: COLOR.text }); });
+  b += `<path d="M262 117 L284 117" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M279 113 L284 117 L279 121" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+  const slot = (y, n, head, sub) => rect(292, y, 324, 42, COLOR.fit, { r: 4 }) + t(306, y + 18, n + ' ' + head, { size: 9.4, weight: 700, fill: '#fff' }) + t(306, y + 33, sub, { size: 8, fill: '#fff' });
+  b += slot(42, '①', '램', 'SO-DIMM(짧은 램) · 규격(DDR4/5)·슬롯 수 확인');
+  b += slot(96, '②', 'SSD', '대개 M.2 2280 · 슬롯 개수·NVMe 세대');
+  b += slot(150, '③', '운영체제', '윈도우 라이선스 값을 총액에 — 리눅스면 0');
+  b += rect(24, 206, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 224, '사기 전 추가 확인: 소켓형이면 CPU·쿨러 높이까지 · 무선(WiFi) 모듈 포함 여부', { size: 8.6, weight: 700, fill: COLOR.over });
+  return figure(
+    '베어본 구성',
+    W, 242, b,
+    '베어본 미니PC는 케이스·메인보드·전원까지(온보드형이면 CPU까지) 조립된 반제품이라, 램(SO-DIMM)·SSD(대개 M.2)·운영체제 세 가지를 채워 넣어야 완성됩니다. CPU 소켓형이면 CPU와 쿨러 높이까지, 그리고 무선 모듈 포함 여부를 사기 전에 확인합니다.'
   );
 }
 
