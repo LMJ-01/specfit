@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>타워 쿨러 방향, 뒤로? 위로? — 케이스의 배기 팬이 있는 쪽으로 맞춥니다</title>
+    <link>https://specfit.kr/posts/cpu-cooler-direction.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/cpu-cooler-direction.html</guid>
+    <pubDate>Wed, 28 Oct 2026 15:00:00 GMT</pubDate>
+    <description>타워형 CPU 쿨러를 달 때 바람을 뒤로 보낼지 위로 보낼지 헷갈립니다. 정답은 쿨러가 아니라 케이스의 공기 흐름이 정하고, 피해야 할 방향은 하나뿐입니다. 판단 순서와 간섭·마운트 확인, 바꾼 뒤 확인하는 법까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>미니타워 케이스 사도 되나 — 크기 취향보다 "들어갈 것" 네 가지가 정합니다</title>
     <link>https://specfit.kr/posts/minitower-vs-midtower.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/minitower-vs-midtower.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-high-pitch-noise.html</guid>
     <pubDate>Thu, 01 Oct 2026 15:00:00 GMT</pubDate>
     <description>조용한 방에서 모니터 쪽에서 가늘게 "지잉" 또는 "삐" 하는 고주파음이 들리는 증상은 게시판 단골 질문입니다. 대개 전원부나 백라이트 구동부의 진동음이라 고장은 아니지만, 밝기를 움직였을 때 소리가 따라 변하는지와 꺼도 나는지로 출처가 갈립니다. 판정과 줄이는 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>컴퓨터 켤 때 "삐" 한 번 나는 소리 — 고장 경보가 아니라 "점검 통과" 보고입니다</title>
-    <link>https://specfit.kr/posts/boot-beep-once.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/boot-beep-once.html</guid>
-    <pubDate>Thu, 01 Oct 2026 15:00:00 GMT</pubDate>
-    <description>전원을 켤 때마다 본체에서 짧게 "삐" 한 번 나는 소리가 고장 신호인지 묻는 질문은 게시판 단골입니다. 짧은 한 번은 메인보드가 자체 점검을 마쳤다고 알리는 소리라 정상이고, 횟수와 길이가 달라질 때만 뜻이 바뀝니다. 패턴 읽는 법과 갑자기 나기 시작한 이유를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

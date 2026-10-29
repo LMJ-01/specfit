@@ -1003,6 +1003,7 @@ export const figures = {
   'fan-hub-decision': fanHubDecision,
   'second-screen-load': secondScreenLoad,
   'coding-static-areas': codingStaticAreas,
+  'cooler-direction': coolerDirection,
 };
 
 /**
@@ -6399,6 +6400,50 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function coolerDirection() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '타워 쿨러 방향 — 케이스의 배기 팬이 있는 쪽으로 바람을 보낸다', { weight: 600, size: 12.5 });
+  const arr = (x1, y1, x2, y2, c) => {
+    const a = Math.atan2(y2 - y1, x2 - x1), h = 6;
+    const p1 = [x2 - h * Math.cos(a - 0.5), y2 - h * Math.sin(a - 0.5)];
+    const p2 = [x2 - h * Math.cos(a + 0.5), y2 - h * Math.sin(a + 0.5)];
+    return `<path d="M${x1} ${y1} L${x2} ${y2}" stroke="${c}" stroke-width="2"/><path d="M${p1[0].toFixed(1)} ${p1[1].toFixed(1)} L${x2} ${y2} L${p2[0].toFixed(1)} ${p2[1].toFixed(1)}" fill="none" stroke="${c}" stroke-width="2"/>`;
+  };
+  // 케이스 옆모습 두 개: 왼쪽=앞, 오른쪽=뒤
+  const panel = (x, title, sub, up) => {
+    let o = t(x, 52, title, { size: 9.4, weight: 700, fill: up ? COLOR.mute : COLOR.fit });
+    o += t(x, 66, sub, { size: 8, fill: COLOR.mute });
+    o += rect(x, 76, 270, 120, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 6, 190, '앞', { size: 8, fill: COLOR.mute });
+    o += t(x + 256, 190, '뒤', { size: 8, fill: COLOR.mute });
+    // 쿨러 방열판
+    o += rect(x + 140, up ? 120 : 104, up ? 70 : 34, up ? 34 : 70, COLOR.mute, { r: 3 });
+    o += t(x + (up ? 175 : 157), up ? 141 : 143, '쿨러', { size: 8, weight: 700, fill: '#fff', anchor: 'middle' });
+    // 흡기
+    o += arr(x + 6, 140, x + 46, 140, COLOR.fit);
+    if (!up) {
+      o += arr(x + 100, 139, x + 136, 139, COLOR.fit);
+      o += arr(x + 178, 139, x + 282, 139, COLOR.over);
+      o += t(x + 214, 128, '후면 배기', { size: 8, weight: 700, fill: COLOR.over });
+    } else {
+      o += arr(x + 175, 186, x + 175, 158, COLOR.fit);
+      o += arr(x + 175, 118, x + 175, 82, COLOR.over);
+      o += t(x + 183, 100, '상단 배기', { size: 8, weight: 700, fill: COLOR.over });
+    }
+    return o;
+  };
+  b += panel(40, '기본 — 앞에서 받아 뒤로', '후면 배기 팬이 주력인 대부분의 케이스', false);
+  b += panel(346, '대안 — 아래에서 받아 위로', '상단 배기가 있고 간섭·마운트 사정이 있을 때', true);
+  b += rect(24, 210, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 228, '피할 것: 쿨러 바람이 앞쪽으로 나가는 방향 — 전면 흡기와 정면으로 맞부딪힘', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '타워 쿨러 장착 방향',
+    W, 246, b,
+    '대부분의 케이스는 앞에서 공기를 받아 뒤로 내보내므로, 타워 쿨러도 앞에서 받아 뒤쪽 배기 팬 쪽으로 밀어 주는 방향이 기본입니다. 상단에 배기 팬이 있고 램 간섭이나 마운트 사정이 있으면 아래에서 받아 위로 보내는 방향도 쓰입니다. 쿨러 바람이 앞쪽으로 나가 전면 흡기와 맞부딪히는 방향만 피하면 됩니다.'
   );
 }
 

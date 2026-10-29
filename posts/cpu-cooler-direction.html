@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>타워 쿨러 방향, 뒤로? 위로? — 케이스의 배기 팬이 있는 쪽으로 맞춥니다 | 스펙핏</title>
+<meta name="description" content="타워형 CPU 쿨러를 달 때 바람을 뒤로 보낼지 위로 보낼지 헷갈립니다. 정답은 쿨러가 아니라 케이스의 공기 흐름이 정하고, 피해야 할 방향은 하나뿐입니다. 판단 순서와 간섭·마운트 확인, 바꾼 뒤 확인하는 법까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/cpu-cooler-direction.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="타워 쿨러 방향, 뒤로? 위로? — 케이스의 배기 팬이 있는 쪽으로 맞춥니다 | 스펙핏">
+<meta property="og:description" content="타워형 CPU 쿨러를 달 때 바람을 뒤로 보낼지 위로 보낼지 헷갈립니다. 정답은 쿨러가 아니라 케이스의 공기 흐름이 정하고, 피해야 할 방향은 하나뿐입니다. 판단 순서와 간섭·마운트 확인, 바꾼 뒤 확인하는 법까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/cpu-cooler-direction.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"타워 쿨러 방향, 뒤로? 위로? — 케이스의 배기 팬이 있는 쪽으로 맞춥니다","description":"타워형 CPU 쿨러를 달 때 바람을 뒤로 보낼지 위로 보낼지 헷갈립니다. 정답은 쿨러가 아니라 케이스의 공기 흐름이 정하고, 피해야 할 방향은 하나뿐입니다. 판단 순서와 간섭·마운트 확인, 바꾼 뒤 확인하는 법까지 정리했습니다.","datePublished":"2026-10-29","dateModified":"2026-10-29","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/cpu-cooler-direction.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"타워 쿨러 방향, 뒤로? 위로? — 케이스의 배기 팬이 있는 쪽으로 맞춥니다","item":"https://specfit.kr/posts/cpu-cooler-direction.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"수랭 쿨러는요","acceptedAnswer":{"@type":"Answer","text":"수랭은 쿨러 몸체가 아니라 라디에이터를 어디에 두느냐의 문제라 판단이 다릅니다. 상단·전면 중 어디에 흡기·배기로 두느냐에 따라 CPU와 그래픽카드 쪽 공기 사정이 갈립니다. 애초에 수랭이 필요한 CPU인지는 기본 쿨러로 충분한지부터 보세요."}},{"@type":"Question","name":"쿨러에 팬이 두 개면 방향을 어떻게 맞추나요","acceptedAnswer":{"@type":"Answer","text":"두 팬이 같은 방향으로 바람을 보내도록 겁니다 — 앞 팬은 방열판으로 밀고, 뒤 팬은 방열판에서 빼내는 식입니다. 서로 마주 보게 달면 바람이 막힙니다."}},{"@type":"Question","name":"어항 케이스처럼 앞이 막혔으면요","acceptedAnswer":{"@type":"Answer","text":"흡기가 하단·측면으로 옮겨 간 케이스라면 \"아래에서 받아 위로\"가 흐름과 더 잘 맞는 경우가 있습니다 — 흡기 길을 보는 법은 어항 케이스 온도에 있습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/gpu.html">GPU</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>타워 쿨러 방향, 뒤로? 위로? — 케이스의 배기 팬이 있는 쪽으로 맞춥니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-10-29">2026년 10월 29일</time>
+      <span class="updated">· 2026년 10월 29일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>타워형 CPU 쿨러를 달다 보면 손이 멈추는 순간이 옵니다 — <strong>바람을
+뒤로 보내야 하나, 위로 보내야 하나?</strong> 상자의 설명서는 둘 다 가능하다고
+하고, 커뮤니티 답도 사람마다 다릅니다.</p>
+<p>정답은 쿨러에 있지 않습니다. <strong>케이스가 공기를 어디로 내보내느냐</strong>가
+정하고, 그 흐름에 맞추면 됩니다. 그리고 확실하게 피해야 할 방향은
+하나뿐입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>케이스 구성</th><th>쿨러 방향</th></tr></thead>
+<tbody>
+<tr><td>후면 배기 팬이 주력 (대부분)</td><td><strong>앞에서 받아 뒤로</strong> — 기본값입니다</td></tr>
+<tr><td>상단 배기가 있고, 뒤로 달면 램·보드와 간섭</td><td><strong>아래에서 받아 위로</strong>도 무난합니다</td></tr>
+<tr><td>보드·쿨러 마운트가 한 방향만 허용</td><td>그 방향이 답 — 케이스 팬으로 흐름을 맞춥니다</td></tr>
+<tr><td><strong>피할 것</strong></td><td>쿨러 바람이 <strong>앞쪽으로</strong> 나가는 방향</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 246" width="640" height="246" role="img" aria-label="타워 쿨러 장착 방향">
+<title>타워 쿨러 장착 방향</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">타워 쿨러 방향 — 케이스의 배기 팬이 있는 쪽으로 바람을 보낸다</text><text x="40" y="52" fill="var(--fig-fit)" font-size="9.4" font-weight="700">기본 — 앞에서 받아 뒤로</text><text x="40" y="66" fill="var(--fg-muted)" font-size="8">후면 배기 팬이 주력인 대부분의 케이스</text><rect x="40" y="76" width="270" height="120" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="46" y="190" fill="var(--fg-muted)" font-size="8">앞</text><text x="296" y="190" fill="var(--fg-muted)" font-size="8">뒤</text><rect x="180" y="104" width="34" height="70" fill="var(--fg-muted)" rx="3"/><text x="197" y="143" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">쿨러</text><path d="M46 140 L86 140" stroke="var(--fig-fit)" stroke-width="2"/><path d="M80.7 142.9 L86 140 L80.7 137.1" fill="none" stroke="var(--fig-fit)" stroke-width="2"/><path d="M140 139 L176 139" stroke="var(--fig-fit)" stroke-width="2"/><path d="M170.7 141.9 L176 139 L170.7 136.1" fill="none" stroke="var(--fig-fit)" stroke-width="2"/><path d="M218 139 L322 139" stroke="var(--fig-over)" stroke-width="2"/><path d="M316.7 141.9 L322 139 L316.7 136.1" fill="none" stroke="var(--fig-over)" stroke-width="2"/><text x="254" y="128" fill="var(--fig-over)" font-size="8" font-weight="700">후면 배기</text><text x="346" y="52" fill="var(--fg-muted)" font-size="9.4" font-weight="700">대안 — 아래에서 받아 위로</text><text x="346" y="66" fill="var(--fg-muted)" font-size="8">상단 배기가 있고 간섭·마운트 사정이 있을 때</text><rect x="346" y="76" width="270" height="120" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="352" y="190" fill="var(--fg-muted)" font-size="8">앞</text><text x="602" y="190" fill="var(--fg-muted)" font-size="8">뒤</text><rect x="486" y="120" width="70" height="34" fill="var(--fg-muted)" rx="3"/><text x="521" y="141" fill="#fff" font-size="8" font-weight="700" text-anchor="middle">쿨러</text><path d="M352 140 L392 140" stroke="var(--fig-fit)" stroke-width="2"/><path d="M386.7 142.9 L392 140 L386.7 137.1" fill="none" stroke="var(--fig-fit)" stroke-width="2"/><path d="M521 186 L521 158" stroke="var(--fig-fit)" stroke-width="2"/><path d="M523.9 163.3 L521 158 L518.1 163.3" fill="none" stroke="var(--fig-fit)" stroke-width="2"/><path d="M521 118 L521 82" stroke="var(--fig-over)" stroke-width="2"/><path d="M523.9 87.3 L521 82 L518.1 87.3" fill="none" stroke="var(--fig-over)" stroke-width="2"/><text x="529" y="100" fill="var(--fig-over)" font-size="8" font-weight="700">상단 배기</text><rect x="24" y="210" width="592" height="28" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="228" fill="var(--fg)" font-size="8.6" font-weight="700">피할 것: 쿨러 바람이 앞쪽으로 나가는 방향 — 전면 흡기와 정면으로 맞부딪힘</text>
+</svg>
+<figcaption>대부분의 케이스는 앞에서 공기를 받아 뒤로 내보내므로, 타워 쿨러도 앞에서 받아 뒤쪽 배기 팬 쪽으로 밀어 주는 방향이 기본입니다. 상단에 배기 팬이 있고 램 간섭이나 마운트 사정이 있으면 아래에서 받아 위로 보내는 방향도 쓰입니다. 쿨러 바람이 앞쪽으로 나가 전면 흡기와 맞부딪히는 방향만 피하면 됩니다.</figcaption>
+</figure>
+<h2 id="왜-뒤로가-기본인가">왜 &quot;뒤로&quot;가 기본인가</h2>
+<p>대부분의 케이스는 <strong>앞에서 차가운 공기를 받아 뒤와 위로 내보내는</strong>
+흐름으로 설계돼 있습니다 — <a href="/posts/case-fan-setup.html">케이스 팬 구성의 원칙</a>이
+이 흐름입니다. 타워 쿨러를 앞에서 받아 뒤로 밀도록 달면, 쿨러가 데운
+공기가 바로 뒤의 배기 팬으로 넘어가 케이스 밖으로 나갑니다. 흐름에
+<strong>올라타는</strong> 배치라 기본값이 됩니다.</p>
+<h2 id="위로가-맞는-경우">&quot;위로&quot;가 맞는 경우</h2>
+<ul>
+<li><strong>상단 배기 팬이 있는 케이스</strong> — 위로 보낸 더운 공기를 상단 팬이 바로
+받아 줍니다. 흐름이 끊기지 않으면 뒤로와의 차이는 대개 크지 않은
+편입니다</li>
+<li><strong>뒤로 달면 간섭이 생길 때</strong> — 쿨러 팬이 램 슬롯 위로 걸리거나, 높은
+방열판 램과 부딪히는 조합이 있습니다. 방향을 90도 돌리면 걸리는 자리가
+바뀌어 풀리는 경우가 있습니다. 램 쪽 간섭 이야기는
+<a href="/posts/ram-heatsink-needed.html">램 방열판 판정</a>에 있습니다</li>
+<li><strong>마운트가 그 방향만 허용할 때</strong> — 보드 소켓과 쿨러 브래킷 조합에
+따라 돌릴 수 있는 방향이 정해진 경우가 있습니다. 이때는 쿨러 방향을
+고집하기보다 케이스 팬으로 흐름을 맞추는 쪽이 현실적입니다</li>
+</ul>
+<h2 id="피해야-할-단-하나-앞으로-내뿜기">피해야 할 단 하나 — 앞으로 내뿜기</h2>
+<p>쿨러 바람이 <strong>케이스 앞쪽을 향하면</strong> 전면 흡기 팬이 들여보내는 공기와
+정면으로 맞부딪힙니다. 데운 공기가 빠져나갈 길 없이 케이스 안에서
+맴도는 모양이라, 다른 방향은 몰라도 이 방향만은 피하는 게 좋습니다.</p>
+<p>조립 직후라면 쿨러 팬이 <strong>실제로 어느 쪽으로 바람을 보내는지</strong>부터
+확인하세요. 팬을 거꾸로 끼우면 &quot;뒤로&quot; 달았는데 바람은 앞으로 나가는
+일이 생깁니다 — 프레임의 화살표나 날개 모양으로 보는 법은
+<a href="/posts/case-fan-setup.html">팬 방향 확인법</a>과 같습니다.</p>
+<h2 id="바꾼-뒤에는-온도로-확인합니다">바꾼 뒤에는 온도로 확인합니다</h2>
+<p>방향은 이론보다 <strong>결과</strong>가 정합니다. 게임이나 긴 작업처럼 부하가 걸린
+상태에서 CPU 온도가 어디서 멈추는지를 바꾸기 전후로 비교해 보세요.
+숫자 하나가 아니라 거동으로 보는 법은
+<a href="/posts/cpu-temp-normal.html">CPU 온도 판정</a>에 있습니다. 차이가 거의
+없다면 간섭이 덜하고 손이 편한 방향을 고르면 됩니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="수랭-쿨러는요">수랭 쿨러는요</h3>
+<p>수랭은 쿨러 몸체가 아니라 <strong>라디에이터를 어디에 두느냐</strong>의 문제라
+판단이 다릅니다. 상단·전면 중 어디에 흡기·배기로 두느냐에 따라 CPU와
+그래픽카드 쪽 공기 사정이 갈립니다. 애초에 수랭이 필요한 CPU인지는
+<a href="/posts/cpu-stock-cooler.html">기본 쿨러로 충분한지</a>부터 보세요.</p>
+<h3 id="쿨러에-팬이-두-개면-방향을-어떻게-맞추나요">쿨러에 팬이 두 개면 방향을 어떻게 맞추나요</h3>
+<p>두 팬이 <strong>같은 방향으로</strong> 바람을 보내도록 겁니다 — 앞 팬은 방열판으로
+밀고, 뒤 팬은 방열판에서 빼내는 식입니다. 서로 마주 보게 달면 바람이
+막힙니다.</p>
+<h3 id="어항-케이스처럼-앞이-막혔으면요">어항 케이스처럼 앞이 막혔으면요</h3>
+<p>흡기가 하단·측면으로 옮겨 간 케이스라면 &quot;아래에서 받아 위로&quot;가 흐름과
+더 잘 맞는 경우가 있습니다 — 흡기 길을 보는 법은
+<a href="/posts/aquarium-case-temp.html">어항 케이스 온도</a>에 있습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>쿨러 방향은 <strong>케이스의 배기 팬이 있는 쪽</strong>으로 맞춥니다</li>
+<li>후면 배기가 주력인 대부분의 케이스는 <strong>앞에서 받아 뒤로</strong>가 기본입니다</li>
+<li>상단 배기가 있고 간섭·마운트 사정이 있으면 <strong>아래에서 받아 위로</strong>도 무난합니다</li>
+<li>피할 것은 하나 — <strong>바람이 앞으로 나가는 방향</strong>입니다</li>
+<li>바꾼 뒤에는 <strong>부하 중 온도의 거동</strong>으로 확인합니다</li>
+</ol>
+<p>쿨링의 이웃 판정들 — <a href="/posts/case-fan-setup.html">케이스 팬 구성</a> ·
+<a href="/posts/cpu-stock-cooler.html">기본 쿨러로 충분한지</a> ·
+<a href="/posts/cpu-temp-normal.html">CPU 온도 판정</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">CPU쿨러방향</span> <span class="tag">타워쿨러</span> <span class="tag">공랭쿨러</span> <span class="tag">케이스배기</span> <span class="tag">쿨러장착</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/fan-hub-needed.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">케이스 팬 허브 필요한가 — 팬 개수가 아니라 단자 수와 전류 합을 셉니다</span>
+        <span class="card-desc">케이스 팬을 늘리다 보면 메인보드 팬 단자가 모자라 허브를 사야 하나 고민하게 됩니다. 직결·분배 케이블·데이지 체인·허브 중 무엇이 맞는지는 팬 개수가 아니라 단자 수와 전류 합이 정합니다. 판정 순서와 조명 선 주의점까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/minitower-vs-midtower.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">미니타워 케이스 사도 되나 — 크기 취향보다 &quot;들어갈 것&quot; 네 가지가 정합니다</span>
+        <span class="card-desc">책상이 좁아서, 혹은 큰 케이스가 부담스러워서 미니타워를 고민하지만 막상 사려면 망설여집니다. 미니타워로 되는 구성과 미들타워가 필요한 구성을 가르는 네 관문, 그리고 온도·조립·업그레이드에서 치르는 값을 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/aquarium-case-temp.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">어항 케이스 온도 괜찮나 — 유리가 아니라 &quot;공기가 들어오는 길&quot;을 봅니다</span>
+        <span class="card-desc">앞과 옆이 유리로 된 어항 케이스는 예쁜 대신 온도가 걱정됩니다. 차이를 만드는 건 유리 자체가 아니라 흡기 경로와 팬 구성, 그리고 들어갈 부품의 발열입니다. 사기 전에 볼 것, 이미 샀다면 확인과 개선 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
