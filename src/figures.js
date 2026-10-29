@@ -1002,6 +1002,7 @@ export const figures = {
   'f-model-flow': fModelFlow,
   'fan-hub-decision': fanHubDecision,
   'second-screen-load': secondScreenLoad,
+  'coding-static-areas': codingStaticAreas,
 };
 
 /**
@@ -6398,6 +6399,38 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function codingStaticAreas() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '코딩 화면에서 하루 종일 그대로인 자리 — 번인은 여기서 시작된다', { weight: 600, size: 12.5 });
+  const X = 24, Y = 40, w = 400, h = 200;
+  b += rect(X, Y, w, h, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += rect(X, Y, w, 20, COLOR.over, { r: 4 });
+  b += t(X + 10, Y + 14, '편집기 탭 막대', { size: 8.2, weight: 700, fill: '#fff' });
+  b += rect(X, Y + 20, 90, h - 50, COLOR.over);
+  b += t(X + 45, Y + 90, '파일 사이드바', { size: 8.2, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += rect(X + 90, Y + 20, w - 90, h - 74, COLOR.fit);
+  b += t(X + 245, Y + 80, '코드 본문 — 계속 바뀜', { size: 9.4, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += rect(X + 90, Y + h - 54, w - 90, 24, COLOR.mute);
+  b += t(X + 100, Y + h - 38, '터미널 프롬프트 — 거의 같은 자리', { size: 8.2, weight: 700, fill: '#fff' });
+  b += rect(X, Y + h - 30, w, 14, COLOR.over);
+  b += t(X + 10, Y + h - 20, '상태 표시줄', { size: 7.6, weight: 700, fill: '#fff' });
+  b += rect(X, Y + h - 16, w, 16, COLOR.over, { r: 4 });
+  b += t(X + 10, Y + h - 5, '작업 표시줄 · 시계', { size: 7.6, weight: 700, fill: '#fff' });
+  // 범례
+  const lg = (y, c, a, sub) => rect(444, y, 14, 14, c, { r: 3 }) + t(466, y + 11, a, { size: 9, weight: 700 }) + t(466, y + 25, sub, { size: 7.8, fill: COLOR.mute });
+  b += lg(56, COLOR.over, '고정 — 같은 픽셀만 늙음', '켜는 순간부터 끄는 순간까지');
+  b += lg(104, COLOR.mute, '거의 고정', '줄은 바뀌어도 자리는 비슷');
+  b += lg(152, COLOR.fit, '바뀜 — 고르게 늙음', '영상·게임은 화면 전체가 이쪽');
+  b += t(444, 214, '밝은 테마일수록 고정 영역이', { size: 8.2, fill: COLOR.mute });
+  b += t(444, 228, '더 밝게 오래 켜져 불리', { size: 8.2, fill: COLOR.mute });
+  return figure(
+    '코딩 화면의 고정 영역',
+    W, 250, b,
+    '코딩 화면은 탭 막대, 사이드바, 상태 표시줄, 작업 표시줄처럼 하루 종일 같은 자리에 같은 것이 떠 있는 영역이 넓고, 바뀌는 건 가운데 코드 본문뿐입니다. OLED는 켜진 만큼 소자가 늙어서 이 고정 영역의 픽셀만 먼저 늙는 구조라, 화면 전체가 계속 바뀌는 영상·게임보다 불리합니다. 배치는 일반적인 편집기 화면을 단순화한 예시입니다.'
   );
 }
 
