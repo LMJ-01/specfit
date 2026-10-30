@@ -1005,6 +1005,7 @@ export const figures = {
   'coding-static-areas': codingStaticAreas,
   'cooler-direction': coolerDirection,
   'barebone-pieces': barebonePieces,
+  'curve-edge-distance': curveEdgeDistance,
 };
 
 /**
@@ -6401,6 +6402,42 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function curveEdgeDistance() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '커브가 하는 일 — 화면 양끝을 눈 쪽으로 당겨 거리를 고르게', { weight: 600, size: 12.5 });
+  const panel = (cx, title, curved, c) => {
+    let o = t(cx, 50, title, { size: 9.4, weight: 700, fill: c, anchor: 'middle' });
+    const ey = 200, sy = 80, half = 120;
+    // 눈
+    o += `<circle cx="${cx}" cy="${ey}" r="7" fill="none" stroke="${COLOR.text}" stroke-width="2"/>`;
+    o += t(cx, ey + 22, '눈', { size: 8, fill: COLOR.mute, anchor: 'middle' });
+    // 화면 (위에서 본 모습)
+    if (curved) {
+      o += `<path d="M${cx - half} ${sy + 60} Q${cx} ${sy - 60} ${cx + half} ${sy + 60}" fill="none" stroke="${c}" stroke-width="5"/>`;
+    } else {
+      o += `<path d="M${cx - half} ${sy} L${cx + half} ${sy}" stroke="${c}" stroke-width="5"/>`;
+    }
+    const edgeY = curved ? sy + 60 : sy;
+    // 거리선
+    o += `<path d="M${cx} ${ey - 8} L${cx} ${sy + 3}" stroke="${COLOR.mute}" stroke-width="1.4" stroke-dasharray="4 3"/>`;
+    o += `<path d="M${cx - 5} ${ey - 6} L${cx - half + 2} ${edgeY + 3}" stroke="${COLOR.mute}" stroke-width="1.4" stroke-dasharray="4 3"/>`;
+    o += `<path d="M${cx + 5} ${ey - 6} L${cx + half - 2} ${edgeY + 3}" stroke="${COLOR.mute}" stroke-width="1.4" stroke-dasharray="4 3"/>`;
+    return o;
+  };
+  b += panel(170, '평면 (넓은 화면)', false, COLOR.over);
+  b += t(170, 248, '양끝이 중앙보다 멀고 비스듬함', { size: 8.6, weight: 700, fill: COLOR.over, anchor: 'middle' });
+  b += panel(470, '커브드', true, COLOR.fit);
+  b += t(470, 248, '양끝이 당겨져 거리가 비슷해짐', { size: 8.6, weight: 700, fill: COLOR.fit, anchor: 'middle' });
+  b += rect(24, 262, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 280, '폭이 좁으면(27인치 16:9) 양끝 차이 자체가 작아 커브가 할 일이 없음 — 넓을수록 명분이 큼', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '평면과 커브드의 양끝 거리',
+    W, 298, b,
+    '위에서 내려다본 모습입니다. 넓은 평면 화면은 중앙보다 양끝이 눈에서 멀고 비스듬해지고, 커브드는 양끝을 눈 쪽으로 당겨 화면 전체를 비슷한 거리로 맞춥니다. 화면 폭이 좁으면 이 차이 자체가 작아서 커브가 할 일이 적습니다. 곡률은 알아보기 쉽게 과장해 그렸습니다.'
   );
 }
 
