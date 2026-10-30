@@ -1006,6 +1006,7 @@ export const figures = {
   'cooler-direction': coolerDirection,
   'barebone-pieces': barebonePieces,
   'curve-edge-distance': curveEdgeDistance,
+  'mini-vs-laptop-flow': miniVsLaptopFlow,
 };
 
 /**
@@ -6402,6 +6403,30 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function miniVsLaptopFlow() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '미니PC냐 노트북이냐 — 성능이 아니라 두 질문이 가른다', { weight: 600, size: 12.5 });
+  const q = (y, txt) => rect(24, y, 330, 36, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 22, txt, { size: 9, weight: 700 });
+  const yes = (y, txt, c) => `<path d="M358 ${y + 18} L376 ${y + 18}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M371 ${y + 14} L376 ${y + 18} L371 ${y + 22}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(367, y + 11, '예', { size: 8, fill: COLOR.mute, anchor: 'middle' }) + rect(382, y, 234, 36, c, { r: 4 }) + t(394, y + 22, txt, { size: 8.8, weight: 700, fill: '#fff' });
+  const no = (y) => `<path d="M60 ${y} L60 ${y + 14}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M56 ${y + 9} L60 ${y + 14} L64 ${y + 9}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(70, y + 11, '아니오', { size: 8, fill: COLOR.mute });
+  b += q(44, '① 밖에서 화면을 열 일이 한 달에 몇 번이라도?');
+  b += yes(44, '노트북 — 미니PC는 그 몇 번을 못 해줌', COLOR.over);
+  b += no(82);
+  b += q(98, '② 모니터·키보드·마우스가 이미 있나?');
+  b += yes(98, '미니PC — 같은 돈에서 사양이 나음', COLOR.fit);
+  b += no(136);
+  b += rect(24, 152, 592, 36, COLOR.soft, { r: 4, stroke: COLOR.line });
+  b += t(36, 174, '없다면 그 값을 미니PC 쪽에 더해 비교 — 차이가 생각보다 줄어듦', { size: 9, weight: 700, fill: COLOR.mute });
+  b += rect(24, 200, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 218, '같은 급이면 성능 차이는 작음 — 갈림길은 "들고 나갈 일"과 "이미 가진 물건"', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '미니PC와 노트북 판단 순서',
+    W, 236, b,
+    '밖에서 화면을 열 일이 한 달에 몇 번이라도 있으면 노트북입니다. 책상에서만 쓰고 모니터·키보드·마우스가 이미 있으면 같은 돈에서 미니PC가 낫고, 없다면 그 값을 미니PC 쪽에 더해 비교해야 공정합니다. 같은 급에서는 성능보다 이 두 질문이 선택을 가릅니다.'
   );
 }
 
