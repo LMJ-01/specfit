@@ -1007,6 +1007,7 @@ export const figures = {
   'barebone-pieces': barebonePieces,
   'curve-edge-distance': curveEdgeDistance,
   'mini-vs-laptop-flow': miniVsLaptopFlow,
+  'bottom-intake-path': bottomIntakePath,
 };
 
 /**
@@ -6403,6 +6404,49 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function bottomIntakePath() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '하단 흡기 팬 — 그래픽카드 바로 아래로 찬 공기를 넣을 때만 일한다', { weight: 600, size: 12.5 });
+  const arr = (x1, y1, x2, y2, c) => {
+    const a = Math.atan2(y2 - y1, x2 - x1), h = 6;
+    const p1 = [x2 - h * Math.cos(a - 0.5), y2 - h * Math.sin(a - 0.5)];
+    const p2 = [x2 - h * Math.cos(a + 0.5), y2 - h * Math.sin(a + 0.5)];
+    return `<path d="M${x1} ${y1} L${x2} ${y2}" stroke="${c}" stroke-width="2"/><path d="M${p1[0].toFixed(1)} ${p1[1].toFixed(1)} L${x2} ${y2} L${p2[0].toFixed(1)} ${p2[1].toFixed(1)}" fill="none" stroke="${c}" stroke-width="2"/>`;
+  };
+  const X = 60, Y = 46, w = 340, h = 180;
+  b += rect(X, Y, w, h, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(X + 6, Y + h - 6, '앞', { size: 8, fill: COLOR.mute });
+  b += t(X + w - 16, Y + h - 6, '뒤', { size: 8, fill: COLOR.mute });
+  // 그래픽카드
+  b += rect(X + 70, Y + 92, 200, 22, COLOR.mute, { r: 3 });
+  b += t(X + 170, Y + 107, '그래픽카드 (팬이 아래를 향함)', { size: 8, weight: 700, fill: '#fff', anchor: 'middle' });
+  // 파워 구역
+  b += rect(X + 220, Y + 140, 120, 40, COLOR.line, { r: 3 });
+  b += t(X + 280, Y + 164, '파워', { size: 8, weight: 700, fill: COLOR.text, anchor: 'middle' });
+  // 전면 흡기
+  b += arr(X - 30, Y + 60, X + 20, Y + 60, COLOR.fit);
+  // 하단 흡기 → 카드
+  b += arr(X + 120, Y + h + 22, X + 120, Y + 118, COLOR.fit);
+  b += arr(X + 170, Y + h + 22, X + 170, Y + 118, COLOR.fit);
+  // 배기
+  b += arr(X + w - 20, Y + 50, X + w + 24, Y + 50, COLOR.over);
+  b += arr(X + 200, Y - 2, X + 200, Y - 12, COLOR.over);
+  // 파워: 자기 흡기 → 바로 뒤로
+  b += arr(X + 300, Y + h + 22, X + 300, Y + h + 2, COLOR.mute);
+  b += arr(X + w - 4, Y + 168, X + w + 24, Y + 168, COLOR.mute);
+  // 설명
+  const note = (y, c, a, sub) => rect(446, y, 12, 12, c, { r: 3 }) + t(464, y + 10, a, { size: 9, weight: 700 }) + t(464, y + 24, sub, { size: 7.8, fill: COLOR.mute });
+  b += note(60, COLOR.fit, '하단 흡기 → 카드 팬이 바로 마심', '전면 흡기가 약할수록 효과가 큼');
+  b += note(104, COLOR.over, '데운 공기는 뒤·위로', '배기가 받아 줘야 흐름이 완성');
+  b += note(148, COLOR.mute, '파워 흡기는 파워가 바로 내보냄', '그래픽카드 온도와는 거의 무관');
+  return figure(
+    '하단 흡기 팬의 공기 경로',
+    W, 256, b,
+    '대부분의 그래픽카드는 팬이 아래를 향해 공기를 빨아들이므로, 카드 바로 아래 바닥에서 찬 공기를 넣는 하단 흡기 팬은 카드에 직접 공기를 공급합니다. 전면 흡기가 약한 케이스일수록 효과가 크고, 이미 흡기가 충분하면 효과는 작습니다. 파워가 바닥에서 마시는 공기는 파워가 바로 뒤로 내보내므로 그래픽카드 온도와는 거의 관계가 없습니다.'
   );
 }
 

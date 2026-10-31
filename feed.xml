@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>케이스 하단 흡기 팬, 그래픽카드 온도에 효과 있나 — 앞에서 공기가 모자랄 때만 일합니다</title>
+    <link>https://specfit.kr/posts/bottom-intake-fan.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/bottom-intake-fan.html</guid>
+    <pubDate>Fri, 30 Oct 2026 15:00:00 GMT</pubDate>
+    <description>케이스 바닥에 흡기 팬을 달면 그래픽카드가 시원해진다는 말과 별 차이 없다는 말이 함께 돕니다. 둘 다 맞을 수 있는 이유, 효과가 큰 케이스와 작은 케이스를 가르는 법, 달기 전에 해 볼 무료 진단까지 정리했습니다.</description>
+  </item>
+  <item>
     <title>타워 쿨러 방향, 뒤로? 위로? — 케이스의 배기 팬이 있는 쪽으로 맞춥니다</title>
     <link>https://specfit.kr/posts/cpu-cooler-direction.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/cpu-cooler-direction.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/pc-fans-run-after-shutdown.html</guid>
     <pubDate>Thu, 01 Oct 2026 15:00:00 GMT</pubDate>
     <description>윈도우에서 시스템 종료를 눌러 화면은 꺼졌는데 본체 팬이 계속 도는 증상은 질문 게시판 단골입니다. 모니터가 꺼진 뒤에도 종료 절차는 한참 남아 있을 수 있고, 그 절차가 어디서 막혔는지에 따라 범인이 갈립니다. 몇 초 기다릴 일인지, 무엇을 끄고 뺄 일인지 판정 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>모니터에서 "지잉·삐" 고주파음이 날 때 — 밝기를 움직여 보면 출처가 갈립니다</title>
-    <link>https://specfit.kr/posts/monitor-high-pitch-noise.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-high-pitch-noise.html</guid>
-    <pubDate>Thu, 01 Oct 2026 15:00:00 GMT</pubDate>
-    <description>조용한 방에서 모니터 쪽에서 가늘게 "지잉" 또는 "삐" 하는 고주파음이 들리는 증상은 게시판 단골 질문입니다. 대개 전원부나 백라이트 구동부의 진동음이라 고장은 아니지만, 밝기를 움직였을 때 소리가 따라 변하는지와 꺼도 나는지로 출처가 갈립니다. 판정과 줄이는 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

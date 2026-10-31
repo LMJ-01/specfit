@@ -13,10 +13,11 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/bottom-intake-fan.html</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/cpu-cooler-direction.html</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/fan-hub-needed.html</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/minitower-vs-midtower.html</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/aquarium-case-temp.html</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/aquarium-case-temp.html</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/resolution-stuck-low.html</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-inserted-backwards.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/case-fan-stops-after-boot.html</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
@@ -124,7 +125,7 @@
   <url><loc>https://specfit.kr/posts/laptop-water-spill.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-always-on.html</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-boot-no-display.html</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/pc-case-open.html</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/pc-case-open.html</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-shutdown-during-game.html</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-speaker-noise.html</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-turns-on-by-itself.html</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>
