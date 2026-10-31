@@ -1008,6 +1008,7 @@ export const figures = {
   'curve-edge-distance': curveEdgeDistance,
   'mini-vs-laptop-flow': miniVsLaptopFlow,
   'bottom-intake-path': bottomIntakePath,
+  'case-dust-factors': caseDustFactors,
 };
 
 /**
@@ -6404,6 +6405,26 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function caseDustFactors() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '케이스에 쌓이는 먼지 — 메쉬 하나로 정해지지 않는다', { weight: 600, size: 12.5 });
+  const box = (x, head, sub1, sub2, c) => rect(x, 46, 168, 92, c, { r: 6 }) + t(x + 84, 72, head, { size: 9.6, weight: 700, fill: '#fff', anchor: 'middle' }) + t(x + 84, 96, sub1, { size: 8.2, fill: '#fff', anchor: 'middle' }) + t(x + 84, 114, sub2, { size: 8.2, fill: '#fff', anchor: 'middle' });
+  b += box(24, '① 들어오는 공기의 양', '메쉬 = 흡기 길이 넓음', '→ 먼지 길도 넓음 ↑', COLOR.mute);
+  b += t(206, 98, '×', { size: 16, weight: 700, fill: COLOR.mute, anchor: 'middle' });
+  b += box(220, '② 필터', '있고 촘촘하면 많이 걸러짐', '없으면 차이가 확연 ↑↑', COLOR.fit);
+  b += t(402, 98, '×', { size: 16, weight: 700, fill: COLOR.mute, anchor: 'middle' });
+  b += box(416, '③ 놓는 자리', '바닥·카펫·반려동물', '→ 공기 자체가 먼지 ↑', COLOR.over);
+  b += rect(24, 154, 592, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 172, '필터 있는 메쉬 + 바닥에서 띄운 자리 → 실사용에서 큰 문제는 적은 편', { size: 8.8, weight: 700, fill: COLOR.text });
+  b += t(36, 187, '필터 없는 메쉬 + 바닥·반려동물 → 청소 주기가 짧아지는 조합', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '케이스 먼지 유입의 세 변수',
+    W, 202, b,
+    '메쉬 케이스는 흡기 길이 넓어 먼지가 들어올 길도 넓지만, 실제로 쌓이는 양은 필터의 유무와 촘촘함, 그리고 본체를 놓는 자리의 공기가 함께 정합니다. 필터가 있는 메쉬를 바닥에서 띄워 두면 실사용에서 큰 문제는 적은 편이고, 필터 없는 메쉬를 바닥이나 반려동물 곁에 두면 청소 주기가 짧아집니다.'
   );
 }
 

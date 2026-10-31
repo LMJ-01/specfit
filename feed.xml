@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>메쉬 케이스, 먼지 많이 들어오나 — 메쉬보다 필터와 놓는 자리가 정합니다</title>
+    <link>https://specfit.kr/posts/mesh-case-dust.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mesh-case-dust.html</guid>
+    <pubDate>Fri, 30 Oct 2026 15:00:00 GMT</pubDate>
+    <description>온도에는 전면 메쉬가 좋다는데 먼지가 걱정돼 망설여집니다. 메쉬 케이스에 먼지가 조금 더 들어오는 건 맞지만, 실제로 얼마나 쌓이는지는 필터와 놓는 자리가 함께 정합니다. 사기 전에 볼 것과 관리 주기를 정리했습니다.</description>
+  </item>
+  <item>
     <title>케이스 하단 흡기 팬, 그래픽카드 온도에 효과 있나 — 앞에서 공기가 모자랄 때만 일합니다</title>
     <link>https://specfit.kr/posts/bottom-intake-fan.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/bottom-intake-fan.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/speaker-phone-interference.html</guid>
     <pubDate>Thu, 01 Oct 2026 15:00:00 GMT</pubDate>
     <description>스피커 가까이에 휴대폰을 두면 가끔 "두두둑·지지직" 하고 터지는 소리는 게시판 단골 질문입니다. 고장이 아니라 휴대폰이 기지국과 교신하는 순간의 전파가 스피커 앰프에 들어와 소리로 바뀐 것이고, 거리 하나로 판정이 끝납니다. 왜 그런지와 줄이는 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>종료했는데 팬이 계속 돌 때 — 화면이 꺼진 것과 컴퓨터가 꺼진 것은 다른 사건입니다</title>
-    <link>https://specfit.kr/posts/pc-fans-run-after-shutdown.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/pc-fans-run-after-shutdown.html</guid>
-    <pubDate>Thu, 01 Oct 2026 15:00:00 GMT</pubDate>
-    <description>윈도우에서 시스템 종료를 눌러 화면은 꺼졌는데 본체 팬이 계속 도는 증상은 질문 게시판 단골입니다. 모니터가 꺼진 뒤에도 종료 절차는 한참 남아 있을 수 있고, 그 절차가 어디서 막혔는지에 따라 범인이 갈립니다. 몇 초 기다릴 일인지, 무엇을 끄고 뺄 일인지 판정 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>
