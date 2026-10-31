@@ -1009,6 +1009,7 @@ export const figures = {
   'mini-vs-laptop-flow': miniVsLaptopFlow,
   'bottom-intake-path': bottomIntakePath,
   'case-dust-factors': caseDustFactors,
+  'used-laptop-checkable': usedLaptopCheckable,
 };
 
 /**
@@ -6405,6 +6406,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function usedLaptopCheckable() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '중고 노트북 — 갈리는 건 상태가 아니라 "확인이 되느냐"', { weight: 600, size: 12.5 });
+  const col = (x, head, sub, items, c) => {
+    let o = rect(x, 42, 284, 30, c, { r: 6 });
+    o += t(x + 14, 62, head, { size: 9.6, weight: 700, fill: '#fff' });
+    o += t(x + 270, 62, sub, { size: 8, fill: '#fff', anchor: 'end' });
+    items.forEach(([a, how], i) => {
+      const y = 80 + i * 30;
+      o += rect(x, y, 284, 26, COLOR.soft, { r: 4, stroke: COLOR.line });
+      o += t(x + 12, y + 17, a, { size: 9, weight: 700 });
+      o += t(x + 272, y + 17, how, { size: 8, fill: COLOR.mute, anchor: 'end' });
+    });
+    return o;
+  };
+  b += col(24, '✅ 숫자로 재짐', '받자마자 5분', [['배터리 잔여 용량', '배터리 리포트'], ['SSD 닳은 정도', 'Wear 값'], ['램 용량·슬롯', '작업 관리자'], ['VRAM', '작업 관리자']], COLOR.fit);
+  b += col(332, '❌ 못 잼 — 진짜 리스크', '짧게 써선 안 드러남', [['냉각 상태(먼지·서멀)', '긴 부하에서만 드러남'], ['침수·수리 이력', '시리얼로 보증 조회'], ['배터리 팽창', '바닥·터치패드 들뜸'], ['힌지·키보드', '직접 만져 봄']], COLOR.over);
+  b += rect(24, 210, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 228, '오른쪽이 크게 걸리는 용도(로컬 LLM처럼 오래 돌리는 작업)면 중고는 신중하게', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '중고 노트북 확인 가능 항목',
+    W, 246, b,
+    '배터리 잔여 용량, SSD 마모, 램 용량과 슬롯, VRAM은 명령이나 작업 관리자로 받자마자 숫자로 확인됩니다. 냉각 상태, 침수·수리 이력, 배터리 팽창, 힌지·키보드 마모는 짧게 써서는 드러나지 않아 진짜 리스크로 남고, 오래 돌리는 작업이 목적이면 이쪽이 크게 걸립니다.'
   );
 }
 
