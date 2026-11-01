@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개","description":"슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-09-28","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-ram-upgrade.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개","description":"슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.","datePublished":"2026-08-18","dateModified":"2026-11-02","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/laptop-ram-upgrade.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개","item":"https://specfit.kr/posts/laptop-ram-upgrade.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개</h1>
     <p class="post-meta">
       <time datetime="2026-08-18">2026년 8월 18일</time>
-      <span class="updated">· 2026년 9월 28일 갱신</span>
+      <span class="updated">· 2026년 11월 2일 갱신</span>
     </p>
   </header>
 
@@ -142,6 +142,13 @@ BIOS 에서 켜야 하는데, 노트북에는 그 설정이 대개 없습니다 
 <p>같은 32GB인데 <strong>대역폭이 두 배 차이</strong>입니다.
 계산식은 <code>클럭 × 8바이트 × 장수</code> 이고, DDR5-5600 기준입니다
 — <a href="/posts/local-llm-without-gpu.html">CPU로 로컬 LLM을 돌릴 때</a> 쓴 것과 같은 식입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 220" width="640" height="220" role="img" aria-label="램 장수와 대역폭">
+<title>램 장수와 대역폭</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">같은 32GB, 장수에 따라 길이 하나냐 둘이냐 (DDR5-5600 기준)</text><text x="24" y="66" fill="var(--fg)" font-size="9.6" font-weight="700">32GB × 1장</text><text x="24" y="81" fill="var(--fg-muted)" font-size="8">길 하나</text><rect x="140" y="56" width="16" height="26" fill="var(--fg-muted)" rx="2"/><rect x="200" y="56" width="165" height="26" fill="var(--fig-over)" rx="4"/><text x="375" y="74" fill="var(--fig-over)" font-size="9.4" font-weight="700">44.8 GB/s</text><text x="24" y="116" fill="var(--fg)" font-size="9.6" font-weight="700">16GB × 2장</text><text x="24" y="131" fill="var(--fg-muted)" font-size="8">길 둘 — 동시에 읽음</text><rect x="140" y="106" width="16" height="26" fill="var(--fg-muted)" rx="2"/><rect x="162" y="106" width="16" height="26" fill="var(--fg-muted)" rx="2"/><rect x="200" y="106" width="330" height="26" fill="var(--fig-fit)" rx="4"/><text x="540" y="124" fill="var(--fig-fit)" font-size="9.4" font-weight="700">89.6 GB/s</text><text x="140" y="158" fill="var(--fg-muted)" font-size="8">↑ 꽂힌 램 장수</text><rect x="24" y="172" width="592" height="40" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="190" fill="var(--fg)" font-size="8.8" font-weight="700">크게 체감: 내장 그래픽 화면 출력 · CPU로 AI 모델 돌리기 · 빌드</text><text x="36" y="205" fill="var(--fg-muted)" font-size="8.4">거의 없음: 에디터·브라우저 같은 가벼운 작업</text>
+</svg>
+<figcaption>같은 32GB라도 한 장이면 길이 하나라 대역폭이 44.8GB/s이고, 16GB 두 장으로 나누면 동시에 읽어 89.6GB/s로 두 배가 됩니다(DDR5-5600, 클럭 × 8바이트 × 장수). 내장 그래픽이나 CPU로 AI 모델을 돌릴 때 크게 체감되고, 가벼운 작업에서는 차이가 거의 없습니다.</figcaption>
+</figure>
 <h3 id="어디서-체감되나">어디서 체감되나</h3>
 <p>전부는 아닙니다. <strong>메모리를 얼마나 자주 읽느냐</strong>에 따라 갈립니다.</p>
 <div class="table-wrap"><table>

@@ -1011,6 +1011,7 @@ export const figures = {
   'case-dust-factors': caseDustFactors,
   'used-laptop-checkable': usedLaptopCheckable,
   'stock-fan-decision': stockFanDecision,
+  'laptop-ram-sticks': laptopRamSticks,
 };
 
 /**
@@ -6407,6 +6408,32 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function laptopRamSticks() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '같은 32GB, 장수에 따라 길이 하나냐 둘이냐 (DDR5-5600 기준)', { weight: 600, size: 12.5 });
+  const x0 = 200, max = 89.6, full = 330;
+  const row = (y, label, sub, v, c, lanes) => {
+    let o = t(24, y + 16, label, { size: 9.6, weight: 700 });
+    o += t(24, y + 31, sub, { size: 8, fill: COLOR.mute });
+    for (let i = 0; i < lanes; i++) o += rect(140 + i * 22, y + 6, 16, 26, COLOR.mute, { r: 2 });
+    o += rect(x0, y + 6, full * v / max, 26, c, { r: 4 });
+    o += t(x0 + full * v / max + 10, y + 24, v.toFixed(1) + ' GB/s', { size: 9.4, weight: 700, fill: c });
+    return o;
+  };
+  b += row(50, '32GB × 1장', '길 하나', 44.8, COLOR.over, 1);
+  b += row(100, '16GB × 2장', '길 둘 — 동시에 읽음', 89.6, COLOR.fit, 2);
+  b += t(140, 158, '↑ 꽂힌 램 장수', { size: 8, fill: COLOR.mute });
+  b += rect(24, 172, 592, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 190, '크게 체감: 내장 그래픽 화면 출력 · CPU로 AI 모델 돌리기 · 빌드', { size: 8.8, weight: 700, fill: COLOR.text });
+  b += t(36, 205, '거의 없음: 에디터·브라우저 같은 가벼운 작업', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '램 장수와 대역폭',
+    W, 220, b,
+    '같은 32GB라도 한 장이면 길이 하나라 대역폭이 44.8GB/s이고, 16GB 두 장으로 나누면 동시에 읽어 89.6GB/s로 두 배가 됩니다(DDR5-5600, 클럭 × 8바이트 × 장수). 내장 그래픽이나 CPU로 AI 모델을 돌릴 때 크게 체감되고, 가벼운 작업에서는 차이가 거의 없습니다.'
   );
 }
 

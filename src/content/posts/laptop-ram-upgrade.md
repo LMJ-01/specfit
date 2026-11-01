@@ -2,7 +2,7 @@
 title: 노트북 램 교체 — 슬롯이 있어도 확인할 것이 세 개
 description: 슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도·꽂는 자리를 틀리면 안 들어가거나 느려집니다. 한 장만 꽂았을 때 대역폭이 반으로 줄어드는 이유까지 계산해서 정리했습니다.
 date: 2026-08-18
-updated: 2026-09-28
+updated: 2026-11-02
 category: memory
 tags: [노트북램, 램교체, SO-DIMM, 듀얼채널, 개발용노트북]
 affiliate: true
@@ -28,6 +28,8 @@ affiliate: true
     ⚠️ 데스크톱용 ram 링크와 절대 바꿔 걸지 마세요 — 서로 안 꽂힙니다.
   - {{BUY:laptop}} 은 "슬롯이 없어서 못 늘리는" 분기에 놓았습니다.
     note 가 "램 32GB · 슬롯 유무" 라 그 자리와 맞습니다. 위치를 옮기지 마세요.
+  - 도해(2026-11-02): laptop-ram-sticks — 32GB×1(44.8) vs 16GB×2(89.6) GB/s
+    막대, 본문 표 수치 그대로(DDR5-5600 기준 명시).
 -->
 
 [노트북 SSD는 대개 바꿀 수 있다](/posts/laptop-ssd-upgrade.html)고 적었습니다.
@@ -122,6 +124,8 @@ affiliate: true
 같은 32GB인데 **대역폭이 두 배 차이**입니다.
 계산식은 `클럭 × 8바이트 × 장수` 이고, DDR5-5600 기준입니다
 — [CPU로 로컬 LLM을 돌릴 때](/posts/local-llm-without-gpu.html) 쓴 것과 같은 식입니다.
+
+{{FIG:laptop-ram-sticks}}
 
 ### 어디서 체감되나
 
