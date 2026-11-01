@@ -1010,6 +1010,7 @@ export const figures = {
   'bottom-intake-path': bottomIntakePath,
   'case-dust-factors': caseDustFactors,
   'used-laptop-checkable': usedLaptopCheckable,
+  'stock-fan-decision': stockFanDecision,
 };
 
 /**
@@ -6406,6 +6407,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function stockFanDecision() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '케이스 기본 팬 바꿀까 — 불만이 "소리"냐 "온도"냐로 갈린다', { weight: 600, size: 12.5 });
+  b += rect(24, 42, 592, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 62, '먼저 기본 팬으로 조립해 평소·게임 중 소리와 온도를 본다 — 불만 없으면 그대로', { size: 9, weight: 700 });
+  const lane = (x, head, c, steps) => {
+    let o = rect(x, 86, 284, 30, c, { r: 6 });
+    o += t(x + 14, 106, head, { size: 9.6, weight: 700, fill: '#fff' });
+    steps.forEach((st, i) => {
+      const y = 126 + i * 36;
+      o += rect(x, y, 284, 28, COLOR.soft, { r: 4, stroke: COLOR.line });
+      o += t(x + 12, y + 18, (i + 1) + '. ' + st, { size: 8.8, weight: 700 });
+      if (i < steps.length - 1) o += `<path d="M${x + 20} ${y + 28} L${x + 20} ${y + 36}" stroke="${COLOR.mute}" stroke-width="1.4"/>`;
+    });
+    return o;
+  };
+  b += lane(24, '소리가 거슬린다', COLOR.fit, ['팬 회전수 곡선부터 낮추기 (바이오스)', '그래도면 교체 — 큰 팬·4핀(PWM)', '웅웅 떨림이면 팬보다 공진 쪽']);
+  b += lane(332, '온도가 높다', COLOR.over, ['옆판 열고 온도 비교 (5분 진단)', '뚝 떨어지면 기류: 방향·먼지·흡기', '그다음에 팬 교체·추가']);
+  b += rect(24, 238, 592, 26, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 255, '교체할 땐: 자리별 지원 크기 · 4핀 여부 · 보드 단자 수 · 조명 규격', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '케이스 기본 팬 교체 판단',
+    W, 272, b,
+    '기본 팬으로 먼저 써 보고 불만이 없으면 그대로 둡니다. 소리가 거슬리면 팬 회전수 곡선부터 낮추고 그래도 남으면 큰 팬이나 4핀 팬으로 교체하는 순서이고, 온도가 높으면 옆판을 열어 기류 문제인지부터 가린 뒤 방향·먼지·흡기를 손보고 그다음에 팬을 바꿉니다.'
   );
 }
 
