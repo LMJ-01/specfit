@@ -1013,6 +1013,7 @@ export const figures = {
   'stock-fan-decision': stockFanDecision,
   'laptop-ram-sticks': laptopRamSticks,
   'thermal-pad-flow': thermalPadFlow,
+  'ram-64-decision': ram64Decision,
 };
 
 /**
@@ -6409,6 +6410,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function ram64Decision() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '램 64GB로 올릴까 — 사용률이 아니라 "신호"와 "작업"이 정한다', { weight: 600, size: 12.5 });
+  const q = (y, txt) => rect(24, y, 330, 36, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 22, txt, { size: 9, weight: 700 });
+  const stop = (y, lab, txt, c) => `<path d="M358 ${y + 18} L376 ${y + 18}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M371 ${y + 14} L376 ${y + 18} L371 ${y + 22}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(367, y + 11, lab, { size: 8, fill: COLOR.mute, anchor: 'middle' }) + rect(382, y, 234, 36, c, { r: 4 }) + t(394, y + 22, txt, { size: 8.8, weight: 700, fill: '#fff' });
+  const down = (y, lab) => `<path d="M60 ${y} L60 ${y + 14}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M56 ${y + 9} L60 ${y + 14} L64 ${y + 9}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(70, y + 11, lab, { size: 8, fill: COLOR.mute });
+  b += q(44, '① 작업을 벌려 놓고 압박 신호가 보이나?');
+  b += stop(44, '아니오', '32GB 그대로 — 올려도 안 빨라짐', COLOR.fit);
+  b += down(82, '예 (커밋 초과 · 압축 수 GB · 전환 시 멈칫)');
+  b += q(98, '② 용량이 아니라 배분 문제(WSL2 등)인가?');
+  b += stop(98, '예', '배분부터 조정', COLOR.mute);
+  b += down(136, '아니오');
+  b += q(152, '③ 램을 크게 잡는 작업(VM·CPU 추론·영상)인가?');
+  b += stop(152, '아니오', '원인 재확인 — 탭·도커는 대개 32GB 안', COLOR.mute);
+  b += down(190, '예');
+  b += rect(24, 206, 592, 36, COLOR.over, { r: 4 });
+  b += t(36, 228, '64GB 자리 — 2슬롯이면 32GB×2 교체 · 노트북은 슬롯(온보드 여부)부터 확인', { size: 9, weight: 700, fill: '#fff' });
+  return figure(
+    '램 64GB 업그레이드 판단 순서',
+    W, 252, b,
+    '램 사용률이 높은 것만으로는 판단하지 않습니다. 작업을 평소처럼 벌려 놓고 커밋 초과·압축 메모리·전환 시 멈칫 같은 압박 신호가 있는지 보고, 그 원인이 WSL2 같은 배분 문제가 아닌지 가립니다. 가상머신·CPU 추론·영상처럼 램을 크게 잡는 작업일 때 64GB가 값을 하고, 2슬롯이면 32GB×2 교체가 깔끔합니다.'
   );
 }
 
