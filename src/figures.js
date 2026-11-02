@@ -1012,6 +1012,7 @@ export const figures = {
   'used-laptop-checkable': usedLaptopCheckable,
   'stock-fan-decision': stockFanDecision,
   'laptop-ram-sticks': laptopRamSticks,
+  'thermal-pad-flow': thermalPadFlow,
 };
 
 /**
@@ -6408,6 +6409,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function thermalPadFlow() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '그래픽카드 써멀패드 교체 — 해야 할 카드는 세 관문을 통과한 카드뿐', { weight: 600, size: 12.5 });
+  const q = (y, txt) => rect(24, y, 330, 36, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 22, txt, { size: 9, weight: 700 });
+  const stop = (y, lab, txt, c) => `<path d="M358 ${y + 18} L376 ${y + 18}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M371 ${y + 14} L376 ${y + 18} L371 ${y + 22}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(367, y + 11, lab, { size: 8, fill: COLOR.mute, anchor: 'middle' }) + rect(382, y, 234, 36, c, { r: 4 }) + t(394, y + 22, txt, { size: 8.8, weight: 700, fill: '#fff' });
+  const down = (y, lab) => `<path d="M60 ${y} L60 ${y + 14}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M56 ${y + 9} L60 ${y + 14} L64 ${y + 9}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(70, y + 11, lab, { size: 8, fill: COLOR.mute });
+  b += q(44, '① 부하 중 메모리 온도가 계속 높고, 전보다 올랐나?');
+  b += stop(44, '아니오', '그대로 — 분해할 이유 없음', COLOR.fit);
+  b += down(82, '예');
+  b += q(98, '② 먼지·기류·팬 커브부터 손봤나?');
+  b += stop(98, '아니오', '그것부터 — 공짜인 단계', COLOR.mute);
+  b += down(136, '예');
+  b += q(152, '③ 보증이 남아 있나?');
+  b += stop(152, '예', 'AS·점검 먼저 — 분해는 불리할 수 있음', COLOR.mute);
+  b += down(190, '아니오');
+  b += rect(24, 206, 592, 36, COLOR.over, { r: 4 });
+  b += t(36, 228, '패드 교체 고려 — 자리마다 두께 확인 필수 · 자신 없으면 점검 맡길 때 함께', { size: 9, weight: 700, fill: '#fff' });
+  return figure(
+    '써멀패드 교체 판단 순서',
+    W, 252, b,
+    '부하 중 메모리 온도가 계속 높고 전보다 올랐는지부터 봅니다. 그렇다면 먼지 청소·기류·팬 커브를 먼저 손보고, 그래도 남았을 때 보증이 남아 있으면 AS나 점검을 먼저 받습니다. 세 관문을 다 지난 카드만 써멀패드 교체를 고려하고, 자리마다 다른 패드 두께를 맞추는 것이 관건입니다.'
   );
 }
 

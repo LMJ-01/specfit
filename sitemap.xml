@@ -13,6 +13,7 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/gpu-thermal-pad.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/case-stock-fan.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/bottom-intake-fan.html</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mesh-case-dust.html</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
@@ -28,7 +29,7 @@
   <url><loc>https://specfit.kr/posts/fan-rgb-one-dead.html</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-one-fan-dead.html</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/spacebar-rattle.html</loc><lastmod>2026-10-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/gpu-backplate-hot.html</loc><lastmod>2026-10-03</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/gpu-backplate-hot.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/keycap-shine.html</loc><lastmod>2026-10-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-palmrest-wear.html</loc><lastmod>2026-10-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-wobble-typing.html</loc><lastmod>2026-10-03</lastmod><priority>0.8</priority></url>
@@ -201,7 +202,7 @@
   <url><loc>https://specfit.kr/posts/external-ssd-dev.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-screen-size.html</loc><lastmod>2026-10-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-xmp-expo.html</loc><lastmod>2026-10-20</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/used-gpu-check.html</loc><lastmod>2026-10-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/used-gpu-check.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/used-laptop-dev.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/amd-radeon-local-llm.html</loc><lastmod>2026-08-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-psu-wattage.html</loc><lastmod>2026-10-16</lastmod><priority>0.8</priority></url>
