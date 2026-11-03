@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","description":"작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-09-03","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/wsl2-memory-limit.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","description":"작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-11-03","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/wsl2-memory-limit.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"WSL2가 램을 다 먹을 때 — Vmmem 잡는 법","item":"https://specfit.kr/posts/wsl2-memory-limit.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vmmem을 그냥 강제 종료하면 안 되나요","acceptedAnswer":{"@type":"Answer","text":"작업 관리자에서 끄면 WSL과 도커가 통째로 내려갑니다. 저장 안 한 작업은 날아갑니다. 정상적인 방법은 wsl --shutdown 입니다."}},{"@type":"Question","name":".wslconfig 를 만들었는데 적용이 안 됩니다","acceptedAnswer":{"@type":"Answer","text":"세 가지를 확인하세요. 위치가 C:\\Users\\사용자명\\.wslconfig 가 맞는지 (다른 폴더면 안 읽습니다) 파일 이름이 .wslconfig.txt 로 저장되지 않았는지 (메모장이 자주 그럽니다) wsl --shutdown 을 했는지"}},{"@type":"Question","name":"WSL 안에서 free -h 를 보면 이미 꽉 차 있는데요","acceptedAnswer":{"@type":"Answer","text":"리눅스는 남는 램을 캐시로 채워둡니다. available 값을 보세요. 그게 넉넉하면 실제로는 여유가 있는 것입니다."}},{"@type":"Question","name":"도커 데스크톱에도 메모리 설정이 있던데요","acceptedAnswer":{"@type":"Answer","text":"윈도우에서 도커가 WSL2 위에서 돌 때는 .wslconfig 쪽이 상위 설정입니다. 여기서 정한 상한을 도커가 넘을 수 없습니다."}},{"@type":"Question","name":"processors 는 얼마로 하나요","acceptedAnswer":{"@type":"Answer","text":"기본값(전체 코어)으로 두셔도 대개 문제없습니다. 빌드 중에 윈도우가 버벅이면 그때 한두 개 줄여보세요."}},{"@type":"Question","name":"로컬 LLM에 영향이 있나요","acceptedAnswer":{"@type":"Answer","text":"GPU로 돌린다면 없습니다. 로컬 LLM은 VRAM을 쓰고, WSL2는 시스템 램을 씁니다. 다만 CPU로 돌린다면 같은 램을 나눠 쓰게 되니 영향이 있습니다."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>WSL2가 램을 다 먹을 때 — Vmmem 잡는 법</h1>
     <p class="post-meta">
       <time datetime="2026-08-16">2026년 8월 16일</time>
-      <span class="updated">· 2026년 9월 3일 갱신</span>
+      <span class="updated">· 2026년 11월 3일 갱신</span>
     </p>
   </header>
 
@@ -88,6 +88,13 @@
 <tr><td>껐다 켜야 하나</td><td>네. <code>wsl --shutdown</code> 한 번</td></tr>
 </tbody>
 </table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 196" width="640" height="196" role="img" aria-label="WSL2 메모리 상한과 램 나눠 쓰기">
+<title>WSL2 메모리 상한과 램 나눠 쓰기</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">.wslconfig는 램을 늘리지 않는다 — 칸막이를 옮길 뿐 (램 16GB 예)</text><text x="24" y="62" fill="var(--fg)" font-size="9.6" font-weight="700">기본값</text><text x="24" y="77" fill="var(--fg-muted)" font-size="8">16GB에선 절반</text><rect x="150" y="50" width="233" height="30" fill="var(--fig-over)" rx="4"/><text x="162" y="70" fill="#fff" font-size="9" font-weight="700">WSL2·도커 상한 8GB</text><rect x="385" y="50" width="231" height="30" fill="var(--fig-fit)" rx="4"/><text x="397" y="70" fill="#fff" font-size="9" font-weight="700">윈도우·브라우저·IDE 쪽 8GB</text><text x="24" y="112" fill="var(--fg)" font-size="9.6" font-weight="700">memory=6GB</text><text x="24" y="127" fill="var(--fg-muted)" font-size="8">.wslconfig로 제한</text><rect x="150" y="100" width="174.75" height="30" fill="var(--fig-over)" rx="4"/><text x="162" y="120" fill="#fff" font-size="9" font-weight="700">WSL2·도커 상한 6GB</text><rect x="326.75" y="100" width="289.25" height="30" fill="var(--fig-fit)" rx="4"/><text x="338.75" y="120" fill="#fff" font-size="9" font-weight="700">윈도우·브라우저·IDE 쪽 10GB</text><path d="M383 84 L324.75 100" stroke="var(--fg-muted)" stroke-width="1.4" stroke-dasharray="3 3"/><text x="389" y="92" fill="var(--fg-muted)" font-size="8">칸막이만 이동 — 합은 그대로 16GB</text><rect x="24" y="148" width="592" height="40" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="166" fill="var(--fg)" font-size="8.6" font-weight="700">상한은 "여기까지만" — 늘 그만큼 쓰는 게 아님 · 적용은 저장 후 wsl --shutdown(도커도 같이 꺼짐)</text><text x="36" y="181" fill="var(--fg-muted)" font-size="8.4">양쪽 다 모자라면 조절로는 안 풀림 → 램 용량 판정으로</text>
+</svg>
+<figcaption>램 16GB에서 WSL2는 기본값으로 절반인 8GB까지 쓸 수 있고, .wslconfig에서 memory=6GB로 제한하면 윈도우 쪽이 10GB로 늘어납니다. 전체 램이 늘어나는 것이 아니라 나눠 쓰는 칸막이가 옮겨지는 것이라, 양쪽 다 모자라면 설정이 아니라 램 용량을 판단할 차례입니다.</figcaption>
+</figure>
 <h2 id="1-vmmem이-뭔가">1. Vmmem이 뭔가</h2>
 <p><strong>WSL2는 윈도우 안에서 진짜 리눅스를 돌립니다.</strong> 예전 방식처럼 흉내만 내는 게 아니라, 가벼운 가상 환경 안에서 리눅스 커널이 실제로 돌아갑니다.</p>
 <p><code>Vmmem</code>은 <strong>그 가상 환경이 쓰는 램</strong>을 윈도우가 한 덩어리로 묶어 보여주는 것입니다.</p>

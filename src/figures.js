@@ -1014,6 +1014,7 @@ export const figures = {
   'laptop-ram-sticks': laptopRamSticks,
   'thermal-pad-flow': thermalPadFlow,
   'ram-64-decision': ram64Decision,
+  'wsl-ram-split': wslRamSplit,
 };
 
 /**
@@ -6410,6 +6411,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function wslRamSplit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '.wslconfig는 램을 늘리지 않는다 — 칸막이를 옮길 뿐 (램 16GB 예)', { weight: 600, size: 12.5 });
+  const x0 = 150, full = 466, unit = full / 16;
+  const row = (y, label, sub, wsl) => {
+    let o = t(24, y + 16, label, { size: 9.6, weight: 700 });
+    o += t(24, y + 31, sub, { size: 8, fill: COLOR.mute });
+    o += rect(x0, y + 4, unit * wsl, 30, COLOR.over, { r: 4 });
+    o += t(x0 + 12, y + 24, 'WSL2·도커 상한 ' + wsl + 'GB', { size: 9, weight: 700, fill: '#fff' });
+    o += rect(x0 + unit * wsl + 2, y + 4, unit * (16 - wsl) - 2, 30, COLOR.fit, { r: 4 });
+    o += t(x0 + unit * wsl + 14, y + 24, '윈도우·브라우저·IDE 쪽 ' + (16 - wsl) + 'GB', { size: 9, weight: 700, fill: '#fff' });
+    return o;
+  };
+  b += row(46, '기본값', '16GB에선 절반', 8);
+  b += row(96, 'memory=6GB', '.wslconfig로 제한', 6);
+  b += `<path d="M${x0 + unit * 8} 84 L${x0 + unit * 6} 100" stroke="${COLOR.mute}" stroke-width="1.4" stroke-dasharray="3 3"/>`;
+  b += t(x0 + unit * 8 + 6, 92, '칸막이만 이동 — 합은 그대로 16GB', { size: 8, fill: COLOR.mute });
+  b += rect(24, 148, 592, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 166, '상한은 "여기까지만" — 늘 그만큼 쓰는 게 아님 · 적용은 저장 후 wsl --shutdown(도커도 같이 꺼짐)', { size: 8.6, weight: 700, fill: COLOR.text });
+  b += t(36, 181, '양쪽 다 모자라면 조절로는 안 풀림 → 램 용량 판정으로', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    'WSL2 메모리 상한과 램 나눠 쓰기',
+    W, 196, b,
+    '램 16GB에서 WSL2는 기본값으로 절반인 8GB까지 쓸 수 있고, .wslconfig에서 memory=6GB로 제한하면 윈도우 쪽이 10GB로 늘어납니다. 전체 램이 늘어나는 것이 아니라 나눠 쓰는 칸막이가 옮겨지는 것이라, 양쪽 다 모자라면 설정이 아니라 램 용량을 판단할 차례입니다.'
   );
 }
 

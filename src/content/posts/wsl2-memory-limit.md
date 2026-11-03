@@ -2,7 +2,7 @@
 title: WSL2가 램을 다 먹을 때 — Vmmem 잡는 법
 description: 작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2입니다. 기본값이 얼마인지, .wslconfig로 어떻게 제한하는지 정리했습니다.
 date: 2026-08-16
-updated: 2026-09-03
+updated: 2026-11-03
 category: laptop
 tags: [WSL2, Vmmem, 윈도우, 개발환경, 램]
 affiliate: true
@@ -18,6 +18,8 @@ affiliate: true
   - .wslconfig 경로: %USERPROFILE%\.wslconfig (C:\Users\사용자명\.wslconfig)
   - 적용에 wsl --shutdown 필요. 도커 데스크톱을 쓰면 그것도 재시작됩니다.
     본문에 경고를 넣었습니다.
+  - 도해(2026-11-03): wsl-ram-split — 본문 4절의 16GB 예(기본 8 → 6GB 제한 시
+    윈도우 쪽 10GB) 그대로. 16GB에서 8GB는 "50%" 기준만으로도 성립하는 값.
   - docker-laptop-spec.md 와 수치가 겹칩니다. 한쪽을 고치면 양쪽을 맞추세요.
 -->
 
@@ -40,6 +42,8 @@ Vmmem          9.2GB
 | 줄일 수 있나 | 됩니다. `.wslconfig` 파일 하나 만들면 됩니다 |
 | 얼마로 잡나 | 램 16GB면 **4~6GB**, 32GB면 8~12GB |
 | 껐다 켜야 하나 | 네. `wsl --shutdown` 한 번 |
+
+{{FIG:wsl-ram-split}}
 
 ## 1. Vmmem이 뭔가
 
