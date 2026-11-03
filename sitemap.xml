@@ -13,6 +13,7 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/usb-file-too-large.html</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/gpu-thermal-pad.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/case-stock-fan.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/bottom-intake-fan.html</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
@@ -51,7 +52,7 @@
   <url><loc>https://specfit.kr/posts/mic-echo.html</loc><lastmod>2026-10-19</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-cursor-moving.html</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-not-detected.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/usb-safe-removal.html</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/usb-safe-removal.html</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-ping-spike.html</loc><lastmod>2026-09-27</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/internet-random-disconnect.html</loc><lastmod>2026-10-03</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-144hz-not-working.html</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
@@ -100,7 +101,7 @@
   <url><loc>https://specfit.kr/posts/pc-fan-loud-at-boot.html</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-heats-room.html</loc><lastmod>2026-09-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-moving-day.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/usb-not-showing.html</loc><lastmod>2026-10-21</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/usb-not-showing.html</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/usb-port-charging.html</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/app-no-sound.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/bluetooth-earbuds-stutter.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>

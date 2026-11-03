@@ -1015,6 +1015,7 @@ export const figures = {
   'thermal-pad-flow': thermalPadFlow,
   'ram-64-decision': ram64Decision,
   'wsl-ram-split': wslRamSplit,
+  'usb-fs-choice': usbFsChoice,
 };
 
 /**
@@ -6411,6 +6412,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function usbFsChoice() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '"파일이 너무 큽니다" — 용량이 아니라 형식(FAT32)의 한 파일 상한', { weight: 600, size: 12.5 });
+  b += rect(24, 40, 592, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 60, '확인: USB 우클릭 → 속성 → 파일 시스템 · FAT32면 파일 한 개 약 4GB까지 (빈 64GB USB도 같음)', { size: 8.8, weight: 700 });
+  b += t(24, 92, '이 USB를 어디에 꽂나?', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, verdict, note, c) => {
+    let o = rect(x, 102, 188, 30, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 121, head, { size: 8.8, weight: 700 });
+    o += `<path d="M${x + 94} 132 L${x + 94} 146" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 90} 141 L${x + 94} 146 L${x + 98} 141" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 150, 188, 34, c, { r: 4 });
+    o += t(x + 12, 172, verdict, { size: 9.6, weight: 700, fill: '#fff' });
+    o += t(x + 4, 200, note, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += card(24, '윈도우 + 맥', 'exFAT', '양쪽 읽고 쓰기 · 큰 파일 용도에 무난', COLOR.fit);
+  b += card(226, '윈도우 컴퓨터끼리만', 'NTFS (또는 exFAT)', '맥에선 기본 상태로 읽기만인 경우 많음', COLOR.fit);
+  b += card(428, 'TV·차량·오래된 기기', '기기 지원 형식 확인', 'FAT32만 읽으면 → 분할 압축으로 쪼개기', COLOR.mute);
+  b += rect(24, 214, 592, 28, COLOR.over, { r: 4 });
+  b += t(36, 232, '포맷은 전부 지운다 → 자료부터 옮기기 · convert 명령은 FAT32→NTFS만, 되돌리려면 포맷', { size: 8.8, weight: 700, fill: '#fff' });
+  return figure(
+    'USB 파일 시스템 고르기',
+    W, 252, b,
+    '"파일이 너무 큽니다"는 USB가 FAT32 형식이라 파일 한 개가 약 4GB를 넘지 못해서 생깁니다. 윈도우와 맥을 오가면 exFAT, 윈도우 컴퓨터끼리만 쓰면 NTFS도 되고, TV·차량처럼 FAT32만 읽는 기기에 꽂는다면 형식을 바꾸지 말고 파일을 분할 압축으로 쪼갭니다. 포맷은 내용을 전부 지우니 자료부터 옮깁니다.'
   );
 }
 
