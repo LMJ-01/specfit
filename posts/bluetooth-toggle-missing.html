@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>블루투스 켜기 버튼이 사라졌을 때 — 버튼만 빠졌나, 장치가 숨었나, 원래 없나 | 스펙핏</title>
+<meta name="description" content="어제까지 쓰던 블루투스 켜기 버튼이 윈도우에서 사라졌습니다. 같은 증상처럼 보여도 버튼만 빠진 경우, 블루투스 장치가 꺼지거나 드라이버가 꼬인 경우, 애초에 블루투스가 없는 컴퓨터인 경우로 갈립니다. 어느 층인지 가르는 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/bluetooth-toggle-missing.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="블루투스 켜기 버튼이 사라졌을 때 — 버튼만 빠졌나, 장치가 숨었나, 원래 없나 | 스펙핏">
+<meta property="og:description" content="어제까지 쓰던 블루투스 켜기 버튼이 윈도우에서 사라졌습니다. 같은 증상처럼 보여도 버튼만 빠진 경우, 블루투스 장치가 꺼지거나 드라이버가 꼬인 경우, 애초에 블루투스가 없는 컴퓨터인 경우로 갈립니다. 어느 층인지 가르는 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/bluetooth-toggle-missing.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"블루투스 켜기 버튼이 사라졌을 때 — 버튼만 빠졌나, 장치가 숨었나, 원래 없나","description":"어제까지 쓰던 블루투스 켜기 버튼이 윈도우에서 사라졌습니다. 같은 증상처럼 보여도 버튼만 빠진 경우, 블루투스 장치가 꺼지거나 드라이버가 꼬인 경우, 애초에 블루투스가 없는 컴퓨터인 경우로 갈립니다. 어느 층인지 가르는 순서를 정리했습니다.","datePublished":"2026-11-05","dateModified":"2026-11-05","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/bluetooth-toggle-missing.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"블루투스 켜기 버튼이 사라졌을 때 — 버튼만 빠졌나, 장치가 숨었나, 원래 없나","item":"https://specfit.kr/posts/bluetooth-toggle-missing.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"버튼은 돌아왔는데 이어폰이 자꾸 끊겨요","acceptedAnswer":{"@type":"Answer","text":"그건 사라짐이 아니라 연결 품질의 문제라 다른 갈래입니다 — 블루투스 이어폰이 끊길 때의 순서를 보세요."}},{"@type":"Question","name":"블루투스 마우스·키보드만 안 잡혀요","acceptedAnswer":{"@type":"Answer","text":"블루투스 자체는 살아 있는데 특정 장치만 안 된다면, 그 장치의 페어링을 지우고 다시 연결하는 게 먼저입니다. 끊기거나 늦는 증상이라면 무선 마우스 끊김 판정이 맞습니다."}},{"@type":"Question","name":"절전에서 깨어난 뒤에만 사라져요","acceptedAnswer":{"@type":"Answer","text":"절전 복귀 때 장치가 제대로 깨어나지 않는 경우입니다. 장치 관리자에서 해당 블루투스 장치의 속성에 전원 관리 탭이 있다면 \"전원을 절약하기 위해 이 장치를 끌 수 있음\"을 꺼 보는 게 이 갈래의 확인법입니다. 소리 장치가 같은 식으로 사라지는 경우는 절전 후 소리가 안 날 때와 같은 구조입니다."}},{"@type":"Question","name":"와이파이도 같이 사라졌어요","acceptedAnswer":{"@type":"Answer","text":"노트북은 와이파이와 블루투스가 한 부품에 같이 들어 있는 경우가 많아서, 둘이 함께 사라졌다면 그 무선 부품 쪽 문제일 가능성이 큽니다 — 완전 종료와 제조사 드라이버가 같은 처방이고, 와이파이 쪽 순서는 노트북 와이파이가 안 잡힐 때에 있습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>블루투스 켜기 버튼이 사라졌을 때 — 버튼만 빠졌나, 장치가 숨었나, 원래 없나</h1>
+    <p class="post-meta">
+      <time datetime="2026-11-05">2026년 11월 5일</time>
+      <span class="updated">· 2026년 11월 5일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>이어폰을 연결하려고 빠른 설정을 열었는데 <strong>블루투스 버튼이 없습니다.</strong>
+설정 앱의 블루투스 화면에도 켜기 스위치가 안 보입니다. 어제까지 멀쩡히
+쓰던 기능이 통째로 사라진 것처럼 보입니다.</p>
+<p>검색하면 &quot;드라이버 다시 까세요&quot;가 먼저 나오지만, 사라진 게 <strong>무엇인지</strong>에
+따라 답이 다릅니다. 버튼만 빠졌을 수도, 블루투스 장치가 꺼지거나 꼬였을
+수도, 애초에 이 컴퓨터에 블루투스가 없을 수도 있습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>어디까지 사라졌나</th><th>판정</th><th>처방</th></tr></thead>
+<tbody>
+<tr><td>빠른 설정 버튼만 없음, 설정 앱엔 있음</td><td><strong>버튼만 빠짐</strong></td><td>빠른 설정 편집으로 다시 넣기</td></tr>
+<tr><td>설정에도 없음, 장치 관리자엔 있음(노란 표시 등)</td><td><strong>장치가 꼬임</strong></td><td>완전 종료 → 드라이버 → 서비스</td></tr>
+<tr><td>장치 관리자에도 Bluetooth 항목이 없음</td><td><strong>장치가 숨었거나 원래 없음</strong></td><td>완전 종료 → 무선 키·바이오스 → 동글·제조사</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 252" width="640" height="252" role="img" aria-label="블루투스 사라짐 판정 순서">
+<title>블루투스 사라짐 판정 순서</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">블루투스 버튼이 사라졌다 — 무엇이 사라졌는지 층으로 가른다</text><rect x="24" y="44" width="330" height="36" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="66" fill="var(--fg)" font-size="9" font-weight="700">① 설정 앱에는 블루투스 켜기 스위치가 있나?</text><path d="M358 62 L376 62" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M371 58 L376 62 L371 66" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><text x="367" y="55" fill="var(--fg-muted)" font-size="8" text-anchor="middle">예</text><rect x="382" y="44" width="234" height="36" fill="var(--fig-fit)" rx="4"/><text x="394" y="66" fill="#fff" font-size="8.6" font-weight="700">버튼만 빠짐 — Win+A → 연필로 다시 추가</text><path d="M60 82 L60 96" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M56 91 L60 96 L64 91" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><text x="70" y="93" fill="var(--fg-muted)" font-size="8">아니오</text><rect x="24" y="98" width="330" height="36" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="120" fill="var(--fg)" font-size="9" font-weight="700">② 장치 관리자에 Bluetooth 항목이 있나?</text><path d="M358 116 L376 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M371 112 L376 116 L371 120" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><text x="367" y="109" fill="var(--fg-muted)" font-size="8" text-anchor="middle">예</text><rect x="382" y="98" width="234" height="36" fill="var(--fg-muted)" rx="4"/><text x="394" y="120" fill="#fff" font-size="8.6" font-weight="700">장치 꼬임 — 완전 종료 → 드라이버 → 서비스</text><path d="M60 136 L60 150" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M56 145 L60 150 L64 145" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><text x="70" y="147" fill="var(--fg-muted)" font-size="8">아니오</text><rect x="24" y="152" width="330" height="36" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="174" fill="var(--fg)" font-size="9" font-weight="700">③ 어제까지는 됐나?</text><path d="M358 170 L376 170" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M371 166 L376 170 L371 174" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><text x="367" y="163" fill="var(--fg-muted)" font-size="8" text-anchor="middle">예</text><rect x="382" y="152" width="234" height="36" fill="var(--fg-muted)" rx="4"/><text x="394" y="174" fill="#fff" font-size="8.6" font-weight="700">숨음 — 완전 종료 → 비행기 모드·무선 키·동글</text><path d="M60 190 L60 204" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M56 199 L60 204 L64 199" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><text x="70" y="201" fill="var(--fg-muted)" font-size="8">아니오 (처음부터 없음)</text><rect x="24" y="206" width="592" height="36" fill="var(--fig-over)" rx="4"/><text x="36" y="228" fill="#fff" font-size="8.8" font-weight="700">블루투스가 없는 컴퓨터일 수 있음 — 데스크톱은 무선 기능 보드·무선 카드가 있어야 · USB 동글로 더하기</text>
+</svg>
+<figcaption>설정 앱에 블루투스 스위치가 있으면 빠른 설정의 버튼만 빠진 것이라 Win+A의 편집으로 다시 넣습니다. 설정에도 없지만 장치 관리자에 Bluetooth 항목이 있으면 Shift를 누른 채 종료하는 완전 종료, 제조사 드라이버, 서비스 순으로 봅니다. 장치 관리자에도 없는데 어제까지 됐다면 완전 종료와 비행기 모드·무선 키·동글을 확인하고, 처음부터 없었다면 블루투스가 없는 컴퓨터일 수 있습니다.</figcaption>
+</figure>
+<h2 id="1층-버튼만-빠졌는지">1층 — 버튼만 빠졌는지</h2>
+<p>가장 가벼운 경우부터 봅니다. <strong>Win + A</strong>로 빠른 설정을 열고 아래쪽 <strong>연필
+(편집)</strong> 아이콘을 눌러 보세요. 추가 목록에 블루투스가 있으면 버튼이 빠졌던
+것뿐입니다 — 다시 넣으면 끝입니다.</p>
+<p>설정 앱의 <strong>블루투스 및 장치</strong> 화면에 켜기 스위치가 보이는지도 같이 봅니다.
+여기 스위치가 있다면 블루투스 자체는 살아 있고, 보이는 자리만 문제였던
+겁니다.</p>
+<h2 id="2층-장치가-꼬였는지">2층 — 장치가 꼬였는지</h2>
+<p>설정에도 스위치가 없다면 장치 관리자를 엽니다(시작 버튼 우클릭 → 장치
+관리자). <strong>Bluetooth</strong> 항목을 펼쳐 봅니다.</p>
+<ul>
+<li><strong>항목은 있는데 노란 표시가 붙어 있다</strong> → 드라이버가 꼬인 상태입니다</li>
+<li><strong>기타 장치에 이름 모를 장치가 노란 표시로 있다</strong> → 드라이버가 아예
+안 잡힌 상태일 수 있습니다</li>
+</ul>
+<p>이때의 순서는 이렇습니다.</p>
+<ol>
+<li><strong>완전 종료.</strong> 그냥 다시 시작이 아니라, <strong>Shift를 누른 채 종료</strong>를 눌러
+완전히 껐다가 켭니다. 빠른 시작 기능 때문에 일반 종료로는 블루투스
+부품이 완전히 꺼지지 않는 경우가 있어서, 마이크로소프트 안내도 이 순서를
+먼저 권합니다</li>
+<li><strong>드라이버.</strong> 장치 관리자에서 해당 장치를 제거한 뒤 다시 시작하거나,
+<strong>노트북·메인보드 제조사 지원 페이지</strong>의 블루투스 드라이버를 설치합니다.
+큰 윈도우 업데이트 직후에 생긴 증상이라면 이 갈래일 가능성이 높습니다</li>
+<li><strong>서비스.</strong> 서비스 목록의 <strong>Bluetooth 지원 서비스</strong>가 중지돼 있지 않은지
+봅니다</li>
+</ol>
+<h2 id="3층-장치가-숨었거나-원래-없거나">3층 — 장치가 숨었거나, 원래 없거나</h2>
+<p>장치 관리자에 <strong>Bluetooth 항목 자체가 없다</strong>면 윈도우가 블루투스 부품을
+아예 못 보고 있는 상태입니다. 두 갈래로 나뉩니다.</p>
+<p><strong>어제까지 됐다면 — 꺼졌거나 숨은 쪽입니다.</strong></p>
+<ul>
+<li>위의 <strong>완전 종료</strong>를 먼저 합니다. 이 갈래에서 가장 자주 풀리는 단계입니다</li>
+<li>노트북이면 <strong>비행기 모드</strong>, 그리고 제품에 따라 있는 <strong>무선 끄기 키</strong>(Fn
+조합의 전파 아이콘)를 확인합니다</li>
+<li>바이오스 설정에서 무선·블루투스를 끄는 항목이 있는 제품도 있습니다</li>
+<li>블루투스가 <strong>USB 동글</strong>이었다면 동글이 빠졌거나, 앞면 포트·허브에서
+전원이 모자란 경우일 수 있습니다 —
+<a href="/posts/usb-hub-power.html">허브의 전력 나눠 쓰기</a></li>
+</ul>
+<p><strong>처음부터 없었다면 — 원래 없는 컴퓨터일 수 있습니다.</strong>
+데스크톱은 메인보드에 무선(와이파이·블루투스) 기능이 들어간 모델이거나
+무선 카드를 따로 꽂은 경우에만 블루투스가 있습니다. 그런 부품이 없으면
+장치 관리자에 항목이 없는 게 정상이고, <strong>USB 블루투스 동글</strong>이나 무선 카드를
+더하는 게 답입니다. 메인보드에 무선이 있는 모델이라면 뒷면의 <strong>안테나</strong>가
+연결돼 있는지도 봅니다 — 블루투스가 잡히긴 해도 끊김이 심해질 수 있습니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="버튼은-돌아왔는데-이어폰이-자꾸-끊겨요">버튼은 돌아왔는데 이어폰이 자꾸 끊겨요</h3>
+<p>그건 사라짐이 아니라 <strong>연결 품질</strong>의 문제라 다른 갈래입니다 —
+<a href="/posts/bluetooth-earbuds-stutter.html">블루투스 이어폰이 끊길 때</a>의 순서를 보세요.</p>
+<h3 id="블루투스-마우스키보드만-안-잡혀요">블루투스 마우스·키보드만 안 잡혀요</h3>
+<p>블루투스 자체는 살아 있는데 특정 장치만 안 된다면, 그 장치의 페어링을 지우고
+다시 연결하는 게 먼저입니다. 끊기거나 늦는 증상이라면
+<a href="/posts/wireless-mouse-lag.html">무선 마우스 끊김 판정</a>이 맞습니다.</p>
+<h3 id="절전에서-깨어난-뒤에만-사라져요">절전에서 깨어난 뒤에만 사라져요</h3>
+<p>절전 복귀 때 장치가 제대로 깨어나지 않는 경우입니다. 장치 관리자에서 해당
+블루투스 장치의 속성에 <strong>전원 관리</strong> 탭이 있다면 &quot;전원을 절약하기 위해 이
+장치를 끌 수 있음&quot;을 꺼 보는 게 이 갈래의 확인법입니다. 소리 장치가 같은
+식으로 사라지는 경우는 <a href="/posts/no-sound-after-sleep.html">절전 후 소리가 안 날 때</a>와
+같은 구조입니다.</p>
+<h3 id="와이파이도-같이-사라졌어요">와이파이도 같이 사라졌어요</h3>
+<p>노트북은 와이파이와 블루투스가 <strong>한 부품</strong>에 같이 들어 있는 경우가 많아서,
+둘이 함께 사라졌다면 그 무선 부품 쪽 문제일 가능성이 큽니다 — 완전 종료와
+제조사 드라이버가 같은 처방이고, 와이파이 쪽 순서는
+<a href="/posts/laptop-wifi-not-connecting.html">노트북 와이파이가 안 잡힐 때</a>에 있습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>사라진 게 <strong>버튼인지, 장치인지, 원래 없는 건지</strong>부터 가릅니다</li>
+<li>버튼만 빠졌다면 <strong>Win + A → 연필 → 다시 추가</strong></li>
+<li>장치 관리자에 노란 표시가 있으면 <strong>완전 종료(Shift + 종료) → 제조사 드라이버 → 서비스</strong></li>
+<li>장치 관리자에 항목이 없으면 <strong>완전 종료 → 비행기 모드·무선 키 → 동글</strong>,
+처음부터 없었다면 <strong>블루투스가 없는 컴퓨터</strong>일 수 있습니다</li>
+</ol>
+<p>블루투스의 이웃 판정들 — <a href="/posts/bluetooth-earbuds-stutter.html">블루투스 이어폰 끊김</a> ·
+<a href="/posts/wireless-mouse-lag.html">무선 마우스 끊김</a> ·
+<a href="/posts/laptop-wifi-not-connecting.html">노트북 와이파이 안 잡힘</a>과 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">블루투스</span> <span class="tag">블루투스사라짐</span> <span class="tag">윈도우블루투스</span> <span class="tag">블루투스드라이버</span> <span class="tag">장치관리자</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mouse-cursor-moving.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 커서가 저절로 움직일 때 — 해킹 걱정 전에 움직임의 모양부터 봅니다</span>
+        <span class="card-desc">손을 안 댔는데 커서가 떨리거나 저절로 움직이면 해킹부터 의심하게 되지만, 대부분의 범인은 훨씬 시시합니다. 잘게 떨리는지, 휙 건너뛰는지, 조종당하듯 움직이는지 — 움직임의 모양 세 갈래로 표면·센서, 무선, 이중 입력을 가르는 판정 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/game-ping-spike.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">인터넷은 멀쩡한데 게임 핑만 튈 때 — 속도가 아니라 변동의 문제입니다</span>
+        <span class="card-desc">속도 측정은 잘 나오고 핑 테스트도 낮은데 게임에서만 순간순간 핑이 튀는 증상은 축을 잘못 재고 있는 경우입니다. 반응 시간은 평균이 아니라 변동이 문제라서 — 튀는 정황(어느 게임·어느 시간·유선 여부)으로 컴퓨터 안, 집 안, 집 밖을 가르는 판정 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/internet-random-disconnect.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">인터넷이 툭 끊겼다 돌아올 때 — 범위와 층, 두 번만 자르면 됩니다</span>
+        <span class="card-desc">잘 되던 인터넷이 하루 몇 번씩 몇 초에서 몇 분간 끊겼다 저절로 돌아오는 순단은 원인 후보가 많아 미궁이 되기 쉽습니다. 끊기는 범위(내 기기만인가 온 집인가)와 끊긴 층(공유기 앞인가 뒤인가), 두 번의 가르기로 용의자를 좁히는 격리 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

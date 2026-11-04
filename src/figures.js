@@ -1018,6 +1018,7 @@ export const figures = {
   'usb-fs-choice': usbFsChoice,
   'laptop-ram-solder': laptopRamSolder,
   'battery-swell-steps': batterySwellSteps,
+  'bt-missing-layers': btMissingLayers,
 };
 
 /**
@@ -6414,6 +6415,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function btMissingLayers() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '블루투스 버튼이 사라졌다 — 무엇이 사라졌는지 층으로 가른다', { weight: 600, size: 12.5 });
+  const q = (y, txt) => rect(24, y, 330, 36, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 22, txt, { size: 9, weight: 700 });
+  const stop = (y, lab, txt, c) => `<path d="M358 ${y + 18} L376 ${y + 18}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M371 ${y + 14} L376 ${y + 18} L371 ${y + 22}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(367, y + 11, lab, { size: 8, fill: COLOR.mute, anchor: 'middle' }) + rect(382, y, 234, 36, c, { r: 4 }) + t(394, y + 22, txt, { size: 8.6, weight: 700, fill: '#fff' });
+  const down = (y, lab) => `<path d="M60 ${y} L60 ${y + 14}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M56 ${y + 9} L60 ${y + 14} L64 ${y + 9}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(70, y + 11, lab, { size: 8, fill: COLOR.mute });
+  b += q(44, '① 설정 앱에는 블루투스 켜기 스위치가 있나?');
+  b += stop(44, '예', '버튼만 빠짐 — Win+A → 연필로 다시 추가', COLOR.fit);
+  b += down(82, '아니오');
+  b += q(98, '② 장치 관리자에 Bluetooth 항목이 있나?');
+  b += stop(98, '예', '장치 꼬임 — 완전 종료 → 드라이버 → 서비스', COLOR.mute);
+  b += down(136, '아니오');
+  b += q(152, '③ 어제까지는 됐나?');
+  b += stop(152, '예', '숨음 — 완전 종료 → 비행기 모드·무선 키·동글', COLOR.mute);
+  b += down(190, '아니오 (처음부터 없음)');
+  b += rect(24, 206, 592, 36, COLOR.over, { r: 4 });
+  b += t(36, 228, '블루투스가 없는 컴퓨터일 수 있음 — 데스크톱은 무선 기능 보드·무선 카드가 있어야 · USB 동글로 더하기', { size: 8.8, weight: 700, fill: '#fff' });
+  return figure(
+    '블루투스 사라짐 판정 순서',
+    W, 252, b,
+    '설정 앱에 블루투스 스위치가 있으면 빠른 설정의 버튼만 빠진 것이라 Win+A의 편집으로 다시 넣습니다. 설정에도 없지만 장치 관리자에 Bluetooth 항목이 있으면 Shift를 누른 채 종료하는 완전 종료, 제조사 드라이버, 서비스 순으로 봅니다. 장치 관리자에도 없는데 어제까지 됐다면 완전 종료와 비행기 모드·무선 키·동글을 확인하고, 처음부터 없었다면 블루투스가 없는 컴퓨터일 수 있습니다.'
   );
 }
 

@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>블루투스 켜기 버튼이 사라졌을 때 — 버튼만 빠졌나, 장치가 숨었나, 원래 없나</title>
+    <link>https://specfit.kr/posts/bluetooth-toggle-missing.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/bluetooth-toggle-missing.html</guid>
+    <pubDate>Wed, 04 Nov 2026 15:00:00 GMT</pubDate>
+    <description>어제까지 쓰던 블루투스 켜기 버튼이 윈도우에서 사라졌습니다. 같은 증상처럼 보여도 버튼만 빠진 경우, 블루투스 장치가 꺼지거나 드라이버가 꼬인 경우, 애초에 블루투스가 없는 컴퓨터인 경우로 갈립니다. 어느 층인지 가르는 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>USB에 4GB 넘는 파일이 안 들어갈 때 — 용량이 아니라 "파일 시스템"의 규칙입니다</title>
     <link>https://specfit.kr/posts/usb-file-too-large.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/usb-file-too-large.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/monitor-wobble-typing.html</guid>
     <pubDate>Fri, 02 Oct 2026 15:00:00 GMT</pubDate>
     <description>키보드를 치거나 책상에 손을 올릴 때마다 모니터가 흔들리는 증상은 게시판 단골 질문입니다. 흔들리는 건 대개 모니터가 아니라 책상이고, 긴 스탠드나 암이 그 작은 떨림을 눈에 띄게 키우는 구조입니다. 책상 갈래와 거치 갈래를 손으로 가르는 법과 처방 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>노트북 손목 닿는 자리가 변색되고 벗겨지고 끈적일 때 — 세 가지는 서로 다른 일입니다</title>
-    <link>https://specfit.kr/posts/laptop-palmrest-wear.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/laptop-palmrest-wear.html</guid>
-    <pubDate>Fri, 02 Oct 2026 15:00:00 GMT</pubDate>
-    <description>노트북 키보드 아래 손목이 닿는 자리(팜레스트)가 거뭇하게 변색되거나, 코팅이 벗겨지거나, 만지면 끈적이는 증상은 게시판 단골 질문입니다. 셋은 같은 자리에 나타나지만 원인도 되돌릴 수 있는지도 다릅니다. 닦아 보는 1분 판정으로 가르고, 각각 무엇을 할 수 있는지 정리했습니다.</description>
   </item>
 </channel>
 </rss>
