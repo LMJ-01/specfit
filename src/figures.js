@@ -1017,6 +1017,7 @@ export const figures = {
   'wsl-ram-split': wslRamSplit,
   'usb-fs-choice': usbFsChoice,
   'laptop-ram-solder': laptopRamSolder,
+  'battery-swell-steps': batterySwellSteps,
 };
 
 /**
@@ -6413,6 +6414,32 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function batterySwellSteps() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '노트북 배터리 부풀음 — 판정은 하나, "계속 쓰지 않는다"', { weight: 600, size: 12.5 });
+  const lane = (x, head, c, steps) => {
+    let o = rect(x, 40, 188, 30, c, { r: 6 });
+    o += t(x + 12, 60, head, { size: 9.6, weight: 700, fill: '#fff' });
+    steps.forEach((st, i) => {
+      const y = 80 + i * 34;
+      o += rect(x, y, 188, 28, COLOR.soft, { r: 4, stroke: COLOR.line });
+      o += t(x + 10, y + 18, st, { size: 8.6, weight: 700 });
+    });
+    return o;
+  };
+  b += lane(24, '신호', COLOR.mute, ['바닥이 들떠 덜컹거림', '터치패드가 솟아 뻑뻑함', '바닥판·키보드 틈 벌어짐', '덮개가 끝까지 안 닫힘']);
+  b += lane(226, '지금 할 것', COLOR.fit, ['1. 저장 후 전원 끄기 (종료)', '2. 충전기 뽑기', '3. 서늘하고 타지 않는 곳에', '4. 서비스센터 문의']);
+  b += lane(428, '하지 말 것', COLOR.over, ['눌러 펴기 · 무거운 것 올리기', '뚫기 · 공기 빼기', '억지로 빼기 (내장형)', '계속 충전 · 가방에 넣고 다니기']);
+  b += rect(24, 222, 592, 28, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 240, '버릴 때: 일반 쓰레기 금지 → 서비스센터 회수 또는 지역 폐배터리 안내 · 열·냄새·연기면 떨어져서 도움 요청', { size: 8.4, weight: 700, fill: COLOR.text });
+  return figure(
+    '노트북 배터리 부풀음 대처',
+    W, 258, b,
+    '바닥 들뜸, 터치패드 솟음, 틈 벌어짐, 덮개가 안 닫히는 것은 배터리가 부푼 신호일 수 있습니다. 저장 후 전원을 끄고 충전기를 뽑아 서늘하고 타지 않는 곳에 둔 뒤 서비스센터에 문의합니다. 누르거나 뚫거나 억지로 빼지 말고, 버릴 때는 일반 쓰레기가 아니라 서비스센터나 지역 안내 경로를 따릅니다.'
   );
 }
 

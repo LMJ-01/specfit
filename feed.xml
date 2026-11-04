@@ -13,6 +13,13 @@
     <description>USB 용량은 넉넉한데 큰 파일을 복사하면 "파일이 너무 큽니다"가 뜹니다. 고장이 아니라 FAT32라는 형식의 한 파일 크기 제한입니다. 내 USB가 어떤 형식인지 확인하는 법, 어디에 꽂을지에 따라 exFAT·NTFS 중 고르는 법, 포맷 전에 지킬 것을 정리했습니다.</description>
   </item>
   <item>
+    <title>노트북 배터리가 부풀었을 때 — 계속 쓰면 안 됩니다, 오늘 할 일과 하지 말 일</title>
+    <link>https://specfit.kr/posts/laptop-battery-swelling.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/laptop-battery-swelling.html</guid>
+    <pubDate>Tue, 03 Nov 2026 15:00:00 GMT</pubDate>
+    <description>노트북 바닥이 들뜨거나 터치패드가 솟아오르면 배터리가 부푼 신호일 수 있습니다. 계속 써도 되냐는 질문의 답은 하나뿐이라, 이 글은 알아채는 법과 지금 바로 할 일, 하지 말아야 할 일, 어디로 가져가는지를 정리했습니다.</description>
+  </item>
+  <item>
     <title>그래픽카드 써멀패드 교체, 효과 있나 — 메모리 온도가 "문제"일 때만, 보증부터 봅니다</title>
     <link>https://specfit.kr/posts/gpu-thermal-pad.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/gpu-thermal-pad.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/laptop-palmrest-wear.html</guid>
     <pubDate>Fri, 02 Oct 2026 15:00:00 GMT</pubDate>
     <description>노트북 키보드 아래 손목이 닿는 자리(팜레스트)가 거뭇하게 변색되거나, 코팅이 벗겨지거나, 만지면 끈적이는 증상은 게시판 단골 질문입니다. 셋은 같은 자리에 나타나지만 원인도 되돌릴 수 있는지도 다릅니다. 닦아 보는 1분 판정으로 가르고, 각각 무엇을 할 수 있는지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>키보드 키캡이 반질반질 번들거릴 때 — 닦이는 번들거림과 안 닦이는 번들거림은 다른 것입니다</title>
-    <link>https://specfit.kr/posts/keycap-shine.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/keycap-shine.html</guid>
-    <pubDate>Fri, 02 Oct 2026 15:00:00 GMT</pubDate>
-    <description>자주 쓰는 키만 반질반질 윤이 나고 기름진 것처럼 번들거리는 현상은 키보드 게시판 단골 질문입니다. 같은 번들거림이라도 손기름이 묻은 것과 표면이 닳아 매끈해진 것은 전혀 다른 일이고, 닦아 보면 1분 만에 갈립니다. 어느 쪽인지 가르는 법과 각각의 처방을 정리했습니다.</description>
   </item>
 </channel>
 </rss>

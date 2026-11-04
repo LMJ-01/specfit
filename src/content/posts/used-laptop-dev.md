@@ -2,7 +2,7 @@
 title: 중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다
 description: 중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.
 date: 2026-08-20
-updated: 2026-11-01
+updated: 2026-11-04
 category: laptop
 tags: [중고노트북, 배터리, SSD수명, 램슬롯, 개발용노트북]
 affiliate: true
@@ -33,6 +33,7 @@ affiliate: true
     기각, 흥정 절의 확인 항목으로 흡수. 메뉴 경로는 윈도우 버전 편차.
   - 도해(2026-11-01): used-laptop-checkable — 숫자로 재지는 넷 / 못 재는 넷.
     본문 갈림선 표·3절과 1:1.
+  - 인바운드(2026-11-04): "③ 배터리 팽창" → laptop-battery-swelling(상호).
 -->
 
 이 사이트의 노트북 글 세 편이 **"중고도 괜찮나요"** 를 한두 줄로만 답하고 넘어갔습니다.
@@ -177,6 +178,8 @@ Get-PhysicalDisk | Get-StorageReliabilityCounter |
 **③ 배터리 팽창**
 
 바닥이 평평한지, 터치패드가 뜨지 않았는지 보세요. **팽창은 위험합니다.**
+이미 쓰던 노트북에서 이 신호가 보인다면 —
+[배터리가 부풀었을 때 할 일](/posts/laptop-battery-swelling.html).
 
 ## 4. 그래서 얼마나 싸야 하나
 
