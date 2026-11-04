@@ -2,7 +2,7 @@
 title: 개발용 외장 SSD — USB 규격이 상한을 정합니다
 description: 외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 그런데 개발 작업과 로컬 LLM에서는 그게 병목이 아닙니다. 규격별 상한과 모델 로딩 시간을 계산했습니다.
 date: 2026-08-20
-updated: 2026-10-14
+updated: 2026-11-04
 category: memory
 tags: [외장SSD, USB, NVMe, 로컬LLM, 개발용PC]
 affiliate: true
@@ -29,6 +29,7 @@ affiliate: true
     외장 링크를 발급하면 products.js 에 ssd-external 로 추가하고 7번 절에 넣으세요.
     next-steps.md 3-A 에 적어두세요.
   - ⚠️ 특정 제품·케이스 모델명을 넣지 않았습니다. 자주 바뀝니다.
+  - 교차 연결(2026-11-04): FAQ "USB 메모리에 둬도 되나요" 끝 ↔ usb-file-too-large(기존 단방향 완성).
 -->
 
 노트북을 [교체하면서 빼낸 SSD](/posts/laptop-ssd-upgrade.html)가 남았거나,
@@ -212,6 +213,8 @@ SSD → (한 번) → VRAM → 이후 연산은 전부 여기서
 
 권하지 않습니다. 일반 USB 메모리는 순차 속도가 훨씬 낮고
 큰 파일에서 속도가 크게 떨어지는 경우가 많습니다. **외장 SSD 와 다른 물건입니다.**
+게다가 FAT32 로 포맷된 USB 메모리면 4GB 가 넘는 모델 파일은 **아예 안
+들어갑니다** — [형식의 한 파일 상한](/posts/usb-file-too-large.html) 이야기입니다.
 
 ### 썬더볼트 케이스를 사면 내장만큼 빨라지나요
 
