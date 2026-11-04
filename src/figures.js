@@ -1016,6 +1016,7 @@ export const figures = {
   'ram-64-decision': ram64Decision,
   'wsl-ram-split': wslRamSplit,
   'usb-fs-choice': usbFsChoice,
+  'laptop-ram-solder': laptopRamSolder,
 };
 
 /**
@@ -6412,6 +6413,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function laptopRamSolder() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '노트북 램 — 살 때 볼 것은 용량보다 "바꿀 수 있느냐"', { weight: 600, size: 12.5 });
+  b += t(24, 48, '사양표에서 찾을 단어', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, verdict, note, c) => {
+    let o = rect(x, 58, 188, 30, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 77, head, { size: 8.8, weight: 700 });
+    o += `<path d="M${x + 94} 88 L${x + 94} 102" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 90} 97 L${x + 94} 102 L${x + 98} 97" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 106, 188, 34, c, { r: 4 });
+    o += t(x + 12, 128, verdict, { size: 9.6, weight: 700, fill: '#fff' });
+    o += t(x + 4, 156, note, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += card(24, '"온보드" · LPDDR5X', '교체 불가 (납땜)', '쓸 용량을 살 때 정함 → 넉넉히', COLOR.over);
+  b += card(226, '"SO-DIMM" · 슬롯 N개', '교체 가능', '작게 시작해 나중에 증설해도 됨', COLOR.fit);
+  b += card(428, '"LPCAMM2"', '교체 가능 (새 규격)', '모듈 한 장으로 듀얼 채널', COLOR.fit);
+  b += rect(24, 174, 592, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 192, '이미 산 노트북: 작업 관리자 → 성능 → 메모리 → "사용된 슬롯"', { size: 8.8, weight: 700, fill: COLOR.text });
+  b += t(36, 207, '1/2처럼 나오면 슬롯 있음 · 항목이 없거나 슬롯 수가 안 보이면 온보드일 가능성 큼 · 맥은 전부 불가', { size: 8.2, fill: COLOR.mute });
+  return figure(
+    '노트북 램 교체 가능 여부 확인',
+    W, 222, b,
+    '사양표에 온보드나 LPDDR5X가 적혀 있으면 램이 납땜돼 바꿀 수 없으니 쓸 용량을 살 때 넉넉히 정합니다. SO-DIMM이나 슬롯 개수가 적혀 있으면 나중에 늘릴 수 있고, LPCAMM2는 교체 가능한 새 규격으로 모듈 한 장이 두 채널을 가집니다. 이미 산 노트북은 작업 관리자의 사용된 슬롯 항목으로 확인합니다.'
   );
 }
 
