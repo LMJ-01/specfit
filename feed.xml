@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>마우스 커서가 사라졌을 때 — "안 보이는" 건지 "안 움직이는" 건지부터</title>
+    <link>https://specfit.kr/posts/mouse-cursor-gone.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mouse-cursor-gone.html</guid>
+    <pubDate>Thu, 05 Nov 2026 15:00:00 GMT</pubDate>
+    <description>화면에서 마우스 커서가 안 보입니다. 다른 화면으로 넘어갔을 뿐인 경우, 특정 프로그램에서만 숨는 경우, 마우스 입력 자체가 끊긴 경우, 노트북 터치패드가 꺼진 경우는 처방이 전부 다릅니다. 커서 없이 움직이는 법과 갈래 가르는 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>블루투스 켜기 버튼이 사라졌을 때 — 버튼만 빠졌나, 장치가 숨었나, 원래 없나</title>
     <link>https://specfit.kr/posts/bluetooth-toggle-missing.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/bluetooth-toggle-missing.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/spacebar-rattle.html</guid>
     <pubDate>Sat, 03 Oct 2026 15:00:00 GMT</pubDate>
     <description>스페이스바·엔터·시프트처럼 긴 키만 달그락·쇳소리가 나는 증상은 키보드 게시판 단골 질문입니다. 스위치가 아니라 긴 키를 수평으로 잡아주는 철심(스테빌라이저)의 소리라, 어느 키인가·어디를 눌렀나로 가르는 법과 처방 순서를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>타이핑할 때마다 모니터가 흔들릴 때 — 떨리는 건 모니터가 아니라 책상이고, 모니터는 확대경입니다</title>
-    <link>https://specfit.kr/posts/monitor-wobble-typing.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/monitor-wobble-typing.html</guid>
-    <pubDate>Fri, 02 Oct 2026 15:00:00 GMT</pubDate>
-    <description>키보드를 치거나 책상에 손을 올릴 때마다 모니터가 흔들리는 증상은 게시판 단골 질문입니다. 흔들리는 건 대개 모니터가 아니라 책상이고, 긴 스탠드나 암이 그 작은 떨림을 눈에 띄게 키우는 구조입니다. 책상 갈래와 거치 갈래를 손으로 가르는 법과 처방 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

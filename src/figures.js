@@ -1021,6 +1021,7 @@ export const figures = {
   'bt-missing-layers': btMissingLayers,
   'minipc-game-weight': minipcGameWeight,
   'nas-what-you-buy': nasWhatYouBuy,
+  'cursor-gone-split': cursorGoneSplit,
 };
 
 /**
@@ -6417,6 +6418,35 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function cursorGoneSplit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '커서가 사라졌다 — "안 보이는" 건지 "안 움직이는" 건지부터', { weight: 600, size: 12.5 });
+  b += rect(24, 40, 592, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 60, '버튼 위에 올리면 강조되거나 클릭이 먹나? (보이지 않아도 반응은 있나)', { size: 9, weight: 700 });
+  const lane = (x, head, c, items) => {
+    let o = `<path d="M${x + 142} 70 L${x + 142} 82" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 138} 77 L${x + 142} 82 L${x + 146} 77" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 86, 284, 28, c, { r: 6 });
+    o += t(x + 14, 105, head, { size: 9.4, weight: 700, fill: '#fff' });
+    items.forEach((it, i) => {
+      const y = 122 + i * 46;
+      o += rect(x, y, 284, 40, COLOR.soft, { r: 4, stroke: COLOR.line });
+      o += t(x + 12, y + 17, it[0], { size: 8.8, weight: 700 });
+      o += t(x + 12, y + 32, it[1], { size: 8, fill: COLOR.mute });
+    });
+    return o;
+  };
+  b += lane(24, '예 — 안 보일 뿐', COLOR.fit, [['다른 화면으로 넘어감 (듀얼·TV 연결 이력)', 'Ctrl 위치 표시 · Win+P → PC 화면만'], ['특정 창 안에서만 숨음', '게임 창 전환 · 하드웨어 가속 끄기']]);
+  b += lane(332, '아니오 — 안 움직임', COLOR.over, [['입력이 끊김', '다른 포트 → 수신기·배터리 → 다른 마우스'], ['노트북 터치패드만 안 됨', '터치패드 끄기 키 · 설정의 켜기 스위치']]);
+  b += rect(24, 222, 592, 26, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 239, '커서 없이 움직이기: Win 키 → 글자 쳐서 검색 · Tab · 방향키 · Enter · Ctrl+Alt+Del', { size: 8.6, weight: 700, fill: COLOR.text });
+  return figure(
+    '마우스 커서 사라짐 판정',
+    W, 256, b,
+    '버튼 위에 올렸을 때 반응이 있으면 커서는 안 보일 뿐이라, 다른 화면으로 넘어갔는지 Ctrl 위치 표시와 Win+P로 확인하고, 특정 창에서만 사라지면 게임 창이나 하드웨어 가속 쪽입니다. 반응이 전혀 없으면 입력이 끊긴 것이라 포트·수신기·배터리·다른 마우스 순서로 보고, 노트북 터치패드만 안 되면 끄기 키와 설정을 확인합니다.'
   );
 }
 
