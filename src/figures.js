@@ -1020,6 +1020,7 @@ export const figures = {
   'battery-swell-steps': batterySwellSteps,
   'bt-missing-layers': btMissingLayers,
   'minipc-game-weight': minipcGameWeight,
+  'nas-what-you-buy': nasWhatYouBuy,
 };
 
 /**
@@ -6416,6 +6417,32 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function nasWhatYouBuy() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '기성 NAS vs 자작 NAS — 값의 차이는 하드웨어가 아니라 "누가 지느냐"', { weight: 600, size: 12.5 });
+  const lane = (x, head, c, steps) => {
+    let o = rect(x, 40, 284, 30, c, { r: 6 });
+    o += t(x + 14, 60, head, { size: 9.6, weight: 700, fill: '#fff' });
+    steps.forEach((st, i) => {
+      const y = 80 + i * 34;
+      o += rect(x, y, 284, 28, COLOR.soft, { r: 4, stroke: COLOR.line });
+      o += t(x + 12, y + 18, st, { size: 8.8, weight: 700 });
+    });
+    return o;
+  };
+  b += lane(24, '기성 NAS — 값에 들어 있는 것', COLOR.fit, ['완성된 소프트웨어 (앱·자동 백업·외부 접속)', '보안 업데이트의 책임 — 제조사', '고장 났을 때 물어볼 곳']);
+  b += lane(332, '자작 NAS — 내 몫이 되는 것', COLOR.over, ['위 기능을 하나씩 직접 세우기 (= 구축)', '보안 업데이트·호환성 확인 직접', '고장 원인 분리 직접 (부품·OS·디스크)']);
+  b += rect(24, 190, 592, 46, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 208, '갈림길은 성능이 아니라 시간 — 구축·유지가 재미면 자작, 숙제면 기성', { size: 8.8, weight: 700, fill: COLOR.text });
+  b += t(36, 225, '가족 사진·중요 자료가 올라가면 기성 쪽으로 · 미니PC 자작은 저장 자리(디스크 베이)가 병목', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '기성 NAS와 자작 NAS의 차이',
+    W, 244, b,
+    '기성 NAS의 값에는 완성된 소프트웨어, 보안 업데이트의 책임, 고장 때 물어볼 곳이 들어 있고, 자작 NAS에서는 이것들이 전부 내 몫이 됩니다. 그래서 갈림길은 성능이 아니라 구축과 유지에 드는 시간이며, 중요한 자료가 올라가면 기성 쪽으로 기울고, 미니PC 자작은 디스크를 꽂을 자리가 병목입니다.'
   );
 }
 
