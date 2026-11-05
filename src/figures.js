@@ -1019,6 +1019,7 @@ export const figures = {
   'laptop-ram-solder': laptopRamSolder,
   'battery-swell-steps': batterySwellSteps,
   'bt-missing-layers': btMissingLayers,
+  'minipc-game-weight': minipcGameWeight,
 };
 
 /**
@@ -6415,6 +6416,26 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function minipcGameWeight() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '미니PC 게임 — 갈림길은 게임의 무게 (내장그래픽 기준)', { weight: 600, size: 12.5 });
+  const box = (x, w, head, verdict, c) => rect(x, 44, w, 56, c, { r: 6 }) + t(x + 12, 66, head, { size: 9.4, weight: 700, fill: '#fff' }) + t(x + 12, 86, verdict, { size: 8.6, fill: '#fff' });
+  b += box(24, 188, '2D · 인디', '대부분 여유', COLOR.fit);
+  b += box(222, 196, '롤 · 발로란트 급', '상위 내장그래픽이면 무난 (옵션 조정)', COLOR.fit);
+  b += box(428, 188, '대작 3D 최신작', '이 물건의 영역이 아님', COLOR.over);
+  b += `<path d="M24 118 L606 118" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M600 113 L606 118 L600 123" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+  b += t(24, 136, '무거울수록 같이 커지는 것: 지속 고부하 → 발열 · 팬 소음 · 시간이 갈수록 프레임 처짐', { size: 8.6, weight: 700, fill: COLOR.text });
+  b += rect(24, 150, 592, 46, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 168, '같은 "미니PC"라도: 사무용 저가 내장그래픽은 한 칸 아래 · 그래픽카드 추가는 불가', { size: 8.6, weight: 700, fill: COLOR.text });
+  b += t(36, 185, '외장 그래픽이 든 "게이밍 미니PC"는 작은 데스크톱 — 다른 부류로 따로 비교', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '미니PC 게임 판정',
+    W, 204, b,
+    '미니PC의 게임 성능은 내장그래픽이 정해서, 2D·인디 게임은 대부분 여유이고 롤·발로란트 급은 상위 내장그래픽이면 옵션을 조정해 무난하며, 대작 3D 최신작은 이 물건의 영역이 아닙니다. 게임이 무거울수록 발열·소음·프레임 처짐이 같이 커지고, 사무용 저가 모델은 한 칸 아래이며 그래픽카드 추가는 안 됩니다.'
   );
 }
 
