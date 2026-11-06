@@ -1022,6 +1022,7 @@ export const figures = {
   'minipc-game-weight': minipcGameWeight,
   'nas-what-you-buy': nasWhatYouBuy,
   'cursor-gone-split': cursorGoneSplit,
+  'minipc-dev-fit': minipcDevFit,
 };
 
 /**
@@ -6418,6 +6419,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function minipcDevFit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '미니PC로 개발 — 속은 노트북이라 판단도 노트북 기준 그대로', { weight: 600, size: 12.5 });
+  const col = (x, head, c, lines) => {
+    let o = rect(x, 40, 188, 30, c, { r: 6 });
+    o += t(x + 12, 60, head, { size: 9.6, weight: 700, fill: '#fff' });
+    lines.forEach((ln, i) => {
+      const y = 80 + i * 32;
+      o += rect(x, y, 188, 26, COLOR.soft, { r: 4, stroke: COLOR.line });
+      o += t(x + 10, y + 17, ln, { size: 8.6, weight: 700 });
+    });
+    return o;
+  };
+  b += col(24, '되는 것 — CPU·램 작업', COLOR.fit, ['웹·백엔드·파이썬 → 16GB', '도커·안드로이드 → 32GB', '빌드·테스트 서버']);
+  b += col(226, '막히는 것 — 외장 GPU', COLOR.over, ['로컬 LLM (CPU로는 느림)', '게임은 가벼운 것까지', '영상 편집 겸용']);
+  b += col(428, '오히려 유리 — 상시 가동', COLOR.fit, ['전기를 적게 먹음', '조용하고 자리 안 차지', '개발 서버·홈서버']);
+  b += rect(24, 184, 592, 46, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 202, '사기 전: CPU 끝 글자 H·HS·U = 노트북용 · "SO-DIMM 슬롯" 표기면 램 증설 가능', { size: 8.8, weight: 700, fill: COLOR.text });
+  b += t(36, 219, '저가형 N 계열은 메모리 채널 1개 — CPU 추론이 한층 더 느림', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '미니PC 개발 용도 판정',
+    W, 238, b,
+    '미니PC는 노트북용 CPU를 쓰는 구조라 노트북 기준이 그대로 적용됩니다. CPU·램으로 하는 웹·백엔드·도커 개발은 되고(도커·안드로이드는 32GB), 외장 그래픽카드가 필요한 로컬 LLM·게임·영상은 막히며, 전기를 적게 먹고 조용해 상시 가동 서버로는 오히려 유리합니다. 사기 전에는 CPU 모델명 끝 글자와 SO-DIMM 슬롯 표기를 확인합니다.'
   );
 }
 
