@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>타자 치면 글자가 지워질 때 — 어떻게 지워지는지 보면 범인이 셋으로 갈립니다 | 스펙핏</title>
+<meta name="description" content="글을 쓰는데 뒤에 있던 글자가 하나씩 사라지거나, 스페이스를 누르면 방금 쓴 마지막 글자가 없어지거나, 손대지 않았는데 글자가 지워집니다. 지워지는 모양에 따라 덮어쓰기 모드, 한글 입력기, 키 자체의 문제로 갈립니다. 갈래별 확인 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/typing-deletes-text.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="타자 치면 글자가 지워질 때 — 어떻게 지워지는지 보면 범인이 셋으로 갈립니다 | 스펙핏">
+<meta property="og:description" content="글을 쓰는데 뒤에 있던 글자가 하나씩 사라지거나, 스페이스를 누르면 방금 쓴 마지막 글자가 없어지거나, 손대지 않았는데 글자가 지워집니다. 지워지는 모양에 따라 덮어쓰기 모드, 한글 입력기, 키 자체의 문제로 갈립니다. 갈래별 확인 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/typing-deletes-text.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"타자 치면 글자가 지워질 때 — 어떻게 지워지는지 보면 범인이 셋으로 갈립니다","description":"글을 쓰는데 뒤에 있던 글자가 하나씩 사라지거나, 스페이스를 누르면 방금 쓴 마지막 글자가 없어지거나, 손대지 않았는데 글자가 지워집니다. 지워지는 모양에 따라 덮어쓰기 모드, 한글 입력기, 키 자체의 문제로 갈립니다. 갈래별 확인 순서를 정리했습니다.","datePublished":"2026-11-06","dateModified":"2026-11-06","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/typing-deletes-text.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"타자 치면 글자가 지워질 때 — 어떻게 지워지는지 보면 범인이 셋으로 갈립니다","item":"https://specfit.kr/posts/typing-deletes-text.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Insert 키가 없는 키보드예요","acceptedAnswer":{"@type":"Answer","text":"작은 키보드나 노트북은 Insert가 다른 키와 합쳐져 Fn 조합으로 들어가 있거나 아예 빠진 경우가 있습니다. 화면 키보드에서 Ins 키를 눌러 전환할 수도 있습니다."}},{"@type":"Question","name":"맥에서도 한글이 지워져요","acceptedAnswer":{"@type":"Answer","text":"맥의 한글 입력기도 조합 과정에서 비슷한 증상이 보고되곤 하며, 큰 업데이트 직후의 보고가 많습니다. 운영체제 업데이트를 기다리거나 다른 입력 방식으로 바꿔 보는 쪽이 일반적인 대처입니다."}},{"@type":"Question","name":"스페이스를 누를 때 소리도 이상해요","acceptedAnswer":{"@type":"Answer","text":"글자 문제와 별개로 스페이스바에서 달그락·찍찍 소리가 난다면 키 아래 철심의 이야기입니다 — 스페이스바 소리 판정."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>타자 치면 글자가 지워질 때 — 어떻게 지워지는지 보면 범인이 셋으로 갈립니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-11-06">2026년 11월 6일</time>
+      <span class="updated">· 2026년 11월 6일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>문서를 고치려고 중간에 글자를 넣었는데 <strong>뒤에 있던 글자가 하나씩 먹혀
+들어갑니다.</strong> 또는 한글을 치고 스페이스를 누르는 순간 <strong>방금 쓴 마지막
+글자가 사라집니다.</strong> 아니면 아무것도 안 눌렀는데 커서 앞 글자가 혼자
+지워집니다.</p>
+<p>셋 다 &quot;글자가 지워진다&quot;로 검색되지만 범인은 서로 다릅니다. 그래서 첫 단계는
+고치는 게 아니라 <strong>어떻게 지워지는지 보는 것</strong>입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>지워지는 모양</th><th>갈래</th><th>먼저 할 것</th></tr></thead>
+<tbody>
+<tr><td>치는 만큼 <strong>커서 뒤 글자가 하나씩</strong> 사라짐</td><td><strong>덮어쓰기 모드</strong></td><td>Insert 키 한 번 · 한글은 아래 [수정] 표시</td></tr>
+<tr><td>스페이스·엔터를 누를 때 <strong>방금 쓴 마지막 글자</strong>가 사라짐</td><td><strong>한글 입력기 조합</strong></td><td>다른 프로그램에서도 그런지 · 입력기 설정</td></tr>
+<tr><td><strong>손대지 않았는데</strong> 글자가 지워짐</td><td><strong>키가 눌린 채이거나 접점 문제</strong></td><td>화면 키보드로 격리 · 키보드 바꿔 보기</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 220" width="640" height="220" role="img" aria-label="글자 지워짐 판정">
+<title>글자 지워짐 판정</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">글자가 지워진다 — 어떻게 지워지는지가 범인을 가른다</text><text x="24" y="48" fill="var(--fg)" font-size="9.6" font-weight="700">지워지는 모양</text><rect x="24" y="58" width="188" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="76" fill="var(--fg)" font-size="8.8" font-weight="700">뒤 글자가 하나씩 먹힘</text><text x="36" y="92" fill="var(--fg-muted)" font-size="8">치는 만큼 커서 뒤가 사라짐</text><path d="M118 102 L118 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M114 111 L118 116 L122 111" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="24" y="120" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="36" y="142" fill="#fff" font-size="9.6" font-weight="700">덮어쓰기 모드</text><text x="28" y="170" fill="var(--fg-muted)" font-size="8">Insert 키 한 번 · 한글은 [수정]→[삽입]</text><rect x="226" y="58" width="188" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="238" y="76" fill="var(--fg)" font-size="8.8" font-weight="700">스페이스·엔터에서</text><text x="238" y="92" fill="var(--fg-muted)" font-size="8">방금 쓴 마지막 글자가 사라짐</text><path d="M320 102 L320 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M316 111 L320 116 L324 111" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="226" y="120" width="188" height="34" fill="var(--fg-muted)" rx="4"/><text x="238" y="142" fill="#fff" font-size="9.6" font-weight="700">한글 입력기 조합</text><text x="230" y="170" fill="var(--fg-muted)" font-size="8">다른 프로그램 비교 → 입력기 설정</text><rect x="428" y="58" width="188" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="440" y="76" fill="var(--fg)" font-size="8.8" font-weight="700">손대지 않았는데</text><text x="440" y="92" fill="var(--fg-muted)" font-size="8">혼자 지워짐 · 한 번에 여러 글자</text><path d="M522 102 L522 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M518 111 L522 116 L526 111" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="428" y="120" width="188" height="34" fill="var(--fig-over)" rx="4"/><text x="440" y="142" fill="#fff" font-size="9.6" font-weight="700">키 눌림·접점 문제</text><text x="432" y="170" fill="var(--fg-muted)" font-size="8">화면 키보드 · 다른 키보드로 격리</text><rect x="24" y="186" width="592" height="26" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="203" fill="var(--fg)" font-size="8.4" font-weight="700">특정 프로그램에서만 그렇다면 그 프로그램 쪽(모드·업데이트) · 메모장에서도 그렇다면 윈도우·키보드 쪽</text>
+</svg>
+<figcaption>치는 만큼 커서 뒤 글자가 하나씩 사라지면 덮어쓰기 모드라 Insert 키를 한 번 누르고, 한글 프로그램은 상태 표시줄의 [수정]을 [삽입]으로 바꿉니다. 스페이스·엔터를 누를 때 마지막 글자가 사라지면 한글 입력기 조합 문제이고, 손대지 않았는데 지워지면 키가 눌린 채이거나 접점 문제라 화면 키보드와 다른 키보드로 격리합니다.</figcaption>
+</figure>
+<h2 id="갈래-덮어쓰기-모드-뒤-글자가-하나씩-먹힌다">갈래 ① — 덮어쓰기 모드: 뒤 글자가 하나씩 먹힌다</h2>
+<p>키보드에는 <strong>삽입</strong>과 <strong>덮어쓰기</strong> 두 모드가 있습니다. 덮어쓰기 모드에서는
+새로 친 글자가 커서 뒤 글자를 밀어내지 않고 <strong>그 자리를 차지</strong>해서, 뒤 글자가
+하나씩 사라지는 것처럼 보입니다. 이 모드는 <strong>Insert 키</strong>로 오가는데, 다른 키를
+누르다 함께 눌리기 쉽습니다.</p>
+<ul>
+<li><strong>Insert 키를 한 번</strong> 누르고 다시 쳐 봅니다. 노트북은 제품에 따라 Insert가
+다른 키와 같이 있어 <strong>Fn과 함께</strong> 눌러야 하기도 합니다</li>
+<li><strong>한컴오피스 한글</strong>이라면 화면 아래 상태 표시줄에 <strong>[삽입]</strong> 또는 <strong>[수정]</strong>이
+보입니다. [수정]이면 덮어쓰기 상태라, 그 글자를 클릭하면 [삽입]으로 바뀝니다</li>
+<li><strong>워드</strong>는 옵션에 따라 Insert 키가 덮어쓰기를 켜고 끄도록 돼 있어, 자꾸 켜진다면
+그 옵션을 꺼 두는 방법이 있습니다</li>
+</ul>
+<p>이 갈래는 <strong>특정 프로그램 안에서만</strong> 나타나는 경우가 많습니다. 메모장에서는
+멀쩡한데 문서 프로그램에서만 그렇다면 그 프로그램의 모드 문제입니다.</p>
+<h2 id="갈래-한글-입력기-스페이스를-누르면-마지막-글자가-사라진다">갈래 ② — 한글 입력기: 스페이스를 누르면 마지막 글자가 사라진다</h2>
+<p>&quot;안녕하세요&quot;를 치고 스페이스를 누르니 &quot;안녕하세&quot;가 남는 식이라면 덮어쓰기가
+아니라 <strong>한글 조합</strong> 쪽입니다. 한글은 자음·모음을 모아 글자를 만드는 동안
+&quot;조합 중&quot; 상태로 있다가 스페이스·엔터에서 확정되는데, 그 확정 순간에 마지막
+글자가 날아가는 경우입니다.</p>
+<ol>
+<li><strong>다른 프로그램에서도 그런지</strong> 봅니다 — 메모장·브라우저에선 괜찮고 특정
+프로그램에서만 그렇다면 그 프로그램과 입력기의 궁합 문제라, 그 프로그램
+업데이트가 먼저입니다</li>
+<li><strong>어디서나 그렇다면</strong> 윈도우 한국어 입력기 설정 쪽입니다. 설정 → 시간 및
+언어 → 언어의 한국어 옵션에서 <strong>이전 버전 입력기와의 호환 옵션</strong>을 켜 보는 것이
+자주 언급되는 처방입니다</li>
+<li>큰 윈도우 업데이트 직후부터라면 이 갈래일 가능성이 더 높습니다</li>
+</ol>
+<p>한영 전환 자체가 안 되는 문제는 다른 갈래입니다 —
+<a href="/posts/keyboard-some-keys-dead.html">한영키만 안 먹힐 때</a>의 FAQ를 보세요.</p>
+<h2 id="갈래-손대지-않았는데-지워진다">갈래 ③ — 손대지 않았는데 지워진다</h2>
+<p>아무것도 누르지 않았는데 커서 앞 글자가 지워지거나, 백스페이스를 한 번 눌렀는데
+여러 글자가 지워진다면 <strong>키 자체</strong>를 의심합니다.</p>
+<ul>
+<li><strong>백스페이스 키가 눌린 채</strong> 걸려 있거나, 키 아래에 이물질이 끼어 접점이 붙었다
+떨어졌다 하는 경우입니다</li>
+<li><strong>화면 키보드</strong>를 띄워 보면 지금 눌려 있는 것으로 잡힌 키가 표시되는 경우가 있어
+격리에 도움이 됩니다. 다른 키보드를 꽂았을 때 멀쩡하면 원래 키보드 쪽입니다</li>
+<li>키가 두 번씩 눌리는 증상과 같은 뿌리인 경우가 많아, 순서는
+<a href="/posts/keyboard-some-keys-dead.html">일부 키가 안 될 때의 층 가르기</a>와 같습니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="insert-키가-없는-키보드예요">Insert 키가 없는 키보드예요</h3>
+<p>작은 키보드나 노트북은 Insert가 다른 키와 합쳐져 Fn 조합으로 들어가 있거나 아예
+빠진 경우가 있습니다. 화면 키보드에서 Ins 키를 눌러 전환할 수도 있습니다.</p>
+<h3 id="맥에서도-한글이-지워져요">맥에서도 한글이 지워져요</h3>
+<p>맥의 한글 입력기도 조합 과정에서 비슷한 증상이 보고되곤 하며, 큰 업데이트 직후의
+보고가 많습니다. 운영체제 업데이트를 기다리거나 다른 입력 방식으로 바꿔 보는
+쪽이 일반적인 대처입니다.</p>
+<h3 id="스페이스를-누를-때-소리도-이상해요">스페이스를 누를 때 소리도 이상해요</h3>
+<p>글자 문제와 별개로 스페이스바에서 달그락·찍찍 소리가 난다면 키 아래 철심의
+이야기입니다 — <a href="/posts/spacebar-rattle.html">스페이스바 소리 판정</a>.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>먼저 <strong>어떻게 지워지는지</strong> 봅니다 — 고치는 건 그다음입니다</li>
+<li><strong>뒤 글자가 하나씩</strong> 먹히면 덮어쓰기 — <strong>Insert 키</strong> 한 번, 한글은 <strong>[수정] → [삽입]</strong></li>
+<li><strong>스페이스·엔터에서 마지막 글자</strong>가 사라지면 한글 입력기 — 다른 프로그램 비교 후 입력기 설정</li>
+<li><strong>손대지 않았는데</strong> 지워지면 키 쪽 — 화면 키보드와 다른 키보드로 격리</li>
+</ol>
+<p>키보드의 이웃 판정들 — <a href="/posts/keyboard-some-keys-dead.html">일부 키가 안 될 때</a> ·
+<a href="/posts/spacebar-rattle.html">스페이스바 소리</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">글자지워짐</span> <span class="tag">덮어쓰기</span> <span class="tag">Insert키</span> <span class="tag">한글입력기</span> <span class="tag">키보드오류</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/laptop-battery-swelling.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">노트북 배터리가 부풀었을 때 — 계속 쓰면 안 됩니다, 오늘 할 일과 하지 말 일</span>
+        <span class="card-desc">노트북 바닥이 들뜨거나 터치패드가 솟아오르면 배터리가 부푼 신호일 수 있습니다. 계속 써도 되냐는 질문의 답은 하나뿐이라, 이 글은 알아채는 법과 지금 바로 할 일, 하지 말아야 할 일, 어디로 가져가는지를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/spacebar-rattle.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">스페이스바·엔터만 소리가 다를 때 — 스위치가 아니라 철심의 소리입니다</span>
+        <span class="card-desc">스페이스바·엔터·시프트처럼 긴 키만 달그락·쇳소리가 나는 증상은 키보드 게시판 단골 질문입니다. 스위치가 아니라 긴 키를 수평으로 잡아주는 철심(스테빌라이저)의 소리라, 어느 키인가·어디를 눌렀나로 가르는 법과 처방 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/keycap-shine.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">키보드 키캡이 반질반질 번들거릴 때 — 닦이는 번들거림과 안 닦이는 번들거림은 다른 것입니다</span>
+        <span class="card-desc">자주 쓰는 키만 반질반질 윤이 나고 기름진 것처럼 번들거리는 현상은 키보드 게시판 단골 질문입니다. 같은 번들거림이라도 손기름이 묻은 것과 표면이 닳아 매끈해진 것은 전혀 다른 일이고, 닦아 보면 1분 만에 갈립니다. 어느 쪽인지 가르는 법과 각각의 처방을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

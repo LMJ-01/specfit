@@ -1023,6 +1023,7 @@ export const figures = {
   'nas-what-you-buy': nasWhatYouBuy,
   'cursor-gone-split': cursorGoneSplit,
   'minipc-dev-fit': minipcDevFit,
+  'typing-delete-split': typingDeleteSplit,
 };
 
 /**
@@ -6419,6 +6420,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function typingDeleteSplit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '글자가 지워진다 — 어떻게 지워지는지가 범인을 가른다', { weight: 600, size: 12.5 });
+  b += t(24, 48, '지워지는 모양', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, sub, verdict, note, c) => {
+    let o = rect(x, 58, 188, 44, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 76, head, { size: 8.8, weight: 700 });
+    o += t(x + 12, 92, sub, { size: 8, fill: COLOR.mute });
+    o += `<path d="M${x + 94} 102 L${x + 94} 116" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 90} 111 L${x + 94} 116 L${x + 98} 111" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 120, 188, 34, c, { r: 4 });
+    o += t(x + 12, 142, verdict, { size: 9.6, weight: 700, fill: '#fff' });
+    o += t(x + 4, 170, note, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += card(24, '뒤 글자가 하나씩 먹힘', '치는 만큼 커서 뒤가 사라짐', '덮어쓰기 모드', 'Insert 키 한 번 · 한글은 [수정]→[삽입]', COLOR.fit);
+  b += card(226, '스페이스·엔터에서', '방금 쓴 마지막 글자가 사라짐', '한글 입력기 조합', '다른 프로그램 비교 → 입력기 설정', COLOR.mute);
+  b += card(428, '손대지 않았는데', '혼자 지워짐 · 한 번에 여러 글자', '키 눌림·접점 문제', '화면 키보드 · 다른 키보드로 격리', COLOR.over);
+  b += rect(24, 186, 592, 26, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 203, '특정 프로그램에서만 그렇다면 그 프로그램 쪽(모드·업데이트) · 메모장에서도 그렇다면 윈도우·키보드 쪽', { size: 8.4, weight: 700, fill: COLOR.text });
+  return figure(
+    '글자 지워짐 판정',
+    W, 220, b,
+    '치는 만큼 커서 뒤 글자가 하나씩 사라지면 덮어쓰기 모드라 Insert 키를 한 번 누르고, 한글 프로그램은 상태 표시줄의 [수정]을 [삽입]으로 바꿉니다. 스페이스·엔터를 누를 때 마지막 글자가 사라지면 한글 입력기 조합 문제이고, 손대지 않았는데 지워지면 키가 눌린 채이거나 접점 문제라 화면 키보드와 다른 키보드로 격리합니다.'
   );
 }
 
