@@ -1025,6 +1025,7 @@ export const figures = {
   'minipc-dev-fit': minipcDevFit,
   'typing-delete-split': typingDeleteSplit,
   'dev-cpu-priority': devCpuPriority,
+  'webdev-ram-ladder': webdevRamLadder,
 };
 
 /**
@@ -6421,6 +6422,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function webdevRamLadder() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '웹 개발 노트북 — 16GB냐 32GB냐는 "도커가 들어오느냐"', { weight: 600, size: 12.5 });
+  const row = (y, txt, ram, c) => rect(24, y, 300, 30, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 19, txt, { size: 8.8, weight: 700 }) + rect(332, y, 70, 30, c, { r: 4 }) + t(367, y + 20, ram, { size: 9.6, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += row(44, '프론트만 — 에디터 + 브라우저 + 개발 서버', '16GB', COLOR.fit);
+  b += row(80, '백엔드 포함 — 서버 + DB 하나', '16GB', COLOR.fit);
+  b += row(116, '도커로 여러 서비스를 띄운다', '32GB', COLOR.over);
+  b += row(152, '모노레포 · 서비스 여러 개 동시', '32GB', COLOR.over);
+  b += rect(420, 44, 196, 138, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(432, 64, '램 다음은', { size: 9.4, weight: 700, fill: COLOR.text });
+  const items = [['화면', '체감이 가장 큼'], ['SSD', '512GB로 시작 가능'], ['CPU', '요즘 것이면 대개 충분'], ['전용 그래픽', '필요 없음']];
+  items.forEach((it, i) => {
+    const y = 88 + i * 24;
+    b += t(432, y, it[0], { size: 8.8, weight: 700 });
+    b += t(510, y, it[1], { size: 8.2, fill: COLOR.mute });
+  });
+  b += t(24, 202, '램을 먹는 건 프레임워크가 아니라 브라우저 탭 · 에디터 · 타입 검사 같은 상시 프로세스', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '웹 개발 노트북 램 판정',
+    W, 212, b,
+    '프론트엔드만 하거나 백엔드에 DB 하나를 로컬로 띄우는 정도면 16GB로 되고, 도커로 여러 서비스를 띄우거나 모노레포에서 서비스 여럿을 동시에 돌리면 32GB가 필요합니다. 램 다음으로 체감이 큰 것은 화면이고, SSD는 512GB로 시작해도 되며, CPU는 대개 충분하고 전용 그래픽카드는 필요 없습니다.'
   );
 }
 
