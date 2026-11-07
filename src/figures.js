@@ -1024,6 +1024,7 @@ export const figures = {
   'cursor-gone-split': cursorGoneSplit,
   'minipc-dev-fit': minipcDevFit,
   'typing-delete-split': typingDeleteSplit,
+  'dev-cpu-priority': devCpuPriority,
 };
 
 /**
@@ -6420,6 +6421,30 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function devCpuPriority() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '개발용 노트북 CPU — 보는 순서가 곧 중요도', { weight: 600, size: 12.5 });
+  const row = (y, n, head, sub, w, c) => {
+    let o = t(24, y + 20, n, { size: 12, weight: 700, fill: c });
+    o += rect(48, y, w, 34, c, { r: 4 });
+    o += t(60, y + 21, head, { size: 9.4, weight: 700, fill: '#fff' });
+    o += t(48 + w + 10, y + 21, sub, { size: 8.4, fill: COLOR.mute });
+    return o;
+  };
+  b += row(42, '1', '램 먼저', '부족하면 CPU가 좋아도 느림', 300, COLOR.over);
+  b += row(84, '2', '접미사·두께 — 저전력형이냐 고성능형이냐', '같은 이름도 다른 물건', 360, COLOR.fit);
+  b += row(126, '3', '등급 5 / 7 / 9 — 코어 수', '7이 기본값, 9는 빌드 잦을 때', 260, COLOR.fit);
+  b += rect(24, 172, 592, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 190, '거의 신경 안 써도 되는 것: 세대(최근이면 충분) · 클럭', { size: 8.8, weight: 700, fill: COLOR.text });
+  b += t(36, 205, 'NPU — 개발·로컬 LLM의 기본 경로와 거의 무관 (마케팅 중심이지만)', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '개발용 노트북 CPU 보는 순서',
+    W, 220, b,
+    '개발용 노트북은 CPU보다 램이 먼저이고, CPU에서는 등급 숫자보다 저전력형이냐 고성능형이냐(접미사·두께)가 먼저입니다. 등급 5·7·9는 코어 수를 정하는데 7이 기본값이고 9는 빌드가 잦을 때만 값을 합니다. 세대와 클럭은 거의 신경 쓰지 않아도 되고, NPU는 개발과 로컬 LLM의 기본 경로와 거의 무관합니다.'
   );
 }
 
