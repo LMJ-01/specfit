@@ -1027,6 +1027,7 @@ export const figures = {
   'dev-cpu-priority': devCpuPriority,
   'webdev-ram-ladder': webdevRamLadder,
   'gaming-laptop-fork': gamingLaptopFork,
+  'android-ram-ladder': androidRamLadder,
 };
 
 /**
@@ -6423,6 +6424,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function androidRamLadder() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '안드로이드 개발 노트북 — 램을 정하는 건 "에뮬레이터를 몇 대 띄우느냐"', { weight: 600, size: 12.5 });
+  const row = (y, txt, ram, c) => rect(24, y, 300, 30, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 19, txt, { size: 8.8, weight: 700 }) + rect(332, y, 76, 30, c, { r: 4 }) + t(370, y + 20, ram, { size: 9.2, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += row(44, '실기기만 연결해서 개발', '16GB', COLOR.fit);
+  b += row(80, '에뮬레이터 1대 + IDE', '16GB 빠듯', COLOR.mute);
+  b += row(116, '에뮬레이터 1대 + IDE + 브라우저', '32GB', COLOR.over);
+  b += row(152, '에뮬레이터 여러 대 (화면 크기별)', '32GB+', COLOR.over);
+  b += rect(424, 44, 192, 138, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(436, 64, '램 다음은', { size: 9.4, weight: 700, fill: COLOR.text });
+  const items = [['SSD', '1TB 권장'], ['CPU', '코어 수 = 빌드 시간'], ['화면', '세로 픽셀이 중요'], ['전용 그래픽', '필요 없음']];
+  items.forEach((it, i) => {
+    const y = 88 + i * 24;
+    b += t(436, y, it[0], { size: 8.8, weight: 700 });
+    b += t(512, y, it[1], { size: 8.2, fill: COLOR.mute });
+  });
+  b += t(24, 202, '16GB에서 버티려면 실기기 연결 · 에뮬레이터 한 대만 · 브라우저 탭 줄이기', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '안드로이드 개발 노트북 램 판정',
+    W, 212, b,
+    '실기기만 연결해 개발하면 16GB로 되고, 에뮬레이터 한 대와 IDE를 같이 띄우면 16GB는 빠듯하며, 브라우저까지 더하면 32GB, 화면 크기별로 에뮬레이터를 여러 대 띄우면 32GB 이상이 필요합니다. 램 다음으로는 SSD 1TB, 빌드 시간을 정하는 CPU 코어 수, 세로 픽셀이 넉넉한 화면을 보고, 전용 그래픽카드는 필요 없습니다.'
   );
 }
 
