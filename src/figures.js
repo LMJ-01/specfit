@@ -1026,6 +1026,7 @@ export const figures = {
   'typing-delete-split': typingDeleteSplit,
   'dev-cpu-priority': devCpuPriority,
   'webdev-ram-ladder': webdevRamLadder,
+  'gaming-laptop-fork': gamingLaptopFork,
 };
 
 /**
@@ -6422,6 +6423,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function gamingLaptopFork() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '게이밍 노트북으로 개발 — 얻는 것과 내는 것, 그리고 어디서 쓰나', { weight: 600, size: 12.5 });
+  const lane = (x, head, c, items) => {
+    let o = rect(x, 40, 284, 28, c, { r: 6 });
+    o += t(x + 14, 59, head, { size: 9.4, weight: 700, fill: '#fff' });
+    o += rect(x, 72, 284, 56, COLOR.soft, { r: 4, stroke: COLOR.line });
+    items.forEach((it, i) => { o += t(x + 12, 90 + i * 18, it, { size: 8.6, weight: 700 }); });
+    return o;
+  };
+  b += lane(24, '얻는 것', COLOR.fit, ['램·SSD 슬롯 (나중에 늘림) · 전용 그래픽(VRAM)', '좋은 냉각 — 오래 도는 빌드·추론에 유리']);
+  b += lane(332, '내는 것', COLOR.over, ['무게 2~3kg · 큰 어댑터', '짧은 배터리 · 팬 소음']);
+  b += t(24, 152, '주로 어디서 쓰나?', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, verdict, c) => rect(x, 162, 188, 26, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(x + 10, 179, head, { size: 8.6, weight: 700 }) + rect(x, 192, 188, 28, c, { r: 4 }) + t(x + 10, 210, verdict, { size: 9, weight: 700, fill: '#fff' });
+  b += card(24, '책상 중심 · 로컬 LLM 계획', '게이밍 노트북이 유리', COLOR.fit);
+  b += card(226, '매일 들고 다님 · 카페에서 오래', '얇은 노트북', COLOR.mute);
+  b += card(428, '책상에서만 · 이동 없음', '데스크톱이 더 나음', COLOR.over);
+  return figure(
+    '게이밍 노트북 개발 용도 판정',
+    W, 230, b,
+    '게이밍 노트북은 램·SSD 슬롯과 전용 그래픽, 좋은 냉각을 얻는 대신 2~3kg의 무게와 큰 어댑터, 짧은 배터리와 팬 소음을 냅니다. 책상 중심에 로컬 LLM 계획이 있으면 유리하고, 매일 들고 다니면 얇은 노트북이, 이동이 전혀 없으면 데스크톱이 더 낫습니다.'
   );
 }
 
