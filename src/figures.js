@@ -1029,6 +1029,7 @@ export const figures = {
   'gaming-laptop-fork': gamingLaptopFork,
   'android-ram-ladder': androidRamLadder,
   'stuck-modifier-map': stuckModifierMap,
+  'ai-tool-where-work': aiToolWhereWork,
 };
 
 /**
@@ -6425,6 +6426,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function aiToolWhereWork() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'AI 코딩 도구 — 연산은 서버가, 그 코드를 돌리는 건 내 컴퓨터가', { weight: 600, size: 12.5 });
+  const box = (x, head, l1, l2, verdict, c) => {
+    let o = rect(x, 42, 284, 30, c, { r: 6 });
+    o += t(x + 14, 62, head, { size: 9.6, weight: 700, fill: '#fff' });
+    o += rect(x, 76, 284, 78, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 96, l1, { size: 8.6, weight: 700 });
+    o += t(x + 12, 114, l2, { size: 8.4, fill: COLOR.mute });
+    o += t(x + 12, 140, verdict, { size: 9, weight: 700, fill: c });
+    return o;
+  };
+  b += box(24, '서버 몫', 'AI가 코드를 읽고 쓰는 연산', '클로드 코드 · 커서 · 코파일럿 · 제미나이 CLI', '→ 사양과 거의 무관 (클로드 코드 공식 램 4GB)', COLOR.fit);
+  b += box(332, '내 컴퓨터 몫', 'AI가 시킨 빌드 · 테스트 · 도커 · 에뮬레이터', 'AI가 있든 없든 원래 하던 개발 작업', '→ 기준은 개발용 노트북 사양 그대로', COLOR.mute);
+  b += rect(24, 168, 592, 40, COLOR.over, { r: 6 });
+  b += t(36, 186, '예외 하나: 로컬 LLM (Ollama · LM Studio) — 모델이 내 컴퓨터에서 돈다', { size: 9, weight: 700, fill: '#fff' });
+  b += t(36, 200, '이때만 그래픽카드의 VRAM이 사양의 전부가 됩니다', { size: 8.4, fill: '#fff' });
+  return figure(
+    'AI 코딩 도구와 컴퓨터 사양',
+    W, 216, b,
+    '클로드 코드·커서·코파일럿 같은 AI 코딩 도구는 코드를 읽고 쓰는 연산을 서버에서 해서 내 컴퓨터 사양을 거의 타지 않습니다. 다만 AI가 시킨 빌드·테스트·도커 실행은 내 컴퓨터에서 돌기 때문에 기준은 원래의 개발용 사양 그대로이고, 모델을 내 컴퓨터에서 돌리는 로컬 LLM만 그래픽카드 VRAM이 사양을 정합니다.'
   );
 }
 
