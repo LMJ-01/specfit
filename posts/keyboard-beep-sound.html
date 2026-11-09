@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>키보드 누를 때마다 삑 소리가 날 때 — 어느 키에서 나는지가 켜진 기능을 알려 줍니다 | 스펙핏</title>
+<meta name="description" content="키를 누를 때마다 컴퓨터에서 삑 소리가 납니다. 고장이 아니라 윈도우 접근성 기능 셋 중 하나가 켜진 경우가 대부분이고, 어느 키에서 소리가 나는지로 어떤 기능인지 가릴 수 있습니다. 끄는 법과 실수로 다시 켜지지 않게 하는 법을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/keyboard-beep-sound.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="키보드 누를 때마다 삑 소리가 날 때 — 어느 키에서 나는지가 켜진 기능을 알려 줍니다 | 스펙핏">
+<meta property="og:description" content="키를 누를 때마다 컴퓨터에서 삑 소리가 납니다. 고장이 아니라 윈도우 접근성 기능 셋 중 하나가 켜진 경우가 대부분이고, 어느 키에서 소리가 나는지로 어떤 기능인지 가릴 수 있습니다. 끄는 법과 실수로 다시 켜지지 않게 하는 법을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/keyboard-beep-sound.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"키보드 누를 때마다 삑 소리가 날 때 — 어느 키에서 나는지가 켜진 기능을 알려 줍니다","description":"키를 누를 때마다 컴퓨터에서 삑 소리가 납니다. 고장이 아니라 윈도우 접근성 기능 셋 중 하나가 켜진 경우가 대부분이고, 어느 키에서 소리가 나는지로 어떤 기능인지 가릴 수 있습니다. 끄는 법과 실수로 다시 켜지지 않게 하는 법을 정리했습니다.","datePublished":"2026-11-10","dateModified":"2026-11-10","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/keyboard-beep-sound.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"키보드 누를 때마다 삑 소리가 날 때 — 어느 키에서 나는지가 켜진 기능을 알려 줍니다","item":"https://specfit.kr/posts/keyboard-beep-sound.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"스피커가 아니라 키보드 자체에서 \"팅\" 소리가 나요","acceptedAnswer":{"@type":"Answer","text":"그건 접근성 기능이 아니라 키보드 안의 금속 부품 소리입니다. 기계식 키보드의 스위치 스프링이나 긴 키 아래 철심이 울리는 경우가 많습니다 — 스페이스바·엔터만 소리가 다를 때."}},{"@type":"Question","name":"이 기능들을 켜 두는 게 좋은 경우도 있나요","acceptedAnswer":{"@type":"Answer","text":"있습니다. 손을 쓰기 불편해 여러 키를 동시에 누르기 어려우면 고정 키가, 손떨림이 있으면 필터 키가, 화면을 보기 어려우면 토글 키가 도움이 됩니다. 쓰는 사람에게 맞으면 켜 두고, 바로 가기만 꺼서 실수로 바뀌지 않게 하면 됩니다."}},{"@type":"Question","name":"키를 누를 때마다 \"딸깍\" 하는 윈도우 효과음은요","acceptedAnswer":{"@type":"Answer","text":"접근성 기능과 별개로, 일부 프로그램이나 화면 키보드는 자체 입력음을 냅니다. 소리가 특정 프로그램 안에서만 난다면 그 프로그램의 설정 쪽입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>키보드 누를 때마다 삑 소리가 날 때 — 어느 키에서 나는지가 켜진 기능을 알려 줍니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-11-10">2026년 11월 10일</time>
+      <span class="updated">· 2026년 11월 10일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>키를 누를 때마다 <strong>스피커에서 &quot;삑&quot;</strong> 소리가 납니다. 어떤 때는 몇 개 키에서만,
+어떤 때는 모든 키에서. 키보드가 고장 났나 싶지만, 대부분은 윈도우의 <strong>접근성
+기능</strong>이 켜진 것입니다. 손이나 귀가 불편한 사람을 돕는 기능이라 소리로 상태를
+알려 주는데, 실수로 켜지기 쉽게 바로 가기가 걸려 있습니다.</p>
+<p>기능은 셋이고, <strong>어느 키에서 소리가 나는지</strong>로 가를 수 있습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>삑 소리가 나는 때</th><th>켜진 기능</th><th>같이 나타나는 증상</th></tr></thead>
+<tbody>
+<tr><td><strong>Caps Lock · Num Lock · Scroll Lock</strong>을 누를 때만</td><td><strong>토글 키</strong></td><td>다른 이상은 없음 — 소리로 알려 줄 뿐</td></tr>
+<tr><td><strong>Shift · Ctrl · Alt · Win</strong>을 누를 때</td><td><strong>고정 키</strong></td><td>한 번 누른 키가 다음 동작까지 유지됨</td></tr>
+<tr><td><strong>모든 키</strong>를 누를 때</td><td><strong>필터 키</strong></td><td>톡톡 치는 입력이 씹히거나 늦게 들어감</td></tr>
+<tr><td>끄는 곳</td><td>설정 → 접근성 → 키보드</td><td>각 기능의 <strong>바로 가기도 같이 끄기</strong></td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 220" width="640" height="220" role="img" aria-label="키보드 삑 소리 판정">
+<title>키보드 삑 소리 판정</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">키 누를 때 삑 — 어느 키에서 나는지가 켜진 기능을 알려 준다</text><text x="24" y="48" fill="var(--fg)" font-size="9.6" font-weight="700">삑 소리가 나는 키</text><rect x="24" y="58" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="77" fill="var(--fg)" font-size="8.8" font-weight="700">Caps · Num · Scroll Lock만</text><path d="M118 88 L118 102" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M114 97 L118 102 L122 97" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="24" y="106" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="36" y="128" fill="#fff" font-size="9.6" font-weight="700">토글 키</text><text x="28" y="156" fill="var(--fg-muted)" font-size="8">알림일 뿐 — 입력 이상 없음</text><rect x="226" y="58" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="238" y="77" fill="var(--fg)" font-size="8.8" font-weight="700">Shift · Ctrl · Alt · Win</text><path d="M320 88 L320 102" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M316 97 L320 102 L324 97" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="226" y="106" width="188" height="34" fill="var(--fg-muted)" rx="4"/><text x="238" y="128" fill="#fff" font-size="9.6" font-weight="700">고정 키</text><text x="230" y="156" fill="var(--fg-muted)" font-size="8">누른 키가 다음 동작까지 유지됨</text><rect x="428" y="58" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="440" y="77" fill="var(--fg)" font-size="8.8" font-weight="700">모든 키</text><path d="M522 88 L522 102" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M518 97 L522 102 L526 97" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="428" y="106" width="188" height="34" fill="var(--fig-over)" rx="4"/><text x="440" y="128" fill="#fff" font-size="9.6" font-weight="700">필터 키</text><text x="432" y="156" fill="var(--fg-muted)" font-size="8">톡톡 친 입력이 씹히거나 늦음</text><rect x="24" y="172" width="592" height="40" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="190" fill="var(--fg)" font-size="8.8" font-weight="700">끄는 곳: 설정 → 접근성 → 키보드 — 기능 스위치와 "바로 가기 키" 둘 다 끄기</text><text x="36" y="205" fill="var(--fg-muted)" font-size="8.2">바로 가기: Shift 연타(고정 키) · 오른쪽 Shift 길게(필터 키) — 게임 중 실수로 켜지기 쉬움</text>
+</svg>
+<figcaption>Caps Lock·Num Lock·Scroll Lock을 누를 때만 삑 소리가 나면 토글 키, Shift·Ctrl·Alt·Win에서 나고 누른 키가 유지되면 고정 키, 모든 키에서 나고 입력이 씹히면 필터 키입니다. 설정 → 접근성 → 키보드에서 기능과 바로 가기 키를 둘 다 끄면 Shift 연타나 길게 누르기로 다시 켜지지 않습니다.</figcaption>
+</figure>
+<h2 id="토글-키-잠금-키에서만-삑">토글 키 — 잠금 키에서만 삑</h2>
+<p>Caps Lock, Num Lock, Scroll Lock을 누를 때만 소리가 난다면 <strong>토글 키</strong>입니다.
+잠금 키가 켜지고 꺼질 때를 소리로 알려 주는 기능이라, 입력에는 아무 문제가
+없습니다. 거슬린다면 끄면 끝입니다.</p>
+<h2 id="고정-키-shiftctrlalt에서-삑">고정 키 — Shift·Ctrl·Alt에서 삑</h2>
+<p>Shift·Ctrl·Alt·Win을 누를 때 소리가 나고, 한 번 누른 키가 <strong>다음 동작까지 눌린
+것처럼 유지</strong>된다면 <strong>고정 키</strong>입니다. 이 기능이 켜진 채로 쓰면 더블클릭에 속성
+창이 뜨거나, 휠이 확대·축소로 바뀌는 식의 엉뚱한 일이 생깁니다 — 그 증상들은
+<a href="/posts/stuck-modifier-key.html">키가 눌린 채로 잡혔을 때</a>에 따로 있습니다.</p>
+<p><strong>Shift를 연달아 여러 번</strong> 누르면 &quot;고정 키를 켜시겠습니까?&quot; 안내가 뜨는데,
+게임이나 빠른 입력 중에 그 창을 무심코 넘기면서 켜지는 경우가 많습니다.</p>
+<h2 id="필터-키-모든-키에서-삑-그리고-입력이-씹힘">필터 키 — 모든 키에서 삑, 그리고 입력이 씹힘</h2>
+<p>어떤 키를 눌러도 소리가 나고, 평소처럼 톡톡 치면 <strong>글자가 안 들어가거나 늦게</strong>
+들어간다면 <strong>필터 키</strong>입니다. 짧거나 반복된 입력을 걸러 내는 기능이라, 키를
+꾹 눌러야 입력됩니다. <strong>오른쪽 Shift를 몇 초 누르고 있으면</strong> 켜기 안내가
+뜨는 바로 가기가 있어, 게임 중에 Shift를 오래 누르다 켜지기도 합니다.</p>
+<p>키가 씹히는 증상 쪽에서 보면 <a href="/posts/keyboard-some-keys-dead.html">일부 키가 안 될 때의 층 가르기</a>의
+&quot;설정 용의자&quot; 첫 줄과 같은 기능입니다.</p>
+<h2 id="끄는-법-기능과-바로-가기를-둘-다">끄는 법 — 기능과 바로 가기를 둘 다</h2>
+<p>설정 → <strong>접근성</strong> → <strong>키보드</strong>에 세 기능이 나란히 있습니다.</p>
+<ol>
+<li>켜져 있는 기능의 스위치를 끕니다</li>
+<li>각 기능을 펼쳐서 <strong>바로 가기 키</strong> 옵션도 끕니다 — 이걸 남겨 두면 Shift를
+연타하거나 오래 누를 때 다시 켜집니다</li>
+</ol>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="스피커가-아니라-키보드-자체에서-팅-소리가-나요">스피커가 아니라 키보드 자체에서 &quot;팅&quot; 소리가 나요</h3>
+<p>그건 접근성 기능이 아니라 <strong>키보드 안의 금속 부품</strong> 소리입니다. 기계식 키보드의
+스위치 스프링이나 긴 키 아래 철심이 울리는 경우가 많습니다 —
+<a href="/posts/spacebar-rattle.html">스페이스바·엔터만 소리가 다를 때</a>.</p>
+<h3 id="이-기능들을-켜-두는-게-좋은-경우도-있나요">이 기능들을 켜 두는 게 좋은 경우도 있나요</h3>
+<p>있습니다. 손을 쓰기 불편해 여러 키를 동시에 누르기 어려우면 고정 키가, 손떨림이
+있으면 필터 키가, 화면을 보기 어려우면 토글 키가 도움이 됩니다. 쓰는 사람에게
+맞으면 켜 두고, 바로 가기만 꺼서 실수로 바뀌지 않게 하면 됩니다.</p>
+<h3 id="키를-누를-때마다-딸깍-하는-윈도우-효과음은요">키를 누를 때마다 &quot;딸깍&quot; 하는 윈도우 효과음은요</h3>
+<p>접근성 기능과 별개로, 일부 프로그램이나 화면 키보드는 자체 입력음을 냅니다.
+소리가 특정 프로그램 안에서만 난다면 그 프로그램의 설정 쪽입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>키마다 삑 소리는 대부분 <strong>접근성 기능</strong>입니다</li>
+<li><strong>잠금 키에서만</strong> → 토글 키, <strong>Shift·Ctrl·Alt에서</strong> → 고정 키, <strong>모든 키에서 + 입력 씹힘</strong> → 필터 키</li>
+<li>설정 → 접근성 → 키보드에서 <strong>기능과 바로 가기를 둘 다</strong> 끕니다</li>
+<li>스피커가 아니라 <strong>키보드 자체의 금속 소리</strong>면 다른 갈래입니다</li>
+</ol>
+<p>키보드의 이웃 판정들 — <a href="/posts/stuck-modifier-key.html">키가 눌린 채로 잡혔을 때</a> ·
+<a href="/posts/keyboard-some-keys-dead.html">일부 키가 안 될 때</a> ·
+<a href="/posts/spacebar-rattle.html">스페이스바 소리</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">키보드삑소리</span> <span class="tag">고정키</span> <span class="tag">필터키</span> <span class="tag">토글키</span> <span class="tag">윈도우접근성</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/stuck-modifier-key.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">더블클릭하면 속성 창이 열릴 때 — 마우스가 아니라 Alt 키가 눌린 채로 잡혀 있습니다</span>
+        <span class="card-desc">파일을 더블클릭했는데 열리지 않고 속성 창이 뜹니다. 고장처럼 보이지만 윈도우가 Alt 키를 누르고 있는 것으로 알고 있는 상태인 경우가 대부분입니다. 같은 원리로 생기는 Ctrl·Shift·Win 키의 형제 증상과, 눌림을 푸는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/typing-deletes-text.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">타자 치면 글자가 지워질 때 — 어떻게 지워지는지 보면 범인이 셋으로 갈립니다</span>
+        <span class="card-desc">글을 쓰는데 뒤에 있던 글자가 하나씩 사라지거나, 스페이스를 누르면 방금 쓴 마지막 글자가 없어지거나, 손대지 않았는데 글자가 지워집니다. 지워지는 모양에 따라 덮어쓰기 모드, 한글 입력기, 키 자체의 문제로 갈립니다. 갈래별 확인 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-battery-swelling.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">노트북 배터리가 부풀었을 때 — 계속 쓰면 안 됩니다, 오늘 할 일과 하지 말 일</span>
+        <span class="card-desc">노트북 바닥이 들뜨거나 터치패드가 솟아오르면 배터리가 부푼 신호일 수 있습니다. 계속 써도 되냐는 질문의 답은 하나뿐이라, 이 글은 알아채는 법과 지금 바로 할 일, 하지 말아야 할 일, 어디로 가져가는지를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

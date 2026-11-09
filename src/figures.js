@@ -1030,6 +1030,7 @@ export const figures = {
   'android-ram-ladder': androidRamLadder,
   'stuck-modifier-map': stuckModifierMap,
   'ai-tool-where-work': aiToolWhereWork,
+  'keyboard-beep-map': keyboardBeepMap,
 };
 
 /**
@@ -6426,6 +6427,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function keyboardBeepMap() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '키 누를 때 삑 — 어느 키에서 나는지가 켜진 기능을 알려 준다', { weight: 600, size: 12.5 });
+  b += t(24, 48, '삑 소리가 나는 키', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, verdict, note, c) => {
+    let o = rect(x, 58, 188, 30, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 77, head, { size: 8.8, weight: 700 });
+    o += `<path d="M${x + 94} 88 L${x + 94} 102" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 90} 97 L${x + 94} 102 L${x + 98} 97" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 106, 188, 34, c, { r: 4 });
+    o += t(x + 12, 128, verdict, { size: 9.6, weight: 700, fill: '#fff' });
+    o += t(x + 4, 156, note, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += card(24, 'Caps · Num · Scroll Lock만', '토글 키', '알림일 뿐 — 입력 이상 없음', COLOR.fit);
+  b += card(226, 'Shift · Ctrl · Alt · Win', '고정 키', '누른 키가 다음 동작까지 유지됨', COLOR.mute);
+  b += card(428, '모든 키', '필터 키', '톡톡 친 입력이 씹히거나 늦음', COLOR.over);
+  b += rect(24, 172, 592, 40, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 190, '끄는 곳: 설정 → 접근성 → 키보드 — 기능 스위치와 "바로 가기 키" 둘 다 끄기', { size: 8.8, weight: 700, fill: COLOR.text });
+  b += t(36, 205, '바로 가기: Shift 연타(고정 키) · 오른쪽 Shift 길게(필터 키) — 게임 중 실수로 켜지기 쉬움', { size: 8.2, fill: COLOR.mute });
+  return figure(
+    '키보드 삑 소리 판정',
+    W, 220, b,
+    'Caps Lock·Num Lock·Scroll Lock을 누를 때만 삑 소리가 나면 토글 키, Shift·Ctrl·Alt·Win에서 나고 누른 키가 유지되면 고정 키, 모든 키에서 나고 입력이 씹히면 필터 키입니다. 설정 → 접근성 → 키보드에서 기능과 바로 가기 키를 둘 다 끄면 Shift 연타나 길게 누르기로 다시 켜지지 않습니다.'
   );
 }
 
