@@ -1028,6 +1028,7 @@ export const figures = {
   'webdev-ram-ladder': webdevRamLadder,
   'gaming-laptop-fork': gamingLaptopFork,
   'android-ram-ladder': androidRamLadder,
+  'stuck-modifier-map': stuckModifierMap,
 };
 
 /**
@@ -6424,6 +6425,37 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function stuckModifierMap() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '클릭·휠·타자가 이상하다 — 윈도우가 "눌려 있다"고 아는 키 찾기', { weight: 600, size: 12.5 });
+  const card = (x, key, l1, l2, c) => {
+    let o = rect(x, 42, 140, 30, c, { r: 6 });
+    o += t(x + 70, 62, key, { size: 11, weight: 700, fill: '#fff', anchor: 'middle' });
+    o += rect(x, 76, 140, 54, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 10, 98, l1, { size: 8.4, weight: 700 });
+    o += t(x + 10, 116, l2, { size: 8.4, weight: 700 });
+    return o;
+  };
+  b += card(24, 'Alt', '더블클릭 → 속성 창', '파일이 안 열림', COLOR.over);
+  b += card(174, 'Ctrl', '휠 → 확대·축소', '클릭 → 여러 개 선택', COLOR.mute);
+  b += card(324, 'Shift', '대문자·특수문자', '클릭 → 범위 선택', COLOR.mute);
+  b += card(474, 'Win', '키마다 창이 열림', '단축키가 실행됨', COLOR.mute);
+  b += t(24, 154, '푸는 순서', { size: 9.6, weight: 700, fill: COLOR.text });
+  const steps = ['① 그 키를 양쪽 다 여러 번', '② 고정 키 끄기 (접근성)', '③ 화면 키보드로 확인', '④ 다른 키보드로 격리'];
+  steps.forEach((st, i) => {
+    const x = 24 + i * 150;
+    b += rect(x, 164, 142, 30, COLOR.fit, { r: 4 });
+    b += t(x + 10, 183, st, { size: 8.6, weight: 700, fill: '#fff' });
+  });
+  b += t(24, 214, '원인: 뗀 신호가 빠짐(무선 끊김·원격 접속·가상 머신) · 고정 키 · 키가 실제로 덜 올라옴', { size: 8.2, fill: COLOR.mute });
+  return figure(
+    '눌린 채로 잡힌 키 판정',
+    W, 224, b,
+    '더블클릭하면 속성 창이 뜨면 Alt, 휠이 확대·축소되고 클릭이 여러 개를 선택하면 Ctrl, 대문자가 나오고 클릭이 범위를 잡으면 Shift, 키마다 창이 열리면 Win이 눌린 채로 잡힌 상태입니다. 그 키를 양쪽 다 여러 번 눌러 풀고, 안 되면 고정 키를 끄고 화면 키보드로 확인한 뒤 다른 키보드로 격리합니다.'
   );
 }
 

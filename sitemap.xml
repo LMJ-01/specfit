@@ -13,8 +13,9 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/stuck-modifier-key.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-cursor-gone.html</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/typing-deletes-text.html</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/typing-deletes-text.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/bluetooth-toggle-missing.html</loc><lastmod>2026-11-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-battery-swelling.html</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/usb-file-too-large.html</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
@@ -68,7 +69,7 @@
   <url><loc>https://specfit.kr/posts/pc-slow-boot.html</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-fullscreen-borderless.html</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-yellow-tint.html</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/mouse-double-click.html</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/mouse-double-click.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-freeze-sound-loop.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/front-usb-not-working.html</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-on-bed.html</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>

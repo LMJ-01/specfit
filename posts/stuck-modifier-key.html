@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>더블클릭하면 속성 창이 열릴 때 — 마우스가 아니라 Alt 키가 눌린 채로 잡혀 있습니다 | 스펙핏</title>
+<meta name="description" content="파일을 더블클릭했는데 열리지 않고 속성 창이 뜹니다. 고장처럼 보이지만 윈도우가 Alt 키를 누르고 있는 것으로 알고 있는 상태인 경우가 대부분입니다. 같은 원리로 생기는 Ctrl·Shift·Win 키의 형제 증상과, 눌림을 푸는 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/stuck-modifier-key.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="더블클릭하면 속성 창이 열릴 때 — 마우스가 아니라 Alt 키가 눌린 채로 잡혀 있습니다 | 스펙핏">
+<meta property="og:description" content="파일을 더블클릭했는데 열리지 않고 속성 창이 뜹니다. 고장처럼 보이지만 윈도우가 Alt 키를 누르고 있는 것으로 알고 있는 상태인 경우가 대부분입니다. 같은 원리로 생기는 Ctrl·Shift·Win 키의 형제 증상과, 눌림을 푸는 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/stuck-modifier-key.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"더블클릭하면 속성 창이 열릴 때 — 마우스가 아니라 Alt 키가 눌린 채로 잡혀 있습니다","description":"파일을 더블클릭했는데 열리지 않고 속성 창이 뜹니다. 고장처럼 보이지만 윈도우가 Alt 키를 누르고 있는 것으로 알고 있는 상태인 경우가 대부분입니다. 같은 원리로 생기는 Ctrl·Shift·Win 키의 형제 증상과, 눌림을 푸는 순서를 정리했습니다.","datePublished":"2026-11-09","dateModified":"2026-11-09","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/stuck-modifier-key.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"더블클릭하면 속성 창이 열릴 때 — 마우스가 아니라 Alt 키가 눌린 채로 잡혀 있습니다","item":"https://specfit.kr/posts/stuck-modifier-key.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"마우스를 바꿔야 하나요","acceptedAnswer":{"@type":"Answer","text":"더블클릭 자체가 문제라면 마우스지만, 속성 창이 뜨는 건 마우스가 아니라 키보드 쪽 신호입니다. 반대로 한 번 눌렀는데 두 번 눌린 것처럼 동작한다면 그건 마우스 접점 문제입니다 — 한 번 눌렀는데 더블클릭이 될 때."}},{"@type":"Question","name":"글자를 칠 때 뒤 글자가 지워지는 것도 같은 문제인가요","acceptedAnswer":{"@type":"Answer","text":"비슷해 보이지만 다른 갈래입니다 — 덮어쓰기 모드나 입력기 문제일 수 있어 타자 치면 글자가 지워질 때에서 따로 가릅니다."}},{"@type":"Question","name":"재부팅하면 풀리던데요","acceptedAnswer":{"@type":"Answer","text":"재부팅하면 키 상태가 처음부터 다시 잡히니 풀리는 게 맞습니다. 다만 위의 1번 (양쪽 키 여러 번 누르기)이 훨씬 빠르고, 자주 되풀이된다면 재부팅보다 원인(무선 연결· 원격 접속·키 걸림)을 찾는 쪽이 낫습니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/laptop.html">노트북</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>더블클릭하면 속성 창이 열릴 때 — 마우스가 아니라 Alt 키가 눌린 채로 잡혀 있습니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-11-09">2026년 11월 9일</time>
+      <span class="updated">· 2026년 11월 9일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>파일을 열려고 더블클릭했는데 파일은 안 열리고 <strong>속성 창</strong>이 뜹니다. 다시 해도
+마찬가지입니다. 마우스가 고장 났나 싶고, 검색하면 &quot;파일 연결 프로그램을
+다시 지정하라&quot;는 답이 나옵니다.</p>
+<p>그런데 이 증상은 대부분 마우스도, 파일 연결도 아닙니다. 윈도우에서 <strong>Alt를
+누른 채 더블클릭하면 속성 창이 열리게</strong> 되어 있어서, 윈도우가 지금 <strong>Alt 키를
+누르고 있는 것으로 알고 있는 상태</strong>라는 뜻입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>증상</th><th>눌린 채로 잡힌 키</th></tr></thead>
+<tbody>
+<tr><td>더블클릭하면 <strong>속성 창</strong>이 열림</td><td><strong>Alt</strong></td></tr>
+<tr><td>마우스 휠을 굴리면 <strong>확대·축소</strong>됨, 클릭하면 <strong>여러 개가 같이 선택</strong>됨</td><td><strong>Ctrl</strong></td></tr>
+<tr><td>글자가 <strong>대문자·특수문자</strong>로 나옴, 클릭하면 <strong>범위가 선택</strong>됨</td><td><strong>Shift</strong></td></tr>
+<tr><td>키를 누를 때마다 <strong>창이 열리거나 단축키가 실행</strong>됨</td><td><strong>Win</strong></td></tr>
+<tr><td>푸는 순서</td><td>양쪽 키 여러 번 누르기 → 고정 키 확인 → 화면 키보드 → 다른 키보드</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 224" width="640" height="224" role="img" aria-label="눌린 채로 잡힌 키 판정">
+<title>눌린 채로 잡힌 키 판정</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">클릭·휠·타자가 이상하다 — 윈도우가 "눌려 있다"고 아는 키 찾기</text><rect x="24" y="42" width="140" height="30" fill="var(--fig-over)" rx="6"/><text x="94" y="62" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">Alt</text><rect x="24" y="76" width="140" height="54" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="34" y="98" fill="var(--fg)" font-size="8.4" font-weight="700">더블클릭 → 속성 창</text><text x="34" y="116" fill="var(--fg)" font-size="8.4" font-weight="700">파일이 안 열림</text><rect x="174" y="42" width="140" height="30" fill="var(--fg-muted)" rx="6"/><text x="244" y="62" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">Ctrl</text><rect x="174" y="76" width="140" height="54" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="184" y="98" fill="var(--fg)" font-size="8.4" font-weight="700">휠 → 확대·축소</text><text x="184" y="116" fill="var(--fg)" font-size="8.4" font-weight="700">클릭 → 여러 개 선택</text><rect x="324" y="42" width="140" height="30" fill="var(--fg-muted)" rx="6"/><text x="394" y="62" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">Shift</text><rect x="324" y="76" width="140" height="54" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="334" y="98" fill="var(--fg)" font-size="8.4" font-weight="700">대문자·특수문자</text><text x="334" y="116" fill="var(--fg)" font-size="8.4" font-weight="700">클릭 → 범위 선택</text><rect x="474" y="42" width="140" height="30" fill="var(--fg-muted)" rx="6"/><text x="544" y="62" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">Win</text><rect x="474" y="76" width="140" height="54" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="484" y="98" fill="var(--fg)" font-size="8.4" font-weight="700">키마다 창이 열림</text><text x="484" y="116" fill="var(--fg)" font-size="8.4" font-weight="700">단축키가 실행됨</text><text x="24" y="154" fill="var(--fg)" font-size="9.6" font-weight="700">푸는 순서</text><rect x="24" y="164" width="142" height="30" fill="var(--fig-fit)" rx="4"/><text x="34" y="183" fill="#fff" font-size="8.6" font-weight="700">① 그 키를 양쪽 다 여러 번</text><rect x="174" y="164" width="142" height="30" fill="var(--fig-fit)" rx="4"/><text x="184" y="183" fill="#fff" font-size="8.6" font-weight="700">② 고정 키 끄기 (접근성)</text><rect x="324" y="164" width="142" height="30" fill="var(--fig-fit)" rx="4"/><text x="334" y="183" fill="#fff" font-size="8.6" font-weight="700">③ 화면 키보드로 확인</text><rect x="474" y="164" width="142" height="30" fill="var(--fig-fit)" rx="4"/><text x="484" y="183" fill="#fff" font-size="8.6" font-weight="700">④ 다른 키보드로 격리</text><text x="24" y="214" fill="var(--fg-muted)" font-size="8.2">원인: 뗀 신호가 빠짐(무선 끊김·원격 접속·가상 머신) · 고정 키 · 키가 실제로 덜 올라옴</text>
+</svg>
+<figcaption>더블클릭하면 속성 창이 뜨면 Alt, 휠이 확대·축소되고 클릭이 여러 개를 선택하면 Ctrl, 대문자가 나오고 클릭이 범위를 잡으면 Shift, 키마다 창이 열리면 Win이 눌린 채로 잡힌 상태입니다. 그 키를 양쪽 다 여러 번 눌러 풀고, 안 되면 고정 키를 끄고 화면 키보드로 확인한 뒤 다른 키보드로 격리합니다.</figcaption>
+</figure>
+<h2 id="왜-이런-일이-생기나">왜 이런 일이 생기나</h2>
+<p>키보드는 키를 <strong>누를 때</strong>와 <strong>뗄 때</strong> 각각 신호를 보냅니다. 그런데 뗄 때 신호가
+중간에 빠지면, 윈도우는 그 키가 아직 눌려 있다고 생각합니다. 그러면 마우스
+동작에 그 키 조합이 덧붙어서 엉뚱한 일이 일어납니다.</p>
+<ul>
+<li><strong>무선 키보드</strong>가 키를 누른 순간 잠깐 끊겼던 경우</li>
+<li><strong>원격 접속·가상 머신</strong> 창에서 Alt+Tab 같은 조합을 쓰고 빠져나온 경우</li>
+<li>키 아래 이물질이나 노화로 <strong>키가 실제로 덜 올라온</strong> 경우</li>
+<li>접근성의 <strong>고정 키</strong>가 켜져서, 한 번 누른 Alt·Ctrl·Shift가 다음 동작까지 유지되는 경우</li>
+</ul>
+<h2 id="푸는-순서">푸는 순서</h2>
+<ol>
+<li><strong>그 키를 양쪽 다 여러 번</strong> 누릅니다. Alt라면 왼쪽 Alt와 오른쪽 Alt(한/영 키
+자리인 키보드도 있습니다)를 각각 몇 번씩 눌렀다 뗍니다. 빠졌던 &quot;뗌&quot; 신호가
+들어가면서 대부분 여기서 풀립니다</li>
+<li><strong>고정 키가 켜져 있지 않은지</strong> 봅니다. 설정 → 접근성 → 키보드의 <strong>고정 키</strong>가
+켜져 있으면 끕니다. Shift를 연달아 누르다 실수로 켜지는 경우가 많습니다</li>
+<li><strong>화면 키보드</strong>를 띄워 봅니다. 눌린 것으로 잡힌 수정키가 다른 색으로 표시되는
+경우가 있어, 어느 키가 범인인지 확인하는 데 도움이 됩니다</li>
+<li><strong>다른 키보드를 꽂아</strong> 보거나, 무선이라면 잠깐 꺼서 연결을 끊어 봅니다.
+원래 키보드를 뺐을 때 증상이 사라지면 그 키보드의 키가 실제로 걸린 쪽입니다</li>
+</ol>
+<p>계속 되풀이된다면 키가 물리적으로 걸리는 쪽이라, 키캡 아래 청소와 키 격리는
+<a href="/posts/keyboard-some-keys-dead.html">일부 키가 안 될 때의 층 가르기</a> 순서와 같습니다.</p>
+<h2 id="형제-증상들">형제 증상들</h2>
+<ul>
+<li><strong>Ctrl</strong> — 브라우저나 문서에서 휠을 굴렸을 뿐인데 화면이 커졌다 작아졌다 하고,
+파일을 하나 클릭했는데 여러 개가 선택된다면 Ctrl입니다. 바탕화면 아이콘이 갑자기
+커지는 것도 같은 원리입니다 — <a href="/posts/desktop-icons-missing.html">아이콘이 갑자기 커질 때</a></li>
+<li><strong>Shift</strong> — 한글이 쌍자음으로, 숫자가 특수문자로 나오고, 클릭할 때마다 범위가
+잡힌다면 Shift입니다</li>
+<li><strong>Win</strong> — 글자를 칠 때마다 시작 메뉴나 엉뚱한 창이 열린다면 Win 키입니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="마우스를-바꿔야-하나요">마우스를 바꿔야 하나요</h3>
+<p>더블클릭 자체가 문제라면 마우스지만, <strong>속성 창이 뜨는</strong> 건 마우스가 아니라 키보드
+쪽 신호입니다. 반대로 한 번 눌렀는데 <strong>두 번 눌린 것처럼</strong> 동작한다면 그건 마우스
+접점 문제입니다 — <a href="/posts/mouse-double-click.html">한 번 눌렀는데 더블클릭이 될 때</a>.</p>
+<h3 id="글자를-칠-때-뒤-글자가-지워지는-것도-같은-문제인가요">글자를 칠 때 뒤 글자가 지워지는 것도 같은 문제인가요</h3>
+<p>비슷해 보이지만 다른 갈래입니다 — 덮어쓰기 모드나 입력기 문제일 수 있어
+<a href="/posts/typing-deletes-text.html">타자 치면 글자가 지워질 때</a>에서 따로 가릅니다.</p>
+<h3 id="재부팅하면-풀리던데요">재부팅하면 풀리던데요</h3>
+<p>재부팅하면 키 상태가 처음부터 다시 잡히니 풀리는 게 맞습니다. 다만 위의 1번
+(양쪽 키 여러 번 누르기)이 훨씬 빠르고, 자주 되풀이된다면 재부팅보다 원인(무선 연결·
+원격 접속·키 걸림)을 찾는 쪽이 낫습니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>더블클릭하면 속성 창이 뜨는 건 대개 <strong>Alt가 눌린 채로 잡힌</strong> 상태입니다</li>
+<li>휠이 확대·축소되면 <strong>Ctrl</strong>, 대문자·범위 선택이면 <strong>Shift</strong>, 창이 열리면 <strong>Win</strong>입니다</li>
+<li>먼저 <strong>그 키를 양쪽 다 여러 번</strong> 눌러 풉니다</li>
+<li>안 풀리면 <strong>고정 키 → 화면 키보드 → 다른 키보드</strong> 순서로 봅니다</li>
+<li>되풀이되면 <strong>키가 실제로 걸린</strong> 쪽이라 키보드 격리로 갑니다</li>
+</ol>
+<p>키보드·마우스의 이웃 판정들 — <a href="/posts/keyboard-some-keys-dead.html">일부 키가 안 될 때</a> ·
+<a href="/posts/mouse-double-click.html">더블클릭이 될 때</a> ·
+<a href="/posts/typing-deletes-text.html">글자가 지워질 때</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">더블클릭속성</span> <span class="tag">Alt키</span> <span class="tag">키눌림</span> <span class="tag">고정키</span> <span class="tag">키보드오류</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/typing-deletes-text.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">타자 치면 글자가 지워질 때 — 어떻게 지워지는지 보면 범인이 셋으로 갈립니다</span>
+        <span class="card-desc">글을 쓰는데 뒤에 있던 글자가 하나씩 사라지거나, 스페이스를 누르면 방금 쓴 마지막 글자가 없어지거나, 손대지 않았는데 글자가 지워집니다. 지워지는 모양에 따라 덮어쓰기 모드, 한글 입력기, 키 자체의 문제로 갈립니다. 갈래별 확인 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/laptop-battery-swelling.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">노트북 배터리가 부풀었을 때 — 계속 쓰면 안 됩니다, 오늘 할 일과 하지 말 일</span>
+        <span class="card-desc">노트북 바닥이 들뜨거나 터치패드가 솟아오르면 배터리가 부푼 신호일 수 있습니다. 계속 써도 되냐는 질문의 답은 하나뿐이라, 이 글은 알아채는 법과 지금 바로 할 일, 하지 말아야 할 일, 어디로 가져가는지를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/spacebar-rattle.html">
+        <span class="card-cat">노트북</span>
+        <span class="card-title">스페이스바·엔터만 소리가 다를 때 — 스위치가 아니라 철심의 소리입니다</span>
+        <span class="card-desc">스페이스바·엔터·시프트처럼 긴 키만 달그락·쇳소리가 나는 증상은 키보드 게시판 단골 질문입니다. 스위치가 아니라 긴 키를 수평으로 잡아주는 철심(스테빌라이저)의 소리라, 어느 키인가·어디를 눌렀나로 가르는 법과 처방 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
