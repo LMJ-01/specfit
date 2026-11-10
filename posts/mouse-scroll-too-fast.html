@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마우스 휠 스크롤이 너무 빠를 때 — 줄 수 설정, 휠 모드, 프로그램 순서로 봅니다 | 스펙핏</title>
+<meta name="description" content="휠을 한 칸만 굴렸는데 화면이 한참 내려가거나, 한 번 굴리면 멈추지 않고 계속 돕니다. 윈도우의 스크롤 줄 수, 마우스의 휠 모드(프리 스핀), 프로그램의 부드러운 스크롤 중 하나인 경우가 대부분입니다. 가르는 순서와, 휠이 튀는 고장과의 구분을 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/mouse-scroll-too-fast.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="마우스 휠 스크롤이 너무 빠를 때 — 줄 수 설정, 휠 모드, 프로그램 순서로 봅니다 | 스펙핏">
+<meta property="og:description" content="휠을 한 칸만 굴렸는데 화면이 한참 내려가거나, 한 번 굴리면 멈추지 않고 계속 돕니다. 윈도우의 스크롤 줄 수, 마우스의 휠 모드(프리 스핀), 프로그램의 부드러운 스크롤 중 하나인 경우가 대부분입니다. 가르는 순서와, 휠이 튀는 고장과의 구분을 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/mouse-scroll-too-fast.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"마우스 휠 스크롤이 너무 빠를 때 — 줄 수 설정, 휠 모드, 프로그램 순서로 봅니다","description":"휠을 한 칸만 굴렸는데 화면이 한참 내려가거나, 한 번 굴리면 멈추지 않고 계속 돕니다. 윈도우의 스크롤 줄 수, 마우스의 휠 모드(프리 스핀), 프로그램의 부드러운 스크롤 중 하나인 경우가 대부분입니다. 가르는 순서와, 휠이 튀는 고장과의 구분을 정리했습니다.","datePublished":"2026-11-10","dateModified":"2026-11-10","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mouse-scroll-too-fast.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"마우스 휠 스크롤이 너무 빠를 때 — 줄 수 설정, 휠 모드, 프로그램 순서로 봅니다","item":"https://specfit.kr/posts/mouse-scroll-too-fast.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"반대로 너무 느려요","acceptedAnswer":{"@type":"Answer","text":"같은 자리를 반대로 조절하면 됩니다 — 윈도우의 줄 수를 올리거나, 휠 모드가 걸림 있는 쪽으로 고정돼 있는지 봅니다."}},{"@type":"Question","name":"노트북 터치패드 스크롤이 빨라요","acceptedAnswer":{"@type":"Answer","text":"터치패드는 마우스 휠과 설정이 따로입니다. 설정의 터치패드 항목에서 스크롤 방향과 속도를 조절합니다."}},{"@type":"Question","name":"내려가다가 가끔 위로 튀어요","acceptedAnswer":{"@type":"Answer","text":"그건 양의 문제가 아니라 휠 부품(인코더)이 방향을 잘못 읽는 쪽입니다 — 마우스 휠이 튀거나 반대로 갈 때의 판정이 그대로입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>마우스 휠 스크롤이 너무 빠를 때 — 줄 수 설정, 휠 모드, 프로그램 순서로 봅니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-11-10">2026년 11월 10일</time>
+      <span class="updated">· 2026년 11월 10일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>휠을 <strong>한 칸</strong> 굴렸는데 화면이 한참 내려갑니다. 또는 살짝 굴렸을 뿐인데 휠이
+<strong>혼자 계속 돌면서</strong> 페이지가 끝까지 날아갑니다. 마우스가 고장 났나 싶지만, 대부분은
+<strong>양을 정하는 설정</strong> 쪽입니다 — 윈도우, 마우스 자체, 프로그램 세 곳 중 하나.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>정황</th><th>갈래</th><th>먼저 할 것</th></tr></thead>
+<tbody>
+<tr><td>어디서나 한 칸에 <strong>너무 많이</strong> 내려감</td><td><strong>윈도우 스크롤 줄 수</strong></td><td>마우스 설정에서 줄 수 낮추기</td></tr>
+<tr><td>휠이 걸림 없이 <strong>혼자 계속 돎</strong></td><td><strong>마우스의 휠 모드</strong></td><td>휠 모드 전환 버튼·동작 확인</td></tr>
+<tr><td><strong>특정 프로그램에서만</strong> 빠르거나 미끄러짐</td><td><strong>프로그램의 부드러운 스크롤</strong></td><td>그 프로그램 옵션 끄기</td></tr>
+<tr><td>내려가다 <strong>반대로 튐</strong></td><td>설정이 아니라 <strong>휠 부품</strong></td><td><a href="/posts/mouse-wheel-jump.html">휠이 튈 때</a></td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 220" width="640" height="220" role="img" aria-label="휠 스크롤 속도 판정">
+<title>휠 스크롤 속도 판정</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">휠 스크롤이 너무 빠르다 — 양을 정하는 곳은 세 군데</text><text x="24" y="48" fill="var(--fg)" font-size="9.6" font-weight="700">빠른 모양</text><rect x="24" y="58" width="188" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="76" fill="var(--fg)" font-size="8.8" font-weight="700">어디서나 한 칸에 많이</text><text x="36" y="92" fill="var(--fg-muted)" font-size="8">모든 프로그램에서 똑같이</text><path d="M118 102 L118 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M114 111 L118 116 L122 111" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="24" y="120" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="36" y="142" fill="#fff" font-size="9.4" font-weight="700">윈도우 스크롤 줄 수</text><text x="28" y="170" fill="var(--fg-muted)" font-size="8">마우스 설정에서 낮추기</text><rect x="226" y="58" width="188" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="238" y="76" fill="var(--fg)" font-size="8.8" font-weight="700">휠이 혼자 계속 돎</text><text x="238" y="92" fill="var(--fg-muted)" font-size="8">딸깍 걸림이 없음</text><path d="M320 102 L320 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M316 111 L320 116 L324 111" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="226" y="120" width="188" height="34" fill="var(--fg-muted)" rx="4"/><text x="238" y="142" fill="#fff" font-size="9.4" font-weight="700">마우스의 휠 모드</text><text x="230" y="170" fill="var(--fg-muted)" font-size="8">모드 전환 버튼 · 휠 누르기</text><rect x="428" y="58" width="188" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="440" y="76" fill="var(--fg)" font-size="8.8" font-weight="700">특정 프로그램에서만</text><text x="440" y="92" fill="var(--fg-muted)" font-size="8">미끄러지듯 흘러감</text><path d="M522 102 L522 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M518 111 L522 116 L526 111" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="428" y="120" width="188" height="34" fill="var(--fg-muted)" rx="4"/><text x="440" y="142" fill="#fff" font-size="9.4" font-weight="700">부드러운 스크롤</text><text x="432" y="170" fill="var(--fg-muted)" font-size="8">그 프로그램 옵션 · 확장 끄기</text><rect x="24" y="186" width="592" height="26" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="203" fill="var(--fig-over)" font-size="8.4" font-weight="700">내려가다 반대로 튄다면 양이 아니라 휠 부품(인코더) 쪽 — 설정으로는 안 고쳐짐</text>
+</svg>
+<figcaption>어디서나 휠 한 칸에 너무 많이 내려가면 윈도우의 스크롤 줄 수를 낮추고, 휠이 걸림 없이 혼자 계속 돌면 마우스의 휠 모드를 전환하며, 특정 프로그램에서만 빠르면 그 프로그램의 부드러운 스크롤을 끕니다. 내려가다 반대로 튀는 것은 설정이 아니라 휠 부품 쪽입니다.</figcaption>
+</figure>
+<h2 id="갈래-윈도우의-스크롤-줄-수">갈래 ① — 윈도우의 스크롤 줄 수</h2>
+<p>어느 프로그램에서나 똑같이 한 칸에 너무 많이 내려간다면 윈도우 설정입니다. 설정의
+<strong>마우스</strong> 항목에 휠을 한 번 굴릴 때 <strong>몇 줄씩</strong> 스크롤할지 정하는 값이 있고, 이 값이
+크게 잡혀 있거나 <strong>한 번에 한 화면씩</strong>으로 되어 있으면 휙휙 넘어갑니다.</p>
+<ul>
+<li>값을 낮춰 가며 편한 지점을 찾습니다</li>
+<li>마우스 제조사 프로그램을 쓴다면, 그 프로그램에도 <strong>스크롤 속도·가속</strong> 설정이 따로
+있는 경우가 있어 둘이 겹쳐 빨라지기도 합니다 — 한쪽만 조절하는 편이 덜 헷갈립니다</li>
+</ul>
+<h2 id="갈래-마우스의-휠-모드">갈래 ② — 마우스의 휠 모드</h2>
+<p>휠을 살짝 밀었는데 <strong>딸깍거리는 걸림 없이 혼자 계속 돈다면</strong>, 일부 마우스에 있는
+<strong>걸림 없이 도는 휠 모드</strong>(제조사마다 이름이 다릅니다)로 바뀐 상태입니다. 긴 문서를
+빠르게 넘기라고 만든 기능이라 고장이 아닙니다.</p>
+<ul>
+<li>휠 아래나 뒤쪽의 <strong>모드 전환 버튼</strong>, 또는 휠을 꾹 누르는 동작으로 오가는 제품이 많습니다</li>
+<li>자동으로 바뀌는 설정이 켜진 제품도 있어서, 빠르게 굴릴 때만 풀려 버린다면 제조사
+프로그램의 휠 설정을 봅니다</li>
+</ul>
+<h2 id="갈래-특정-프로그램의-부드러운-스크롤">갈래 ③ — 특정 프로그램의 부드러운 스크롤</h2>
+<p>브라우저나 특정 프로그램에서만 스크롤이 빠르거나 <strong>미끄러지듯 계속 흘러간다면</strong> 그
+프로그램의 <strong>부드러운 스크롤</strong> 옵션이나 확장 프로그램 쪽입니다.</p>
+<ul>
+<li>브라우저라면 설정에서 부드러운 스크롤을 끄거나, 확장 프로그램을 잠시 꺼 봅니다</li>
+<li>그림·영상 프로그램은 휠 한 칸이 화면 이동이 아니라 <strong>확대·축소</strong>에 묶여 있기도 합니다 —
+휠만 굴렸는데 확대·축소가 된다면 Ctrl이 눌린 채로 잡힌 경우일 수도 있습니다 —
+<a href="/posts/stuck-modifier-key.html">키가 눌린 채로 잡혔을 때</a></li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="반대로-너무-느려요">반대로 너무 느려요</h3>
+<p>같은 자리를 반대로 조절하면 됩니다 — 윈도우의 줄 수를 올리거나, 휠 모드가 걸림 있는
+쪽으로 고정돼 있는지 봅니다.</p>
+<h3 id="노트북-터치패드-스크롤이-빨라요">노트북 터치패드 스크롤이 빨라요</h3>
+<p>터치패드는 마우스 휠과 설정이 따로입니다. 설정의 <strong>터치패드</strong> 항목에서 스크롤 방향과
+속도를 조절합니다.</p>
+<h3 id="내려가다가-가끔-위로-튀어요">내려가다가 가끔 위로 튀어요</h3>
+<p>그건 양의 문제가 아니라 <strong>휠 부품(인코더)</strong>이 방향을 잘못 읽는 쪽입니다 —
+<a href="/posts/mouse-wheel-jump.html">마우스 휠이 튀거나 반대로 갈 때</a>의 판정이 그대로입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>어디서나 한 칸에 너무 많이 → <strong>윈도우 스크롤 줄 수</strong>(제조사 프로그램과 겹치는지도)</li>
+<li>휠이 <strong>혼자 계속 돎</strong> → 마우스의 <strong>휠 모드</strong> 전환</li>
+<li><strong>특정 프로그램에서만</strong> → 그 프로그램의 <strong>부드러운 스크롤</strong></li>
+<li><strong>반대로 튐</strong>은 설정이 아니라 <strong>휠 부품</strong> 쪽</li>
+</ol>
+<p>마우스의 이웃 판정들 — <a href="/posts/mouse-wheel-jump.html">휠이 튈 때</a> ·
+<a href="/posts/stuck-modifier-key.html">키가 눌린 채로 잡혔을 때</a> ·
+<a href="/posts/mouse-cursor-trail.html">커서에 꼬리가 생길 때</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">마우스휠</span> <span class="tag">스크롤속도</span> <span class="tag">휠스크롤</span> <span class="tag">프리스핀</span> <span class="tag">부드러운스크롤</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mouse-cursor-trail.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 커서에 꼬리가 생길 때 — 설정 하나, 모니터 하나, 프로그램 하나</span>
+        <span class="card-desc">마우스를 움직이면 커서 뒤로 잔상이 줄줄이 따라옵니다. 윈도우의 포인터 자국 기능이 켜졌거나, 모니터의 응답속도 보정이 과하거나, 특정 프로그램의 그리기 문제인 경우가 대부분입니다. 어디서 꼬리가 보이는지로 가르는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mouse-drag-stuck.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 드래그가 안 풀릴 때 — 버튼을 뗐는데 계속 끌려온다면 넷 중 하나입니다</span>
+        <span class="card-desc">버튼을 뗐는데도 창이나 파일이 커서를 따라 계속 끌려옵니다. 윈도우의 클릭 잠금 기능, 마우스 버튼 접점, 무선 연결에서 빠진 신호, 특정 프로그램 중 하나인 경우가 대부분입니다. 당장 푸는 법과 원인 가르는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mouse-cursor-gone.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 커서가 사라졌을 때 — &quot;안 보이는&quot; 건지 &quot;안 움직이는&quot; 건지부터</span>
+        <span class="card-desc">화면에서 마우스 커서가 안 보입니다. 다른 화면으로 넘어갔을 뿐인 경우, 특정 프로그램에서만 숨는 경우, 마우스 입력 자체가 끊긴 경우, 노트북 터치패드가 꺼진 경우는 처방이 전부 다릅니다. 커서 없이 움직이는 법과 갈래 가르는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

@@ -1033,6 +1033,7 @@ export const figures = {
   'keyboard-beep-map': keyboardBeepMap,
   'drag-stuck-split': dragStuckSplit,
   'cursor-trail-split': cursorTrailSplit,
+  'scroll-fast-split': scrollFastSplit,
 };
 
 /**
@@ -6429,6 +6430,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function scrollFastSplit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '휠 스크롤이 너무 빠르다 — 양을 정하는 곳은 세 군데', { weight: 600, size: 12.5 });
+  b += t(24, 48, '빠른 모양', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, sub, verdict, note, c) => {
+    let o = rect(x, 58, 188, 44, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 76, head, { size: 8.8, weight: 700 });
+    o += t(x + 12, 92, sub, { size: 8, fill: COLOR.mute });
+    o += `<path d="M${x + 94} 102 L${x + 94} 116" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 90} 111 L${x + 94} 116 L${x + 98} 111" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 120, 188, 34, c, { r: 4 });
+    o += t(x + 12, 142, verdict, { size: 9.4, weight: 700, fill: '#fff' });
+    o += t(x + 4, 170, note, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += card(24, '어디서나 한 칸에 많이', '모든 프로그램에서 똑같이', '윈도우 스크롤 줄 수', '마우스 설정에서 낮추기', COLOR.fit);
+  b += card(226, '휠이 혼자 계속 돎', '딸깍 걸림이 없음', '마우스의 휠 모드', '모드 전환 버튼 · 휠 누르기', COLOR.mute);
+  b += card(428, '특정 프로그램에서만', '미끄러지듯 흘러감', '부드러운 스크롤', '그 프로그램 옵션 · 확장 끄기', COLOR.mute);
+  b += rect(24, 186, 592, 26, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 203, '내려가다 반대로 튄다면 양이 아니라 휠 부품(인코더) 쪽 — 설정으로는 안 고쳐짐', { size: 8.4, weight: 700, fill: COLOR.over });
+  return figure(
+    '휠 스크롤 속도 판정',
+    W, 220, b,
+    '어디서나 휠 한 칸에 너무 많이 내려가면 윈도우의 스크롤 줄 수를 낮추고, 휠이 걸림 없이 혼자 계속 돌면 마우스의 휠 모드를 전환하며, 특정 프로그램에서만 빠르면 그 프로그램의 부드러운 스크롤을 끕니다. 내려가다 반대로 튀는 것은 설정이 아니라 휠 부품 쪽입니다.'
   );
 }
 
