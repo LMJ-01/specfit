@@ -1031,6 +1031,7 @@ export const figures = {
   'stuck-modifier-map': stuckModifierMap,
   'ai-tool-where-work': aiToolWhereWork,
   'keyboard-beep-map': keyboardBeepMap,
+  'drag-stuck-split': dragStuckSplit,
 };
 
 /**
@@ -6427,6 +6428,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function dragStuckSplit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '드래그가 안 풀린다 — 컴퓨터는 버튼이 "아직 눌려 있다"고 안다', { weight: 600, size: 12.5 });
+  b += rect(24, 40, 592, 30, COLOR.fit, { r: 6 });
+  b += t(36, 60, '지금 당장: 같은 버튼 한 번 더 클릭 · 파일 끌기는 Esc로 취소 · 잘못 떨어뜨렸으면 Ctrl+Z', { size: 9, weight: 700, fill: '#fff' });
+  const card = (x, y, head, sub, act, c) => {
+    let o = rect(x, y, 288, 58, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += rect(x, y, 6, 58, c, { r: 2 });
+    o += t(x + 16, y + 19, head, { size: 9.2, weight: 700 });
+    o += t(x + 16, y + 35, sub, { size: 8.2, fill: COLOR.mute });
+    o += t(x + 16, y + 50, act, { size: 8.4, weight: 700, fill: c });
+    return o;
+  };
+  b += card(24, 82, '① 윈도우 클릭 잠금', '길게 누를 때마다 규칙적으로', '→ 마우스 속성 · 단추 탭에서 끄기', COLOR.over);
+  b += card(328, 82, '② 버튼 접점', '오래 쓴 마우스 · 가끔 · 더블클릭도 같이', '→ 다른 마우스로 비교', COLOR.mute);
+  b += card(24, 148, '③ 무선에서 빠진 신호', '커서 멈칫·건너뜀도 가끔', '→ 배터리 · 수신기 · 재연결', COLOR.mute);
+  b += card(328, 148, '④ 특정 프로그램', '바탕화면에선 멀쩡', '→ 그 프로그램 업데이트·재시작', COLOR.mute);
+  return figure(
+    '드래그 안 풀림 판정',
+    W, 216, b,
+    '버튼을 뗐는데도 끌기가 이어지면 같은 버튼을 한 번 더 누르거나 Esc로 먼저 풉니다. 길게 누를 때마다 규칙적으로 그러면 윈도우 클릭 잠금, 오래 쓴 마우스에서 가끔이면 버튼 접점, 무선에서 커서 멈칫과 함께면 뗌 신호 누락, 특정 프로그램 안에서만이면 그 프로그램 쪽입니다.'
   );
 }
 

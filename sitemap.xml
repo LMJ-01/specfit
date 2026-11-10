@@ -14,6 +14,7 @@
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/posts/keyboard-beep-sound.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/mouse-drag-stuck.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/stuck-modifier-key.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-cursor-gone.html</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/typing-deletes-text.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
@@ -70,7 +71,7 @@
   <url><loc>https://specfit.kr/posts/pc-slow-boot.html</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/game-fullscreen-borderless.html</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-yellow-tint.html</loc><lastmod>2026-10-27</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/mouse-double-click.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/mouse-double-click.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-freeze-sound-loop.html</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/front-usb-not-working.html</loc><lastmod>2026-10-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-on-bed.html</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
@@ -142,7 +143,7 @@
   <url><loc>https://specfit.kr/posts/psu-capacity-power-draw.html</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-16x2-vs-32x1.html</loc><lastmod>2026-10-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ssd-cold-storage.html</loc><lastmod>2026-09-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/wireless-mouse-lag.html</loc><lastmod>2026-11-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/wireless-mouse-lag.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/cpu-f-model.html</loc><lastmod>2026-10-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/cpu-mobo-swap-windows.html</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/desktop-wifi-vs-lan.html</loc><lastmod>2026-10-19</lastmod><priority>0.8</priority></url>
