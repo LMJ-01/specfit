@@ -1034,6 +1034,7 @@ export const figures = {
   'drag-stuck-split': dragStuckSplit,
   'cursor-trail-split': cursorTrailSplit,
   'scroll-fast-split': scrollFastSplit,
+  'dev-laptop-order': devLaptopOrder,
 };
 
 /**
@@ -6430,6 +6431,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function devLaptopOrder() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '개발용 노트북 — 나중에 못 바꾸는 것부터 고른다', { weight: 600, size: 12.5 });
+  const row = (y, n, item, tag, note, c) => {
+    let o = t(24, y + 20, n, { size: 12, weight: 700, fill: c });
+    o += rect(48, y, 150, 30, c, { r: 4 });
+    o += t(60, y + 20, item, { size: 9.6, weight: 700, fill: '#fff' });
+    o += rect(206, y, 150, 30, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(218, y + 20, tag, { size: 8.8, weight: 700 });
+    o += t(368, y + 20, note, { size: 8.4, fill: COLOR.mute });
+    return o;
+  };
+  b += row(42, '1', '램', '대개 못 바꿈', '슬롯이 있는지부터 · 도커·에뮬레이터면 32GB', COLOR.over);
+  b += row(78, '2', '화면', '못 바꿈', '세로 픽셀·선명도가 매일의 체감', COLOR.over);
+  b += row(114, '3', '그래픽카드', '못 바꿈', '로컬 LLM을 할 때만 — VRAM 8GB가 하한', COLOR.over);
+  b += row(150, '4', 'SSD', '바꿀 수 있는 경우 많음', '여기서 아껴도 됨', COLOR.fit);
+  b += row(186, '5', 'CPU', '못 바꾸지만', '요즘 것이면 대개 충분', COLOR.mute);
+  return figure(
+    '개발용 노트북 고르는 순서',
+    W, 226, b,
+    '개발용 노트북은 나중에 바꿀 수 없는 것부터 고릅니다. 램은 대개 못 바꾸니 슬롯 여부부터 보고 도커·에뮬레이터를 쓰면 32GB, 화면과 그래픽카드도 바꿀 수 없어 화면은 매일의 체감으로, 그래픽카드는 로컬 LLM을 할 때만 따집니다. SSD는 바꿀 수 있는 경우가 많아 여기서 아끼고, CPU는 요즘 것이면 대개 충분합니다.'
   );
 }
 
