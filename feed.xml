@@ -13,6 +13,13 @@
     <description>버튼을 뗐는데도 창이나 파일이 커서를 따라 계속 끌려옵니다. 윈도우의 클릭 잠금 기능, 마우스 버튼 접점, 무선 연결에서 빠진 신호, 특정 프로그램 중 하나인 경우가 대부분입니다. 당장 푸는 법과 원인 가르는 순서를 정리했습니다.</description>
   </item>
   <item>
+    <title>마우스 커서에 꼬리가 생길 때 — 설정 하나, 모니터 하나, 프로그램 하나</title>
+    <link>https://specfit.kr/posts/mouse-cursor-trail.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/mouse-cursor-trail.html</guid>
+    <pubDate>Mon, 09 Nov 2026 15:00:00 GMT</pubDate>
+    <description>마우스를 움직이면 커서 뒤로 잔상이 줄줄이 따라옵니다. 윈도우의 포인터 자국 기능이 켜졌거나, 모니터의 응답속도 보정이 과하거나, 특정 프로그램의 그리기 문제인 경우가 대부분입니다. 어디서 꼬리가 보이는지로 가르는 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>키보드 누를 때마다 삑 소리가 날 때 — 어느 키에서 나는지가 켜진 기능을 알려 줍니다</title>
     <link>https://specfit.kr/posts/keyboard-beep-sound.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/keyboard-beep-sound.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/thermal-paste-overflow.html</guid>
     <pubDate>Mon, 05 Oct 2026 15:00:00 GMT</pubDate>
     <description>쿨러를 조이고 보니 서멀이 옆으로 삐져나왔거나 메인보드에 묻어 걱정되는 사연은 조립 게시판 단골 질문입니다. 흔히 쓰는 서멀은 전기가 통하지 않아 묻은 양보다 묻은 자리가 기준이고, 온도가 정상이면 다시 바를 이유도 없습니다. 자리별 판정과 닦는 법, 예외를 정리했습니다.</description>
-  </item>
-  <item>
-    <title>쿨러 나사를 너무 세게 조였나 — "끝까지"와 "힘껏"을 가르면 보드 휨 걱정이 끝납니다</title>
-    <link>https://specfit.kr/posts/cooler-screw-torque.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/cooler-screw-torque.html</guid>
-    <pubDate>Mon, 05 Oct 2026 15:00:00 GMT</pubDate>
-    <description>CPU 쿨러 나사를 너무 세게 조인 건 아닌지, 메인보드가 휘어 보이는데 괜찮은지 묻는 사연은 조립 게시판 단골입니다. 쿨러 나사는 멈추는 곳까지가 설계 압력이라 그 뒤의 힘이 문제이고, 판정은 보드 모양이 아니라 증상으로 합니다. 조이는 순서와 처방을 정리했습니다.</description>
   </item>
 </channel>
 </rss>

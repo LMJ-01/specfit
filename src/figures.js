@@ -1032,6 +1032,7 @@ export const figures = {
   'ai-tool-where-work': aiToolWhereWork,
   'keyboard-beep-map': keyboardBeepMap,
   'drag-stuck-split': dragStuckSplit,
+  'cursor-trail-split': cursorTrailSplit,
 };
 
 /**
@@ -6428,6 +6429,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function cursorTrailSplit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '커서에 꼬리가 생긴다 — 어디서, 무엇이 번지는지로 가른다', { weight: 600, size: 12.5 });
+  b += t(24, 48, '꼬리가 보이는 모양', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, sub, verdict, note, c) => {
+    let o = rect(x, 58, 188, 44, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 76, head, { size: 8.8, weight: 700 });
+    o += t(x + 12, 92, sub, { size: 8, fill: COLOR.mute });
+    o += `<path d="M${x + 94} 102 L${x + 94} 116" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 90} 111 L${x + 94} 116 L${x + 98} 111" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 120, 188, 34, c, { r: 4 });
+    o += t(x + 12, 142, verdict, { size: 9.4, weight: 700, fill: '#fff' });
+    o += t(x + 4, 170, note, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += card(24, '커서 모양 그대로 여러 개', '어디서나 똑같이', '포인터 자국 기능', '마우스 속성 · 포인터 옵션에서 끄기', COLOR.fit);
+  b += card(226, '움직이는 모든 것이 번짐', '창 · 스크롤 · 게임까지', '모니터 오버드라이브', '모니터 메뉴에서 한 단계 낮추기', COLOR.over);
+  b += card(428, '특정 프로그램 위에서만', '바탕화면은 깨끗', '그 프로그램의 그리기', '하드웨어 가속 끄기 · 드라이버', COLOR.mute);
+  b += rect(24, 186, 592, 26, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 203, '스크린샷엔 잔상이 안 찍히는 경우가 많음 → 격리는 모니터 메뉴 위에서 보거나 다른 모니터에 연결', { size: 8.4, weight: 700, fill: COLOR.text });
+  return figure(
+    '커서 꼬리 판정',
+    W, 220, b,
+    '커서 모양 그대로 여러 개가 어디서나 따라오면 윈도우의 포인터 자국 기능이라 마우스 속성의 포인터 옵션에서 끕니다. 창·스크롤·게임까지 움직이는 모든 것이 번지면 모니터 오버드라이브를 한 단계 낮추고, 특정 프로그램 위에서만 생기면 그 프로그램의 하드웨어 가속을 끕니다. 스크린샷에는 잔상이 찍히지 않는 경우가 많습니다.'
   );
 }
 

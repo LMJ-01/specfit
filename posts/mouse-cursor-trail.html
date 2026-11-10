@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마우스 커서에 꼬리가 생길 때 — 설정 하나, 모니터 하나, 프로그램 하나 | 스펙핏</title>
+<meta name="description" content="마우스를 움직이면 커서 뒤로 잔상이 줄줄이 따라옵니다. 윈도우의 포인터 자국 기능이 켜졌거나, 모니터의 응답속도 보정이 과하거나, 특정 프로그램의 그리기 문제인 경우가 대부분입니다. 어디서 꼬리가 보이는지로 가르는 순서를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/mouse-cursor-trail.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="마우스 커서에 꼬리가 생길 때 — 설정 하나, 모니터 하나, 프로그램 하나 | 스펙핏">
+<meta property="og:description" content="마우스를 움직이면 커서 뒤로 잔상이 줄줄이 따라옵니다. 윈도우의 포인터 자국 기능이 켜졌거나, 모니터의 응답속도 보정이 과하거나, 특정 프로그램의 그리기 문제인 경우가 대부분입니다. 어디서 꼬리가 보이는지로 가르는 순서를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/mouse-cursor-trail.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"마우스 커서에 꼬리가 생길 때 — 설정 하나, 모니터 하나, 프로그램 하나","description":"마우스를 움직이면 커서 뒤로 잔상이 줄줄이 따라옵니다. 윈도우의 포인터 자국 기능이 켜졌거나, 모니터의 응답속도 보정이 과하거나, 특정 프로그램의 그리기 문제인 경우가 대부분입니다. 어디서 꼬리가 보이는지로 가르는 순서를 정리했습니다.","datePublished":"2026-11-10","dateModified":"2026-11-10","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mouse-cursor-trail.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"마우스 커서에 꼬리가 생길 때 — 설정 하나, 모니터 하나, 프로그램 하나","item":"https://specfit.kr/posts/mouse-cursor-trail.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"스크린샷을 찍으면 잔상이 안 보여요","acceptedAnswer":{"@type":"Answer","text":"정상입니다 — 스크린샷에는 커서나 모니터가 만든 잔상이 찍히지 않는 경우가 많습니다. 그래서 격리는 다른 방법으로 합니다. 모니터 자체 메뉴를 띄우고 그 위에서도 움직임이 번지는지 보거나, 다른 모니터에 연결해 봅니다."}},{"@type":"Question","name":"커서가 떨리거나 혼자 움직이는 것도 같은 문제인가요","acceptedAnswer":{"@type":"Answer","text":"다른 갈래입니다 — 잔상은 그리는 쪽, 떨림은 입력 쪽입니다. 커서가 저절로 움직일 때를 보세요."}},{"@type":"Question","name":"주사율이 낮아서 그런 건 아닌가요","acceptedAnswer":{"@type":"Answer","text":"주사율이 낮으면 움직임이 뚝뚝 끊겨 보이는 쪽이고, 꼬리가 줄줄이 남는 것과는 모양이 다릅니다. 고주사율 모니터인데 60Hz처럼 보인다면 144Hz가 안 나올 때가 그 갈래입니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>마우스 커서에 꼬리가 생길 때 — 설정 하나, 모니터 하나, 프로그램 하나</h1>
+    <p class="post-meta">
+      <time datetime="2026-11-10">2026년 11월 10일</time>
+      <span class="updated">· 2026년 11월 10일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>마우스를 움직이면 커서 뒤로 <strong>잔상이 줄줄이</strong> 따라옵니다. 빠르게 움직일수록 꼬리가
+길어지고, 눈이 피곤해집니다. 그래픽카드가 고장 났나 싶지만, 대부분은 셋 중
+하나입니다 — <strong>윈도우 설정</strong>, <strong>모니터 설정</strong>, <strong>특정 프로그램.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>정황</th><th>갈래</th><th>먼저 할 것</th></tr></thead>
+<tbody>
+<tr><td>커서 뒤로 <strong>커서 모양 그대로</strong> 여러 개가 따라옴, 어디서나</td><td><strong>포인터 자국 기능</strong></td><td>마우스 설정에서 끄기</td></tr>
+<tr><td>커서뿐 아니라 <strong>움직이는 모든 것</strong>의 테두리가 번지거나 밝게 빛남</td><td><strong>모니터 응답속도 보정</strong></td><td>모니터 메뉴에서 한 단계 낮추기</td></tr>
+<tr><td><strong>특정 프로그램 안에서만</strong> 잔상</td><td><strong>그 프로그램의 그리기</strong></td><td>그 프로그램의 하드웨어 가속 끄기</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 220" width="640" height="220" role="img" aria-label="커서 꼬리 판정">
+<title>커서 꼬리 판정</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">커서에 꼬리가 생긴다 — 어디서, 무엇이 번지는지로 가른다</text><text x="24" y="48" fill="var(--fg)" font-size="9.6" font-weight="700">꼬리가 보이는 모양</text><rect x="24" y="58" width="188" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="76" fill="var(--fg)" font-size="8.8" font-weight="700">커서 모양 그대로 여러 개</text><text x="36" y="92" fill="var(--fg-muted)" font-size="8">어디서나 똑같이</text><path d="M118 102 L118 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M114 111 L118 116 L122 111" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="24" y="120" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="36" y="142" fill="#fff" font-size="9.4" font-weight="700">포인터 자국 기능</text><text x="28" y="170" fill="var(--fg-muted)" font-size="8">마우스 속성 · 포인터 옵션에서 끄기</text><rect x="226" y="58" width="188" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="238" y="76" fill="var(--fg)" font-size="8.8" font-weight="700">움직이는 모든 것이 번짐</text><text x="238" y="92" fill="var(--fg-muted)" font-size="8">창 · 스크롤 · 게임까지</text><path d="M320 102 L320 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M316 111 L320 116 L324 111" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="226" y="120" width="188" height="34" fill="var(--fig-over)" rx="4"/><text x="238" y="142" fill="#fff" font-size="9.4" font-weight="700">모니터 오버드라이브</text><text x="230" y="170" fill="var(--fg-muted)" font-size="8">모니터 메뉴에서 한 단계 낮추기</text><rect x="428" y="58" width="188" height="44" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="440" y="76" fill="var(--fg)" font-size="8.8" font-weight="700">특정 프로그램 위에서만</text><text x="440" y="92" fill="var(--fg-muted)" font-size="8">바탕화면은 깨끗</text><path d="M522 102 L522 116" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M518 111 L522 116 L526 111" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="428" y="120" width="188" height="34" fill="var(--fg-muted)" rx="4"/><text x="440" y="142" fill="#fff" font-size="9.4" font-weight="700">그 프로그램의 그리기</text><text x="432" y="170" fill="var(--fg-muted)" font-size="8">하드웨어 가속 끄기 · 드라이버</text><rect x="24" y="186" width="592" height="26" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="203" fill="var(--fg)" font-size="8.4" font-weight="700">스크린샷엔 잔상이 안 찍히는 경우가 많음 → 격리는 모니터 메뉴 위에서 보거나 다른 모니터에 연결</text>
+</svg>
+<figcaption>커서 모양 그대로 여러 개가 어디서나 따라오면 윈도우의 포인터 자국 기능이라 마우스 속성의 포인터 옵션에서 끕니다. 창·스크롤·게임까지 움직이는 모든 것이 번지면 모니터 오버드라이브를 한 단계 낮추고, 특정 프로그램 위에서만 생기면 그 프로그램의 하드웨어 가속을 끕니다. 스크린샷에는 잔상이 찍히지 않는 경우가 많습니다.</figcaption>
+</figure>
+<h2 id="갈래-윈도우-포인터-자국">갈래 ① — 윈도우 포인터 자국</h2>
+<p>커서 뒤로 <strong>똑같은 커서 모양이 여러 개</strong> 줄지어 따라오고, 바탕화면이든 어디든
+똑같다면 윈도우의 <strong>포인터 자국 표시</strong> 기능입니다. 커서를 잘 못 찾는 사람을 위해
+일부러 꼬리를 그려 주는 기능이라, 켜져 있으면 고장처럼 보입니다.</p>
+<ul>
+<li>제어판의 <strong>마우스</strong> 설정(마우스 속성) → <strong>포인터 옵션</strong> 탭 → <strong>포인터 자국 표시</strong> 체크를 해제합니다</li>
+<li>커서를 자꾸 잃어버려서 켰던 거라면, 같은 탭의 <strong>Ctrl 키로 포인터 위치 표시</strong>가
+덜 거슬리는 대안입니다</li>
+</ul>
+<h2 id="갈래-모니터의-응답속도-보정">갈래 ② — 모니터의 응답속도 보정</h2>
+<p>커서만이 아니라 <strong>창을 끌 때, 스크롤할 때, 게임에서 움직이는 모든 것</strong>의 테두리가
+번지거나 반대로 밝은 테두리가 생긴다면 모니터 쪽입니다. 게이밍 모니터의 <strong>응답속도
+보정(오버드라이브)</strong>을 가장 높은 단계로 두면, 움직이는 물체 뒤에 <strong>역잔상</strong>이 생기는
+제품이 많습니다.</p>
+<ul>
+<li>모니터 자체 메뉴(버튼)에서 응답속도·오버드라이브 단계를 <strong>한 단계씩 낮춰</strong> 봅니다 —
+중간 단계가 가장 깨끗한 경우가 흔합니다</li>
+<li>원리와 단계 고르는 법은 <a href="/posts/monitor-response-time.html">모니터 응답속도 판정</a>에 있습니다</li>
+<li>모니터를 두 대 쓰는데 <strong>한쪽에서만</strong> 그렇다면 그 모니터의 설정만 다른 경우입니다</li>
+</ul>
+<h2 id="갈래-특정-프로그램-안에서만">갈래 ③ — 특정 프로그램 안에서만</h2>
+<p>바탕화면에서는 깨끗한데 <strong>브라우저나 특정 프로그램 위에서만</strong> 커서 주변에 지저분한
+자국이 남는다면 그 프로그램이 화면을 다시 그리는 방식의 문제입니다.</p>
+<ul>
+<li>그 프로그램 설정의 <strong>하드웨어 가속</strong>을 끄면 풀리는 사례가 있습니다</li>
+<li>그래픽 드라이버를 최신으로 바꾸는 것도 같은 갈래의 처방입니다</li>
+<li>그 프로그램에서 커서가 <strong>아예 안 보이는</strong> 쪽이라면 —
+<a href="/posts/mouse-cursor-gone.html">커서가 사라졌을 때</a>의 같은 갈래입니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="스크린샷을-찍으면-잔상이-안-보여요">스크린샷을 찍으면 잔상이 안 보여요</h3>
+<p>정상입니다 — 스크린샷에는 커서나 모니터가 만든 잔상이 찍히지 않는 경우가 많습니다.
+그래서 격리는 다른 방법으로 합니다. 모니터 자체 메뉴를 띄우고 그 위에서도 움직임이
+번지는지 보거나, 다른 모니터에 연결해 봅니다.</p>
+<h3 id="커서가-떨리거나-혼자-움직이는-것도-같은-문제인가요">커서가 떨리거나 혼자 움직이는 것도 같은 문제인가요</h3>
+<p>다른 갈래입니다 — 잔상은 <strong>그리는 쪽</strong>, 떨림은 <strong>입력 쪽</strong>입니다.
+<a href="/posts/mouse-cursor-moving.html">커서가 저절로 움직일 때</a>를 보세요.</p>
+<h3 id="주사율이-낮아서-그런-건-아닌가요">주사율이 낮아서 그런 건 아닌가요</h3>
+<p>주사율이 낮으면 움직임이 <strong>뚝뚝 끊겨</strong> 보이는 쪽이고, 꼬리가 줄줄이 남는 것과는
+모양이 다릅니다. 고주사율 모니터인데 60Hz처럼 보인다면
+<a href="/posts/monitor-144hz-not-working.html">144Hz가 안 나올 때</a>가 그 갈래입니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>커서 모양 그대로 <strong>여러 개</strong>가 어디서나 따라오면 <strong>포인터 자국</strong> — 마우스 설정에서 끄기</li>
+<li><strong>움직이는 모든 것</strong>의 테두리가 번지면 <strong>모니터 오버드라이브</strong> — 한 단계 낮추기</li>
+<li><strong>특정 프로그램에서만</strong>이면 그 프로그램의 <strong>하드웨어 가속</strong></li>
+<li>스크린샷에는 안 찍히니, 격리는 <strong>모니터 메뉴 위·다른 모니터</strong>로</li>
+</ol>
+<p>마우스·화면의 이웃 판정들 — <a href="/posts/mouse-cursor-gone.html">커서가 사라졌을 때</a> ·
+<a href="/posts/monitor-response-time.html">모니터 응답속도</a> ·
+<a href="/posts/mouse-cursor-moving.html">커서가 저절로 움직일 때</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">마우스커서잔상</span> <span class="tag">포인터자국</span> <span class="tag">커서꼬리</span> <span class="tag">오버드라이브</span> <span class="tag">하드웨어가속</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mouse-drag-stuck.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 드래그가 안 풀릴 때 — 버튼을 뗐는데 계속 끌려온다면 넷 중 하나입니다</span>
+        <span class="card-desc">버튼을 뗐는데도 창이나 파일이 커서를 따라 계속 끌려옵니다. 윈도우의 클릭 잠금 기능, 마우스 버튼 접점, 무선 연결에서 빠진 신호, 특정 프로그램 중 하나인 경우가 대부분입니다. 당장 푸는 법과 원인 가르는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mouse-cursor-gone.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 커서가 사라졌을 때 — &quot;안 보이는&quot; 건지 &quot;안 움직이는&quot; 건지부터</span>
+        <span class="card-desc">화면에서 마우스 커서가 안 보입니다. 다른 화면으로 넘어갔을 뿐인 경우, 특정 프로그램에서만 숨는 경우, 마우스 입력 자체가 끊긴 경우, 노트북 터치패드가 꺼진 경우는 처방이 전부 다릅니다. 커서 없이 움직이는 법과 갈래 가르는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/bluetooth-toggle-missing.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">블루투스 켜기 버튼이 사라졌을 때 — 버튼만 빠졌나, 장치가 숨었나, 원래 없나</span>
+        <span class="card-desc">어제까지 쓰던 블루투스 켜기 버튼이 윈도우에서 사라졌습니다. 같은 증상처럼 보여도 버튼만 빠진 경우, 블루투스 장치가 꺼지거나 드라이버가 꼬인 경우, 애초에 블루투스가 없는 컴퓨터인 경우로 갈립니다. 어느 층인지 가르는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>
