@@ -1036,6 +1036,7 @@ export const figures = {
   'scroll-fast-split': scrollFastSplit,
   'dev-laptop-order': devLaptopOrder,
   'ollama-vram-ladder': ollamaVramLadder,
+  'docker-ram-ladder': dockerRamLadder,
 };
 
 /**
@@ -6432,6 +6433,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function dockerRamLadder() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '도커 노트북 램 — 컨테이너를 몇 개 띄우느냐가 답', { weight: 600, size: 12.5 });
+  const row = (y, txt, ram, c) => rect(24, y, 300, 30, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 19, txt, { size: 8.8, weight: 700 }) + rect(332, y, 70, 30, c, { r: 4 }) + t(367, y + 20, ram, { size: 9.6, weight: 700, fill: '#fff', anchor: 'middle' });
+  b += row(44, '컨테이너 1~2개 — 웹 서버 + DB 하나', '16GB', COLOR.fit);
+  b += row(80, '컨테이너 3~5개 — DB · 캐시 · 큐 · 앱', '32GB', COLOR.over);
+  b += row(116, '여럿 + IDE + 브라우저 상시', '32GB+', COLOR.over);
+  b += row(152, '쿠버네티스 로컬 클러스터', '32GB+', COLOR.over);
+  b += rect(420, 44, 196, 138, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(432, 64, '램 말고는', { size: 9.4, weight: 700, fill: COLOR.text });
+  const items = [['SSD', '1TB 권장'], ['CPU', '요즘 것이면 대개 충분'], ['그래픽카드', '도커와 무관']];
+  items.forEach((it, i) => {
+    const y = 88 + i * 24;
+    b += t(432, y, it[0], { size: 8.8, weight: 700 });
+    b += t(510, y, it[1], { size: 8.2, fill: COLOR.mute });
+  });
+  b += t(24, 202, '윈도우는 도커 아래의 WSL2가 램을 먼저 잡아서, 같은 16GB라도 리눅스보다 빨리 찹니다', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '도커 노트북 램 판정',
+    W, 212, b,
+    '컨테이너를 1~2개(웹 서버와 DB 하나) 띄우면 16GB로 되고, 3~5개(DB·캐시·큐·앱)면 32GB, 여러 개에 IDE와 브라우저까지 상시로 띄우거나 쿠버네티스 로컬 클러스터를 쓰면 32GB 이상이 필요합니다. 램 말고는 SSD 1TB를 권장하고, CPU는 대개 충분하며 그래픽카드는 도커와 무관합니다. 윈도우에서는 도커 아래의 WSL2가 램을 먼저 잡아 리눅스보다 빨리 찹니다.'
   );
 }
 
