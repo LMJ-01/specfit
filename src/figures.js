@@ -1035,6 +1035,7 @@ export const figures = {
   'cursor-trail-split': cursorTrailSplit,
   'scroll-fast-split': scrollFastSplit,
   'dev-laptop-order': devLaptopOrder,
+  'ollama-vram-ladder': ollamaVramLadder,
 };
 
 /**
@@ -6431,6 +6432,32 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function ollamaVramLadder() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, 'VRAM별 한계선 — 전부 VRAM에 올라가는 크기가 "여유" (Q4 양자화 기준)', { weight: 600, size: 12.5 });
+  b += t(24, 52, 'VRAM', { size: 8.6, weight: 700, fill: COLOR.mute });
+  b += t(104, 52, '여유 — 전부 VRAM에', { size: 8.6, weight: 700, fill: COLOR.mute });
+  b += t(284, 52, '그 위 — 느리거나 빠듯', { size: 8.6, weight: 700, fill: COLOR.mute });
+  const row = (y, vram, fit, over) => {
+    let o = rect(24, y, 70, 28, COLOR.text, { r: 4 }) + t(59, y + 18, vram, { size: 9.6, weight: 700, fill: '#fff', anchor: 'middle' });
+    o += rect(104, y, 170, 28, COLOR.fit, { r: 4 }) + t(116, y + 18, fit, { size: 9.4, weight: 700, fill: '#fff' });
+    o += rect(284, y, 332, 28, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(296, y + 18, over, { size: 8.8, fill: COLOR.text });
+    return o;
+  };
+  b += row(62, '8GB', '7~8B', '12~14B 느림');
+  b += row(96, '12GB', '12~14B', '20~22B 느림');
+  b += row(130, '16GB', '14B', '20~22B 빠듯 · 32B 느림');
+  b += row(164, '24GB', '20~22B', '32B 빠듯 · 70B 불가');
+  b += row(198, '32GB', '32B', '70B 느림');
+  b += t(24, 248, '8GB가 실질 하한 · 가중치가 이미 VRAM을 넘는 조합은 컨텍스트를 0으로 줄여도 안 들어감', { size: 8.4, fill: COLOR.over, weight: 700 });
+  return figure(
+    'Ollama VRAM별 모델 크기 한계선',
+    W, 260, b,
+    'Q4 양자화 기준으로 전부 VRAM에 올라가는 모델 크기는 8GB에서 7~8B, 12GB에서 12~14B, 16GB에서 14B, 24GB에서 20~22B, 32GB에서 32B입니다. 그 위 크기는 느리거나 빠듯하고, 24GB에서 70B는 불가입니다. 8GB가 실질적인 하한선이며, 가중치만으로 VRAM을 넘는 조합은 컨텍스트를 줄여도 들어가지 않습니다.'
   );
 }
 

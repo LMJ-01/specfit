@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-10-07","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-11-11","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","item":"https://specfit.kr/posts/ollama-minimum-spec.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나</h1>
     <p class="post-meta">
       <time datetime="2026-08-13">2026년 8월 13일</time>
-      <span class="updated">· 2026년 10월 7일 갱신</span>
+      <span class="updated">· 2026년 11월 11일 갱신</span>
     </p>
   </header>
 
@@ -192,6 +192,13 @@
 <p>대표 GPU는 <strong>지금 신품으로 살 수 있는 카드</strong> 기준입니다.
 RTX 40 시리즈는 단종되어 뺐습니다 — 같은 VRAM의 현행 카드는 대역폭이 더 높습니다.</p>
 <p>판정은 위 계산기와 같은 기준입니다. 글과 도구가 다른 답을 내면 안 되기 때문입니다.</p>
+<figure class="fig">
+<svg viewBox="0 0 640 260" width="640" height="260" role="img" aria-label="Ollama VRAM별 모델 크기 한계선">
+<title>Ollama VRAM별 모델 크기 한계선</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">VRAM별 한계선 — 전부 VRAM에 올라가는 크기가 "여유" (Q4 양자화 기준)</text><text x="24" y="52" fill="var(--fg-muted)" font-size="8.6" font-weight="700">VRAM</text><text x="104" y="52" fill="var(--fg-muted)" font-size="8.6" font-weight="700">여유 — 전부 VRAM에</text><text x="284" y="52" fill="var(--fg-muted)" font-size="8.6" font-weight="700">그 위 — 느리거나 빠듯</text><rect x="24" y="62" width="70" height="28" fill="var(--fg)" rx="4"/><text x="59" y="80" fill="#fff" font-size="9.6" font-weight="700" text-anchor="middle">8GB</text><rect x="104" y="62" width="170" height="28" fill="var(--fig-fit)" rx="4"/><text x="116" y="80" fill="#fff" font-size="9.4" font-weight="700">7~8B</text><rect x="284" y="62" width="332" height="28" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="296" y="80" fill="var(--fg)" font-size="8.8">12~14B 느림</text><rect x="24" y="96" width="70" height="28" fill="var(--fg)" rx="4"/><text x="59" y="114" fill="#fff" font-size="9.6" font-weight="700" text-anchor="middle">12GB</text><rect x="104" y="96" width="170" height="28" fill="var(--fig-fit)" rx="4"/><text x="116" y="114" fill="#fff" font-size="9.4" font-weight="700">12~14B</text><rect x="284" y="96" width="332" height="28" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="296" y="114" fill="var(--fg)" font-size="8.8">20~22B 느림</text><rect x="24" y="130" width="70" height="28" fill="var(--fg)" rx="4"/><text x="59" y="148" fill="#fff" font-size="9.6" font-weight="700" text-anchor="middle">16GB</text><rect x="104" y="130" width="170" height="28" fill="var(--fig-fit)" rx="4"/><text x="116" y="148" fill="#fff" font-size="9.4" font-weight="700">14B</text><rect x="284" y="130" width="332" height="28" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="296" y="148" fill="var(--fg)" font-size="8.8">20~22B 빠듯 · 32B 느림</text><rect x="24" y="164" width="70" height="28" fill="var(--fg)" rx="4"/><text x="59" y="182" fill="#fff" font-size="9.6" font-weight="700" text-anchor="middle">24GB</text><rect x="104" y="164" width="170" height="28" fill="var(--fig-fit)" rx="4"/><text x="116" y="182" fill="#fff" font-size="9.4" font-weight="700">20~22B</text><rect x="284" y="164" width="332" height="28" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="296" y="182" fill="var(--fg)" font-size="8.8">32B 빠듯 · 70B 불가</text><rect x="24" y="198" width="70" height="28" fill="var(--fg)" rx="4"/><text x="59" y="216" fill="#fff" font-size="9.6" font-weight="700" text-anchor="middle">32GB</text><rect x="104" y="198" width="170" height="28" fill="var(--fig-fit)" rx="4"/><text x="116" y="216" fill="#fff" font-size="9.4" font-weight="700">32B</text><rect x="284" y="198" width="332" height="28" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="296" y="216" fill="var(--fg)" font-size="8.8">70B 느림</text><text x="24" y="248" fill="var(--fig-over)" font-size="8.4" font-weight="700">8GB가 실질 하한 · 가중치가 이미 VRAM을 넘는 조합은 컨텍스트를 0으로 줄여도 안 들어감</text>
+</svg>
+<figcaption>Q4 양자화 기준으로 전부 VRAM에 올라가는 모델 크기는 8GB에서 7~8B, 12GB에서 12~14B, 16GB에서 14B, 24GB에서 20~22B, 32GB에서 32B입니다. 그 위 크기는 느리거나 빠듯하고, 24GB에서 70B는 불가입니다. 8GB가 실질적인 하한선이며, 가중치만으로 VRAM을 넘는 조합은 컨텍스트를 줄여도 들어가지 않습니다.</figcaption>
+</figure>
 <blockquote><p>🔴 <strong>2026-08-18 정정.</strong> 계산기의 KV 캐시(컨텍스트) 계산이 틀려 있었습니다.
 파라미터 수에 비례시켰는데 실제로는 <strong>레이어 수</strong>를 따라갑니다.
 그래서 필요 메모리를 실제보다 적게 잡고 있었고, <strong>24GB 줄이 <code>32B</code> 에서
