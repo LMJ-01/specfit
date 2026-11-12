@@ -1039,6 +1039,7 @@ export const figures = {
   'docker-ram-ladder': dockerRamLadder,
   'snap-edge-map': snapEdgeMap,
   'laptop-gpu-vram-gap': laptopGpuVramGap,
+  'notif-missing-flow': notifMissingFlow,
 };
 
 /**
@@ -6435,6 +6436,31 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function notifMissingFlow() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '윈도우 알림이 안 뜬다 — Win + N으로 알림 센터부터 열고 가르기', { weight: 600, size: 12.5 });
+  const q = (y, txt) => rect(24, y, 330, 36, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 22, txt, { size: 9, weight: 700 });
+  const stop = (y, lab, txt, c) => `<path d="M358 ${y + 18} L376 ${y + 18}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M371 ${y + 14} L376 ${y + 18} L371 ${y + 22}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(367, y + 11, lab, { size: 8, fill: COLOR.mute, anchor: 'middle' }) + rect(382, y, 234, 36, c, { r: 4 }) + t(394, y + 22, txt, { size: 8.8, weight: 700, fill: '#fff' });
+  const down = (y, lab) => `<path d="M60 ${y} L60 ${y + 14}" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M56 ${y + 9} L60 ${y + 14} L64 ${y + 9}" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>` + t(70, y + 11, lab, { size: 8, fill: COLOR.mute });
+  b += q(44, '① 알림 센터가 열리나?');
+  b += stop(44, '아니오', 'Windows 탐색기 다시 시작', COLOR.mute);
+  b += down(82, '예');
+  b += q(98, '② 안 뜬 알림이 알림 센터엔 쌓여 있나?');
+  b += stop(98, '예', '팝업만 꺼짐 → "알림 배너 표시"', COLOR.fit);
+  b += down(136, '아니오');
+  b += q(152, '③ 모든 앱이 조용한가?');
+  b += stop(152, '예', '방해 금지 · 자동 켜기 규칙', COLOR.over);
+  b += down(190, '아니오 — 한 앱만');
+  b += rect(24, 206, 592, 36, COLOR.fit, { r: 4 });
+  b += t(36, 228, '그 앱의 알림 — 윈도우 쪽 앱 목록 + 앱 안의 알림 설정, 둘 다 켜져 있어야 뜸', { size: 9, weight: 700, fill: '#fff' });
+  return figure(
+    '윈도우 알림 안 뜸 판정 순서',
+    W, 252, b,
+    'Win+N으로 알림 센터를 열어 봅니다. 열리지 않으면 작업 관리자에서 Windows 탐색기를 다시 시작합니다. 열리고 안 뜬 알림이 쌓여 있으면 팝업만 꺼진 것이라 그 앱의 알림 배너 표시를 켭니다. 쌓여 있지 않고 모든 앱이 조용하면 방해 금지와 자동 켜기 규칙을, 한 앱만 조용하면 윈도우의 앱 목록과 앱 안의 알림 설정을 둘 다 확인합니다.'
   );
 }
 
