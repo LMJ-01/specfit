@@ -2,7 +2,7 @@
 title: 로컬 LLM 되는 노트북 고르기 — 이름이 같아도 VRAM이 다릅니다
 description: 노트북 RTX 5070은 8GB, 데스크톱 5070은 12GB입니다. 같은 이름인데 돌아가는 모델이 다릅니다. 노트북에서 확인해야 할 것을 정리했습니다.
 date: 2026-08-15
-updated: 2026-08-25
+updated: 2026-11-12
 category: laptop
 tags: [노트북, 로컬LLM, VRAM, RTX50, 개발용노트북]
 affiliate: true
@@ -23,6 +23,8 @@ affiliate: true
     같은 방식으로 `laptop: true` 를 두었습니다.
     ⚠️ 이 표의 VRAM 과 `gpu-data.js` 의 노트북 항목은 **같은 값**입니다.
     한쪽을 고치면 양쪽을 맞추세요.
+  - 도해(2026-11-12): laptop-gpu-vram-gap — 결론표 여섯 줄(노트북/데스크톱 VRAM, 다름·같음) 그대로
+    + RTX 5070 노트북 12GB 구성 단서. 새 수치 없음. 표·gpu-data.js와 함께 고칠 것(세 곳).
 -->
 
 노트북으로 로컬 LLM을 하려는 분들이 가장 많이 하는 실수가 있습니다.
@@ -43,6 +45,8 @@ affiliate: true
 | RTX 5050 | 8GB | 8GB | 같음 |
 
 **여섯 종류 중 세 종류가 다릅니다.**
+
+{{FIG:laptop-gpu-vram-gap}}
 
 로컬 LLM에서는 [VRAM이 돌아가는 모델을 정하므로](/posts/ollama-minimum-spec.html),
 이 차이가 그대로 결과 차이가 됩니다.

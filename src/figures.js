@@ -1038,6 +1038,7 @@ export const figures = {
   'ollama-vram-ladder': ollamaVramLadder,
   'docker-ram-ladder': dockerRamLadder,
   'snap-edge-map': snapEdgeMap,
+  'laptop-gpu-vram-gap': laptopGpuVramGap,
 };
 
 /**
@@ -6434,6 +6435,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function laptopGpuVramGap() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '같은 이름, 다른 VRAM — 노트북 GPU는 사양표에서 용량부터 확인', { weight: 600, size: 12.5 });
+  b += t(24, 52, '이름', { size: 8.6, weight: 700, fill: COLOR.mute });
+  b += t(150, 52, '노트북', { size: 8.6, weight: 700, fill: COLOR.mute });
+  b += t(290, 52, '데스크톱', { size: 8.6, weight: 700, fill: COLOR.mute });
+  const row = (y, name, lap, desk, diff) => {
+    let o = rect(24, y, 116, 26, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 17, name, { size: 9, weight: 700 });
+    o += rect(150, y, 130, 26, diff ? COLOR.over : COLOR.fit, { r: 4 }) + t(162, y + 17, lap, { size: 9.4, weight: 700, fill: '#fff' });
+    o += rect(290, y, 130, 26, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(302, y + 17, desk, { size: 9.4, weight: 700 });
+    o += t(432, y + 17, diff ? '다름' : '같음', { size: 9, weight: 700, fill: diff ? COLOR.over : COLOR.mute });
+    return o;
+  };
+  b += row(62, 'RTX 5090', '24GB', '32GB', true);
+  b += row(94, 'RTX 5080', '16GB', '16GB', false);
+  b += row(126, 'RTX 5070 Ti', '12GB', '16GB', true);
+  b += row(158, 'RTX 5070', '8GB', '12GB', true);
+  b += row(190, 'RTX 5060', '8GB', '8GB', false);
+  b += row(222, 'RTX 5050', '8GB', '8GB', false);
+  b += t(24, 270, '여섯 중 셋이 다름 · RTX 5070 노트북은 출처에 따라 12GB 구성도 있다고 표기 — 이름만으로는 알 수 없음', { size: 8.4, fill: COLOR.over, weight: 700 });
+  return figure(
+    '노트북과 데스크톱 GPU VRAM 비교',
+    W, 282, b,
+    '같은 이름이라도 노트북 GPU의 VRAM이 데스크톱과 다른 경우가 있습니다. RTX 5090은 노트북 24GB·데스크톱 32GB, 5070 Ti는 12GB·16GB, 5070은 8GB·12GB로 다르고, 5080·5060·5050은 같습니다. 5070 노트북은 출처에 따라 12GB 구성도 있다고 표기되므로 제품 사양에서 직접 확인해야 합니다.'
   );
 }
 
