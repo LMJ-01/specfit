@@ -13,9 +13,10 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/window-snap-edge.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/keyboard-beep-sound.html</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-cursor-trail.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/mouse-drag-stuck.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/mouse-drag-stuck.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-scroll-too-fast.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/stuck-modifier-key.html</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-cursor-gone.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
@@ -122,7 +123,7 @@
   <url><loc>https://specfit.kr/posts/laptop-slow-on-battery.html</loc><lastmod>2026-10-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-mixed-refresh.html</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-off-or-sleep.html</loc><lastmod>2026-10-25</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/monitor-sleep-window-move.html</loc><lastmod>2026-11-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/monitor-sleep-window-move.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-wheel-jump.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/no-sound-after-sleep.html</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-burning-smell.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>

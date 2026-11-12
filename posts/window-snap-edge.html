@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>창을 끌면 화면 끝에 달라붙을 때 — 윈도우 창 맞춤, 다 끄지 말고 골라 끄기 | 스펙핏</title>
+<meta name="description" content="창을 옮기려고 끌었는데 화면 끝에 닿자마자 절반 크기로 붙거나, 위로 올리자 꽉 차 버립니다. 고장이 아니라 윈도우의 창 맞춤 기능이고, 거슬리는 부분만 골라 끌 수 있습니다. 어떤 동작이 어느 기능인지, 키보드로 되돌리는 법까지 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/window-snap-edge.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="창을 끌면 화면 끝에 달라붙을 때 — 윈도우 창 맞춤, 다 끄지 말고 골라 끄기 | 스펙핏">
+<meta property="og:description" content="창을 옮기려고 끌었는데 화면 끝에 닿자마자 절반 크기로 붙거나, 위로 올리자 꽉 차 버립니다. 고장이 아니라 윈도우의 창 맞춤 기능이고, 거슬리는 부분만 골라 끌 수 있습니다. 어떤 동작이 어느 기능인지, 키보드로 되돌리는 법까지 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/window-snap-edge.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"창을 끌면 화면 끝에 달라붙을 때 — 윈도우 창 맞춤, 다 끄지 말고 골라 끄기","description":"창을 옮기려고 끌었는데 화면 끝에 닿자마자 절반 크기로 붙거나, 위로 올리자 꽉 차 버립니다. 고장이 아니라 윈도우의 창 맞춤 기능이고, 거슬리는 부분만 골라 끌 수 있습니다. 어떤 동작이 어느 기능인지, 키보드로 되돌리는 법까지 정리했습니다.","datePublished":"2026-11-12","dateModified":"2026-11-12","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/window-snap-edge.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"창을 끌면 화면 끝에 달라붙을 때 — 윈도우 창 맞춤, 다 끄지 말고 골라 끄기","item":"https://specfit.kr/posts/window-snap-edge.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"창을 놓았는데 계속 커서를 따라와요","acceptedAnswer":{"@type":"Answer","text":"그건 맞춤이 아니라 컴퓨터가 버튼이 아직 눌려 있다고 아는 상태입니다 — 마우스 드래그가 안 풀릴 때."}},{"@type":"Question","name":"모니터를 두 대 쓰는데 절전에서 깨면 창이 한쪽으로 몰려요","acceptedAnswer":{"@type":"Answer","text":"창 맞춤과는 다른 갈래로, 모니터가 꺼졌다 켜질 때 윈도우가 화면 배치를 다시 짜면서 생기는 일입니다 — 절전 후 창이 한 모니터로 몰릴 때."}},{"@type":"Question","name":"창이 화면 밖으로 나가서 잡을 수가 없어요","acceptedAnswer":{"@type":"Answer","text":"그 창을 작업 표시줄에서 고른 뒤 Win + ←·→를 누르면 보이는 화면 쪽으로 붙어서 돌아옵니다. 모니터 하나를 끈 뒤에 생긴 일이라면 모니터 하나만 끄고 쓸 때에 같은 갈래가 있습니다."}},{"@type":"Question","name":"끄면 성능이 좋아지나요","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 창 맞춤은 창을 놓을 자리를 정해 주는 기능이라 켜 두든 끄든 성능과는 무관합니다. 편한 쪽으로 고르면 됩니다."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>창을 끌면 화면 끝에 달라붙을 때 — 윈도우 창 맞춤, 다 끄지 말고 골라 끄기</h1>
+    <p class="post-meta">
+      <time datetime="2026-11-12">2026년 11월 12일</time>
+      <span class="updated">· 2026년 11월 12일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>창을 옮기려고 잡아 끌었는데, 화면 왼쪽 끝에 닿자마자 <strong>창이 절반 크기로 착 달라붙습니다.</strong>
+위로 조금 올렸을 뿐인데 <strong>화면이 꽉 차</strong> 버리기도 하고, 위쪽에 칸이 나뉜 그림이 불쑥 뜨기도
+합니다. 마우스가 이상한가 싶지만, 이건 윈도우가 일부러 해 주는 <strong>창 맞춤</strong> 기능입니다.</p>
+<p>창 맞춤은 여러 동작이 묶인 기능이라, <strong>통째로 끄면 쓸 만한 것까지</strong> 사라집니다. 어느 동작이
+어느 항목인지 알면 거슬리는 것만 골라 끌 수 있습니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>지금 일어나는 일</th><th>정체</th><th>처리</th></tr></thead>
+<tbody>
+<tr><td>끝에 닿으면 <strong>절반·4분의 1·꽉 참</strong>으로 붙음</td><td><strong>창 맞춤</strong> 본체</td><td>싫으면 창 맞춤 스위치 끄기</td></tr>
+<tr><td>위로 끌거나 최대화 단추에 올리면 <strong>칸 나뉜 그림</strong>이 뜸</td><td><strong>맞춤 레이아웃 표시</strong></td><td>그 표시 항목만 끄기</td></tr>
+<tr><td>하나를 붙이자 반대편에 <strong>다른 창 목록</strong>이 뜸</td><td><strong>옆에 맞출 항목 표시</strong></td><td>Esc로 닫기 · 항목 끄기</td></tr>
+<tr><td>붙은 창 하나의 크기를 바꾸니 <strong>옆 창도 같이</strong> 바뀜</td><td><strong>인접 창 함께 조정</strong></td><td>항목 끄기</td></tr>
+<tr><td>창을 흔들었더니 <strong>다른 창이 다 내려감</strong></td><td><strong>제목 표시줄 흔들기</strong></td><td>같은 화면의 흔들기 옵션 끄기</td></tr>
+<tr><td>끄는 곳</td><td>설정 → 시스템 → <strong>멀티태스킹</strong></td><td>세부 항목은 창 맞춤을 펼치면 보임</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 254" width="640" height="254" role="img" aria-label="윈도우 창 맞춤 동작 지도">
+<title>윈도우 창 맞춤 동작 지도</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">창이 화면 끝에 달라붙는다 — 고장이 아니라 윈도우 "창 맞춤", 놓는 자리가 크기를 정함</text><text x="24" y="52" fill="var(--fg)" font-size="9.6" font-weight="700">제목 표시줄을 잡고 끌어서 어디에 닿았나?</text><rect x="24" y="62" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="81" fill="var(--fg)" font-size="8.8" font-weight="700">위쪽 끝</text><path d="M118 92 L118 106" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M114 101 L118 106 L122 101" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="24" y="110" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="36" y="132" fill="#fff" font-size="9.6" font-weight="700">꽉 채움 (최대화)</text><text x="28" y="160" fill="var(--fg-muted)" font-size="8">되돌리기: Win + ↓ · 가운데로 끌어내기</text><rect x="226" y="62" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="238" y="81" fill="var(--fg)" font-size="8.8" font-weight="700">왼쪽·오른쪽 끝</text><path d="M320 92 L320 106" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M316 101 L320 106 L324 101" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="226" y="110" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="238" y="132" fill="#fff" font-size="9.6" font-weight="700">화면 절반</text><text x="230" y="160" fill="var(--fg-muted)" font-size="8">붙인 뒤 다른 창 목록 → Esc로 닫힘</text><rect x="428" y="62" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="440" y="81" fill="var(--fg)" font-size="8.8" font-weight="700">네 모서리</text><path d="M522 92 L522 106" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M518 101 L522 106 L526 101" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="428" y="110" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="440" y="132" fill="#fff" font-size="9.6" font-weight="700">화면 4분의 1</text><text x="432" y="160" fill="var(--fg-muted)" font-size="8">되돌리기: 가운데로 끌어내기</text><rect x="24" y="178" width="592" height="30" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="197" fill="var(--fg)" font-size="8.8" font-weight="700">따로 끌 수 있는 도우미: 칸 나뉜 그림(레이아웃) · 옆에 맞출 창 목록 · 옆 창 크기 함께 조정</text><rect x="24" y="216" width="592" height="28" fill="var(--fig-over)" rx="4"/><text x="36" y="234" fill="#fff" font-size="8.8" font-weight="700">끄는 곳: 설정 → 시스템 → 멀티태스킹 → 창 맞춤 (펼쳐서 거슬리는 항목만)</text>
+</svg>
+<figcaption>창을 끌어 화면 위쪽 끝에 닿으면 최대화, 왼쪽이나 오른쪽 끝이면 절반, 모서리면 4분의 1 크기로 붙습니다. 칸 나뉜 레이아웃 그림, 옆에 맞출 창 목록, 옆 창 크기 함께 조정은 따로 끌 수 있는 도우미이고, 설정 → 시스템 → 멀티태스킹 → 창 맞춤을 펼쳐 거슬리는 항목만 끄면 됩니다. 되돌리기는 가운데로 끌어내거나 Win+↓입니다.</figcaption>
+</figure>
+<h2 id="놓는-자리가-크기를-정합니다">놓는 자리가 크기를 정합니다</h2>
+<p>창 맞춤의 규칙은 단순합니다. 제목 표시줄을 잡고 끌어서 <strong>어디에 닿느냐</strong>가 크기를 정합니다.</p>
+<ul>
+<li><strong>위쪽 끝</strong> — 화면을 꽉 채웁니다(최대화)</li>
+<li><strong>왼쪽·오른쪽 끝</strong> — 화면의 절반</li>
+<li><strong>네 모서리</strong> — 화면의 4분의 1</li>
+</ul>
+<p>그래서 화면 끝 근처에서 창을 옮기다 보면 원하지 않을 때도 붙습니다. 붙은 창을 <strong>다시 화면
+가운데로 끌어내면</strong> 원래 크기로 돌아옵니다.</p>
+<h2 id="칸-나뉜-그림과-다른-창-목록-맞춤의-도우미들">칸 나뉜 그림과 다른 창 목록 — 맞춤의 &quot;도우미&quot;들</h2>
+<p>창 맞춤 본체 말고도, 맞추기를 도와주려고 뜨는 화면이 둘 있습니다.</p>
+<ul>
+<li><strong>맞춤 레이아웃</strong> — 창을 화면 위쪽으로 끌거나 최대화 단추에 마우스를 올리면 화면을 나누는
+칸 그림이 뜹니다. 칸 하나에 놓으면 그 크기로 배치됩니다. 최근 윈도우 11에서 늘어난 기능이라
+&quot;갑자기 생겼다&quot;고 느끼기 쉽습니다</li>
+<li><strong>옆에 맞출 항목</strong> — 창 하나를 절반에 붙이면, 남은 절반에 넣을 다른 창들이 작게 늘어섭니다.
+하나를 고르면 나란히 배치되고, 필요 없으면 <strong>Esc</strong>나 빈 곳 클릭으로 닫힙니다</li>
+</ul>
+<p>이 둘은 <strong>본체와 따로 끌 수 있습니다.</strong> 끝에 붙는 건 편한데 그림이 뜨는 게 거슬린다면 본체는
+두고 이 항목들만 끄면 됩니다.</p>
+<h2 id="골라-끄는-곳">골라 끄는 곳</h2>
+<p>설정 → 시스템 → <strong>멀티태스킹</strong>에서 <strong>창 맞춤</strong>을 펼치면 세부 항목이 나옵니다. 항목 이름과
+개수는 윈도우 버전에 따라 조금씩 다르지만, 대체로 이렇게 갈립니다.</p>
+<ol>
+<li>끝에 붙는 것 자체가 싫다 → <strong>창 맞춤 스위치</strong>를 끕니다</li>
+<li>붙는 건 좋은데 칸 그림이 싫다 → <strong>레이아웃 표시</strong> 관련 항목만 끕니다</li>
+<li>붙인 뒤 다른 창 목록이 싫다 → <strong>옆에 맞출 항목 표시</strong>만 끕니다</li>
+<li>옆 창 크기가 같이 바뀌는 게 싫다 → <strong>인접 창 크기 조정</strong> 항목만 끕니다</li>
+</ol>
+<p>같은 멀티태스킹 화면에 <strong>제목 표시줄 창 흔들기</strong> 옵션도 있습니다. 켜져 있으면 창을 잡고
+좌우로 흔드는 순간 나머지 창이 전부 최소화되는데, 창을 옮기다 손이 떨려 그렇게 되기도 합니다.</p>
+<h2 id="키보드로-되돌리기">키보드로 되돌리기</h2>
+<p>마우스로 끌어내기 번거로울 때는 <strong>Win + 방향키</strong>가 빠릅니다.</p>
+<ul>
+<li><strong>Win + ↑</strong> — 최대화</li>
+<li><strong>Win + ↓</strong> — 최대화를 풀고 원래 크기로, 한 번 더 누르면 최소화</li>
+<li><strong>Win + ← / →</strong> — 왼쪽·오른쪽 절반으로</li>
+<li><strong>제목 표시줄 더블클릭</strong> — 최대화와 원래 크기를 오갑니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="창을-놓았는데-계속-커서를-따라와요">창을 놓았는데 계속 커서를 따라와요</h3>
+<p>그건 맞춤이 아니라 컴퓨터가 버튼이 <strong>아직 눌려 있다고</strong> 아는 상태입니다 —
+<a href="/posts/mouse-drag-stuck.html">마우스 드래그가 안 풀릴 때</a>.</p>
+<h3 id="모니터를-두-대-쓰는데-절전에서-깨면-창이-한쪽으로-몰려요">모니터를 두 대 쓰는데 절전에서 깨면 창이 한쪽으로 몰려요</h3>
+<p>창 맞춤과는 다른 갈래로, 모니터가 꺼졌다 켜질 때 윈도우가 화면 배치를 다시 짜면서 생기는
+일입니다 — <a href="/posts/monitor-sleep-window-move.html">절전 후 창이 한 모니터로 몰릴 때</a>.</p>
+<h3 id="창이-화면-밖으로-나가서-잡을-수가-없어요">창이 화면 밖으로 나가서 잡을 수가 없어요</h3>
+<p>그 창을 작업 표시줄에서 고른 뒤 <strong>Win + ←·→</strong>를 누르면 보이는 화면 쪽으로 붙어서 돌아옵니다.
+모니터 하나를 끈 뒤에 생긴 일이라면 <a href="/posts/dual-monitor-turn-off-one.html">모니터 하나만 끄고 쓸 때</a>에
+같은 갈래가 있습니다.</p>
+<h3 id="끄면-성능이-좋아지나요">끄면 성능이 좋아지나요</h3>
+<p>아닙니다. 창 맞춤은 창을 놓을 자리를 정해 주는 기능이라 켜 두든 끄든 성능과는 무관합니다.
+편한 쪽으로 고르면 됩니다.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>화면 끝에 달라붙는 건 고장이 아니라 <strong>창 맞춤</strong> — 위쪽 끝은 꽉 참, 옆 끝은 절반, 모서리는 4분의 1</li>
+<li>칸 그림·다른 창 목록·옆 창 동시 조정은 <strong>따로 끌 수 있는 도우미</strong></li>
+<li>설정 → 시스템 → <strong>멀티태스킹</strong> → 창 맞춤을 펼쳐 <strong>거슬리는 항목만</strong> 끕니다</li>
+<li>되돌리기는 <strong>가운데로 끌어내기</strong> 또는 <strong>Win + 방향키</strong></li>
+</ol>
+<p>화면과 창의 이웃 판정들 — <a href="/posts/monitor-sleep-window-move.html">절전 후 창이 몰릴 때</a> ·
+<a href="/posts/mouse-drag-stuck.html">드래그가 안 풀릴 때</a> ·
+<a href="/posts/dual-monitor-turn-off-one.html">모니터 하나만 끄고 쓸 때</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">창맞춤</span> <span class="tag">화면분할</span> <span class="tag">창달라붙음</span> <span class="tag">윈도우11</span> <span class="tag">멀티태스킹</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/resolution-stuck-low.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">해상도가 낮게 고정돼 안 바뀔 때 — 컴퓨터가 모니터를 &quot;모르는&quot; 상태입니다</span>
+        <span class="card-desc">어느 날 화면이 크고 뭉개지더니 해상도 목록에 1024×768 같은 낮은 값만 남는 증상은, 해상도 목록을 채우는 두 경로 중 하나가 끊겼다는 신호입니다. 드라이버 갈래와 모니터 정보 갈래를 가르는 법, 고장이 아닌 배율 착각까지 순서대로 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-wobble-typing.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">타이핑할 때마다 모니터가 흔들릴 때 — 떨리는 건 모니터가 아니라 책상이고, 모니터는 확대경입니다</span>
+        <span class="card-desc">키보드를 치거나 책상에 손을 올릴 때마다 모니터가 흔들리는 증상은 게시판 단골 질문입니다. 흔들리는 건 대개 모니터가 아니라 책상이고, 긴 스탠드나 암이 그 작은 떨림을 눈에 띄게 키우는 구조입니다. 책상 갈래와 거치 갈래를 손으로 가르는 법과 처방 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/monitor-high-pitch-noise.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">모니터에서 &quot;지잉·삐&quot; 고주파음이 날 때 — 밝기를 움직여 보면 출처가 갈립니다</span>
+        <span class="card-desc">조용한 방에서 모니터 쪽에서 가늘게 &quot;지잉&quot; 또는 &quot;삐&quot; 하는 고주파음이 들리는 증상은 게시판 단골 질문입니다. 대개 전원부나 백라이트 구동부의 진동음이라 고장은 아니지만, 밝기를 움직였을 때 소리가 따라 변하는지와 꺼도 나는지로 출처가 갈립니다. 판정과 줄이는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

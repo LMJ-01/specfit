@@ -1037,6 +1037,7 @@ export const figures = {
   'dev-laptop-order': devLaptopOrder,
   'ollama-vram-ladder': ollamaVramLadder,
   'docker-ram-ladder': dockerRamLadder,
+  'snap-edge-map': snapEdgeMap,
 };
 
 /**
@@ -6433,6 +6434,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function snapEdgeMap() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '창이 화면 끝에 달라붙는다 — 고장이 아니라 윈도우 "창 맞춤", 놓는 자리가 크기를 정함', { weight: 600, size: 12.5 });
+  b += t(24, 52, '제목 표시줄을 잡고 끌어서 어디에 닿았나?', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, verdict, note, c) => {
+    let o = rect(x, 62, 188, 30, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 81, head, { size: 8.8, weight: 700 });
+    o += `<path d="M${x + 94} 92 L${x + 94} 106" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 90} 101 L${x + 94} 106 L${x + 98} 101" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 110, 188, 34, c, { r: 4 });
+    o += t(x + 12, 132, verdict, { size: 9.6, weight: 700, fill: '#fff' });
+    o += t(x + 4, 160, note, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += card(24, '위쪽 끝', '꽉 채움 (최대화)', '되돌리기: Win + ↓ · 가운데로 끌어내기', COLOR.fit);
+  b += card(226, '왼쪽·오른쪽 끝', '화면 절반', '붙인 뒤 다른 창 목록 → Esc로 닫힘', COLOR.fit);
+  b += card(428, '네 모서리', '화면 4분의 1', '되돌리기: 가운데로 끌어내기', COLOR.fit);
+  b += rect(24, 178, 592, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 197, '따로 끌 수 있는 도우미: 칸 나뉜 그림(레이아웃) · 옆에 맞출 창 목록 · 옆 창 크기 함께 조정', { size: 8.8, weight: 700 });
+  b += rect(24, 216, 592, 28, COLOR.over, { r: 4 });
+  b += t(36, 234, '끄는 곳: 설정 → 시스템 → 멀티태스킹 → 창 맞춤 (펼쳐서 거슬리는 항목만)', { size: 8.8, weight: 700, fill: '#fff' });
+  return figure(
+    '윈도우 창 맞춤 동작 지도',
+    W, 254, b,
+    '창을 끌어 화면 위쪽 끝에 닿으면 최대화, 왼쪽이나 오른쪽 끝이면 절반, 모서리면 4분의 1 크기로 붙습니다. 칸 나뉜 레이아웃 그림, 옆에 맞출 창 목록, 옆 창 크기 함께 조정은 따로 끌 수 있는 도우미이고, 설정 → 시스템 → 멀티태스킹 → 창 맞춤을 펼쳐 거슬리는 항목만 끄면 됩니다. 되돌리기는 가운데로 끌어내거나 Win+↓입니다.'
   );
 }
 
