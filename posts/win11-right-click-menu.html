@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>윈도우 11 우클릭 메뉴에서 복사·붙여넣기가 사라졌을 때 — 지워진 게 아니라 자리가 바뀐 것 | 스펙핏</title>
+<meta name="description" content="윈도우 11에서 파일을 우클릭하면 메뉴가 짧아지고, 복사·잘라내기·이름 바꾸기·삭제 글자가 안 보입니다. 맨 위나 아래의 작은 아이콘 줄로 옮겨졌고, 압축 프로그램 같은 항목은 &quot;더 많은 옵션&quot;으로 한 칸 들어갔습니다. 레지스트리를 건드리지 않고 찾는 법과 옛 메뉴를 바로 여는 키를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/win11-right-click-menu.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="윈도우 11 우클릭 메뉴에서 복사·붙여넣기가 사라졌을 때 — 지워진 게 아니라 자리가 바뀐 것 | 스펙핏">
+<meta property="og:description" content="윈도우 11에서 파일을 우클릭하면 메뉴가 짧아지고, 복사·잘라내기·이름 바꾸기·삭제 글자가 안 보입니다. 맨 위나 아래의 작은 아이콘 줄로 옮겨졌고, 압축 프로그램 같은 항목은 &quot;더 많은 옵션&quot;으로 한 칸 들어갔습니다. 레지스트리를 건드리지 않고 찾는 법과 옛 메뉴를 바로 여는 키를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/win11-right-click-menu.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"윈도우 11 우클릭 메뉴에서 복사·붙여넣기가 사라졌을 때 — 지워진 게 아니라 자리가 바뀐 것","description":"윈도우 11에서 파일을 우클릭하면 메뉴가 짧아지고, 복사·잘라내기·이름 바꾸기·삭제 글자가 안 보입니다. 맨 위나 아래의 작은 아이콘 줄로 옮겨졌고, 압축 프로그램 같은 항목은 \"더 많은 옵션\"으로 한 칸 들어갔습니다. 레지스트리를 건드리지 않고 찾는 법과 옛 메뉴를 바로 여는 키를 정리했습니다.","datePublished":"2026-11-13","dateModified":"2026-11-13","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/win11-right-click-menu.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"모니터","item":"https://specfit.kr/monitor.html"},{"@type":"ListItem","position":3,"name":"윈도우 11 우클릭 메뉴에서 복사·붙여넣기가 사라졌을 때 — 지워진 게 아니라 자리가 바뀐 것","item":"https://specfit.kr/posts/win11-right-click-menu.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"우클릭하면 늘 긴 메뉴만 떠요","acceptedAnswer":{"@type":"Answer","text":"설정을 바꾼 적이 없는데 그렇다면 Shift가 눌린 채로 잡혀 있을 수 있습니다. 한글이 쌍자음으로 나오거나 클릭할 때 범위가 잡히는 증상이 같이 있다면 거의 확실합니다 — 키가 눌린 채로 잡혔을 때."}},{"@type":"Question","name":"바탕화면 우클릭 메뉴도 바뀌었나요","acceptedAnswer":{"@type":"Answer","text":"바탕화면도 같은 방식의 짧은 메뉴입니다. 아이콘을 다시 보이게 하는 보기 항목은 짧은 메뉴에 그대로 있습니다 — 바탕화면 아이콘이 사라졌을 때."}},{"@type":"Question","name":"우클릭 자체가 안 먹어요","acceptedAnswer":{"@type":"Answer","text":"메뉴가 아예 안 뜬다면 메뉴 문제가 아니라 마우스 버튼이나 탐색기 쪽입니다 — 커서는 움직이는데 클릭이 안 될 때."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/monitor.html">모니터</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>윈도우 11 우클릭 메뉴에서 복사·붙여넣기가 사라졌을 때 — 지워진 게 아니라 자리가 바뀐 것</h1>
+    <p class="post-meta">
+      <time datetime="2026-11-13">2026년 11월 13일</time>
+      <span class="updated">· 2026년 11월 13일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>윈도우 11에서 파일을 우클릭했더니 메뉴가 <strong>짧아졌습니다.</strong> 늘 쓰던 <strong>복사</strong>, <strong>잘라내기</strong>,
+<strong>이름 바꾸기</strong>, <strong>삭제</strong> 글자가 안 보이고, 압축 프로그램 항목도 사라졌습니다. 뭔가 망가졌나
+싶지만, 윈도우 11은 우클릭 메뉴를 <strong>일부러 줄여</strong> 놓았습니다. 항목은 지워진 게 아니라
+<strong>자리만 옮겼습니다.</strong></p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>안 보이는 것</th><th>옮겨 간 자리</th><th>찾는 법</th></tr></thead>
+<tbody>
+<tr><td><strong>잘라내기 · 복사 · 이름 바꾸기 · 삭제</strong></td><td>메뉴 <strong>맨 위나 맨 아래의 작은 아이콘 줄</strong></td><td>아이콘에 마우스를 올리면 이름이 뜸</td></tr>
+<tr><td><strong>압축 · 일부 프로그램 항목</strong></td><td><strong>더 많은 옵션 표시</strong> 안쪽</td><td>메뉴 맨 아래 항목 클릭</td></tr>
+<tr><td>옛날처럼 <strong>긴 메뉴를 바로</strong></td><td>—</td><td><strong>Shift를 누른 채 우클릭</strong> · <strong>Shift + F10</strong></td></tr>
+<tr><td>긴 메뉴에도 <strong>아예 없음</strong></td><td>자리 문제가 아님</td><td>그 프로그램 재설치 · 업데이트 확인</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 244" width="640" height="244" role="img" aria-label="윈도우 11 우클릭 메뉴 항목 위치">
+<title>윈도우 11 우클릭 메뉴 항목 위치</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">윈도우 11 우클릭 메뉴 — 항목은 지워진 게 아니라 자리만 옮김</text><text x="24" y="52" fill="var(--fg)" font-size="9.6" font-weight="700">안 보이는 항목은 어디로 갔나?</text><rect x="24" y="62" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="81" fill="var(--fg)" font-size="8.8" font-weight="700">복사 · 잘라내기 · 삭제</text><path d="M118 92 L118 106" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M114 101 L118 106 L122 101" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="24" y="110" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="36" y="132" fill="#fff" font-size="9.4" font-weight="700">메뉴 위·아래 아이콘 줄</text><text x="28" y="160" fill="var(--fg-muted)" font-size="8">마우스를 올리면 이름이 뜸</text><rect x="226" y="62" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="238" y="81" fill="var(--fg)" font-size="8.8" font-weight="700">압축 · 프로그램 항목</text><path d="M320 92 L320 106" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M316 101 L320 106 L324 101" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="226" y="110" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="238" y="132" fill="#fff" font-size="9.4" font-weight="700">더 많은 옵션 표시 안쪽</text><text x="230" y="160" fill="var(--fg-muted)" font-size="8">맨 아래 항목 → 예전 긴 메뉴</text><rect x="428" y="62" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="440" y="81" fill="var(--fg)" font-size="8.8" font-weight="700">긴 메뉴에도 없음</text><path d="M522 92 L522 106" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M518 101 L522 106 L526 101" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="428" y="110" width="188" height="34" fill="var(--fg-muted)" rx="4"/><text x="440" y="132" fill="#fff" font-size="9.4" font-weight="700">자리 문제가 아님</text><text x="432" y="160" fill="var(--fg-muted)" font-size="8">프로그램 재설치 · 업데이트 확인</text><rect x="24" y="180" width="592" height="30" fill="var(--fig-over)" rx="4"/><text x="36" y="199" fill="#fff" font-size="8.8" font-weight="700">레지스트리 없이 긴 메뉴 바로 열기: Shift 누른 채 우클릭 · 파일 고르고 Shift + F10</text><text x="24" y="232" fill="var(--fg-muted)" font-size="8.4">Ctrl + C · X · V, F2(이름 바꾸기), Delete 키는 그대로 동작</text>
+</svg>
+<figcaption>윈도우 11의 짧은 우클릭 메뉴에서 복사·잘라내기·이름 바꾸기·삭제는 메뉴 위나 아래의 아이콘 줄로 옮겨졌고, 압축 같은 프로그램 항목은 맨 아래 "더 많은 옵션 표시" 안쪽의 예전 긴 메뉴에 있습니다. Shift를 누른 채 우클릭하거나 Shift+F10을 누르면 긴 메뉴가 바로 열립니다. 긴 메뉴에도 없다면 자리 문제가 아니라 항목이 빠진 것입니다.</figcaption>
+</figure>
+<h2 id="복사삭제는-아이콘-줄로-갔습니다">복사·삭제는 아이콘 줄로 갔습니다</h2>
+<p>간소화된 메뉴의 <strong>맨 위</strong>(메뉴가 아래로 열릴 때) 또는 <strong>맨 아래</strong>(위로 열릴 때)에 작은
+아이콘이 한 줄로 놓여 있습니다. 이게 예전의 글자 항목들입니다.</p>
+<ul>
+<li><strong>가위</strong> — 잘라내기</li>
+<li><strong>겹친 종이</strong> — 복사</li>
+<li><strong>글자 커서가 있는 칸</strong> — 이름 바꾸기</li>
+<li><strong>휴지통</strong> — 삭제</li>
+</ul>
+<p>버전에 따라 아이콘만 있기도 하고 글자가 함께 붙기도 합니다. 마우스를 올리면 이름이 떠서
+헷갈리면 확인할 수 있습니다. 붙여넣기는 <strong>빈 곳을 우클릭</strong>했을 때 같은 자리에 나옵니다.</p>
+<p>키보드로 하던 <strong>Ctrl + C · X · V</strong>, <strong>F2</strong>(이름 바꾸기), <strong>Delete</strong>는 그대로 됩니다.</p>
+<h2 id="프로그램-항목은-더-많은-옵션-안에-있습니다">프로그램 항목은 &quot;더 많은 옵션&quot; 안에 있습니다</h2>
+<p>압축 프로그램이나 백신, 클라우드 동기화 프로그램이 넣어 두던 항목은 메뉴 맨 아래의 <strong>더
+많은 옵션 표시</strong>를 누르면 나오는 <strong>예전 방식의 긴 메뉴</strong>에 있는 경우가 많습니다. 윈도우 11의
+짧은 메뉴에 들어가려면 프로그램이 새 방식에 맞춰져 있어야 해서, 그렇지 않은 프로그램은 한
+칸 안쪽에 남습니다. 프로그램을 업데이트하면 짧은 메뉴로 올라오는 경우도 있습니다.</p>
+<h2 id="긴-메뉴를-바로-여는-키">긴 메뉴를 바로 여는 키</h2>
+<p>매번 &quot;더 많은 옵션&quot;을 누르기 번거롭다면 키 하나로 건너뛸 수 있습니다.</p>
+<ul>
+<li><strong>Shift를 누른 채 우클릭</strong> — 짧은 메뉴를 건너뛰고 긴 메뉴가 바로 열립니다</li>
+<li>파일을 고른 뒤 <strong>Shift + F10</strong> — 키보드만으로 긴 메뉴를 엽니다</li>
+</ul>
+<p>검색하면 레지스트리나 명령어로 <strong>항상</strong> 긴 메뉴가 뜨게 바꾸는 방법이 많이 나옵니다. 되는
+방법이긴 하지만, 큰 업데이트 뒤에 원래대로 돌아가기도 하고 시스템 설정을 직접 고치는
+일이라, Shift 습관으로 충분하다면 그쪽이 덜 번거롭습니다.</p>
+<h2 id="긴-메뉴에도-없다면-다른-문제입니다">긴 메뉴에도 없다면 — 다른 문제입니다</h2>
+<p>&quot;더 많은 옵션&quot;을 눌러도 원하는 항목이 <strong>아예 없다면</strong> 자리가 바뀐 게 아니라 항목 자체가
+빠진 것입니다. 프로그램 항목이라면 그 프로그램을 다시 설치하거나 업데이트하는 것이 먼저이고,
+윈도우 기본 항목(새로 만들기 등)이 빠졌다면 윈도우 업데이트를 끝까지 설치했는지 확인합니다.</p>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="우클릭하면-늘-긴-메뉴만-떠요">우클릭하면 늘 긴 메뉴만 떠요</h3>
+<p>설정을 바꾼 적이 없는데 그렇다면 <strong>Shift가 눌린 채로 잡혀</strong> 있을 수 있습니다. 한글이 쌍자음으로
+나오거나 클릭할 때 범위가 잡히는 증상이 같이 있다면 거의 확실합니다 —
+<a href="/posts/stuck-modifier-key.html">키가 눌린 채로 잡혔을 때</a>.</p>
+<h3 id="바탕화면-우클릭-메뉴도-바뀌었나요">바탕화면 우클릭 메뉴도 바뀌었나요</h3>
+<p>바탕화면도 같은 방식의 짧은 메뉴입니다. 아이콘을 다시 보이게 하는 <strong>보기</strong> 항목은 짧은 메뉴에
+그대로 있습니다 — <a href="/posts/desktop-icons-missing.html">바탕화면 아이콘이 사라졌을 때</a>.</p>
+<h3 id="우클릭-자체가-안-먹어요">우클릭 자체가 안 먹어요</h3>
+<p>메뉴가 아예 안 뜬다면 메뉴 문제가 아니라 마우스 버튼이나 탐색기 쪽입니다 —
+<a href="/posts/cursor-moves-no-click.html">커서는 움직이는데 클릭이 안 될 때</a>.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>윈도우 11 우클릭 메뉴는 <strong>일부러 짧아진</strong> 것 — 항목은 자리만 옮겼습니다</li>
+<li><strong>복사·잘라내기·이름 바꾸기·삭제</strong>는 메뉴 위나 아래의 <strong>아이콘 줄</strong></li>
+<li><strong>프로그램 항목</strong>은 맨 아래 <strong>더 많은 옵션 표시</strong> 안쪽</li>
+<li>긴 메뉴를 바로 열려면 <strong>Shift + 우클릭</strong> 또는 <strong>Shift + F10</strong></li>
+<li>긴 메뉴에도 없으면 자리 문제가 아니라 <strong>항목이 빠진</strong> 것</li>
+</ol>
+<p>윈도우 화면의 이웃 판정들 — <a href="/posts/desktop-icons-missing.html">바탕화면 아이콘이 사라졌을 때</a> ·
+<a href="/posts/stuck-modifier-key.html">키가 눌린 채로 잡혔을 때</a> ·
+<a href="/posts/window-snap-edge.html">창이 화면 끝에 달라붙을 때</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">우클릭메뉴</span> <span class="tag">윈도우11</span> <span class="tag">더많은옵션</span> <span class="tag">복사붙여넣기</span> <span class="tag">파일탐색기</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/windows-notifications-missing.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">윈도우 알림이 안 뜰 때 — 방해 금지, 앱 하나, 팝업만, 순서대로 가르기</span>
+        <span class="card-desc">메신저나 메일이 왔는데 화면 오른쪽 아래에 아무것도 뜨지 않습니다. 방해 금지가 저절로 켜졌거나, 그 앱의 알림만 꺼졌거나, 알림 센터에는 쌓이는데 팝업만 꺼진 경우가 대부분입니다. 어느 갈래인지 가르는 순서와 각 갈래의 설정 자리를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/window-snap-edge.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">창을 끌면 화면 끝에 달라붙을 때 — 윈도우 창 맞춤, 다 끄지 말고 골라 끄기</span>
+        <span class="card-desc">창을 옮기려고 끌었는데 화면 끝에 닿자마자 절반 크기로 붙거나, 위로 올리자 꽉 차 버립니다. 고장이 아니라 윈도우의 창 맞춤 기능이고, 거슬리는 부분만 골라 끌 수 있습니다. 어떤 동작이 어느 기능인지, 키보드로 되돌리는 법까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/resolution-stuck-low.html">
+        <span class="card-cat">모니터</span>
+        <span class="card-title">해상도가 낮게 고정돼 안 바뀔 때 — 컴퓨터가 모니터를 &quot;모르는&quot; 상태입니다</span>
+        <span class="card-desc">어느 날 화면이 크고 뭉개지더니 해상도 목록에 1024×768 같은 낮은 값만 남는 증상은, 해상도 목록을 채우는 두 경로 중 하나가 끊겼다는 신호입니다. 드라이버 갈래와 모니터 정보 갈래를 가르는 법, 고장이 아닌 배율 착각까지 순서대로 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

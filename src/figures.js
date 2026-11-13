@@ -1041,6 +1041,7 @@ export const figures = {
   'laptop-gpu-vram-gap': laptopGpuVramGap,
   'notif-missing-flow': notifMissingFlow,
   'search-typing-split': searchTypingSplit,
+  'right-click-map': rightClickMap,
 };
 
 /**
@@ -6437,6 +6438,33 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function rightClickMap() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '윈도우 11 우클릭 메뉴 — 항목은 지워진 게 아니라 자리만 옮김', { weight: 600, size: 12.5 });
+  b += t(24, 52, '안 보이는 항목은 어디로 갔나?', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, verdict, note, c) => {
+    let o = rect(x, 62, 188, 30, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 81, head, { size: 8.8, weight: 700 });
+    o += `<path d="M${x + 94} 92 L${x + 94} 106" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 90} 101 L${x + 94} 106 L${x + 98} 101" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 110, 188, 34, c, { r: 4 });
+    o += t(x + 12, 132, verdict, { size: 9.4, weight: 700, fill: '#fff' });
+    o += t(x + 4, 160, note, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += card(24, '복사 · 잘라내기 · 삭제', '메뉴 위·아래 아이콘 줄', '마우스를 올리면 이름이 뜸', COLOR.fit);
+  b += card(226, '압축 · 프로그램 항목', '더 많은 옵션 표시 안쪽', '맨 아래 항목 → 예전 긴 메뉴', COLOR.fit);
+  b += card(428, '긴 메뉴에도 없음', '자리 문제가 아님', '프로그램 재설치 · 업데이트 확인', COLOR.mute);
+  b += rect(24, 180, 592, 30, COLOR.over, { r: 4 });
+  b += t(36, 199, '레지스트리 없이 긴 메뉴 바로 열기: Shift 누른 채 우클릭 · 파일 고르고 Shift + F10', { size: 8.8, weight: 700, fill: '#fff' });
+  b += t(24, 232, 'Ctrl + C · X · V, F2(이름 바꾸기), Delete 키는 그대로 동작', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '윈도우 11 우클릭 메뉴 항목 위치',
+    W, 244, b,
+    '윈도우 11의 짧은 우클릭 메뉴에서 복사·잘라내기·이름 바꾸기·삭제는 메뉴 위나 아래의 아이콘 줄로 옮겨졌고, 압축 같은 프로그램 항목은 맨 아래 "더 많은 옵션 표시" 안쪽의 예전 긴 메뉴에 있습니다. Shift를 누른 채 우클릭하거나 Shift+F10을 누르면 긴 메뉴가 바로 열립니다. 긴 메뉴에도 없다면 자리 문제가 아니라 항목이 빠진 것입니다.'
   );
 }
 
