@@ -6,6 +6,13 @@
   <description>내 조건에 맞는 스펙</description>
   <language>ko</language>
   <item>
+    <title>윈도우 검색창에 글자가 안 쳐질 때 — "어디까지 안 되나"로 네 갈래를 가릅니다</title>
+    <link>https://specfit.kr/posts/windows-search-no-typing.html</link>
+    <guid isPermaLink="true">https://specfit.kr/posts/windows-search-no-typing.html</guid>
+    <pubDate>Thu, 12 Nov 2026 15:00:00 GMT</pubDate>
+    <description>시작 메뉴나 작업 표시줄 검색창을 눌러도 글자가 들어가지 않습니다. 검색창만 멈춘 것인지, 윈도우 입력창 전체에서 입력기가 빠진 것인지, 글자는 되는데 결과만 안 나오는 것인지, 키보드 자체인지에 따라 처방이 다릅니다. 메모장 하나로 가르는 순서를 정리했습니다.</description>
+  </item>
+  <item>
     <title>윈도우 알림이 안 뜰 때 — 방해 금지, 앱 하나, 팝업만, 순서대로 가르기</title>
     <link>https://specfit.kr/posts/windows-notifications-missing.html</link>
     <guid isPermaLink="true">https://specfit.kr/posts/windows-notifications-missing.html</guid>
@@ -137,13 +144,6 @@
     <guid isPermaLink="true">https://specfit.kr/posts/fan-hub-needed.html</guid>
     <pubDate>Tue, 27 Oct 2026 15:00:00 GMT</pubDate>
     <description>케이스 팬을 늘리다 보면 메인보드 팬 단자가 모자라 허브를 사야 하나 고민하게 됩니다. 직결·분배 케이블·데이지 체인·허브 중 무엇이 맞는지는 팬 개수가 아니라 단자 수와 전류 합이 정합니다. 판정 순서와 조명 선 주의점까지 정리했습니다.</description>
-  </item>
-  <item>
-    <title>어항 케이스 온도 괜찮나 — 유리가 아니라 "공기가 들어오는 길"을 봅니다</title>
-    <link>https://specfit.kr/posts/aquarium-case-temp.html</link>
-    <guid isPermaLink="true">https://specfit.kr/posts/aquarium-case-temp.html</guid>
-    <pubDate>Mon, 26 Oct 2026 15:00:00 GMT</pubDate>
-    <description>앞과 옆이 유리로 된 어항 케이스는 예쁜 대신 온도가 걱정됩니다. 차이를 만드는 건 유리 자체가 아니라 흡기 경로와 팬 구성, 그리고 들어갈 부품의 발열입니다. 사기 전에 볼 것, 이미 샀다면 확인과 개선 순서를 정리했습니다.</description>
   </item>
 </channel>
 </rss>

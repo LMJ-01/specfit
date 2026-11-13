@@ -1040,6 +1040,7 @@ export const figures = {
   'snap-edge-map': snapEdgeMap,
   'laptop-gpu-vram-gap': laptopGpuVramGap,
   'notif-missing-flow': notifMissingFlow,
+  'search-typing-split': searchTypingSplit,
 };
 
 /**
@@ -6436,6 +6437,25 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function searchTypingSplit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '검색창에 글자가 안 쳐진다 — 메모장에서 쳐 보면 갈래가 나뉨', { weight: 600, size: 12.5 });
+  b += t(24, 52, '어디까지 안 되나', { size: 8.6, weight: 700, fill: COLOR.mute });
+  b += t(364, 52, '갈래 → 먼저 할 것', { size: 8.6, weight: 700, fill: COLOR.mute });
+  const row = (y, txt, verdict, c) => rect(24, y, 330, 32, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 20, txt, { size: 8.8, weight: 700 }) + rect(364, y, 252, 32, c, { r: 4 }) + t(376, y + 20, verdict, { size: 8.8, weight: 700, fill: '#fff' });
+  b += row(62, '검색창만 · 메모장·설정 검색칸은 됨', '검색·탐색기 멈춤 → 작업 관리자', COLOR.fit);
+  b += row(102, '검색창·설정·시작 전부 · 메모장은 됨', '입력기 빠짐 → 재로그인 · ctfmon', COLOR.fit);
+  b += row(142, '글자는 들어감 · 결과가 안 나옴', '검색 색인 → 문제 해결 · 다시 만들기', COLOR.mute);
+  b += row(182, '메모장에서도 안 됨', '키보드 쪽 → 연결·키 층 가르기', COLOR.over);
+  b += t(24, 236, '메모장 열기: Win + R → notepad → Enter (시작 메뉴가 안 될 때)', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '윈도우 검색창 입력 안 됨 판정',
+    W, 248, b,
+    '메모장에서 글자를 쳐 보면 갈래가 나뉩니다. 검색창만 안 되고 메모장과 설정 검색칸은 되면 검색·탐색기가 멈춘 것이라 작업 관리자에서 다시 시작합니다. 검색창·설정·시작 메뉴가 전부 안 되고 메모장만 되면 입력기가 빠진 것이라 다시 로그인하거나 ctfmon을 띄웁니다. 글자는 들어가는데 결과가 안 나오면 검색 색인 쪽이고, 메모장에서도 안 되면 키보드 쪽입니다.'
   );
 }
 

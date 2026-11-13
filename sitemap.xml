@@ -14,6 +14,7 @@
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/posts/windows-notifications-missing.html</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/windows-search-no-typing.html</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/window-snap-edge.html</loc><lastmod>2026-11-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/keyboard-beep-sound.html</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-cursor-trail.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
@@ -21,7 +22,7 @@
   <url><loc>https://specfit.kr/posts/mouse-scroll-too-fast.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/stuck-modifier-key.html</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-cursor-gone.html</loc><lastmod>2026-11-10</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/typing-deletes-text.html</loc><lastmod>2026-11-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/typing-deletes-text.html</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/bluetooth-toggle-missing.html</loc><lastmod>2026-11-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-battery-swelling.html</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/usb-file-too-large.html</loc><lastmod>2026-11-04</lastmod><priority>0.8</priority></url>
@@ -52,7 +53,7 @@
   <url><loc>https://specfit.kr/posts/speaker-pop-on-power.html</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/cpu-fan-error-boot.html</loc><lastmod>2026-10-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/cursor-busy-flicker.html</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/cursor-moves-no-click.html</loc><lastmod>2026-11-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/cursor-moves-no-click.html</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/monitor-blackout-briefly.html</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/motherboard-debug-led.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/pc-cold-boot-issue.html</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
