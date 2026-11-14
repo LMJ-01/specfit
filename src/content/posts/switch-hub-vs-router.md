@@ -22,6 +22,7 @@ tags: [스위칭허브, 공유기, 유선랜, 포트부족, 홈네트워크]
     "가정 규모에서는 대개".
   - 금액 미기재. 쿠팡 링크 없음 (adsenseReview). 기가/2.5G 스위칭허브 =
     이 글이 최우선 배치 자리 (승인 후, next-steps 3-A).
+  - 전수 점검(2026-11-14): 정독. 이상 없음(공유기·허브 역할 구분 · 이중 NAT hedge · 10/100 구형 병목 · AP 모드 확인).
 -->
 
 컴퓨터, [미니PC](/posts/mini-pc-for-dev.html), [NAS](/posts/nas-vs-external-hdd.html),
