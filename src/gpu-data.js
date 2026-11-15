@@ -106,8 +106,10 @@ export const gpus = [
   //   M5 153GB/s · M5 Pro 307GB/s · M5 Max 460GB/s(GPU 32코어)~614GB/s(GPU 40코어)
   //
   //   ⚠️ M5 Max 는 같은 이름 안에서 GPU 코어 수에 따라 대역폭이 갈립니다.
-  //      메모리 용량이 아니라 GPU 구성이 정합니다. 여기서는 64GB 를 460,
-  //      128GB 를 614 로 두었으나, 실제로는 구성별로 확인해야 합니다.
+  //      메모리 용량이 아니라 GPU 구성이 정합니다.
+  //      ✅ 2026-11-15 재확인(apple.com 맥북 프로 사양): GPU 32코어 M5 Max(460GB/s)는
+  //      36GB 구성뿐이고, 48·64·128GB 는 GPU 40코어(614GB/s)에서만 고를 수 있습니다.
+  //      이전에는 64GB 를 460 으로 두었는데 틀린 값이라 614 로 고치고 36GB 항목을 넣었습니다.
   //
   // vram 은 '모델에 실제로 쓸 수 있는 몫' 입니다.
   //   macOS 의 Metal 은 통합 메모리의 약 75% 까지만 GPU 작업에 내줍니다.
@@ -120,7 +122,8 @@ export const gpus = [
   { id: 'm5pro-24', name: 'Mac M5 Pro · 24GB', vram: 16, bw: 307, tdp: 0, mac: true, tier: 'mac' },
   { id: 'm5pro-48', name: 'Mac M5 Pro · 48GB', vram: 34, bw: 307, tdp: 0, mac: true, tier: 'mac' },
   { id: 'm5pro-64', name: 'Mac M5 Pro · 64GB', vram: 46, bw: 307, tdp: 0, mac: true, tier: 'mac' },
-  { id: 'm5max-64', name: 'Mac M5 Max · 64GB', vram: 46, bw: 460, tdp: 0, mac: true, tier: 'mac' },
+  { id: 'm5max-36', name: 'Mac M5 Max · 36GB', vram: 25, bw: 460, tdp: 0, mac: true, tier: 'mac' },
+  { id: 'm5max-64', name: 'Mac M5 Max · 64GB', vram: 46, bw: 614, tdp: 0, mac: true, tier: 'mac' },
   { id: 'm5max-128', name: 'Mac M5 Max · 128GB', vram: 96, bw: 614, tdp: 0, mac: true, tier: 'mac' },
 
   // ── 통합메모리 미니PC (2026-08-29 추가) ─────────────────────────
