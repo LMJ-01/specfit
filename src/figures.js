@@ -5442,7 +5442,7 @@ function psuCheckOrder() {
   let b = '';
   b += t(24, 24, '그래픽카드 파워 — 확인 셋, 순서대로 (W는 마지막)', { weight: 600, size: 12.5 });
   const gates = [
-    ['① 커넥터', '12V-2x6(12VHPWR) 단자가 파워에 있나', '없으면 W와 무관하게 못 꽂음 · 어댑터는 차선', COLOR.over],
+    ['① 커넥터', '12V-2x6(12VHPWR) 단자가 파워에 있나', '없으면 동봉 어댑터 + 8핀 2~4개 필요 · 차선', COLOR.over],
     ['② 규격', 'ATX 3.1(최소 3.0) 표기', '순간 부하 설계 — 옛 파워는 게임 중 꺼짐', COLOR.accent],
     ['③ 용량', '(카드 TDP + CPU + 80W) × 1.3', '부하 50~80% 구간이 효율·소음의 자리', COLOR.fit],
   ];
@@ -5463,7 +5463,7 @@ function psuCheckOrder() {
   b += t(150 + 466 * 0.9, 163, '꽉 채움 → 발열·소음', { size: 7.4, fill: COLOR.over, anchor: 'middle' });
   b += t(150, 180, '0%', { size: 7, fill: COLOR.mute });
   b += t(616, 180, '100%', { size: 7, fill: COLOR.mute, anchor: 'end' });
-  b += t(24, 202, 'W만 맞추고 사면 상자를 열고 나서 커넥터가 없다는 걸 압니다 — 순서가 전부입니다.', { size: 8.4, weight: 600, fill: COLOR.text });
+  b += t(24, 202, 'W만 맞추고 사면 상자를 열고 나서 커넥터가 모자란 걸 압니다 — 순서가 전부입니다.', { size: 8.4, weight: 600, fill: COLOR.text });
   return figure(
     '파워 확인 순서 — 커넥터·규격·용량',
     W, 214, b,
