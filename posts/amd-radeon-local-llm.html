@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다","description":"VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨어가 아니라 소프트웨어입니다. 어디서 막히는지, 이미 갖고 계신 경우와 새로 사는 경우를 갈랐습니다.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/amd-radeon-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다","description":"VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨어가 아니라 소프트웨어입니다. 어디서 막히는지, 이미 갖고 계신 경우와 새로 사는 경우를 갈랐습니다.","datePublished":"2026-08-18","dateModified":"2026-11-15","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/amd-radeon-local-llm.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다","item":"https://specfit.kr/posts/amd-radeon-local-llm.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"라데온이 같은 값에 VRAM 이 더 큰데요","acceptedAnswer":{"@type":"Answer","text":"VRAM 이 크면 더 큰 모델이 올라갑니다. 그건 사실입니다. 다만 지원 여부를 먼저 확인하셔야 합니다. 안 돌아가는 16GB 는 8GB 보다 못합니다."}},{"@type":"Question","name":"지원 목록에 없는 카드는 아예 안 되나요","acceptedAnswer":{"@type":"Answer","text":"되는 경우도 있습니다. 제조사가 공식 보증하지 않을 뿐입니다. 다만 문제가 생겼을 때 기댈 곳이 없다는 뜻이라, 처음 시작하시는 분께는 권하지 않습니다."}},{"@type":"Question","name":"윈도우와 리눅스 중 어느 쪽이 나은가요","acceptedAnswer":{"@type":"Answer","text":"일반적으로 리눅스 쪽 지원이 먼저 갖춰지는 경향이 있습니다. 다만 상황이 계속 바뀌므로 쓰려는 도구의 문서에서 지금 기준으로 확인하세요."}},{"@type":"Question","name":"라데온과 지포스를 같이 꽂으면요","acceptedAnswer":{"@type":"Answer","text":"권하지 않습니다. 서로 다른 통로를 쓰기 때문에 함께 묶기가 까다롭습니다. 같은 제조사 카드를 두 장 꽂는 것도 이득이 크지 않습니다 — 그래픽카드 두 장에 정리했습니다."}},{"@type":"Question","name":"맥은 어떤가요","acceptedAnswer":{"@type":"Answer","text":"맥은 또 다른 통로(Metal)를 쓰고, 지원이 잘 되어 있습니다. 대신 대역폭과 용량의 성격이 달라 계산이 다릅니다 — 맥 통합메모리 글을 보세요."}},{"@type":"Question","name":"전기요금은 차이가 나나요","acceptedAnswer":{"@type":"Answer","text":"카드의 소비 전력만큼 차이가 납니다. 제조사가 아니라 그 카드의 TDP 를 보세요. 계산법은 로컬 LLM 전기요금에 있습니다."}}]}</script>
 </head>
@@ -66,7 +66,7 @@
     <h1>AMD 라데온으로 로컬 LLM — 되긴 되는데 손이 갑니다</h1>
     <p class="post-meta">
       <time datetime="2026-08-18">2026년 8월 18일</time>
-      
+      <span class="updated">· 2026년 11월 15일 갱신</span>
     </p>
   </header>
 
@@ -98,6 +98,13 @@
 </tbody>
 </table></div>
 <p><strong>하드웨어가 나쁜 게 아닙니다. 소프트웨어 생태계가 기울어져 있는 것입니다.</strong></p>
+<figure class="fig">
+<svg viewBox="0 0 640 252" width="640" height="252" role="img" aria-label="AMD 라데온 로컬 LLM 판단">
+<title>AMD 라데온 로컬 LLM 판단</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">라데온으로 로컬 LLM — 하드웨어 규칙은 같고, 갈리는 건 "내 카드를 도구가 지원하나"</text><rect x="24" y="40" width="592" height="30" fill="var(--bg-soft)" rx="6" stroke="var(--border)"/><text x="36" y="60" fill="var(--fg)" font-size="8.8" font-weight="700">같은 것: 돌아가는 모델 크기는 VRAM이, 속도는 대역폭이 정함 — 로고와 무관</text><text x="24" y="92" fill="var(--fg)" font-size="9.6" font-weight="700">내 상황은?</text><rect x="24" y="102" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="121" fill="var(--fg)" font-size="8.8" font-weight="700">이미 라데온이 있다</text><path d="M118 132 L118 146" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M114 141 L118 146 L122 141" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="24" y="150" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="36" y="172" fill="#fff" font-size="9.4" font-weight="700">시도해 보기</text><text x="28" y="200" fill="var(--fg-muted)" font-size="8">드는 비용은 시간뿐</text><rect x="226" y="102" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="238" y="121" fill="var(--fg)" font-size="8.8" font-weight="700">LLM 때문에 새로 산다</text><path d="M320 132 L320 146" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M316 141 L320 146 L324 141" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="226" y="150" width="188" height="34" fill="var(--fg-muted)" rx="4"/><text x="238" y="172" fill="#fff" font-size="9.4" font-weight="700">NVIDIA가 마찰이 적음</text><text x="230" y="200" fill="var(--fg-muted)" font-size="8">성능이 아니라 손이 덜 감</text><rect x="428" y="102" width="188" height="30" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="440" y="121" fill="var(--fg)" font-size="8.8" font-weight="700">게이밍 위주 + 가끔 LLM</text><path d="M522 132 L522 146" stroke="var(--fg-muted)" stroke-width="1.6"/><path d="M518 141 L522 146 L526 141" fill="none" stroke="var(--fg-muted)" stroke-width="1.6"/><rect x="428" y="150" width="188" height="34" fill="var(--fig-fit)" rx="4"/><text x="440" y="172" fill="#fff" font-size="9.4" font-weight="700">라데온으로 충분</text><text x="432" y="200" fill="var(--fg-muted)" font-size="8">게이밍 기준으로 고르기</text><rect x="24" y="214" width="592" height="28" fill="var(--fig-over)" rx="4"/><text x="36" y="232" fill="#fff" font-size="8.8" font-weight="700">확인 순서: 내 카드 VRAM → 도구 공식 문서에서 카드·운영체제 지원 → 설치 뒤 GPU 사용률</text>
+</svg>
+<figcaption>돌아가는 모델 크기는 VRAM이, 속도는 메모리 대역폭이 정한다는 규칙은 제조사와 무관하게 같습니다. 갈리는 것은 실행 프로그램이 내 카드와 운영체제를 지원하느냐입니다. 이미 라데온이 있으면 시도해 보고, 로컬 LLM 때문에 새로 산다면 NVIDIA가 손이 덜 가며, 게이밍이 주 목적이면 라데온으로도 충분합니다. 확인은 내 카드 VRAM, 도구 공식 문서의 지원 목록, 설치 뒤 GPU 사용률 순서입니다.</figcaption>
+</figure>
 <h2 id="1-하드웨어-규칙은-완전히-같습니다">1. 하드웨어 규칙은 완전히 같습니다</h2>
 <p>이 사이트가 반복해 온 두 가지가 제조사와 무관하게 성립합니다.</p>
 <p><strong>① VRAM 이 &quot;되느냐&quot;를 정합니다</strong></p>
@@ -220,6 +227,10 @@
 </table></div>
 <p><strong>AMD 가 못 돌리는 게 아니라, 어느 통로로 갈지를 사용자가 알아야 하는 상황</strong>입니다.
 NVIDIA 는 그 고민이 없습니다.</p>
+<blockquote><p><strong>2026년 11월에 다시 확인한 모습</strong> — 대표적인 실행 프로그램인 Ollama 의 공식 문서는
+AMD 카드 지원 목록을 <strong>리눅스와 윈도우에 따로</strong> 두고 있고, 목록에 없는 카드는 Vulkan 쪽
+통로로 시도하는 길을 안내합니다. 이 글의 구조(통로가 셋, 카드·운영체제별로 갈림)는
+그대로이고, 어느 카드가 목록에 있는지는 계속 바뀌니 <strong>그 문서에서 직접</strong> 보세요.</p></blockquote>
 <h3 id="그래서-실제로-겪는-차이">그래서 실제로 겪는 차이</h3>
 <ul>
 <li>설치할 때 <strong>추가 구성 요소를 깔아야 하는 경우</strong>가 있습니다</li>
@@ -296,6 +307,8 @@ NVIDIA 는 그 고민이 없습니다.</p>
 <li>로컬 LLM 때문에 <strong>새로 산다면 NVIDIA 가 마찰이 적습니다</strong></li>
 <li>설치 후 <strong>GPU 사용률이 올라가는지</strong> 꼭 확인하세요</li>
 </ol>
+<p>로컬 LLM 이 처음이면 <a href="/posts/local-llm-start-guide.html">용어 없이 읽는 시작 가이드</a>부터,
+VRAM 용량별로 어떤 크기까지 되는지는 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양</a>에 있습니다.</p>
 <p>지원 상황이 바뀌었거나 실제 결과가 다르면 <a href="/contact.html">알려주세요</a>.
 이 글은 특히 빨리 낡습니다. 확인 후 고치고 갱신일을 표시합니다.</p>
   </div>

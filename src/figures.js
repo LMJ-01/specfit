@@ -1042,6 +1042,7 @@ export const figures = {
   'notif-missing-flow': notifMissingFlow,
   'search-typing-split': searchTypingSplit,
   'right-click-map': rightClickMap,
+  'radeon-llm-fork': radeonLlmFork,
 };
 
 /**
@@ -6438,6 +6439,34 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function radeonLlmFork() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '라데온으로 로컬 LLM — 하드웨어 규칙은 같고, 갈리는 건 "내 카드를 도구가 지원하나"', { weight: 600, size: 12.5 });
+  b += rect(24, 40, 592, 30, COLOR.soft, { r: 6, stroke: COLOR.line });
+  b += t(36, 60, '같은 것: 돌아가는 모델 크기는 VRAM이, 속도는 대역폭이 정함 — 로고와 무관', { size: 8.8, weight: 700 });
+  b += t(24, 92, '내 상황은?', { size: 9.6, weight: 700, fill: COLOR.text });
+  const card = (x, head, verdict, note, c) => {
+    let o = rect(x, 102, 188, 30, COLOR.soft, { r: 4, stroke: COLOR.line });
+    o += t(x + 12, 121, head, { size: 8.8, weight: 700 });
+    o += `<path d="M${x + 94} 132 L${x + 94} 146" stroke="${COLOR.mute}" stroke-width="1.6"/><path d="M${x + 90} 141 L${x + 94} 146 L${x + 98} 141" fill="none" stroke="${COLOR.mute}" stroke-width="1.6"/>`;
+    o += rect(x, 150, 188, 34, c, { r: 4 });
+    o += t(x + 12, 172, verdict, { size: 9.4, weight: 700, fill: '#fff' });
+    o += t(x + 4, 200, note, { size: 8, fill: COLOR.mute });
+    return o;
+  };
+  b += card(24, '이미 라데온이 있다', '시도해 보기', '드는 비용은 시간뿐', COLOR.fit);
+  b += card(226, 'LLM 때문에 새로 산다', 'NVIDIA가 마찰이 적음', '성능이 아니라 손이 덜 감', COLOR.mute);
+  b += card(428, '게이밍 위주 + 가끔 LLM', '라데온으로 충분', '게이밍 기준으로 고르기', COLOR.fit);
+  b += rect(24, 214, 592, 28, COLOR.over, { r: 4 });
+  b += t(36, 232, '확인 순서: 내 카드 VRAM → 도구 공식 문서에서 카드·운영체제 지원 → 설치 뒤 GPU 사용률', { size: 8.8, weight: 700, fill: '#fff' });
+  return figure(
+    'AMD 라데온 로컬 LLM 판단',
+    W, 252, b,
+    '돌아가는 모델 크기는 VRAM이, 속도는 메모리 대역폭이 정한다는 규칙은 제조사와 무관하게 같습니다. 갈리는 것은 실행 프로그램이 내 카드와 운영체제를 지원하느냐입니다. 이미 라데온이 있으면 시도해 보고, 로컬 LLM 때문에 새로 산다면 NVIDIA가 손이 덜 가며, 게이밍이 주 목적이면 라데온으로도 충분합니다. 확인은 내 카드 VRAM, 도구 공식 문서의 지원 목록, 설치 뒤 GPU 사용률 순서입니다.'
   );
 }
 
