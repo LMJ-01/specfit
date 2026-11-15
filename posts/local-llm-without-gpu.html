@@ -25,9 +25,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가","description":"그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.","datePublished":"2026-08-15","dateModified":"2026-08-30","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-without-gpu.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가","description":"그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 느린지는 숫자로 설명됩니다. 시스템 램 대역폭이 그래픽카드의 몇 분의 일인지 계산했습니다.","datePublished":"2026-08-15","dateModified":"2026-11-16","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/local-llm-without-gpu.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가","item":"https://specfit.kr/posts/local-llm-without-gpu.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"CPU가 좋으면 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"조금 빨라지지만 크게 달라지지 않습니다. 병목이 연산이 아니라 메모리 읽기 속도이기 때문입니다. 코어를 늘려도 램에서 읽어오는 속도가 그대로면 한계가 있습니다."}},{"@type":"Question","name":"DDR5로 바꾸면 얼마나 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"DDR4-3200에서 DDR5-5600이면 대역폭이 약 1.75배입니다. 체감이 되긴 하지만, 그래픽카드와의 격차를 메우지는 못합니다. 이것 때문에 메인보드와 CPU까지 바꿀 정도는 아닙니다."}},{"@type":"Question","name":"그래픽카드를 사면 얼마나 나아지나요","acceptedAnswer":{"@type":"Answer","text":"보급형 신품(RTX 5060)만 해도 대역폭이 5배입니다. 게다가 모델이 VRAM에 다 올라가면 시스템 램은 거의 쓰이지 않습니다. 차원이 다른 경험이 됩니다. 어느 카드가 맞는지는 Ollama 최소 사양 정리를 보세요."}},{"@type":"Question","name":"노트북 내장그래픽으로는요","acceptedAnswer":{"@type":"Answer","text":"위에 적은 대로 내장그래픽은 시스템 램을 나눠 쓰므로 큰 도움이 안 됩니다. 다만 최근 노트북용 통합 칩 중에는 대역폭이 높은 것도 있으니, 본인 기기의 메모리 규격을 확인해 보세요."}},{"@type":"Question","name":"램만 잔뜩 늘리면 큰 모델이 돌아가나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 32B도 램 32GB면 올라갑니다. 다만 대역폭이 그대로라 속도는 더 느려집니다 — 읽을 양이 늘었기 때문입니다. 용량 문제가 아니라 속도 문제입니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"CPU가 좋으면 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"조금 빨라지지만 크게 달라지지 않습니다. 병목이 연산이 아니라 메모리 읽기 속도이기 때문입니다. 코어를 늘려도 램에서 읽어오는 속도가 그대로면 한계가 있습니다."}},{"@type":"Question","name":"DDR5로 바꾸면 얼마나 빨라지나요","acceptedAnswer":{"@type":"Answer","text":"DDR4-3200에서 DDR5-5600이면 대역폭이 약 1.75배입니다. 체감이 되긴 하지만, 그래픽카드와의 격차를 메우지는 못합니다. 이것 때문에 메인보드와 CPU까지 바꿀 정도는 아닙니다."}},{"@type":"Question","name":"그래픽카드를 사면 얼마나 나아지나요","acceptedAnswer":{"@type":"Answer","text":"보급형 신품(RTX 5060)만 해도 대역폭이 5배입니다. 게다가 모델이 VRAM에 다 올라가면 시스템 램은 거의 쓰이지 않습니다. 차원이 다른 경험이 됩니다. 어느 카드가 맞는지는 Ollama 최소 사양 정리를 보세요."}},{"@type":"Question","name":"노트북 내장그래픽으로는요","acceptedAnswer":{"@type":"Answer","text":"위에 적은 대로 내장그래픽은 시스템 램을 나눠 쓰므로 큰 도움이 안 됩니다. 다만 최근 노트북·미니PC용 통합 칩 중에는 메모리를 넓게 묶어 대역폭이 256 GB/s 급인 것도 있습니다 — 계산은 미니PC로 로컬 LLM에 있습니다. 본인 기기의 메모리 규격을 확인해 보세요."}},{"@type":"Question","name":"램만 잔뜩 늘리면 큰 모델이 돌아가나요","acceptedAnswer":{"@type":"Answer","text":"돌아가긴 합니다. 32B도 램 32GB면 올라갑니다. 다만 대역폭이 그대로라 속도는 더 느려집니다 — 읽을 양이 늘었기 때문입니다. 용량 문제가 아니라 속도 문제입니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -66,7 +66,7 @@
     <h1>그래픽카드 없이 로컬 LLM — CPU로 돌리면 얼마나 느린가</h1>
     <p class="post-meta">
       <time datetime="2026-08-15">2026년 8월 15일</time>
-      <span class="updated">· 2026년 8월 30일 갱신</span>
+      <span class="updated">· 2026년 11월 16일 갱신</span>
     </p>
   </header>
 
@@ -144,8 +144,9 @@ DDR4-3200 듀얼채널
 <p>두 규격의 차이와 <strong>왜 골라서 사는 게 아닌지</strong>는
 <a href="/posts/ddr4-vs-ddr5.html">DDR4와 DDR5 차이</a>에 있습니다.</p>
 <blockquote><p>⚠️ <strong>위 5600·3200 은 표기 속도를 다 쓴다고 본 값입니다.</strong>
-그런데 그건 BIOS 에서 켜야 나옵니다. 안 켜져 있으면 DDR5 는 4800(76.8GB/s),
-DDR4 는 2133(34.1GB/s)으로 돕니다 — <a href="/posts/ram-xmp-expo.html">램 XMP·EXPO</a> 참고.
+그런데 그건 BIOS 에서 켜야 나오는 경우가 많습니다. 안 켜져 있으면 DDR5 는 대개 4800(76.8GB/s),
+DDR4 는 대개 2133(34.1GB/s)으로 돕니다(표준 속도가 5600 처럼 더 높게 들어 있는 램은 그 값으로 잡히기도 합니다)
+— <a href="/posts/ram-xmp-expo.html">램 XMP·EXPO</a> 참고.
 <strong>CPU 로 돌리실 거라면 이건 확인해 볼 값어치가 있습니다.</strong> 그대로 속도이기 때문입니다.</p></blockquote>
 <p><strong>보급형 신품 그래픽카드(RTX 5060)와 비교해도 5배 차이입니다.</strong></p>
 <p>다만 이 배수가 곧 체감 속도 배수는 아닙니다.
@@ -174,7 +175,7 @@ CPU 쪽은 연산 능력에서도 밀리고, 실제 차이는 이보다 더 벌�
 <div class="table-wrap"><table>
 <thead><tr><th>모델</th><th>파일 크기 (Q4)</th><th>필요한 램</th></tr></thead>
 <tbody>
-<tr><td>3B</td><td>약 2GB</td><td>8GB로 가능</td></tr>
+<tr><td>3B</td><td>약 2GB</td><td>8GB로도 돌아갑니다(빠듯)</td></tr>
 <tr><td>7~8B</td><td>약 4.7GB</td><td>16GB 권장</td></tr>
 <tr><td>14B</td><td>약 9GB</td><td>16GB로 빠듯, 32GB 권장</td></tr>
 <tr><td>32B</td><td>약 20GB</td><td>32GB 이상</td></tr>
@@ -215,8 +216,8 @@ CPU 추론은 근본적으로 대역폭에 막혀 있어서, 설정으로 해결
 <p>어느 카드가 맞는지는 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>를 보세요.</p>
 <h3 id="노트북-내장그래픽으로는요">노트북 내장그래픽으로는요</h3>
 <p>위에 적은 대로 내장그래픽은 시스템 램을 나눠 쓰므로 큰 도움이 안 됩니다.
-다만 최근 노트북용 통합 칩 중에는 대역폭이 높은 것도 있으니,
-본인 기기의 메모리 규격을 확인해 보세요.</p>
+다만 최근 노트북·미니PC용 통합 칩 중에는 메모리를 넓게 묶어 대역폭이 256 GB/s 급인 것도 있습니다 —
+계산은 <a href="/posts/mini-pc-local-llm.html">미니PC로 로컬 LLM</a>에 있습니다. 본인 기기의 메모리 규격을 확인해 보세요.</p>
 <h3 id="램만-잔뜩-늘리면-큰-모델이-돌아가나요">램만 잔뜩 늘리면 큰 모델이 돌아가나요</h3>
 <p><strong>돌아가긴 합니다.</strong> 32B도 램 32GB면 올라갑니다.
 다만 대역폭이 그대로라 속도는 더 느려집니다 — 읽을 양이 늘었기 때문입니다.

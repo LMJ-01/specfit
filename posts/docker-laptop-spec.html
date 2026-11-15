@@ -25,9 +25,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"도커 돌리는 노트북 사양 — 램 16GB로 되나","description":"도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-11-12","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/docker-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"도커 돌리는 노트북 사양 — 램 16GB로 되나","description":"도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇 개 띄우면 16GB가 어디서 터지는지, 디스크는 얼마나 필요한지 계산해서 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/docker-laptop-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"노트북","item":"https://specfit.kr/laptop.html"},{"@type":"ListItem","position":3,"name":"도커 돌리는 노트북 사양 — 램 16GB로 되나","item":"https://specfit.kr/posts/docker-laptop-spec.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥에서 도커가 느린데 정상인가요","acceptedAnswer":{"@type":"Answer","text":"맥의 도커도 가상 환경 위에서 돌아서, 특히 파일 접근이 느린 편입니다. 소스 폴더를 컨테이너에 연결해 쓰면 체감됩니다. 구조상의 특성이라 설정으로 크게 해결되지는 않습니다."}},{"@type":"Question","name":"WSL2가 램을 안 돌려줍니다","acceptedAnswer":{"@type":"Answer","text":"한 번 잡은 램을 바로 안 놓는 동작이 있습니다. .wslconfig 로 상한을 정하면 됩니다 — WSL2가 램을 다 먹을 때에 적었습니다."}},{"@type":"Question","name":"컨테이너마다 램을 제한할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 실행할 때 메모리 상한 옵션을 주면 됩니다. 다만 상한을 넘기면 컨테이너가 강제 종료되므로, DB 같은 건 넉넉히 잡으셔야 합니다."}},{"@type":"Question","name":"16GB인데 32GB로 늘리면 확실히 나아지나요","acceptedAnswer":{"@type":"Answer","text":"도커를 쓰신다면 네. 지금 스왑이 일어나고 있을 가능성이 큽니다. 작업 관리자 → 성능 → 메모리에서 \"커밋된 메모리\"가 물리 램보다 크면 이미 디스크로 넘어가고 있다는 뜻입니다. 판단 기준은 램 16GB vs 32GB에 있습니다."}},{"@type":"Question","name":"도커 대신 쓸 방법은 없나요","acceptedAnswer":{"@type":"Answer","text":"가벼운 대안들이 있지만 램을 먹는 구조 자체는 비슷합니다. 윈도우에서는 결국 리눅스 환경이 하나 떠야 하기 때문입니다."}},{"@type":"Question","name":"로컬 LLM이랑 같이 돌려도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 다만 로컬 LLM은 VRAM, 도커는 시스템 램으로 서로 다른 자원을 씁니다. 둘 다 하실 거면 램 32GB + VRAM 12GB 이상이 편합니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"맥에서 도커가 느린데 정상인가요","acceptedAnswer":{"@type":"Answer","text":"맥의 도커도 가상 환경 위에서 돌아서, 특히 파일 접근이 느린 편입니다. 소스 폴더를 컨테이너에 연결해 쓰면 체감됩니다. 최근 버전은 파일 공유 방식이 바뀌어 예전보다 나아졌지만, 구조상의 특성이라 리눅스에서 직접 돌릴 때만큼 빨라지지는 않습니다."}},{"@type":"Question","name":"WSL2가 램을 안 돌려줍니다","acceptedAnswer":{"@type":"Answer","text":"한 번 잡은 램을 바로 안 놓는 동작이 있습니다. .wslconfig 로 상한을 정하면 됩니다 — WSL2가 램을 다 먹을 때에 적었습니다."}},{"@type":"Question","name":"컨테이너마다 램을 제한할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 실행할 때 메모리 상한 옵션을 주면 됩니다. 다만 상한을 넘기면 컨테이너가 강제 종료되므로, DB 같은 건 넉넉히 잡으셔야 합니다."}},{"@type":"Question","name":"16GB인데 32GB로 늘리면 확실히 나아지나요","acceptedAnswer":{"@type":"Answer","text":"도커를 쓰신다면 네. 지금 스왑이 일어나고 있을 가능성이 큽니다. 작업 관리자 → 성능 → 메모리에서 \"커밋된 메모리\"가 물리 램보다 크면 디스크로 넘기기 시작했거나 곧 넘길 상태라는 뜻입니다. 판단 기준은 램 16GB vs 32GB에 있습니다."}},{"@type":"Question","name":"도커 대신 쓸 방법은 없나요","acceptedAnswer":{"@type":"Answer","text":"가벼운 대안들이 있지만 램을 먹는 구조 자체는 비슷합니다. 윈도우에서는 결국 리눅스 환경이 하나 떠야 하기 때문입니다."}},{"@type":"Question","name":"로컬 LLM이랑 같이 돌려도 되나요","acceptedAnswer":{"@type":"Answer","text":"됩니다. 다만 로컬 LLM은 VRAM, 도커는 시스템 램으로 서로 다른 자원을 씁니다. 둘 다 하실 거면 램 32GB + VRAM 12GB 이상이 편합니다."}}]}</script>
 </head>
 <body class="is-post">
 <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -66,7 +66,7 @@
     <h1>도커 돌리는 노트북 사양 — 램 16GB로 되나</h1>
     <p class="post-meta">
       <time datetime="2026-08-16">2026년 8월 16일</time>
-      <span class="updated">· 2026년 11월 12일 갱신</span>
+      <span class="updated">· 2026년 11월 16일 갱신</span>
     </p>
   </header>
 
@@ -104,25 +104,29 @@
 </figure>
 <h2 id="1-도커가-램을-먹는-구조-윈도우가-특히-다릅니다">1. 도커가 램을 먹는 구조 — 윈도우가 특히 다릅니다</h2>
 <p><strong>리눅스에서는 컨테이너가 그냥 프로세스입니다.</strong> 쓰는 만큼만 램을 먹습니다.</p>
-<p><strong>윈도우에서는 다릅니다.</strong> 도커가 WSL2라는 리눅스 환경 위에서 돌기 때문에, 그 리눅스가 먼저 램을 잡습니다.
+<p><strong>윈도우에서는 다릅니다.</strong> 도커가 WSL2라는 리눅스 환경 위에서 돌기 때문에, 그 리눅스가 램을 따로 가져갑니다.
 (WSL2와 리눅스 듀얼 부팅 중 무엇을 고를지는 <a href="/posts/dual-boot-vs-wsl.html">듀얼 부팅 vs WSL</a>에 따로 있습니다.)</p>
 <pre><code>윈도우
- └ WSL2 (리눅스 가상 환경)   ← 여기가 램을 통째로 예약합니다
+ └ WSL2 (리눅스 가상 환경)   ← 쓰는 만큼 커지다가 상한까지 차오릅니다
     └ 도커
        └ 컨테이너들</code></pre>
 <p>작업 관리자에서 <strong><code>Vmmem</code></strong> 이라는 게 램을 잔뜩 먹고 있는 걸 보신 적이 있다면, 그게 이겁니다. 도커가 아니라 그 아래 리눅스입니다.</p>
-<p><strong>기본값이 &quot;전체 램의 50% 또는 8GB 중 작은 값&quot;입니다.</strong></p>
+<p><strong>그 상한의 기본값이 &quot;전체 램의 절반(50%)&quot;입니다.</strong></p>
 <div class="table-wrap"><table>
 <thead><tr><th>내 램</th><th>WSL2가 가져갈 수 있는 몫</th></tr></thead>
 <tbody>
 <tr><td>16GB</td><td>8GB</td></tr>
-<tr><td>32GB</td><td>8GB</td></tr>
-<tr><td>64GB</td><td>8GB</td></tr>
+<tr><td>32GB</td><td>16GB</td></tr>
+<tr><td>64GB</td><td>32GB</td></tr>
 </tbody>
 </table></div>
-<p>16GB에서는 <strong>절반이 통째로</strong> 넘어갑니다. 여기에 윈도우와 브라우저와 IDE가 얹히면 남는 게 없습니다.</p>
+<blockquote><p>예전 문서에는 &quot;50% 또는 8GB 중 작은 값&quot;이라고 적혀 있었고, 오래된 WSL 버전은 그렇게 동작할 수 있습니다.
+지금 마이크로소프트 문서는 50%로만 적고 있습니다(2026년 11월 확인).
+내 환경의 실제 값은 WSL 안에서 <code>free -h</code> 를 쳐서 <code>total</code> 로 확인하는 게 정확합니다.</p></blockquote>
+<p>항상 그만큼 쓰는 건 아니지만, 리눅스가 남는 램을 캐시로 채워 가면 실제로 그 언저리까지 갑니다.
+16GB에서는 <strong>절반이 통째로</strong> 넘어갈 수 있습니다. 여기에 윈도우와 브라우저와 IDE가 얹히면 남는 게 없습니다.</p>
 <p>이 값은 조절할 수 있습니다. 방법은 <a href="/posts/wsl2-memory-limit.html">WSL2가 램을 다 먹을 때</a>에 따로 적었습니다.</p>
-<p><strong>맥도 비슷합니다.</strong> 맥의 도커도 가상 환경 위에서 돌아서 별도로 램을 예약합니다.</p>
+<p><strong>맥도 비슷합니다.</strong> 맥의 도커도 가상 환경 위에서 돌아서 램을 따로 가져갑니다(상한은 도커 설정에서 조절합니다).</p>
 <h2 id="2-컨테이너-하나가-얼마나-먹나">2. 컨테이너 하나가 얼마나 먹나</h2>
 <p>기본 설정 기준의 <strong>대략치</strong>입니다. 이미지와 설정에 따라 크게 달라집니다.</p>
 <div class="table-wrap"><table>
@@ -183,8 +187,8 @@ WSL2 + 도커가 가져갈 몫    최대 8GB</code></pre>
 <p>정리는 이 명령으로 합니다.</p>
 <pre><code>docker system df      # 얼마나 쓰고 있는지 확인
 docker system prune   # 안 쓰는 것 정리</code></pre>
-<blockquote><p>⚠️ <code>prune</code> 은 안 쓰는 이미지·컨테이너·네트워크를 지웁니다.
-볼륨(데이터)까지 지우는 옵션은 따로 있으니, <strong>뭘 지우는지 보고 실행하세요.</strong></p></blockquote>
+<blockquote><p>⚠️ <code>prune</code> 은 멈춘 컨테이너·안 쓰는 네트워크·이름표 없는 이미지·빌드 캐시를 지웁니다.
+안 쓰는 이미지를 전부 지우는 옵션과 볼륨(데이터)까지 지우는 옵션은 따로 있으니, <strong>뭘 지우는지 보고 실행하세요.</strong></p></blockquote>
 <p><strong>노트북 SSD는 1TB를 권합니다.</strong> 로컬 LLM까지 겸하면 <a href="/posts/dev-ssd-choose.html">모델 파일이 하나에 5~20GB</a>라 더 빨리 찹니다.</p>
 
 <h2 id="5-cpu와-그래픽카드는-신경-안-쓰셔도-됩니다">5. CPU와 그래픽카드는 신경 안 쓰셔도 됩니다</h2>
@@ -211,7 +215,8 @@ docker system prune   # 안 쓰는 것 정리</code></pre>
 <h2 id="자주-묻는-질문">자주 묻는 질문</h2>
 <h3 id="맥에서-도커가-느린데-정상인가요">맥에서 도커가 느린데 정상인가요</h3>
 <p>맥의 도커도 가상 환경 위에서 돌아서, 특히 <strong>파일 접근이 느린</strong> 편입니다.
-소스 폴더를 컨테이너에 연결해 쓰면 체감됩니다. 구조상의 특성이라 설정으로 크게 해결되지는 않습니다.</p>
+소스 폴더를 컨테이너에 연결해 쓰면 체감됩니다. 최근 버전은 파일 공유 방식이 바뀌어 예전보다 나아졌지만,
+구조상의 특성이라 리눅스에서 직접 돌릴 때만큼 빨라지지는 않습니다.</p>
 <h3 id="wsl2가-램을-안-돌려줍니다">WSL2가 램을 안 돌려줍니다</h3>
 <p>한 번 잡은 램을 바로 안 놓는 동작이 있습니다.
 <code>.wslconfig</code> 로 상한을 정하면 됩니다 — <a href="/posts/wsl2-memory-limit.html">WSL2가 램을 다 먹을 때</a>에 적었습니다.</p>
@@ -220,7 +225,7 @@ docker system prune   # 안 쓰는 것 정리</code></pre>
 다만 <strong>상한을 넘기면 컨테이너가 강제 종료</strong>되므로, DB 같은 건 넉넉히 잡으셔야 합니다.</p>
 <h3 id="16gb인데-32gb로-늘리면-확실히-나아지나요">16GB인데 32GB로 늘리면 확실히 나아지나요</h3>
 <p><strong>도커를 쓰신다면 네.</strong> 지금 스왑이 일어나고 있을 가능성이 큽니다.
-작업 관리자 → 성능 → 메모리에서 <strong>&quot;커밋된 메모리&quot;가 물리 램보다 크면</strong> 이미 디스크로 넘어가고 있다는 뜻입니다.
+작업 관리자 → 성능 → 메모리에서 <strong>&quot;커밋된 메모리&quot;가 물리 램보다 크면</strong> 디스크로 넘기기 시작했거나 곧 넘길 상태라는 뜻입니다.
 판단 기준은 <a href="/posts/ram-16gb-vs-32gb.html">램 16GB vs 32GB</a>에 있습니다.</p>
 <h3 id="도커-대신-쓸-방법은-없나요">도커 대신 쓸 방법은 없나요</h3>
 <p>가벼운 대안들이 있지만 <strong>램을 먹는 구조 자체는 비슷합니다.</strong>
@@ -231,7 +236,7 @@ docker system prune   # 안 쓰는 것 정리</code></pre>
 <h2 id="정리">정리</h2>
 <ol>
 <li>도커에서 갈리는 건 <strong>램 하나</strong>입니다. CPU·그래픽카드는 거의 무관합니다</li>
-<li><strong>윈도우는 WSL2가 램을 먼저 예약</strong>합니다. 기본값이 최대 8GB입니다</li>
+<li><strong>윈도우는 WSL2가 램을 따로 가져갑니다.</strong> 기본 상한이 전체 램의 절반입니다</li>
 <li><strong>DB 계열 컨테이너가 큽니다.</strong> 개수보다 &quot;DB를 몇 개 띄우나&quot;가 기준입니다</li>
 <li>컨테이너 3개 이상이면 <strong>32GB</strong>입니다. 1~2개면 16GB로 됩니다</li>
 <li><strong>SSD가 조용히 찹니다.</strong> <code>docker system df</code> 로 가끔 확인하세요</li>
