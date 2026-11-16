@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마우스 휠을 눌렀더니 화면이 저절로 내려갈 때 — 고장이 아니라 자동 스크롤입니다 | 스펙핏</title>
+<meta name="description" content="휠을 굴리다가 꾹 눌렸는데, 동그란 화살표 표시가 생기고 마우스를 움직이는 쪽으로 화면이 혼자 흘러갑니다. 브라우저와 문서 프로그램에 들어 있는 자동 스크롤 기능입니다. 푸는 법, 끄는 법, 누른 적이 없는데도 생길 때의 갈래를 정리했습니다.">
+<link rel="canonical" href="https://specfit.kr/posts/mouse-wheel-autoscroll.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="스펙핏">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="마우스 휠을 눌렀더니 화면이 저절로 내려갈 때 — 고장이 아니라 자동 스크롤입니다 | 스펙핏">
+<meta property="og:description" content="휠을 굴리다가 꾹 눌렸는데, 동그란 화살표 표시가 생기고 마우스를 움직이는 쪽으로 화면이 혼자 흘러갑니다. 브라우저와 문서 프로그램에 들어 있는 자동 스크롤 기능입니다. 푸는 법, 끄는 법, 누른 적이 없는데도 생길 때의 갈래를 정리했습니다.">
+<meta property="og:url" content="https://specfit.kr/posts/mouse-wheel-autoscroll.html">
+<meta property="og:image" content="https://specfit.kr/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="naver-site-verification" content="1b06651a0659fc53f8131d626ea5cd2323c0a9ca">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="스펙핏" href="/feed.xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})()</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"마우스 휠을 눌렀더니 화면이 저절로 내려갈 때 — 고장이 아니라 자동 스크롤입니다","description":"휠을 굴리다가 꾹 눌렸는데, 동그란 화살표 표시가 생기고 마우스를 움직이는 쪽으로 화면이 혼자 흘러갑니다. 브라우저와 문서 프로그램에 들어 있는 자동 스크롤 기능입니다. 푸는 법, 끄는 법, 누른 적이 없는데도 생길 때의 갈래를 정리했습니다.","datePublished":"2026-11-16","dateModified":"2026-11-16","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/mouse-wheel-autoscroll.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"네트워크","item":"https://specfit.kr/network.html"},{"@type":"ListItem","position":3,"name":"마우스 휠을 눌렀더니 화면이 저절로 내려갈 때 — 고장이 아니라 자동 스크롤입니다","item":"https://specfit.kr/posts/mouse-wheel-autoscroll.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"화살표 모양이 위아래만 있을 때도 있고 사방일 때도 있어요","acceptedAnswer":{"@type":"Answer","text":"페이지가 움직일 수 있는 방향을 보여 주는 것입니다. 가로로도 넘치는 페이지에서는 좌우 화살표가 함께 나옵니다. 같은 기능입니다."}},{"@type":"Question","name":"링크 위에서 누르면 왜 안 켜지나요","acceptedAnswer":{"@type":"Answer","text":"링크 위에서는 같은 단추가 새 탭으로 열기로 쓰입니다. 자동 스크롤은 글자나 빈 곳에서 눌렀을 때 켜집니다."}},{"@type":"Question","name":"탐색기나 바탕화면에서는 안 생기던데요","acceptedAnswer":{"@type":"Answer","text":"이 기능은 윈도우 전체가 아니라 프로그램마다 따로 들어 있습니다. 브라우저와 문서 프로그램에는 대개 있고, 없는 프로그램도 많습니다. 그래서 어떤 창에서만 생기는 것이 정상입니다."}},{"@type":"Question","name":"게임에서는 휠 단추가 다른 일을 해요","acceptedAnswer":{"@type":"Answer","text":"게임은 가운데 단추를 자기 기능(표식 찍기, 시점 돌리기 등)에 씁니다. 마우스 전용 프로그램에서 가운데 단추를 비웠다면 게임에서도 그 단추가 안 먹으니, 게임을 한다면 비우기 전에 확인하세요."}}]}</script>
+</head>
+<body class="is-post">
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <span class="brand-name">스펙핏</span>
+      <span class="brand-tag">내 조건에 맞는 스펙</span>
+    </a>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="/posts/local-llm-start-guide.html">처음이신가요</a>
+      <a href="/tools/vram.html">VRAM 계산기</a>
+      <a href="/gpu.html">GPU</a>
+      <a href="/laptop.html">노트북</a>
+      <a href="/monitor.html">모니터</a>
+      <a href="/memory.html">메모리·스토리지</a>
+      <a href="/minipc.html">미니PC</a>
+      <a href="/network.html">네트워크</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="밝기 전환" data-theme-toggle>
+      <span aria-hidden="true">◐</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+<article class="post">
+  <nav class="breadcrumb" aria-label="현재 위치">
+    <a href="/">홈</a>
+    <span aria-hidden="true">›</span><a href="/network.html">네트워크</a>
+  </nav>
+
+  <header class="post-head">
+    <h1>마우스 휠을 눌렀더니 화면이 저절로 내려갈 때 — 고장이 아니라 자동 스크롤입니다</h1>
+    <p class="post-meta">
+      <time datetime="2026-11-16">2026년 11월 16일</time>
+      <span class="updated">· 2026년 11월 16일 갱신</span>
+    </p>
+  </header>
+
+  
+
+  <div class="post-body">
+<p>휠을 굴리다가 조금 세게 눌렸을 뿐인데, 화면에 <strong>동그란 화살표 표시</strong>가 생기더니 마우스를
+움직이는 쪽으로 페이지가 <strong>혼자 흘러갑니다.</strong> 휠을 굴려도 멈추지 않아서 마우스가 고장 난 것처럼
+보입니다. 고장이 아닙니다. 브라우저와 문서 프로그램에 원래 들어 있는 <strong>자동 스크롤</strong> 기능이
+켜진 것입니다.</p>
+<h2 id="결론부터">결론부터</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>지금 모습</th><th>갈래</th><th>먼저 할 것</th></tr></thead>
+<tbody>
+<tr><td><strong>화살표 표시</strong>가 뜨고 화면이 흐름 · 휠을 누른 뒤부터</td><td>자동 스크롤 기능</td><td><strong>아무 마우스 단추나 한 번 더</strong> 누르기</td></tr>
+<tr><td>누른 적이 없는데 표시가 뜸 · <strong>탭이 저절로 닫히거나 새 탭이 열림</strong></td><td>휠 단추가 헛눌림</td><td>다른 마우스로 바꿔 확인</td></tr>
+<tr><td><strong>노트북 터치패드</strong>에서 표시가 뜸</td><td>세 손가락 탭 설정</td><td>터치패드 설정에서 가운데 단추 해제</td></tr>
+<tr><td>표시 <strong>없이</strong> 화면만 흐름</td><td>다른 문제</td><td>눌린 키 · 휠 튐 쪽 판정으로</td></tr>
+</tbody>
+</table></div>
+<figure class="fig">
+<svg viewBox="0 0 640 248" width="640" height="248" role="img" aria-label="휠 클릭 자동 스크롤 판정">
+<title>휠 클릭 자동 스크롤 판정</title>
+<text x="24" y="24" fill="var(--fg)" font-size="12.5" font-weight="600">휠을 눌렀더니 화면이 혼자 흐른다 — 화살표 표시가 있는지부터</text><text x="24" y="52" fill="var(--fg-muted)" font-size="8.6" font-weight="700">지금 모습</text><text x="364" y="52" fill="var(--fg-muted)" font-size="8.6" font-weight="700">갈래 → 먼저 할 것</text><rect x="24" y="62" width="330" height="32" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="82" fill="var(--fg)" font-size="8.8" font-weight="700">화살표 표시가 뜸 · 휠을 누른 뒤부터</text><rect x="364" y="62" width="252" height="32" fill="var(--fig-fit)" rx="4"/><text x="376" y="82" fill="#fff" font-size="8.8" font-weight="700">자동 스크롤 → 아무 단추나 한 번 더</text><rect x="24" y="102" width="330" height="32" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="122" fill="var(--fg)" font-size="8.8" font-weight="700">누른 적 없는데 뜸 · 탭이 닫힘·새 탭 열림</text><rect x="364" y="102" width="252" height="32" fill="var(--fig-over)" rx="4"/><text x="376" y="122" fill="#fff" font-size="8.8" font-weight="700">휠 단추 헛눌림 → 다른 마우스로 확인</text><rect x="24" y="142" width="330" height="32" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="162" fill="var(--fg)" font-size="8.8" font-weight="700">노트북 터치패드에서 뜸</text><rect x="364" y="142" width="252" height="32" fill="var(--fig-fit)" rx="4"/><text x="376" y="162" fill="#fff" font-size="8.8" font-weight="700">세 손가락 탭 → 가운데 단추 해제</text><rect x="24" y="182" width="330" height="32" fill="var(--bg-soft)" rx="4" stroke="var(--border)"/><text x="36" y="202" fill="var(--fg)" font-size="8.8" font-weight="700">표시 없이 화면만 흐름</text><rect x="364" y="182" width="252" height="32" fill="var(--fg-muted)" rx="4"/><text x="376" y="202" fill="#fff" font-size="8.8" font-weight="700">다른 문제 → 눌린 키 · 휠 판정</text><text x="24" y="236" fill="var(--fg-muted)" font-size="8.4">휠을 눌렀다 떼면 켜진 채 남고, 누른 채 움직이면 떼는 순간 끝납니다</text>
+</svg>
+<figcaption>휠을 누른 뒤 화살표 표시가 뜨고 화면이 흐르면 자동 스크롤 기능이라 아무 마우스 단추나 한 번 더 누르면 풀립니다. 누른 적이 없는데 표시가 뜨고 탭이 닫히거나 새 탭이 열리면 휠 단추가 헛눌리는 것이라 다른 마우스로 확인합니다. 노트북 터치패드에서 뜨면 세 손가락 탭 설정을 봅니다. 표시 없이 화면만 흐르면 눌린 키나 휠 쪽의 다른 문제입니다.</figcaption>
+</figure>
+<h2 id="휠은-굴리는-것-말고-누르는-단추이기도-합니다">휠은 굴리는 것 말고 &quot;누르는 단추&quot;이기도 합니다</h2>
+<p>마우스 휠은 굴리는 부품이면서 동시에 <strong>세 번째 단추</strong>입니다. 꾹 누르면 딸깍 하고 눌립니다.
+이 단추를 흔히 가운데 단추라고 부릅니다.</p>
+<p>브라우저(크롬·엣지·파이어폭스)와 워드·엑셀 같은 문서 프로그램은 이 단추에 <strong>자동 스크롤</strong>을
+묶어 두었습니다. 긴 문서를 손가락을 계속 굴리지 않고 읽으라고 만든 기능입니다.</p>
+<pre><code>페이지 빈 곳에서 휠을 누름
+  → 누른 자리에 화살표 표시가 생김
+  → 포인터를 표시 아래로 내리면 화면이 내려감 (위로 올리면 올라감)
+  → 표시에서 멀어질수록 빨라짐</code></pre>
+<p>그래서 휠을 굴리다가 실수로 눌리면, <strong>마우스를 조금만 움직여도 화면이 계속 흘러가는</strong> 상황이
+됩니다. 기능을 모르면 고장으로 보일 수밖에 없습니다.</p>
+<h2 id="푸는-법-한-번-더-누르면-끝납니다">푸는 법 — 한 번 더 누르면 끝납니다</h2>
+<ul>
+<li><strong>아무 마우스 단추나 한 번 더 누릅니다</strong> — 왼쪽 단추든 휠이든 됩니다</li>
+<li>키보드의 <strong>Esc</strong>로도 풀리는 경우가 많습니다</li>
+</ul>
+<p>켜지는 방식이 두 가지라는 것만 알아 두면 헷갈리지 않습니다.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>누르는 방식</th><th>동작</th></tr></thead>
+<tbody>
+<tr><td>휠을 <strong>눌렀다 뗌</strong></td><td>자동 스크롤이 <strong>켜진 채로 남음</strong> — 한 번 더 눌러야 풀림</td></tr>
+<tr><td>휠을 <strong>누른 채로</strong> 마우스를 움직임</td><td>누르고 있는 동안만 흐름 — <strong>떼면 바로 끝</strong></td></tr>
+</tbody>
+</table></div>
+<p>실수로 켜지는 건 대개 첫 번째입니다.</p>
+<h2 id="아예-꺼-두고-싶다면">아예 꺼 두고 싶다면</h2>
+<p>자주 실수로 켜진다면 기능을 꺼 두는 방법이 있습니다. 다만 프로그램마다 사정이 다릅니다.</p>
+<ul>
+<li><strong>파이어폭스</strong> — 설정 → 일반 → 탐색에 있는 <strong>자동 스크롤 사용</strong> 체크를 풉니다</li>
+<li><strong>크롬 · 엣지</strong> — 설정 화면에 끄는 항목이 없는 것으로 알려져 있습니다(2026년 11월 기준).
+끄려면 아래의 마우스 쪽 방법을 씁니다</li>
+<li><strong>마우스 전용 프로그램</strong> — 제조사 프로그램이 있는 마우스라면 가운데 단추의 기능을 다른
+것으로 바꾸거나 비워 둘 수 있습니다. 이러면 모든 프로그램에서 한꺼번에 꺼집니다</li>
+</ul>
+<p>가운데 단추를 비우면 <strong>링크를 새 탭으로 열기</strong>, <strong>탭 닫기</strong>처럼 같은 단추에 묶인 편한 기능도
+함께 사라집니다. 불편이 크지 않다면 &quot;한 번 더 누르면 풀린다&quot;만 알아 두는 쪽이 손해가 적습니다.</p>
+<h2 id="누른-적이-없는데-생긴다면-휠-단추-쪽입니다">누른 적이 없는데 생긴다면 — 휠 단추 쪽입니다</h2>
+<p>휠을 누르지 않았는데도 화살표 표시가 뜬다면, 휠 아래의 <strong>단추 부품이 약한 힘에도 눌리거나
+헛눌리는</strong> 상태일 수 있습니다. 같은 단추가 하는 다른 일에서도 티가 납니다.</p>
+<ul>
+<li>링크 위에서 휠을 굴렸는데 <strong>새 탭이 열림</strong></li>
+<li>탭 위를 지나갔는데 <strong>탭이 닫힘</strong></li>
+<li>휠을 굴릴 때마다 자동 스크롤이 <strong>자주</strong> 켜짐</li>
+</ul>
+<p>이 가운데 하나라도 같이 있다면 설정이 아니라 마우스 쪽입니다. <strong>다른 마우스를 꽂아</strong> 같은
+일이 생기는지 보면 바로 갈립니다. 다른 마우스에서 멀쩡하다면 원래 마우스의 휠 부품이 닳은
+것이고, 휠이 튀는 증상까지 함께라면 <a href="/posts/mouse-wheel-jump.html">휠이 튀거나 반대로 갈 때</a>의
+수리·교체 판단이 그대로 적용됩니다.</p>
+<h2 id="노트북-터치패드에서-생긴다면">노트북 터치패드에서 생긴다면</h2>
+<p>마우스 없이 터치패드만 쓰는데 같은 표시가 뜬다면, <strong>세 손가락으로 두드리는 동작</strong>이 가운데
+단추로 지정돼 있을 수 있습니다.</p>
+<p>윈도우 11에서는 설정 → Bluetooth 및 장치 → 터치 패드 → <strong>세 손가락 제스처</strong>의 탭 항목에서
+바꿉니다. &quot;마우스 가운데 단추&quot;로 되어 있다면 다른 것(또는 아무 작업 안 함)으로 바꾸면 됩니다.
+항목 이름은 윈도우 버전에 따라 조금 다를 수 있습니다.</p>
+<h2 id="표시-없이-화면만-흐른다면-다른-문제입니다">표시 없이 화면만 흐른다면 — 다른 문제입니다</h2>
+<p>화살표 표시가 <strong>없는데</strong> 화면이 혼자 움직인다면 자동 스크롤이 아닙니다. 흔한 갈래는 셋입니다.</p>
+<ul>
+<li><strong>키가 눌린 채로 잡힘</strong> — 아래 화살표나 스페이스가 눌려 있으면 화면이 계속 내려갑니다.
+<a href="/posts/stuck-modifier-key.html">키가 눌린 채로 잡혔을 때</a>의 확인법이 그대로 쓰입니다</li>
+<li><strong>휠이 헛도는 경우</strong> — 손을 떼도 휠이 계속 도는 모드이거나 한 칸에 너무 많이 내려간다면
+<a href="/posts/mouse-scroll-too-fast.html">휠 스크롤이 너무 빠를 때</a> 쪽입니다</li>
+<li><strong>위아래로 튀는 경우</strong> — 내리는데 위로 튄다면 <a href="/posts/mouse-wheel-jump.html">휠 부품 쪽</a>입니다</li>
+</ul>
+<h2 id="자주-묻는-질문">자주 묻는 질문</h2>
+<h3 id="화살표-모양이-위아래만-있을-때도-있고-사방일-때도-있어요">화살표 모양이 위아래만 있을 때도 있고 사방일 때도 있어요</h3>
+<p>페이지가 움직일 수 있는 방향을 보여 주는 것입니다. 가로로도 넘치는 페이지에서는 좌우 화살표가
+함께 나옵니다. 같은 기능입니다.</p>
+<h3 id="링크-위에서-누르면-왜-안-켜지나요">링크 위에서 누르면 왜 안 켜지나요</h3>
+<p>링크 위에서는 같은 단추가 <strong>새 탭으로 열기</strong>로 쓰입니다. 자동 스크롤은 글자나 빈 곳에서
+눌렀을 때 켜집니다.</p>
+<h3 id="탐색기나-바탕화면에서는-안-생기던데요">탐색기나 바탕화면에서는 안 생기던데요</h3>
+<p>이 기능은 윈도우 전체가 아니라 <strong>프로그램마다</strong> 따로 들어 있습니다. 브라우저와 문서 프로그램에는
+대개 있고, 없는 프로그램도 많습니다. 그래서 어떤 창에서만 생기는 것이 정상입니다.</p>
+<h3 id="게임에서는-휠-단추가-다른-일을-해요">게임에서는 휠 단추가 다른 일을 해요</h3>
+<p>게임은 가운데 단추를 자기 기능(표식 찍기, 시점 돌리기 등)에 씁니다. 마우스 전용 프로그램에서
+가운데 단추를 비웠다면 게임에서도 그 단추가 안 먹으니, 게임을 한다면 비우기 전에 확인하세요.</p>
+<h2 id="정리">정리</h2>
+<ol>
+<li>휠을 누르면 생기는 화살표 표시는 <strong>자동 스크롤</strong> — 고장이 아닙니다</li>
+<li><strong>아무 마우스 단추나 한 번 더</strong> 누르면 풀립니다</li>
+<li>파이어폭스는 설정에서 끌 수 있고, 크롬·엣지는 <strong>마우스 쪽에서</strong> 가운데 단추를 바꿔야 합니다</li>
+<li>누른 적이 없는데 생기고 <strong>탭이 닫히거나 새 탭이 열린다면</strong> 휠 단추 부품 쪽 — 다른 마우스로 확인</li>
+<li>표시 <strong>없이</strong> 흐르면 눌린 키나 휠 문제로, 다른 갈래입니다</li>
+</ol>
+<p>마우스 휠의 이웃 판정들 — <a href="/posts/mouse-wheel-jump.html">휠이 튀거나 반대로 갈 때</a> ·
+<a href="/posts/mouse-scroll-too-fast.html">휠 스크롤이 너무 빠를 때</a>와 이어집니다.</p>
+<p>기준이나 동작이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
+  </div>
+
+  
+
+  <p class="tags"><span class="tag">마우스휠</span> <span class="tag">자동스크롤</span> <span class="tag">가운데버튼</span> <span class="tag">휠클릭</span> <span class="tag">스크롤</span></p>
+</article>
+
+<section class="related" aria-labelledby="related-h">
+  <h2 id="related-h">같이 보면 좋은 글</h2>
+  <ul class="card-list">
+    <li class="card">
+      <a href="/posts/mouse-cursor-trail.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 커서에 꼬리가 생길 때 — 설정 하나, 모니터 하나, 프로그램 하나</span>
+        <span class="card-desc">마우스를 움직이면 커서 뒤로 잔상이 줄줄이 따라옵니다. 윈도우의 포인터 자국 기능이 켜졌거나, 모니터의 응답속도 보정이 과하거나, 특정 프로그램의 그리기 문제인 경우가 대부분입니다. 어디서 꼬리가 보이는지로 가르는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mouse-drag-stuck.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 드래그가 안 풀릴 때 — 버튼을 뗐는데 계속 끌려온다면 넷 중 하나입니다</span>
+        <span class="card-desc">버튼을 뗐는데도 창이나 파일이 커서를 따라 계속 끌려옵니다. 윈도우의 클릭 잠금 기능, 마우스 버튼 접점, 무선 연결에서 빠진 신호, 특정 프로그램 중 하나인 경우가 대부분입니다. 당장 푸는 법과 원인 가르는 순서를 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
+      <a href="/posts/mouse-scroll-too-fast.html">
+        <span class="card-cat">네트워크</span>
+        <span class="card-title">마우스 휠 스크롤이 너무 빠를 때 — 줄 수 설정, 휠 모드, 프로그램 순서로 봅니다</span>
+        <span class="card-desc">휠을 한 칸만 굴렸는데 화면이 한참 내려가거나, 한 번 굴리면 멈추지 않고 계속 돕니다. 윈도우의 스크롤 줄 수, 마우스의 휠 모드(프리 스핀), 프로그램의 부드러운 스크롤 중 하나인 경우가 대부분입니다. 가르는 순서와, 휠이 튀는 고장과의 구분을 정리했습니다.</span>
+      </a>
+    </li>
+  </ul>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-links">
+      <a href="/about.html">소개</a>
+      <a href="/contact.html">문의</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/terms.html">이용약관</a>
+      <a href="/disclosure.html">제휴 고지</a>
+    </p>
+    <p class="footer-note">
+      직접 사용해 본 제품이 아니라, 공개된 스펙과 벤치마크를 기준으로 선별했습니다.
+    </p>
+    <p class="footer-copy">© 2026 스펙핏</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('[data-theme-toggle]').addEventListener('click',function(){
+  var el=document.documentElement;
+  var cur=el.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var next=cur==='dark'?'light':'dark';
+  el.setAttribute('data-theme',next);
+  try{localStorage.setItem('theme',next)}catch(e){}
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('a[rel~="sponsored"]'):null;
+  if(!a||typeof gtag!=='function')return;
+  gtag('event','affiliate_click',{
+    link_url:a.href,
+    link_text:(a.textContent||'').trim().slice(0,80),
+    page_path:location.pathname
+  });
+},true);
+</script>
+
+</body>
+</html>

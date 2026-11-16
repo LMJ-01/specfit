@@ -1043,6 +1043,7 @@ export const figures = {
   'search-typing-split': searchTypingSplit,
   'right-click-map': rightClickMap,
   'radeon-llm-fork': radeonLlmFork,
+  'wheel-autoscroll-split': wheelAutoscrollSplit,
 };
 
 /**
@@ -6439,6 +6440,25 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function wheelAutoscrollSplit() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '휠을 눌렀더니 화면이 혼자 흐른다 — 화살표 표시가 있는지부터', { weight: 600, size: 12.5 });
+  b += t(24, 52, '지금 모습', { size: 8.6, weight: 700, fill: COLOR.mute });
+  b += t(364, 52, '갈래 → 먼저 할 것', { size: 8.6, weight: 700, fill: COLOR.mute });
+  const row = (y, txt, verdict, c) => rect(24, y, 330, 32, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 20, txt, { size: 8.8, weight: 700 }) + rect(364, y, 252, 32, c, { r: 4 }) + t(376, y + 20, verdict, { size: 8.8, weight: 700, fill: '#fff' });
+  b += row(62, '화살표 표시가 뜸 · 휠을 누른 뒤부터', '자동 스크롤 → 아무 단추나 한 번 더', COLOR.fit);
+  b += row(102, '누른 적 없는데 뜸 · 탭이 닫힘·새 탭 열림', '휠 단추 헛눌림 → 다른 마우스로 확인', COLOR.over);
+  b += row(142, '노트북 터치패드에서 뜸', '세 손가락 탭 → 가운데 단추 해제', COLOR.fit);
+  b += row(182, '표시 없이 화면만 흐름', '다른 문제 → 눌린 키 · 휠 판정', COLOR.mute);
+  b += t(24, 236, '휠을 눌렀다 떼면 켜진 채 남고, 누른 채 움직이면 떼는 순간 끝납니다', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '휠 클릭 자동 스크롤 판정',
+    W, 248, b,
+    '휠을 누른 뒤 화살표 표시가 뜨고 화면이 흐르면 자동 스크롤 기능이라 아무 마우스 단추나 한 번 더 누르면 풀립니다. 누른 적이 없는데 표시가 뜨고 탭이 닫히거나 새 탭이 열리면 휠 단추가 헛눌리는 것이라 다른 마우스로 확인합니다. 노트북 터치패드에서 뜨면 세 손가락 탭 설정을 봅니다. 표시 없이 화면만 흐르면 눌린 키나 휠 쪽의 다른 문제입니다.'
   );
 }
 
