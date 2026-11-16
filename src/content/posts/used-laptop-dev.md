@@ -2,7 +2,7 @@
 title: 중고 노트북 개발용으로 괜찮나 — 확인되는 것만 봅니다
 description: 중고에서 갈리는 건 상태가 아니라 확인 가능 여부입니다. 배터리·SSD·램 슬롯은 명령 하나로 재집니다. 못 재는 것과 그때 얼마나 깎아야 하는지 정리했습니다.
 date: 2026-08-20
-updated: 2026-11-04
+updated: 2026-11-17
 category: laptop
 tags: [중고노트북, 배터리, SSD수명, 램슬롯, 개발용노트북]
 affiliate: true
@@ -34,6 +34,7 @@ affiliate: true
   - 도해(2026-11-01): used-laptop-checkable — 숫자로 재지는 넷 / 못 재는 넷.
     본문 갈림선 표·3절과 1:1.
   - 인바운드(2026-11-04): "③ 배터리 팽창" → laptop-battery-swelling(상호).
+  - 2026-11-17: 노트북 RTX 5070 VRAM 한 문장만 수정(8GB · 12GB 두 구성 — 11/15 확인). 이 글의 전수 점검은 아직.
 -->
 
 이 사이트의 노트북 글 세 편이 **"중고도 괜찮나요"** 를 한두 줄로만 답하고 넘어갔습니다.
@@ -151,7 +152,7 @@ Get-PhysicalDisk | Get-StorageReliabilityCounter |
 같은 작업 관리자에서 **성능 → GPU → 전용 GPU 메모리**.
 
 **노트북 GPU 는 이름이 같아도 VRAM 이 다릅니다.**
-노트북 RTX 5070 은 8GB, 데스크톱은 12GB 입니다 —
+노트북 RTX 5070 은 8GB 구성과 12GB 구성이 둘 다 있고, 데스크톱은 12GB 입니다 —
 [표는 여기](/posts/local-llm-laptop-choose.html)에 있습니다.
 
 {{VRAM_TOOL}}
