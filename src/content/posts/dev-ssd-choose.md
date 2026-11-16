@@ -2,7 +2,7 @@
 title: 개발용 SSD 고르기 — Gen5가 필요한 경우는 거의 없습니다
 description: PCIe 5.0은 Gen4의 두 배 속도지만 개발 작업에서는 체감이 거의 없습니다. 대신 DRAM 유무와 TLC/QLC가 실제로 갈리는 지점입니다.
 date: 2026-08-15
-updated: 2026-10-21
+updated: 2026-11-17
 category: memory
 tags: [SSD, NVMe, PCIe5, 개발용PC, 로컬LLM]
 affiliate: true
@@ -21,6 +21,9 @@ affiliate: true
   - 2026-10-21 dev-ssd-priority 도해(본문 중요도 순서 그대로) + "펌웨어 업데이트"
     문단 흡수(기각 후보 — StorageReview 1~3위 + ITWorld). "대부분 비파괴·드물게
     파괴적 업데이트는 공지" 수준, 제조사·제품명 미기재. dev-backup-strategy 상호.
+  - 전수 점검(2026-11-17): 정독 + 검산(Q4 파일 크기 2 / 4.7 / 9 / 20 / 43GB · Gen5 12,000~14,900 대 Gen4 약 7,000 = 두 배).
+    수정 1 — Gen5 발열 문단에 "최근 세대는 초기보다 줄었다고 알려짐" 단서(재검색 없이 알려진 흐름만, 수치 없음). DRAM · TLC/QLC ·
+    용량 권장은 ssd-tbw-lifespan · docker-laptop-spec · nvme-heatsink 과 어긋남 없음.
 -->
 
 SSD를 고를 때 가장 눈에 띄는 숫자가 **순차 읽기 속도**입니다.
@@ -58,6 +61,7 @@ PCIe 5.0 제품이 14,000 MB/s를 넘어가니 Gen4의 두 배입니다.
 
 Gen5는 Gen4보다 열이 많이 납니다. **방열판이 사실상 필수**이고,
 냉각이 부족하면 스스로 속도를 낮춰 버립니다. 그러면 Gen5를 산 의미가 사라집니다.
+(최근 세대 제품은 초기 Gen5보다 발열이 줄었다고 알려져 있지만, Gen4보다 높은 편인 것은 같습니다.)
 
 노트북이라면 더 문제입니다. 공간이 좁아 방열판을 못 넣는 경우가 많습니다.
 

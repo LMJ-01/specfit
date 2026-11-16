@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-11-15","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-11-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","item":"https://specfit.kr/posts/ollama-minimum-spec.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나</h1>
     <p class="post-meta">
       <time datetime="2026-08-13">2026년 8월 13일</time>
-      <span class="updated">· 2026년 11월 15일 갱신</span>
+      <span class="updated">· 2026년 11월 17일 갱신</span>
     </p>
   </header>
 
@@ -240,9 +240,10 @@ Q5·Q8 로 올리면 이 계수가 얼마나 커지는지는
 <code>ollama.com</code> 의 모델 페이지에서 태그별로 표시됩니다.</p>
 <h3 id="2-kv-캐시-여기서-많이-틀립니다">2. KV 캐시 — 여기서 많이 틀립니다</h3>
 <p><strong>컨텍스트를 길게 잡을수록 VRAM을 더 먹습니다.</strong> 모델 크기와 별개입니다.</p>
-<p>긴 문서를 넣거나 대화를 길게 이어가면 KV 캐시가 계속 커지고,
-어느 순간 VRAM을 넘겨 시스템 램으로 넘어갑니다. 이때부터 속도가 급격히 떨어집니다.</p>
-<p>&quot;처음엔 빨랐는데 대화가 길어지니 느려진다&quot;는 대부분 이 문제입니다.</p>
+<p>긴 문서를 다루려고 컨텍스트 길이를 크게 설정하면 그만큼의 KV 캐시가 <strong>모델을 올릴 때 한꺼번에</strong> 잡히고,
+합계가 VRAM을 넘으면 넘친 몫이 시스템 램으로 넘어갑니다. 이때부터 속도가 급격히 떨어집니다.</p>
+<p>&quot;처음엔 빨랐는데 대화가 길어지니 느려진다&quot;는 조금 다른 이야기입니다 — 메모리가 불어나서가 아니라,
+대화가 길어질수록 모델이 매번 다뤄야 할 내용이 늘기 때문입니다. 새 대화로 시작하면 돌아옵니다.</p>
 <h3 id="3-오버헤드">3. 오버헤드</h3>
 <p>컨텍스트 윈도우와 배치 처리를 위한 여유분으로 <strong>1~2GB 정도</strong>를 남겨둬야 합니다.
 VRAM을 100% 채우도록 계산하면 실제로는 안 돌아갑니다.</p>
