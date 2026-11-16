@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용","description":"긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.","datePublished":"2026-08-21","dateModified":"2026-09-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-context-length.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용","description":"긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.","datePublished":"2026-08-21","dateModified":"2026-11-16","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-context-length.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용","item":"https://specfit.kr/posts/ollama-context-length.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,7 +65,7 @@
     <h1>Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용</h1>
     <p class="post-meta">
       <time datetime="2026-08-21">2026년 8월 21일</time>
-      <span class="updated">· 2026년 9월 17일 갱신</span>
+      <span class="updated">· 2026년 11월 16일 갱신</span>
     </p>
   </header>
 
@@ -77,9 +77,12 @@
 <p><strong>입력이 잘려 나갔을 가능성이 큽니다.</strong> 그것도 조용히요.</p>
 <h2 id="무슨-일이-일어나는가">무슨 일이 일어나는가</h2>
 <p>Ollama는 모델이 한 번에 기억하는 분량(<strong>컨텍스트 길이</strong>)을 기본값으로
-제한해 둡니다. 이 기본값이 <strong>2048 또는 4096 토큰</strong>으로, 버전에 따라 다릅니다.
-공식 문서끼리도 표기가 어긋날 정도라, 본인 설치본의 값은 아래에서 직접
-확인하는 편이 확실합니다.</p>
+제한해 둡니다. 예전 버전은 이 기본값이 <strong>2048 또는 4096 토큰</strong>이었고,
+최근 공식 문서는 <strong>그래픽카드 메모리에 따라</strong> 정한다고 적습니다 — 24GB 미만이면
+4096(4K), 24~48GB면 32K, 그보다 크면 더 길게입니다(2026년 11월 확인).</p>
+<p>개인용 카드는 대부분 24GB 미만이라 <strong>여전히 4096 근처가 기본</strong>이라는 뜻입니다.
+버전에 따라 다르니 본인 설치본의 값은 직접 확인하는 편이 확실합니다 — 최근 버전은
+모델을 띄운 상태에서 <code>ollama ps</code> 를 치면 지금 잡힌 컨텍스트 길이가 함께 나옵니다.</p>
 <p>4096 토큰이 어느 정도냐면, 이 사이트 계산기의 라벨로 <strong>&quot;파일 한 개 정도 —
 A4 두세 장&quot;</strong>입니다. 그 이상을 넣으면 Ollama는 오류를 내지 않고
 <strong>넘치는 앞부분을 잘라낸 뒤 그냥 실행합니다.</strong></p>
@@ -271,7 +274,8 @@ VRAM 용량이 대역폭보다 먼저입니다</li>
 <p><strong>기본값이 왜 이렇게 작냐면</strong> — 위 표가 답입니다. 기본값을 32K로
 잡으면 8GB 카드에서 8B 모델이 설치 직후부터 느려집니다. 낮은
 기본값은 &quot;일단 어디서든 돌아가게&quot;를 고른 결과이고, 대신 잘림이
-조용히 일어나는 게 대가입니다. <strong>지금 설정은</strong> <code>ollama show
+조용히 일어나는 게 대가입니다(최근 버전이 메모리가 큰 카드에서만
+기본값을 올려 주는 것도 같은 이유입니다). <strong>지금 설정은</strong> <code>ollama show
 모델명</code>으로 컨텍스트 상한과 파라미터를 볼 수 있고, 실제로
 잘렸는지는 서버 로그의 <code>truncating</code> 문구가 확실합니다.</p>
 <p><strong>KV 캐시 쪽을 줄이는 길도</strong> 있습니다 — 실행기에 KV를 q8·q4로
@@ -286,15 +290,13 @@ VRAM 용량이 대역폭보다 먼저입니다</li>
 뒀습니다. 그리고 <strong>문서를 안 넣어도 긴 대화는 같은 원리로
 잘립니다</strong> — 주고받은 대화 전체가 컨텍스트에 쌓여서, 긴 대화 끝에
 초반을 잊는 것도 같은 증상입니다.</p>
-<p>기억할 뼈대는 넷입니다 — 기본 컨텍스트는 2048~4096 토큰(A4 두세
-장), 넘치면 오류 없이 조용히 잘리며(그게 &quot;앞부분을 까먹는&quot; 증상의
-정체), <code>num_ctx</code>로 늘리고(대화 중 <code>/set parameter</code>·API
-옵션·Modelfile·환경 변수), 늘리면 VRAM이 듭니다 — 8B 모델도 32K면
-10GB, 128K면 22GB.</p>
-<ol>
-<li>올린 뒤 느려졌다면 KV 캐시가 VRAM을 넘긴 겁니다 — 길이·모델·카드 중
-하나를 조정해야 합니다</li>
-</ol>
+<p>기억할 뼈대는 다섯입니다 — 기본 컨텍스트는 대부분의 개인용 카드에서
+4096 토큰 근처(A4 두세 장), 넘치면 오류 없이 조용히 잘리며(그게
+&quot;앞부분을 까먹는&quot; 증상의 정체), <code>num_ctx</code>로 늘리고(대화 중
+<code>/set parameter</code>·API 옵션·Modelfile·환경 변수), 늘리면 VRAM이
+듭니다 — 8B 모델도 32K면 10GB, 128K면 22GB. 그리고 올린 뒤
+느려졌다면 KV 캐시가 VRAM을 넘긴 것이라, 길이·모델·카드 중 하나를
+조정해야 합니다.</p>
 <p>처음 설치부터라면 <a href="/posts/ollama-install-guide.html">Ollama 설치 가이드</a>,
 카드별 한계는 <a href="/posts/ollama-minimum-spec.html">Ollama 최소 사양 정리</a>에 있습니다.</p>
 <p>수치나 명령이 실제와 다르면 <a href="/contact.html">알려주세요</a>. 확인 후 갱신합니다.</p>
