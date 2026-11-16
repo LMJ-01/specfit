@@ -5445,7 +5445,7 @@ function psuCheckOrder() {
   const gates = [
     ['① 커넥터', '12V-2x6(12VHPWR) 단자가 파워에 있나', '없으면 동봉 어댑터 + 8핀 2~4개 필요 · 차선', COLOR.over],
     ['② 규격', 'ATX 3.1(최소 3.0) 표기', '순간 부하 설계 — 옛 파워는 게임 중 꺼짐', COLOR.accent],
-    ['③ 용량', '(카드 TDP + CPU + 80W) × 1.3', '부하 50~80% 구간이 효율·소음의 자리', COLOR.fit],
+    ['③ 용량', '(카드 TDP + CPU + 80W) × 1.3', '최대 부하가 80% 아래 — 효율·소음 여유', COLOR.fit],
   ];
   gates.forEach((g, i) => {
     const x = 24 + i * 204;
@@ -5459,8 +5459,8 @@ function psuCheckOrder() {
   // 아래: 부하 구간 띠
   b += t(24, 162, '파워 용량 대비 부하', { size: 9, weight: 600, fill: COLOR.text });
   b += rect(150, 150, 466, 18, COLOR.soft, { r: 4, stroke: COLOR.line });
-  b += rect(150 + 466 * 0.5, 150, 466 * 0.3, 18, COLOR.fit, { r: 0 });
-  b += t(150 + 466 * 0.65, 163, '50~80% — 효율 좋고 조용', { size: 7.8, weight: 600, fill: COLOR.soft, anchor: 'middle' });
+  b += rect(150 + 466 * 0.35, 150, 466 * 0.45, 18, COLOR.fit, { r: 0 });
+  b += t(150 + 466 * 0.575, 163, '절반 안팎이 효율 정점 · 80% 아래로', { size: 7.8, weight: 600, fill: COLOR.soft, anchor: 'middle' });
   b += t(150 + 466 * 0.9, 163, '꽉 채움 → 발열·소음', { size: 7.4, fill: COLOR.over, anchor: 'middle' });
   b += t(150, 180, '0%', { size: 7, fill: COLOR.mute });
   b += t(616, 180, '100%', { size: 7, fill: COLOR.mute, anchor: 'end' });
@@ -5468,7 +5468,7 @@ function psuCheckOrder() {
   return figure(
     '파워 확인 순서 — 커넥터·규격·용량',
     W, 214, b,
-    '그래픽카드용 파워는 와트보다 커넥터가 먼저 막습니다. 12V-2x6 단자가 있는지, ATX 3.1 규격인지 확인한 뒤에 카드 TDP와 CPU, 나머지 부품을 더해 1.3배 한 용량을 고르면 부하가 효율 좋은 50~80% 구간에 들어옵니다.'
+    '그래픽카드용 파워는 와트보다 커넥터가 먼저 막습니다. 12V-2x6 단자가 있는지, ATX 3.1 규격인지 확인한 뒤에 카드 TDP와 CPU, 나머지 부품을 더해 1.3배 한 용량을 고르면 최대 부하에서도 용량의 80% 아래에 머뭅니다. 효율은 부하가 용량의 절반 안팎일 때 가장 높습니다.'
   );
 }
 
