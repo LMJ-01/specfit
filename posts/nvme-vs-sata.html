@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배","description":"M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생김새가 같은데 속도가 6배 차이나고, 슬롯이 안 받는 경우도 있습니다. 사기 전에 확인할 것을 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-10-07","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/nvme-vs-sata.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배","description":"M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생김새가 같은데 속도가 6배 차이나고, 슬롯이 안 받는 경우도 있습니다. 사기 전에 확인할 것을 정리했습니다.","datePublished":"2026-08-16","dateModified":"2026-11-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/nvme-vs-sata.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"메모리·스토리지","item":"https://specfit.kr/memory.html"},{"@type":"ListItem","position":3,"name":"NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배","item":"https://specfit.kr/posts/nvme-vs-sata.html"}]}</script>
 </head>
 <body class="is-post">
@@ -65,14 +65,14 @@
     <h1>NVMe와 SATA 차이 — 같은 M.2인데 속도가 6배</h1>
     <p class="post-meta">
       <time datetime="2026-08-16">2026년 8월 16일</time>
-      <span class="updated">· 2026년 10월 7일 갱신</span>
+      <span class="updated">· 2026년 11월 17일 갱신</span>
     </p>
   </header>
 
   
 
   <div class="post-body">
-<p>SSD를 사려고 보면 <code>NVMe</code>와 <code>SATA</code>가 나뉘어 있습니다. 값도 꽤 차이납니다.</p>
+<p>SSD를 사려고 보면 <code>NVMe</code>와 <code>SATA</code>가 나뉘어 있습니다. 값은 요즘 비슷해졌는데 속도는 크게 다릅니다.</p>
 <p><strong>문제는 둘 다 M.2라는 같은 모양으로 나온다는 것</strong>입니다. 생긴 게 똑같은데 속도는 6배 차이가 나고, 심지어 내 컴퓨터에 안 꽂히는 경우도 있습니다.</p>
 <h2 id="갈림길은-짧습니다">갈림길은 짧습니다</h2>
 <p>새로 사는 거라면 <strong>NVMe</strong>입니다 — 값 차이가 크지 않아서요. 오래된
@@ -84,7 +84,7 @@
 <tbody>
 <tr><td>순차 읽기</td><td>약 550 MB/s</td><td><strong>3,500~7,000 MB/s</strong></td></tr>
 <tr><td>생김새</td><td>2.5인치 또는 <strong>M.2</strong></td><td><strong>M.2</strong></td></tr>
-<tr><td>값</td><td>쌉니다</td><td>비쌉니다</td></tr>
+<tr><td>값</td><td>비슷하거나 조금 쌉니다</td><td>비슷합니다</td></tr>
 <tr><td>개발 작업 체감</td><td>—</td><td><strong>생각보다 작습니다</strong></td></tr>
 </tbody>
 </table></div>
@@ -195,8 +195,8 @@ NVMe냐 SATA냐를 고민하기 전에 그 교체부터 하는 게 체감이 가
 SSD도 납땜이라 교체가 안 됩니다 —
 <a href="/posts/laptop-ssd-upgrade.html">노트북 SSD 교체</a>에 확인법이
 있습니다.</p>
-<p><strong>두 개를 꽂으면</strong> 용량이 늘 뿐 속도는 그대로고(RAID는 개발용으로
-권하지 않습니다 — 복잡해지고 한쪽이 고장 나면 전부 잃습니다),
+<p><strong>두 개를 꽂으면</strong> 용량이 늘 뿐 속도는 그대로고(속도를 올리려고 둘을
+묶는 RAID 0은 개발용으로 권하지 않습니다 — 복잡해지고 한쪽이 고장 나면 전부 잃습니다),
 <strong>발열은</strong> Gen3·Gen4에선 대개 문제없고 Gen5부터 방열판을
 챙깁니다. 내 SSD가 실제로 스로틀링을 겪는지 재보는 법은
 <a href="/posts/nvme-heatsink.html">NVMe 방열판 필요한가</a>에 있습니다.</p>
