@@ -27,6 +27,7 @@ tags: [와이파이7, 공유기, WiFi6, 무선랜, 홈네트워크]
     다수: 팀뷰어·캐논 도움말). 새 망 재연결·옛 프린터 항목 재추가·주소 예약은
     표준 절차 수준, 연결 방법은 "제품마다". modem-direct-connection 교차.
   - 쿠팡 링크 없음 (adsenseReview). 공유기 = 링크 후보(승인 후).
+  - 전수 점검(2026-11-19): 정독. 이상 없음 — 세 관문 · 하위 호환 · 6GHz 투과 · MLO 양쪽 7 조건 · netsh 확인법 그대로. 링크 대상(router-device-count · router-lifespan · desktop-wifi-vs-lan 순간 변동 · mini-pc-for-dev 홈서버) 내용 확인.
 -->
 
 인터넷이 굼뜨면 제일 먼저 떠오르는 게 **"공유기를 최신으로

@@ -23,6 +23,7 @@ tags: [램방열판, 튜닝램, 램발열, XMP, 데스크톱조립]
   - 인바운드(2026-10-29): 쿨러 간섭 절 끝 → cpu-cooler-direction.
   - 교차 연결(2026-10-30): "후부착 방열판" 절 끝 ↔ nvme-heatsink.
   - 금액 미기재. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-19): 정독. 이상 없음 — 정격 발열 · 후부착 효과 · 쿨러 간섭 · DDR5 온도 센서 hedge 그대로. 링크 대상(cpu-stock-cooler 램 간섭 항목 · cpu-cooler-direction · nvme-heatsink) 내용 확인.
 -->
 
 조립 부품을 고르다 보면 램에서 갈립니다 — **방열판 달린 튜닝램이냐,

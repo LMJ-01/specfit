@@ -26,6 +26,7 @@ tags: [SSD, 용량관리, SLC캐시, 저장장치, 쓰기속도]
     yellowit 정리 + 4DDiG 판촉으로 기각, FAQ 로 흡수. 정리 도구 판매
     페이지가 상위라 "프로그램 살 필요 없음 — 내장 저장소 화면"으로.
   - 금액 미기재. 쿠팡 링크 없음 (adsenseReview). 2TB NVMe = 링크 후보.
+  - 전수 점검(2026-11-19): 정독. 이상 없음 — 지우고-쓰기 · SLC 캐시 · 1~2할 통설 hedge · 저장소 화면 경로 그대로. 링크 대상(dev-backup-strategy SSD 보관 · ssd-partition · game-install-ssd-hdd) 내용 확인.
 -->
 
 SSD 용량이 빨간 줄에 가까워지면 다들 같은 걸 검색합니다 —
