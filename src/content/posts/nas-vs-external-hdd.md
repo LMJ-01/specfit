@@ -2,7 +2,7 @@
 title: NAS가 필요한가 — 외장하드와는 다른 물건입니다
 description: 외장하드가 꽉 차면 NAS를 검색하게 되는데, NAS는 더 큰 외장하드가 아니라 성격이 다른 장비입니다. 외장하드로 충분한 경우, NAS라야 되는 경우, 그 사이의 간이 NAS를 판정 기준으로 정리했습니다.
 date: 2026-09-01
-updated: 2026-09-06
+updated: 2026-11-19
 category: network
 tags: [NAS, 외장하드, 홈서버, 네트워크저장소, 백업]
 ---
@@ -23,6 +23,7 @@ tags: [NAS, 외장하드, 홈서버, 네트워크저장소, 백업]
   - 금액 미기재 — "본체와 디스크가 따로", "비용 단위가 다름"까지만.
   - 쿠팡 링크 없음 (adsenseReview). NAS 본체·NAS용 HDD·외장 HDD =
     링크 후보 (승인 후 배치).
+  - 전수 점검(2026-11-19): 정독. 수정 1 — 게임 설치 FAQ 링크가 external-ssd-dev(개발용 외장 SSD, 게임 언급 없음)를 가리켜 약속과 어긋남 → game-install-ssd-hdd 로. 기가 유선 ≈ HDD 한 대 급 · 3-2-1 · 간이 NAS hedge 그대로. 링크 확인: dev-backup-strategy(SSD 서랍 보관) · desktop-ups(NAS 상시) · mesh-wifi-backhaul(상시 장비 직결) 대상 내용 있음.
 -->
 
 외장하드가 꽉 차거나, 노트북과 데스크톱 사이에 파일을 옮기다 지치면
@@ -132,7 +133,7 @@ NAS를 사면 백업이 해결된다고 생각하기 쉬운데,
 
 ### 게임 설치용으로도 쓸 수 있나요
 
-권하지 않습니다. 게임은 [SSD 속도가 체감되는 용도](/posts/external-ssd-dev.html)라
+권하지 않습니다. 게임은 [설치 위치에 따라 로딩이 갈리는 용도](/posts/game-install-ssd-hdd.html)라
 네트워크 너머 HDD에서 돌릴 물건이 아닙니다. NAS는 보관·공유의
 물건이지, 실행의 물건이 아닙니다.
 
