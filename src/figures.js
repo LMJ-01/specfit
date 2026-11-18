@@ -6999,7 +6999,7 @@ function minipcDevFit() {
   b += col(226, '막히는 것 — 외장 GPU', COLOR.over, ['로컬 LLM (CPU로는 느림)', '게임은 가벼운 것까지', '영상 편집 겸용']);
   b += col(428, '오히려 유리 — 상시 가동', COLOR.fit, ['전기를 적게 먹음', '조용하고 자리 안 차지', '개발 서버·홈서버']);
   b += rect(24, 184, 592, 46, COLOR.soft, { r: 6, stroke: COLOR.line });
-  b += t(36, 202, '사기 전: CPU 끝 글자 H·HS·U = 노트북용 · "SO-DIMM 슬롯" 표기면 램 증설 가능', { size: 8.8, weight: 700, fill: COLOR.text });
+  b += t(36, 202, '사기 전: CPU 사양표의 세그먼트(모바일) 확인 · "SO-DIMM 슬롯" 표기면 램 증설 가능', { size: 8.8, weight: 700, fill: COLOR.text });
   b += t(36, 219, '저가형 N 계열은 메모리 채널 1개 — CPU 추론이 한층 더 느림', { size: 8.4, fill: COLOR.mute });
   return figure(
     '미니PC 개발 용도 판정',
