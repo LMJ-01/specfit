@@ -26,6 +26,7 @@ tags: [인터넷속도, 다운로드속도, Mbps, 기가인터넷, 속도측정]
   - 이론 상한 62.5MB/s 는 단위 환산 수치(가격 아님) — 금액 미기재
     원칙과 무관. 실측은 "여기에 못 미치는 게 보통" hedge.
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-20): 정독. 이상 없음 — ÷8 환산(500→62.5 · 1G→125MB/s) 검산 일치 · 관문 순서 · 폰은 빠른데 FAQ 그대로. 링크 대상(modem-direct-connection · website-not-loading · internet-slow-at-night · game-ping-spike) 내용 확인.
 -->
 
 500메가 인터넷을 쓰는데 게임 다운로드 창에는 **60MB/s**가 떠

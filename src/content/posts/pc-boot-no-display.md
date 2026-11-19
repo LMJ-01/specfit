@@ -27,6 +27,7 @@ tags: [부팅안됨, 화면안나옴, 램재장착, 비프음, 조립PC]
   - 화면이 "나오다 꺼짐"(pc-shutdown-during-game)·"한쪽만 안
     나옴"(dual-monitor-one-blank)과 증상 구분 명시.
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-20): 정독. 이상 없음 — 릴레이 구조 · 바깥→안쪽 격리 · 비프음/LED 설명서 기준 · 스탠드오프 FAQ 그대로. 링크 대상(boot-beep-once · motherboard-debug-led · cooler-screw-torque · gpu-not-detected) 내용 확인.
 -->
 
 전원 버튼을 누르면 **팬도 돌고, LED도 들어오고, 소리도 나는데 —

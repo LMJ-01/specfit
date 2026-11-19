@@ -26,6 +26,7 @@ tags: [24시간가동, 상시가동, 컴퓨터수명, 홈서버, 절전]
   - 유휴 전력·전기 언급은 방향성만, 금액 미기재 (psu-capacity-
     power-draw·local-llm-power-cost 서술과 일치).
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-20): 정독. 이상 없음 — 스트레스 두 종류 비단정 · 용도 판정 · 관리 목록 그대로. 링크 대상(pc-turns-on-by-itself WOL 갈래 · psu-capacity-power-draw 유휴·대기 전력 · pc-slow-until-reboot · pc-power-strip) 내용 확인.
 -->
 
 홈서버를 만들었든, 다운로드를 밤새 걸든, 원격 접속용으로 두든 —
