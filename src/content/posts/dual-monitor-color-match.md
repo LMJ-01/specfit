@@ -28,6 +28,7 @@ tags: [듀얼모니터, 색감차이, 색맞추기, 캘리브레이션, 모니�
   - 기각 후보 흡수(2026-10-25): "모니터 화면 갑자기 보라색·초록색" —
     검색 상위 삼성서비스 1·2·4위 + 레노버 3위 + 영문 다수로 기각, FAQ 로
     흡수. OSD 색으로 신호/모니터 가르기는 표준 격리 절차, "대개" hedge.
+  - 전수 점검(2026-11-19): 정독. 이상 없음 — 완전 일치 불가 · 밝기→색온도→OS 순서 · 보라·초록 격리 FAQ 그대로. 링크 대상(monitor-lifespan 백라이트 색 변화 · dual-monitor-vs-single 주/보조 배치 · monitor-yellow-tint · hdr-washed-out) 내용 확인.
 -->
 
 [모니터를 두 대로 늘리면](/posts/dual-monitor-vs-single.html) 꽤
