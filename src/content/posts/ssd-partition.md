@@ -23,6 +23,7 @@ tags: [파티션, SSD, C드라이브, D드라이브, 디스크관리]
   - 기각 후보 흡수(2026-11-01): "SSD 추가 vs 큰 용량 교체" — 검색 상위
     wikidocs 정리 + zimaspace·4DDiG 판촉 + ITWorld 매체로 기각, "물리적으로
     나누기" 절 끝에 흡수.
+  - 전수 점검(2026-11-20): 정독. 이상 없음 — 백업 아님 · 속도 무관 · 재설치 보험 · 두 번째 SSD 서술 그대로. 링크 대상(dual-boot-vs-wsl · ssd-tbw-lifespan · game-install-ssd-hdd) 내용 확인.
 -->
 
 새 SSD에 윈도우를 깔 때 한 번은 멈추게 되는 화면이 있습니다 —
