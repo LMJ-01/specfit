@@ -23,6 +23,7 @@ tags: [듀얼모니터, 게임프레임, 프레임드랍, GPU, 모니터두대]
   - 도해(2026-10-29): second-screen-load — 보조 화면 내용별 상대 부담 개념도
     (막대는 수치 아님, 캡션 명시). 본문 결론 표와 1:1.
   - 금액 미기재. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-19): 정독. 이상 없음 — 출력은 가벼운 일 · 보조 화면 일 · 전/후 비교 판정 · 혼용 스터터 hedge 그대로. 링크 대상(igpu-dual-monitor 카드+내장 FAQ · game-recording-fps-drop · game-fullscreen-borderless · monitor-mixed-refresh) 내용 확인.
 -->
 
 [모니터를 두 대로 늘리려는](/posts/dual-monitor-vs-single.html)
