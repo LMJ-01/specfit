@@ -26,6 +26,7 @@ tags: [듀얼부팅, WSL, 리눅스, 개발환경, 우분투]
   - 2026-10-21 wsl-vs-dualboot 도해(본문 구조 그대로) + FAQ "선택 화면 없이 윈도우로"
     흡수(기각 후보 — 결과 전부 영문: ubuntu.fan·itsfoss·linux.org·launchpad).
     부팅 메뉴 키 "제품마다", 빠른 시작은 "꼬이는 경우가 있어" 수준, 복구 명령 미기재.
+  - 전수 점검(2026-11-19): 정독. 이상 없음 — WSL 메모리는 wsl2-memory-limit 로 위임(그 글 50% 기본값 갱신 완료라 이 글엔 수치 없음 — 어긋남 없음). CUDA 지원 · usbipd · /mnt/c 경계 · 부트로더 FAQ 그대로. 링크 대상(ram-64gb-worth-it VM 항목 · pc-clock-wrong 모양 ③) 내용 확인.
 -->
 
 개발 공부가 어느 정도 진행되면 한 번은 마주치는 갈림길입니다 —

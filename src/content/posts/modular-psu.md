@@ -20,6 +20,7 @@ tags: [모듈러파워, 파워서플라이, 케이블정리, 조립PC, 세미모
   - 케이블 정리→기류 개선은 구조적 개연 수준으로, case-fan-setup 과
     일치. 금액 미기재. 쿠팡 링크 없음 (adsenseReview). 골드
     풀모듈러 = 링크 후보 (승인 후).
+  - 전수 점검(2026-11-19): 정독. 이상 없음 — 성능 무관 · 혼용 금지 경고 · 피그테일 FAQ hedge 그대로. 링크 대상(case-fan-setup · psu-lifespan · gpu-psu-wattage 커넥터) 내용 확인.
 -->
 
 파워를 고르다 보면 [용량](/posts/gpu-psu-wattage.html)과
