@@ -30,6 +30,7 @@ tags: [모니터절전, 모니터수명, 전원끄기, 대기전력, 모니터�
   - 교차 연결(2026-10-25): monitor-lifespan(→ 이 글 기존) ↔ FAQ "며칠씩
     켜두고" 끝 문단 상호 연결.
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-21): 정독. 이상 없음 — 절전 중 백라이트 휴식 · 버튼 접점 비용 · OLED 케어 예외 · Win+Ctrl+Shift+B FAQ 그대로. 링크 대상(pc-power-led-blinking · monitor-lifespan · pc-power-strip) 내용 확인.
 -->
 
 컴퓨터를 끌 때마다 손이 고민합니다 — **모니터 전원 버튼까지 눌러
