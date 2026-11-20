@@ -28,6 +28,7 @@ tags: [블루투스이어폰, 소리끊김, 24GHz간섭, 절전설정, 노트북
     "안테나·모듈·환경 차이" 구조 서술.
   - 인바운드(2026-11-05): FAQ 신설 "버튼 자체가 사라졌어요" → bluetooth-toggle-missing(상호).
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-20): 정독. 이상 없음 — 정황별 네 갈래 · 5GHz 정공법 · 통화 모드 전환(최신 코덱 낙차 감소는 기기 조합 hedge) · 볼륨 두 개 FAQ 그대로. 링크 대상(speaker-phone-interference · bluetooth-toggle-missing · app-no-sound) 내용 확인.
 -->
 
 폰에 물리면 멀쩡한 블루투스 이어폰이 **노트북에만 물리면 뚝뚝

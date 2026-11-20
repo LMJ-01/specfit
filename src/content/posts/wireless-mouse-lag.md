@@ -32,6 +32,7 @@ tags: [무선마우스, 커서끊김, 동글, 전파간섭, 블루투스]
   - 인바운드(2026-11-05): "블루투스 마우스라면" 항목 → bluetooth-toggle-missing(상호).
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
     USB 연장 케이블 = 링크 후보 (승인 후).
+  - 전수 점검(2026-11-20): 정독. 이상 없음 — 배터리 → 동글 위치 → USB 3.0 간섭 → 격리 → 절전 순서 · 깨어나는 시간 FAQ 그대로. 링크 대상(mouse-cursor-moving · mouse-drag-stuck · front-usb-not-working · gamepad-not-working) 내용 확인.
 -->
 
 마우스 커서가 부드럽게 가다가 **순간 멈추고, 건너뛰고, 다시
