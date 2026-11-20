@@ -33,6 +33,7 @@ tags: [컴퓨터혼자켜짐, 절전해제, WOL, 빠른시작, 전원설정]
     yellowit 정리 1·2·5·6위 + 커세어 제조사로 기각, FAQ "USB에 불" 뒤로
     흡수. 메뉴 이름은 보드별이라 미기재.
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-20): 정독. 이상 없음 — powercfg /lastwake·/waketimers·/requests · 갈래 넷 · 덮개 열면 켜짐 FAQ 그대로. 링크 대상(pc-fans-run-after-shutdown 빠른 시작 · laptop-hot-in-bag · fan-rgb-one-dead · pc-always-on WOL) 내용 확인.
 -->
 
 분명히 끄고 잤는데 **새벽에 컴퓨터가 켜져 있습니다.** 혹은
