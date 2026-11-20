@@ -1044,6 +1044,7 @@ export const figures = {
   'right-click-map': rightClickMap,
   'radeon-llm-fork': radeonLlmFork,
   'wheel-autoscroll-split': wheelAutoscrollSplit,
+  'taskbar-stuck-triage': taskbarStuckTriage,
 };
 
 /**
@@ -6440,6 +6441,25 @@ function modelLoadExternal() {
     '모델 로딩 시간 — 내장과 외장',
     W, 244, b,
     '외장 SSD에 로컬 LLM 모델을 두면 처음 읽어 올리는 시간만 늘어납니다. 4.7GB 모델은 내장 NVMe 약 0.7초, 10Gbps 외장 약 5초, 5Gbps 외장 약 9초이고, 20GB 모델은 각각 약 2.9초, 20초, 40초입니다. 모델이 VRAM에 올라간 뒤의 생성 속도는 같습니다.'
+  );
+}
+
+function taskbarStuckTriage() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '전체화면인데 작업 표시줄이 남는다 — 위에서부터 한 줄씩', { weight: 600, size: 12.5 });
+  b += t(24, 52, '지금 모습', { size: 8.6, weight: 700, fill: COLOR.mute });
+  b += t(364, 52, '갈래 → 먼저 할 것', { size: 8.6, weight: 700, fill: COLOR.mute });
+  const row = (y, txt, verdict, c) => rect(24, y, 330, 32, COLOR.soft, { r: 4, stroke: COLOR.line }) + t(36, y + 20, txt, { size: 8.8, weight: 700 }) + rect(364, y, 252, 32, c, { r: 4 }) + t(376, y + 20, verdict, { size: 8.8, weight: 700, fill: '#fff' });
+  b += row(62, '깜빡이거나 색이 든 단추가 있음', '주의 요청 → 그 단추 한 번 누르기', COLOR.fit);
+  b += row(102, '깜빡임 없음 · 어제까진 잘 사라짐', '탐색기 꼬임 → Windows 탐색기 다시 시작', COLOR.over);
+  b += row(142, '브라우저 테두리·주소창이 보임', '큰 창일 뿐 → 전체화면 단추 · F11', COLOR.fit);
+  b += row(182, '옆 모니터에만 남음', '정상 → 그 화면 표시 설정', COLOR.mute);
+  b += t(24, 236, '탐색기를 다시 시작해도 열어 둔 프로그램은 그대로 남습니다 (파일 탐색기 창만 닫힘)', { size: 8.4, fill: COLOR.mute });
+  return figure(
+    '작업 표시줄이 안 사라질 때 판정',
+    W, 248, b,
+    '작업 표시줄에 깜빡이거나 색이 든 단추가 있으면 앱이 주의를 끄는 중이라 그 단추를 한 번 눌러 줍니다. 깜빡임이 없는데 어제까지 잘 사라졌다면 작업 관리자에서 Windows 탐색기를 다시 시작합니다. 브라우저 테두리가 보이면 전체화면이 아니라 큰 창이라 전체화면 단추나 F11을 씁니다. 옆 모니터에만 남는 작업 표시줄은 정상입니다.'
   );
 }
 
