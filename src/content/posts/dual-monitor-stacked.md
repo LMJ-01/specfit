@@ -33,6 +33,7 @@ tags: [듀얼모니터, 상하배치, 모니터배치, 모니터암, 데스크�
     dual-monitor-mouse-escape FAQ 에서 이 글로 연결(상호 완성).
   - 도해(2026-10-28): stacked-gaze — 정면(주) vs 위(흘깃) 시선 각도 개념도.
     각도 수치 없음, 본문 결론 표 범위 안.
+  - 전수 점검(2026-11-21): 정독. 이상 없음 — 용도 기준(흘깃/오래) · 주 모니터 정면 · 거치 · 작업표시줄·배치 FAQ 그대로. 링크 대상(game-wrong-monitor 주 모니터 · monitor-wobble-typing · monitor-mixed-resolution) 내용 확인.
 -->
 
 듀얼 모니터는 당연히 옆으로 나란히 — 라고 생각하다가, 좁은
