@@ -28,6 +28,7 @@ tags: [USB충전, USB전원, 폰충전, USB선풍기, 데스크셋업]
     일반 서술.
   - 교차 연결(2026-10-29): FAQ "앞면·뒷면" ↔ front-usb-not-working C타입 문단.
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-21): 정독. 이상 없음 — 곁들인 전원 체급 · 컴퓨터 부담 미미 · 끄면 멈추는 포트 · 전원 없는 허브 함정 그대로. 링크 대상(monitor-usb-c-one-cable · pc-fans-run-after-shutdown · laptop-slow-on-battery) 내용 확인.
 -->
 
 책상 위의 본체는 훌륭한 멀티탭처럼 보입니다 — USB 구멍이
