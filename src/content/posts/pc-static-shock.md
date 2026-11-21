@@ -30,6 +30,7 @@ tags: [정전기, 컴퓨터찌릿, 접지, 누설전류, 전기안전]
     검색 상위 yellowit 정리·ifixit·Dell 제조사로 기각, FAQ 로 흡수.
   - 교차 연결(2026-11-01): pc-burning-smell FAQ "멀티탭 쪽" ↔ 이 글(기존 단방향 완성).
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-21): 정독. 이상 없음 — 톡 vs 저릿 · 접지 확인 순서 · 전문가 영역 경계 · 핫플러그 FAQ 그대로. 링크 대상(pc-humidifier · mouse-cursor-moving 충전 중 커서 · pc-shutdown-during-game) 내용 확인.
 -->
 
 건조한 계절이 오면 올라오는 단골 하소연입니다 — **"본체만 만지면

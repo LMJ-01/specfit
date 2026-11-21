@@ -31,6 +31,7 @@ tags: [듀얼모니터, 모니터끄기, 보조모니터, 디스플레이설정,
     Alt+Space 이동은 표준 단축키, "버전·언어에 따라 메뉴 이름 다름"
     hedge. laptop-clamshell-mode와 교차 연결.
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-21): 정독. 이상 없음 — 전원 버튼=실종 처리 · 디스플레이 설정 정답 경로 · Win+P · 안 보이는 창 FAQ 그대로. 링크 대상(game-wrong-monitor · monitor-sleep-window-move · laptop-clamshell-mode) 내용 확인.
 -->
 
 게임을 켜거나 영화를 틀 때, 옆의 보조 모니터가 갑자기 거슬립니다.

@@ -26,6 +26,7 @@ tags: [게임설치위치, SSD게임, HDD게임, 로딩속도, 스팀라이브�
     USB 규격이 상한 — external-ssd-dev 재사용 ⑦ HDD 보관용 운용
     (서랍 비유)은 통설 수준.
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-21): 정독. 이상 없음 — 프레임 아닌 기다림 · 스트리밍형 예외 hedge · 책상/서랍 운용 · 라이브러리 이동 그대로. 링크 대상(ssd-tbw-lifespan · external-ssd-dev 포트 상한 · pc-clicking-noise) 내용 확인.
 -->
 
 SSD와 HDD를 같이 쓰는 컴퓨터라면 게임을 깔 때마다 잠깐
