@@ -32,6 +32,7 @@ tags: [CPUFanError, 부팅오류, CPU팬, 팬헤더, 바이오스설정]
   - 구조 다변화: 서두 + 해석 + 눈으로 확인 1분 + 갈래 소제목 3 +
     결론표 + 산문 마무리. FAQ·번호 정리 미사용.
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-23): 정독. 이상 없음 — 메시지=회전 보고 부재 · 눈으로 1분 · 안 돎/자리 착오/너무 느림 세 갈래 · 감시 끄기는 팬 없는 구성만 · 정황 표 그대로. 링크 대상(psu-zero-fan · case-fan-stops-after-boot · ram-xmp-expo Overclocking Failed FAQ) 내용 확인.
 -->
 
 전원을 켜면 검은 화면에 **"CPU Fan Error! Press F1 to Run SETUP"**
