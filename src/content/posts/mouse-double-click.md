@@ -32,6 +32,7 @@ tags: [마우스더블클릭, 채터링, 마우스고장, 스위치, 드래그�
   - 인바운드(2026-11-09): 판별 "설정부터 배제" 끝 → stuck-modifier-key(상호).
   - 인바운드(2026-11-10): 판별 "드래그로 관찰" 끝 → mouse-drag-stuck(상호).
   - 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
+  - 전수 점검(2026-11-22): 정독. 이상 없음 — 3분 판별(설정·드래그·다른 PC) · 채터링 정체 · 완화는 임시 · 보증→수리 vs 교체 저울 · 옆 버튼 문단 그대로. 링크 대상(keyboard-some-keys-dead 두 번 입력 FAQ · dual-monitor-one-blank 맞바꾸기 · stuck-modifier-key · mouse-drag-stuck) 내용 확인.
 -->
 
 한 번 클릭했는데 폴더가 두 개 열립니다. 파일을 끌고 가다가 중간에
