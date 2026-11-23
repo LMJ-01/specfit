@@ -25,6 +25,7 @@ tags: [USB, FAT32, exFAT, NTFS, 파일이너무큽니다]
     "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
   - 인바운드(2026-11-04): usb-not-showing FAQ "쓰기 금지" 끝 · usb-safe-removal
     "USB 메모리" 항목.
+  - 전수 점검(2026-11-24): 정독. 이상 없음 — FAT32 한 파일 상한(약 4GB) · 속성 확인 · 꽂을 곳으로 exFAT/NTFS 고르기 · 포맷 전 백업 · convert는 NTFS로만 · 분할 압축 그대로. 링크 대상(usb-not-showing 쓰기 금지 FAQ · usb-hub-power · external-ssd-dev) 내용 확인.
 -->
 
 용량이 몇십 GB씩 남은 USB에 영상이나 설치 파일 하나를 옮기려는데,

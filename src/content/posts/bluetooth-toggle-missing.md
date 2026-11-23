@@ -25,6 +25,7 @@ tags: [블루투스, 블루투스사라짐, 윈도우블루투스, 블루투스�
     "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
   - 인바운드(2026-11-05): bluetooth-earbuds-stutter FAQ 신설 · wireless-mouse-lag
     "블루투스 마우스라면" 항목.
+  - 전수 점검(2026-11-24): 정독. 이상 없음 — 버튼/장치 꼬임/숨음·원래 없음 세 층 · Win+A 편집 · Shift+종료 완전 종료 · 드라이버·서비스 · 무선 키·동글·안테나 그대로. 링크 대상(bluetooth-earbuds-stutter · no-sound-after-sleep · laptop-wifi-not-connecting) 내용 확인.
 -->
 
 이어폰을 연결하려고 빠른 설정을 열었는데 **블루투스 버튼이 없습니다.**
