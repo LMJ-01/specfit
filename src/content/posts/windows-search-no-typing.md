@@ -24,6 +24,7 @@ tags: [윈도우검색, 검색창입력안됨, 시작메뉴검색, 입력기, �
   - 레지스트리·서비스 편집·SFC 명령 없음(상위 일부가 안내하지만 일반 사용자 범위 밖으로 봄).
     특정 키보드·노트북 제품 없음. 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
   - 인바운드(2026-11-13): cursor-moves-no-click 갈래 ③(탐색기 층) · typing-deletes-text FAQ.
+  - 전수 점검(2026-11-24): 정독. 이상 없음 — 메모장으로 가르기 · 검색만 멈춤/입력기 빠짐(ctfmon hedge)/색인/키보드 네 갈래 그대로. 링크 대상(cursor-moves-no-click 탐색기 갈래 · typing-deletes-text · keyboard-some-keys-dead) 내용 확인.
 -->
 
 시작 버튼을 누르고 프로그램 이름을 치는데, **검색창에 글자가 하나도 안 들어갑니다.**

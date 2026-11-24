@@ -26,6 +26,7 @@ tags: [작업표시줄, 전체화면, 자동숨기기, 윈도우탐색기, 유�
     금액. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
   - 도해: taskbar-stuck-triage — 결론표 네 줄 그대로. 새 사실 없음.
   - 인바운드(2026-11-20): game-minimizes-itself FAQ 1개 · desktop-icons-missing 갈래 ③ 끝 문장.
+  - 전수 점검(2026-11-24, 대기열 표 작성 뒤 쓴 글이라 표 밖에서 추가 점검): 정독. 이상 없음 — 깜빡이는 단추→탐색기 다시 시작→진짜 전체화면 여부 · 자동 숨기기 · 듀얼 정상 동작 · FAQ 그대로. 링크 대상(game-minimizes-itself 방해 금지 · pc-slow-until-reboot · game-fullscreen-borderless · desktop-icons-missing 탐색기 갈래) 내용 확인. 마지막 줄 문구가 다른 글('기준이나 동작이')과 조금 다르지만('설정 경로나 동작이') 뜻이 같아 그대로 둠.
 -->
 
 영상을 전체화면으로 틀었는데 화면 맨 아래에 **작업 표시줄이 그대로** 떠 있습니다. 자막이

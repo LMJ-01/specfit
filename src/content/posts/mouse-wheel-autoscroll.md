@@ -26,6 +26,7 @@ tags: [마우스휠, 자동스크롤, 가운데버튼, 휠클릭, 스크롤]
     "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
   - 도해: wheel-autoscroll-split — 결론표 네 줄 그대로. 새 사실 없음.
   - 인바운드(2026-11-16): mouse-wheel-jump FAQ "휠 클릭도 잘 안 돼요" · mouse-scroll-too-fast FAQ 1개.
+  - 전수 점검(2026-11-24, 대기열 표 작성 뒤 쓴 글이라 표 밖에서 추가 점검): 정독. 이상 없음 — 가운데 단추=자동 스크롤 · 한 번 더 누르면 풀림 · 파이어폭스만 설정으로 끔(크롬·엣지 2026-11 기준 hedge) · 헛눌림 · 세 손가락 탭 그대로. 링크 대상(mouse-wheel-jump · mouse-scroll-too-fast · stuck-modifier-key) 내용 확인.
 -->
 
 휠을 굴리다가 조금 세게 눌렸을 뿐인데, 화면에 **동그란 화살표 표시**가 생기더니 마우스를
