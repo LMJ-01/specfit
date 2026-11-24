@@ -26,6 +26,7 @@ tags: [글자지워짐, 덮어쓰기, Insert키, 한글입력기, 키보드오�
   - 인바운드(2026-11-06): keyboard-some-keys-dead FAQ "다른 기호가 나와요" 끝 ·
     spacebar-rattle 처방 순서 끝.
   - 인바운드 제공(2026-11-13): FAQ 신설 "검색창에 아예 안 들어가요" → windows-search-no-typing(상호).
+  - 전수 점검(2026-11-24): 정독. 이상 없음 — 지워지는 모양 세 갈래(덮어쓰기·한글 조합·키 자체) · Insert/[수정] 표시 · 이전 버전 입력기 호환 hedge · FAQ 그대로. 링크 대상(keyboard-some-keys-dead 한영키 FAQ · stuck-modifier-key · windows-search-no-typing) 내용 확인.
 -->
 
 문서를 고치려고 중간에 글자를 넣었는데 **뒤에 있던 글자가 하나씩 먹혀

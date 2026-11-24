@@ -23,6 +23,7 @@ tags: [마우스커서잔상, 포인터자국, 커서꼬리, 오버드라이브,
     (adsenseReview).
   - 인바운드(2026-11-10): monitor-response-time 오버드라이브 절 · mouse-cursor-gone FAQ.
   - 교차 연결(2026-11-10): FAQ 신설 "스크롤할 때 너무 휙휙" → mouse-scroll-too-fast(상호).
+  - 전수 점검(2026-11-24): 정독. 이상 없음 — 포인터 자국/오버드라이브 역잔상/프로그램 그리기 세 갈래 · 스크린샷엔 안 찍힘 · 주사율 구분 FAQ 그대로. 링크 대상(monitor-response-time 오버드라이브 절 · mouse-cursor-gone · mouse-scroll-too-fast) 내용 확인.
 -->
 
 마우스를 움직이면 커서 뒤로 **잔상이 줄줄이** 따라옵니다. 빠르게 움직일수록 꼬리가

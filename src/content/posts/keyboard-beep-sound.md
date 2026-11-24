@@ -27,6 +27,7 @@ tags: [키보드삑소리, 고정키, 필터키, 토글키, 윈도우접근성]
     Ctrl+Win+Enter 바로 가기 · 접근성 → 내레이터에서 끄기·바로 가기·자동 시작).
   - 특정 키보드 제품 없음. 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
   - 인바운드(2026-11-10): stuck-modifier-key 푸는 순서 2번 · spacebar-rattle 마무리.
+  - 전수 점검(2026-11-24): 정독. 이상 없음 — 소리 나는 키로 토글/고정/필터 가르기 · 기능과 바로 가기 둘 다 끄기 · 내레이터(Ctrl+Win+Enter) FAQ · 켜 두는 경우 그대로. 링크 대상(stuck-modifier-key · keyboard-some-keys-dead 설정 용의자 · spacebar-rattle) 내용 확인.
 -->
 
 키를 누를 때마다 **스피커에서 "삑"** 소리가 납니다. 어떤 때는 몇 개 키에서만,

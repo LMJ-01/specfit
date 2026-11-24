@@ -22,6 +22,7 @@ tags: [마우스드래그, 드래그안풀림, 클릭잠금, 마우스버튼, �
     없음. 쿠팡 링크 없음 (adsenseReview).
   - 인바운드(2026-11-10): mouse-double-click 판별 "드래그로 관찰" · wireless-mouse-lag 5절.
   - 인바운드 제공(2026-11-12): FAQ 신설 "창을 놓자마자 크기가 바뀌어요" → window-snap-edge(상호).
+  - 전수 점검(2026-11-24): 정독. 이상 없음 — 당장 풀기(한 번 더 클릭·Esc·Ctrl+Z) · 클릭 잠금/접점/뗌 신호 누락/프로그램 네 갈래 · 터치패드 FAQ 그대로. 링크 대상(mouse-double-click 드래그 관찰 · wireless-mouse-lag · window-snap-edge) 내용 확인.
 -->
 
 창을 옮기려고 잡았다 놓았는데 **창이 커서를 계속 따라옵니다.** 파일을 끌었다
