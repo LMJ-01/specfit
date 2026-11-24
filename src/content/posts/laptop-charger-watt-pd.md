@@ -31,6 +31,7 @@ affiliate: true
     아닌 도구) → 다른 단자 → 흔들리면 점검. "충전 단자가 정해진 제품도" hedge.
   - 전수 점검(2026-11-14): 정독 + 검산. 이상 없음(20V×3.25A=65W · 20V×2.25A=45W · 케이블 3A=60W/5A=100W · EPR 28/36/48V
     240W · 100W+3A 케이블=60W · 하한값 hedge 확인). 본문 BUY·COUPANG 자리표시는 adsenseReview로 출력 안 됨.
+  - 2바퀴 점검(2026-11-25): 정독 + 재검산. 이상 없음 — 전압×전류 수치 · 케이블 3A/5A 구분 그대로. 링크 대상(mini-pc-heat 어댑터 발열 FAQ · laptop-slow-on-battery · monitor-usb-c-one-cable) 약속 일치.
 -->
 
 충전기를 안 가져왔는데 책상에 폰 충전기가 있습니다. 꽂으면 될까요?

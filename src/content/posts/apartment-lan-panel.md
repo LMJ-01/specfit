@@ -25,6 +25,7 @@ tags: [단자함, 아파트인터넷, 기가인터넷, 스위칭허브, 홈네�
     extrememanual·jab-guyver 정리 선점 + 삼성서비스·USRO). 같은 대역 판정·공용/개인
     프로필·주소창 직접 접속은 표준 절차 수준. modem-direct-connection 교차.
   - 전수 점검(2026-11-14): 정독. 이상 없음(단자함 구성 '건물에 따라' · 4가닥=100Mbps · 통신사 장비 선 긋기 · 공유 폴더 FAQ 확인).
+  - 2바퀴 점검(2026-11-25): 정독. 이상 없음 — 단자함 구성 '건물에 따라' hedge · 4가닥=100Mbps · 링크 대상(modem-direct-connection · switch-hub-vs-router · lan-cable-cat) 약속 일치.
 -->
 
 방 벽에 랜포트가 있는데 꽂아도 인터넷이 안 됩니다. 되긴 되는데
