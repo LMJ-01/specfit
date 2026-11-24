@@ -23,6 +23,7 @@ tags: [마우스휠, 스크롤속도, 휠스크롤, 프리스핀, 부드러운�
   - 특정 마우스 제품 없음. 금액 미기재. "직접 써본" 류 없음. 쿠팡 링크 없음 (adsenseReview).
   - 인바운드(2026-11-10): mouse-wheel-jump FAQ "브라우저에서만 이상해요" · mouse-cursor-trail.
   - 2026-11-16: FAQ 1개 추가 — 새 글 mouse-wheel-autoscroll 로 연결. 새 사실 없음.
+  - 전수 점검(2026-11-24): 정독. 이상 없음 — 줄 수/휠 모드(프리 스핀)/프로그램 부드러운 스크롤 세 갈래 · 반대로 튐은 부품 · 자동 스크롤 FAQ 그대로. 링크 대상(mouse-wheel-jump · stuck-modifier-key Ctrl · mouse-wheel-autoscroll) 내용 확인.
 -->
 
 휠을 **한 칸** 굴렸는데 화면이 한참 내려갑니다. 또는 살짝 굴렸을 뿐인데 휠이
