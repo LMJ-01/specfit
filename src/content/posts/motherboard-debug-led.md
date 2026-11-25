@@ -3,7 +3,7 @@ title: 메인보드 빨간불(CPU·DRAM·VGA·BOOT)이 켜진 채 멈출 때 —
 description: 부팅이 안 되는데 메인보드 구석의 작은 불(CPU·DRAM·VGA·BOOT) 하나가 켜진 채 멈춰 있다면, 그 불은 고장 경보가 아니라 "여기서 막혔다"는 위치 표시입니다. 네 불이 켜지는 순서와 각 불이 뜻하는 갈래, 불별로 먼저 볼 것 순서를 정리했습니다.
 date: 2026-10-01
 updated: 2026-10-07
-category: memory
+category: desktop
 tags: [메인보드빨간불, 디버그LED, DRAM불, 부팅안됨, 조립PC]
 ---
 

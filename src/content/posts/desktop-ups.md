@@ -3,7 +3,7 @@ title: 개인 데스크톱에 UPS — 대부분 불필요, 필요한 경우는 �
 description: 정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대부분은 아니고, 필요한 경우는 명확합니다. 밤새 돌리는 작업, 쓰기 중인 데이터, 잦은 정전. 용량 계산과 사인파 문제까지 정리했습니다.
 date: 2026-08-25
 updated: 2026-09-29
-category: gpu
+category: desktop
 tags: [UPS, 무정전전원장치, 정전, 데스크톱, 홈서버]
 affiliate: true
 ---

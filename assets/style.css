@@ -150,6 +150,7 @@ img {
   gap: 1rem;
   min-height: 60px;
   flex-wrap: wrap;
+  padding-top: 0.6rem;
 }
 
 .brand {
@@ -174,6 +175,17 @@ img {
   display: flex;
   gap: 0.25rem;
   flex-wrap: wrap;
+  /* 2026-11-25 분류 9개로 늘며 한 줄에 안 들어감 — 메뉴는 브랜드·밝기 버튼 아래 자기 줄을 씁니다.
+     (안 그러면 밝기 버튼이 메뉴 사이 둘째 줄로 밀려납니다.) */
+  order: 3;
+  flex-basis: 100%;
+  margin: -0.5rem 0 0.5rem -0.6rem;
+}
+/* 휴대폰에서는 메뉴가 여러 줄이라 위에 고정하면 화면의 3분의 1을 가립니다. */
+@media (max-width: 640px) {
+  .site-header {
+    position: static;
+  }
 }
 .site-nav a {
   color: var(--fg-muted);

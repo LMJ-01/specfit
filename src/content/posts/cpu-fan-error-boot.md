@@ -3,7 +3,7 @@ title: 켤 때마다 CPU Fan Error가 뜨고 F1을 눌러야 할 때 — 보드�
 description: 부팅마다 CPU Fan Error가 뜨고 F1을 눌러야 하는 증상은 게시판 단골입니다. 이 메시지는 팬 고장 판정이 아니라 보드가 CPU 팬 자리에서 회전 신호를 못 읽었다는 보고입니다 — 안 도는지, 다른 자리에 꽂혔는지, 너무 느린지 세 갈래로 가르는 순서를 정리했습니다.
 date: 2026-10-01
 updated: 2026-10-20
-category: memory
+category: desktop
 tags: [CPUFanError, 부팅오류, CPU팬, 팬헤더, 바이오스설정]
 ---
 

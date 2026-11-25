@@ -3,7 +3,7 @@ title: 파워 80PLUS 등급 — 골드에 웃돈 낼 가치가 있는 경우
 description: 브론즈냐 골드냐는 취향이 아니라 나눗셈입니다. 등급이 실제로 뜻하는 것, 절감량을 kWh로 계산하는 법, 웃돈이 회수되는 조건을 정리했습니다. 로컬 LLM을 상시 돌리면 계산이 달라집니다.
 date: 2026-08-24
 updated: 2026-11-16
-category: gpu
+category: desktop
 tags: [파워서플라이, 80PLUS, 골드, 효율, 전기요금]
 affiliate: false
 ---

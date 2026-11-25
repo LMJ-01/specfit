@@ -26,7 +26,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"컴퓨터가 혼자 켜질 때 — 유령이 아니라 \"깨우라는 신호\"가 있습니다","description":"끈 컴퓨터가 새벽에 저절로 켜져 있거나, 절전이 자꾸 풀리는 증상은 으스스하지만 원인은 논리적입니다. 컴퓨터는 누가 깨웠는지 장부를 남기고, 깨우는 신호의 출처는 몇 갈래로 정해져 있습니다. 확인 순서와 끄는 방법을 정리했습니다.","datePublished":"2026-09-05","dateModified":"2026-10-30","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/pc-turns-on-by-itself.html","image":"https://specfit.kr/assets/og-default.png"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"미니PC","item":"https://specfit.kr/minipc.html"},{"@type":"ListItem","position":3,"name":"컴퓨터가 혼자 켜질 때 — 유령이 아니라 \"깨우라는 신호\"가 있습니다","item":"https://specfit.kr/posts/pc-turns-on-by-itself.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"본체","item":"https://specfit.kr/desktop.html"},{"@type":"ListItem","position":3,"name":"컴퓨터가 혼자 켜질 때 — 유령이 아니라 \"깨우라는 신호\"가 있습니다","item":"https://specfit.kr/posts/pc-turns-on-by-itself.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"악성코드 아닌가요","acceptedAnswer":{"@type":"Answer","text":"가능성이 없진 않지만 확률로는 위 설정 갈래들이 압도적입니다. 불안하면 장부(/lastwake·이벤트 로그)를 먼저 보세요 — 원인이 장치·타이머로 찍혀 있으면 그쪽 이야기이고, 백신 검사는 그것대로 돌려 두면 됩니다. 공포보다 로그가 정확합니다."}},{"@type":"Question","name":"절전이 아예 몇 초 만에 풀려요","acceptedAnswer":{"@type":"Answer","text":"깨우기 소스가 상시 신호를 보내는 상태입니다 — 채터링(연타 신호)을 내는 오래된 마우스, 트래픽에 계속 반응하는 랜카드가 전형입니다. 갈래 ①·②의 설정 해제로 소스를 하나씩 잘라 보세요."}},{"@type":"Question","name":"완전히 꺼도 USB에 불이 들어와 있어요","acceptedAnswer":{"@type":"Answer","text":"고장이 아닙니다 — 꺼진 상태에서도 USB에 대기 전원을 주는 보드가 많습니다(충전용). 바이오스에 끄는 항목이 있는 보드도 있고, 이 대기 전원 자체가 갈래 ④의 \"깨어날 여지\"와 같은 뿌리입니다. 램·케이스·팬의 RGB 조명이 꺼진 뒤에도 남는 것도 같은 대기 전원 이야기입니다. 조명 프로그램(보드·램 제조사의 것)에서 \"꺼졌을 때\" 동작을 끄거나, 바이오스의 대기 전원·조명 관련 항목을 보는 순서이고, 항목 이름과 유무는 보드에 따라 다릅니다. 조명 선의 규격·연결 쪽 이야기는 팬 조명 판정에 있습니다."}},{"@type":"Question","name":"본체 전원 버튼이 이상한 걸까요","acceptedAnswer":{"@type":"Answer","text":"가능은 합니다 — 버튼 접촉 불량이 눌림 신호를 만드는 갈래인데, 설정 갈래를 다 자른 뒤에 남는 마지막 용의자로 두는 게 순서입니다. 케이스의 전원 스위치 커넥터를 보드에서 잠시 빼 두고 재현되는지 보는 것이 격리 진단이 됩니다 (그동안은 보드의 전원 버튼이나 커넥터 단락으로 켭니다 — 익숙하지 않다면 이 단계는 점검 맡기는 쪽이 안전합니다)."}},{"@type":"Question","name":"반대로 절전에 들어가면 키보드·마우스로 안 깨어나요","acceptedAnswer":{"@type":"Answer","text":"이 글의 장부를 거꾸로 보는 문제입니다 — 깨울 권한이 키보드·마우스에 없거나, 그 장치가 꽂힌 USB 포트가 절전 중 전기를 끊는 경우입니다. 장치 관리자의 키보드·마우스 속성에서 \"이 장치를 사용하여 컴퓨터의 대기 모드를 종료할 수 있음\"을 켜고, 전원 옵션의 USB 선택적 절전도 꺼 봅니다. 무선이라면 수신기를 허브 말고 본체에 직접 꽂는 게 먼저고, 보드에 따라 바이오스에 USB로 깨우기 항목이 따로 있습니다. 깨우기를 여럿에 열어 두면 이번엔 혼자 깨는 쪽으로 기울 수 있으니, 실제로 깨울 장치 하나만 여는 게 균형입니다."}},{"@type":"Question","name":"절전에 아예 안 들어가요 — 화면만 꺼지고 본체는 계속 돌아요","acceptedAnswer":{"@type":"Answer","text":"이번엔 깨우는 쪽이 아니라 잠드는 걸 막는 쪽의 장부입니다. 관리자 권한 명령 프롬프트에서 powercfg /requests를 치면, 지금 절전을 붙잡고 있는 앱·드라이버·장치가 항목별로 나옵니다. 영상 재생 중인 브라우저 탭, 화면 공유·원격 프로그램, 소리를 내고 있는 앱, 다운로드 중인 런처가 흔한 이름이고, 그걸 닫은 뒤 같은 명령을 다시 쳐서 비었는지 보면 됩니다. 목록이 비었는데도 안 잠든다면 전원 옵션의 \"절전\" 시간 자체가 \"사용 안 함\"이나 아주 길게 잡혀 있는 건 아닌지 — 화면 끄기 시간과 절전 시간은 따로 정해지는 값입니다."}},{"@type":"Question","name":"노트북은 덮개만 열어도 켜져요","acceptedAnswer":{"@type":"Answer","text":"고장도 혼자 켜짐도 아니라 설계된 기능입니다 — 꺼진 상태에서 덮개를 열면 부팅되도록 출고 때 켜 둔 노트북이 많습니다. 끄는 자리는 제조사마다 다릅니다. 바이오스(설정) 메뉴의 \"덮개 열면 켜기\" 류 항목이거나 제조사 관리 앱 안에 있고, 끄는 항목이 아예 없는 모델도 있습니다. 덮개를 닫을 때 잠들지 않게 하는 윈도우 설정과는 다른 스위치라는 점만 구분하면 됩니다 — 그쪽은 덮개 닫고 쓰는 글 입니다."}},{"@type":"Question","name":"일부러 혼자 켜지게 하고 싶어요","acceptedAnswer":{"@type":"Answer","text":"이 글의 갈래들을 반대로 쓰면 됩니다 — 바이오스 알람으로 아침 자동 켜짐, WOL로 원격 깨우기. 24시간 켜두기와 비교 하면, \"필요할 때만 깨우기\"가 전기 면에서 한 수 위의 구성입니다."}}]}</script>
 </head>
 <body class="is-post">
@@ -45,6 +45,9 @@
       <a href="/laptop.html">노트북</a>
       <a href="/monitor.html">모니터</a>
       <a href="/memory.html">메모리·스토리지</a>
+      <a href="/desktop.html">본체</a>
+      <a href="/input.html">키보드·마우스</a>
+      <a href="/windows.html">윈도우·소리</a>
       <a href="/minipc.html">미니PC</a>
       <a href="/network.html">네트워크</a>
     </nav>
@@ -59,7 +62,7 @@
 <article class="post">
   <nav class="breadcrumb" aria-label="현재 위치">
     <a href="/">홈</a>
-    <span aria-hidden="true">›</span><a href="/minipc.html">미니PC</a>
+    <span aria-hidden="true">›</span><a href="/desktop.html">본체</a>
   </nav>
 
   <header class="post-head">
@@ -263,24 +266,24 @@ on LAN)이 있습니다. 원격 접속용으로는 유용하지만, 쓸 계획�
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
-      <a href="/posts/black-screen-cursor.html">
-        <span class="card-cat">미니PC</span>
-        <span class="card-title">검은 화면에 마우스 커서만 보일 때 — 그 커서가 사건의 증인입니다</span>
-        <span class="card-desc">부팅했는데 검은 화면에 커서만 덩그러니 있는 증상은 겁부터 나지만, 커서가 움직인다는 사실 자체가 절반의 진단입니다. 화면·그래픽·윈도우 핵심은 살아 있고 바탕화면을 그리는 담당자만 출근을 안 한 상태 — 기다리기, 탐색기 재출근, 반복 시 갈래까지 순서를 정리했습니다.</span>
+      <a href="/posts/case-stock-fan.html">
+        <span class="card-cat">본체</span>
+        <span class="card-title">케이스 기본 팬, 교체해야 하나 — 써 보고 &quot;소리&quot;가 거슬릴 때와 &quot;온도&quot;가 높을 때만입니다</span>
+        <span class="card-desc">케이스에 딸려 온 기본 팬을 바로 좋은 팬으로 바꿔야 하나 고민이 됩니다. 대부분은 그냥 써도 되고, 바꿀 이유는 소리와 온도 두 가지뿐인데 처방 순서가 서로 다릅니다. 판정 순서와 교체할 때 확인할 것을 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/pc-slow-boot.html">
-        <span class="card-cat">미니PC</span>
-        <span class="card-title">부팅이 오래 걸릴 때 — 어느 구간에서 머무는지가 범인을 알려줍니다</span>
-        <span class="card-desc">전원을 누르고 바탕화면이 쓸 만해질 때까지 한참 걸리는 증상은 원인 후보가 너무 많아 헤매기 쉽습니다. 부팅을 세 구간(로고 전·로고에서 로그인·로그인 뒤)으로 자르면 구간마다 용의자가 다릅니다 — 시계로 재는 판정과 구간별 처방을 정리했습니다.</span>
+      <a href="/posts/bottom-intake-fan.html">
+        <span class="card-cat">본체</span>
+        <span class="card-title">케이스 하단 흡기 팬, 그래픽카드 온도에 효과 있나 — 앞에서 공기가 모자랄 때만 일합니다</span>
+        <span class="card-desc">케이스 바닥에 흡기 팬을 달면 그래픽카드가 시원해진다는 말과 별 차이 없다는 말이 함께 돕니다. 둘 다 맞을 수 있는 이유, 효과가 큰 케이스와 작은 케이스를 가르는 법, 달기 전에 해 볼 무료 진단까지 정리했습니다.</span>
       </a>
     </li>
     <li class="card">
-      <a href="/posts/front-usb-not-working.html">
-        <span class="card-cat">미니PC</span>
-        <span class="card-title">전면 USB만 안 될 때 — 앞 포트는 연장선 너머에 있습니다</span>
-        <span class="card-desc">본체 뒤 USB는 멀쩡한데 앞 포트만 인식이 안 되거나 끊기는 증상은 게시판 단골 질문입니다. 뒷면은 메인보드 직결, 전면은 케이스 케이블을 한 번 거치는 구조라 용의자가 다릅니다 — 갈래별 판정 순서를 정리했습니다.</span>
+      <a href="/posts/mesh-case-dust.html">
+        <span class="card-cat">본체</span>
+        <span class="card-title">메쉬 케이스, 먼지 많이 들어오나 — 메쉬보다 필터와 놓는 자리가 정합니다</span>
+        <span class="card-desc">온도에는 전면 메쉬가 좋다는데 먼지가 걱정돼 망설여집니다. 메쉬 케이스에 먼지가 조금 더 들어오는 건 맞지만, 실제로 얼마나 쌓이는지는 필터와 놓는 자리가 함께 정합니다. 사기 전에 볼 것과 관리 주기를 정리했습니다.</span>
       </a>
     </li>
   </ul>
