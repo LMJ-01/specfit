@@ -4,6 +4,7 @@ description: 13.6인치 고해상도가 15.6인치 FHD보다 코드가 적게 �
 date: 2026-08-20
 updated: 2026-11-16
 category: laptop
+sub: choose
 tags: [노트북화면, 인치, 해상도, 배율, 개발용노트북]
 affiliate: true
 ---

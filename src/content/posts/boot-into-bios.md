@@ -4,6 +4,7 @@ description: 컴퓨터를 켜면 윈도우 대신 바이오스 설정 화면으�
 date: 2026-09-06
 updated: 2026-11-14
 category: desktop
+sub: power
 tags: [바이오스, 부팅안됨, 부팅순서, CMOS배터리, 윈도우진입]
 ---
 

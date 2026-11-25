@@ -4,6 +4,7 @@ description: 컴퓨터 스피커나 이어폰에서 지지직, 웅, 쏴아 하�
 date: 2026-09-05
 updated: 2026-11-03
 category: windows
+sub: sound
 tags: [스피커노이즈, 지지직, 화이트노이즈, 접지, 오디오]
 ---
 

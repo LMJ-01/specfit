@@ -4,6 +4,7 @@ description: 책상이 좁아서, 또는 그냥 궁금해서 — 듀얼 모니�
 date: 2026-09-07
 updated: 2026-10-28
 category: monitor
+sub: dual
 tags: [듀얼모니터, 상하배치, 모니터배치, 모니터암, 데스크셋업]
 ---
 

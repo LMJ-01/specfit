@@ -4,6 +4,7 @@ description: VRAM 규칙은 NVIDIA와 똑같습니다. 갈리는 건 하드웨�
 date: 2026-08-18
 updated: 2026-11-15
 category: gpu
+sub: llm
 tags: [AMD, 라데온, ROCm, 로컬LLM, 인텔Arc]
 affiliate: true
 ---

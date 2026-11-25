@@ -4,6 +4,7 @@ description: 윈도우 11에서 파일을 우클릭하면 메뉴가 짧아지고
 date: 2026-11-13
 updated: 2026-11-13
 category: windows
+sub: screen
 tags: [우클릭메뉴, 윈도우11, 더많은옵션, 복사붙여넣기, 파일탐색기]
 ---
 

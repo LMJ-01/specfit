@@ -4,6 +4,7 @@ description: 광택(글레어) 패널과 무광(논글레어) 패널 중 뭐가 
 date: 2026-09-01
 updated: 2026-11-18
 category: monitor
+sub: choose
 tags: [글레어, 논글레어, 무광패널, 모니터코팅, 눈피로]
 ---
 

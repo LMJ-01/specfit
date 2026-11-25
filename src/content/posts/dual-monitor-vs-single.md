@@ -4,6 +4,7 @@ description: 두 대로 넓히면 세로는 그대로입니다. 코드를 더 �
 date: 2026-08-16
 updated: 2026-11-17
 category: monitor
+sub: dual
 tags: [듀얼모니터, 모니터, 코딩용모니터, 해상도, 32인치]
 affiliate: true
 ---

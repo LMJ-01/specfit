@@ -4,6 +4,7 @@ description: 노트북에서 램은 못 늘리는 모델이 많지만 SSD는 바
 date: 2026-08-16
 updated: 2026-11-17
 category: memory
+sub: ssd
 tags: [노트북SSD, SSD교체, NVMe, M.2, 개발용노트북]
 affiliate: true
 ---

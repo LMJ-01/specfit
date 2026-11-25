@@ -4,6 +4,7 @@ description: 케이스 팬을 더 달아야 하는지, 흡기·배기는 어떻�
 date: 2026-09-01
 updated: 2026-11-01
 category: desktop
+sub: cooling
 tags: [케이스팬, 흡기배기, 쿨링, 데스크톱조립, 발열관리]
 ---
 

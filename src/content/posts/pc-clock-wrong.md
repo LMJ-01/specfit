@@ -4,6 +4,7 @@ description: 컴퓨터 시간이 몇 분씩 어긋나거나, 껐다 켜면 몇 �
 date: 2026-09-17
 updated: 2026-11-22
 category: desktop
+sub: care
 tags: [컴퓨터시계, 시간동기화, CMOS배터리, 시간대, 윈도우설정]
 ---
 

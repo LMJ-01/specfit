@@ -4,6 +4,7 @@ description: 섞어 쓰면 세 가지가 생깁니다. 경계에서 커서가 �
 date: 2026-08-24
 updated: 2026-11-08
 category: monitor
+sub: dual
 tags: [듀얼모니터, 해상도, 배율, DPI, 멀티모니터]
 affiliate: true
 ---

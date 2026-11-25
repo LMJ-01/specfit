@@ -4,6 +4,7 @@ description: 메신저나 메일이 왔는데 화면 오른쪽 아래에 아무�
 date: 2026-11-13
 updated: 2026-11-13
 category: windows
+sub: screen
 tags: [윈도우알림, 알림안뜸, 방해금지, 집중지원, 알림센터]
 ---
 

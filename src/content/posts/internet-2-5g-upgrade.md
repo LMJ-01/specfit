@@ -4,6 +4,7 @@ description: 요금제를 2.5G로 올렸는데 속도는 그대로인 경우가 
 date: 2026-09-01
 updated: 2026-11-18
 category: network
+sub: internet
 tags: [2.5기가인터넷, 스위칭허브, 공유기, 랜카드, 홈네트워크]
 ---
 

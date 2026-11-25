@@ -4,6 +4,7 @@ description: 어댑터를 뽑으면 노트북이 눈에 띄게 느려지는 건 
 date: 2026-09-06
 updated: 2026-11-20
 category: laptop
+sub: care
 tags: [노트북느려짐, 배터리모드, 전원모드, 어댑터와트, 스로틀링]
 ---
 

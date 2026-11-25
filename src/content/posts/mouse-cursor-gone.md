@@ -4,6 +4,7 @@ description: 화면에서 마우스 커서가 안 보입니다. 다른 화면으
 date: 2026-11-06
 updated: 2026-11-24
 category: input
+sub: mouse
 tags: [마우스커서, 커서사라짐, 마우스포인터, 듀얼모니터, 터치패드]
 ---
 

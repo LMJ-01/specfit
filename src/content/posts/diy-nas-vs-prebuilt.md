@@ -4,6 +4,7 @@ description: 미니PC나 남는 컴퓨터로 NAS를 직접 만들 수 있다는 
 date: 2026-09-01
 updated: 2026-11-05
 category: network
+sub: gear
 tags: [NAS, 자작NAS, 미니PC, 홈서버, 네트워크저장소]
 ---
 

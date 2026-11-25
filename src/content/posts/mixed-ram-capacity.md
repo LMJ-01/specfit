@@ -4,6 +4,7 @@ description: 8GB에 16GB를 더 꽂는 식의 혼용이 되는지, 성능은 어
 date: 2026-09-02
 updated: 2026-11-22
 category: memory
+sub: ram
 tags: [램혼용, 듀얼채널, 램증설, 플렉스모드, 메모리]
 ---
 

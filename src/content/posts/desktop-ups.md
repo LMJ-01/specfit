@@ -4,6 +4,7 @@ description: 정전 대비 장치가 개인 컴퓨터에도 필요할까요. 대
 date: 2026-08-25
 updated: 2026-09-29
 category: desktop
+sub: psu
 tags: [UPS, 무정전전원장치, 정전, 데스크톱, 홈서버]
 affiliate: true
 ---

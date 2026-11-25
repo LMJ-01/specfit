@@ -4,6 +4,7 @@ description: 모니터 두 대의 색이 다른 것은 고장이 아니라 패�
 date: 2026-09-04
 updated: 2026-10-25
 category: monitor
+sub: dual
 tags: [듀얼모니터, 색감차이, 색맞추기, 캘리브레이션, 모니터설정]
 ---
 

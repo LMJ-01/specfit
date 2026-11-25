@@ -4,6 +4,7 @@ description: 타워형 CPU 쿨러를 달 때 바람을 뒤로 보낼지 위로 �
 date: 2026-10-29
 updated: 2026-10-29
 category: desktop
+sub: cooling
 tags: [CPU쿨러방향, 타워쿨러, 공랭쿨러, 케이스배기, 쿨러장착]
 ---
 

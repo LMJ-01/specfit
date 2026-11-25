@@ -4,6 +4,7 @@ description: 포트가 두 개인데 한 대만 나오는 이유가 있습니다
 date: 2026-08-18
 updated: 2026-11-17
 category: monitor
+sub: dual
 tags: [듀얼모니터, 도킹스테이션, MST, DisplayLink, 노트북]
 affiliate: true
 ---

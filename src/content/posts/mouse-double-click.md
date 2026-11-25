@@ -4,6 +4,7 @@ description: 마우스를 한 번 클릭했는데 창이 두 개 열리고, 드�
 date: 2026-09-21
 updated: 2026-11-10
 category: input
+sub: mouse
 tags: [마우스더블클릭, 채터링, 마우스고장, 스위치, 드래그끊김]
 ---
 

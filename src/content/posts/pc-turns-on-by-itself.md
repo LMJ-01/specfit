@@ -4,6 +4,7 @@ description: 끈 컴퓨터가 새벽에 저절로 켜져 있거나, 절전이 �
 date: 2026-09-05
 updated: 2026-10-30
 category: desktop
+sub: power
 tags: [컴퓨터혼자켜짐, 절전해제, WOL, 빠른시작, 전원설정]
 ---
 

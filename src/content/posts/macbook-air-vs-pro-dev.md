@@ -4,6 +4,7 @@ description: M5 에어와 프로는 메모리 한계와 대역폭이 다릅니�
 date: 2026-08-15
 updated: 2026-11-15
 category: laptop
+sub: choose
 tags: [맥북에어, 맥북프로, M5, 개발용노트북, 로컬LLM]
 affiliate: true
 ---

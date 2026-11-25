@@ -4,6 +4,7 @@ description: 폰에서는 멀쩡한 블루투스 이어폰이 노트북·컴퓨�
 date: 2026-09-06
 updated: 2026-11-05
 category: windows
+sub: sound
 tags: [블루투스이어폰, 소리끊김, 24GHz간섭, 절전설정, 노트북]
 ---
 

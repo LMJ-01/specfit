@@ -4,6 +4,7 @@ description: 공유기를 몇 년마다 바꿔야 하는지, 오래된 공유기
 date: 2026-09-08
 updated: 2026-09-26
 category: network
+sub: gear
 tags: [공유기수명, 공유기교체, 공유기노후, 홈네트워크, 교체시기]
 ---
 

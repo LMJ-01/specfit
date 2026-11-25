@@ -4,6 +4,7 @@ description: 파일을 더블클릭했는데 열리지 않고 속성 창이 뜹�
 date: 2026-11-09
 updated: 2026-11-13
 category: input
+sub: keyboard
 tags: [더블클릭속성, Alt키, 키눌림, 고정키, 키보드오류]
 ---
 

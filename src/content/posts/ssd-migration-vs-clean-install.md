@@ -4,6 +4,7 @@ description: SSD를 바꿀 때 윈도우를 통째로 옮길지 새로 깔지 �
 date: 2026-09-04
 updated: 2026-11-20
 category: memory
+sub: ssd
 tags: [SSD교체, 마이그레이션, 클린설치, 윈도우설치, SSD업그레이드]
 ---
 

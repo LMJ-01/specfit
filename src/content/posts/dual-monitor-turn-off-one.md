@@ -4,6 +4,7 @@ description: 게임이나 영화 볼 때 보조 모니터만 잠깐 끄고 싶�
 date: 2026-09-09
 updated: 2026-11-23
 category: monitor
+sub: dual
 tags: [듀얼모니터, 모니터끄기, 보조모니터, 디스플레이설정, 게임환경]
 ---
 

@@ -4,6 +4,7 @@ description: 낮에는 쌩쌩한 인터넷이 저녁 8시쯤부터 느려지고 
 date: 2026-09-07
 updated: 2026-10-08
 category: network
+sub: internet
 tags: [인터넷느려짐, 저녁인터넷, 혼잡시간대, 속도측정, 통신사문의]
 ---
 

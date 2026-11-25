@@ -4,6 +4,7 @@ description: 케이블 하나로 화면·충전·허브를 다 하려면 세 가
 date: 2026-08-17
 updated: 2026-11-17
 category: monitor
+sub: choose
 tags: [USB-C, 원케이블, 모니터, PD충전, 개발용노트북]
 affiliate: true
 ---

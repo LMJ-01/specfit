@@ -4,6 +4,7 @@ description: 32GB는 개인용 신품 그래픽카드의 천장입니다. 32B를
 date: 2026-08-18
 updated: 2026-11-15
 category: gpu
+sub: llm
 tags: [RTX5090, VRAM, 로컬LLM, 32GB, 파워서플라이]
 affiliate: true
 ---

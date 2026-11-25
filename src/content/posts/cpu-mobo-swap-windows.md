@@ -4,6 +4,7 @@ description: 보드를 바꾸면 윈도우를 재설치해야 한다는 관습�
 date: 2026-09-04
 updated: 2026-11-19
 category: desktop
+sub: care
 tags: [메인보드교체, CPU교체, 윈도우재설치, 정품인증, 업그레이드]
 ---
 

@@ -4,6 +4,7 @@ description: 겨울마다 컴퓨터 옆에 가습기를 둬도 되는지 묻는 
 date: 2026-09-08
 updated: 2026-10-08
 category: desktop
+sub: care
 tags: [가습기, 컴퓨터배치, 습도관리, 백분현상, 데스크셋업]
 ---
 

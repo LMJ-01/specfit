@@ -4,6 +4,7 @@ description: 잘 쓰던 듀얼 모니터에서 한쪽만 화면이 안 나오는
 date: 2026-09-05
 updated: 2026-11-23
 category: monitor
+sub: dual
 tags: [듀얼모니터, 화면안나옴, 신호없음, 모니터인식, 케이블]
 ---
 

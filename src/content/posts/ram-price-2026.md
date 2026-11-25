@@ -4,6 +4,7 @@ description: AI 서버 수요로 D램 값이 2026년 들어 크게 올랐습니�
 date: 2026-08-16
 updated: 2026-11-16
 category: memory
+sub: ram
 tags: [램, DDR5, 램가격, D램, 개발용PC]
 affiliate: true
 ---

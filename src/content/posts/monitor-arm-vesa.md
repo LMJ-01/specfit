@@ -4,6 +4,7 @@ description: 나사 구멍 간격이 맞아도 안 되는 경우가 세 가지 �
 date: 2026-08-18
 updated: 2026-11-18
 category: monitor
+sub: choose
 tags: [모니터암, VESA, 듀얼모니터, 세로모니터, 코딩용모니터]
 affiliate: true
 ---

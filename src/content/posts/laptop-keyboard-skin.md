@@ -4,6 +4,7 @@ description: 노트북 키스킨을 두고 발열 때문에 쓰지 말라는 쪽
 date: 2026-09-12
 updated: 2026-11-24
 category: laptop
+sub: care
 tags: [키스킨, 노트북발열, 키보드커버, 노트북관리, 노트북액세서리]
 ---
 

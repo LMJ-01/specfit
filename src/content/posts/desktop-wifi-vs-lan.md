@@ -4,6 +4,7 @@ description: 컴퓨터 자리에 랜선이 안 닿으면 와이파이로 버티�
 date: 2026-09-04
 updated: 2026-11-21
 category: network
+sub: internet
 tags: [유선랜, 와이파이, 데스크탑, 게임핑, 무선랜카드]
 ---
 

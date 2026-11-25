@@ -4,6 +4,7 @@ description: USB 허브에 꽂은 외장하드가 인식이 안 되거나 끊기
 date: 2026-09-15
 updated: 2026-11-09
 category: memory
+sub: usb
 tags: [USB허브, 외장하드, 무전원, 유전원, 인식불량]
 ---
 

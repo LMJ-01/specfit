@@ -4,6 +4,7 @@ description: 노트북 RTX 5070은 8GB 구성이 있고, 데스크톱 5070은 12
 date: 2026-08-15
 updated: 2026-11-15
 category: laptop
+sub: choose
 tags: [노트북, 로컬LLM, VRAM, RTX50, 개발용노트북]
 affiliate: true
 ---

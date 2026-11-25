@@ -4,6 +4,7 @@ description: 부팅했는데 검은 화면에 커서만 덩그러니 있는 증�
 date: 2026-09-29
 updated: 2026-11-14
 category: windows
+sub: screen
 tags: [검은화면, 커서만보임, 탐색기, 부팅오류, 안전모드]
 ---
 

@@ -4,6 +4,7 @@ description: 안드로이드 스튜디오는 IDE보다 에뮬레이터가 램을
 date: 2026-08-16
 updated: 2026-11-16
 category: laptop
+sub: choose
 tags: [안드로이드스튜디오, 에뮬레이터, 개발용노트북, 램, 안드로이드개발]
 affiliate: true
 ---

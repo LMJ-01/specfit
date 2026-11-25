@@ -4,6 +4,7 @@ description: 외장하드가 꽉 차면 NAS를 검색하게 되는데, NAS는 �
 date: 2026-09-01
 updated: 2026-11-19
 category: network
+sub: gear
 tags: [NAS, 외장하드, 홈서버, 네트워크저장소, 백업]
 ---
 

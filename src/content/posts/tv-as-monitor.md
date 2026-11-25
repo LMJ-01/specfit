@@ -4,6 +4,7 @@ description: 안 쓰는 TV를 책상에 올려도 될까요. 밀도(PPI)는 의�
 date: 2026-08-25
 updated: 2026-10-10
 category: monitor
+sub: choose
 tags: [TV모니터, 크로마서브샘플링, 4K, PPI, HDMI]
 ---
 

@@ -4,6 +4,7 @@ description: 창을 옮기려고 끌었는데 화면 끝에 닿자마자 절반 
 date: 2026-11-12
 updated: 2026-11-12
 category: windows
+sub: screen
 tags: [창맞춤, 화면분할, 창달라붙음, 윈도우11, 멀티태스킹]
 ---
 

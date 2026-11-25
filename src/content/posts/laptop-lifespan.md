@@ -4,6 +4,7 @@ description: 노트북 수명을 물으면 2년부터 10년까지 답이 갈립�
 date: 2026-09-01
 updated: 2026-10-20
 category: laptop
+sub: care
 tags: [노트북수명, 교체시기, 배터리, 업그레이드, 중고노트북]
 ---
 

@@ -4,6 +4,7 @@ description: 27인치 5K는 200% 배율에서 작업 영역이 정확히 QHD가 
 date: 2026-08-17
 updated: 2026-11-16
 category: monitor
+sub: choose
 tags: [5K모니터, 4K모니터, PPI, 배율, 코딩용모니터]
 affiliate: true
 ---

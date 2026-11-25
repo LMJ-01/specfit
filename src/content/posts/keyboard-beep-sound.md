@@ -4,6 +4,7 @@ description: 키를 누를 때마다 컴퓨터에서 삑 소리가 납니다. �
 date: 2026-11-10
 updated: 2026-11-11
 category: input
+sub: keyboard
 tags: [키보드삑소리, 고정키, 필터키, 토글키, 윈도우접근성]
 ---
 

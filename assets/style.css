@@ -629,6 +629,20 @@ tbody tr:last-child td {
 .home-sec {
   margin-top: 2.6rem;
 }
+/* 카테고리 안의 작은 분류 묶음(2026-11-25). 위에 고정된 머리글에 제목이 가리지 않게 여백을 둡니다. */
+.sub-sec {
+  margin-top: 2.2rem;
+  scroll-margin-top: 7rem;
+}
+.sub-sec > h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.15rem;
+}
+@media (max-width: 640px) {
+  .sub-sec {
+    scroll-margin-top: 1rem;
+  }
+}
 .home-sec > h2 {
   margin: 0 0 0.9rem;
   padding-top: 0;

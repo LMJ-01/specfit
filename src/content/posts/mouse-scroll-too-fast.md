@@ -4,6 +4,7 @@ description: 휠을 한 칸만 굴렸는데 화면이 한참 내려가거나, �
 date: 2026-11-10
 updated: 2026-11-16
 category: input
+sub: mouse
 tags: [마우스휠, 스크롤속도, 휠스크롤, 프리스핀, 부드러운스크롤]
 ---
 

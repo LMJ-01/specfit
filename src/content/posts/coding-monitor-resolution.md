@@ -4,6 +4,7 @@ description: 코딩에서 갈리는 건 주사율이나 색재현율이 아니�
 date: 2026-08-15
 updated: 2026-11-17
 category: monitor
+sub: choose
 tags: [모니터, 코딩용모니터, 4K, QHD, PPI]
 affiliate: true
 ---

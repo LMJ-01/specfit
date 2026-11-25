@@ -4,6 +4,7 @@ description: 게임은 잘 돌아가는데 녹화나 방송을 켜는 순간 프
 date: 2026-09-24
 updated: 2026-10-23
 category: gpu
+sub: game
 tags: [게임녹화, 프레임드랍, 인코더, 방송설정, 하드웨어인코딩]
 ---
 

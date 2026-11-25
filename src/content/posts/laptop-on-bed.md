@@ -4,6 +4,7 @@ description: 침대나 이불 위에서 노트북을 쓰면 고장 난다는 말
 date: 2026-09-19
 updated: 2026-11-12
 category: laptop
+sub: care
 tags: [노트북발열, 침대사용, 이불, 흡기구, 노트북과열]
 ---
 

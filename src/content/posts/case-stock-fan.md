@@ -4,6 +4,7 @@ description: 케이스에 딸려 온 기본 팬을 바로 좋은 팬으로 바�
 date: 2026-11-01
 updated: 2026-11-01
 category: desktop
+sub: cooling
 tags: [케이스기본팬, 케이스팬교체, 팬소음, 케이스쿨링, PWM팬]
 ---
 

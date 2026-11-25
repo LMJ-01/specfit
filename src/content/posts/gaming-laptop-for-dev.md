@@ -4,6 +4,7 @@ description: 확장성과 냉각은 게이밍 노트북이 확실히 낫습니�
 date: 2026-08-17
 updated: 2026-11-17
 category: laptop
+sub: choose
 tags: [게이밍노트북, 개발용노트북, 로컬LLM, 램슬롯, 냉각]
 affiliate: true
 ---

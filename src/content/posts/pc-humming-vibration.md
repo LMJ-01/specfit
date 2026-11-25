@@ -4,6 +4,7 @@ description: 컴퓨터에서 웅웅·지잉 하는 떨림 소리가 나고, 본�
 date: 2026-09-13
 updated: 2026-10-04
 category: desktop
+sub: cooling
 tags: [본체소음, 공진음, 웅웅소리, 케이스떨림, 진동소음]
 ---
 

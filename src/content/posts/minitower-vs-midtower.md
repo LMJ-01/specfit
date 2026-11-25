@@ -4,6 +4,7 @@ description: 책상이 좁아서, 혹은 큰 케이스가 부담스러워서 미
 date: 2026-10-28
 updated: 2026-10-28
 category: desktop
+sub: care
 tags: [미니타워, 미들타워, 케이스크기, MATX, 케이스선택]
 ---
 

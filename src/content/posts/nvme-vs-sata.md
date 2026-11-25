@@ -4,6 +4,7 @@ description: M.2 슬롯에 꽂히는 SSD라고 다 빠른 게 아닙니다. 생�
 date: 2026-08-16
 updated: 2026-11-17
 category: memory
+sub: ssd
 tags: [NVMe, SATA, SSD, M.2, 개발용PC]
 affiliate: true
 ---

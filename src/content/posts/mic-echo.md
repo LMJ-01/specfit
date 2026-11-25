@@ -4,6 +4,7 @@ description: 디스코드나 화상회의에서 목소리가 메아리처럼 울
 date: 2026-09-28
 updated: 2026-10-19
 category: windows
+sub: sound
 tags: [마이크에코, 소리울림, 디스코드, 하울링, 헤드셋]
 ---
 

@@ -4,6 +4,7 @@ description: 5·7·9 중 어느 등급을 살지, 같은 등급인데 성능이 
 date: 2026-08-16
 updated: 2026-11-17
 category: laptop
+sub: choose
 tags: [노트북CPU, 코어울트라, 라이젠, NPU, 개발용노트북]
 affiliate: true
 ---

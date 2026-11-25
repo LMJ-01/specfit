@@ -4,6 +4,7 @@ description: 컴퓨터 케이스를 만질 때 찌릿한 경험은 겨울 단골
 date: 2026-09-09
 updated: 2026-11-01
 category: desktop
+sub: psu
 tags: [정전기, 컴퓨터찌릿, 접지, 누설전류, 전기안전]
 ---
 

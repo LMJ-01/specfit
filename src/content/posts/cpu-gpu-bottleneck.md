@@ -4,6 +4,7 @@ description: 조합을 정할 때마다 병목 걱정이 따라옵니다. 병목
 date: 2026-09-03
 updated: 2026-11-19
 category: gpu
+sub: game
 tags: [병목현상, CPU병목, 조합, 그래픽카드, 업그레이드]
 ---
 

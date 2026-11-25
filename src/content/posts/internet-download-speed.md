@@ -4,6 +4,7 @@ description: 500메가 요금제를 쓰는데 다운로드 창에는 60MB/s만 �
 date: 2026-09-05
 updated: 2026-10-11
 category: network
+sub: internet
 tags: [인터넷속도, 다운로드속도, Mbps, 기가인터넷, 속도측정]
 ---
 

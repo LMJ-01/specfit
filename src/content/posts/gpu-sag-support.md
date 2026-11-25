@@ -4,6 +4,7 @@ description: 요즘 상급 카드는 무거워서 끝이 처집니다. 어느 �
 date: 2026-08-25
 updated: 2026-10-03
 category: gpu
+sub: card
 tags: [그래픽카드지지대, 새그, GPU처짐, 조립, PCIe]
 affiliate: true
 ---

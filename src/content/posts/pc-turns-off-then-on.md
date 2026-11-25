@@ -4,6 +4,7 @@ description: 전원 버튼을 눌렀는데 잠깐 돌다 꺼지고, 잠시 뒤 �
 date: 2026-09-18
 updated: 2026-11-20
 category: desktop
+sub: power
 tags: [컴퓨터재부팅, 켜졌다꺼짐, XMP, 부팅문제, 전원문제]
 ---
 

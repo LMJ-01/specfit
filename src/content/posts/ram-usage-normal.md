@@ -4,6 +4,7 @@ description: 작업 관리자의 램 사용률이 높으면 불안해집니다. 
 date: 2026-09-04
 updated: 2026-10-22
 category: memory
+sub: ram
 tags: [램사용률, 메모리점유율, 작업관리자, 램부족, 메모리관리]
 ---
 

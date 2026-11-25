@@ -4,6 +4,7 @@ description: 케이스 팬 여러 개 중 하나만 불이 안 들어오거나 �
 date: 2026-10-05
 updated: 2026-10-28
 category: desktop
+sub: cooling
 tags: [팬RGB, ARGB, RGB안켜짐, 케이스팬, RGB허브]
 ---
 

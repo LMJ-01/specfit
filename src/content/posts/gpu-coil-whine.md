@@ -4,6 +4,7 @@ description: 게임이나 고부하 작업 때 그래픽카드 쪽에서 찌르�
 date: 2026-09-01
 updated: 2026-11-18
 category: gpu
+sub: card
 tags: [코일노이즈, 그래픽카드소음, 고주파, GPU, 코일떨림]
 ---
 

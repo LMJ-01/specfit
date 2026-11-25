@@ -4,6 +4,7 @@ description: 게임 좀 하면 방이 후끈해지고, 에어컨 없는 컴퓨�
 date: 2026-09-07
 updated: 2026-09-10
 category: desktop
+sub: cooling
 tags: [컴퓨터발열, 방온도, 여름컴퓨터, 소비전력, 컴퓨터방]
 ---
 

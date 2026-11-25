@@ -4,6 +4,7 @@ description: 외장 그래픽 박스는 대역폭 병목 때문에 게임에서 
 date: 2026-08-25
 updated: 2026-11-18
 category: gpu
+sub: llm
 tags: [eGPU, 썬더볼트, 로컬LLM, 노트북, 외장그래픽]
 affiliate: true
 ---

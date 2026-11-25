@@ -4,6 +4,7 @@ description: PCIe 5.0은 Gen4의 두 배 속도지만 개발 작업에서는 체
 date: 2026-08-15
 updated: 2026-11-17
 category: memory
+sub: ssd
 tags: [SSD, NVMe, PCIe5, 개발용PC, 로컬LLM]
 affiliate: true
 ---

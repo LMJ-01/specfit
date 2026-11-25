@@ -4,6 +4,7 @@ description: 신형이 나오면 이월된 작년 모델이 눈에 들어옵니�
 date: 2026-09-04
 updated: 2026-10-18
 category: laptop
+sub: choose
 tags: [이월노트북, 작년모델, 노트북구매, 구형신품, 세대차이]
 ---
 

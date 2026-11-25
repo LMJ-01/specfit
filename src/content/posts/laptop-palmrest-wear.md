@@ -4,6 +4,7 @@ description: 노트북 키보드 아래 손목이 닿는 자리(팜레스트)가
 date: 2026-10-03
 updated: 2026-11-24
 category: laptop
+sub: care
 tags: [노트북팜레스트, 노트북변색, 코팅벗겨짐, 노트북끈적임, 노트북외관관리]
 ---
 

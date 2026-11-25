@@ -4,6 +4,7 @@ description: 풀 모듈러, 세미 모듈러, 논 모듈러 중 뭘 사야 하�
 date: 2026-09-03
 updated: 2026-10-16
 category: desktop
+sub: psu
 tags: [모듈러파워, 파워서플라이, 케이블정리, 조립PC, 세미모듈러]
 ---
 

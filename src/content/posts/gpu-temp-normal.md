@@ -4,6 +4,7 @@ description: 게임 중 온도를 봤다가 80도에 놀라 검색하게 됩니�
 date: 2026-09-04
 updated: 2026-11-03
 category: gpu
+sub: card
 tags: [그래픽카드온도, GPU온도, 발열, 스로틀링, 핫스팟]
 ---
 

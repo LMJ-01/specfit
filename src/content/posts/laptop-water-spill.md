@@ -4,6 +4,7 @@ description: 키보드에 물이나 커피를 쏟은 직후의 몇 분이 수리
 date: 2026-09-05
 updated: 2026-11-20
 category: laptop
+sub: care
 tags: [노트북침수, 물쏟음, 키보드, 노트북수리, 응급대처]
 ---
 

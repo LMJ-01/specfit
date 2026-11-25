@@ -4,6 +4,7 @@ description: 맥은 램이 VRAM 역할까지 합니다. 그런데 전체를 다 
 date: 2026-08-15
 updated: 2026-11-15
 category: laptop
+sub: choose
 tags: [맥북, 애플실리콘, 통합메모리, 로컬LLM, M5]
 affiliate: true
 ---

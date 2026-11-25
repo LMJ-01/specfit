@@ -4,6 +4,7 @@ description: 무선 마우스 커서가 순간순간 멈추거나 튀는 증상�
 date: 2026-09-05
 updated: 2026-11-10
 category: input
+sub: mouse
 tags: [무선마우스, 커서끊김, 동글, 전파간섭, 블루투스]
 ---
 

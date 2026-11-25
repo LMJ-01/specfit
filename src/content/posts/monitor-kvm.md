@@ -4,6 +4,7 @@ description: 재택하면 책상에 컴퓨터가 두 대가 됩니다. 모니터
 date: 2026-08-25
 updated: 2026-10-17
 category: monitor
+sub: choose
 tags: [KVM, 모니터, 재택근무, USB허브, 듀얼PC]
 affiliate: true
 ---

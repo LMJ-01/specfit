@@ -4,6 +4,7 @@ description: 모니터 화면이 어느 날 누렇게, 종이색처럼 변해서
 date: 2026-09-22
 updated: 2026-11-22
 category: monitor
+sub: trouble
 tags: [화면누렇게, 야간모드, 색온도, 리더모드, 모니터색감]
 ---
 

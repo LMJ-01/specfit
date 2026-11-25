@@ -4,6 +4,7 @@ description: 램을 두 장 꽂았다고 듀얼 채널이 되는 게 아닙니�
 date: 2026-08-21
 updated: 2026-11-14
 category: memory
+sub: ram
 tags: [듀얼채널, 램, CPU-Z, 메모리대역폭, DDR5]
 affiliate: true
 ---

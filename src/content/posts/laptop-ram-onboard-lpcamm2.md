@@ -4,6 +4,7 @@ description: 최근 얇은 노트북은 램이 납땜되어 있어 교체가 불
 date: 2026-08-15
 updated: 2026-11-14
 category: memory
+sub: ram
 tags: [노트북램, 온보드, LPCAMM2, LPDDR5X, 개발용노트북]
 affiliate: true
 ---

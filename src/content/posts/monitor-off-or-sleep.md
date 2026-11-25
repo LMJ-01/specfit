@@ -4,6 +4,7 @@ description: 컴퓨터를 끌 때 모니터 전원도 같이 눌러 꺼야 하�
 date: 2026-09-06
 updated: 2026-10-25
 category: monitor
+sub: choose
 tags: [모니터절전, 모니터수명, 전원끄기, 대기전력, 모니터관리]
 ---
 

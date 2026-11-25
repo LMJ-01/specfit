@@ -4,6 +4,7 @@ description: 노트북 바닥이 들뜨거나 터치패드가 솟아오르면 �
 date: 2026-11-04
 updated: 2026-11-04
 category: laptop
+sub: care
 tags: [노트북배터리, 배터리부풀음, 배터리팽창, 스웰링, 노트북안전]
 ---
 

@@ -4,6 +4,7 @@ description: 같은 CPU인데 F가 붙으면 내장그래픽이 빠지고 값이
 date: 2026-09-04
 updated: 2026-11-19
 category: desktop
+sub: care
 tags: [CPU, F모델, 내장그래픽, 조립PC, 부품선택]
 ---
 

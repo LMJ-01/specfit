@@ -4,6 +4,7 @@ description: 쓰다 보면 모니터가 한 번씩 1초쯤 까맣게 꺼졌다�
 date: 2026-10-01
 updated: 2026-10-06
 category: monitor
+sub: trouble
 tags: [모니터꺼졌다켜짐, 화면깜빡임, 신호없음, 모니터케이블, 모니터전원]
 ---
 

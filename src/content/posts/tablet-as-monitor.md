@@ -4,6 +4,7 @@ description: 집에 있는 태블릿을 노트북 옆 보조 화면으로 쓸 �
 date: 2026-09-04
 updated: 2026-11-20
 category: monitor
+sub: choose
 tags: [태블릿, 보조모니터, 듀얼모니터, 세컨드스크린, 아이패드]
 ---
 

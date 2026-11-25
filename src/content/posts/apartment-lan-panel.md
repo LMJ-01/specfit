@@ -4,6 +4,7 @@ description: 방 랜포트가 죽어 있거나 속도가 100Mbps에 막힐 때, 
 date: 2026-09-01
 updated: 2026-11-25
 category: network
+sub: gear
 tags: [단자함, 아파트인터넷, 기가인터넷, 스위칭허브, 홈네트워크]
 ---
 

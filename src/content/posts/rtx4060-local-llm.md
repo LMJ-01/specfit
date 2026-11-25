@@ -4,6 +4,7 @@ description: 가장 흔한 입문 카드인 RTX 4060의 VRAM은 8GB입니다. �
 date: 2026-08-15
 updated: 2026-11-17
 category: gpu
+sub: llm
 tags: [RTX4060, 로컬LLM, VRAM, 8GB, Ollama]
 affiliate: true
 ---

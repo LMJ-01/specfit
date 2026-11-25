@@ -4,6 +4,7 @@ description: 고주사율 모니터에 60Hz를 보조로 붙이면 144가 60으�
 date: 2026-09-06
 updated: 2026-10-05
 category: monitor
+sub: dual
 tags: [주사율혼용, 144Hz, 듀얼모니터, 모니터설정, 게이밍모니터]
 ---
 

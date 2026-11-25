@@ -4,6 +4,7 @@ description: 노트북은 부품 대부분을 나중에 못 바꿉니다. 램, �
 date: 2026-08-15
 updated: 2026-11-17
 category: laptop
+sub: choose
 tags: [개발용노트북, 노트북사양, 램, 로컬LLM, 해상도]
 affiliate: true
 ---

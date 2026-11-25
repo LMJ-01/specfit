@@ -4,6 +4,7 @@ description: 게임 중에만 컴퓨터가 툭 꺼지거나 혼자 재부팅되�
 date: 2026-09-05
 updated: 2026-11-20
 category: desktop
+sub: power
 tags: [컴퓨터꺼짐, 게임중꺼짐, 재부팅, 파워, 과열]
 ---
 

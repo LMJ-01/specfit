@@ -4,6 +4,7 @@ description: 컴퓨터 청소 주기를 물으면 몇 달에 한 번이라는 �
 date: 2026-09-04
 updated: 2026-10-31
 category: desktop
+sub: care
 tags: [먼지청소, 본체청소, 컴퓨터관리, 발열, PC청소]
 ---
 

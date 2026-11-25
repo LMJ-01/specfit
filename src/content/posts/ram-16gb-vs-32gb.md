@@ -4,6 +4,7 @@ description: 32GB를 사라는 답은 쓸모가 적습니다. 로컬 LLM에서 �
 date: 2026-08-15
 updated: 2026-11-15
 category: memory
+sub: ram
 tags: [RAM, 메모리, 로컬LLM, 개발용PC, DDR5]
 affiliate: true
 ---

@@ -4,6 +4,7 @@ description: 온도가 걱정되면 옆판을 열어두고 싶어집니다. 그�
 date: 2026-09-05
 updated: 2026-10-31
 category: desktop
+sub: care
 tags: [케이스, 옆판개방, 쿨링, 기류, 먼지]
 ---
 

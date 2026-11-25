@@ -4,6 +4,7 @@ description: 백업 이야기는 늘 "다 복사하라"로 끝나는데, 개발�
 date: 2026-08-30
 updated: 2026-11-18
 category: memory
+sub: ssd
 tags: [백업, 외장하드, SSD, 데이터보관, 3-2-1]
 ---
 

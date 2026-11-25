@@ -4,6 +4,7 @@ description: 게임 중 화면이 툭 꺼지고 모니터에 신호 없음이 �
 date: 2026-09-19
 updated: 2026-11-17
 category: gpu
+sub: game
 tags: [신호없음, 모니터꺼짐, 게임중꺼짐, 그래픽카드, 드라이버]
 ---
 

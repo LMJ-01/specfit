@@ -4,6 +4,7 @@ description: 책상 아래가 좁거나 선반에 넣고 싶어서 본체를 눕
 date: 2026-09-06
 updated: 2026-11-21
 category: desktop
+sub: care
 tags: [본체눕히기, 케이스방향, 그래픽카드처짐, 케이스통풍, 책상배치]
 ---
 

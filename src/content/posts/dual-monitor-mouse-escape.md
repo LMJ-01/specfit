@@ -4,6 +4,7 @@ description: 듀얼 모니터로 게임하다 마우스가 옆 화면으로 빠�
 date: 2026-09-05
 updated: 2026-11-03
 category: monitor
+sub: dual
 tags: [듀얼모니터, 마우스이탈, 전체화면, 테두리없는창, 게임설정]
 ---
 

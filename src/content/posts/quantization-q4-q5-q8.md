@@ -4,6 +4,7 @@ description: Q8이 Q4보다 용량을 73% 더 씁니다. 그 대가로 얻는 �
 date: 2026-08-15
 updated: 2026-10-07
 category: memory
+sub: ram
 tags: [양자화, Q4, 로컬LLM, VRAM, Ollama]
 affiliate: true
 ---

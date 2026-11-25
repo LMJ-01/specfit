@@ -4,6 +4,7 @@ description: 조용한 방에서 모니터 쪽에서 가늘게 "지잉" 또는 "
 date: 2026-10-02
 updated: 2026-11-12
 category: monitor
+sub: trouble
 tags: [모니터고주파음, 모니터소음, 코일노이즈, 어댑터소음, 백라이트]
 ---
 

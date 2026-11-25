@@ -4,6 +4,7 @@ description: 공유기를 한 달에 한 번은 껐다 켜야 한다는 말이 �
 date: 2026-09-03
 updated: 2026-10-24
 category: network
+sub: gear
 tags: [공유기재부팅, 인터넷끊김, 자동재부팅, 공유기관리, 홈네트워크]
 ---
 

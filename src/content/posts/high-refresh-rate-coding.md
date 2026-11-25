@@ -4,6 +4,7 @@ description: 고주사율 모니터가 코딩이나 문서작업에도 의미가
 date: 2026-09-01
 updated: 2026-11-18
 category: monitor
+sub: choose
 tags: [주사율, 144Hz, 코딩모니터, 사무용모니터, 모니터선택]
 ---
 

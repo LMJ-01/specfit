@@ -4,6 +4,7 @@ description: 로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아�
 date: 2026-08-13
 updated: 2026-11-17
 category: gpu
+sub: llm
 tags: [Ollama, 로컬LLM, VRAM, 그래픽카드]
 affiliate: false
 ---

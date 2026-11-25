@@ -4,6 +4,7 @@ description: 휠을 굴리다가 꾹 눌렸는데, 동그란 화살표 표시가
 date: 2026-11-16
 updated: 2026-11-16
 category: input
+sub: mouse
 tags: [마우스휠, 자동스크롤, 가운데버튼, 휠클릭, 스크롤]
 ---
 

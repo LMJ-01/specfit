@@ -4,6 +4,7 @@ description: 게임이나 작업 중 화면이 정지하고 소리가 드르륵 
 date: 2026-09-20
 updated: 2026-10-01
 category: desktop
+sub: power
 tags: [프리징, 컴퓨터멈춤, 드르륵, 화면정지, 강제재부팅]
 ---
 

@@ -4,6 +4,7 @@ description: 컴퓨터를 켜는 순간 팬이 크게 위잉 돌다가 몇 초 �
 date: 2026-09-07
 updated: 2026-11-21
 category: desktop
+sub: cooling
 tags: [팬소음, 부팅소음, 풀스핀, 팬커브, 컴퓨터소리]
 ---
 

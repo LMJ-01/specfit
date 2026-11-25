@@ -4,6 +4,7 @@ description: 게임을 하다가 알트탭을 누른 것도 아닌데 갑자기 
 date: 2026-09-07
 updated: 2026-11-20
 category: gpu
+sub: game
 tags: [게임튕김, 바탕화면전환, 포커스, 전체화면, 알림설정]
 ---
 

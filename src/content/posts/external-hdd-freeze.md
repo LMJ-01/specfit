@@ -4,6 +4,7 @@ description: 외장하드만 꽂으면 탐색기가 멈추고 컴퓨터가 버�
 date: 2026-09-06
 updated: 2026-09-28
 category: memory
+sub: usb
 tags: [외장하드, 탐색기멈춤, 배드섹터, USB간섭, 백업]
 ---
 

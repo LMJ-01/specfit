@@ -242,6 +242,12 @@ export function postPage(post, related = []) {
   <nav class="breadcrumb" aria-label="현재 위치">
     <a href="/">홈</a>
     ${cat ? `<span aria-hidden="true">›</span><a href="/${cat.slug}.html">${escapeHtml(cat.label)}</a>` : ''}
+    ${(() => {
+      const sub = cat && cat.subs && cat.subs.find((s) => s.slug === post.sub);
+      return sub
+        ? `<span aria-hidden="true">›</span><a href="/${cat.slug}.html#s-${sub.slug}">${escapeHtml(sub.label)}</a>`
+        : '';
+    })()}
   </nav>
 
   <header class="post-head">
@@ -342,6 +348,9 @@ export function listPage({
   // 처음 읽을 글이 아래로 밀려 있었습니다. 홈의 featured 와 같은 역할을
   // 카테고리 단위로 하는 것입니다. 스타일은 hero-link 재사용 — 새 CSS 없음.
   start = null,
+  // 작은 분류(2026-11-25). 있으면 카테고리 목록을 묶음별로 나눠 그리고, 위에 바로가기 칩을 둡니다.
+  // 새 주소를 만들지 않고 같은 페이지 안의 #s-<slug> 로 이동합니다 — 얇은 페이지가 늘지 않습니다.
+  subs = null,
 }) {
   // 계산기에 제휴 링크가 있으면 고지가 '첫 부분'에 있어야 합니다.
   // 하단 표기나 누락은 수익 전액 몰수 사유입니다. 사람이 기억할 일이 아니라
@@ -377,6 +386,24 @@ export function listPage({
   // 카테고리. 카드가 아니라 칩 한 줄입니다.
   // 이 사이트가 무엇을 다루는지 한 줄로 보여주면 충분하고,
   // 카드로 만들면 상자만 네 개 더 늘어납니다. 글 수는 빈 껍데기가 아님을 보여줍니다.
+  // 작은 분류 묶음. sub 가 없거나 틀린 글은 맨 끝 '기타' 로 모읍니다(빌드가 경고).
+  const groups = subs
+    ? [
+        ...subs.map((s) => ({ ...s, items: posts.filter((p) => p.sub === s.slug) })),
+        { slug: 'etc', label: '기타', items: posts.filter((p) => !subs.some((s) => s.slug === p.sub)) },
+      ].filter((g) => g.items.length)
+    : null;
+  const subBox = groups
+    ? `<nav class="cats" aria-label="작은 분류">
+    ${groups
+      .map(
+        (g) =>
+          `<a href="#s-${g.slug}">${escapeHtml(g.label)}<span class="cats-n">${g.items.length}</span></a>`
+      )
+      .join('\n    ')}
+  </nav>`
+    : '';
+
   const catBox = catCards.length
     ? `<nav class="cats" aria-label="분류" data-search-hide>
     ${catCards
@@ -435,6 +462,7 @@ export function listPage({
   ${start ? `<p class="hero-actions"><a class="hero-link" href="${start.href}">처음이면 — ${escapeHtml(start.label)}</a></p>` : ''}
   ${heroBox}
   ${catBox}
+  ${subBox}
   ${
     searchable
       ? `<div class="search">
@@ -456,7 +484,18 @@ ${featuredBox}
       ? `<ul class="post-list" data-list>
     ${posts.map(postRow).join('\n    ')}
   </ul>`
-      : `<ul class="card-list" data-list>
+      : groups
+        ? groups
+            .map(
+              (g) => `<section class="sub-sec" id="s-${g.slug}">
+  <h2>${escapeHtml(g.label)} <span class="cats-n">${g.items.length}편</span></h2>
+  <ul class="card-list">
+    ${g.items.map(cardItem).join('\n    ')}
+  </ul>
+  </section>`
+            )
+            .join('\n')
+        : `<ul class="card-list" data-list>
     ${posts.map(cardItem).join('\n    ')}
   </ul>`
   }

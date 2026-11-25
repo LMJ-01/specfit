@@ -4,6 +4,7 @@ description: 컴퓨터를 며칠 켜두면 점점 굼떠지다가 재부팅 한 
 date: 2026-09-06
 updated: 2026-10-19
 category: windows
+sub: screen
 tags: [컴퓨터느려짐, 재부팅, 메모리누수, 빠른시작, 작동시간]
 ---
 

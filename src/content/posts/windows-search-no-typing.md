@@ -4,6 +4,7 @@ description: 시작 메뉴나 작업 표시줄 검색창을 눌러도 글자가 
 date: 2026-11-13
 updated: 2026-11-13
 category: windows
+sub: screen
 tags: [윈도우검색, 검색창입력안됨, 시작메뉴검색, 입력기, 검색색인]
 ---
 

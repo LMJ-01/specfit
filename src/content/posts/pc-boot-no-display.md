@@ -4,6 +4,7 @@ description: 전원을 누르면 팬도 돌고 불도 들어오는데 화면만 
 date: 2026-09-05
 updated: 2026-10-06
 category: desktop
+sub: power
 tags: [부팅안됨, 화면안나옴, 램재장착, 비프음, 조립PC]
 ---
 

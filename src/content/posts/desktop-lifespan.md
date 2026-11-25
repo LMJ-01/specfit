@@ -4,6 +4,7 @@ description: 조립 컴퓨터를 맞추고 나면 이게 몇 년이나 갈지 �
 date: 2026-09-07
 updated: 2026-11-15
 category: desktop
+sub: care
 tags: [컴퓨터수명, 데스크탑수명, 부품교체, 업그레이드, 교체시기]
 ---
 

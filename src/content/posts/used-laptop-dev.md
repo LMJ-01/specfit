@@ -4,6 +4,7 @@ description: 중고에서 갈리는 건 상태가 아니라 확인 가능 여부
 date: 2026-08-20
 updated: 2026-11-18
 category: laptop
+sub: choose
 tags: [중고노트북, 배터리, SSD수명, 램슬롯, 개발용노트북]
 affiliate: true
 ---

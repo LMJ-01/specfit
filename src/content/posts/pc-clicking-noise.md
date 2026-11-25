@@ -4,6 +4,7 @@ description: 컴퓨터에서 딸깍·딱딱 소리가 나면 폭탄 초침처럼
 date: 2026-09-07
 updated: 2026-10-06
 category: desktop
+sub: cooling
 tags: [컴퓨터소음, 딸깍소리, 하드디스크소리, 팬간섭, 백업]
 ---
 

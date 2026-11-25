@@ -4,6 +4,7 @@ description: 스피커 가까이에 휴대폰을 두면 가끔 "두두둑·지�
 date: 2026-10-02
 updated: 2026-10-07
 category: windows
+sub: sound
 tags: [스피커지지직, 휴대폰간섭, 전파간섭, 스피커노이즈, 두두둑소리]
 ---
 

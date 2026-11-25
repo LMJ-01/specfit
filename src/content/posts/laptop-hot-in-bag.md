@@ -4,6 +4,7 @@ description: 덮개를 닫고 가방에 넣었는데 꺼내 보니 후끈하고 
 date: 2026-09-07
 updated: 2026-10-04
 category: laptop
+sub: care
 tags: [노트북발열, 절전모드, 최대절전, 가방보관, 배터리방전]
 ---
 

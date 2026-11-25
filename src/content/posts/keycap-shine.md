@@ -4,6 +4,7 @@ description: 자주 쓰는 키만 반질반질 윤이 나고 기름진 것처럼
 date: 2026-10-03
 updated: 2026-11-19
 category: input
+sub: keyboard
 tags: [키캡번들거림, 키캡반질반질, 키보드관리, ABS키캡, 키캡교체]
 ---
 

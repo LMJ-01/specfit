@@ -4,6 +4,7 @@ description: 제조사 표기는 영상 재생 기준입니다. 개발은 부하
 date: 2026-08-17
 updated: 2026-11-07
 category: laptop
+sub: choose
 tags: [노트북배터리, Wh, 개발용노트북, USB-C충전, 전력]
 affiliate: true
 ---

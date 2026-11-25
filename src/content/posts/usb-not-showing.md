@@ -4,6 +4,7 @@ description: USB를 꽂으면 "뚜둥" 연결음은 나는데 내 PC에는 아�
 date: 2026-09-07
 updated: 2026-11-04
 category: memory
+sub: usb
 tags: [USB인식, 드라이브문자, 장치관리자, 디스크관리, 외장저장장치]
 ---
 

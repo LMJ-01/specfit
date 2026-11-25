@@ -4,6 +4,7 @@ description: 외장 SSD는 아무리 빨라도 USB 규격 이상 못 냅니다. 
 date: 2026-08-20
 updated: 2026-11-18
 category: memory
+sub: usb
 tags: [외장SSD, USB, NVMe, 로컬LLM, 개발용PC]
 affiliate: true
 ---

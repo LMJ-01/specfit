@@ -4,6 +4,7 @@ description: 새 컴퓨터의 파워 팬이 멈춰 있으면 불량인가 싶어
 date: 2026-09-04
 updated: 2026-10-28
 category: desktop
+sub: psu
 tags: [파워팬, 제로팬, 파워서플라이, 팬소음, 세미패시브]
 ---
 

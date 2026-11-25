@@ -4,6 +4,7 @@ description: 단종된 구형 카드지만 VRAM 12GB로 14B 모델이 여유롭�
 date: 2026-08-15
 updated: 2026-11-15
 category: gpu
+sub: llm
 tags: [RTX3060, 로컬LLM, VRAM, 중고그래픽카드, Ollama]
 affiliate: true
 ---

@@ -4,6 +4,7 @@ description: 모니터 스펙표의 1ms가 구매 기준이 되곤 하는데, �
 date: 2026-09-04
 updated: 2026-11-19
 category: monitor
+sub: choose
 tags: [응답속도, 모니터, 잔상, 오버드라이브, 게이밍모니터]
 ---
 

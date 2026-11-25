@@ -4,6 +4,7 @@ description: AI 코딩 도구 때문에 컴퓨터를 바꿀 필요는 거의 없
 date: 2026-08-22
 updated: 2026-11-14
 category: laptop
+sub: choose
 tags: [AI코딩, 클로드코드, 커서, 개발노트북, 사양]
 affiliate: true
 ---

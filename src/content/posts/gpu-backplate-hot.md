@@ -4,6 +4,7 @@ description: 게임을 하다 그래픽카드 뒷판(백플레이트)에 손을 
 date: 2026-10-03
 updated: 2026-11-02
 category: gpu
+sub: card
 tags: [그래픽카드뜨거움, 백플레이트, 그래픽카드온도, GPU발열, 케이스통풍]
 ---
 

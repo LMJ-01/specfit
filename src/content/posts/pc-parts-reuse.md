@@ -4,6 +4,7 @@ description: 새 견적을 짜면서 쓰던 부품 중 뭘 가져가도 되는�
 date: 2026-09-29
 updated: 2026-11-03
 category: desktop
+sub: care
 tags: [부품재사용, PC업그레이드, 파워재사용, 램호환, 견적]
 ---
 

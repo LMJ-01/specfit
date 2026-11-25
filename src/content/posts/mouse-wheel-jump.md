@@ -4,6 +4,7 @@ description: 스크롤을 내리는데 화면이 위로 확 튀는 증상과, �
 date: 2026-09-06
 updated: 2026-11-24
 category: input
+sub: mouse
 tags: [마우스휠, 휠튐, 스크롤반전, 인코더, 마우스수리]
 ---
 

@@ -4,6 +4,7 @@ description: 키보드에서 몇 개의 키만 반응이 없으면 교체해야 
 date: 2026-09-06
 updated: 2026-11-08
 category: input
+sub: keyboard
 tags: [키보드고장, 키안눌림, 필터키, 키보드매트릭스, 노트북키보드]
 ---
 

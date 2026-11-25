@@ -4,6 +4,7 @@ description: 카드별 TDP로 필요 용량을 계산했습니다. 다만 용량
 date: 2026-08-18
 updated: 2026-11-16
 category: gpu
+sub: card
 tags: [파워서플라이, TDP, RTX5090, ATX3.1, 로컬LLM]
 affiliate: true
 ---

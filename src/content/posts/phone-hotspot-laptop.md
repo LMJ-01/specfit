@@ -4,6 +4,7 @@ description: 폰 핫스팟으로 노트북이나 데스크탑 인터넷을 써�
 date: 2026-09-12
 updated: 2026-10-22
 category: network
+sub: internet
 tags: [핫스팟, 테더링, 노트북인터넷, 데이터사용량, 종량제연결]
 ---
 

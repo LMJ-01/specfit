@@ -4,6 +4,7 @@ description: 윈도우에서 HDR을 켜는 순간 바탕화면과 브라우저�
 date: 2026-09-25
 updated: 2026-11-18
 category: monitor
+sub: trouble
 tags: [HDR, 물빠진색, 모니터설정, SDR밝기, 윈도우HDR]
 ---
 

@@ -4,6 +4,7 @@ description: 안 쓰는 노트북을 뭐라도 시키고 싶은데 마땅한 게
 date: 2026-09-02
 updated: 2026-11-04
 category: laptop
+sub: care
 tags: [구형노트북, 노트북활용, 홈서버, 재활용, 데이터소거]
 ---
 

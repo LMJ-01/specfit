@@ -4,6 +4,7 @@ description: 컴퓨터 본체의 전원 불빛이 깜빡이면 고장인지 절�
 date: 2026-09-30
 updated: 2026-11-12
 category: desktop
+sub: power
 tags: [전원LED, 깜빡임, 절전모드, 컴퓨터안켜짐, 모니터램프]
 ---
 

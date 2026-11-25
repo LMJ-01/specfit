@@ -4,6 +4,7 @@ description: 케이스 팬을 늘리다 보면 메인보드 팬 단자가 모자
 date: 2026-10-28
 updated: 2026-11-03
 category: desktop
+sub: cooling
 tags: [팬허브, 케이스팬, 팬헤더, 분배케이블, ARGB]
 ---
 

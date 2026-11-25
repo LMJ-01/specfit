@@ -4,6 +4,7 @@ description: 모니터를 몇 년 쓰고 바꿔야 하는지는 커뮤니티 단
 date: 2026-09-08
 updated: 2026-11-21
 category: monitor
+sub: choose
 tags: [모니터수명, 모니터교체, 백라이트, 모니터노화, 교체시기]
 ---
 

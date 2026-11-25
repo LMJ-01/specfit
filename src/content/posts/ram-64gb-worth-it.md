@@ -4,6 +4,7 @@ description: 램 32GB 다음 칸인 64GB가 필요한지 커뮤니티마다 답�
 date: 2026-09-01
 updated: 2026-11-16
 category: memory
+sub: ram
 tags: [램64GB, 램32GB, 메모리업그레이드, 램용량, 개발램]
 ---
 

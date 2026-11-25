@@ -4,6 +4,7 @@ description: 긴 문서를 넣었는데 앞부분을 무시한다면 모델이 �
 date: 2026-08-21
 updated: 2026-11-16
 category: gpu
+sub: llm
 tags: [Ollama, 컨텍스트, num_ctx, KV캐시, VRAM, 로컬LLM]
 affiliate: true
 ---

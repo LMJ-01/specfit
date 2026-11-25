@@ -4,6 +4,7 @@ description: 팬이 쉬지 않고 돌아서 불안한 사람과, 너무 조용�
 date: 2026-09-10
 updated: 2026-11-21
 category: laptop
+sub: care
 tags: [노트북팬소음, 팬안돌아감, 노트북발열, 팬소리, 노트북관리]
 ---
 

@@ -4,6 +4,7 @@ description: 프레임 수치는 높은데 화면이 뚝뚝 끊기는 느낌이 
 date: 2026-09-05
 updated: 2026-11-20
 category: gpu
+sub: game
 tags: [프레임드랍, 스터터링, 게임끊김, 프레임타임, 수직동기화]
 ---
 

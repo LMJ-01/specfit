@@ -4,6 +4,7 @@ description: 앞과 옆이 유리로 된 어항 케이스는 예쁜 대신 온�
 date: 2026-10-27
 updated: 2026-10-31
 category: desktop
+sub: cooling
 tags: [어항케이스, 케이스온도, 케이스쿨링, 메쉬케이스, 케이스팬]
 ---
 

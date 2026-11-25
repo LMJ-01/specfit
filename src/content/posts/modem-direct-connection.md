@@ -4,6 +4,7 @@ description: 컴퓨터 한 대뿐인데 공유기가 꼭 필요한지, 모뎀에
 date: 2026-09-13
 updated: 2026-10-21
 category: network
+sub: gear
 tags: [모뎀직결, 공유기없이, 인터넷연결, 홈네트워크, 유선인터넷]
 ---
 

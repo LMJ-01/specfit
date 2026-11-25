@@ -4,6 +4,7 @@ description: 쿨러를 조이고 보니 서멀이 옆으로 삐져나왔거나 �
 date: 2026-10-06
 updated: 2026-10-08
 category: desktop
+sub: cooling
 tags: [서멀구리스, 서멀삐져나옴, CPU조립, 서멀양, 쿨러장착]
 ---
 

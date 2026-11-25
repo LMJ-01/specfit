@@ -4,6 +4,7 @@ description: 전기요금만 든다고들 합니다. 얼마인지 계산했습�
 date: 2026-08-18
 updated: 2026-11-17
 category: gpu
+sub: llm
 tags: [전기요금, 누진제, 로컬LLM, TDP, 전력]
 affiliate: true
 ---

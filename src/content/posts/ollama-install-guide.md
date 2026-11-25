@@ -4,6 +4,7 @@ description: 로컬 LLM을 처음 돌려보는 가장 빠른 길입니다. 설�
 date: 2026-08-15
 updated: 2026-11-17
 category: gpu
+sub: llm
 tags: [Ollama, 로컬LLM, 설치, 입문]
 affiliate: true
 ---

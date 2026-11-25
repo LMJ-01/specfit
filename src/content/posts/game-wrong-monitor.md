@@ -4,6 +4,7 @@ description: 듀얼 모니터에서 게임을 켰더니 옆의 보조 화면에�
 date: 2026-09-17
 updated: 2026-11-22
 category: monitor
+sub: dual
 tags: [듀얼모니터, 게임, 주모니터, 전체화면, 보조모니터]
 ---
 

@@ -4,6 +4,7 @@ description: 집에 와이파이 기기가 수십 대로 늘면서 "몇 대까�
 date: 2026-09-04
 updated: 2026-10-08
 category: network
+sub: gear
 tags: [공유기, 기기연결, 와이파이혼잡, 최대접속, 홈네트워크]
 ---
 

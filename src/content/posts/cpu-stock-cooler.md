@@ -4,6 +4,7 @@ description: CPU에 딸려 오는 기본 쿨러로 버틸지, 사제 쿨러를 �
 date: 2026-09-01
 updated: 2026-11-18
 category: desktop
+sub: cooling
 tags: [CPU쿨러, 기본쿨러, 공랭쿨러, 소음, 데스크톱조립]
 ---
 

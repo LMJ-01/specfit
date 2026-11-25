@@ -4,6 +4,7 @@ description: 작업 관리자의 Vmmem이 램을 몇 GB씩 쓰고 있다면 WSL2
 date: 2026-08-16
 updated: 2026-11-16
 category: laptop
+sub: choose
 tags: [WSL2, Vmmem, 윈도우, 개발환경, 램]
 affiliate: true
 ---

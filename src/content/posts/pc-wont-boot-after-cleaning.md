@@ -4,6 +4,7 @@ description: 큰맘 먹고 본체를 청소했는데 컴퓨터가 안 켜지는 
 date: 2026-09-11
 updated: 2026-11-22
 category: desktop
+sub: power
 tags: [청소후부팅안됨, 램재장착, 접촉불량, 컴퓨터청소, 부팅문제]
 ---
 

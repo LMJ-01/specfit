@@ -4,6 +4,7 @@ description: 윈도우에서 시스템 종료를 눌러 화면은 꺼졌는데 �
 date: 2026-10-02
 updated: 2026-11-14
 category: desktop
+sub: power
 tags: [종료후팬돌아감, 컴퓨터안꺼짐, 빠른시작, 시스템종료, 강제종료]
 ---
 

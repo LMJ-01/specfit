@@ -4,6 +4,7 @@ description: 채굴 이력은 GPU-Z로도 확인이 안 됩니다. 밝힐 수 �
 date: 2026-08-20
 updated: 2026-11-18
 category: gpu
+sub: card
 tags: [중고그래픽카드, 채굴, GPU-Z, RTX3090, RTX3060]
 affiliate: true
 ---

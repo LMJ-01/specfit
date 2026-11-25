@@ -4,6 +4,7 @@ description: 마우스 커서 옆의 파란 로딩 원이 1~2초마다 깜빡이
 date: 2026-10-01
 updated: 2026-10-22
 category: windows
+sub: screen
 tags: [커서로딩표시, 무한로딩, 백그라운드프로세스, 작업관리자, 윈도우11]
 ---
 

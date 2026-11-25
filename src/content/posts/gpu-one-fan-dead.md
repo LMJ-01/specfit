@@ -4,6 +4,7 @@ description: 그래픽카드 팬 세 개 중 하나만 멈춰 있거나 그 팬�
 date: 2026-10-05
 updated: 2026-10-05
 category: gpu
+sub: card
 tags: [그래픽카드팬, 팬하나안돎, 제로팬, 팬베어링, 그래픽카드소음]
 ---
 

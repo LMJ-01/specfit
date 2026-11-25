@@ -4,6 +4,7 @@ description: 컴퓨터 USB에 폰을 꽂아 충전하고 선풍기·조명을 �
 date: 2026-09-07
 updated: 2026-10-29
 category: desktop
+sub: psu
 tags: [USB충전, USB전원, 폰충전, USB선풍기, 데스크셋업]
 ---
 

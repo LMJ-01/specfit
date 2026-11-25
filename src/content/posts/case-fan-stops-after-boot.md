@@ -4,6 +4,7 @@ description: 전원을 켜면 케이스 팬이 힘차게 돌다가 몇 초 뒤 �
 date: 2026-10-06
 updated: 2026-11-01
 category: desktop
+sub: cooling
 tags: [케이스팬, 팬멈춤, 팬커브, 바이오스팬설정, 팬헤더]
 ---
 

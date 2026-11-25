@@ -4,6 +4,7 @@ description: DDR5-6000을 사도 기본 설정으로는 4800으로 돕니다. �
 date: 2026-08-20
 updated: 2026-11-14
 category: memory
+sub: ram
 tags: [XMP, EXPO, 램클럭, 메모리대역폭, JEDEC]
 affiliate: true
 ---

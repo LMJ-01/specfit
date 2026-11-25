@@ -4,6 +4,7 @@ description: VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. �
 date: 2026-08-15
 updated: 2026-11-17
 category: gpu
+sub: llm
 tags: [로컬LLM, 입문, Ollama, VRAM, 초보]
 affiliate: true
 ---

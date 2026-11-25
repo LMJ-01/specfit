@@ -4,6 +4,7 @@ description: 합쳐지지 않습니다. 나눠 올릴 수는 있지만 속도는
 date: 2026-08-18
 updated: 2026-11-16
 category: gpu
+sub: llm
 tags: [멀티GPU, VRAM, 로컬LLM, NVLink, 파워서플라이]
 affiliate: true
 ---

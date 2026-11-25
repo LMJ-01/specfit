@@ -4,6 +4,7 @@ description: 로컬 LLM에서 시스템 램과 VRAM은 역할이 다릅니다. �
 date: 2026-08-14
 updated: 2026-11-16
 category: memory
+sub: ram
 tags: [로컬LLM, RAM, VRAM, 메모리, Ollama]
 affiliate: true
 ---

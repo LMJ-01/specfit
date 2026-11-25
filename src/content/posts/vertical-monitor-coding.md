@@ -4,6 +4,7 @@ description: 모니터를 세로로 돌리면 코드가 1.8배 보입니다. 다
 date: 2026-08-16
 updated: 2026-11-17
 category: monitor
+sub: choose
 tags: [세로모니터, 피벗, 코딩용모니터, VESA, 모니터암]
 affiliate: true
 ---

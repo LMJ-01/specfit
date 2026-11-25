@@ -4,6 +4,7 @@ description: 컴퓨터에서 정체 모를 띠링, 뚜둥 소리가 간헐적으
 date: 2026-09-29
 updated: 2026-11-13
 category: windows
+sub: sound
 tags: [알림음, 띠링소리, 연결음반복, 볼륨믹서, 유령소리]
 ---
 

@@ -4,6 +4,7 @@ description: DDR4와 DDR5는 슬롯이 달라 물리적으로 안 바뀝니다. 
 date: 2026-08-16
 updated: 2026-11-17
 category: memory
+sub: ram
 tags: [DDR4, DDR5, 램, 메모리, 개발용PC]
 affiliate: true
 ---

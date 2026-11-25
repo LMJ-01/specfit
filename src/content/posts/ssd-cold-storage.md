@@ -4,6 +4,7 @@ description: 서랍의 외장 SSD나 뽑아둔 SSD의 데이터가 증발한다�
 date: 2026-09-05
 updated: 2026-11-20
 category: memory
+sub: ssd
 tags: [SSD, 데이터보존, 장기보관, 외장SSD, 백업]
 ---
 

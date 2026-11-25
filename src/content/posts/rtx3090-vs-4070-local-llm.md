@@ -4,6 +4,7 @@ description: 로컬 LLM에서는 세대가 낮아도 VRAM이 큰 쪽이 유리�
 date: 2026-08-14
 updated: 2026-11-15
 category: gpu
+sub: llm
 tags: [RTX3090, RTX4070, 로컬LLM, VRAM, 중고그래픽카드]
 affiliate: false
 ---

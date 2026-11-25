@@ -4,6 +4,7 @@ description: 버튼을 눌러도 팬도 불도 소리도 없는 완전 무반응
 date: 2026-09-24
 updated: 2026-10-07
 category: desktop
+sub: power
 tags: [컴퓨터안켜짐, 전원무반응, 파워서플라이, 전원버튼, 멀티탭]
 ---
 

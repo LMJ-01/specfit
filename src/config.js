@@ -189,6 +189,12 @@ export const config = {
       description:
         '로컬 LLM·딥러닝용 그래픽카드를 VRAM 기준으로 고르고, 온도·소음·인식 문제와 게임 끊김 같은 그래픽카드 증상을 가릅니다. 어떤 카드로 몇 B 모델이 돌아가는지 계산기로 바로 확인할 수 있습니다.',
       start: { href: '/posts/local-llm-start-guide.html', label: '용어 없이 읽는 로컬 LLM 시작 가이드' },
+      // 작은 분류(2026-11-25) — 글 front matter 의 sub 와 매칭. 분류 페이지 안의 묶음·바로가기 칩.
+      subs: [
+        { slug: 'llm', label: '로컬 LLM·카드 고르기' },
+        { slug: 'card', label: '그래픽카드 상태·설치' },
+        { slug: 'game', label: '게임 화면·성능' },
+      ],
     },
     {
       slug: 'laptop',
@@ -196,6 +202,11 @@ export const config = {
       description:
         '개발·AI 작업용 노트북. 나중에 못 바꾸는 램·화면·그래픽카드부터 정하는 순서로 정리했습니다.',
       start: { href: '/posts/dev-laptop-spec.html', label: '나중에 못 바꾸는 것부터 고르는 순서' },
+      // 작은 분류(2026-11-25) — 글 front matter 의 sub 와 매칭. 분류 페이지 안의 묶음·바로가기 칩.
+      subs: [
+        { slug: 'choose', label: '노트북 고르기·개발 환경' },
+        { slug: 'care', label: '노트북 관리·증상' },
+      ],
     },
     {
       slug: 'monitor',
@@ -203,6 +214,12 @@ export const config = {
       description:
         '코딩용 모니터. 주사율이나 색재현율이 아니라 해상도와 크기의 조합이 갈림길입니다. PPI와 배율을 계산해 정리했고, 듀얼 모니터·화면 표시 문제도 여기서 가릅니다.',
       start: { href: '/posts/coding-monitor-resolution.html', label: '크기와 해상도 조합부터 정하기' },
+      // 작은 분류(2026-11-25) — 글 front matter 의 sub 와 매칭. 분류 페이지 안의 묶음·바로가기 칩.
+      subs: [
+        { slug: 'choose', label: '모니터 고르기·쓰는 법' },
+        { slug: 'dual', label: '듀얼 모니터' },
+        { slug: 'trouble', label: '화면 증상' },
+      ],
     },
     {
       slug: 'memory',
@@ -210,6 +227,12 @@ export const config = {
       description:
         '램과 SSD, USB·외장 저장장치. 얼마나 필요한지는 VRAM을 얼마나 넘기느냐가 정합니다. 값이 오른 2026년 기준으로 고르는 법과, 인식·속도 문제를 확인하는 순서를 정리했습니다.',
       start: { href: '/posts/ram-16gb-vs-32gb.html', label: '16GB로 되나, 32GB가 필요한가' },
+      // 작은 분류(2026-11-25) — 글 front matter 의 sub 와 매칭. 분류 페이지 안의 묶음·바로가기 칩.
+      subs: [
+        { slug: 'ram', label: '램' },
+        { slug: 'ssd', label: 'SSD·하드·백업' },
+        { slug: 'usb', label: 'USB·외장 저장장치' },
+      ],
     },
     // 2026-11-25 신설 3개 — 고르는 글 기준 6개 분류에 고장·증상 글 94편이 흩어져 있던 것을
     // 사용자 결정으로 재배치(글 주소는 그대로, front matter 의 category 만 변경).
@@ -219,6 +242,13 @@ export const config = {
       description:
         '데스크톱 본체의 전원·부팅·팬·소음·쿨러·파워·케이스. 안 켜지거나 이상한 소리가 날 때 어느 부품부터 볼지, 본체를 고르고 두는 기준까지 증상과 구조로 정리했습니다.',
       start: { href: '/posts/pc-boot-no-display.html', label: '팬은 도는데 화면이 안 나올 때' },
+      // 작은 분류(2026-11-25) — 글 front matter 의 sub 와 매칭. 분류 페이지 안의 묶음·바로가기 칩.
+      subs: [
+        { slug: 'power', label: '켜짐·꺼짐·부팅' },
+        { slug: 'cooling', label: '온도·팬·소음' },
+        { slug: 'psu', label: '파워·전기 안전' },
+        { slug: 'care', label: '고르기·설치·관리' },
+      ],
     },
     {
       slug: 'input',
@@ -226,6 +256,11 @@ export const config = {
       description:
         '마우스 커서·클릭·휠과 키보드 키·소리 문제. 고장인지 설정인지부터 가르고, 버튼 접점·수신기·윈도우 설정 순서로 확인하는 법을 정리했습니다.',
       start: { href: '/posts/mouse-wheel-jump.html', label: '마우스 휠이 튀거나 반대로 갈 때' },
+      // 작은 분류(2026-11-25) — 글 front matter 의 sub 와 매칭. 분류 페이지 안의 묶음·바로가기 칩.
+      subs: [
+        { slug: 'mouse', label: '마우스·게임패드' },
+        { slug: 'keyboard', label: '키보드' },
+      ],
     },
     {
       slug: 'windows',
@@ -233,6 +268,11 @@ export const config = {
       description:
         '작업 표시줄·바탕화면·알림·검색 같은 윈도우 화면 증상과 스피커·마이크·블루투스 소리 문제. 고장을 의심하기 전에 설정과 담당 프로그램부터 확인하는 순서로 정리했습니다.',
       start: { href: '/posts/black-screen-cursor.html', label: '검은 화면에 커서만 보일 때' },
+      // 작은 분류(2026-11-25) — 글 front matter 의 sub 와 매칭. 분류 페이지 안의 묶음·바로가기 칩.
+      subs: [
+        { slug: 'screen', label: '윈도우 화면·설정' },
+        { slug: 'sound', label: '소리·블루투스' },
+      ],
     },
     // 2026-08-26 신설 — 8/24 검증에서 "카테고리가 없어 보류"였던 자리.
     // 2차 심사 거절 후 공백기에 열었습니다 (심사 중 구조 변경 금지 제약 없음).
@@ -251,6 +291,11 @@ export const config = {
       description:
         '공유기, 랜선, 와이파이. 집 안의 연결이 왜 느린지를 후기 없이 규격과 배선 구조로 판단합니다. 제일 약한 고리가 속도를 정합니다.',
       start: { href: '/posts/lan-cable-cat.html', label: '랜선 규격 읽는 법부터' },
+      // 작은 분류(2026-11-25) — 글 front matter 의 sub 와 매칭. 분류 페이지 안의 묶음·바로가기 칩.
+      subs: [
+        { slug: 'internet', label: '인터넷 속도·끊김' },
+        { slug: 'gear', label: '공유기·랜선·NAS' },
+      ],
     },
   ],
 };

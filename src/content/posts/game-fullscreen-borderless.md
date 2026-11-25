@@ -4,6 +4,7 @@ description: 게임 그래픽 설정의 화면 모드 세 가지 중 뭘 골라�
 date: 2026-09-22
 updated: 2026-10-02
 category: gpu
+sub: game
 tags: [전체화면, 테두리없는창, 창모드, 게임설정, 알트탭]
 ---
 

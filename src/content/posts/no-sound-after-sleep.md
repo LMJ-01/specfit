@@ -4,6 +4,7 @@ description: 절전 복귀 후 스피커가 침묵하는데 재부팅하면 돌�
 date: 2026-09-06
 updated: 2026-11-13
 category: windows
+sub: sound
 tags: [절전모드, 소리안남, 오디오장치, USB절전, 모니터스피커]
 ---
 

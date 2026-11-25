@@ -4,6 +4,7 @@ description: 모니터를 한 대 더 달면 게임 성능이 깎이는지 걱�
 date: 2026-09-04
 updated: 2026-10-29
 category: monitor
+sub: dual
 tags: [듀얼모니터, 게임프레임, 프레임드랍, GPU, 모니터두대]
 ---
 

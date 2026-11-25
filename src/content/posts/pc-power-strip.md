@@ -4,6 +4,7 @@ description: 컴퓨터를 멀티탭에 꽂아도 되는지, 안 쓸 때 스위�
 date: 2026-09-06
 updated: 2026-11-16
 category: desktop
+sub: psu
 tags: [멀티탭, 컴퓨터전원, 정격용량, 문어발, 전기안전]
 ---
 

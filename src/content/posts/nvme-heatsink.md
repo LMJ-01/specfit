@@ -4,6 +4,7 @@ description: 모두에게 필요한 건 아닙니다. Gen3면 대개 불필요�
 date: 2026-08-22
 updated: 2026-10-30
 category: memory
+sub: ssd
 tags: [NVMe, SSD방열판, 스로틀링, M.2, 발열]
 affiliate: true
 ---

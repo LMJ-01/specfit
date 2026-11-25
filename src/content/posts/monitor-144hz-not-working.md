@@ -4,6 +4,7 @@ description: 고주사율 모니터를 샀는데 윈도우 설정에는 60Hz만 
 date: 2026-09-26
 updated: 2026-10-27
 category: monitor
+sub: trouble
 tags: [144Hz, 주사율설정, 모니터설정, DP케이블, 고주사율]
 ---
 

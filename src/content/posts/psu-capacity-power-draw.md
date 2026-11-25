@@ -4,6 +4,7 @@ description: 750W 파워를 달면 전기도 750W씩 나가는 것 아닌가 하
 date: 2026-09-05
 updated: 2026-11-20
 category: desktop
+sub: psu
 tags: [파워서플라이, 전기세, 소비전력, 파워용량, 효율]
 ---
 

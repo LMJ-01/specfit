@@ -4,6 +4,7 @@ description: 어느 날 화면이 크고 뭉개지더니 해상도 목록에 102
 date: 2026-10-25
 updated: 2026-10-27
 category: monitor
+sub: trouble
 tags: [해상도변경안됨, 해상도고정, 기본디스플레이어댑터, 모니터케이블, 디스플레이배율]
 ---
 

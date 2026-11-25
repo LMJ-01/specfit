@@ -4,6 +4,7 @@ description: 온도에는 전면 메쉬가 좋다는데 먼지가 걱정돼 망�
 date: 2026-10-31
 updated: 2026-10-31
 category: desktop
+sub: cooling
 tags: [메쉬케이스, 케이스먼지, 먼지필터, 케이스선택, 케이스쿨링]
 ---
 

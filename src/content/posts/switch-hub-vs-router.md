@@ -4,6 +4,7 @@ description: 유선으로 물릴 기기는 늘었는데 공유기 뒤 포트는 
 date: 2026-09-01
 updated: 2026-11-21
 category: network
+sub: gear
 tags: [스위칭허브, 공유기, 유선랜, 포트부족, 홈네트워크]
 ---
 

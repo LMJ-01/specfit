@@ -4,6 +4,7 @@ description: 마우스 포인터는 멀쩡히 움직이는데 아무것도 눌�
 date: 2026-10-01
 updated: 2026-11-13
 category: input
+sub: mouse
 tags: [클릭안됨, 마우스포인터, 컴퓨터멈춤, 응답없음, 탐색기재시작]
 ---
 

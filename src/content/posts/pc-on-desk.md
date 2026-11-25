@@ -4,6 +4,7 @@ description: 컴퓨터 본체를 책상 위에 올릴지 아래에 둘지는 커
 date: 2026-09-06
 updated: 2026-11-21
 category: desktop
+sub: care
 tags: [본체위치, 책상배치, 먼지관리, 컴퓨터소음, 데스크셋업]
 ---
 

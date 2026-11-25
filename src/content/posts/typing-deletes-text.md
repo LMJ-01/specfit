@@ -4,6 +4,7 @@ description: 글을 쓰는데 뒤에 있던 글자가 하나씩 사라지거나,
 date: 2026-11-06
 updated: 2026-11-13
 category: input
+sub: keyboard
 tags: [글자지워짐, 덮어쓰기, Insert키, 한글입력기, 키보드오류]
 ---
 

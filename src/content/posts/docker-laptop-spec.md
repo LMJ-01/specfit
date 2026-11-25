@@ -4,6 +4,7 @@ description: 도커는 CPU보다 램을 먼저 먹습니다. 컨테이너를 몇
 date: 2026-08-16
 updated: 2026-11-16
 category: laptop
+sub: choose
 tags: [도커, Docker, 개발용노트북, 램, WSL2]
 affiliate: true
 ---

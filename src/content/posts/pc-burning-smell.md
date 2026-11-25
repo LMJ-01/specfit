@@ -4,6 +4,7 @@ description: 본체에서 탄내나 매캐한 냄새가 나면 "작동은 잘 �
 date: 2026-09-06
 updated: 2026-11-01
 category: desktop
+sub: psu
 tags: [컴퓨터탄내, 타는냄새, 파워서플라이, 과열, 안전]
 ---
 

@@ -4,6 +4,7 @@ description: 그래픽카드가 장치 관리자에 아예 없는 것, 알 수 �
 date: 2026-09-06
 updated: 2026-11-05
 category: gpu
+sub: card
 tags: [그래픽카드인식, 장치관리자, 보조전원, 드라이버, 조립PC]
 ---
 

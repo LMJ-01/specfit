@@ -4,6 +4,7 @@ description: 아이패드가 이미 있으면 코딩 공부도 이걸로 되지 
 date: 2026-09-04
 updated: 2026-09-04
 category: laptop
+sub: choose
 tags: [아이패드, 태블릿, 코딩공부, 개발환경, 노트북]
 ---
 

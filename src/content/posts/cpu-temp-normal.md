@@ -4,6 +4,7 @@ description: 게임 중 CPU가 80도를 넘는 걸 보고 검색하면 답변이
 date: 2026-09-25
 updated: 2026-11-06
 category: desktop
+sub: cooling
 tags: [CPU온도, 게임중온도, 스로틀링, CPU쿨러, 온도확인]
 ---
 

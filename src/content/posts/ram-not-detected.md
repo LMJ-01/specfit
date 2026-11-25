@@ -4,6 +4,7 @@ description: 램을 추가했는데 용량이 그대로거나, 32GB를 꽂았는
 date: 2026-09-28
 updated: 2026-10-07
 category: memory
+sub: ram
 tags: [램인식, 램증설, 하드웨어예약, 램슬롯, 메모리인식오류]
 ---
 

@@ -4,6 +4,7 @@ description: 65W 노트북에 30W 충전기를 꽂으면 무슨 일이 생기는
 date: 2026-08-22
 updated: 2026-11-06
 category: laptop
+sub: care
 tags: [노트북충전기, USB-PD, 와트, USB-C, 어댑터]
 affiliate: true
 ---

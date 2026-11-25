@@ -4,6 +4,7 @@ description: 이사철마다 컴퓨터 본체를 어떻게 옮겨야 하나 걱�
 date: 2026-09-07
 updated: 2026-10-07
 category: desktop
+sub: care
 tags: [컴퓨터이사, 본체운반, 그래픽카드분리, 포장이사, 이사준비]
 ---
 

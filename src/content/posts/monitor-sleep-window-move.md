@@ -4,6 +4,7 @@ description: 듀얼 모니터에서 절전이나 디스플레이 끄기 후 복�
 date: 2026-09-06
 updated: 2026-11-14
 category: monitor
+sub: dual
 tags: [듀얼모니터, 절전모드, 창위치, 창몰림, 디스플레이끄기]
 ---
 

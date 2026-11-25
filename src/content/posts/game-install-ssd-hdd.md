@@ -4,6 +4,7 @@ description: SSD와 HDD 중 어디에 게임을 설치해야 하는지는 저장
 date: 2026-09-11
 updated: 2026-10-15
 category: memory
+sub: ssd
 tags: [게임설치위치, SSD게임, HDD게임, 로딩속도, 스팀라이브러리]
 ---
 

@@ -4,6 +4,7 @@ description: 슬롯이 있으면 바꿀 수 있습니다. 다만 규격·속도�
 date: 2026-08-18
 updated: 2026-11-17
 category: memory
+sub: ram
 tags: [노트북램, 램교체, SO-DIMM, 듀얼채널, 개발용노트북]
 affiliate: true
 ---

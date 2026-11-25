@@ -4,6 +4,7 @@ description: SSD 용량을 어디까지 채워도 되는지, 왜 꽉 차면 느�
 date: 2026-09-01
 updated: 2026-10-27
 category: memory
+sub: ssd
 tags: [SSD, 용량관리, SLC캐시, 저장장치, 쓰기속도]
 ---
 

@@ -4,6 +4,7 @@ description: 최신 공유기를 사면 집 와이파이가 빨라질 것 같지
 date: 2026-09-01
 updated: 2026-10-22
 category: network
+sub: gear
 tags: [와이파이7, 공유기, WiFi6, 무선랜, 홈네트워크]
 ---
 

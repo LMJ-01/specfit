@@ -4,6 +4,7 @@ description: USB와 외장하드를 안전 제거 없이 뽑아도 되는지는 
 date: 2026-09-28
 updated: 2026-11-04
 category: memory
+sub: usb
 tags: [안전제거, USB메모리, 외장하드, 쓰기캐시, 빠른제거]
 ---
 

@@ -4,6 +4,7 @@ description: 케이스 스펙의 호환 길이만 믿고 샀다가 안 들어가
 date: 2026-09-04
 updated: 2026-11-19
 category: gpu
+sub: card
 tags: [그래픽카드길이, 케이스호환, GPU장착, 조립PC, 슬롯]
 ---
 

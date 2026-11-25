@@ -4,6 +4,7 @@ description: CPU 쿨러 나사를 너무 세게 조인 건 아닌지, 메인보�
 date: 2026-10-06
 updated: 2026-10-07
 category: desktop
+sub: cooling
 tags: [쿨러나사, 메인보드휨, CPU쿨러장착, 조립실수, 접촉불량]
 ---
 

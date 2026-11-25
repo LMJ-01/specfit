@@ -4,6 +4,7 @@ description: 그래픽카드 메모리 온도가 높다며 써멀패드를 갈�
 date: 2026-11-02
 updated: 2026-11-02
 category: gpu
+sub: card
 tags: [써멀패드, 그래픽카드메모리온도, VRAM온도, 그래픽카드분해, 그래픽카드보증]
 ---
 

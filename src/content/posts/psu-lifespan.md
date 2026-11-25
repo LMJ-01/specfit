@@ -4,6 +4,7 @@ description: 파워서플라이 수명을 물으면 5년부터 15년까지 답�
 date: 2026-09-01
 updated: 2026-11-19
 category: desktop
+sub: psu
 tags: [파워서플라이, 파워수명, 교체시기, PSU, 데스크톱]
 ---
 

@@ -4,6 +4,7 @@ description: 전원을 누르고 바탕화면이 쓸 만해질 때까지 한참 
 date: 2026-09-23
 updated: 2026-09-29
 category: desktop
+sub: power
 tags: [부팅느림, 부팅오래걸림, 시작프로그램, 빠른시작, SSD업그레이드]
 ---
 

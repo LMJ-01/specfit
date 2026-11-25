@@ -4,6 +4,7 @@ description: 컴퓨터나 스피커를 켜고 끌 때마다 "퍽" 하고 터지�
 date: 2026-10-02
 updated: 2026-10-02
 category: windows
+sub: sound
 tags: [스피커퍽소리, 팝노이즈, 스피커노이즈, 앰프전원순서, 오디오절전]
 ---
 

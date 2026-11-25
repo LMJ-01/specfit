@@ -4,6 +4,7 @@ description: 코딩은 번인에 가장 불리한 사용 방식입니다. 같은
 date: 2026-08-17
 updated: 2026-11-17
 category: monitor
+sub: choose
 tags: [OLED, 번인, QD-OLED, 코딩용모니터, 서브픽셀]
 affiliate: true
 ---

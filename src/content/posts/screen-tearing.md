@@ -4,6 +4,7 @@ description: 게임 중 화면이 가로선으로 어긋나 찢어져 보이는 
 date: 2026-09-14
 updated: 2026-11-22
 category: monitor
+sub: trouble
 tags: [티어링, 화면찢어짐, 수직동기, 가변주사율, 게임화면]
 ---
 

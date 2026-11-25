@@ -4,6 +4,7 @@ description: 웹 개발은 생각보다 요구가 낮습니다. 램을 먹는 �
 date: 2026-08-17
 updated: 2026-11-16
 category: laptop
+sub: choose
 tags: [웹개발, 개발용노트북, 램, node, 프론트엔드]
 affiliate: true
 ---

@@ -4,6 +4,7 @@ description: 부팅이 안 되는데 메인보드 구석의 작은 불(CPU·DRAM
 date: 2026-10-01
 updated: 2026-10-07
 category: desktop
+sub: power
 tags: [메인보드빨간불, 디버그LED, DRAM불, 부팅안됨, 조립PC]
 ---
 

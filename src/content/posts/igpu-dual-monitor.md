@@ -4,6 +4,7 @@ description: 그래픽카드 없이 내장그래픽만으로 모니터 두 대�
 date: 2026-09-01
 updated: 2026-11-18
 category: monitor
+sub: dual
 tags: [내장그래픽, 듀얼모니터, 메인보드, 모니터연결, 사무용PC]
 ---
 

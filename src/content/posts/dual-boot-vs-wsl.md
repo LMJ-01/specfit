@@ -4,6 +4,7 @@ description: 개발 공부를 하다 보면 리눅스 듀얼부팅을 해야 하
 date: 2026-09-03
 updated: 2026-10-21
 category: laptop
+sub: choose
 tags: [듀얼부팅, WSL, 리눅스, 개발환경, 우분투]
 ---
 

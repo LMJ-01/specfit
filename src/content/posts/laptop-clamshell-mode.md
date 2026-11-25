@@ -4,6 +4,7 @@ description: 노트북을 데스크톱처럼, 덮개를 닫은 채 외부 모니
 date: 2026-09-01
 updated: 2026-11-19
 category: laptop
+sub: care
 tags: [클램셸, 노트북거치대, 외부모니터, 노트북발열, 데스크톱모드]
 ---
 

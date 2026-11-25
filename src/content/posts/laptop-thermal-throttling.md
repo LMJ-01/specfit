@@ -4,6 +4,7 @@ description: 짧은 벤치마크에서는 안 보이고 긴 빌드와 로컬 LLM
 date: 2026-08-17
 updated: 2026-10-20
 category: laptop
+sub: care
 tags: [노트북발열, 스로틀링, 지속성능, 개발용노트북, 냉각]
 affiliate: true
 ---

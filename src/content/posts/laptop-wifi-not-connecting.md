@@ -4,6 +4,7 @@ description: 같은 와이파이에 폰은 멀쩡히 붙는데 노트북만 안 
 date: 2026-09-07
 updated: 2026-11-07
 category: network
+sub: internet
 tags: [노트북와이파이, 인터넷없음, 와이파이연결안됨, 네트워크재설정, 격리진단]
 ---
 

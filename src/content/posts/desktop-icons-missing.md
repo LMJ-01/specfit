@@ -4,6 +4,7 @@ description: 어느 날 바탕화면이 텅 비어 있으면 파일이 다 날�
 date: 2026-09-06
 updated: 2026-11-20
 category: windows
+sub: screen
 tags: [바탕화면아이콘, 아이콘사라짐, 바탕화면표시, OneDrive, 탐색기]
 ---
 

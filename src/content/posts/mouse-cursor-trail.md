@@ -4,6 +4,7 @@ description: 마우스를 움직이면 커서 뒤로 잔상이 줄줄이 따라�
 date: 2026-11-10
 updated: 2026-11-10
 category: input
+sub: mouse
 tags: [마우스커서잔상, 포인터자국, 커서꼬리, 오버드라이브, 하드웨어가속]
 ---
 

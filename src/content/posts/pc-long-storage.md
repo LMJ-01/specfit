@@ -4,6 +4,7 @@ description: 몇 달 안 쓴 컴퓨터가 방치만으로 고장 나는지는 �
 date: 2026-09-14
 updated: 2026-11-22
 category: desktop
+sub: care
 tags: [장기보관, 컴퓨터방치, CMOS배터리, 재가동, 부팅실패]
 ---
 

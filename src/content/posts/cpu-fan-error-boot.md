@@ -4,6 +4,7 @@ description: 부팅마다 CPU Fan Error가 뜨고 F1을 눌러야 하는 증상�
 date: 2026-10-01
 updated: 2026-10-20
 category: desktop
+sub: power
 tags: [CPUFanError, 부팅오류, CPU팬, 팬헤더, 바이오스설정]
 ---
 

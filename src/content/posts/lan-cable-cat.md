@@ -4,6 +4,7 @@ description: 서랍에서 나온 랜선을 꽂아도 될까요. 케이블 피복
 date: 2026-09-01
 updated: 2026-11-07
 category: network
+sub: gear
 tags: [랜선, CAT6, 기가인터넷, 이더넷, 홈네트워크]
 ---
 

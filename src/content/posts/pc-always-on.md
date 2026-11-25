@@ -4,6 +4,7 @@ description: 컴퓨터를 계속 켜두면 고장 나는지, 껐다 켜는 게 �
 date: 2026-09-05
 updated: 2026-10-13
 category: desktop
+sub: care
 tags: [24시간가동, 상시가동, 컴퓨터수명, 홈서버, 절전]
 ---
 

@@ -4,6 +4,7 @@ description: 8GB는 좁지만 쓸 수 없는 건 아닙니다. 컨텍스트를 �
 date: 2026-08-15
 updated: 2026-11-15
 category: gpu
+sub: llm
 tags: [VRAM, 8GB, 로컬LLM, 양자화, Ollama]
 affiliate: true
 ---

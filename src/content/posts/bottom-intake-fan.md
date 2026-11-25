@@ -4,6 +4,7 @@ description: 케이스 바닥에 흡기 팬을 달면 그래픽카드가 시원�
 date: 2026-10-31
 updated: 2026-10-31
 category: desktop
+sub: cooling
 tags: [하단팬, 케이스흡기, 그래픽카드온도, 케이스팬, 케이스쿨링]
 ---
 

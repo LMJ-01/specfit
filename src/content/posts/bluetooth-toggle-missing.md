@@ -4,6 +4,7 @@ description: 어제까지 쓰던 블루투스 켜기 버튼이 윈도우에서 �
 date: 2026-11-05
 updated: 2026-11-05
 category: windows
+sub: sound
 tags: [블루투스, 블루투스사라짐, 윈도우블루투스, 블루투스드라이버, 장치관리자]
 ---
 

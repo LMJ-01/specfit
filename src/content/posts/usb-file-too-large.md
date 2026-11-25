@@ -4,6 +4,7 @@ description: USB 용량은 넉넉한데 큰 파일을 복사하면 "파일이 �
 date: 2026-11-04
 updated: 2026-11-04
 category: memory
+sub: usb
 tags: [USB, FAT32, exFAT, NTFS, 파일이너무큽니다]
 ---
 

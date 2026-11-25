@@ -4,6 +4,7 @@ description: 코딩은 60Hz면 되기 때문에 대부분 아무 단자나 됩�
 date: 2026-08-17
 updated: 2026-10-01
 category: monitor
+sub: choose
 tags: [DisplayPort, HDMI, 모니터케이블, 대역폭, 코딩용모니터]
 affiliate: true
 ---

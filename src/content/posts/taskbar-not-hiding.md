@@ -4,6 +4,7 @@ description: 유튜브나 영상을 전체화면으로 틀었는데 화면 아�
 date: 2026-11-20
 updated: 2026-11-20
 category: windows
+sub: screen
 tags: [작업표시줄, 전체화면, 자동숨기기, 윈도우탐색기, 유튜브전체화면]
 ---
 

@@ -4,6 +4,7 @@ description: 같은 32GB를 만드는 두 가지 방법 중 뭐가 나은지는 
 date: 2026-09-05
 updated: 2026-11-22
 category: memory
+sub: ram
 tags: [램, 듀얼채널, 32GB, 램구성, 조립PC]
 ---
 

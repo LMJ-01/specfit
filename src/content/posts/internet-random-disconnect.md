@@ -4,6 +4,7 @@ description: 잘 되던 인터넷이 하루 몇 번씩 몇 초에서 몇 분간 
 date: 2026-09-26
 updated: 2026-10-03
 category: network
+sub: internet
 tags: [인터넷끊김, 순단, 공유기, 랜선, 핑테스트]
 ---
 

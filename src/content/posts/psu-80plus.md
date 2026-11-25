@@ -4,6 +4,7 @@ description: 브론즈냐 골드냐는 취향이 아니라 나눗셈입니다. �
 date: 2026-08-24
 updated: 2026-11-16
 category: desktop
+sub: psu
 tags: [파워서플라이, 80PLUS, 골드, 효율, 전기요금]
 affiliate: false
 ---

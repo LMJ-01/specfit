@@ -4,6 +4,7 @@ description: 튜닝램에는 다 달려 있고, 순정램에 따로 붙이자니
 date: 2026-09-01
 updated: 2026-10-30
 category: memory
+sub: ram
 tags: [램방열판, 튜닝램, 램발열, XMP, 데스크톱조립]
 ---
 

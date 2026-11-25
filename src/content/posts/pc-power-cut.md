@@ -4,6 +4,7 @@ description: 정전이나 뽑힌 코드로 컴퓨터가 강제로 꺼지면 고�
 date: 2026-09-12
 updated: 2026-10-04
 category: desktop
+sub: power
 tags: [정전, 강제종료, 컴퓨터꺼짐, 데이터손상, 전원차단]
 ---
 

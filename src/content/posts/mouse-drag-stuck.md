@@ -4,6 +4,7 @@ description: 버튼을 뗐는데도 창이나 파일이 커서를 따라 계속 
 date: 2026-11-10
 updated: 2026-11-12
 category: input
+sub: mouse
 tags: [마우스드래그, 드래그안풀림, 클릭잠금, 마우스버튼, 무선마우스]
 ---
 

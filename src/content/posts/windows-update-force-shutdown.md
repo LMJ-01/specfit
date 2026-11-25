@@ -4,6 +4,7 @@ description: 나가야 하는데 화면은 "업데이트 구성 중 30%". 강제
 date: 2026-09-16
 updated: 2026-10-12
 category: windows
+sub: screen
 tags: [윈도우업데이트, 강제종료, 업데이트구성중, 부팅, 전원]
 ---
 

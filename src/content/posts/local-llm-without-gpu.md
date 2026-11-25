@@ -4,6 +4,7 @@ description: 그래픽카드가 없어도 돌아갑니다. 다만 왜 그렇게 
 date: 2026-08-15
 updated: 2026-11-16
 category: memory
+sub: ram
 tags: [로컬LLM, CPU, 내장그래픽, 메모리대역폭, Ollama]
 affiliate: true
 ---

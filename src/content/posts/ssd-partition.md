@@ -4,6 +4,7 @@ description: C·D 드라이브로 나누는 게 관습처럼 남아 있는데, �
 date: 2026-09-04
 updated: 2026-11-01
 category: memory
+sub: ssd
 tags: [파티션, SSD, C드라이브, D드라이브, 디스크관리]
 ---
 

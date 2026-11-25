@@ -465,6 +465,8 @@ async function build() {
         date: p.data.date || '1970-01-01',
         updated: p.data.updated || '',
         category: p.data.category || '',
+        // 작은 분류(2026-11-25). config 카테고리의 subs 와 매칭됩니다.
+        sub: p.data.sub || '',
         tags: Array.isArray(p.data.tags) ? p.data.tags : [],
         // 계산기나 위젯을 실으면 그 안에 제휴 링크가 있으므로 자동으로 제휴 페이지가 됩니다.
         // 심사 모드에서는 제휴 요소가 전부 빠지므로 고지도 빠져야 합니다 —
@@ -520,6 +522,13 @@ async function build() {
     if (p.description.length > 160)
       warnings.push(`${p.slug}: description 이 ${p.description.length}자 (160자 이하 권장)`);
     if (!p.category) warnings.push(`${p.slug}: category 없음 (목록에서 누락됨)`);
+    // 작은 분류가 있는 카테고리에서 sub 가 없거나 틀리면 분류 페이지의 '기타' 묶음으로 떨어집니다.
+    {
+      const c = config.categories.find((x) => x.slug === p.category);
+      if (c && c.subs && !c.subs.some((s) => s.slug === p.sub))
+        warnings.push(`${p.slug}: sub '${p.sub}' 가 '${p.category}' 의 작은 분류에 없습니다 (기타로 표시됨)`);
+      if (c && !c.subs && p.sub) warnings.push(`${p.slug}: '${p.category}' 에는 작은 분류가 없는데 sub '${p.sub}' 가 있습니다`);
+    }
     if (p.title.length > 60)
       warnings.push(`${p.slug}: 제목이 ${p.title.length}자 (검색결과에서 잘림)`);
     // 제휴 링크가 있는데 affiliate 플래그가 없으면 고지가 안 붙습니다 → 수익 몰수 위험
@@ -609,6 +618,7 @@ async function build() {
           intro: cat.description,
           searchable: false,
           start: cat.start || null,
+          subs: cat.subs || null,
         })
       )
     );

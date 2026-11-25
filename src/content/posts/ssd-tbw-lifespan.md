@@ -4,6 +4,7 @@ description: TBW를 하루 쓰기량으로 나눠보면 수십 년이 나옵니�
 date: 2026-08-18
 updated: 2026-11-16
 category: memory
+sub: ssd
 tags: [SSD, TBW, 수명, QLC, 개발용PC]
 affiliate: true
 ---

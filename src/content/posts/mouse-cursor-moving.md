@@ -4,6 +4,7 @@ description: 손을 안 댔는데 커서가 떨리거나 저절로 움직이면 
 date: 2026-09-28
 updated: 2026-11-11
 category: input
+sub: mouse
 tags: [마우스커서, 커서떨림, 마우스오작동, 광마우스, 터치패드]
 ---
 

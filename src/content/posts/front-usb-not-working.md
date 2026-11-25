@@ -4,6 +4,7 @@ description: 본체 뒤 USB는 멀쩡한데 앞 포트만 인식이 안 되거�
 date: 2026-09-19
 updated: 2026-10-29
 category: desktop
+sub: care
 tags: [전면USB, USB인식안됨, 케이스, 헤더케이블, 포트문제]
 ---
 

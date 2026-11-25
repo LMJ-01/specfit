@@ -4,6 +4,7 @@ description: 윈도우는 패드를 인식하는데 정작 게임 안에서는 �
 date: 2026-09-24
 updated: 2026-11-22
 category: input
+sub: mouse
 tags: [게임패드, 패드인식, 컨트롤러, 스팀설정, 엑스인풋]
 ---
 

@@ -4,6 +4,7 @@ description: 전체 소리는 멀쩡한데 특정 게임이나 프로그램만 �
 date: 2026-09-06
 updated: 2026-11-08
 category: windows
+sub: sound
 tags: [게임소리안남, 볼륨믹서, 출력장치, 사운드설정, 윈도우]
 ---
 
