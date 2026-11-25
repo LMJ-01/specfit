@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-11-17","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","description":"로컬 LLM을 돌리기 전에 확인할 것은 GPU 이름이 아니라 VRAM입니다. VRAM 용량별로 실제 돌아가는 모델 크기를 정리했습니다.","datePublished":"2026-08-13","dateModified":"2026-11-26","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-minimum-spec.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나","item":"https://specfit.kr/posts/ollama-minimum-spec.html"}]}</script>
 </head>
 <body class="is-post">
@@ -69,7 +69,7 @@
     <h1>Ollama 최소 사양 — 내 VRAM으로 몇 B 모델까지 돌아가나</h1>
     <p class="post-meta">
       <time datetime="2026-08-13">2026년 8월 13일</time>
-      <span class="updated">· 2026년 11월 17일 갱신</span>
+      <span class="updated">· 2026년 11월 26일 갱신</span>
     </p>
   </header>
 
@@ -289,9 +289,10 @@ VRAM이 부족하면 아무리 빠른 GPU라도 CPU로 넘어가면서 느려집
 <li>속도가 필요하면 → 전용 GPU가 유리</li>
 </ul>
 <h2 id="표를-보고-나면-생기는-질문들">표를 보고 나면 생기는 질문들</h2>
-<p><strong>&quot;8GB인데 14B는 안 되나?&quot;</strong> — 돌아가긴 합니다. 다만 컨텍스트를
-크게 줄여야 하고 일부 레이어가 CPU로 넘어가 속도가 떨어져서,
-8GB에서는 7~8B를 쓰는 편이 훨씬 쾌적합니다. <strong>&quot;두 장 꽂으면
+<p><strong>&quot;8GB인데 14B는 안 되나?&quot;</strong> — 돌아가긴 합니다. 다만 모델 파일만으로
+8GB를 넘어서 일부 레이어가 CPU로 넘어가고(위에서 본 대로 컨텍스트를
+줄여도 이 벽은 남습니다) 속도가 떨어져서, 8GB에서는 7~8B를 쓰는 편이
+훨씬 쾌적합니다. <strong>&quot;두 장 꽂으면
 합쳐지나?&quot;</strong> — 용량은 늘지만 속도는 합쳐지지 않습니다. 카드들이
 순서대로 일하고 중간 결과를 주고받는 시간이 붙어서, 8GB 두 장보다
 16GB 한 장이 낫습니다 — 파워·슬롯 간격까지 포함한 판단은
