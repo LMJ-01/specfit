@@ -28,6 +28,7 @@ affiliate: true
   - 상위 글 다듬기(2026-11-15): ① 도해 신설 radeon-llm-fork(결론표 두 개 내용 그대로 — 같은 규칙 · 상황 3갈래 · 확인 순서, 새 주장 없음)
     ② 2절 끝에 "2026년 11월 재확인" 문단(Ollama 공식 GPU 문서 기준: OS별 지원 목록 · 목록 밖은 Vulkan 경로 — 11/14 전수 점검 때
     확인한 내용, 카드 목록은 원칙대로 미기재) ③ 교차 연결 2(local-llm-start-guide · ollama-minimum-spec, 상호 완성). updated 필드 신설.
+  - 2바퀴 점검(2026-11-25): 정독. 이상 없음 — 지원 카드 목록 미기재 원칙 · 11월 재확인 문단 그대로(재검색 없음, 11/14 대조분 유효). 링크 대상(rtx4060ti-16gb-vs-4070 = 5060 Ti vs 5070 글, 링크 문구와 제목 일치 · mac-unified-memory-local-llm · local-llm-power-cost TDP) 확인.
 -->
 
 이 사이트의 글은 대부분 NVIDIA 기준으로 쓰여 있습니다. 이유가 있습니다.
