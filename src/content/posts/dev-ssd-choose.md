@@ -25,6 +25,7 @@ affiliate: true
   - 전수 점검(2026-11-17): 정독 + 검산(Q4 파일 크기 2 / 4.7 / 9 / 20 / 43GB · Gen5 12,000~14,900 대 Gen4 약 7,000 = 두 배).
     수정 1 — Gen5 발열 문단에 "최근 세대는 초기보다 줄었다고 알려짐" 단서(재검색 없이 알려진 흐름만, 수치 없음). DRAM · TLC/QLC ·
     용량 권장은 ssd-tbw-lifespan · docker-laptop-spec · nvme-heatsink 과 어긋남 없음.
+  - 2바퀴 점검(2026-11-27): 정독 + 재검산(Q4 파일 2/4.7/9/20/43GB · Gen5 대 Gen4 두 배). 이상 없음 — 중요도 순서(용량 → DRAM → TLC/QLC → 순차 속도)·맺음말 일치, 용량 표(일반 512 · 도커 1TB · LLM 1TB+)가 docker-laptop-spec · web-dev-laptop-spec과 일치. 분류 메모리 › SSD·하드·백업 적절.
 -->
 
 SSD를 고를 때 가장 눈에 띄는 숫자가 **순차 읽기 속도**입니다.

@@ -24,6 +24,7 @@ affiliate: true
     rtx4060-local-llm 도 같은 날 통일 ③ 모델 세대 단서(qwen3 — 태그·용량은 제3자 자료뿐이라 숫자 없이 "크기 단계가 비슷"까지만).
     명령어 표는 그대로 유효(qwen2.5 태그).
   - 교차 연결(2026-11-26): "잘 안 될 때"에 FAQ "한국어로 물었는데 영어로 답합니다" 신설(/set system 처방 한 줄) → ollama-answers-in-english(새 글, 상호).
+  - 2바퀴 점검(2026-11-27): 정독. 이상 없음 — VRAM별 모델 표(16GB → 12~14B)가 계산기·ollama-minimum-spec과 일치, 11/17 수정분(채팅 창 앱 · 느려지는 이유) · 11/26 영어 답변 FAQ 유지. 분류 GPU › 로컬 LLM 적절.
 -->
 
 [시작 가이드](/posts/local-llm-start-guide.html)에서 내 장비로 뭐가 되는지 확인하셨다면,
