@@ -2,7 +2,7 @@
 title: 로컬 LLM 처음이라면 — 용어 없이 읽는 시작 가이드
 description: VRAM, 양자화, 파라미터 같은 말을 몰라도 됩니다. 내 컴퓨터로 AI를 돌릴 수 있는지, 무엇부터 확인해야 하는지 순서대로 정리했습니다.
 date: 2026-08-15
-updated: 2026-11-17
+updated: 2026-11-27
 category: gpu
 sub: llm
 tags: [로컬LLM, 입문, Ollama, VRAM, 초보]
@@ -24,6 +24,7 @@ affiliate: true
   - 전수 점검(2026-11-17): 정독. 수정 2 — ① "노트북 RTX 5070 은 8GB" → 8GB · 12GB 두 구성(11/15 확인, local-llm-laptop-choose 와 통일 — 선행 메모 해소)
     ② "CPU만으로는 한 글자씩" → 가장 작은 모델은 견딜 만하다는 local-llm-without-gpu 결론표와 맞춤. 허브 링크 17개 전부 살아 있음(linkcheck).
     추가(2026-11-17 05시): 컨텍스트 용어 설명에서 "대화가 길어지면 메모리를 더 써서 느려진다"로 읽히던 문장을 분리 — 메모리는 설정 길이만큼 처음에 잡힘(ollama-install-guide 점검 때 확인).
+  - 2바퀴 점검(2026-11-27): 정독. 수정 1 — 이 글 메모의 규칙(새 로컬 LLM 글은 '다음은 여기부터'에 연결)대로 11/26 새 글 ollama-answers-in-english 항목 추가(설치 가이드 바로 아래) — 11/26 발행 때 인바운드 2곳만 잡고 허브를 빠뜨린 것. 나머지(용어 순서 · 계산기 판정 4단계 · CPU 서술 · 노트북 5070 두 구성) 이상 없음, 허브 링크 18개 linkcheck로 확인. 분류 GPU › 로컬 LLM 적절.
 -->
 
 "내 컴퓨터에서 AI를 돌린다"는 이야기를 보고 오셨다면, 아마 이런 상태일 겁니다.
@@ -142,6 +143,9 @@ AI가 한 번에 기억하는 내용의 길이입니다.
 
 **"일단 깔아보고 싶다"**
 → [Ollama 설치부터 첫 대화까지](/posts/ollama-install-guide.html)
+
+**"깔았는데 한국어로 물어도 영어로 답해요"**
+→ [영어로 답할 때 — 언제 바뀌는지로 가르기](/posts/ollama-answers-in-english.html)
 
 **"그래픽카드가 없는데요"**
 → [CPU로 돌리면 얼마나 느린가](/posts/local-llm-without-gpu.html)

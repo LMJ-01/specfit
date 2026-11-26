@@ -25,6 +25,7 @@ tags: [램, 듀얼채널, 32GB, 램구성, 조립PC]
     시세 변동 영역이라 언급 자체 회피). 쿠팡 링크 없음 (adsenseReview).
   - 전수 점검(2026-11-17): 정독. 이상 없음 — 듀얼 채널 = 대역폭 두 배 · 내장그래픽 · 4장 구성 hedge · 2슬롯/4슬롯 판정이 laptop-ram-upgrade · mixed-ram-capacity · ram-64gb-worth-it 과 어긋남 없음.
   - 교차 연결(2026-11-22): FAQ "16×2에 16×2를 더해" 끝 → mixed-ram-capacity 새 FAQ(8+8+16+16 배치) 상호.
+  - 2바퀴 점검(2026-11-27): 정독. 이상 없음 — 결론표·판단 순서·정리 일치, 11/22 교차 연결 유지, mixed-ram-capacity · laptop-ram-upgrade와 서술 일치. 분류 메모리 › 램 적절.
 -->
 
 램 32GB로 가기로 정하고 나면 마지막 갈림길이 하나 남습니다 —
