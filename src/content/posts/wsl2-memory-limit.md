@@ -28,6 +28,7 @@ affiliate: true
     ③ 예시 파일에서 processors=4 · swap=2GB 를 뺌 — 본문이 "건드릴 필요 없다"면서 붙여넣기 예시에는 넣어 둔 모순(코어 많은 PC에서 그대로
     붙이면 코어가 줄어듦) ④ VmmemWSL 이름 병기 ⑤ 커밋된 메모리 문장 통일 ⑥ processors 기본값 한 줄.
     도해 wsl-ram-split 은 16GB 예라 50% 기준 그대로 성립 — 손대지 않음.
+  - 2바퀴 점검(2026-11-26): 정독. 이상 없음 — 결론표(16GB → 4~6GB, 32GB → 8~12GB)와 2단계 표·정리 4번 일치, 기본 상한 50% · autoMemoryReclaim '버전에 따라' hedge 유지(11/16 확인분, 재검색 없음). docker-laptop-spec · web-dev-laptop-spec과 수치 일치. 분류 노트북 › 고르기·개발 환경 적절.
 -->
 
 윈도우에서 개발하다 보면 작업 관리자에서 이걸 보게 됩니다.
