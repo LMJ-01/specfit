@@ -2,7 +2,7 @@
 title: Ollama 설치부터 첫 대화까지 — 명령어 두 줄
 description: 로컬 LLM을 처음 돌려보는 가장 빠른 길입니다. 설치, 모델 받기, 대화까지 순서대로. 어떤 모델을 골라야 하는지도 함께 정리했습니다.
 date: 2026-08-15
-updated: 2026-11-17
+updated: 2026-11-26
 category: gpu
 sub: llm
 tags: [Ollama, 로컬LLM, 설치, 입문]
@@ -23,6 +23,7 @@ affiliate: true
     공식 문서 원문은 미확인) → 느려지는 이유를 "다뤄야 할 내용이 늘어서"로 바로잡음. 같은 문장이 있던 local-llm-start-guide · ollama-minimum-spec ·
     rtx4060-local-llm 도 같은 날 통일 ③ 모델 세대 단서(qwen3 — 태그·용량은 제3자 자료뿐이라 숫자 없이 "크기 단계가 비슷"까지만).
     명령어 표는 그대로 유효(qwen2.5 태그).
+  - 교차 연결(2026-11-26): "잘 안 될 때"에 FAQ "한국어로 물었는데 영어로 답합니다" 신설(/set system 처방 한 줄) → ollama-answers-in-english(새 글, 상호).
 -->
 
 [시작 가이드](/posts/local-llm-start-guide.html)에서 내 장비로 뭐가 되는지 확인하셨다면,
@@ -140,6 +141,14 @@ ollama run qwen2.5:7b
 
 반대로 **긴 문서를 넣었는데 앞부분을 무시한다면** 입력이 조용히 잘린 것입니다.
 [컨텍스트 길이 설정](/posts/ollama-context-length.html)에서 원인과 해법을 다뤘습니다.
+
+### 한국어로 물었는데 영어로 답합니다
+
+처음부터 영어라면 모델이 영어 쪽으로 기운 것이고, 잘 하다가 길어진 뒤
+영어라면 처음 준 지시가 잘려 나간 것입니다. 대화 안에서 `/set system 너는
+항상 한국어로 답한다.` 로 지시를 고정하는 것이 가장 빠른 처방이고, 갈래별
+판정과 모델에 박아 두는 법은 [영어로 답할 때](/posts/ollama-answers-in-english.html)에
+정리했습니다.
 
 ### 그래픽카드를 안 쓰는 것 같습니다
 

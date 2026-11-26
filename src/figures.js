@@ -800,6 +800,43 @@ ${t(390, 212, '경계가 2×2 로 뭉개집니다 — 색 글자가 번지는 �
   );
 }
 
+function langDriftThree() {
+  const W = 640;
+  let b = '';
+  b += t(24, 24, '한국어로 물었는데 영어로 — 언제 바뀌는지가 원인을 가릅니다', { weight: 600, size: 12.5 });
+  const cards = [
+    ['처음부터 매번', '① 모델이 영어 쪽으로 기움', '영어 위주로 배운 계열', '→ 한국어에 강한 계열로'],
+    ['코드·용어 섞일 때만', '② 작은 모델이 못 버팀', '지시를 지키는 힘이 약함', '→ 시스템 프롬프트 · 한 체급 위'],
+    ['길어진 뒤부터', '③ "한국어로" 지시가 잘림', '컨텍스트를 넘은 앞부분 삭제', '→ 시스템 프롬프트 · 새 대화'],
+  ];
+  cards.forEach((c, i) => {
+    const x = 24 + i * 200;
+    b += rect(x, 40, 188, 112, COLOR.soft, { r: 6, stroke: COLOR.line });
+    b += rect(x, 40, 188, 24, i === 2 ? COLOR.over : COLOR.accent, { r: 6 });
+    b += t(x + 94, 56, c[0], { size: 9, weight: 700, fill: '#fff', anchor: 'middle' });
+    b += t(x + 12, 84, c[1], { size: 9, weight: 700, fill: COLOR.text });
+    b += t(x + 12, 104, c[2], { size: 8.2, fill: COLOR.mute });
+    b += t(x + 12, 136, c[3], { size: 8.4, weight: 700, fill: COLOR.fit });
+  });
+  // 잘림 모식도
+  b += t(24, 178, '③의 모습 — 대화가 컨텍스트 길이를 넘으면 오래된 메시지부터 밀려남', { size: 8.6, weight: 700, fill: COLOR.text });
+  const msgs = ['"한국어로 답해"', '질문1', '답1', '질문2', '답2', '질문3'];
+  msgs.forEach((m, i) => {
+    const x = 24 + i * 76;
+    const cut = i === 0;
+    b += rect(x, 188, 70, 22, cut ? COLOR.soft : COLOR.fit, { r: 3, stroke: cut ? COLOR.over : COLOR.line });
+    b += t(x + 35, 203, m, { size: 7.6, weight: 700, fill: cut ? COLOR.over : '#fff', anchor: 'middle' });
+  });
+  b += rect(100, 184, 380, 30, 'none', { r: 4, stroke: COLOR.accent });
+  b += t(490, 203, '← 기억하는 범위', { size: 8, fill: COLOR.accent });
+  b += t(24, 232, '첫 메시지의 지시는 범위 밖으로 잘려 나감 → 지시는 대화가 아니라 시스템 프롬프트(맨 앞에 따로 붙는 칸)에', { size: 7.8, fill: COLOR.mute });
+  return figure(
+    '영어로 답하는 세 갈래',
+    W, 248, b,
+    '한국어로 물었는데 영어로 답하는 증상은 언제 바뀌는지로 원인이 갈립니다. 처음부터 매번이면 영어 위주로 배운 모델이라 한국어에 강한 계열로 바꾸고, 코드나 전문 용어가 섞일 때만이면 작은 모델이 지시를 못 버티는 것이라 지시를 시스템 프롬프트로 고정하거나 한 체급 올립니다. 잘 하다가 대화가 길어진 뒤부터라면 컨텍스트 길이를 넘은 앞부분이 잘리면서 처음 준 한국어 지시가 사라진 것이라, 지시를 시스템 프롬프트에 두고 새 대화로 시작합니다.'
+  );
+}
+
 export const figures = {
   'vram-overflow': vramOverflow,
   'memory-parts': memoryParts,
@@ -1045,6 +1082,7 @@ export const figures = {
   'radeon-llm-fork': radeonLlmFork,
   'wheel-autoscroll-split': wheelAutoscrollSplit,
   'taskbar-stuck-triage': taskbarStuckTriage,
+  'lang-drift-three': langDriftThree,
 };
 
 /**

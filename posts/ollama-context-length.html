@@ -25,7 +25,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9784398608515061" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSZHNTLEJ0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DSZHNTLEJ0')</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용","description":"긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.","datePublished":"2026-08-21","dateModified":"2026-11-16","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-context-length.html","image":"https://specfit.kr/assets/og-default.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용","description":"긴 문서를 넣었는데 앞부분을 무시한다면 모델이 아니라 설정 문제입니다. Ollama의 기본 컨텍스트가 얼마인지, 어떻게 늘리는지, 늘리면 VRAM이 얼마나 더 드는지 계산으로 정리했습니다.","datePublished":"2026-08-21","dateModified":"2026-11-26","author":{"@type":"Person","name":"MJ","url":"https://specfit.kr/about.html"},"publisher":{"@type":"Organization","name":"스펙핏"},"mainEntityOfPage":"https://specfit.kr/posts/ollama-context-length.html","image":"https://specfit.kr/assets/og-default.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://specfit.kr/"},{"@type":"ListItem","position":2,"name":"GPU","item":"https://specfit.kr/gpu.html"},{"@type":"ListItem","position":3,"name":"Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용","item":"https://specfit.kr/posts/ollama-context-length.html"}]}</script>
 </head>
 <body class="is-post">
@@ -69,7 +69,7 @@
     <h1>Ollama가 긴 문서를 까먹는 이유 — 컨텍스트 길이(num_ctx)와 VRAM 비용</h1>
     <p class="post-meta">
       <time datetime="2026-08-21">2026년 8월 21일</time>
-      <span class="updated">· 2026년 11월 16일 갱신</span>
+      <span class="updated">· 2026년 11월 26일 갱신</span>
     </p>
   </header>
 
@@ -113,7 +113,10 @@ A4 두세 장&quot;</strong>입니다. 그 이상을 넣으면 Ollama는 오류�
 <pre><code>truncating input prompt          ← 서버 로그에 이 문구가 있으면 잘린 겁니다</code></pre>
 <p>그래서 증상이 이상하게 나타납니다. 문서 뒷부분 질문에는 답을 잘 하는데
 앞부분을 물으면 딴소리를 하고, 대화가 길어지면 처음에 정한 규칙을 잊습니다.
-<strong>모델 품질 문제로 보이지만 실제로는 설정 문제입니다.</strong></p>
+<strong>모델 품질 문제로 보이지만 실제로는 설정 문제입니다.</strong> 잘 하던 한국어
+답이 대화 중간부터 <strong>영어로 바뀌는</strong> 것도 이 얼굴일 수 있습니다 — 처음 부탁한
+&quot;한국어로&quot;가 잘려 나간 경우라, <a href="/posts/ollama-answers-in-english.html">영어로 답할 때의 판정</a>에
+갈래와 처방을 따로 정리했습니다.</p>
 <h2 id="늘리는-방법-네-가지">늘리는 방법 — 네 가지</h2>
 <p>어디서 쓰느냐에 따라 넣는 자리가 다를 뿐, 늘리는 값은 같은 <code>num_ctx</code>입니다.</p>
 <p><strong>① 대화 중 임시로</strong> — <code>ollama run</code> 안에서:</p>
@@ -321,6 +324,13 @@ VRAM 용량이 대역폭보다 먼저입니다</li>
   <h2 id="related-h">같이 보면 좋은 글</h2>
   <ul class="card-list">
     <li class="card">
+      <a href="/posts/ollama-answers-in-english.html">
+        <span class="card-cat">GPU</span>
+        <span class="card-title">Ollama가 한국어로 물어도 영어로 답할 때 — 모델 탓, 크기 탓, 잘려 나간 지시 탓</span>
+        <span class="card-desc">로컬 LLM에 한국어로 물었는데 영어로 답하거나, 대화 중간부터 영어로 바뀌는 증상은 흔합니다. 원인은 대개 셋 — 영어 위주로 배운 모델, 작은 크기, 긴 대화에서 잘려 나간 &quot;한국어로&quot; 지시입니다. 언제 바뀌는지로 가르고, 계속 한국어로 답하게 하는 설정까지 정리했습니다.</span>
+      </a>
+    </li>
+    <li class="card">
       <a href="/posts/gpu-thermal-pad.html">
         <span class="card-cat">GPU</span>
         <span class="card-title">그래픽카드 써멀패드 교체, 효과 있나 — 메모리 온도가 &quot;문제&quot;일 때만, 보증부터 봅니다</span>
@@ -332,13 +342,6 @@ VRAM 용량이 대역폭보다 먼저입니다</li>
         <span class="card-cat">GPU</span>
         <span class="card-title">그래픽카드 팬 세 개 중 하나만 안 돌 때 — 쉬는 건지 죽은 건지는 부하가 가립니다</span>
         <span class="card-desc">그래픽카드 팬 세 개 중 하나만 멈춰 있거나 그 팬만 소리가 다른 증상은 게시판 단골 질문입니다. 저부하에서 쉬는 설계, 팬을 묶음으로 제어하는 구조, 베어링·모터 고장은 겉모습이 같아도 부하를 걸면 갈립니다. 손가락 판정과 처방 순서를 정리했습니다.</span>
-      </a>
-    </li>
-    <li class="card">
-      <a href="/posts/gpu-backplate-hot.html">
-        <span class="card-cat">GPU</span>
-        <span class="card-title">그래픽카드 백플레이트가 손 대기 뜨거울 때 — 손의 온도계와 부품의 온도계는 눈금이 다릅니다</span>
-        <span class="card-desc">게임을 하다 그래픽카드 뒷판(백플레이트)에 손을 댔더니 깜짝 놀랄 만큼 뜨거워서 고장인지 묻는 질문은 게시판 단골입니다. 뒷판이 뜨거운 건 열이 거기로 빠져나오고 있다는 설계의 신호인 경우가 대부분이고, 판단은 손이 아니라 센서로 합니다. 정상과 경고를 가르는 기준을 정리했습니다.</span>
       </a>
     </li>
   </ul>

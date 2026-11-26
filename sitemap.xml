@@ -16,6 +16,7 @@
   <url><loc>https://specfit.kr/disclosure.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://specfit.kr/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://specfit.kr/posts/ollama-answers-in-english.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/taskbar-not-hiding.html</loc><lastmod>2026-11-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mouse-wheel-autoscroll.html</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/win11-right-click-menu.html</loc><lastmod>2026-11-13</lastmod><priority>0.8</priority></url>
@@ -216,7 +217,7 @@
   <url><loc>https://specfit.kr/posts/ai-coding-tool-pc-spec.html</loc><lastmod>2026-11-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-charger-watt-pd.html</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/nvme-heatsink.html</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/ollama-context-length.html</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/ollama-context-length.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-dual-channel-check.html</loc><lastmod>2026-11-14</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/external-ssd-dev.html</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/laptop-screen-size.html</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
@@ -259,7 +260,7 @@
   <url><loc>https://specfit.kr/posts/local-llm-without-gpu.html</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/mac-unified-memory-local-llm.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/macbook-air-vs-pro-dev.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority></url>
-  <url><loc>https://specfit.kr/posts/ollama-install-guide.html</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority></url>
+  <url><loc>https://specfit.kr/posts/ollama-install-guide.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/quantization-q4-q5-q8.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/ram-16gb-vs-32gb.html</loc><lastmod>2026-11-26</lastmod><priority>0.8</priority></url>
   <url><loc>https://specfit.kr/posts/rtx3060-12gb-local-llm.html</loc><lastmod>2026-11-15</lastmod><priority>0.8</priority></url>
