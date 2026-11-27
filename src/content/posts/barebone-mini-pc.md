@@ -2,7 +2,7 @@
 title: 베어본 미니PC — 반제품을 사면 뭘 더 사야 완성되나
 description: 베어본은 미완성 컴퓨터입니다. 뭐가 빠져 있고 뭘 골라 넣어야 하는지, 완제품과는 언제 갈리는지 정리했습니다. 갖고 있는 램과 SSD를 살릴 수 있는 게 이 방식의 핵심입니다.
 date: 2026-08-29
-updated: 2026-11-18
+updated: 2026-11-28
 category: minipc
 tags: [베어본, 미니PC, SO-DIMM, M.2, 조립]
 affiliate: true
@@ -26,6 +26,7 @@ affiliate: true
   - 도해(2026-10-30): barebone-pieces — 들어 있는 것 / 채울 것 셋 / 사기 전
     추가 확인. 본문 "빠져 있는 것"·"CPU 갈림길" 절과 1:1, 금액 없음.
   - 전수 점검(2026-11-18): 정독. 수정 1 — "베어본은 정의상 슬롯이 열려 있어 걱정이 없다" 단정 완화(램 온보드 + SSD만 빈 제품도 있음 — 알려진 시장 구성, hedge). SO-DIMM · M.2 2280 · CPU 온보드/소켓 갈래 · 듀얼 채널 서술 그대로.
+  - 2바퀴 점검(2026-11-28): 정독. 수정 1 — FAQ "개발용 SSD는 dev-ssd-choose 기준대로 1TB"가 그 글의 용량 표(일반 512 · 도커 1TB · LLM 1TB+)를 한 줄로 뭉갬 → 표대로 셋. SO-DIMM · 듀얼 채널 · 온보드/소켓 갈래 그대로.
 -->
 
 미니PC를 알아보다 보면 같은 제품이 두 가지 값으로 팔립니다.
@@ -139,7 +140,8 @@ CPU 소켓형    →  CPU 도 따로 사서 꽂아야 함. 데스크톱용 CPU �
 램은 [개발용 미니PC](/posts/mini-pc-for-dev.html)의 기준 그대로 —
 도커·안드로이드면 32GB(16GB 두 장)입니다([에뮬레이터가 램을
 먹는 구조](/posts/android-studio-laptop-spec.html)는 그 글에). SSD 용량은
-[개발용 SSD 고르기](/posts/dev-ssd-choose.html)의 기준대로 1TB 를 권합니다.
+[개발용 SSD 고르기](/posts/dev-ssd-choose.html)의 기준대로 — 웹 개발만이면 512GB, 도커를 쓰면 1TB,
+로컬 LLM까지 겸하면 1TB 이상입니다.
 
 ### 로컬 LLM 용으로 베어본을 맞추면요
 
