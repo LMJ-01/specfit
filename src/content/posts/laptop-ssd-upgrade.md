@@ -20,6 +20,7 @@ affiliate: true
   - 전수 점검(2026-11-17): 정독 + 검산(M.2 길이 규격 · 931GB = 10¹² ÷ 2³⁰ · Q4 파일 크기 · 용량 권장이 dev-ssd-choose 와 일치). 수정 5(같은 취지) —
     "바꿀 수 있는 건 사실상 SSD 하나" · "램은 대개 못 늘립니다"가 laptop-ram-upgrade · dev-laptop-spec("슬롯이 없으면 못 바꿈")과 수위가 달라
     서두 · description · FAQ · 끝 문단을 통일하고 FAQ에 램 교체 글 링크 추가 / Gen5 단정 완화. 절차 · 보증 hedge 그대로.
+  - 2바퀴 점검(2026-11-27): 정독 + 재검산(931GB · Q4 파일 · 용량 표 = dev-ssd-choose). 이상 없음 — 서두 '거의 어느 노트북에서나 SSD 하나'와 램 서술(슬롯 없으면 못 늘림)이 dev-laptop-spec · laptop-ram-onboard-lpcamm2 11/27 수정과 어긋남 없음. 분류 메모리 › SSD 적절.
 -->
 
 노트북을 사고 나서 아쉬운 게 생겼을 때, **거의 어느 노트북에서나 바꿀 수 있는 건 SSD 하나**입니다.
