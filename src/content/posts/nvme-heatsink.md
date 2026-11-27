@@ -31,7 +31,7 @@ affiliate: true
     슬롯 구성은 보드별이라 "설명서 표" 위임, 단정 없음.
   - 교차 연결(2026-10-30): ram-heatsink-needed ↔ 이 글(기존 단방향 완성).
   - 전수 점검(2026-11-18): 정독. 이상 없음 — 세대별 판정 · 70~80도대 hedge · 온도 확인 절차 · 보드 방열판 우선 · 슬롯 공유 hedge 모두 dev-ssd-choose · laptop-ssd-upgrade(11/17 수정본)와 일치.
-  - 2바퀴 점검(2026-11-28): 정독. 수정 1 — 모델 파일 크기 "5~20GB"가 nvme-vs-sata · external-ssd-dev · dev-ssd-choose 의 "5~43GB(70B 43GB)"와 어긋남 → 같은 범위로. 세대별 판정 · 70~80도대 hedge · 온도 표 그대로.
+  - 2바퀴 점검(2026-11-28): 정독. 수정 1 — 모델 파일 크기 "5~20GB"가 nvme-vs-sata · external-ssd-dev · dev-ssd-choose 의 "5~43GB(70B 43GB)"와 어긋남 → 같은 SSD 분류 이웃 글(nvme-vs-sata)과 같은 범위로. 커밋 뒤 grep: "5~20GB"는 dev-laptop-spec · docker-laptop-spec · ssd-tbw-lifespan 에 남음 — 7~32B의 흔한 범위로 쓰였고 ssd-tbw 는 20GB를 계산 기준으로 삼아 틀린 말이 아니라 그대로 둠(판단 기록). 세대별 판정 · 70~80도대 hedge · 온도 표 그대로.
 -->
 
 NVMe SSD를 사면 따라오는 질문입니다. **"방열판 달아야 하나요?"**
