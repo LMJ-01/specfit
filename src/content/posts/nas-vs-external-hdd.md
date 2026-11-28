@@ -25,6 +25,7 @@ tags: [NAS, 외장하드, 홈서버, 네트워크저장소, 백업]
   - 쿠팡 링크 없음 (adsenseReview). NAS 본체·NAS용 HDD·외장 HDD =
     링크 후보 (승인 후 배치).
   - 전수 점검(2026-11-19): 정독. 수정 1 — 게임 설치 FAQ 링크가 external-ssd-dev(개발용 외장 SSD, 게임 언급 없음)를 가리켜 약속과 어긋남 → game-install-ssd-hdd 로. 기가 유선 ≈ HDD 한 대 급 · 3-2-1 · 간이 NAS hedge 그대로. 링크 확인: dev-backup-strategy(SSD 서랍 보관) · desktop-ups(NAS 상시) · mesh-wifi-backhaul(상시 장비 직결) 대상 내용 있음.
+  - 2바퀴 점검(2026-11-28): 정독. 이상 없음 — 결론표/정리 일치 · 기가 유선 ≈ HDD 한 대 급 · 3-2-1 이 dev-backup-strategy 와 같음 · 11/19 링크 수정분 유지.
 -->
 
 외장하드가 꽉 차거나, 노트북과 데스크톱 사이에 파일을 옮기다 지치면
